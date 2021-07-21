@@ -38,6 +38,7 @@
   header {
     position:fixed;top:0;left:0;width:100%;height:100px;padding:0;
     height: 5vh;
+    z-index: 100;
 
   }
 
@@ -203,7 +204,7 @@
     display: flex;
     justify-content: center; /* align horizontal */
     align-items: center; 
-    height:95vh;
+    height:100vh;
 }
  
 .qhero_page_accueil {
@@ -259,7 +260,7 @@
           position: relative;
           width: 100%;
           height: 100%;
-          margin: 3vh auto;
+          margin: 5vh auto 7vh auto;
           padding-right: 60px;
         }
         section::after {
@@ -359,6 +360,42 @@
           }
         }
 
+
+
+/* Caroussel de photos */
+
+
+.swiper-container {
+  width: 100%;
+  height: 100%;
+}
+
+.swiper-slide {
+  text-align: center;
+  font-size: 18px;
+  background: #fff;
+
+  /* Center slide text vertically */
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  -webkit-align-items: center;
+  align-items: center;
+}
+
+.swiper-slide img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
 
 
   /* ##### Fin style de la page d'accueil ##### */

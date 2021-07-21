@@ -59,26 +59,45 @@ $tourSQL = $db->query("SELECT * FROM tourism LIMIT 4");
 ?>
 
 
+
 <!--  ######Ceci est la partie Html de la page d'accueil. Raccorder le back par la suite.##### -->
 <div class="qhero">
-  <div class="qhero_page_accueil">
-
+  
+<div class="qhero_page_accueil">
     <h1 class="style_h1_accueil">“Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod.”</h1>
-
     <h2 class="style_h2_accueil">Sed rutrum vulputate dapibus. Vivamus id tincidunt eros, in suscipit quam. Praesent aliquet justo auctor urna feugiat, luctus aliquam odio pharetra. Fusce iaculis mauris sem. Donec varius urna libero, sit amet tincidunt enim laoreet ut. Donec non sem pharetra, ullamcorper nibh in, lacinia risus. Proin rutrum egestas massa, a cursus diam interdum ac. </h2>
         
     <section id="section10" class="demo">
      <a href="#thanks"><span></span>Scroll</a>
         </section>
-
-  </div>
-
+        </div>           
 </div>
 
+<!--  ######Ceci est le caroussel de la page d'accueil. Raccorder le back par la suite.##### -->
 
 
 
+<div class="swiper-container mySwiper">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide">Grand Large
+          <img src="assets/jpg/images page d'accueil/Villa-grande-Anse-Martinique02.jpg" alt="Photo Maison Grand Large Martinique">
+        </div>
+        <div class="swiper-slide">Slide 2
+          <img src="assets/jpg/images page d'accueil/Villa-grande-Anse-Martinique02.jpg" alt="Photo Maison Grand Large Martinique">
+        </div>
+        <div class="swiper-slide">Slide 3
+          <img src="assets/jpg/images page d'accueil/Villa-grande-Anse-Martinique02.jpg" alt="Photo Maison Grand Large Martinique">
+        </div>
+        <div class="swiper-slide">Slide 4
+          <img src="assets/jpg/images page d'accueil/Villa-grande-Anse-Martinique02.jpg" alt="Photo Maison Grand Large Martinique">
+        </div>
+      </div>
+      <div class="swiper-button-next"></div>
+      <div class="swiper-button-prev"></div>
+      <div class="swiper-pagination"></div>
+</div>
 
+    
 
 <!-- Footer -->
 <footer class="py-5 bg-inverse">
@@ -92,6 +111,31 @@ $tourSQL = $db->query("SELECT * FROM tourism LIMIT 4");
 <script src="vendor/jquery/jquery.min.js"></script>
 <script src="vendor/popper/popper.min.js"></script>
 <script src="vendor/bootstrap/js/bootstrap.min.js"></script>
+
+
+<!-- Swiper JS -->
+
+
+
+<script src="https://unpkg.com/swiper/swiper-bundle.js"></script>
+<script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+
+
+
+<!-- Initialize Swiper -->
+<script>
+  var swiper = new Swiper(".mySwiper", {
+    cssMode: false,
+    navigation: {
+      nextEl: ".swiper-button-next",
+      prevEl: ".swiper-button-prev",
+    },
+    pagination: {
+      el: ".swiper-pagination",
+    },
+    keyboard: true,
+  });
+</script>
 
 </body>
 

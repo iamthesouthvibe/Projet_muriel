@@ -11,9 +11,12 @@
   <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
   <link href="css/w3.css" rel="stylesheet">
   <!-- Custom styles for this template -->
+  <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.css" />
+<link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
   <link href="css/full-width-pics.css" rel="stylesheet">
   <!-- Custom styles for this template -->
   <link rel="stylesheet" href="../style/style.css">
+
 </head>
 
 
