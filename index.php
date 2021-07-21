@@ -2,6 +2,8 @@
 require_once 'core/core.php';
 include 'includes/header.php';
 
+/*
+
 $sql = $db->query("SELECT * FROM rooms LIMIT 4");
 $tourSQL = $db->query("SELECT * FROM tourism LIMIT 4");
 ?>
@@ -13,7 +15,7 @@ $tourSQL = $db->query("SELECT * FROM tourism LIMIT 4");
         <h1>Homes Muriel etst branch</h1><hr />
       <div class="row">
 
-      <?php while($room = mysqli_fetch_assoc($sql)): ?>
+      <?php  while($room = mysqli_fetch_assoc($sql)): ?>
           <div class="col-lg-3 col-md-4 col-sm-6">
             <h4 class="text-center"><?=$room['room_number'];?></h4>
             <img src="<?=$room['photo'];?>" class="img-responsive" alt="room" width="100%" height="200px">
@@ -28,7 +30,7 @@ $tourSQL = $db->query("SELECT * FROM tourism LIMIT 4");
     <?php endwhile; ?>
       </div>
     </section>
-
+    -->
 
     <!-- Content section -->
     <section class="py-5">
@@ -51,7 +53,27 @@ $tourSQL = $db->query("SELECT * FROM tourism LIMIT 4");
       <?php endwhile; ?>
         </div>
       </div>
-    </section>
+    </section> */
+
+    ?>
+
+
+<!--  ######Ceci est la partie Html de la page d'accueil. Raccorder le back par la suite.##### -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
     <!-- Footer -->
     <footer class="py-5 bg-inverse">

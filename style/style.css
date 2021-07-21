@@ -5,3 +5,19 @@
          url(MgOpenModernaBold.ttf);
     
   }
+
+@font-face {
+    font-family: NeueMontreal-Bold;
+    src: local("../assets/fonts/NeueMontreal/NeueMontreal-Bold.otf"),
+         local("NeueMontreal-Bold"),
+         url(MgOpenModernaBold.ttf);
+    
+  }
+
+@font-face {
+    font-family: NeueMontreal-Regular;
+    src: local("../assets/fonts/NeueMontreal/NeueMontreal-Regular.otf"),
+         local("NeueMontreal-Regular"),
+         url(MgOpenModernaBold.ttf);
+    
+  }
