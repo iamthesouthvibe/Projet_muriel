@@ -2,18 +2,10 @@
     font-family: ITCGaramondStd-BkNarrow;
     src: local("../assets/fonts/GaramondStd/ITCGaramondStd-BkNarrow.otf"),
          local("ITCGaramondStd-BkNarrow"),
-         url(ITCGaramondStd-BkNarrow.otf);
+        url('../assets/fonts/GaramondStd/ITCGaramondStd-BkNarrow.woff2') format('woff2'),
+        url('../assets/fonts/GaramondStd/ITCGaramondStd-BkNarrow.woff') format('woff');
     
   }
-
- @font-face {
-    font-family: 'ITC Garamond Std Book Narrow';
-    src: url('../assets/fonts/ITCGaramondStd-BkNarrow.woff2') format('woff2'),
-        url('../assets/fonts/ITCGaramondStd-BkNarrow.woff') format('woff');
-    font-weight: normal;
-    font-style: normal;
-    font-display: swap;
-}
 
 @font-face {
     font-family: NeueMontreal-Bold;
