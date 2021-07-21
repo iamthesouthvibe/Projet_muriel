@@ -36,8 +36,13 @@
 
 
   header {
-    position:fixed;top:0;left:0;width:100%;height:100px;padding:0;
+    position:fixed;
+    top:0;left:0;
+    width:100%;
+    height:100px;
+    padding:0;
     height: 5vh;
+    z-index: 50;
 
   }
 
@@ -78,6 +83,7 @@
     width: 60px;
     height: 17px;
     position: relative;
+    z-index: 50;
     cursor: pointer;
     margin-left: 50px;
     transform: rotate(0deg);
@@ -128,11 +134,13 @@
     -moz-transform: rotate(135deg);
     -o-transform: rotate(135deg);
     -webkit-transform: rotate(135deg);
+    z-index: 30;
   }
 
   .burger-menu.open span:nth-child(2) {
     opacity: 0;
     left: 30px;
+    z-index: 30;
   }
 
   .burger-menu.open span:nth-child(3) {
@@ -141,6 +149,7 @@
     -moz-transform: rotate(-135deg);
     -o-transform: rotate(-135deg);
     -webkit-transform: rotate(-135deg);
+    z-index: 30;
   }
   
 
@@ -149,50 +158,50 @@
 
   /*_______________________________________________________________________*/
 
+/* ##### Style du menu navigation ##### */
 
-  /* Cursor */
+.container_menu {
+    display: flex;
+}
 
-  .cursor{
+
+.menu_nav {
     position: fixed;
-    width: 50px;
-    height: 50px;
-    border: 2px solid #c6c6c6;
-    border-radius: 50%;
-    left: 0;
+    width: 80vw;
+    height: 100vh;
+    background-color: #9A4747;
     top: 0;
-    pointer-events: none;
-    transform: translate(-50%, -50%);
-    transition: .1s;
-    background: rgba(0, 0, 0, 0.05);
-  }
-  
-  .cursor2{
+    left: -100vw;
+
+    transition: left 1.3s;
+}
+
+.menu_nav_right {
     position: fixed;
-    width: 8px;
-    height: 8px;
-    background-color: #c6c6c6;
-    border-radius: 50%;
-    left: 0;
+    width: 20vw;
+    height: 100vh;
+    background-color: #E5E5E5;;
+    right: -20vw;
     top: 0;
-    pointer-events: none;
-    transform: translate(-50%, -50%);
-    transition: .15s;
-  }
-  
-  .content:hover ~ .cursor{
-    transform: translate(-50%, -50%) scale(1.5);
-    background-color: #c6c6c6;
-    opacity: .5;
-  }
-  
-  .content:hover ~ .cursor2{
-    opacity: 0;
-  }
-
-  /* Fin Cursor */
 
 
-  /*_______________________________________________________________________*/
+    transition: right 1.3s;
+}
+
+
+.active {
+    left: 0;
+}
+
+.active_snd {
+    right: 0;
+}
+
+
+
+/* ##### fin du menu navigation ##### */
+
+
   
 
   /* ##### Style de la page d'accueil ##### */
@@ -396,40 +405,4 @@
   }
 }
 
-<<<<<<< HEAD
-  /* ##### Fin style de la page d'accueil ##### */
-
-
-
-
-  @media screen and (max-width: 450px)
-  {
-    .header_left img {
-        width: 50px;
-        height: 22px;
-    }
-
-    .header_right button {
-        top: 87vh;
-    position: relative;
-    }
-
-    .burger-menu span:nth-child(2) {
-        top: 10px;
-      }
-
-      .burger-menu span:nth-child(3) {
-        top: 20px;
-      }
-  }
-
-
-  @media screen and (max-width: 321px) {
-    .header_right button {
-        width: 147px;
-        height: 36px;
-    
-  }
-=======
     /* ##### Fin Media Queries Header ##### */
->>>>>>> b85a9fcff1adf5d19c04a3de1a9c0a0c97ea83d3
