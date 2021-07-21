@@ -1,6 +1,7 @@
 <?php
 require_once 'core/core.php';
 include 'includes/header.php';
+include "includes/cursor.php"
 
 /*
 
