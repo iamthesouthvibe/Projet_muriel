@@ -25,7 +25,9 @@
   body {
     margin: 25px 25px;
     padding: 0;
-    background-color: #FCF7EC;;
+    background-color: #FCF7EC;
+
+    font-family: NeueMontreal-Regular;
   }
 
 
@@ -62,7 +64,7 @@
     border-radius: 40px;
     border: none;
     border-color: none;
-    color: white;
+    color: #FCF7EC;
     margin-right: 50px;
 
     font-family: Neue Montreal;
