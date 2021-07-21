@@ -6,6 +6,15 @@
     
   }
 
+ @font-face {
+    font-family: 'ITC Garamond Std Book Narrow';
+    src: url('ITCGaramondStd-BkNarrow.woff2') format('woff2'),
+        url('ITCGaramondStd-BkNarrow.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
 @font-face {
     font-family: NeueMontreal-Bold;
     src: local("../assets/fonts/NeueMontreal/NeueMontreal-Bold.otf"),
