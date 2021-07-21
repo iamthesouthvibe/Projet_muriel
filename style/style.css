@@ -150,22 +150,43 @@
 }
  
 
-  .style_h1_accueil {
+.style_h1_accueil {
     font-family: ITCGaramondStd-BkNarrow;
     font-style: normal;
     font-weight: normal;
-    font-size: 144px;
+    font-size: 9vw;
     line-height: 78%;
     /* or 112px */
 
     text-align: center;
     color: #9A4747;
 
-  }
+    margin-top: 10vh;
+
+}
+
+.style_h2_accueil {
+
+  font-family: Neue Montreal;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 18px;
+  line-height: 20px;
+  /* or 111% */
+
+  text-align: center;
+
+  color: #000000;
+
+  max-width: 42vw;
+  margin: 8vh auto 0vh auto;
+
+}
    
 
- .style_scroll_SVG_accueil{
+.style_scroll_SVG_accueil{
     display: block;
     margin: 0 auto;
+    margin-top: 10px;
  }
 
