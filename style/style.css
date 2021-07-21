@@ -1,0 +1,7 @@
+@font-face {
+    font-family: ITCGaramondStd-BkNarrow;
+    src: local("../assets/fonts/GaramondStd/ITCGaramondStd-BkNarrow.otf"),
+         local("ITCGaramondStd-BkNarrow"),
+         url(MgOpenModernaBold.ttf);
+    
+  }
