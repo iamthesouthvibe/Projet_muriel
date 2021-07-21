@@ -160,11 +160,11 @@
     justify-content: center; /* align horizontal */
     align-items: center; 
     height:95vh;
-    padding-top: 16vh;
 }
  
 .qhero_page_accueil {
     max-width: 85vw;
+    margin: auto;
 }
  
 
