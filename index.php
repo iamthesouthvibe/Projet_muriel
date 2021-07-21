@@ -7,11 +7,6 @@ $tourSQL = $db->query("SELECT * FROM tourism LIMIT 4");
 ?>
 
 
-    <!-- Header - set the background image for the header in the line below -->
-    <header class="py-5 bg-image-full" style="background-image: url('images/slide-2.jpg'); height:300px">
-      
-    </header>
-
     <!-- Content section -->
     <section class="py-5">
       <div class="container">
@@ -34,11 +29,6 @@ $tourSQL = $db->query("SELECT * FROM tourism LIMIT 4");
       </div>
     </section>
 
-    <!-- Image Section - set the background image for the header in the line below -->
-    <section class="py-5 bg-image-full" style="background-image: url(images/slide-2.jpg);">
-      <!-- Put anything you want here! There is just a spacer below for demo purposes! -->
-      <div style="height: 200px;"></div>
-    </section>
 
     <!-- Content section -->
     <section class="py-5">
