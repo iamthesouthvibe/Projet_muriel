@@ -15,7 +15,7 @@ $tourSQL = $db->query("SELECT * FROM tourism LIMIT 4");
     <!-- Content section -->
     <section class="py-5">
       <div class="container">
-        <h1>Homes</h1><hr />
+        <h1>Homes Muriel</h1><hr />
       <div class="row">
 
       <?php while($room = mysqli_fetch_assoc($sql)): ?>
