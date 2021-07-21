@@ -133,7 +133,9 @@
   /* fin style header */
 
 
+  /*_______________________________________________________________________*/
 
+  
 
   /* ##### Style de la page d'accueil ##### */
 
@@ -143,6 +145,7 @@
     display: flex;
     justify-content: center; /* align horizontal */
     align-items: center; 
+    height:95vh;
 }
  
 .qhero_page_accueil {
@@ -186,7 +189,11 @@
 
 .style_scroll_SVG_accueil{
     display: block;
-    margin: 0 auto;
-    margin-top: 10px;
+    margin: 0 auto;     
+    margin-bottom: -20vh;
+    margin-top: 10vh;
  }
 
+
+
+  /* ##### Fin style de la page d'accueil ##### */
