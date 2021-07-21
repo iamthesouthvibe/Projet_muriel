@@ -62,8 +62,11 @@ $tourSQL = $db->query("SELECT * FROM tourism LIMIT 4");
 
 
 
+<h1>“Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod.”</h1>
 
+<h2>Sed rutrum vulputate dapibus. Vivamus id tincidunt eros, in suscipit quam. Praesent aliquet justo auctor urna feugiat, luctus aliquam odio pharetra. Fusce iaculis mauris sem. Donec varius urna libero, sit amet tincidunt enim laoreet ut. Donec non sem pharetra, ullamcorper nibh in, lacinia risus. Proin rutrum egestas massa, a cursus diam interdum ac. </h2>
 
+<img src = "../assets/svg/Scroll-Desktopsvg.svg" alt="Symbole Scroll SVG"/>
 
 
 
