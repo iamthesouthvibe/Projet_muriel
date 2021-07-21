@@ -22,7 +22,6 @@
     
   }
 
-<<<<<<< Updated upstream
   body {
     margin: 25px 25px;
     padding: 0;
@@ -132,22 +131,26 @@
   }
 
   /* fin style header */
-=======
 
 
 
 
   /* ##### Style de la page d'accueil ##### */
 
-
-  .qhero_page_accueil{
-    margin: 0 auto;
-    width: 100vw; 
-    height: 95vh;
-  }
+.qhero {
+    width: 100%;
+    text-align: center;
+    display: flex;
+    justify-content: center; /* align horizontal */
+    align-items: center; 
+}
+ 
+.qhero_page_accueil {
+    max-width: 85vw;
+}
+ 
 
   .style_h1_accueil {
-
     font-family: ITCGaramondStd-BkNarrow;
     font-style: normal;
     font-weight: normal;
@@ -158,7 +161,4 @@
     text-align: center;
     color: #9A4747;
 
-    max-width: 1400px;
-
   }
->>>>>>> Stashed changes

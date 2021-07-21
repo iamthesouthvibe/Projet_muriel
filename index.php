@@ -55,18 +55,20 @@ $tourSQL = $db->query("SELECT * FROM tourism LIMIT 4");
       </div>
     </section> */
 
-    ?>
+?>
 
 
 <!--  ######Ceci est la partie Html de la page d'accueil. Raccorder le back par la suite.##### -->
+<div class="qhero">
+  <div class="qhero_page_accueil">
 
-<div class="qhero_page_accueil">
+    <h1 class="style_h1_accueil">“Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod.”</h1>
 
-  <h1 class="style_h1_accueil">“Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod.”</h1>
+    <h2 class="style_h2_accueil">Sed rutrum vulputate dapibus. Vivamus id tincidunt eros, in suscipit quam. Praesent aliquet justo auctor urna feugiat, luctus aliquam odio pharetra. Fusce iaculis mauris sem. Donec varius urna libero, sit amet tincidunt enim laoreet ut. Donec non sem pharetra, ullamcorper nibh in, lacinia risus. Proin rutrum egestas massa, a cursus diam interdum ac. </h2>
 
-  <h2 class="style_h2_accueil">Sed rutrum vulputate dapibus. Vivamus id tincidunt eros, in suscipit quam. Praesent aliquet justo auctor urna feugiat, luctus aliquam odio pharetra. Fusce iaculis mauris sem. Donec varius urna libero, sit amet tincidunt enim laoreet ut. Donec non sem pharetra, ullamcorper nibh in, lacinia risus. Proin rutrum egestas massa, a cursus diam interdum ac. </h2>
+    <img src="../assets/svg/Scroll-Desktopsvg.svg" alt="Symbole Scroll SVG" class="style_scroll_SVG_accueil" />
 
-  <img src = "../assets/svg/Scroll-Desktopsvg.svg" alt="Symbole Scroll SVG" class="style_scroll_SVG_accueil"/>
+  </div>
 
 </div>
 
@@ -77,19 +79,19 @@ $tourSQL = $db->query("SELECT * FROM tourism LIMIT 4");
 
 
 
-    <!-- Footer -->
-    <footer class="py-5 bg-inverse">
-      <div class="container">
-        <p class="m-0 text-center ">Copyright &copy; Hotel & Tourism</p>
-      </div>
-      <!-- /.container -->
-    </footer>
+<!-- Footer -->
+<footer class="py-5 bg-inverse">
+  <div class="container">
+    <p class="m-0 text-center ">Copyright &copy; Hotel & Tourism</p>
+  </div>
+  <!-- /.container -->
+</footer>
 
-    <!-- Bootstrap core JavaScript -->
-    <script src="vendor/jquery/jquery.min.js"></script>
-    <script src="vendor/popper/popper.min.js"></script>
-    <script src="vendor/bootstrap/js/bootstrap.min.js"></script>
+<!-- Bootstrap core JavaScript -->
+<script src="vendor/jquery/jquery.min.js"></script>
+<script src="vendor/popper/popper.min.js"></script>
+<script src="vendor/bootstrap/js/bootstrap.min.js"></script>
 
-  </body>
+</body>
 
 </html>
