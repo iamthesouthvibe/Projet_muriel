@@ -17,9 +17,22 @@
 </head>
 
 <style>
+  body {
+    margin: 15px 15px;
+    padding: 0;
+    background-color: #FCF7EC;;
+  }
+
+
   nav {
     display: flex;
     justify-content: space-between;
+  }
+
+
+  .header_left img {
+    width: 90px;
+  height: 39px;
   }
 
   .header_right {
@@ -35,8 +48,8 @@
   }
 
   .burger-menu {
-    width: 120px;
-    height: 90px;
+    width: 37px;
+    height: 17px;
     position: relative;
     cursor: pointer;
     transform: rotate(0deg);
@@ -53,8 +66,8 @@
     background: black;
     display: block;
     position: absolute;
-    height: 8px;
-    width: 100%;
+    height: 3px;
+    width: 50px;
     opacity: 1;
     left: 0;
     transform: rotate(0deg);
@@ -72,17 +85,17 @@
   }
 
   .burger-menu span:nth-child(2) {
-    top: 36px;
+    top: 14px;
     width: 50%;
     float: right;
   }
 
   .burger-menu span:nth-child(3) {
-    top: 72px;
+    top: 28px;
   }
 
   .burger-menu.open span:nth-child(1) {
-    top: 36px;
+    top: 14px;
     transform: rotate(135deg);
     -moz-transform: rotate(135deg);
     -o-transform: rotate(135deg);
@@ -95,7 +108,7 @@
   }
 
   .burger-menu.open span:nth-child(3) {
-    top: 36px;
+    top: 14px;
     transform: rotate(-135deg);
     -moz-transform: rotate(-135deg);
     -o-transform: rotate(-135deg);
@@ -107,7 +120,7 @@
   <header>
     <nav>
       <div class="header_left">
-        <img src="" alt="Logo muriel Home">
+        <img src="../assets/png/LOGO_ANCIEN.png" alt="Logo muriel Home">
       </div>
       <div class="header_right">
         <button>Réserver</button>
