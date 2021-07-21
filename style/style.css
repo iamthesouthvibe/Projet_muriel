@@ -2,7 +2,7 @@
     font-family: ITCGaramondStd-BkNarrow;
     src: local("../assets/fonts/GaramondStd/ITCGaramondStd-BkNarrow.otf"),
          local("ITCGaramondStd-BkNarrow"),
-         url(MgOpenModernaBold.ttf);
+         url(ITCGaramondStd-BkNarrow.otf);
     
   }
 
@@ -10,7 +10,7 @@
     font-family: NeueMontreal-Bold;
     src: local("../assets/fonts/NeueMontreal/NeueMontreal-Bold.otf"),
          local("NeueMontreal-Bold"),
-         url(MgOpenModernaBold.ttf);
+         url(NeueMontreal-Bold.otf);
     
   }
 
@@ -18,10 +18,11 @@
     font-family: NeueMontreal-Regular;
     src: local("../assets/fonts/NeueMontreal/NeueMontreal-Regular.otf"),
          local("NeueMontreal-Regular"),
-         url(MgOpenModernaBold.ttf);
+         url(NeueMontreal-Bold.otf);
     
   }
 
+<<<<<<< Updated upstream
   body {
     margin: 25px 25px;
     padding: 0;
@@ -131,3 +132,33 @@
   }
 
   /* fin style header */
+=======
+
+
+
+
+  /* ##### Style de la page d'accueil ##### */
+
+
+  .qhero_page_accueil{
+    margin: 0 auto;
+    width: 100vw; 
+    height: 95vh;
+  }
+
+  .style_h1_accueil {
+
+    font-family: ITCGaramondStd-BkNarrow;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 144px;
+    line-height: 78%;
+    /* or 112px */
+
+    text-align: center;
+    color: #9A4747;
+
+    max-width: 1400px;
+
+  }
+>>>>>>> Stashed changes
