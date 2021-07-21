@@ -33,6 +33,7 @@
 
   header {
     height: 5vh;
+    position: fixed;
   }
 
   nav {
@@ -146,6 +147,7 @@
     justify-content: center; /* align horizontal */
     align-items: center; 
     height:95vh;
+    padding-top: 16vh;
 }
  
 .qhero_page_accueil {
@@ -164,7 +166,6 @@
     text-align: center;
     color: #9A4747;
 
-    margin-top: 8vh;
 
 }
 
@@ -182,7 +183,7 @@
   color: #000000;
 
   max-width: 42vw;
-  margin: 8vh auto 0vh auto;
+  margin: 5vh auto 0vh auto;
 
 }
    
@@ -191,7 +192,7 @@
     display: block;
     margin: 0 auto;     
     margin-bottom: -20vh;
-    margin-top: 10vh;
+    margin-top: 6vh;
  }
 
 
