@@ -21,29 +21,51 @@
 
 
 <body>
-  <header>
-    <nav>
-      <div class="header_left">
-        <img src="../assets/png/LOGO_ANCIEN.png" alt="Logo muriel Home">
-      </div>
-      <div class="header_right">
-        <button>Réserver</button>
-        <div class="burger-menu">
-          <span></span>
-          <span></span>
-          <span></span>
+  <div class="header">
+    <header>
+      <nav>
+        <div class="header_left">
+          <img src="../assets/png/LOGO_ANCIEN.png" alt="Logo muriel Home">
         </div>
+        <div class="header_right">
+          <button>Réserver</button>
+          <div class="burger-menu">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+        </div>
+      </nav>
+    </header>
+    <div class="container_menu">
+      <div class="menu_nav">
+
       </div>
-    </nav>
-  </header>
+      <div class="menu_nav_right">
+
+      </div>
+    </div>
+  </div>
+
+
 
 
   <script>
-    document.querySelector('.burger-menu').addEventListener("click", (event) => {
+    let navBar = document.querySelector('.menu_nav');
+    let navBarRight = document.querySelector('.menu_nav_right');
+    let menuBurger = document.querySelector('.burger-menu');
+    let headerButton = document.querySelector('.header_right button')
+    menuBurger.addEventListener("click", (event) => {
       if (event.currentTarget.classList.contains("open")) {
         event.currentTarget.classList.remove("open");
+        navBar.classList.remove("active");
+        navBarRight.classList.remove("active_snd");
+        headerButton.style.display = ""
       } else {
         event.currentTarget.classList.add("open");
+        navBar.classList.add("active");
+        navBarRight.classList.add("active_snd");
+        headerButton.style.display = "none"
       }
     });
   </script>
