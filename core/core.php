@@ -1,5 +1,5 @@
 <?php 
-$db = new mysqli('localhost','root','','hotel_db');
+$db = new mysqli('localhost','root','root','hotel_db');
 if(!$db) {
     echo 'Could not establish database connection, please review your settings';
 }
