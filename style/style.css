@@ -454,7 +454,57 @@
 }
 
 
-  /* ##### Fin style de la page d'accueil ##### */
+/* Section Muriel */
+
+
+.section_muriel {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: center;
+  margin-top: 13vh;
+}
+
+.img_muriel {
+  max-width: 22.6vw;
+}
+
+.section_muriel_titre_text {
+  max-width : 40vw;
+  margin-left: 5vw;
+}
+
+.titre_section_muriel {
+  /*margin: -10px auto;*/
+
+  font-family: ITCGaramondStd-BkNarrow;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 8vw;
+  line-height: 79%;
+  /* or 103px */
+
+
+  color: #9A4747;
+
+  margin-top: 5px; /* ajustement pour le titre avec la photo */
+}
+
+.texte_section_muriel {
+
+  font-family:NeueMontreal-Regular ;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 18px;
+  line-height: 20px;
+  /* or 111% */
+
+
+  color: #000000;
+
+}
+
+/* ##### Fin style de la page d'accueil ##### */
 
 
   /* ##### Debut Media Queries Header ##### */
