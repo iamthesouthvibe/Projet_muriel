@@ -27,7 +27,7 @@
         <img src="../assets/png/LOGO_ANCIEN.png" alt="Logo muriel Home">
       </div>
       <div class="header_right">
-        <button>Réserver</button>
+        <button><a href="">Reserver</a></button>
         <div class="burger-menu">
           <span></span>
           <span></span>
