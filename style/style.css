@@ -491,7 +491,111 @@ margin-top: 30px;
 
 footer {
   background-color:  #E5E5E5;
-  height: 30vh;
+  margin-top: 20vh;    
+}
+
+.footer_class {
+
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  -webkit-align-content: stretch;
+  -ms-flex-line-pack: stretch;
+  align-content: stretch;
+  -webkit-align-items: flex-start;
+  -ms-flex-align: start;
+  align-items: flex-start;
+
+  padding-right: 10vw;
+}
+
+.footer_informations {
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  -webkit-align-content: stretch;
+  -ms-flex-line-pack: stretch;
+  align-content: stretch;
+  -webkit-align-items: flex-start;
+  -ms-flex-align: start;
+  align-items: flex-start;
+}
+
+.footer_class li {
+  list-style-type : none;
+}
+
+.footer_class a {
+  text-decoration: none;
+  font-family: Neue Montreal;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 22px;
+  line-height: 111.5%;
+  color: #000000;
+
+}
+
+.footer_class h4 {
+  font-family: NeueMontreal-Regular;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 27px;
+  line-height: 111.5%;
+  color: #9A4747;
+
+  margin-top: 0;
+  margin-bottom: 12px;
+}
+
+.footer_class ul li .bouton-up {
+  font-family: NeueMontreal-Regular;
+font-style: normal;
+font-weight: normal;
+font-size: 27px;
+line-height: 111.5%;
+/* or 30px */
+
+
+color: #9A4747;   
+}
+
+.footer_informations h5{
+  font-family: Neue Montreal;
+font-style: normal;
+font-weight: normal;
+font-size: 17px;
+line-height: 90%;
+/* or 15px */
+color: #000000;
+
+padding-right: 1vw;
+padding-left: 1vw;
+
+
+}
+
+footer ul {
+  padding-left: 1vw;
+  margin-bottom: 10vh;
 }
 
 
