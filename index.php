@@ -79,19 +79,48 @@ $tourSQL = $db->query("SELECT * FROM tourism LIMIT 4");
     <div class="swiper-wrapper">
       <div class="swiper-slide">
         <img src="./assets/jpg/images page d'accueil/Villa-grande-Anse-Martinique02.jpg" alt="" srcset="">
+        <div class="swiper-slide-titre">
+          <h2>Grand large</h2>
+          <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Itaque quos numquam corrupti tempora neque dicta deserunt ab molestias obcaecati rerum,
+            illum fugiat quas aperiam asperiores sit facere cupiditate facilis earum? Lorem ipsum dolor sit, amet consectetur adipisicing elit. Voluptates, quas, nulla, in dolorum enim officia perferendis
+            reiciendis expedita accusantium laborum maxime quo
+            nihil debitis est exercitationem. Doloremque officia soluta eligendi!</p>
+          <button><a href="">Découvrir</a></button>
+        </div>
       </div>
       <div class="swiper-slide">
         <img src="./assets/jpg/images page d'accueil/Villa-grande-Anse-Martinique02.jpg" alt="" srcset="">
+        <div class="swiper-slide-titre">
+          <h2>Grand large</h2>
+          <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Itaque quos numquam corrupti tempora neque dicta deserunt ab molestias obcaecati rerum,
+            illum fugiat quas aperiam asperiores sit facere cupiditate facilis earum? Lorem ipsum dolor sit, amet consectetur adipisicing elit. Voluptates, quas, nulla, in dolorum enim officia perferendis
+            reiciendis expedita accusantium laborum maxime quo
+            nihil debitis est exercitationem. Doloremque officia soluta eligendi!</p>
+          <button><a href="">Découvrir</a></button>
+        </div>
       </div>
       <div class="swiper-slide">
-        <img src="./assets/jpg/images page d'accueil/Villa-grande-Anse-Martinique02.jpg" alt="" srcset=""
-        ></div>
-      <div class="swiper-slide">Slide 4</div>
-      <div class="swiper-slide">Slide 5</div>
-      <div class="swiper-slide">Slide 6</div>
-      <div class="swiper-slide">Slide 7</div>
-      <div class="swiper-slide">Slide 8</div>
-      <div class="swiper-slide">Slide 9</div>
+        <img src="./assets/jpg/images page d'accueil/Villa-grande-Anse-Martinique02.jpg" alt="" srcset="">
+        <div class="swiper-slide-titre">
+          <h2>Grand large</h2>
+          <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Itaque quos numquam corrupti tempora neque dicta deserunt ab molestias obcaecati rerum,
+            illum fugiat quas aperiam asperiores sit facere cupiditate facilis earum? Lorem ipsum dolor sit, amet consectetur adipisicing elit. Voluptates, quas, nulla, in dolorum enim officia perferendis
+            reiciendis expedita accusantium laborum maxime quo
+            nihil debitis est exercitationem. Doloremque officia soluta eligendi!</p>
+          <button><a href="">Découvrir</a></button>
+        </div>
+      </div>
+      <div class="swiper-slide">
+        <img src="./assets/jpg/images page d'accueil/Villa-grande-Anse-Martinique02.jpg" alt="" srcset="">
+        <div class="swiper-slide-titre">
+          <h2>Grand large</h2>
+          <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Itaque quos numquam corrupti tempora neque dicta deserunt ab molestias obcaecati rerum,
+            illum fugiat quas aperiam asperiores sit facere cupiditate facilis earum? Lorem ipsum dolor sit, amet consectetur adipisicing elit. Voluptates, quas, nulla, in dolorum enim officia perferendis
+            reiciendis expedita accusantium laborum maxime quo
+            nihil debitis est exercitationem. Doloremque officia soluta eligendi!</p>
+          <button><a href="">Découvrir</a></button>
+        </div>
+      </div>
     </div>
     <div class="swiper-button-next"></div>
     <div class="swiper-button-prev"></div>
@@ -131,6 +160,7 @@ $tourSQL = $db->query("SELECT * FROM tourism LIMIT 4");
 <!-- Initialize Swiper -->
 <script>
   var swiper = new Swiper(".mySwiper", {
+    loop: true,
     navigation: {
       nextEl: ".swiper-button-next",
       prevEl: ".swiper-button-prev",
