@@ -7,7 +7,6 @@
   <meta name="description" content="">
   <meta name="author" content="">
   <title>MH My Home</title>
-  <link href="css/w3.css" rel="stylesheet">
   <!-- Custom styles for this template -->
   <link
       rel="stylesheet"

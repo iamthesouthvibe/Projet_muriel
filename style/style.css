@@ -282,6 +282,7 @@
     text-align: center;
     color: rgba(154, 71, 71, 1);
     ;
+    margin-bottom: 50px;
 
 
 }
@@ -308,6 +309,7 @@
 
         .scroll_anim {
           margin-top: 100px;
+          
         }
 
         .circle-1, .circle-2 {
