@@ -462,16 +462,23 @@ margin-top: 30px;
 
 .cursor_active_right {
   transform: translate(-50%, -50%) scale(1.5);
-  background: rgb(255, 0, 0);
-  content: url("/assets/svg/arrow-right.svg");
-  
+  background:  #9A4747;
+  border: none;
+  background-image: url("/assets/svg/arrow-right.svg");
+  background-size: 15px;
+  background-repeat:no-repeat;
+  background-position: center;
 }
 
 
 .cursor_active_left {
   transform: translate(-50%, -50%) scale(1.5);
-  background: rgb(2, 86, 165);
-  content: url("/assets/svg/arrow-left.svg");
+  background:  #9A4747;
+  border: none;
+  background-image: url("/assets/svg/arrow-left.svg");
+  background-size: 15px;
+  background-repeat:no-repeat;
+  background-position: center;
 }
 
 
