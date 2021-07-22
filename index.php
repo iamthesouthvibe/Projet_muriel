@@ -1,7 +1,7 @@
 <?php
 require_once 'core/core.php';
 include 'includes/header.php';
-include "includes/cursor.php";
+
 
 /*
 
@@ -75,7 +75,7 @@ $tourSQL = $db->query("SELECT * FROM tourism LIMIT 4");
 
 
   <!-- Swiper -->
-  <div class="swiper-container mySwiper">
+  <div class="swiper-container mySwiper swiperHover">
     <div class="swiper-wrapper">
       <div class="swiper-slide">
         <img src="./assets/jpg/images page d'accueil/Villa-grande-Anse-Martinique02.jpg" alt="" srcset="">
@@ -123,7 +123,7 @@ $tourSQL = $db->query("SELECT * FROM tourism LIMIT 4");
       </div>
     </div>
     <div class="swiper-button-next"></div>
-    <div class="swiper-button-prev"></div>
+      <div class="swiper-button-prev"></div>
   </div>
 
   </div>
@@ -142,7 +142,9 @@ $tourSQL = $db->query("SELECT * FROM tourism LIMIT 4");
     </div>
   </div>
 
-<?php include ("./includes/footer.php") ?>
+<?php
+include "includes/cursor.php";
+ include ("./includes/footer.php"); ?>
 </main>
 
 
@@ -166,4 +168,30 @@ $tourSQL = $db->query("SELECT * FROM tourism LIMIT 4");
       prevEl: ".swiper-button-prev",
     },
   });
+
+let swiperHoverRight = document.querySelector('.swiperHover .swiper-button-next ')
+
+  swiperHoverRight.addEventListener('mouseenter', function(e) {
+    cursor.classList.add('cursor_active_right');
+    cursor2.classList.add('cursor2_active_right');
+  })
+
+  swiperHoverRight.addEventListener('mouseleave', function(e) {
+    cursor.classList.remove('cursor_active_right');
+    cursor2.classList.remove('cursor2_active_right');
+  })
+
+
+
+  let swiperHoverLeft = document.querySelector('.swiperHover .swiper-button-prev ')
+
+  swiperHoverLeft.addEventListener('mouseenter', function(e) {
+    cursor.classList.add('cursor_active_left');
+    cursor2.classList.add('cursor2_active_left');
+  })
+
+  swiperHoverLeft.addEventListener('mouseleave', function(e) {
+    cursor.classList.remove('cursor_active_left');
+    cursor2.classList.remove('cursor2_active_left');
+  })
 </script>
