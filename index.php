@@ -77,9 +77,15 @@ $tourSQL = $db->query("SELECT * FROM tourism LIMIT 4");
   <!-- Swiper -->
   <div class="swiper-container mySwiper">
     <div class="swiper-wrapper">
-      <div class="swiper-slide"><img src="./assets/jpg/images page d'accueil/Villa-grande-Anse-Martinique02.jpg" alt="" srcset=""></div>
-      <div class="swiper-slide"><img src="./assets/jpg/images page d'accueil/Villa-grande-Anse-Martinique02.jpg" alt="" srcset=""></div>
-      <div class="swiper-slide">Slide 3</div>
+      <div class="swiper-slide">
+        <img src="./assets/jpg/images page d'accueil/Villa-grande-Anse-Martinique02.jpg" alt="" srcset="">
+      </div>
+      <div class="swiper-slide">
+        <img src="./assets/jpg/images page d'accueil/Villa-grande-Anse-Martinique02.jpg" alt="" srcset="">
+      </div>
+      <div class="swiper-slide">
+        <img src="./assets/jpg/images page d'accueil/Villa-grande-Anse-Martinique02.jpg" alt="" srcset=""
+        ></div>
       <div class="swiper-slide">Slide 4</div>
       <div class="swiper-slide">Slide 5</div>
       <div class="swiper-slide">Slide 6</div>
