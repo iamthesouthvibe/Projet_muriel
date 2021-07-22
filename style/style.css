@@ -229,6 +229,7 @@
   transform: translate(-50%, -50%);
   transition: .1s;
   background: rgba(0, 0, 0, 0.05);
+  z-index: 1000;
 }
 
 .cursor2{
@@ -242,6 +243,7 @@
   pointer-events: none;
   transform: translate(-50%, -50%);
   transition: .15s;
+  z-index: 1000;
 }
 
 .content:hover ~ .cursor{
