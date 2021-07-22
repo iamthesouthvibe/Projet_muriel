@@ -490,3 +490,50 @@
 }
 
     /* ##### Fin Media Queries Header ##### */
+
+
+
+/* ##### Debut Media Queries Page Accueil ##### */
+
+@media screen and (max-width: 450px) {
+
+  .qhero_page_accueil {
+    position: absolute;
+    bottom: 180px;
+  }
+    
+  .style_h1_accueil {
+      font-size: 61px;
+      line-height: 78%;
+      /* or 48px */
+    }
+
+    .style_h2_accueil {
+      max-width: 80vw;
+    }
+
+    .demo {
+      display: none;
+    }
+
+  }
+
+
+  @media screen and (max-height: 740px) {
+
+    .qhero_page_accueil {
+      position: absolute;
+      bottom: 140px;  
+    }
+
+    .style_h1_accueil {
+      font-size: 54px;
+    }
+
+    .demo {
+      display: none;
+    }
+  }
+
+/* ##### Fin Media Queries Page Accueil ##### */
+
