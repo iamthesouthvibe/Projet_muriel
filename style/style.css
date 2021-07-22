@@ -744,3 +744,31 @@ footer ul {
 
 /* ##### Fin Media Queries Page Accueil ##### */
 
+
+/* ##### Debut Media Queries Footer ##### */
+
+
+@media screen and (max-width: 450px) {
+
+  footer {
+    padding-bottom: 90px;
+  
+  }
+
+  .footer_class {
+    display: block;
+    padding-top: 5px;
+    padding-left: 14px;
+  }
+
+  footer ul {
+    margin-bottom: 5vh;
+  }
+
+  .footer_informations {
+    display: block;
+    text-align: center;
+
+  }
+}
+/* ##### Fin Media Queries Footer ##### */
