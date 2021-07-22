@@ -215,6 +215,54 @@
     right: 0;
 }
 
+.menu_nav_link {
+  bottom: 25px;
+    position: fixed;
+}
+
+
+
+.menu_nav ul li {
+  list-style: none;
+}
+
+
+.container_menu ul li a {
+  font-family: ITCGaramondStd-BkNarrow;
+    font-style: normal;
+    font-weight: normal;
+  text-decoration: none;
+    /* list-style: none; */
+    /* list-style-type: none; */
+    color: #FCF7EC;
+    font-size: 170px;
+    line-height: 1;
+    margin-bottom: 10px;
+    display: inline-block;
+  position: relative;
+}
+
+.container_menu ul li a::after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  transform: scaleX(0);
+  height: 7px;
+  bottom: 0;
+  left: 0;
+  background-color: #FCF7EC;
+  transform-origin: bottom right;
+  transition: transform 0.7s ease-out;
+}
+
+.menu_nav ul li a:hover::after {
+  transform: scaleX(1);
+  transform-origin: bottom left;
+}
+
+
+
+
 
 
 /* ##### fin du menu navigation ##### */

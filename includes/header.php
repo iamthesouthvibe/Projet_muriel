@@ -8,14 +8,11 @@
   <meta name="author" content="">
   <title>MH My Home</title>
   <!-- Custom styles for this template -->
-  <link
-      rel="stylesheet"
-      href="https://unpkg.com/swiper/swiper-bundle.min.css"
-    />
+  <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
   <link rel="stylesheet" href="../style/style.css">
-  
+
   <!-- Custom styles for this template -->
- 
+
 </head>
 
 
@@ -37,17 +34,35 @@
     </nav>
 
     <div class="bouton_responsive">
-    <button class="bouton_phone"><a href="">Reserver</a></button>
+      <button class="bouton_phone"><a href="">Reserver</a></button>
     </div>
 
   </header>
 
   <div class="container_menu">
     <div class="menu_nav">
-     
+      <div class="menu_nav_link">
+        <ul>
+          <li>
+            <a href="">Home</a>
+          </li>
+          <li>
+            <a href="">Rubriques</a>
+          </li>
+          <li>
+            <a href="">Produits</a>
+          </li>
+          <li>
+            <a href="">Contact</a>
+          </li>
+          <li>
+            <a href="">A propos</a>
+          </li>
+        </ul>
+      </div>
     </div>
     <div class="menu_nav_right">
-
+    
     </div>
   </div>
 
