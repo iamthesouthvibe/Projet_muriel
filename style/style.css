@@ -328,6 +328,8 @@
           animation: scroll 2s infinite linear;
           opacity:0;
         }
+
+        
         
         .circle-2{
           animation-delay: 1s;
@@ -335,15 +337,15 @@
         
         @keyframes scroll {
           0% {
-            cy: 4;
+            cy: 20%;
             opacity: 0;
           }
           45%, 55% {
             opacity: 1;
-            cy: 9;
+            cy: 40%;
           }
           100% {
-            cy: 14;
+            cy: 60%;
             opacity: 0;
           }
         }
@@ -444,7 +446,7 @@ margin-top: 30px;
 .swiper-button-next {
   background: transparent;
     position: absolute;
-    width: 50%;
+    width: 40%;
     height: 104%;
     top: 0%;
     opacity: 0;
@@ -453,10 +455,16 @@ margin-top: 30px;
 .swiper-button-prev {
   background: transparent;
     position: absolute;
-    width: 50%;
+    width: 40%;
     height: 104%;
     top: 0%;
     opacity: 0;
+}
+
+.swiper-pagination-bullet-active {
+  opacity: 1;
+  background: var(--swiper-pagination-color, var(--swiper-theme-color));
+  background-color: #9A4747;;
 }
 
 

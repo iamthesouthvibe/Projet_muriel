@@ -123,7 +123,8 @@ $tourSQL = $db->query("SELECT * FROM tourism LIMIT 4");
       </div>
     </div>
     <div class="swiper-button-next"></div>
-      <div class="swiper-button-prev"></div>
+    <div class="swiper-button-prev"></div>
+    <div class="swiper-pagination"></div>
   </div>
 
   </div>
@@ -142,9 +143,9 @@ $tourSQL = $db->query("SELECT * FROM tourism LIMIT 4");
     </div>
   </div>
 
-<?php
-include "includes/cursor.php";
- include ("./includes/footer.php"); ?>
+  <?php
+  include "includes/cursor.php";
+  include("./includes/footer.php"); ?>
 </main>
 
 
@@ -167,9 +168,12 @@ include "includes/cursor.php";
       nextEl: ".swiper-button-next",
       prevEl: ".swiper-button-prev",
     },
+    pagination: {
+          el: ".swiper-pagination",
+        }
   });
 
-let swiperHoverRight = document.querySelector('.swiperHover .swiper-button-next ')
+  let swiperHoverRight = document.querySelector('.swiperHover .swiper-button-next ')
 
   swiperHoverRight.addEventListener('mouseenter', function(e) {
     cursor.classList.add('cursor_active_right');
