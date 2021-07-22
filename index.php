@@ -60,74 +60,46 @@ $tourSQL = $db->query("SELECT * FROM tourism LIMIT 4");
 
 
 <main>
-<!--  ######Ceci est la partie Html de la page d'accueil. Raccorder le back par la suite.##### -->
-<div class="qhero">
-  <div class="qhero_page_accueil">
-    <h1 class="style_h1_accueil">“Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod.”</h1>
-    <h2 class="style_h2_accueil">Sed rutrum vulputate dapibus. Vivamus id tincidunt eros, in suscipit quam. Praesent aliquet justo auctor urna feugiat, luctus aliquam odio pharetra. Fusce iaculis mauris sem. Donec varius urna libero, sit amet tincidunt enim laoreet ut. Donec non sem pharetra, ullamcorper nibh in, lacinia risus. Proin rutrum egestas massa, a cursus diam interdum ac. </h2>
-
-    <section id="section10" class="demo">
-      <a href="#thanks"><span></span>Scroll</a>
-    </section>
-  </div>
-</div>
-
-
-<!--  ######Ceci est le caroussel de la page d'accueil. Raccorder le back par la suite.##### -->
-
-  <div class="swiper-container mySwiper">
-    <div class="swiper-wrapper">
-      <div class="swiper-slide">Grand Large
-        <img src="assets/jpg/images page d'accueil/Villa-grande-Anse-Martinique02.jpg" alt="Photo Maison Grand Large Martinique">
-      </div>
-      <div class="swiper-slide">Slide 2
-        <img src="assets/jpg/images page d'accueil/Villa-grande-Anse-Martinique02.jpg" alt="Photo Maison Grand Large Martinique">
-      </div>
-      <div class="swiper-slide">Slide 3
-        <img src="assets/jpg/images page d'accueil/Villa-grande-Anse-Martinique02.jpg" alt="Photo Maison Grand Large Martinique">
-      </div>
-      <div class="swiper-slide">Slide 4
-        <img src="assets/jpg/images page d'accueil/Villa-grande-Anse-Martinique02.jpg" alt="Photo Maison Grand Large Martinique">
-      </div>
+  <!--  ######Ceci est la partie Html de la page d'accueil. Raccorder le back par la suite.##### -->
+  <div class="qhero">
+    <div class="qhero_page_accueil">
+      <h1 class="style_h1_accueil">“Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod.”</h1>
+      <h2 class="style_h2_accueil">Sed rutrum vulputate dapibus. Vivamus id tincidunt eros, in suscipit quam. Praesent aliquet justo auctor urna feugiat, luctus aliquam odio pharetra. Fusce iaculis mauris sem. Donec varius urna libero, sit amet tincidunt enim laoreet ut. Donec non sem pharetra, ullamcorper nibh in, lacinia risus. Proin rutrum egestas massa, a cursus diam interdum ac. </h2>
+      <svg width="40px" viewBox="0 0 14.334 24.75" class="scroll_anim">
+        <circle class="circle-1" fill="black" cx="7.167" cy="6" r="1.2" />
+        <circle class="circle-2" fill="black" cx="7.167" cy="6" r="1.2" />
+        <path stroke="black" fill="transparent" stroke-width="0.5" d="M7.167,0.5C3.485,0.5,0.5,3.485,0.5,7.167v10.416                   c0,3.682,2.985,6.667,6.667,6.667s6.667-2.985,6.667-6.667V7.167C13.834,3.485,10.849,0.5,7.167,0.5z" />
+      </svg>
     </div>
-    <div class="swiper-button-next"></div>
-    <div class="swiper-button-prev"></div>
-    <div class="swiper-pagination"></div>
   </div>
-        
 
 
-  </main>
+    <!-- Swiper -->
+    <div class="swiper-container mySwiper">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide"><img src="./assets/jpg/images page d'accueil/Villa-grande-Anse-Martinique02.jpg" alt="" srcset=""></div>
+        <div class="swiper-slide"><img src="./assets/jpg/images page d'accueil/Villa-grande-Anse-Martinique02.jpg" alt="" srcset=""></div>
+        <div class="swiper-slide">Slide 3</div>
+        <div class="swiper-slide">Slide 4</div>
+        <div class="swiper-slide">Slide 5</div>
+        <div class="swiper-slide">Slide 6</div>
+        <div class="swiper-slide">Slide 7</div>
+        <div class="swiper-slide">Slide 8</div>
+        <div class="swiper-slide">Slide 9</div>
+      </div>
+      <div class="swiper-button-next"></div>
+      <div class="swiper-button-prev"></div>
+    </div>
 
+    <!-- Swiper JS -->
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
 
-<!-- Footer -->
-<footer class="py-5 bg-inverse">
-  <div class="container">
-    <p class="m-0 text-center ">Copyright &copy; Hotel & Tourism</p>
-  </div>
-</footer>
-
-<!-- Bootstrap core JavaScript -->
-<script src="vendor/jquery/jquery.min.js"></script>
-<script src="vendor/popper/popper.min.js"></script>
-<script src="vendor/bootstrap/js/bootstrap.min.js"></script>
-<!-- Swiper JS -->
-<script src="https://unpkg.com/swiper/swiper-bundle.js"></script>
-<script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
-
-<!-- Initialize Swiper -->
-<script>
-  var swiper = new Swiper(".mySwiper", {
-    cssMode: false,
-    loop: true,
-    navigation: {
-      nextEl: ".swiper-button-next",
-      prevEl: ".swiper-button-prev",
-    },
-    pagination: {
-      el: ".swiper-pagination",
-    },
-    keyboard: true,
-  });
-</script>
-
+    <!-- Initialize Swiper -->
+    <script>
+      var swiper = new Swiper(".mySwiper", {
+        navigation: {
+          nextEl: ".swiper-button-next",
+          prevEl: ".swiper-button-prev",
+        },
+      });
+    </script>

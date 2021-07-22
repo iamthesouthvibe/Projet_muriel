@@ -9,10 +9,14 @@
   <title>MH My Home</title>
   <link href="css/w3.css" rel="stylesheet">
   <!-- Custom styles for this template -->
-  <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.css" />
-  <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
-  <!-- Custom styles for this template -->
+  <link
+      rel="stylesheet"
+      href="https://unpkg.com/swiper/swiper-bundle.min.css"
+    />
   <link rel="stylesheet" href="../style/style.css">
+  
+  <!-- Custom styles for this template -->
+ 
 </head>
 
 

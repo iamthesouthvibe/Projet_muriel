@@ -27,6 +27,7 @@
     margin: 25px 25px;
     padding: 0;
     background-color: #FCF7EC;
+    height: 100%;
 
     font-family: NeueMontreal-Regular;
   }
@@ -162,7 +163,6 @@
 /* ##### Style du menu navigation ##### */
 
 .container_menu {
-    
     overflow: hidden;
     top: 0;
 
@@ -176,6 +176,7 @@
     height: 100vh;
     background-color: #9A4747;
     top: 0;
+    z-index: 10;
  
     left: -100vw;
 
@@ -190,6 +191,7 @@
     background-color: #E5E5E5;
     right: -20vw;
     top: 0;
+    z-index: 10;
 
     transition: right 0.8s ease;
 }
@@ -302,124 +304,40 @@
 
 }
    
-
-.style_scroll_SVG_accueil{
-    display: block;
-    margin: 0 auto;     
-    margin-bottom: -20vh;
-    margin-top: 6vh;
- }
-
         /* Bouton animé scroll */
 
-        section {
-          position: relative;
-          width: 100%;
-          height: 100%;
-          margin: 5vh auto 7  vh auto;
-          padding-right: 60px;
-        }
-        section::after {
-          position: absolute;
-          bottom: 0;
-          left: 0;
-          content: '';
-          width: 100%;
-          height: 80%;
-          background: -webkit-linear-gradient(top,rgba(0,0,0,0) 0,rgba(0,0,0,.8) 80%,rgba(0,0,0,.8) 100%);
-          background: linear-gradient(to bottom,rgba(0,0,0,0) 0,rgba(0,0,0,.8) 80%,rgba(0,0,0,.8) 100%);
+        .scroll_anim {
+          margin-top: 100px;
         }
 
-        
-        
-        .demo a {
-          position: absolute;
-          -webkit-transform: translate(0, -50%);
-          transform: translate(0, -50%);
-          color: rgb(0, 0, 0);
-          font-family: Neue Montreal;
-          font-style: normal;
-          font-weight: normal;
-          font-size: 30px;
-          line-height: 20px;
-          /* or 67% */
-
-          text-align: center;
-          text-decoration: none;
-          transition: opacity .3s;
-
-          top : 7vh;
-        }
-        .demo a:hover {
-          opacity: .5;
+        .circle-1, .circle-2 {
+          animation: scroll 2s infinite linear;
+          opacity:0;
         }
         
+        .circle-2{
+          animation-delay: 1s;
+        }
         
-        #section10 a {
-          padding-top: 60px;
-        }
-        #section10 a span {
-          position: absolute;
-          top: 0;
-          left: 50%;
-          width: 30px;
-          height: 50px;
-          margin-left: -15px;
-          border: 2px solid rgb(0, 0, 0);
-          border-radius: 50px;
-          box-sizing: border-box;
-        }
-        #section10 a span::before {
-          position: absolute;
-          top: 10px;
-          left: 50%;
-          content: '';
-          width: 6px;
-          height: 6px;
-          margin-left: -3px;
-          background-color: rgb(0, 0, 0);
-          border-radius: 100%;
-          -webkit-animation: sdb10 2s infinite;
-          animation: sdb10 2s infinite;
-          box-sizing: border-box;
-        }
-        @-webkit-keyframes sdb10 {
+        @keyframes scroll {
           0% {
-            -webkit-transform: translate(0, 0);
+            cy: 4;
             opacity: 0;
           }
-          40% {
+          45%, 55% {
             opacity: 1;
-          }
-          80% {
-            -webkit-transform: translate(0, 20px);
-            opacity: 0;
+            cy: 9;
           }
           100% {
+            cy: 14;
             opacity: 0;
           }
         }
-        @keyframes sdb10 {
-          0% {
-            transform: translate(0, 0);
-            opacity: 0;
-          }
-          40% {
-            opacity: 1;
-          }
-          80% {
-            transform: translate(0, 20px);
-            opacity: 0;
-          }
-          100% {
-            opacity: 0;
-          }
-        }
+        
 
 
 
 /* Caroussel de photos */
-
 
 .swiper-container {
   width: 100%;
@@ -452,8 +370,6 @@
   height: 100%;
   object-fit: cover;
 }
-
-
   /* ##### Fin style de la page d'accueil ##### */
 
 
