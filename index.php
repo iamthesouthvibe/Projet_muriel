@@ -60,20 +60,20 @@ $tourSQL = $db->query("SELECT * FROM tourism LIMIT 4");
 
 
 <main>
-<!--  ######Ceci est la partie Html de la page d'accueil. Raccorder le back par la suite.##### -->
-<div class="qhero">
-  <div class="qhero_page_accueil">
-    <h1 class="style_h1_accueil">“Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod.”</h1>
-    <h2 class="style_h2_accueil">Sed rutrum vulputate dapibus. Vivamus id tincidunt eros, in suscipit quam. Praesent aliquet justo auctor urna feugiat, luctus aliquam odio pharetra. Fusce iaculis mauris sem. Donec varius urna libero, sit amet tincidunt enim laoreet ut. Donec non sem pharetra, ullamcorper nibh in, lacinia risus. Proin rutrum egestas massa, a cursus diam interdum ac. </h2>
+  <!--  ######Ceci est la partie Html de la page d'accueil. Raccorder le back par la suite.##### -->
+  <div class="qhero">
+    <div class="qhero_page_accueil">
+      <h1 class="style_h1_accueil">“Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod.”</h1>
+      <h2 class="style_h2_accueil">Sed rutrum vulputate dapibus. Vivamus id tincidunt eros, in suscipit quam. Praesent aliquet justo auctor urna feugiat, luctus aliquam odio pharetra. Fusce iaculis mauris sem. Donec varius urna libero, sit amet tincidunt enim laoreet ut. Donec non sem pharetra, ullamcorper nibh in, lacinia risus. Proin rutrum egestas massa, a cursus diam interdum ac. </h2>
 
-    <section id="section10" class="demo">
-      <a href="#thanks"><span></span>Scroll</a>
-    </section>
+      <section id="section10" class="demo">
+        <a href="#thanks"><span></span>Scroll</a>
+      </section>
+    </div>
   </div>
-</div>
 
 
-<!--  ######Ceci est le caroussel de la page d'accueil. Raccorder le back par la suite.##### -->
+  <!--  ######Ceci est le caroussel de la page d'accueil. Raccorder le back par la suite.##### -->
 
   <div class="swiper-container mySwiper">
     <div class="swiper-wrapper">
@@ -94,25 +94,23 @@ $tourSQL = $db->query("SELECT * FROM tourism LIMIT 4");
     <div class="swiper-button-prev"></div>
     <div class="swiper-pagination"></div>
   </div>
-        
-<!--  ######Ceci est la section Muriel.##### -->
 
-<div class="section_muriel">
+  <!--  ######Ceci est la section Muriel.##### -->
+
+  <div class="section_muriel">
     <div>
       <img src="assets/jpg/Muriel.png" alt="Photo Profil Muriel" class="img_muriel">
     </div>
-          <div class="section_muriel_titre_text"> 
-            <h2 class="titre_section_muriel">Muriel</h2>
-            <p class="texte_section_muriel">Je quittai à 20 ans la métropole pour la Martinique, par amour et par désir d’aventures. Avec mon compagnon, nous sommes arrivés là-bas avec nos seules valises et envies de conquérir le monde.  De débrouilles en petits boulots, incertains du lendemain, nous avons finalement passé 21 ans sur cette île aux mille couleurs et saveurs.  Inspirée par cette terre où se rencontrent les cultures, où se métissent les imaginations, je me suis prise d’une véritable passion pour habiller les murs de ma maison de toutes ces influences.<br> <br> 
-
-Quand j’ai eu envie d’explorer d’autres horizons, Narbonne fut comme une évidence. J’y retrouvais le soleil, la mer, la générosité joyeuse de ses habitants.   Rien ne me plaît tant que le contraste.  J’aime chiner dans les greniers et les brocantes, trouver des meubles auxquels redonner vie. Je ponce, je peins, je détourne. J’aime cette petite étincelle d’étonnement que provoque la rencontre entre un objet design et une bricole restaurée sur mes murs.<br><br>
-
-Je veux créer des maisons pour faire rêver, des maisons qui soient comme des personnalités, surprenantes, inattendues, accueillantes et généreuses. Où l’on ait envie de rester et de revenir, comme pour poursuivre une conversation interrompue trop tôt.son de charme situé au coeur de la martinique. </p>
-          </div>
-</div>
+    <div class="section_muriel_titre_text">
+      <h2 class="titre_section_muriel">Muriel</h2>
+      <p class="texte_section_muriel">Je quittai à 20 ans la métropole pour la Martinique, par amour et par désir d’aventures. Avec mon compagnon, nous sommes arrivés là-bas avec nos seules valises et envies de conquérir le monde. De débrouilles en petits boulots, incertains du lendemain, nous avons finalement passé 21 ans sur cette île aux mille couleurs et saveurs. Inspirée par cette terre où se rencontrent les cultures, où se métissent les imaginations, je me suis prise d’une véritable passion pour habiller les murs de ma maison de toutes ces influences.<br> <br>
+        Quand j’ai eu envie d’explorer d’autres horizons, Narbonne fut comme une évidence. J’y retrouvais le soleil, la mer, la générosité joyeuse de ses habitants. Rien ne me plaît tant que le contraste. J’aime chiner dans les greniers et les brocantes, trouver des meubles auxquels redonner vie. Je ponce, je peins, je détourne. J’aime cette petite étincelle d’étonnement que provoque la rencontre entre un objet design et une bricole restaurée sur mes murs.<br><br>
+        Je veux créer des maisons pour faire rêver, des maisons qui soient comme des personnalités, surprenantes, inattendues, accueillantes et généreuses. Où l’on ait envie de rester et de revenir, comme pour poursuivre une conversation interrompue trop tôt.son de charme situé au coeur de la martinique. </p>
+    </div>
+  </div>
 
 
-  </main>
+</main>
 
 
 
@@ -146,4 +144,3 @@ Je veux créer des maisons pour faire rêver, des maisons qui soient comme des p
     keyboard: true,
   });
 </script>
-
