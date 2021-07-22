@@ -64,8 +64,8 @@
             <h5>2021 All Right are reserved</h5>
         </div>
         <div>
-            <h5>Website design and coded by <br>
-                Jean Vayssie et Léo Labeaume</h5>
+            <h5>Website designed and coded by <br>
+                Jean Vayssié et Léo Labeaume</h5>
         </div>
     </div>
 </footer>
