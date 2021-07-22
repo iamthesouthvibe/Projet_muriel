@@ -7,45 +7,42 @@
   <meta name="description" content="">
   <meta name="author" content="">
   <title>MH My Home</title>
-  <!-- Bootstrap core CSS -->
-  <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
   <link href="css/w3.css" rel="stylesheet">
   <!-- Custom styles for this template -->
   <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.css" />
-<link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
-  <link href="css/full-width-pics.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
   <!-- Custom styles for this template -->
   <link rel="stylesheet" href="../style/style.css">
-
 </head>
 
 
 <body>
-  <div class="header">
-    <header>
-      <nav>
-        <div class="header_left">
-          <img src="../assets/png/LOGO_ANCIEN.png" alt="Logo muriel Home">
-        </div>
-        <div class="header_right">
-          <button>Réserver</button>
-          <div class="burger-menu">
-            <span></span>
-            <span></span>
-            <span></span>
-          </div>
-        </div>
-      </nav>
-    </header>
-    <div class="container_menu">
-      <div class="menu_nav">
 
+  <header>
+    <nav>
+      <div class="header_left">
+        <img src="../assets/png/LOGO_ANCIEN.png" alt="Logo muriel Home">
       </div>
-      <div class="menu_nav_right">
+      <div class="header_right">
+        <button>Réserver</button>
+        <div class="burger-menu">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+      </div>
+    </nav>
+  </header>
+  
+  <div class="container_menu">
+    <div class="menu_nav">
 
-      </div>
+    </div>
+    <div class="menu_nav_right">
+
     </div>
   </div>
+
 
 
 
@@ -60,12 +57,14 @@
         event.currentTarget.classList.remove("open");
         navBar.classList.remove("active");
         navBarRight.classList.remove("active_snd");
-        headerButton.style.display = ""
+        // headerButton.style.display = ""
+        document.body.style.overflow = ""
       } else {
         event.currentTarget.classList.add("open");
         navBar.classList.add("active");
         navBarRight.classList.add("active_snd");
-        headerButton.style.display = "none"
+        //headerButton.style.display = "none"
+        document.body.style.overflow = "hidden"
       }
     });
   </script>
