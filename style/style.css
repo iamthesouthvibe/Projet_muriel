@@ -487,7 +487,7 @@ margin-top: 30px;
 /* ##### Fin style de la page d'accueil ##### */
 
 
-  /* ##### Debut Media Queries Header ##### */
+/* ##### Debut Media Queries Header ##### */
 
   @media screen and (max-width: 450px)
   {
@@ -530,12 +530,59 @@ margin-top: 30px;
   }
 }
 
-    /* ##### Fin Media Queries Header ##### */
+/* ##### Fin Media Queries Header ##### */
 
 
 
 /* ##### Debut Media Queries Page Accueil ##### */
 
+
+@media screen and (max-width: 450px) {
+
+  .scroll_anim {
+    display: none;
+  }
+
+  .style_h1_accueil {
+    font-size: 61px;
+    line-height: 78%;
+    max-width: 100vw;
+    margin-bottom: 27px;
+    margin-top: 0px;
+  }
+
+  .style_h2_accueil {
+    max-width: 66vw;
+    margin: 0vh auto;
+  }
+
+  .section_muriel {
+    display: block;
+    text-align: center;
+  }
+
+  .section_muriel_titre_text {
+    max-width: 90vw;
+    margin: auto;
+  }
+
+  .titre_section_muriel {
+    font-size: 40px;
+    margin-top: 30px;
+  }
+
+  .img_muriel {
+    max-width: 60vw;
+  }
+
+  .texte_section_muriel {
+    text-align: left;
+    font-size: 24px;
+    line-height: 23px;
+  }
+
+
+}
 
 /* ##### Fin Media Queries Page Accueil ##### */
 
