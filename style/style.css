@@ -441,6 +441,47 @@ margin-top: 30px;
     color: black;
 }
 
+.swiper-button-next {
+  background: transparent;
+    position: absolute;
+    width: 50%;
+    height: 104%;
+    top: 0%;
+    opacity: 0;
+}
+
+.swiper-button-prev {
+  background: transparent;
+    position: absolute;
+    width: 50%;
+    height: 104%;
+    top: 0%;
+    opacity: 0;
+}
+
+
+.cursor_active_right {
+  transform: translate(-50%, -50%) scale(1.5);
+  background: rgb(255, 0, 0);
+  content: url("/assets/svg/noun_Arrow_34.svg");
+  
+}
+
+
+.cursor_active_left {
+  transform: translate(-50%, -50%) scale(1.5);
+  background: rgb(2, 86, 165);
+}
+
+
+.cursor2_active_right {
+  background: transparent;
+}
+
+
+.cursor2_active_left {
+  background: transparent;
+}
 
 /* Section Muriel */
 
