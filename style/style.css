@@ -84,6 +84,13 @@
     font-size: 20px;
   }
 
+
+  /* Systeme pour le bouton responsive*/
+  .bouton_responsive {
+    display: none;
+  }
+
+
   .burger-menu {
     width: 60px;
     height: 17px;
@@ -530,6 +537,36 @@ footer {
     margin: auto auto;
     max-width: 60%;
       }
+
+      .bouton_desktop {
+        display: none;
+      }
+
+      .bouton_responsive {display: flex;
+        place-content: center;
+      }
+
+      .bouton_responsive button {
+        width: 170px;
+        height: 36px;
+        background: #9A4747;
+        border-radius: 40px;
+        border: none;
+        border-color: none;
+        position: fixed;
+        top : 91vh;
+        margin: auto;
+    
+      }
+
+      .bouton_responsive button a {
+        color: #FCF7EC;
+        text-decoration: none;
+        font-family: Neue Montreal;
+        font-style: normal;
+        font-weight: bold;
+        font-size: 20px;
+      }
   }
 
 
@@ -539,6 +576,10 @@ footer {
         height: 36px;
     
   }
+
+
+
+
 }
 
 /* ##### Fin Media Queries Header ##### */
