@@ -487,6 +487,17 @@ margin-top: 30px;
 /* ##### Fin style de la page d'accueil ##### */
 
 
+/* ##### Debut style footer ##### */
+
+footer {
+  background-color:  #E5E5E5;
+  height: 30vh;
+}
+
+
+/* ##### Fin style footer ##### */
+
+
 /* ##### Debut Media Queries Header ##### */
 
   @media screen and (max-width: 450px)

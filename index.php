@@ -142,7 +142,7 @@ $tourSQL = $db->query("SELECT * FROM tourism LIMIT 4");
     </div>
   </div>
 
-
+<?php include ("./includes/footer.php") ?>
 </main>
 
 
