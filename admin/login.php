@@ -9,11 +9,7 @@
     $password = trim($password);
     $hashed = password_hash($password, PASSWORD_DEFAULT);
 ?>
-<style>
-  body {
-    background-color: purple;
-  }
-</style>
+
     <div class="container">
         <div class="row">
             <div class="col-md-3">
