@@ -605,16 +605,42 @@ margin-top: 30px;
 /* ##### Debut style de la page contact ##### */
 
 .page_contact {
-  padding: 16vh 1vw 1vh 1vw;
+  padding: 16vh 25px 1vh 25px;
+  
 }
 
 .bloc1 h2{
   text-align: right;
+  font-family: ITCGaramondStd-BkNarrow;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 6.5vw;
+  line-height: 110.5%;
+  /* or 111px */
+  
+  text-align: right;
+  
+  color: #FCF7EC;
+
+  margin: 0;
+  
 }
 
 .bloc2 {
   position: absolute;
-  bottom: 10px;
+  bottom: 0px;
+}
+
+.bloc2 h1 {
+  font-family: ITCGaramondStd-BkNarrow;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14vw;
+  line-height: 80.5%;
+  color: #FCF7EC;
+
+  margin: 0;  
+
 }
 /* ##### Fin style de la page contact ##### */
 

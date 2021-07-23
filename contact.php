@@ -30,5 +30,7 @@ include 'includes/header.php';
 
     let boutonText= document.querySelector(".bouton_desktop a");
     boutonText.style.color="#9A4747";
+
+    document.body.style.overflow="hidden";
  
 </script>
