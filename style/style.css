@@ -635,7 +635,7 @@ margin-top: 30px;
 
   .bloc2 {
     position: absolute;
-    bottom: 0vh;
+    bottom: 25px;
   }
 
   .bloc2 a {
@@ -643,8 +643,8 @@ margin-top: 30px;
 font-style: normal;
 font-weight: normal;
 font-size: 20vw;
-line-height: 80.5%;
-/* or 208px */
+line-height: 69.5%;
+
 
 
 color: #FCF7EC;
