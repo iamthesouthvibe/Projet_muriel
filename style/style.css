@@ -602,6 +602,24 @@ margin-top: 30px;
 /* ##### Fin style de la page d'accueil ##### */
 
 
+/* ##### Debut style de la page contact ##### */
+
+.page_contact {
+  padding: 16vh 1vw 1vh 1vw;
+}
+
+.bloc1 h2{
+  text-align: right;
+}
+
+.bloc2 {
+  position: absolute;
+  bottom: 10px;
+}
+/* ##### Fin style de la page contact ##### */
+
+
+
 /* ##### Debut style footer ##### */
 
 footer {
