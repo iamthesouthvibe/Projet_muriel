@@ -184,7 +184,7 @@
     overflow: hidden;
     width: 80vw;
     height: 100vh;
-    background-color: #9A4747;
+    background-color: #E5E5E5;
     top: 0;
     z-index: 10;
  
@@ -217,13 +217,25 @@
 
 .menu_nav_link {
   bottom: 25px;
-    position: fixed;
+  position: absolute;
     z-index: 1000;
+}
+
+
+.menu_nav_right ul {
+  position: absolute;
+    bottom: 25px;
+    right: 25px;
 }
 
 
 
 .menu_nav ul li {
+  list-style: none;
+}
+
+
+.menu_nav_right ul li {
   list-style: none;
 }
 
@@ -235,7 +247,7 @@
   text-decoration: none;
     /* list-style: none; */
     /* list-style-type: none; */
-    color: #FCF7EC;
+    color:rgba(154, 71, 71, 1);
     font-size: 7vw;
     line-height: 1;
     margin-bottom: 10px;
@@ -251,12 +263,12 @@
   height: 7px;
   bottom: 0;
   left: 0;
-  background-color: #FCF7EC;
+  background-color: rgba(154, 71, 71, 1);
   transform-origin: bottom right;
   transition: transform 0.7s ease-out;
 }
 
-.menu_nav ul li a:hover::after {
+.container_menu ul li a:hover::after {
   transform: scaleX(1);
   transform-origin: bottom left;
 }
@@ -872,7 +884,12 @@ footer ul {
       .swiper-container {
         height:90vh;
     
-} 
+      } 
+
+      .container_menu ul li a {
+          font-size: 55px;
+      
+      }
   }
 
 
