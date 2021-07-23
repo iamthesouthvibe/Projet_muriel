@@ -622,6 +622,56 @@ margin-top: 30px;
 /* ##### Fin style de la page d'accueil ##### */
 
 
+/* ##### Debut style de la page contact ##### */
+
+  .page_contact {
+    padding-right: 25px;
+    padding-left: 25px;
+  }
+
+  .bloc1 {
+    text-align: right;
+    margin-top: 17vh;
+  }
+
+  .bloc1 h1 {
+    margin: 0;
+  }
+
+  .bloc1 h1 a {
+    text-decoration: none;
+
+    font-family: ITCGaramondStd-BkNarrow;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 4vw;
+    line-height: 110.5%;
+    /* or 111px */
+
+    text-align: right;
+
+    color: #FCF7EC;
+  }
+
+  .bloc2 {
+    position: absolute;
+    bottom: 25px;
+  }
+
+  .bloc2 a {
+    font-family: ITCGaramondStd-BkNarrow;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 20vw;
+    line-height: 80.5%;
+    color: #FCF7EC;
+
+    text-decoration: none;
+  }
+/* ##### Fin style de la page contact ##### */
+
+
+
 /* ##### Debut style footer ##### */
 
 footer {
@@ -895,6 +945,13 @@ footer ul {
     /* Adpatation de la taille occupée par la carroussel en reponsive (10% en plus)*/
       .swiper-container {
         height:90vh;
+
+      } 
+        /* responsive de la page contact */
+
+    .page_contact {
+      padding-right: 14px;
+     padding-left: 14px;
     
       } 
 
@@ -902,7 +959,14 @@ footer ul {
           font-size: 55px;
       
       }
-  }
+    }
+    
+    .bloc1 h1 a {
+      font-size: 12vw;
+      line-height: 120%; 
+    }
+
+  
 
 
   @media screen and (max-width: 321px) {
