@@ -46,7 +46,7 @@
       <div class="menu_nav_link">
         <ul>
           <li>
-            <a href="">Home</a>
+            <a href="index.php">Home</a>
           </li>
           <li>
             <a href="">Rubriques</a>
@@ -66,7 +66,7 @@
     <div class="menu_nav_right">
     <ul>
           <li>
-            <a href="">01</a>
+            <a href="index.php">01</a>
           </li>
           <li>
             <a href="">02</a>
@@ -75,7 +75,7 @@
             <a href="">03</a>
           </li>
           <li>
-            <a href="">04</a>
+            <a href="contact.php">04</a>
           </li>
           <li>
             <a href="">05</a>
