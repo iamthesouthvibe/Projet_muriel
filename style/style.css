@@ -184,7 +184,7 @@
     overflow: hidden;
     width: 80vw;
     height: 100vh;
-    background-color: #9A4747;
+    background-color: #E5E5E5;
     top: 0;
     z-index: 10;
  
@@ -235,7 +235,7 @@
   text-decoration: none;
     /* list-style: none; */
     /* list-style-type: none; */
-    color: #FCF7EC;
+    color:rgba(154, 71, 71, 1);
     font-size: 7vw;
     line-height: 1;
     margin-bottom: 10px;
@@ -251,7 +251,7 @@
   height: 7px;
   bottom: 0;
   left: 0;
-  background-color: #FCF7EC;
+  background-color: rgba(154, 71, 71, 1);
   transform-origin: bottom right;
   transition: transform 0.7s ease-out;
 }
