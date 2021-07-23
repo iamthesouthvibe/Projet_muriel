@@ -21,7 +21,9 @@
   <header>
     <nav>
       <div class="header_left">
+        <a href="index.php">
         <img src="../assets/png/LOGO_ANCIEN.png" alt="Logo muriel Home">
+        </a>
       </div>
       <div class="header_right">
         <button class="bouton_desktop"><a href="">Reserver</a></button>
