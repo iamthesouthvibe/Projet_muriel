@@ -7,7 +7,7 @@
     //Removing blank spaces from both ends of the Password or email
     $email = trim($email);
     $password = trim($password);
-    //$hashed = password_hash($password, PASSWORD_DEFAULT);
+    $hashed = password_hash($password, PASSWORD_DEFAULT);
 ?>
 <style>
   body {
@@ -37,7 +37,7 @@
                               if ($count < 1){
                                 echo '<div class="w3-text-red text-center">email not found in database.</div>';
                               } else {
-                                if(password_verify($password, $user['password'])){
+                                if(password_verify($hashed, $user['password'])){
                                     echo '<div class="w3-text-red text-center">The password you entered was incorrect, please try again.</div>';
                                 }else {
                                     //FINALLY LOG THE USER IN
@@ -72,17 +72,7 @@
 
         </div>
     </div>
-<div class="breaks">
 
-    <footer class="container-fluid text-center w3-text-white">
-    	  <a href="#Home" title="To Top">
-    	    <span class="glyphicon glyphicon-chevron-up"></span>
-    	  </a>
-
-    	  <p>&copy; Copyright 2003-<?php echo date("Y"); ?> Hotel & Tourism</a></p>
-    </footer>
-
-</div>
 
 </body>
 </html>
