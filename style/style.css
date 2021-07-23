@@ -32,7 +32,10 @@
     font-family: NeueMontreal-Regular;
   }
 
- 
+  ::-webkit-scrollbar {                           
+    width: 1px;
+    height: 1px;
+}
 
 
   /* style HEADER */
