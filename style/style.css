@@ -218,6 +218,7 @@
 .menu_nav_link {
   bottom: 25px;
     position: fixed;
+    z-index: 1000;
 }
 
 
