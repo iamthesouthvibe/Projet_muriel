@@ -604,53 +604,53 @@ margin-top: 30px;
 
 /* ##### Debut style de la page contact ##### */
 
-.page_contact {
-  padding: 16vh 25px 1vh 25px;
-}
+  .page_contact {
+    padding-right: 25px;
+    padding-left: 25px;
+  }
 
-.bloc1 {
-  display: block;
-}
+  .bloc1 {
+    text-align: right;
+    margin-top: 17vh;
+  }
 
-.bloc1 a {
-  text-align: right;
-  font-family: ITCGaramondStd-BkNarrow;
-  font-style: normal;
-  font-weight: normal;
-  font-size: 6.5vw;
-  line-height: 110.5%;
-  /* or 111px */
-  
-  text-align: right;
-  
-  color: #FCF7EC;
+  .bloc1 h1 {
+    margin: 0;
+  }
 
-  margin: 0;
+  .bloc1 h1 a {
+    text-decoration: none;
 
-  text-decoration: none;
-  
-  float: right;
-}
+    font-family: ITCGaramondStd-BkNarrow;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 4vw;
+    line-height: 110.5%;
+    /* or 111px */
 
-.bloc2 {
-  position: absolute;
-  bottom: 0px;
-}
+    text-align: right;
 
-.bloc2 a {
-  font-family: ITCGaramondStd-BkNarrow;
-  font-style: normal;
-  font-weight: normal;
-  font-size: 14vw;
-  line-height: 80.5%;
-  color: #FCF7EC;
+    color: #FCF7EC;
+  }
 
-  margin: 0;  
+  .bloc2 {
+    position: absolute;
+    bottom: 0vh;
+  }
 
-  text-decoration: none;
+  .bloc2 a {
+    font-family: ITCGaramondStd-BkNarrow;
+font-style: normal;
+font-weight: normal;
+font-size: 20vw;
+line-height: 80.5%;
+/* or 208px */
 
 
-}
+color: #FCF7EC;
+
+text-decoration: none;
+  }
 /* ##### Fin style de la page contact ##### */
 
 

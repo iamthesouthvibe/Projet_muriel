@@ -7,17 +7,15 @@ include 'includes/header.php';
 <div class="page_contact">
 
     <div class="bloc1">
-            <ul>
-                <li>
-                <a href="">muriel.coutellier67@gmail.com </a> 
-                </li>
-                <li>
-                <a href="">Instagram</a> 
-                </li>
-                <li>
+            <h1>
+                <a href="">muriel.coutellier67@gmail.com</a> <br>
+                </h1>
+                <h1>
+                <a href="">Instagram</a> <br>
+                </h1>
+                <h1>
                 <a href="">+33777240109</a>
-                </li>
-            </ul>
+                </h1>
     </div>
     <div class="bloc2">
             <a href="">Prise <br>
@@ -25,6 +23,7 @@ include 'includes/header.php';
     </div>
 
 </div>
+
 
 <script>
     document.body.style.backgroundColor="#9A4747";
@@ -41,7 +40,6 @@ include 'includes/header.php';
     let boutonResp = document.querySelector(".bouton_responsive");
     if (width<450) {
         boutonResp.style.display = "none";
-    }
-
-    let 
+    } 
 </script>
+
