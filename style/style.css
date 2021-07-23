@@ -606,10 +606,13 @@ margin-top: 30px;
 
 .page_contact {
   padding: 16vh 25px 1vh 25px;
-  
 }
 
-.bloc1 h2{
+.bloc1 {
+  display: block;
+}
+
+.bloc1 a {
   text-align: right;
   font-family: ITCGaramondStd-BkNarrow;
   font-style: normal;
@@ -623,7 +626,10 @@ margin-top: 30px;
   color: #FCF7EC;
 
   margin: 0;
+
+  text-decoration: none;
   
+  float: right;
 }
 
 .bloc2 {
@@ -631,7 +637,7 @@ margin-top: 30px;
   bottom: 0px;
 }
 
-.bloc2 h1 {
+.bloc2 a {
   font-family: ITCGaramondStd-BkNarrow;
   font-style: normal;
   font-weight: normal;
@@ -640,6 +646,9 @@ margin-top: 30px;
   color: #FCF7EC;
 
   margin: 0;  
+
+  text-decoration: none;
+
 
 }
 /* ##### Fin style de la page contact ##### */

@@ -7,17 +7,21 @@ include 'includes/header.php';
 <div class="page_contact">
 
     <div class="bloc1">
-            <h2>
-                muriel.coutellier67@gmail.com <br>
-                +33777240109 <br>
-                Instagram
-            </h2>
+            <ul>
+                <li>
+                <a href="">muriel.coutellier67@gmail.com </a> 
+                </li>
+                <li>
+                <a href="">Instagram</a> 
+                </li>
+                <li>
+                <a href="">+33777240109</a>
+                </li>
+            </ul>
     </div>
     <div class="bloc2">
-            <h1>
-            Prise <br>
-            de contact
-            </h1>
+            <a href="">Prise <br>
+            de contact</a>
     </div>
 
 </div>
@@ -33,4 +37,11 @@ include 'includes/header.php';
 
     document.body.style.overflow="hidden";
  
+    let width = document.body.clientWidth;
+    let boutonResp = document.querySelector(".bouton_responsive");
+    if (width<450) {
+        boutonResp.style.display = "none";
+    }
+
+    let 
 </script>
