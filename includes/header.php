@@ -55,7 +55,7 @@
             <a href="">Produits</a>
           </li>
           <li>
-            <a href="">Contact</a>
+            <a href="contact.php">Contact</a>
           </li>
           <li>
             <a href="">A propos</a>
