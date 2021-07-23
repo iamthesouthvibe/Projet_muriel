@@ -8,7 +8,7 @@ include 'includes/header.php';
 
     <div class="bloc1">
             <h1>
-                <a href="">muriel.coutellier67@gmail.com</a> <br>
+                <a href="" class="bloc1_lien_first_child">muriel.coutellier67@gmail.com</a> <br>
                 </h1>
                 <h1>
                 <a href="">Instagram</a> <br>
@@ -35,11 +35,14 @@ include 'includes/header.php';
     boutonText.style.color="#9A4747";
 
     document.body.style.overflow="hidden";
- 
+
+    
+    let bloc1lien = document.querySelector(".bloc1_lien_first_child")
     let width = document.body.clientWidth;
     let boutonResp = document.querySelector(".bouton_responsive");
     if (width<450) {
         boutonResp.style.display = "none";
-    } 
+        bloc1lien.innerHTML="Email"
+    }  
 </script>
 

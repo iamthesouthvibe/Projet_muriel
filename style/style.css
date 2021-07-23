@@ -640,16 +640,13 @@ margin-top: 30px;
 
   .bloc2 a {
     font-family: ITCGaramondStd-BkNarrow;
-font-style: normal;
-font-weight: normal;
-font-size: 20vw;
-line-height: 80.5%;
-/* or 208px */
+    font-style: normal;
+    font-weight: normal;
+    font-size: 20vw;
+    line-height: 80.5%;
+    color: #FCF7EC;
 
-
-color: #FCF7EC;
-
-text-decoration: none;
+    text-decoration: none;
   }
 /* ##### Fin style de la page contact ##### */
 
@@ -924,8 +921,21 @@ footer ul {
     /* Adpatation de la taille occupée par la carroussel en reponsive (10% en plus)*/
       .swiper-container {
         height:90vh;
+
+      } 
+        /* responsive de la page contact */
+
+    .page_contact {
+      padding-right: 14px;
+     padding-left: 14px;
     
-} 
+    }
+    
+    .bloc1 h1 a {
+      font-size: 12vw;
+      line-height: 120%; 
+    }
+
   }
 
 
