@@ -335,7 +335,7 @@
 /* ##### Fin Curseur  ##### */
 
 
-  /* ##### Style de la page d'accueil ##### */
+/* ##### Style de la page d'accueil ##### */
 
 .qhero {
     width: 100%;
@@ -670,6 +670,84 @@ margin-top: 30px;
   }
 /* ##### Fin style de la page contact ##### */
 
+
+/* ##### Debut Style de la page 404 ##### */
+
+.div_2_page-404 {
+  text-align: center;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.div_titre_404 h1 {
+font-family: ITCGaramondStd-BkNarrow;
+font-style: normal;
+font-weight: normal;
+font-size: 20vw;
+line-height: 80.5%;
+/* or 208px */
+
+text-align: center;
+
+color: #FCF7EC;
+
+margin: 0;
+
+}
+
+.div_text_404 h2 {
+font-family: ITCGaramondStd-BkNarrow;
+font-style: normal;
+font-weight: normal;
+font-size: 10vw;
+line-height: 80.5%;
+
+text-align: center;
+
+color: #FCF7EC;
+
+margin: 0;
+
+width: 10000px;
+}
+
+
+
+.div_bouton_retour_home { 
+  position: absolute;
+  bottom: 10vh;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.bouton_retour_home {
+  width: 203px;
+  height: 46px;
+  border: 2px solid #FCF7EC;
+  background: none;
+  border-radius: 40px;
+  margin-top: 30px;
+}
+
+.bouton_retour_home a {
+  text-decoration: none;
+font-family:NeueMontreal-Regular;
+font-style: normal;
+font-weight: bold;
+font-size: 18px;
+line-height: 20px;
+/* or 111% */
+
+text-align: center;
+
+color: #FCF7EC;
+
+}
+
+
+/* ##### Fin Style de la page 404 ##### */
 
 
 /* ##### Debut style footer ##### */
