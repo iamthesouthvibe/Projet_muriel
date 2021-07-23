@@ -714,7 +714,6 @@ width: 10000px;
 }
 
 
-
 .div_bouton_retour_home { 
   position: absolute;
   bottom: 10vh;
@@ -1025,7 +1024,8 @@ footer ul {
         height:90vh;
 
       } 
-        /* responsive de la page contact */
+      
+      /* responsive de la page contact */
 
     .page_contact {
       padding-right: 14px;
@@ -1043,6 +1043,9 @@ footer ul {
       font-size: 12vw;
       line-height: 120%; 
     }
+
+  /* responsive de la page contact */
+
 
   
 
@@ -1086,6 +1089,23 @@ footer ul {
   .texte_section_muriel {
   font-size: 20px;
   line-height: 20px;
+
+  }
+
+/* responsive du bouton de la page 404 */
+
+.bouton_retour_home {
+  width: 179px;
+  height: 30px;
+}
+
+.bouton_retour_home a {
+  font-size: 17px;
+}
+
+
+/* responsive du Footer */
+
 }
 
 footer {
