@@ -57,7 +57,7 @@
         <span class="tooltip">Utilisateurs</span>
       </li>
       <li>
-        <a href="">
+        <a href="../index.php">
         <i class='bx bx-map' ></i>
           <span class="links_name">Visite site</span>
         </a>
@@ -68,15 +68,15 @@
       <div class="profile_content">
         <div class="profile">
           <div class="profile_details">
-            <img src="https://www.w3schools.com/images/lamp.jpg" alt="" srcset="">
+            <img src="/assets/jpg/Muriel.png" alt="" srcset="">
             <div class="name_job">
               <div class="name">Muriel Coutellier</div>
               <div class="job">Admin & Editeur</div>
             </div>
-            <a href="logout.php">
+          </div>
+          <a href="logout.php">
               <i class='bx bx-log-out' id="log_out"></i>
             </a>
-          </div>
         </div>
       </div>
     <?php endif ?>

@@ -27,8 +27,12 @@ body {
     min-height: 100vh;
     width: 100%;
     background-color: #FCF7EC;
+    font-family: sans-serif;
+    overflow-x: hidden;
   }
 
+  /* ### Début style Side bar admin page  ### */
+  
   .sidebar {
     position: fixed;
     top: 0;
@@ -176,6 +180,11 @@ body {
     background: #FCF7EC;
   }
 
+  .sidebar ul li a:hover .links_name {
+    color: #000;
+    background: #FCF7EC;
+  }
+
   .sidebar.active ul li {
     width: 100%;
   }
@@ -190,9 +199,10 @@ body {
   }
 
   .sidebar .links_name {
-    font-family: NeueMontreal-Regular;
+    font-family: sans-serif;
     pointer-events: none;
     opacity: 0;
+    color: #FCF7EC;
   }
 
   .sidebar.active .links_name {
@@ -203,7 +213,8 @@ body {
   .sidebar .profile_content {
     position: absolute;
     color: #FCF7EC;
-    bottom: 0;
+    background-color: #E5E5E5;
+    bottom: 15px;
     left: 0;
     width: 100%;
   }
@@ -237,6 +248,7 @@ body {
 
   .profile .profile_details .name_job {
     margin-left: 10px;
+    color: black;
   }
 
   .profile .profile_details .name {
@@ -251,7 +263,7 @@ body {
 
   .profile #log_out {
     position: absolute;
-    bottom: 5px;
+    bottom: 25px;
     left: 50%;
     transform: translateX(-50%);
     min-width: 50px;
@@ -259,8 +271,81 @@ body {
     font-size: 20px;
     border-radius: 6px;
     text-align: center;
+    font-size: 29px;
+    color: black;
   }
 
   .sidebar.active .profile #log_out {
     left: 88%;
   }
+
+   /* ### Fin style Side bar admin page  ### */
+
+
+    /* ### Début style page admin header  ### */
+
+.admin_page {
+    margin: 25px 25px 25px 145px;
+}
+
+
+.admin_page .header_admin {
+    display: flex;
+    justify-content: space-between;
+}
+
+.admin_page .header_admin h1 {
+    font-family: ITCGaramondStd-BkNarrow;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 102px;
+    margin: 0;
+}
+
+
+.admin_page .header_admin img {
+    width: 90px;
+    height: 39px;
+}
+
+.admin_page_maison {
+    display: flex;
+    justify-content: space-between;
+}
+
+.admin_page_maison_container {
+    width: 30%;
+}
+
+.admin_page_maison_container img {
+    width: 100%;
+}
+
+.admin_page_maison_title {
+    display: flex;
+    justify-content: space-between;
+    margin-left: 15px;
+    align-items: center;
+}
+
+.admin_page_maison_title h2 {
+    font-family: ITCGaramondStd-BkNarrow;
+    color: #9A4747;
+    font-size: 2vw;
+    margin: 0;
+}
+
+.admin_page_maison_title button {
+    border: 2px solid #9A4747;
+    box-sizing: border-box;
+    border-radius: 40px;
+    width: 134.8px;
+    height: 34.66px;
+    background-color: transparent;
+}
+
+.admin_page_maison_title button a {
+    color: #9A4747;
+    text-decoration: none;
+    font-size: 0.8vw;
+}
