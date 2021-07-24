@@ -1,3 +1,27 @@
+@font-face {
+    font-family: ITCGaramondStd-BkNarrow;
+    src: local("./fonts/GaramondStd/ITCGaramondStd-BkNarrow.otf"),
+         local("ITCGaramondStd-BkNarrow"),
+        url('./fonts/GaramondStd/ITCGaramondStd-BkNarrow.woff2') format('woff2'),
+        url('./fonts/GaramondStd/ITCGaramondStd-BkNarrow.woff') format('woff');
+    
+  }
+
+@font-face {
+    font-family: NeueMontreal-Bold;
+    src: local("./fonts/NeueMontreal/NeueMontreal-Bold.otf") format('otf'),
+         local("NeueMontreal-Bold") format('otf'),
+         url("./fonts/NeueMontreal/NeueMontreal-Bold.otf") format('otf');
+    
+  }
+
+@font-face {
+    font-family: NeueMontreal-Regular;
+    src: local("./fonts/NeueMontreal/NeueMontreal-Regular.otf") format('otf'),
+         local("./fonts/NeueMontreal/NeueMontreal-Regular.otf") format('otf'),
+         url("./fonts/NeueMontreal/NeueMontreal-Regular.otf") format('otf');
+  }
+
 body {
     position: relative;
     min-height: 100vh;
@@ -166,6 +190,7 @@ body {
   }
 
   .sidebar .links_name {
+    font-family: NeueMontreal-Regular;
     pointer-events: none;
     opacity: 0;
   }

@@ -2,7 +2,6 @@
   <div class="sidebar">
     <div class="logo_content">
       <div class="logo">
-        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACQAAAAkCAYAAADhAJiYAAAB60lEQVRYR+2V4TEEQRCF30WACJCBDBABIkAEiAARIAJE4ESACBABIkAE1HfVfdU7Nbuzd0vV/ZiuUjduel6/fv1mbqQFi9GC8VElVJpIVagqVFKgtF899N8KrUlatSJPpWJ99oeO7FHSphUaijWBGQryJWlJ0qukjT4KlHLaCAFOoTTiWBjXmyWg1JmtPyS9h4Nbkn4yWDRBQ41oI5QD8IMUPpe0K+mupWMI7Rmxzw5VbiSdRGI5QnT0UJD2UBIKnXbk3Uu67IF1K+nAcXKE2Ly2BNgDShxLurA1xYgd+1yxLpcluSKMl1E6aVT1sUZ1GRvnJ5EjBIEj2982UP6NylHMrzyeYU3gvWdb0zkEnXTEIiXaYsojR6jtKkeFrgJp1KJjIlWXM/5OuYrkRYUaNzRHyJnHRNTBwHRM4CEfaxxFVBdTu+lTFTnrzwRYmDs7sii556Sf+IpwP1F4bN9FdRlR6XI0DJ3zUNdVpktMSTf87RuJ9fDu+ENJLjltt/DbLoubfNp0OjISHAQlXiyTQr528/r4UMWD0RLkg+WG7sJqTCAlFCWPJmwbX9f3PI45Q3dipYSi5H6V5yET36No6CJWSihKHkdUBMokzIU19Nd+HqIzjezPC8wKWBUqKVYVqgqVFCjtVw+VFPoFtupmJbBJr4UAAAAASUVORK5CYII=" />
         <div class="logo_name">MH My Home</div>
       </div>
       <i class='bx bx-menu' id="btn"></i>
@@ -16,7 +15,7 @@
         <span class="tooltip">Reservations</span>
       </li>
       <li>
-        <a href="">
+        <a href="rooms.php">
           <i class='bx bx-home'></i>
           <span class="links_name">Maison</span>
         </a>
@@ -51,7 +50,7 @@
         <span class="tooltip">Commentaires</span>
       </li>
       <li>
-        <a href="">
+        <a href="users.php">
           <i class='bx bx-user'></i>
           <span class="links_name">Utilisateurs</span>
         </a>
@@ -74,7 +73,7 @@
               <div class="name">Muriel Coutellier</div>
               <div class="job">Admin & Editeur</div>
             </div>
-            <a href="">
+            <a href="logout.php">
               <i class='bx bx-log-out' id="log_out"></i>
             </a>
           </div>
