@@ -6,6 +6,7 @@ include 'includes/header.php';
 
 <main>
 
+     <!-- Section accueil -->
     <div class="qhero_page_maison">
         <div class="qhero_entree_page_maison">
             <div class="div_h1_titre">
@@ -35,7 +36,7 @@ include 'includes/header.php';
         </div>
     </div>
 
-    
+     <!-- Section presentation maison -->
      <div class="container_presentation_maison">
         <div class="container_presentation_maison_gauche">
             <div class="text_gauche">
@@ -60,6 +61,166 @@ include 'includes/header.php';
         </div>
     </div>
 
+      <!-- Swiper -->
+  <div class="swiper-container mySwiper swiperHover">
+    <div class="swiper-wrapper">
+      <div class="swiper-slide">
+        <img src="./assets/jpg/images page d'accueil/Villa-grande-Anse-Martinique02.jpg" alt="" srcset="">
+        <div class="swiper-slide-titre">
+          <p>Le barbeue à l’arrière de la maison</p>
+        </div>
+      </div>
+      <div class="swiper-slide">
+        <img src="./assets/jpg/images page d'accueil/Villa-grande-Anse-Martinique02.jpg" alt="" srcset="">
+        <div class="swiper-slide-titre">
+          <p>Le barbeue à l’arrière de la maison</p>
+        </div>
+      </div>
+      <div class="swiper-slide">
+        <img src="./assets/jpg/images page d'accueil/Villa-grande-Anse-Martinique02.jpg" alt="" srcset="">
+        <div class="swiper-slide-titre">
+          <p>Le barbeue à l’arrière de la maison</p>
+        </div>
+      </div>
+      <div class="swiper-slide">
+        <img src="./assets/jpg/images page d'accueil/Villa-grande-Anse-Martinique02.jpg" alt="" srcset="">
+        <div class="swiper-slide-titre">
+          <p>Le barbeue à l’arrière de la maison</p>
+        </div>
+      </div>
+      <div class="swiper-slide">
+        <img src="./assets/jpg/images page d'accueil/Villa-grande-Anse-Martinique02.jpg" alt="" srcset="">
+        <div class="swiper-slide-titre">
+          <p>Le barbeue à l’arrière de la maison</p>
+        </div>
+      </div>
+      <div class="swiper-slide">
+        <img src="./assets/jpg/images page d'accueil/Villa-grande-Anse-Martinique02.jpg" alt="" srcset="">
+        <div class="swiper-slide-titre">
+          <p>Le barbeue à l’arrière de la maison</p>
+        </div>
+      </div>
+      <div class="swiper-slide">
+        <img src="./assets/jpg/images page d'accueil/Villa-grande-Anse-Martinique02.jpg" alt="" srcset="">
+        <div class="swiper-slide-titre">
+          <p>Le barbeue à l’arrière de la maison</p>
+        </div>
+      </div>
+      <div class="swiper-slide">
+        <img src="./assets/jpg/images page d'accueil/Villa-grande-Anse-Martinique02.jpg" alt="" srcset="">
+        <div class="swiper-slide-titre">
+          <p>Le barbeue à l’arrière de la maison</p>
+        </div>
+      </div>
+      <div class="swiper-slide">
+        <img src="./assets/jpg/images page d'accueil/Villa-grande-Anse-Martinique02.jpg" alt="" srcset="">
+        <div class="swiper-slide-titre">
+          <p>Le barbeue à l’arrière de la maison</p>
+        </div>
+      </div>
+      <div class="swiper-slide">
+        <img src="./assets/jpg/images page d'accueil/Villa-grande-Anse-Martinique02.jpg" alt="" srcset="">
+        <div class="swiper-slide-titre">
+          <p>Le barbeue à l’arrière de la maison</p>
+        </div>
+      </div>
+      <div class="swiper-slide">
+        <img src="./assets/jpg/images page d'accueil/Villa-grande-Anse-Martinique02.jpg" alt="" srcset="">
+        <div class="swiper-slide-titre">
+          <p>Le barbeue à l’arrière de la maison</p>
+        </div>
+      </div>
+      <div class="swiper-slide">
+        <img src="./assets/jpg/images page d'accueil/Villa-grande-Anse-Martinique02.jpg" alt="" srcset="">
+        <div class="swiper-slide-titre">
+          <p>Le barbeue à l’arrière de la maison</p>
+        </div>
+      </div>
+      <div class="swiper-slide">
+        <img src="./assets/jpg/images page d'accueil/Villa-grande-Anse-Martinique02.jpg" alt="" srcset="">
+        <div class="swiper-slide-titre">
+          <p>Le barbeue à l’arrière de la maison</p>
+        </div>
+      </div>
+      <div class="swiper-slide">
+        <img src="./assets/jpg/images page d'accueil/Villa-grande-Anse-Martinique02.jpg" alt="" srcset="">
+        <div class="swiper-slide-titre">
+          <p>Le barbeue à l’arrière de la maison</p>
+        </div>
+      </div>
+      <div class="swiper-slide">
+        <img src="./assets/jpg/images page d'accueil/Villa-grande-Anse-Martinique02.jpg" alt="" srcset="">
+        <div class="swiper-slide-titre">
+          <p>Le barbeue à l’arrière de la maison</p>
+        </div>
+      </div>
+      <div class="swiper-slide">
+        <img src="./assets/jpg/images page d'accueil/Villa-grande-Anse-Martinique02.jpg" alt="" srcset="">
+        <div class="swiper-slide-titre">
+          <p>Le barbeue à l’arrière de la maison</p>
+        </div>
+      </div>
+      
+    </div>
+    <div class="swiper-button-next"></div>
+    <div class="swiper-button-prev"></div>
+    <div class="swiper-pagination"></div>
+  </div>
+
+  </div>
+
+
+  <?php
+  include "includes/cursor.php";
+  include("./includes/footer.php"); ?>
 
 </main>
 
+<!-- Swiper JS -->
+<script src="https://unpkg.com/swiper/swiper-bundle.js"></script>
+<script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+
+
+
+<!-- Swiper JS -->
+<script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+
+<!-- Initialize Swiper -->
+<script>
+  var swiper = new Swiper(".mySwiper", {
+    loop: true,
+    navigation: {
+      nextEl: ".swiper-button-next",
+      prevEl: ".swiper-button-prev",
+    },
+    pagination: {
+          el: ".swiper-pagination",
+        }
+  });
+
+  let swiperHoverRight = document.querySelector('.swiperHover .swiper-button-next ')
+
+  swiperHoverRight.addEventListener('mouseenter', function(e) {
+    cursor.classList.add('cursor_active_right');
+    cursor2.classList.add('cursor2_active_right');
+  })
+
+  swiperHoverRight.addEventListener('mouseleave', function(e) {
+    cursor.classList.remove('cursor_active_right');
+    cursor2.classList.remove('cursor2_active_right');
+  })
+
+
+
+  let swiperHoverLeft = document.querySelector('.swiperHover .swiper-button-prev ')
+
+  swiperHoverLeft.addEventListener('mouseenter', function(e) {
+    cursor.classList.add('cursor_active_left');
+    cursor2.classList.add('cursor2_active_left');
+  })
+
+  swiperHoverLeft.addEventListener('mouseleave', function(e) {
+    cursor.classList.remove('cursor_active_left');
+    cursor2.classList.remove('cursor2_active_left');
+  })
+</script>
