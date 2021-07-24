@@ -825,11 +825,14 @@ color: #FCF7EC;
   margin-bottom: 10px;
 }
 
-.form_login input {
+.form_login_email input,
+.form_login_password input
+ {
   border: none;
   border-bottom: solid 1px;
   width: 10vw;
   margin-top: 15px;
+  background-color:#FCF7EC;
 }
 
 .form_login_email {
@@ -845,10 +848,11 @@ color: #FCF7EC;
   width: 210px;
   height: 40px;
 
-  background: #9A4747;
+  background-color: #9A4747;
   border-radius: 40px;
   color: white;
   font-size: 30px;
+  border: none;
 }
 
 .login_page_container_return {
@@ -1168,10 +1172,7 @@ footer ul {
       line-height: 120%; 
     }
 
-  /* responsive de la page contact */
-
-
-  
+  /* responsive de la page admin login */
 
       .login_page_container_title h1 {
         font-size: 19vw;
