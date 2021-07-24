@@ -28,7 +28,7 @@ if(isset($_SESSION['user_adding_error'])){
 }
 
  if(isset($_SESSION['logged_in'])){
-    echo '<div class="w3-green w3-center">'.$_SESSION['logged_in'].'</div> ';
+    echo '<div>'.$_SESSION['logged_in'].'</div> ';
     unset($_SESSION['logged_in']);
 }
 

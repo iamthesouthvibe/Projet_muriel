@@ -1058,7 +1058,8 @@ footer ul {
         display: none;
       }
 
-      .bouton_responsive {display: flex;
+      .bouton_responsive {
+        display: flex;
         place-content: center;
       }
 
@@ -1174,18 +1175,43 @@ footer ul {
 
   /* responsive de la page admin login */
 
-      .login_page_container_title h1 {
-        font-size: 19vw;
+  .login_page {
+    overflow: scroll;
+  }
+
+  .login_page_header {
+    position: fixed;
+  }
+
+  .login_page_header img {
+    width: 50px;
+        height: 22px;
+  }
+
+  .login_page_container_title {
+    margin-top: 200px;
+  }
+
+  .login_page_container .login_page_container_title h1 {
+        font-size: 75px;
     }
   
     .login_page_container_title p {
-        font-size: 30px;
-        line-height: 34px;
+      font-size: 13px;
+      line-height: 14px;
     }
+
+    .form_login {
+      margin-top: 53px;
+  }
   
     .form_login label {
-        font-size: 58px;
+        font-size: 30px;
         line-height: 95.5%;
+    }
+
+    .form_input-login {
+      font-size: 21px;
     }
   
     .form_login input {
@@ -1193,10 +1219,10 @@ footer ul {
     }
   
     .login_page_container_return a {
-        font-size: 25px;
-        line-height: 20px;  
+        
+      font-size: 12px;
     }
-  }
+  }  
 
 
   @media screen and (max-width: 321px) {
