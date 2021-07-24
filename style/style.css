@@ -1188,12 +1188,25 @@ footer ul {
         height: 22px;
   }
 
-  .login_page_container_title {
-    margin-top: 200px;
+  .login_page_container {
+    height: 100%;
   }
 
+  .login_page_container_title {
+    margin-top: 70px;
+  }
+
+  .form_login_password {
+    margin-bottom: 47px;
+  }
+
+  .form_login_email {
+    margin-bottom: 38px;
+}
+
+
   .login_page_container .login_page_container_title h1 {
-        font-size: 75px;
+        font-size: 81px;
     }
   
     .login_page_container_title p {
@@ -1224,12 +1237,18 @@ footer ul {
     }
   }  
 
+  
+
 
   @media screen and (max-width: 321px) {
     .header_right button {
         width: 147px;
         height: 36px;
     
+  }
+
+  .login_page_container .login_page_container_title h1 {
+    font-size: 64px;
   }
 
 }

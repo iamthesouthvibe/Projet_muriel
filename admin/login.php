@@ -54,9 +54,8 @@ $hashed = password_hash($password, PASSWORD_DEFAULT);
     <div class="login_page_container">
         <div class="login_page_container_title">
             <h1>Bienvenue sur l’espace connexion “Admin”</h1>
-            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Provident atque illum, ipsa qui exercitationem aperiam nisi suscipit fuga ex
-                deserunt eligendi aspernatur rerum tempora a nemo, ullam tenetur consequatur? Tenetur Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quaerat quis amet reprehenderit esse eum rem exercitationem excepturi
-                vel veniam. Itaque exercitationem error provident, nulla veritatis mollitia explicabo perferendis quod quisquam..</p>
+            <p>Bienvenue sur la page d'administration, connectez-vous pour accéder aux fonctions d'administrateur. Sur cette page, il sera possible de consulter les reservations, d'ajouter des produits/artciles, 
+                de modifier des produits/artciles, de supprimer des produits/artciles, et bien plus de fonctions..</p>
         </div>
 
         <form action="login.php" method="post" class="form_login">
