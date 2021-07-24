@@ -46,6 +46,9 @@
             <li>
                 <a href="">Contact</a>
             </li>
+            <li>
+                <a href="/admin/login.php">Admin</a>
+            </li>
         </ul>
     </div>
     <div>
