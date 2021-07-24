@@ -1,3 +1,8 @@
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="description" content="">
+<link rel="stylesheet" href="../style/style.css">
+
 <?php
 
 require_once $_SERVER['DOCUMENT_ROOT'] . '/core/core.php';
@@ -11,7 +16,6 @@ $hashed = password_hash($password, PASSWORD_DEFAULT);
 
 ?>
 
-<link rel="stylesheet" href="../style/style.css">
 <div class="login_page">
     <div class="login_page_header">
         <a href=""><img src="../assets/png/LOGO_ANCIEN.png" alt="Logo muriel home"></a>
@@ -19,21 +23,21 @@ $hashed = password_hash($password, PASSWORD_DEFAULT);
     <?php
     if (isset($_POST['login'])) {
         if (empty($_POST['email']) || empty($_POST['password'])) {
-            echo '<div class="w3-text-red text-center">Email and password are required to proceed.</div>';
+            echo '<div">Email and password are required to proceed.</div>';
         } else {
             //Ensuring password is 6 or more characters long
             if (strlen($password) < 6) {
-                echo '<div class="w3-text-red text-center">password must be at least 6 characters</div>';
+                echo '<div>password must be at least 6 characters</div>';
             } else {
                 //Check if Email exists in database
                 $sql = $db->query("SELECT * FROM users WHERE email = '$email' ");
                 $user = mysqli_fetch_assoc($sql);
                 $count = mysqli_num_rows($sql);
                 if ($count < 1) {
-                    echo '<div class="w3-text-red text-center">email not found in database.</div>';
+                    echo '<div>email not found in database.</div>';
                 } else {
                     if (password_verify($hashed, $user['password'])) {
-                        echo '<div class="w3-text-red text-center">The password you entered was incorrect, please try again.</div>';
+                        echo '<div>The password you entered was incorrect, please try again.</div>';
                     } else {
                         //FINALLY LOG THE USER IN
                         $userID = $user['id'];
@@ -50,9 +54,8 @@ $hashed = password_hash($password, PASSWORD_DEFAULT);
     <div class="login_page_container">
         <div class="login_page_container_title">
             <h1>Bienvenue sur l’espace connexion “Admin”</h1>
-            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Provident atque illum, ipsa qui exercitationem aperiam nisi suscipit fuga ex
-                deserunt eligendi aspernatur rerum tempora a nemo, ullam tenetur consequatur? Tenetur Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quaerat quis amet reprehenderit esse eum rem exercitationem excepturi
-                vel veniam. Itaque exercitationem error provident, nulla veritatis mollitia explicabo perferendis quod quisquam..</p>
+            <p>Bienvenue sur la page d'administration, connectez-vous pour accéder aux fonctions d'administrateur. Sur cette page, il sera possible de consulter les reservations, d'ajouter des produits/artciles, 
+                de modifier des produits/artciles, de supprimer des produits/artciles, et bien plus de fonctions..</p>
         </div>
 
         <form action="login.php" method="post" class="form_login">
