@@ -614,6 +614,131 @@ margin-top: 30px;
 /* ##### Fin style de la page d'accueil ##### */
 
 
+/* ##### debut style page admin login #### */
+
+.login_page {
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  position: fixed;
+}
+
+.login_page_header {
+  height: 5vh;
+  width: 100vw;
+}
+
+.login_page_header img {
+  width: 90px;
+  height: 39px;
+  margin-left: 25px;
+  margin-top: 25px;
+}
+
+.login_page_container {
+  text-align: center;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.login_page_container_title h1 {
+  font-family: ITCGaramondStd-BkNarrow;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 9vw;
+  line-height: 78%;
+  /* or 112px */
+
+  text-align: center;
+  color: rgba(154, 71, 71, 1);
+  width: 100vw;
+
+  margin-bottom: 20px;
+}
+
+.login_page_container_title p {
+  font-family: Neue Montreal;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 18px;
+  line-height: 20px;
+  /* or 111% */
+
+  text-align: center;
+
+  color: #000000;
+  margin: auto;
+  width: 60%;
+}
+
+.form_login {
+  margin-top: 100px;
+}
+
+.form_login label {
+  font-family: Neue Montreal;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 30px;
+  line-height: 95.5%;
+  /* or 29px */
+
+  text-align: center;
+
+  color: #9A4747;
+  margin-bottom: 10px;
+}
+
+.form_login input {
+  border: none;
+  border-bottom: solid 1px;
+  width: 10vw;
+  margin-top: 15px;
+}
+
+.form_login_email {
+  display: block;
+  margin-bottom: 50px;
+}
+
+.form_login_password {
+  margin-bottom: 80px;
+}
+
+.form_input-login {
+  width: 210px;
+  height: 40px;
+
+  background: #9A4747;
+  border-radius: 40px;
+  color: white;
+  font-size: 30px;
+}
+
+.login_page_container_return {
+  margin-top: 30px;
+}
+
+.login_page_container_return a {
+  font-family: Neue Montreal;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 15px;
+  line-height: 20px;
+  /* or 133% */
+
+  text-align: center;
+
+  color: #000000;
+  text-decoration: none;
+}
+
+
+/* #### Fin style page admin login #### */
+
+
 /* ##### Debut style footer ##### */
 
 footer {
@@ -890,6 +1015,29 @@ footer ul {
           font-size: 55px;
       
       }
+
+      .login_page_container_title h1 {
+        font-size: 19vw;
+    }
+  
+    .login_page_container_title p {
+        font-size: 30px;
+        line-height: 34px;
+    }
+  
+    .form_login label {
+        font-size: 58px;
+        line-height: 95.5%;
+    }
+  
+    .form_login input {
+        width: 37vw;
+    }
+  
+    .login_page_container_return a {
+        font-size: 25px;
+        line-height: 20px;  
+    }
   }
 
 
