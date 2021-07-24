@@ -673,29 +673,7 @@ margin-top: 30px;
 
 /* ##### Debut Style de la page 404 ##### */
 
-
-/* ##### debut style page admin login #### */
-
-.login_page {
-  width: 100vw;
-  height: 100vh;
-  overflow: hidden;
-  position: fixed;
-}
-
-.login_page_header {
-  height: 5vh;
-  width: 100vw;
-}
-
-.login_page_header img {
-  width: 90px;
-  height: 39px;
-  margin-left: 25px;
-  margin-top: 25px;
-}
-
-.login_page_container {
+.div_2_page-404 {
   text-align: center;
   position: absolute;
   top: 50%;
@@ -769,6 +747,36 @@ color: #FCF7EC;
 
 
 /* ##### Fin Style de la page 404 ##### */
+
+/* ##### debut style page admin login #### */
+
+.login_page {
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  position: fixed;
+}
+
+.login_page_header {
+  height: 5vh;
+  width: 100vw;
+}
+
+.login_page_header img {
+  width: 90px;
+  height: 39px;
+  margin-left: 25px;
+  margin-top: 25px;
+}
+
+.login_page_container {
+  text-align: center;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
 .login_page_container_title h1 {
   font-family: ITCGaramondStd-BkNarrow;
   font-style: normal;
