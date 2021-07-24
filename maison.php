@@ -35,8 +35,31 @@ include 'includes/header.php';
         </div>
     </div>
 
-
-
+    
+   <!-- <div class="container_presentation_maison">
+        <div class="container_presentation_maison_gauche">
+            <div class="text_gauche">
+                <p>
+                À notre arrivée en Martinique, pendant 3 ans, nous avons travaillé sur un catamaran de croisière qui, entre deux excursions aux îles Grenadines, venait régulièrement mouiller dans la baie azur des Anses d’Arlet… Quel ne fut pas notre bonheur lorsque, quelques années plus tard, nous avons pu nous offrir, ce qui n’était alors qu’une cabane au bout d’une piste, notre future maison, avec cette vue imprenable sur les eaux moirées de la baie… 
+                </p>
+                <div class="image_gauche">
+                     <img src="assets/jpg/maison_photo_01.jpg" alt="Photo Maison">
+                </div>
+                <p>
+                Cette maison demeure le socle de notre famille quand nous revenons nous souvenir de ces années heureuses sur l’île…
+                </p>
+            </div>
+        </div>
+        <div class="container_presentation_maison_droite">
+            <div class="text-droite">
+                <p>Nous avons décidé là de creuser les fondations de notre famille. Nos enfants y sont nés. Je les vois encore descendre à toute allure les petites marches menant à la mer, et croquer à pleine bouche les citrons verts du jardin…  Au fil des années, la maison s’est modifiée et agrandie au fur et à mesure de nos projets.  </p>
+            </div>
+            <div class="image_droite">
+                <img src="assets/jpg/maison_photo_01.jpg" alt="Photo Maison">
+            </div>
+        </div>
+    </div>
+-->
 
 </main>
 
