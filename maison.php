@@ -36,7 +36,7 @@ include 'includes/header.php';
     </div>
 
     
-   <!-- <div class="container_presentation_maison">
+     <div class="container_presentation_maison">
         <div class="container_presentation_maison_gauche">
             <div class="text_gauche">
                 <p>
@@ -59,7 +59,7 @@ include 'includes/header.php';
             </div>
         </div>
     </div>
--->
+
 
 </main>
 

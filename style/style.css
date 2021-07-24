@@ -686,6 +686,39 @@ margin-top: 30px;
   transform: translate(-50%, -50%);
 }
 
+.container_presentation_maison {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-around;
+  margin-top: 10vh;
+}
+
+.container_presentation_maison img {
+  max-width: 35vw;
+  margin-top: 10vh;
+  margin-bottom: 10vh;
+
+}
+
+.container_presentation_maison p {
+  max-width: 35vw;
+}
+
+.container_presentation_maison p {
+  font-family: Neue Montreal;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 24px;
+  line-height: 24px;
+  color: #000000;
+}
+
+.container_presentation_maison_droite {
+  margin-top: 35vh;
+}
+
+ 
+
 /* ##### Fin style de la page maison ##### */
 
 
@@ -1248,6 +1281,34 @@ footer ul {
         margin-top: 1vh;
 
       }
+
+      .container_presentation_maison {
+        display: block;
+      }
+
+      .container_presentation_maison p {
+        max-width: 90vw;
+        margin:auto;
+      }
+
+      .container_presentation_maison img {
+        max-width: 90vw;
+        margin-top: 5vh;
+        margin-bottom: 5vh;
+      }
+
+      .image_gauche  {
+        text-align: center;
+      } 
+
+      .image_droite  {
+        text-align: center;
+      } 
+
+      .container_presentation_maison_droite {
+        margin-top: 0;
+      }
+
       
       /* responsive de la page contact */
 
