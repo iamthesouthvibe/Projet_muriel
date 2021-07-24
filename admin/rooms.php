@@ -27,11 +27,12 @@ if(isset($_GET['delete'])){
 
 ?>
 
-<div class="w3-container w3-main" style="margin-left:200px">
+<div class="w3-container w3-main" style="margin-left:600px; position:absolute" >
+<!--
   <header class="w3-container w3-purple">
    <span class="w3-opennav w3-xlarge w3-hide-large" onclick="w3_open()">☰</span>
    <h2 class="text-center">Rooms</h2>
- </header>
+ </header>-->
     <div class="row"><br />
         <div class="col-md-12">
             <a href="add_room.php" class="btn btn-primary pull-right">Add a room</a>
