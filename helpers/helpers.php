@@ -21,6 +21,7 @@ function is_logged_in(){
         return false;
 }
 
+
 function login_error_check($redirect = 'login.php'){
     $_SESSION['error_flash'] = 'You must be logged in to view that page.';
     header('Location: '.$redirect);
