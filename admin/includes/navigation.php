@@ -9,7 +9,7 @@
     </div>
     <ul class="nav_list">
       <li>
-        <a href="">
+        <a href="reservations.php">
           <i class='bx bx-home-heart'></i>
           <span class="links_name">Reservations</span>
         </a>
