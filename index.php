@@ -85,7 +85,7 @@ $tourSQL = $db->query("SELECT * FROM tourism LIMIT 4");
             illum fugiat quas aperiam asperiores sit facere cupiditate facilis earum? Lorem ipsum dolor sit, amet consectetur adipisicing elit. Voluptates, quas, nulla, in dolorum enim officia perferendis
             reiciendis expedita accusantium laborum maxime quo
             nihil debitis est exercitationem. Doloremque officia soluta eligendi!</p>
-          <button><a href="">Découvrir</a></button>
+          <button><a href="maison.php">Découvrir</a></button>
         </div>
       </div>
       <div class="swiper-slide">
