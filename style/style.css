@@ -252,15 +252,15 @@
   font-family: ITCGaramondStd-BkNarrow;
     font-style: normal;
     font-weight: normal;
-  text-decoration: none;
+    text-decoration: none;
     /* list-style: none; */
     /* list-style-type: none; */
     color:rgba(154, 71, 71, 1);
-    font-size: 7vw;
-    line-height: 1;
+    font-size: 8vw;
+    line-height: 0.9;
     margin-bottom: 10px;
     display: inline-block;
-  position: relative;
+    position: relative;
 }
 
 .container_menu ul li a::after {
