@@ -68,10 +68,10 @@
       <div class="profile_content">
         <div class="profile">
           <div class="profile_details">
-            <img src="/assets/jpg/Muriel.png" alt="" srcset="">
+            <img src="/images/<?= $user_info['photo'];  ?>" alt="" srcset="">
             <div class="name_job">
-              <div class="name">Muriel Coutellier</div>
-              <div class="job">Admin & Editeur</div>
+              <div class="name"><?php echo $user_info['first'].' '.$user_info['last']; ?></div>
+              <div class="job"><?php echo $user_info['permissions']; ?></div>
             </div>
           </div>
           <a href="logout.php">
