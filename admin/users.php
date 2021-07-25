@@ -86,12 +86,12 @@ if (isset($_GET['edit']) && !empty($_GET['edit'])) {
             <form action="users.php" method="POST" class="form" id="add_user" enctype='multipart/form-data'>
                 <div class="col-sm-6">
                     <div class="form-group">
-                        <input type="text" value="<?= (isset($_GET['edit'])) ? '' . $edit['full_name'] . '' : '' . $fullname . ''; ?>" name="name" class="form-control" placeholder="Full name*">
+                        <input type="text" value="<?= (isset($_GET['edit'])) ? '' . $edit['full_name'] . '' : '' . $fullname . ''; ?>" name="name" placeholder="Full name*">
                     </div>
                 </div>
                 <div class="col-sm-6">
                     <div class="form-group">
-                        <input type="email" value="<?= (isset($_GET['edit'])) ? '' . $edit['email'] . '' : '' . $email . ''; ?>" name="email" class="form-control" placeholder="User email*">
+                        <input type="email" value="<?= (isset($_GET['edit'])) ? '' . $edit['email'] . '' : '' . $email . ''; ?>" name="email"  placeholder="User email*">
                     </div>
                 </div>
                 <div class="col-sm-6">
@@ -102,7 +102,7 @@ if (isset($_GET['edit']) && !empty($_GET['edit'])) {
                 <div class="col-sm-12">
                     <div class="form-group">
                         <label for="role">User role*:</label>
-                        <select id="permission" name="role" class="form-control">
+                        <select id="permission" name="role">
                             <option value="" selected>select a user role</option>
                             <option value="admin">Admin</option>
                             <option value="editor">Editor</option>
@@ -110,14 +110,14 @@ if (isset($_GET['edit']) && !empty($_GET['edit'])) {
                         </select>
                     </div>
                 </div>
-                <div class="col-sm-6 form-group">
-                    <input type="password" name="password" class="form-control" placeholder="Password*">
+                <div >
+                    <input type="password" name="password"  placeholder="Password*">
                 </div>
                 <div class="col-sm-6 form-group">
-                    <input type="password" name="password2" class="form-control" placeholder="Confirm password*">
+                    <input type="password" name="password2" placeholder="Confirm password*">
                 </div>
-                <div class="col-sm-12">
-                    <input type="submit" class="btn btn-info" name="<?= (isset($_GET['edit'])) ? 'edit' : 'add'; ?>" value="<?= (isset($_GET['edit'])) ? 'Edit user' : 'Add user'; ?>">
+                <div>
+                    <input type="submit" name="<?= (isset($_GET['edit'])) ? 'edit' : 'add'; ?>" value="<?= (isset($_GET['edit'])) ? 'Edit user' : 'Add user'; ?>">
                     <?php if (isset($_GET['edit'])) : ?>
                         <a href="users.php" class="btn btn-info" name="">Cancel</a>
                     <?php endif; ?>
@@ -128,7 +128,7 @@ if (isset($_GET['edit']) && !empty($_GET['edit'])) {
         <div class="col-md-6">
             <h3>User's table</h3>
 
-            <table class="table table-striped table-condensed table-bordered">
+            <table>
                 <thead>
                     <tr>
                         <th>#</th>
@@ -146,8 +146,8 @@ if (isset($_GET['edit']) && !empty($_GET['edit'])) {
                             <td><?= $rows['permissions']; ?></td>
                             <td><?= $rows['last_login']; ?></td>
                             <td>
-                                <a href="users.php?delete=<?= $rows['id']; ?>" class="w3-btn w3-small w3-red"><span class="glyphicon glyphicon-trash"></span></a>
-                                <a href="users.php?edit=<?= $rows['id']; ?>" class="w3-btn w3-small w3-blue"><span class="glyphicon glyphicon-edit"></span></a>
+                                <a href="users.php?delete=<?= $rows['id']; ?>" ><span ></span></a>
+                                <a href="users.php?edit=<?= $rows['id']; ?>"><span ></span></a>
                             </td>
                         </tr>
                     <?php endwhile; ?>
