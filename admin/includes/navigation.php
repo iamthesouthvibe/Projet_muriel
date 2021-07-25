@@ -2,7 +2,7 @@
   <div class="sidebar">
     <div class="logo_content">
       <div class="logo">
-        <div class="logo_name">MH My Home</div>
+        <div class="logo_name">Dashborard</div>
       </div>
       <i class='bx bx-menu' id="btn"></i>
     </div>

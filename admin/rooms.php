@@ -81,5 +81,19 @@ if (isset($_GET['delete'])) {
                 <button><a href="">Modifier</a></button>
             </div>
         </div>
+       <div class="admin_page_maison_container">
+            <img src="/assets/jpg/images page d'accueil/Villa-grande-Anse-Martinique02.jpg" alt="" srcset="">
+            <div class="admin_page_maison_title">
+                <h2>Villa Grande</h2>
+                <button><a href="">Modifier</a></button>
+            </div>
+        </div>
+        <div class="admin_page_maison_container">
+            <img src="/assets/jpg/images page d'accueil/Villa-grande-Anse-Martinique02.jpg" alt="" srcset="">
+            <div class="admin_page_maison_title">
+                <h2>Villa Grande</h2>
+                <button><a href="">Modifier</a></button>
+            </div>
+        </div>
     </div>
 </div>
