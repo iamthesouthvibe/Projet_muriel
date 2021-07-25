@@ -5,6 +5,9 @@ require_once('../helpers/helpers.php');
 if (!is_logged_in()) {
     login_error_check();
 }
+if (!permission()) {
+    permission_error();
+}
 
 include 'includes/header.php';
 include 'includes/navigation.php';
@@ -14,7 +17,7 @@ $result = $db->query($sql);
 $row_count = 1; ####//Row Counter
 #################################
 //FIELDS DETAILS
-@$name = sanitize($_POST['name']);
+@$fullname = sanitize($_POST['name']);
 @$email = sanitize($_POST['email']);
 @$role = sanitize($_POST['role']);
 @$password = sanitize($_POST['password']);
@@ -22,45 +25,40 @@ $row_count = 1; ####//Row Counter
 @$joinDate = date("Y-m-d H:m:i");
 
 
-
 //CODE TO REGISTER A NEW ADMINISTRATOR
 if (isset($_POST['add'])) {
     if (!empty($_POST['name']) && !empty($_POST['email']) && !empty($_POST['role']) && !empty($_POST['password'])) {
-        if (!empty($_FILES)) {
-            $fileName = @$_FILES['file']['name'];
-            $ext = strtolower(substr($fileName, strpos($fileName, '.') + 1));
-            $fileName = md5(microtime()) . '.' . $ext;
-            $type = @$_Files['file']['type'];
-            $tmp_name = @$_FILES['file']['tmp_name'];
+        if ($_POST['password'] == $_POST['password2']) {
 
-            if (($ext == 'jpg') || ($ext == 'jpeg') || ($ext == 'png') || ($ext == 'gif')) {
-                $location = $_SERVER['DOCUMENT_ROOT'] . '/images/';
-                move_uploaded_file($tmp_name, $location . $fileName);
-            } else {
-                echo '<div class="w3-center w3-red">The image type must be jpg, jpeg, gif, or png.</div></br>';
-            }
-            if ($_POST['password'] == $_POST['password2']) {
+            //HASHING THE PASSWORD FOR SECURITY
+            $password = password_hash($password, PASSWORD_DEFAULT);
+            //INSERT QUERY REGISTERING NEW ADMIN TO THE DATABASE
+            $name = $_FILES['file']['name'];
+            $target_dir = $_SERVER['DOCUMENT_ROOT'] . '/images/';
+            $target_file = $target_dir . basename($_FILES["file"]["name"]);
+            // Select file type
+            $imageFileType = strtolower(pathinfo($target_file, PATHINFO_EXTENSION));
 
-                //HASHING THE PASSWORD FOR SECURITY
-                $password = password_hash($password, PASSWORD_DEFAULT);
-                //INSERT QUERY REGISTERING NEW ADMIN TO THE DATABASE
-                $image = 'images/' . $fileName;
-                $sql = "INSERT INTO users (`full_name`, `email`, `password`, `join_date`, `permissions`, `photo`) VALUES('$name','$email','$password','$joinDate','$role','$image')";
-                $insert = $db->query($sql);
-                $_SESSION['add_admin'] = 'New user successfully added!';
-                //header("Location: users.php");
-                var_dump($_POST);
-            } else {
-                echo '<div class="w3-red w3-center"> Passwords do not match!</div> ';
-                var_dump($insert);
+            // Valid file extensions
+            $extensions_arr = array("jpg", "jpeg", "png", "gif");
+
+            if (in_array($imageFileType, $extensions_arr)) {
+                // Upload file
+                if (move_uploaded_file($_FILES['file']['tmp_name'], $target_dir . $name)) {
+                    // Insert record
+                    $sql = "INSERT INTO users (`full_name`, `email`, `password`, `join_date`, `permissions`, `photo`) VALUES('$fullname','$email','$password','$joinDate','$role','$name')";
+                    $insert = $db->query($sql);
+                    $_SESSION['add_admin'] = 'New user successfully added!';
+                    header("Location: users.php");
+                }
             }
+        } else {
+            echo '<div class="w3-red w3-center"> Passwords do not match!</div> ';
         }
     } else {
         echo '<div class="w3-red w3-center"> All fields with an asterisks are required!</div> ';
-        var_dump($insert);
     }
 }
-
 
 
 //CODE TO DELETE A DATABASE USER
@@ -85,10 +83,10 @@ if (isset($_GET['edit']) && !empty($_GET['edit'])) {
 
             <h3 class="">New user Form</h3>
             <hr>
-            <form action="users.php" method="POST" class="form" id="add_user">
+            <form action="users.php" method="POST" class="form" id="add_user" enctype='multipart/form-data'>
                 <div class="col-sm-6">
                     <div class="form-group">
-                        <input type="text" value="<?= (isset($_GET['edit'])) ? '' . $edit['full_name'] . '' : '' . $name . ''; ?>" name="name" class="form-control" placeholder="Full name*">
+                        <input type="text" value="<?= (isset($_GET['edit'])) ? '' . $edit['full_name'] . '' : '' . $fullname . ''; ?>" name="name" class="form-control" placeholder="Full name*">
                     </div>
                 </div>
                 <div class="col-sm-6">
@@ -98,7 +96,7 @@ if (isset($_GET['edit']) && !empty($_GET['edit'])) {
                 </div>
                 <div class="col-sm-6">
                     <div class="form-group">
-                        <input type="file" name="file" id="file" class="form-control" placeholder="photo">
+                        <input type="file" name="file" id="file">
                     </div>
                 </div>
                 <div class="col-sm-12">
@@ -158,3 +156,4 @@ if (isset($_GET['edit']) && !empty($_GET['edit'])) {
         </div>
     </div>
 </div>
+
