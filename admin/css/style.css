@@ -431,8 +431,11 @@ textarea {
 .admin_page_addtours .submit_button {
   height: 30px;
     width: 154px;
-    border: solid 1px;
+    border: none;
     border-radius: 40px;
+    background-color: #9A4747;
+    color: #FCF7EC;
+    font-size: 20px;
 }
 
 @media screen and (max-width: 450px)

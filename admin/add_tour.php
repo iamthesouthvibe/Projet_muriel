@@ -123,7 +123,7 @@ if (isset($_GET['edit'])) {
 //Canceling EDITING
 if (isset($_GET['cancelEdit'])) {
   unset($_SESSION['edit']);
-  header("Location: add_tour.php");
+  header("Location: tours.php");
 }
 
 //DELETING IMAGE
@@ -138,7 +138,7 @@ if (isset($_GET['delete_image'])) {
   unlink($imageURL2);
   unlink($imageURL3);
   ##################################################################
-  $sql = "UPDATE tourism SET `photo` = '', `photo_2` = '', `photo_3` = '' WHERE id = '$toEditID' ";
+  $sql = "UPDATE tourism SET `photo` = '$imageURL', `photo_2` = '$imageUR2', `photo_3` = '$imageURL3' WHERE id = '$toEditID' ";
   $db->query($sql);
   header("Location: add_tour.php?edit=$toEditID");
 }
@@ -288,7 +288,7 @@ if (isset($_GET['delete_image'])) {
           <?php if (!@$rows['photo'] || @$rows['photo'] == '') : ?>
             <label for="file">Photo:</label>
             <br>
-            <input type="file" class="form-control" name="file" id="file">
+            <input type="file" class="form-control" name="file" id="file" value="<?= (isset($toEditID)) ? '' . $rows['photo'] . '' : ''; ?>">
           <?php endif;  ?>
         </div>
 
@@ -319,7 +319,7 @@ if (isset($_GET['delete_image'])) {
         <?php
         if (isset($toEditID)) {
           echo '<br>';
-          echo ' <a href="add_tour.php?cancelEdit=' . $toEditID . '" type="button" name="cancelEdit" class="w3-btn w3-orange w3-btn-block">Cancel Edit</a>';
+          echo ' <a href="add_tour.php?cancelEdit=' . $toEditID . '" type="button" name="cancelEdit" class="submit_button">Cancel Edit</a>';
         } ?>
       </div>
     </form>
