@@ -27,7 +27,7 @@ if (!empty($_FILES)) {
   $tmp_name = @$_FILES['file']['tmp_name'];
 
   if (($ext == 'jpg') || ($ext == 'jpeg') || ($ext == 'png') || ($ext == 'gif')) {
-    $location = $_SERVER['DOCUMENT_ROOT'].'/images/';
+    $location = $_SERVER['DOCUMENT_ROOT'] . '/images/';
     move_uploaded_file($tmp_name, $location . $fileName);
   } else {
     echo '<div class="w3-center w3-red">The image type must be jpg, jpeg, gif, or png.</div></br>';
@@ -40,7 +40,7 @@ if (!empty($_FILES)) {
   $tmp_name2 = @$_FILES['file2']['tmp_name'];
 
   if (($ext2 == 'jpg') || ($ext2 == 'jpeg') || ($ext2 == 'png') || ($ext2 == 'gif')) {
-    $location2 = $_SERVER['DOCUMENT_ROOT'].'/images/';
+    $location2 = $_SERVER['DOCUMENT_ROOT'] . '/images/';
     move_uploaded_file($tmp_name2, $location2 . $fileName2);
   } else {
     echo '<div class="w3-center w3-red">The image type must be jpg, jpeg, gif, or png.</div></br>';
@@ -53,7 +53,7 @@ if (!empty($_FILES)) {
   $tmp_name3 = @$_FILES['file3']['tmp_name'];
 
   if (($ext3 == 'jpg') || ($ext3 == 'jpeg') || ($ext3 == 'png') || ($ext3 == 'gif')) {
-    $location3 = $_SERVER['DOCUMENT_ROOT'].'/images/';
+    $location3 = $_SERVER['DOCUMENT_ROOT'] . '/images/';
     move_uploaded_file($tmp_name3, $location3 . $fileName3);
   } else {
     echo '<div class="w3-center w3-red">The image type must be jpg, jpeg, gif, or png.</div></br>';
@@ -97,7 +97,7 @@ else if (isset($_POST['update'])) {
     $sqlSelect = $db->query("SELECT * FROM tourism WHERE id = '$toEditID' ");
     $row = mysqli_fetch_assoc($sqlSelect);
 
-    if ($row['photo'] == '' || $row['photo_2'] == '' || $row['photo_3'] == '' ) {
+    if ($row['photo'] == '' || $row['photo_2'] == '' || $row['photo_3'] == '') {
       $query = $db->query("UPDATE tourism SET `title`='$title', `subtitles`='$subtitles', `photo`='$image', `photo_2`='$image2',`photo_3`='$image3',
       `location`='$location_t', `details`='$sdetails', `date`='$date'  WHERE id = '$toEditID' ");
     } else {
@@ -143,6 +143,7 @@ if (isset($_GET['delete_image'])) {
   header("Location: add_tour.php?edit=$toEditID");
 }
 ?>
+<!--
 <div class="w3-container w3-main" style="margin-left:200px">
   <header class="w3-container w3-purple">
     <span class="w3-opennav w3-xlarge w3-hide-large" onclick="w3_open()">☰</span>
@@ -247,18 +248,80 @@ if (isset($_GET['delete_image'])) {
     </div>
   </div>
 </div>
-<script>
-  function w3_open() {
-    document.getElementsByClassName("w3-sidenav")[0].style.display = "block";
-  }
+      -->
 
-  function w3_close() {
-    document.getElementsByClassName("w3-sidenav")[0].style.display = "none";
-  }
-</script>
+<div class="admin_page">
+  <div class="header_admin">
+    <h1><?= (isset($toEditID)) ? '' . 'Modifier une rubrique' . '' : 'Ajouter une rubrique'; ?></h1>
+    <img src="../assets/png/LOGO_ANCIEN.png" alt="Logo Muriel">
+  </div>
+  <div class="admin_page_addtours">
+    <form method="POST" enctype="multipart/form-data">
+      <div class="form_addtours_top">
+        <div>
+          <label for="title">Titre</label>
+          <br>
+          <input type="text" name="title" value="<?= (isset($toEditID)) ? '' . $rows['title'] . '' : ''; ?>" placeholder="Titre">
+        </div>
 
-<script src="js/jquery-1.11.2.min.js"></script>
-<script src="js/bootstrap.js"></script>
-</body>
+        <div>
+          <label for="subtitles">Sous-titre</label>
+          <br>
+          <input type="text" name="subtitles" value="<?= (isset($toEditID)) ? '' . $rows['subtitles'] . '' : ''; ?>" placeholder="event topic">
+        </div>
 
-</html>
+        <div>
+          <label for="location">Lieu </label>
+          <br>
+          <input type="text" name="location" class="form-control" value="<?= (isset($toEditID)) ? '' . $rows['location'] . '' : ''; ?>" placeholder="venue">
+        </div>
+
+        <div>
+          <label for="date">Date</label>
+          <br>
+          <input type="date" name="date" value="<?= (isset($toEditID)) ? '' . $rows['date'] . '' : ''; ?>" class="form-control">
+        </div>
+      </div>
+
+      <div class="form_addtours_middle">
+        <div>
+          <?php if (!@$rows['photo'] || @$rows['photo'] == '') : ?>
+            <label for="file">Photo:</label>
+            <br>
+            <input type="file" class="form-control" name="file" id="file">
+          <?php endif;  ?>
+        </div>
+
+        <div>
+          <?php if (!@$rows['photo_2'] || @$rows['photo_2'] == '') : ?>
+            <label for="file2">Photo:</label>
+            <br>
+            <input type="file" class="form-control" name="file2" id="file">
+          <?php endif;  ?>
+        </div>
+
+        <div>
+          <?php if (!@$rows['photo_3'] || @$rows['photo_3'] == '') : ?>
+            <label for="file3">Photo:</label>
+            <br>
+            <input type="file" class="form-control" name="file3" id="file">
+          <?php endif;  ?>
+        </div>
+      </div>
+      <div class="form_addtours_bottom">
+        <div>
+          <label for="sdetails">Description:</label>
+          <br>
+          <textarea name="sdetails" col="20" rows="5"><?= (isset($toEditID)) ? '' . $rows['details'] . '' : ''; ?></textarea>
+        </div>
+
+        <input type="submit" name="<?= (isset($toEditID)) ? 'update' : 'add'; ?>" value="<?= (isset($toEditID)) ? 'Edit Tour' : 'Add Tour'; ?>" class="submit_button"><br>
+        <?php
+        if (isset($toEditID)) {
+          echo '<br>';
+          echo ' <a href="add_tour.php?cancelEdit=' . $toEditID . '" type="button" name="cancelEdit" class="w3-btn w3-orange w3-btn-block">Cancel Edit</a>';
+        } ?>
+      </div>
+    </form>
+  </div>
+</div>

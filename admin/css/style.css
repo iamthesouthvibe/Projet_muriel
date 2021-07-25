@@ -320,7 +320,7 @@ body {
 
 
 .admin_page_maison_container img {
-  width: 33vw;
+  width: 29vw;
 }
 
 .admin_page_maison_title {
@@ -380,7 +380,59 @@ body {
 }
 
 .admin_page_tours a img:hover {
-  transform: scale(1.5, 1.5);
+  transform: scale(1.2, 1.2);
+}
+
+.form_addtours_top,
+.form_addtours_middle,
+.form_addtours_bottom {
+  display: flex;
+  margin-top: 50px;
+  gap: 70px;
+}
+
+.admin_page_addtours form label {
+  font-family: Neue Montreal;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 25px;
+  line-height: 95.5%;
+
+  color: #9A4747;
+}
+
+.admin_page_addtours form input[type="text" i],
+.admin_page_addtours form input[type="date" i]  {
+  font-family: ITCGaramondStd-BkNarrow;
+  font-size: 19px;
+}
+
+.admin_page_addtours form input[type="file" i] {
+  border-radius: 40px;
+  background-color: #FCF7EC;
+  color: #9A4747;
+  border: solid 1px #9A4747;
+}
+
+.admin_page_addtours form input {
+  border: none;
+  border-bottom: solid 1px;
+  background-color: #FCF7EC;
+}
+
+
+textarea {
+  width: 550px;
+  height: 250px;
+  font-family: ITCGaramondStd-BkNarrow;
+  font-size: 19px;
+}
+
+.admin_page_addtours .submit_button {
+  height: 30px;
+    width: 154px;
+    border: solid 1px;
+    border-radius: 40px;
 }
 
 @media screen and (max-width: 450px)
@@ -414,6 +466,7 @@ body {
     font-size: 5vw;
   }
 
+
   .admin_page_maison_title button {
     width: 92.8px;
     height: 18.66px;
@@ -421,5 +474,12 @@ body {
 
 .admin_page_maison_title button a {
   font-size: 13px;
+}
+
+.admin_page_tours_container {
+  width: 100%;
+}
+.admin_page_tours_title h2 {
+  font-size: 15px;
 }
    }

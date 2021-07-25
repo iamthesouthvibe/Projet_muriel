@@ -32,7 +32,7 @@ if (isset($_GET['delete'])) {
 
 <div class="admin_page">
     <div class="header_admin">
-        <h1>Tourisme</h1>
+        <h1>Rubriques</h1>
         <img src="../assets/png/LOGO_ANCIEN.png" alt="Logo Muriel">
     </div>
     <div class="admin_page_tours">
