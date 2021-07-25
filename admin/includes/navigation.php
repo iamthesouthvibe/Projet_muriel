@@ -22,7 +22,7 @@
         <span class="tooltip">Maison</span>
       </li>
       <li>
-        <a href="">
+        <a href="tours.php">
         <i class='bx bx-news' ></i>
           <span class="links_name">Rubriques</span>
         </a>

@@ -314,12 +314,12 @@ body {
   /* flex-direction: row; */
   flex-wrap: wrap;
   align-content: center;
+  row-gap: 2vh;
 }
 
 
 
 .admin_page_maison_container img {
-  height: 35vh;
   width: 33vw;
 }
 
@@ -351,3 +351,75 @@ body {
     text-decoration: none;
     font-size: 0.8vw;
 }
+
+.admin_page_tours_container {
+  display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: solid 1px;
+    width: 50vw;
+}
+
+.admin_page_tours_title h2 {
+  margin: 10px;
+}
+
+.admin_page_tours_action i {
+  font-size: 27px;
+    border: solid 1.5px #9A4747;
+    border-radius: 6px;
+    color: #000;
+}
+
+.admin_page_tours a img {
+  position: fixed;
+    right: 25px;
+    bottom: 25px;
+    width: 60px;
+    transition: all 0.5s;
+}
+
+.admin_page_tours a img:hover {
+  transform: scale(1.5, 1.5);
+}
+
+@media screen and (max-width: 450px)
+  {
+    .sidebar ul li i {
+      font-size: 25px;
+    }
+
+    .admin_page .header_admin {
+      margin-bottom: 15px;
+    }
+
+    .admin_page .header_admin h1 {
+      font-size:  30px;
+    }
+
+    .admin_page .header_admin img {
+      width: 55px;
+      height: 22px;
+  }
+
+  .admin_page {
+    margin-left: 100px;
+  }
+
+  .admin_page_maison_container img {
+    width: 65vw;
+  }
+
+  .admin_page_maison_title h2 {
+    font-size: 5vw;
+  }
+
+  .admin_page_maison_title button {
+    width: 92.8px;
+    height: 18.66px;
+}
+
+.admin_page_maison_title button a {
+  font-size: 13px;
+}
+   }
