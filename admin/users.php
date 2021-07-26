@@ -51,6 +51,8 @@ if (isset($_POST['add'])) {
                     $_SESSION['add_admin'] = 'New user successfully added!';
                     header("Location: users.php");
                 }
+            } else {
+                echo '<div>Extiensions acceptées : png, gif, jpg, jpeg</div>';
             }
         } else {
             echo '<div class="w3-red w3-center"> Passwords do not match!</div> ';
@@ -91,7 +93,7 @@ if (isset($_GET['edit']) && !empty($_GET['edit'])) {
                 </div>
                 <div class="col-sm-6">
                     <div class="form-group">
-                        <input type="email" value="<?= (isset($_GET['edit'])) ? '' . $edit['email'] . '' : '' . $email . ''; ?>" name="email"  placeholder="User email*">
+                        <input type="email" value="<?= (isset($_GET['edit'])) ? '' . $edit['email'] . '' : '' . $email . ''; ?>" name="email" placeholder="User email*">
                     </div>
                 </div>
                 <div class="col-sm-6">
@@ -110,8 +112,8 @@ if (isset($_GET['edit']) && !empty($_GET['edit'])) {
                         </select>
                     </div>
                 </div>
-                <div >
-                    <input type="password" name="password"  placeholder="Password*">
+                <div>
+                    <input type="password" name="password" placeholder="Password*">
                 </div>
                 <div class="col-sm-6 form-group">
                     <input type="password" name="password2" placeholder="Confirm password*">
@@ -146,8 +148,8 @@ if (isset($_GET['edit']) && !empty($_GET['edit'])) {
                             <td><?= $rows['permissions']; ?></td>
                             <td><?= $rows['last_login']; ?></td>
                             <td>
-                                <a href="users.php?delete=<?= $rows['id']; ?>" ><span ></span></a>
-                                <a href="users.php?edit=<?= $rows['id']; ?>"><span ></span></a>
+                                <a href="users.php?delete=<?= $rows['id']; ?>"><span></span></a>
+                                <a href="users.php?edit=<?= $rows['id']; ?>"><span></span></a>
                             </td>
                         </tr>
                     <?php endwhile; ?>
@@ -156,4 +158,3 @@ if (isset($_GET['edit']) && !empty($_GET['edit'])) {
         </div>
     </div>
 </div>
-
