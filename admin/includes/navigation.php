@@ -1,55 +1,100 @@
-<style>
-     .navbar {
-      margin-bottom: 0;
-      border-radius: 0;
-      border: none;
-    }
-</style>
-<body>
-    <!-- <div id="headerWrapper">
-    class="navbar navbar-inverse w3-purple"
 
-  </div> -->
-<nav class="w3-sidenav w3-collapse w3-purple w3-card-2 w3-animate-left" style="width:200px;">
-  <a href="javascript:void(0)" onclick="w3_close()"
-  class="w3-closenav w3-large w3-hide-large">Close ×</a>
-    <div class="container-fluid">
-        <div class="navbar-header">
-            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#Navigation">
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-            </button>
-            <a href="index.php" class="navbar-brand active w3-text-white">H&T - Admin</a>
-        </div>
-
-        <ul class="nav navbar-nav collapse navbar-collapse" id="Navigation">
-          	<a href="#" onclick="w3_close()" class="w3-closenav w3-hide-large">Close x</a>
-            <li><a class="w3-text-white" href="reservations.php" >Reservations</a></li>
-            <li><a class="w3-text-white" href="rooms.php" >Rooms</a></li>
-            <li><a class="w3-text-white" href="tours.php" >Blog</a></li>
-            <li><a class="w3-text-white" href="comments.php" >Comments</a></li>
-            <!-- <li><a class="w3-text-white" href="videos.php">Videos</a></li> -->
-            <?php if(permission()): ?>
-              <li> <a class="w3-text-white" href="users.php" class=" w3-hover-red"><span class="glyphicon glyphicon-user"></span> Users</a> </li>
-            <?php endif; ?>
-            <li><a class="w3-text-white" href="../index.php"  class="w3-text-white w3-hover-red"><span class="glyphicon glyphicon-map-marker"></span> Visit Site</a></li>
-            <li><a class="w3-text-white" href="logout.php">Logout</a></li>
-            <li>  <a class="w3-text-white" href="#" data-toggle="dropdown" class="w3-text-white w3-hover-red"><?php echo $user_info['first'].' '.$user_info['last']; ?></a></li>
-        </ul>
-
-        <ul class="nav navbar-nav">
-
-
-            <li class="dropdown">
-
-                  <ul class="dropdown-menu w3-purple" role="menu">
-
-                    <li><a class="w3-text-white" href="#">Change password</a></li>
-                  </ul>
-            </li>
-
-        </ul>
+  <div class="sidebar">
+    <div class="logo_content">
+      <div class="logo">
+        <div class="logo_name">Dashborard</div>
+      </div>
+      <i class='bx bx-menu' id="btn"></i>
     </div>
-</nav>
+    <ul class="nav_list">
+      <li>
+        <a href="reservations.php">
+          <i class='bx bx-home-heart'></i>
+          <span class="links_name">Reservations</span>
+        </a>
+        <span class="tooltip">Reservations</span>
+      </li>
+      <li>
+        <a href="rooms.php">
+          <i class='bx bx-home'></i>
+          <span class="links_name">Maison</span>
+        </a>
+        <span class="tooltip">Maison</span>
+      </li>
+      <li>
+        <a href="tours.php">
+        <i class='bx bx-news' ></i>
+          <span class="links_name">Rubriques</span>
+        </a>
+        <span class="tooltip">Rubriques</span>
+      </li>
+      <li>
+        <a href="">
+          <i class='bx bx-shopping-bag'></i>
+          <span class="links_name">Articles</span>
+        </a>
+        <span class="tooltip">Articles</span>
+      </li>
+      <li>
+        <a href="">
+          <i class='bx bx-basket'></i>
+          <span class="links_name">Articles vendus</span>
+        </a>
+        <span class="tooltip">Articles vendus</span>
+      </li>
+      <li>
+        <a href="">
+          <i class='bx bx-comment'></i>
+          <span class="links_name">Commentaires</span>
+        </a>
+        <span class="tooltip">Commentaires</span>
+      </li>
+      <li>
+        <a href="users.php">
+          <i class='bx bx-user'></i>
+          <span class="links_name">Utilisateurs</span>
+        </a>
+        <span class="tooltip">Utilisateurs</span>
+      </li>
+      <li>
+        <a href="../index.php">
+        <i class='bx bx-map' ></i>
+          <span class="links_name">Visite site</span>
+        </a>
+        <span class="tooltip">visite site</span>
+      </li>
+    </ul>
+    <?php if (permission()) : ?>
+      <div class="profile_content">
+        <div class="profile">
+          <div class="profile_details">
+            <img src="/images/<?= $user_info['photo'];  ?>" alt="" srcset="">
+            <div class="name_job">
+              <div class="name"><?php echo $user_info['first'].' '.$user_info['last']; ?></div>
+              <div class="job"><?php echo $user_info['permissions']; ?></div>
+            </div>
+          </div>
+          <a href="logout.php">
+              <i class='bx bx-log-out' id="log_out"></i>
+            </a>
+        </div>
+      </div>
+    <?php endif ?>
+  </div>
+
+  <script>
+    let btn = document.querySelector("#btn");
+    let sidebar = document.querySelector(".sidebar");
+    let searchBtn = document.querySelector("bx-search");
+
+    btn.onclick = function() {
+      sidebar.classList.toggle('active')
+    }
+
+    searchBtn.onclick = function() {
+      sidebar.classList.toggle('active')
+    }
+  </script>
+</body>
+
+</html>

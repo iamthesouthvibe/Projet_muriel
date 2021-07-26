@@ -855,7 +855,7 @@ color: #FCF7EC;
   color: rgba(154, 71, 71, 1);
   width: 100vw;
 
-  margin-bottom: 20px;
+  margin-bottom: 15px;
 }
 
 .login_page_container_title p {
@@ -874,7 +874,7 @@ color: #FCF7EC;
 }
 
 .form_login {
-  margin-top: 100px;
+  margin-top: 7vh;
 }
 
 .form_login label {
@@ -907,7 +907,7 @@ color: #FCF7EC;
 }
 
 .form_login_password {
-  margin-bottom: 80px;
+  margin-bottom: 3vh;
 }
 
 .form_input-login {
@@ -1301,6 +1301,7 @@ footer ul {
         
       font-size: 12px;
     }
+
   }  
 
   
