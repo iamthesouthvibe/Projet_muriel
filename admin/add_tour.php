@@ -30,7 +30,7 @@ if (!empty($_FILES)) {
     $location = $_SERVER['DOCUMENT_ROOT'] . '/images/';
     move_uploaded_file($tmp_name, $location . $fileName);
   } else {
-    echo '<div class="w3-center w3-red">The image type must be jpg, jpeg, gif, or png.</div></br>';
+    // echo '<div class="w3-center w3-red">The image type must be jpg, jpeg, gif, or png.</div></br>';
   }
 
   $fileName2 = @$_FILES['file2']['name'];
@@ -43,7 +43,7 @@ if (!empty($_FILES)) {
     $location2 = $_SERVER['DOCUMENT_ROOT'] . '/images/';
     move_uploaded_file($tmp_name2, $location2 . $fileName2);
   } else {
-    echo '<div class="w3-center w3-red">The image type must be jpg, jpeg, gif, or png.</div></br>';
+    //echo '<div class="w3-center w3-red">The image type must be jpg, jpeg, gif, or png.</div></br>';
   }
 
   $fileName3 = @$_FILES['file3']['name'];
@@ -56,7 +56,7 @@ if (!empty($_FILES)) {
     $location3 = $_SERVER['DOCUMENT_ROOT'] . '/images/';
     move_uploaded_file($tmp_name3, $location3 . $fileName3);
   } else {
-    echo '<div class="w3-center w3-red">The image type must be jpg, jpeg, gif, or png.</div></br>';
+   // echo '<div class="w3-center w3-red">The image type must be jpg, jpeg, gif, or png.</div></br>';
   }
 }
 
@@ -73,14 +73,14 @@ if (isset($_POST['add'])) {
     $query_run = $db->query($sql);
     if ($query_run) {
       $_SESSION['added_event'] = '<div class="w3-center w3-green">Tour Event successfully added!</div></br>';
+      var_dump($query_run);
     }
+    var_dump($query_run);
     header("Location: tours.php");
   } else {
     $error = '<span class="form_error">Please fill in all fields.</span></br>';
   }
 }
-
-
 //RUNNING UPDATE IF EDITING
 else if (isset($_POST['update'])) {
   if (
@@ -264,7 +264,7 @@ if (isset($_GET['delete_image'])) {
     <img src="../assets/png/LOGO_ANCIEN.png" alt="Logo Muriel">
   </div>
   <div class="admin_page_addtours">
-    <form method="POST" enctype="multipart/form-data" id="form" name="form">
+    <form method="POST" enctype="multipart/form-data" id="form" name="form" onsubmit="return validate();">
       <div class="form_addtours_top">
         <div class="form-control">
           <label for="title">Titre</label>
