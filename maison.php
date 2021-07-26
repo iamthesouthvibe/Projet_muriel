@@ -91,9 +91,9 @@ include 'includes/header.php';
 
 
 
-    <!-- Swiper Infos techniques maison-->
+    <!-- Swiper Infos techniques maison DESKTOP-->
 
-    <div class="carousel_maison_02">
+    <div class="carousel_maison_02 affichage_desktop_infos_technique">
         <div class="swiper-container mySwiper swiperHover">
             <div class="swiper-wrapper">
                 <div class="swiper-slide">
@@ -195,6 +195,66 @@ include 'includes/header.php';
             <div class="swiper-button-prev"></div>
 
         </div>
+
+    </div>
+
+    <!-- Swiper Infos techniques maison Responsive-->
+
+    <div class="carousel_maison_02 affichage_responsive_infos_technique">
+        <div class="swiper-container mySwiper swiperHover">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                    <div class="bloc_text_slider">
+                        <p class="bloc_text_slider_p">12 Personnes</p>
+                    </div>
+                    <div>
+                        <p class="bloc_text_slider_p">6 Chambres</p>
+                    </div>
+                    <div>
+                        <p class="bloc_text_slider_p">2 Sdb</p>
+                    </div>
+                    <div>
+                        <p class="bloc_text_slider_p">Vue sur Mer</p>
+                    </div>
+                    <div>
+                        <p class="bloc_text_slider_p">Piscine</p>
+                    </div>
+                    <div>
+                        <p class="bloc_text_slider_p">Jardin</p>
+                    </div>
+                    <div>
+                        <p class="bloc_text_slider_p">2 Terrasses</p>
+                    </div>
+                </div>
+            </div>
+            <div class="swiper-slide">
+                <div class="bloc_text_slider">
+                    <p>12 Personnes</p>
+                </div>
+                <div>
+                    <p>6 Chambres</p>
+                </div>
+                <div>
+                    <p>2 Sdb</p>
+                </div>
+                <div>
+                    <p>Vue sur Mer</p>
+                </div>
+                <div>
+                    <p>Piscine</p>
+                </div>
+                <div>
+                    <p>Jardin</p>
+                </div>
+                <div>
+                    <p>2 Terrasses</p>
+                </div>
+            </div>
+        </div>
+        <div class="swiper-button-next"></div>
+        <div class="swiper-button-prev"></div>
+
+    </div>
 
     </div>
     </div>
