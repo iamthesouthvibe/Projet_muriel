@@ -534,7 +534,7 @@ margin-top: 30px;
 .swiper-pagination-bullet-active {
   opacity: 1;
   background: var(--swiper-pagination-color, var(--swiper-theme-color));
-  background-color: #9A4747;;
+  background-color: #9A4747;
 }
 
 
@@ -559,6 +559,47 @@ margin-top: 30px;
   background-position: center;
 }
 
+.carousel_maison .swiper-slide {
+    text-align: center;
+    font-size: 18px;
+    background: #fff;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-align-items: end;
+    align-items: end;
+    -webkit-justify-content: flex-start;
+}
+
+.carousel_maison .swiper-slide-titre {
+  position: relative;
+  margin: 0px 0px 20px 30px;
+}
+
+
+.cursor_active_left_maison {
+  transform: translate(-50%, -50%) scale(1.5);
+  background:  #FCF7EC;
+  border: none;
+  background-image: url("/assets/svg/arrow-left.svg");
+  background-size: 15px;
+  background-repeat:no-repeat;
+  background-position: center;
+}
+
+.cursor_active_right_maison {
+  transform: translate(-50%, -50%) scale(1.5);
+  background:  #FCF7EC;
+  border: none;
+  background-image: url("/assets/svg/arrow-right.svg");
+  background-size: 15px;
+  background-repeat:no-repeat;
+  background-position: center;
+}
+
+
+
 
 .cursor2_active_right {
   background: transparent;
@@ -568,6 +609,8 @@ margin-top: 30px;
 .cursor2_active_left {
   background: transparent;
 }
+
+
 
 /* Section Muriel */
 
@@ -716,6 +759,12 @@ margin-top: 30px;
 .container_presentation_maison_droite {
   margin-top: 35vh;
 }
+
+
+/* Caroussel de photos de la maison */
+
+
+
 
  
 
