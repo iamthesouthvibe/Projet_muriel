@@ -248,20 +248,30 @@ if (isset($_GET['delete_image'])) {
 </div>
       -->
 
+<style>
+  .form-control small {
+    opacity: 0;
+  }
+
+  .form-control.error small {
+    opacity: 1;
+  }
+</style>
+
 <div class="admin_page">
   <div class="header_admin">
     <h1><?= (isset($toEditID)) ? '' . 'Modifier une rubrique' . '' : 'Ajouter une rubrique'; ?></h1>
     <img src="../assets/png/LOGO_ANCIEN.png" alt="Logo Muriel">
   </div>
   <div class="admin_page_addtours">
-    <form method="POST" enctype="multipart/form-data" id="form">
+    <form method="POST" enctype="multipart/form-data" id="form" name="form">
       <div class="form_addtours_top">
         <div class="form-control">
           <label for="title">Titre</label>
           <br>
           <input type="text" name="title" value="<?= (isset($toEditID)) ? '' . $rows['title'] . '' : ''; ?>" placeholder="Titre" id="title">
           <br>
-          <span class="error_title" style="opacity: 0;">Veuillez entrer un titre</span>
+          <small>Error Message</small>
         </div>
 
         <div class="form-control">
@@ -269,48 +279,54 @@ if (isset($_GET['delete_image'])) {
           <br>
           <input type="text" name="subtitles" id="subtitle" value="<?= (isset($toEditID)) ? '' . $rows['subtitles'] . '' : ''; ?>" placeholder="event topic">
           <br>
-          <span class="error_subtitle" style="opacity: 0;">Veuillez entrer un sous-titre</span>
+          <small>Error Message</small>
         </div>
 
-        <div>
+        <div class="form-control">
           <label for="location">Lieu </label>
           <br>
-          <input type="text" id="location" name="location" value="<?= (isset($toEditID)) ? '' . $rows['location'] . '' : ''; ?>" placeholder="venue">
+          <input type="text" id="lieu" name="location" value="<?= (isset($toEditID)) ? '' . $rows['location'] . '' : ''; ?>" placeholder="venue">
           <br>
-          <span class="error_location" style="opacity: 0;">Veuillez entrer un lieu</span>
+          <small>Error Message</small>
         </div>
 
         <div class="form-control">
           <label for="date">Date</label>
           <br>
-          <input type="date" name="date" value="<?= (isset($toEditID)) ? '' . $rows['date'] . '' : ''; ?>">
+          <input type="date" id="date" name="date" value="<?= (isset($toEditID)) ? '' . $rows['date'] . '' : ''; ?>">
           <br>
-
+          <small>Error Message</small>
         </div>
       </div>
 
       <div class="form_addtours_middle">
-        <div>
+        <div class="form-control">
           <?php if (!@$rows['photo'] || @$rows['photo'] == '') : ?>
             <label for="file">Photo:</label>
             <br>
             <input type="file" name="file" id="file" value="<?= (isset($toEditID)) ? '' . $rows['photo'] . '' : ''; ?>">
+            <br>
+            <small>Error Message</small>
           <?php endif;  ?>
         </div>
 
-        <div>
+        <div class="form-control">
           <?php if (!@$rows['photo_2'] || @$rows['photo_2'] == '') : ?>
             <label for="file2">Photo:</label>
             <br>
-            <input type="file" name="file2" id="file">
+            <input type="file" name="file2" id="file2">
+            <br>
+            <small>Error Message</small>
           <?php endif;  ?>
         </div>
 
-        <div>
+        <div class="form-control">
           <?php if (!@$rows['photo_3'] || @$rows['photo_3'] == '') : ?>
             <label for="file3">Photo:</label>
             <br>
-            <input type="file" name="file3" id="file">
+            <input type="file" name="file3" id="file3">
+            <br>
+            <small>Error Message</small>
           <?php endif;  ?>
         </div>
       </div>
@@ -318,8 +334,9 @@ if (isset($_GET['delete_image'])) {
         <div class="form-control">
           <label for="sdetails">Description:</label>
           <br>
-          <textarea name="sdetails" col="20" rows="5"><?= (isset($toEditID)) ? '' . $rows['details'] . '' : ''; ?></textarea>
-
+          <textarea name="sdetails" id="description" col="20" rows="5"><?= (isset($toEditID)) ? '' . $rows['details'] . '' : ''; ?></textarea>
+          <br>
+          <small>Error Message</small>
         </div>
 
         <input type="submit" name="<?= (isset($toEditID)) ? 'update' : 'add'; ?>" value="<?= (isset($toEditID)) ? 'Edit Tour' : 'Add Tour'; ?>" class="submit_button"><br>
@@ -333,3 +350,5 @@ if (isset($_GET['delete_image'])) {
   </div>
 </div>
 
+
+<script src="./js/checkform.js"></script>
