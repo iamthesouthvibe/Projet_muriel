@@ -17,7 +17,7 @@ $result = $db->query($sql);
 $row_count = 1; ####//Row Counter
 #################################
 //FIELDS DETAILS
-@$fullname = sanitize($_POST['name']);
+@$fullname = sanitize($_POST['fullname']);
 @$email = sanitize($_POST['email']);
 @$role = sanitize($_POST['role']);
 @$password = sanitize($_POST['password']);
@@ -27,13 +27,13 @@ $row_count = 1; ####//Row Counter
 
 //CODE TO REGISTER A NEW ADMINISTRATOR
 if (isset($_POST['add'])) {
-    if (!empty($_POST['name']) && !empty($_POST['email']) && !empty($_POST['role']) && !empty($_POST['password'])) {
+    if (!empty($_POST['fullname']) && !empty($_POST['email']) && !empty($_POST['role']) && !empty($_POST['password'])) {
         if ($_POST['password'] == $_POST['password2']) {
 
             //HASHING THE PASSWORD FOR SECURITY
             $password = password_hash($password, PASSWORD_DEFAULT);
             //INSERT QUERY REGISTERING NEW ADMIN TO THE DATABASE
-            $name = $_FILES['file']['name'];
+            $filename = $_FILES['file']['name'];
             $target_dir = $_SERVER['DOCUMENT_ROOT'] . '/images/';
             $target_file = $target_dir . basename($_FILES["file"]["name"]);
             // Select file type
@@ -44,9 +44,9 @@ if (isset($_POST['add'])) {
 
             if (in_array($imageFileType, $extensions_arr)) {
                 // Upload file
-                if (move_uploaded_file($_FILES['file']['tmp_name'], $target_dir . $name)) {
+                if (move_uploaded_file($_FILES['file']['tmp_name'], $target_dir . $filename)) {
                     // Insert record
-                    $sql = "INSERT INTO users (`full_name`, `email`, `password`, `join_date`, `permissions`, `photo`) VALUES('$fullname','$email','$password','$joinDate','$role','$name')";
+                    $sql = "INSERT INTO users (`full_name`, `email`, `password`, `join_date`, `permissions`, `photo`) VALUES('$fullname','$email','$password','$joinDate','$role','$filename')";
                     $insert = $db->query($sql);
                     $_SESSION['add_admin'] = 'New user successfully added!';
                     header("Location: users.php");
@@ -88,7 +88,7 @@ if (isset($_GET['edit']) && !empty($_GET['edit'])) {
             <form action="users.php" method="POST" class="form" id="add_user" enctype='multipart/form-data'>
                 <div class="col-sm-6">
                     <div class="form-group">
-                        <input type="text" value="<?= (isset($_GET['edit'])) ? '' . $edit['full_name'] . '' : '' . $fullname . ''; ?>" name="name" placeholder="Full name*">
+                        <input type="text" value="<?= (isset($_GET['edit'])) ? '' . $edit['full_name'] . '' : '' . $fullname . ''; ?>" name="fullname" placeholder="Full name*">
                     </div>
                 </div>
                 <div class="col-sm-6">
