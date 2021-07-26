@@ -52,8 +52,6 @@ function getFieldName(input) {
     return input.id.charAt(0).toUpperCase() + input.id.slice(1);
 }
 
-
-
 //check length
 
 function checkLength(input, min, max) {
@@ -71,8 +69,6 @@ function checkLength(input, min, max) {
         return showSuccess(input);
     }
 }
-
-
 
 /*Event listeners
 form.addEventListener("submit", function (event) {
