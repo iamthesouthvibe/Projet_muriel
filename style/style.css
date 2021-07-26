@@ -763,12 +763,59 @@ align-items: flex-end;
 }
 
 
-/* Caroussel de photos de la maison */
+/* Caroussel de texte technique de la maison */
+
+.carousel_maison_02 .swiper-container {
+  width: 100%;
+  height: 100px;
+}
+
+.carousel_maison_02 .swiper-slide {
+  justify-content: space-around;
+  background: #EFE4CD;
+}
+
+
+.carousel_maison_02 .separator {
+  border-right: solid 1.7px;
+  height: 40px;
+}
+
+
+.carousel_maison_02 .swiper-slide .vide_flexBox {
+  width: 20px;
+}
+
+.carousel_maison_02 .swiper-button-next {
+    background: transparent;
+    position: absolute;
+    width: 0;
+    height: 104%;
+    top: 0%;
+    opacity: 1;
+    margin-top: 0;
+    margin-right: 2vw;
+    color: grey;
+    --swiper-navigation-size: 37px;
+}
+
+.carousel_maison_02 .swiper-button-prev {
+    background: transparent;
+    position: absolute;
+    width: 0;
+    height: 104%;
+    top: 0%;
+    opacity: 1;
+    margin-top: 0;
+    margin-left: 2vw;
+    color: grey;
+    --swiper-navigation-size: 37px;
+}
 
 
 
 
- 
+
 
 /* ##### Fin style de la page maison ##### */
 
