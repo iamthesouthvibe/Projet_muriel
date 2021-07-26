@@ -43,7 +43,7 @@
         <span class="tooltip">Articles vendus</span>
       </li>
       <li>
-        <a href="">
+        <a href="comments.php">
           <i class='bx bx-comment'></i>
           <span class="links_name">Commentaires</span>
         </a>
