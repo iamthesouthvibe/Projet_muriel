@@ -352,6 +352,10 @@ body {
     font-size: 0.8vw;
 }
 
+.admin_page_tours {
+  margin-top: 50px;
+}
+
 .admin_page_tours_container {
   display: flex;
     justify-content: space-between;
@@ -361,7 +365,8 @@ body {
 }
 
 .admin_page_tours_title h2 {
-  margin: 10px;
+  margin: 10px 0;
+  font-weight: 500;
 }
 
 .admin_page_tours_action i {
