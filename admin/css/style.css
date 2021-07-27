@@ -443,6 +443,32 @@ textarea {
     font-size: 20px;
 }
 
+/* ####### Debut Admin page utlisateurs style */
+
+
+.admin_page_users {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 50px;
+  gap: 10%;
+}
+
+
+.admin_page_users .table_users {
+  width: 50%;
+}
+
+
+.admin_page_users .form_users {
+  width: 50%;
+}
+
+
+
+/* ####### Fin Admin page utlisateurs style */
+
+
+
 @media screen and (max-width: 450px)
   {
     .sidebar ul li i {

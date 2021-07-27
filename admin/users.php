@@ -21,7 +21,7 @@ $row_count = 1; ####//Row Counter
 @$email = $_POST['email'];
 @$role = $_POST['role'];
 @$password = $_POST['password'];
-@$password2 =$_POST['password2'];
+@$password2 = $_POST['password2'];
 @$joinDate = date("Y-m-d H:m:i");
 
 //CODE TO REGISTER A NEW ADMINISTRATOR
@@ -44,15 +44,15 @@ if (isset($_POST['add'])) {
                 // Upload file
                 if (move_uploaded_file($_FILES['file']['tmp_name'], $target_dir . $fileName)) {
                     // Insert record
-                        $sql = "INSERT INTO users (`full_name`, `email`, `password`, `join_date`, `permissions`, `photo`) VALUES('$fullname','$email','$password','$joinDate' ,'$role','$fileName')";
-                        $insert = $db->query($sql);
-                
-                        if ($insert) {
-                            $_SESSION['add_admin'] = 'New user successfully added!';
-                            header("Location: users.php");
-                        } else {
-                            printf("Erreur : %s\n", $db->error);
-                        }
+                    $sql = "INSERT INTO users (`full_name`, `email`, `password`, `join_date`, `permissions`, `photo`) VALUES('$fullname','$email','$password','$joinDate' ,'$role','$fileName')";
+                    $insert = $db->query($sql);
+
+                    if ($insert) {
+                        $_SESSION['add_admin'] = 'New user successfully added!';
+                        header("Location: users.php");
+                    } else {
+                        printf("Erreur : %s\n", $db->error);
+                    }
                 }
             } else {
                 echo '<div>Extiensions acceptées : png, gif, jpg, jpeg</div>';
@@ -81,13 +81,42 @@ if (isset($_GET['edit']) && !empty($_GET['edit'])) {
 }
 
 ?>
-<div class="w3-container w3-main" style="margin-left:200px">
 
-    <div class="row">
-        <div class="col-md-6">
 
-            <h3 class="">New user Form</h3>
-            <hr>
+<div class="admin_page">
+    <div class="header_admin">
+        <h1>Utilisateurs</h1>
+        <img src="../assets/png/LOGO_ANCIEN.png" alt="Logo Muriel">
+    </div>
+    <div class="admin_page_users">
+        <div class="table_users">
+            <table>
+                <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>Name</th>
+                        <th>Roles</th>
+                        <th>Last login</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <?php while ($rows = mysqli_fetch_assoc($result)) : ?>
+                        <tr>
+                            <td><?= $row_count++; ?></td>
+                            <td><?= $rows['full_name']; ?></td>
+                            <td><?= $rows['permissions']; ?></td>
+                            <td><?= $rows['last_login']; ?></td>
+                            <td>
+                                <a href="users.php?delete=<?= $rows['id']; ?>"><span></span></a>
+                                <a href="users.php?edit=<?= $rows['id']; ?>"><span></span></a>
+                            </td>
+                        </tr>
+                    <?php endwhile; ?>
+                </tbody>
+            </table>
+        </div>
+        <div class="form_users">
             <form action="users.php" method="POST" class="form" id="add_user" enctype='multipart/form-data'>
                 <div class="col-sm-6">
                     <div class="form-group">
@@ -128,36 +157,6 @@ if (isset($_GET['edit']) && !empty($_GET['edit'])) {
                     <?php endif; ?>
                 </div>
             </form>
-
-        </div>
-        <div class="col-md-6">
-            <h3>User's table</h3>
-
-            <table>
-                <thead>
-                    <tr>
-                        <th>#</th>
-                        <th>Name</th>
-                        <th>Roles</th>
-                        <th>Last login</th>
-                        <th>Actions</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <?php while ($rows = mysqli_fetch_assoc($result)) : ?>
-                        <tr>
-                            <td><?= $row_count++; ?></td>
-                            <td><?= $rows['full_name']; ?></td>
-                            <td><?= $rows['permissions']; ?></td>
-                            <td><?= $rows['last_login']; ?></td>
-                            <td>
-                                <a href="users.php?delete=<?= $rows['id']; ?>"><span></span></a>
-                                <a href="users.php?edit=<?= $rows['id']; ?>"><span></span></a>
-                            </td>
-                        </tr>
-                    <?php endwhile; ?>
-                </tbody>
-            </table>
         </div>
     </div>
 </div>
