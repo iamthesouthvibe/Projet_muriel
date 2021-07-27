@@ -56,7 +56,7 @@ if (!empty($_FILES)) {
     $location3 = $_SERVER['DOCUMENT_ROOT'] . '/images/';
     move_uploaded_file($tmp_name3, $location3 . $fileName3);
   } else {
-    // echo '<div class="w3-center w3-red">The image type must be jpg, jpeg, gif, or png.</div></br>';
+   // echo '<div class="w3-center w3-red">The image type must be jpg, jpeg, gif, or png.</div></br>';
   }
 }
 
@@ -73,13 +73,12 @@ if (isset($_POST['add'])) {
     $query_run = $db->query($sql);
     if ($query_run) {
       $_SESSION['added_event'] = '<div class="w3-center w3-green">Tour Event successfully added!</div></br>';
-    } else {
-      printf("Erreur : %s\n", $db->error);
+      var_dump($query_run);
     }
-
+    var_dump($query_run);
     header("Location: tours.php");
   } else {
-    '<span class="form_error">Please fill in all fields.</span></br>';
+    $error = '<span class="form_error">Please fill in all fields.</span></br>';
   }
 }
 //RUNNING UPDATE IF EDITING
