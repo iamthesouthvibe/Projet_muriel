@@ -285,7 +285,7 @@ body {
     /* ### Début style page admin header  ### */
 
 .admin_page {
-    margin: 25px 25px 25px 145px;
+    margin: 25px 25px 25px 125px;
 }
 
 
@@ -449,7 +449,7 @@ textarea {
 .admin_page_users {
   display: flex;
   justify-content: space-between;
-  margin-top: 50px;
+  margin-top: 30px;
   gap: 10%;
 }
 
@@ -463,10 +463,6 @@ textarea {
   border-radius: 6px;
 }
 
-
-.admin_page_users .table_users tr {
-  
-}
 
 .admin_page_users .table_users td {
    /* border-bottom: 1px solid rgb(0, 0, 0);*/

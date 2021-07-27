@@ -64,7 +64,6 @@
         <span class="tooltip">visite site</span>
       </li>
     </ul>
-    <?php if (permission()) : ?>
       <div class="profile_content">
         <div class="profile">
           <div class="profile_details">
@@ -79,7 +78,6 @@
             </a>
         </div>
       </div>
-    <?php endif ?>
   </div>
 
   <script>

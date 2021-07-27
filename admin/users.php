@@ -108,7 +108,7 @@ if (isset($_GET['edit']) && !empty($_GET['edit'])) {
                             <td><?= $rows['permissions']; ?></td>
                             <td><?= $rows['last_login']; ?></td>
                             <td>
-                                <a href="users.php?delete=<?= $rows['id']; ?>"><i class='bx bx-trash' ></i></a>
+                                <a href="users.php?delete=<?= $rows['id']; ?>"><i class='bx bx-trash'></i></a>
                                 <a href="users.php?edit=<?= $rows['id']; ?>"><span></span></a>
                             </td>
                         </tr>
@@ -118,37 +118,35 @@ if (isset($_GET['edit']) && !empty($_GET['edit'])) {
         </div>
         <div class="form_users">
             <form action="users.php" method="POST" class="form" id="add_user" enctype='multipart/form-data'>
-                <div class="col-sm-6">
                     <div class="form-group">
-                        <input type="text" value="<?= (isset($_GET['edit'])) ? '' . $edit['full_name'] . '' : '' . $fullname . ''; ?>" name="fullname" placeholder="Full name">
+                        <label for="fullname">Nom complet</label>
+                        <br>
+                        <input type="text" value="<?= (isset($_GET['edit'])) ? '' . $edit['full_name'] . '' : '' . $fullname . ''; ?>" name="fullname" id="fullname" placeholder="" required>
+                        <br>
+                        <label for="email">Email</label>
+                        <br>
+                        <input type="email" value="<?= (isset($_GET['edit'])) ? '' . $edit['email'] . '' : '' . $email . ''; ?>" name="email" id="email" placeholder="" required>
                     </div>
-                </div>
-                <div class="col-sm-6">
                     <div class="form-group">
-                        <input type="email" value="<?= (isset($_GET['edit'])) ? '' . $edit['email'] . '' : '' . $email . ''; ?>" name="email" placeholder="User email">
-                    </div>
-                </div>
-                <div class="col-sm-6">
-                    <div class="form-group">
+                        <label for="file">Photo</label>
                         <input type="file" name="file" id="file">
                     </div>
-                </div>
-                <div class="col-sm-12">
                     <div class="form-group">
-                        <label for="role">User role:</label>
+                        <label for="role">Role</label>
                         <select id="permission" name="role">
-                            <option value="" selected>select a user role</option>
+                            <option value="" selected>Selectionne un role</option>
                             <option value="admin">Admin</option>
                             <option value="editor">Editor</option>
                             <option value="editor,admin">Editor & Admin</option>
                         </select>
-                    </div>
                 </div>
                 <div>
-                    <input type="password" name="password" placeholder="Password">
+                    <label for="password">Mot de passe</label>
+                    <input type="password" name="password" id="password" placeholder="">
                 </div>
                 <div class="col-sm-6 form-group">
-                    <input type="password" name="password2" placeholder="Confirm password">
+                    <label for="password2">Confirmer le mot de passe</label>
+                    <input type="password" name="password2" id="password2" placeholder="Confirm password">
                 </div>
                 <div>
                     <input type="submit" name="<?= (isset($_GET['edit'])) ? 'edit' : 'add'; ?>" value="<?= (isset($_GET['edit'])) ? 'Edit user' : 'Add user'; ?>">
