@@ -94,10 +94,10 @@ if (isset($_GET['edit']) && !empty($_GET['edit'])) {
                 <thead>
                     <tr>
                         <th>#</th>
-                        <th>Name</th>
+                        <th>Nom</th>
                         <th>Roles</th>
-                        <th>Last login</th>
-                        <th>Actions</th>
+                        <th>Dernière connexion</th>
+                        <th>Supp</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -108,7 +108,7 @@ if (isset($_GET['edit']) && !empty($_GET['edit'])) {
                             <td><?= $rows['permissions']; ?></td>
                             <td><?= $rows['last_login']; ?></td>
                             <td>
-                                <a href="users.php?delete=<?= $rows['id']; ?>"><span></span></a>
+                                <a href="users.php?delete=<?= $rows['id']; ?>"><i class='bx bx-trash' ></i></a>
                                 <a href="users.php?edit=<?= $rows['id']; ?>"><span></span></a>
                             </td>
                         </tr>
