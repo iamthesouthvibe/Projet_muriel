@@ -16,40 +16,43 @@ $result = $db->query($sql);
 #################################
 $row_count = 1; ####//Row Counter
 #################################
-//FIELDS DETAILS
-@$fullname = sanitize($_POST['fullname']);
-@$email = sanitize($_POST['email']);
-@$role = sanitize($_POST['role']);
-@$password = sanitize($_POST['password']);
-@$password2 = sanitize($_POST['password2']);
+// FIELDS DETAILS
+@$fullname = $_POST['fullname'];
+@$email = $_POST['email'];
+@$role = $_POST['role'];
+@$password = $_POST['password'];
+@$password2 =$_POST['password2'];
 @$joinDate = date("Y-m-d H:m:i");
-
 
 //CODE TO REGISTER A NEW ADMINISTRATOR
 if (isset($_POST['add'])) {
-    if (!empty($_POST['fullname']) && !empty($_POST['email']) && !empty($_POST['role']) && !empty($_POST['password'])) {
+    if (!empty($_POST['fullname']) && !empty($_POST['email']) && !empty($_POST['role']) && !empty($_POST['password']) && !empty($_FILES["file"]["name"])) {
         if ($_POST['password'] == $_POST['password2']) {
 
             //HASHING THE PASSWORD FOR SECURITY
             $password = password_hash($password, PASSWORD_DEFAULT);
             //INSERT QUERY REGISTERING NEW ADMIN TO THE DATABASE
-            $filename = $_FILES['file']['name'];
+            $fileName = $_FILES['file']['name'];
             $target_dir = $_SERVER['DOCUMENT_ROOT'] . '/images/';
             $target_file = $target_dir . basename($_FILES["file"]["name"]);
-            // Select file type
+
             $imageFileType = strtolower(pathinfo($target_file, PATHINFO_EXTENSION));
 
-            // Valid file extensions
             $extensions_arr = array("jpg", "jpeg", "png", "gif");
 
             if (in_array($imageFileType, $extensions_arr)) {
                 // Upload file
-                if (move_uploaded_file($_FILES['file']['tmp_name'], $target_dir . $filename)) {
+                if (move_uploaded_file($_FILES['file']['tmp_name'], $target_dir . $fileName)) {
                     // Insert record
-                    $sql = "INSERT INTO users (`full_name`, `email`, `password`, `join_date`, `permissions`, `photo`) VALUES('$fullname','$email','$password','$joinDate','$role','$filename')";
-                    $insert = $db->query($sql);
-                    $_SESSION['add_admin'] = 'New user successfully added!';
-                    header("Location: users.php");
+                        $sql = "INSERT INTO users (`full_name`, `email`, `password`, `join_date`, `permissions`, `photo`) VALUES('$fullname','$email','$password','$joinDate' ,'$role','$fileName')";
+                        $insert = $db->query($sql);
+                
+                        if ($insert) {
+                            $_SESSION['add_admin'] = 'New user successfully added!';
+                            header("Location: users.php");
+                        } else {
+                            printf("Erreur : %s\n", $db->error);
+                        }
                 }
             } else {
                 echo '<div>Extiensions acceptées : png, gif, jpg, jpeg</div>';
@@ -88,12 +91,12 @@ if (isset($_GET['edit']) && !empty($_GET['edit'])) {
             <form action="users.php" method="POST" class="form" id="add_user" enctype='multipart/form-data'>
                 <div class="col-sm-6">
                     <div class="form-group">
-                        <input type="text" value="<?= (isset($_GET['edit'])) ? '' . $edit['full_name'] . '' : '' . $fullname . ''; ?>" name="fullname" placeholder="Full name*">
+                        <input type="text" value="<?= (isset($_GET['edit'])) ? '' . $edit['full_name'] . '' : '' . $fullname . ''; ?>" name="fullname" placeholder="Full name">
                     </div>
                 </div>
                 <div class="col-sm-6">
                     <div class="form-group">
-                        <input type="email" value="<?= (isset($_GET['edit'])) ? '' . $edit['email'] . '' : '' . $email . ''; ?>" name="email" placeholder="User email*">
+                        <input type="email" value="<?= (isset($_GET['edit'])) ? '' . $edit['email'] . '' : '' . $email . ''; ?>" name="email" placeholder="User email">
                     </div>
                 </div>
                 <div class="col-sm-6">
@@ -103,7 +106,7 @@ if (isset($_GET['edit']) && !empty($_GET['edit'])) {
                 </div>
                 <div class="col-sm-12">
                     <div class="form-group">
-                        <label for="role">User role*:</label>
+                        <label for="role">User role:</label>
                         <select id="permission" name="role">
                             <option value="" selected>select a user role</option>
                             <option value="admin">Admin</option>
@@ -113,10 +116,10 @@ if (isset($_GET['edit']) && !empty($_GET['edit'])) {
                     </div>
                 </div>
                 <div>
-                    <input type="password" name="password" placeholder="Password*">
+                    <input type="password" name="password" placeholder="Password">
                 </div>
                 <div class="col-sm-6 form-group">
-                    <input type="password" name="password2" placeholder="Confirm password*">
+                    <input type="password" name="password2" placeholder="Confirm password">
                 </div>
                 <div>
                     <input type="submit" name="<?= (isset($_GET['edit'])) ? 'edit' : 'add'; ?>" value="<?= (isset($_GET['edit'])) ? 'Edit user' : 'Add user'; ?>">
