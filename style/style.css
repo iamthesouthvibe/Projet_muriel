@@ -707,7 +707,7 @@ align-items: flex-end;
   line-height: 20px;
   color: #000000;
   margin-top: 0;
-  margin-bottom: 12vh;
+  margin-bottom: 8vh;
 }
 
 .div_h3_text_presentation h3 {
@@ -1377,7 +1377,6 @@ footer ul {
 
       .div_h2_sous_titre h2 {
         margin-top: 1vh;
-
       }
 
       .container_presentation_maison {

@@ -458,13 +458,18 @@ textarea {
   width: 50%;
 }
 
+.admin_page_users .table_users table {
+  border: solid 1px;
+  border-radius: 6px;
+}
+
 
 .admin_page_users .table_users tr {
   
 }
 
 .admin_page_users .table_users td {
-    border-bottom: 1px solid rgb(0, 0, 0);
+   /* border-bottom: 1px solid rgb(0, 0, 0);*/
     padding: 5px 10px;
 }
 
@@ -472,6 +477,11 @@ textarea {
   border-bottom: 1px solid rgb(0, 0, 0);
   padding: 3px 10px;
   text-align: left;
+  color: #9A4747;
+}
+
+.admin_page_users .table_users .bx {
+  color: #000;
 }
 
 
