@@ -63,8 +63,8 @@ $tourSQL = $db->query("SELECT * FROM tourism LIMIT 4");
   <!--  ######Ceci est la partie Html de la page d'accueil. Raccorder le back par la suite.##### -->
   <div class="qhero">
     <div class="qhero_page_accueil">
-      <h1 class="style_h1_accueil">“Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod.”</h1>
-      <h2 class="style_h2_accueil">Sed rutrum vulputate dapibus. Vivamus id tincidunt eros, in suscipit quam. Praesent aliquet justo auctor urna feugiat, luctus aliquam odio pharetra. Fusce iaculis mauris sem. Donec varius urna libero, sit amet tincidunt enim laoreet ut. Donec non sem pharetra, ullamcorper nibh in, lacinia risus. Proin rutrum egestas massa, a cursus diam interdum ac. </h2>
+      <h1 class="style_h1_accueil">“Laissez-vous séduire par un univers d’élégance et de douceur. <br> 4 maisons, 4 ambiances, le regard d’une femme”</h1>
+      <h2 class="style_h2_accueil">Je veux créer des maisons pour faire rêver, des maisons qui soient comme des personnalités, surprenantes, inattendues, accueillantes et généreuses. Où l’on ait envie de rester et de revenir, comme pour poursuivre une conversation interrompue trop tôt. </h2>
       <svg width="40px" viewBox="0 0 14.334 24.75" class="scroll_anim">
         <circle class="circle-1" fill="black" cx="7.167" cy="6" r="1.2" />
         <circle class="circle-2" fill="black" cx="7.167" cy="6" r="1.2" />
