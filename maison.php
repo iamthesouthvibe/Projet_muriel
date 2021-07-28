@@ -201,6 +201,43 @@ include 'includes/header.php';
 
 
 
+    <!-- Section articles blog -->
+
+    <div class="container_blog">
+        <div class="titre_section_blog">
+            <h4 class="titre_section_blog_h4">
+                Espace Partage
+            </h4>
+        </div>
+        <div class="espace_flexbox_blog">
+            <div class="espace_article_blog">
+                <img src="assets/jpg/maison_photo_01.jpg" alt="Thumbnail du blog">
+                <h6>Date de l'article</h6>
+                <h5>Titre de l'article</h5>
+                <a href="">Lire l'article →</a>
+            </div>
+            <div class="espace_article_blog">
+                <img src="assets/jpg/maison_photo_01.jpg" alt="Thumbnail du blog">
+                <h6>Date de l'article</h6>
+                <h5>Titre de l'article</h5>
+                <a href="">Lire l'article →</a>
+            </div>
+            <div class="espace_article_blog">
+                <img src="assets/jpg/maison_photo_01.jpg" alt="Thumbnail du blog">
+                <h6>Date de l'article</h6>
+                <h5>Titre de l'article</h5>
+                <a href="">Lire l'article →</a>
+            </div>
+        </div>
+        <div class="lien_page_blog">
+            <a href="">Lire tous les Articles de blog →</a>
+        </div>
+
+    </div>
+
+
+
+
 
 
     <?php
