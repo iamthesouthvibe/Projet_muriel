@@ -70,36 +70,6 @@ function checkLength(input, min, max) {
     }
 }
 
-/*Event listeners
-form.addEventListener("submit", function (event) {
-
-    event.preventDefault();
-    let checkValue = checkRequired(title);
-    let checkSub = checkRequired(subtitle);
-    let checkDate = checkRequired(date);
-    let checkLieu = checkRequired(lieu);
-    let checkFile = checkRequired(file);
-    let checkFile2 = checkRequired(file2);
-    let checkFile3 = checkRequired(file3);
-    let checkDesc = checkRequired(description);
-    let checkLengthTitle = checkLength(title, 3, 45);
-    let checkLengthDes = checkLength(description, 50, 800);
-    console.log(checkValue);
-    console.log(checkSub);
-    console.log(checkDate);
-    console.log(checkLieu);
-    console.log(checkFile);
-    console.log(checkFile3);
-    console.log(checkLengthTitle);
-    console.log(checkLengthDes);
-
-
-    if (checkValue.value && checkLengthTitle.value && checkLengthDes.value && checkSub.value && checkDate.value && checkLieu.value && checkFile.value && checkFile2.value && checkFile3.value && checkDesc.value) {
-        form.submit();
-    } 
-
-});*/
-
 function validate() {
     let checkValue = checkRequired(title);
     let checkSub = checkRequired(subtitle);
@@ -111,16 +81,7 @@ function validate() {
     let checkDesc = checkRequired(description);
     let checkLengthTitle = checkLength(title, 3, 45);
     let checkLengthDes = checkLength(description, 50, 800);
-    console.log(checkValue);
-    console.log(checkSub);
-    console.log(checkDate);
-    console.log(checkLieu);
-    console.log(checkFile);
-    console.log(checkFile3);
-    console.log(checkLengthTitle);
-    console.log(checkLengthDes);
-
-
+ 
     if (checkValue.value && checkLengthTitle.value && checkLengthDes.value && checkSub.value && checkDate.value && checkLieu.value && checkFile.value && checkFile2.value && checkFile3.value && checkDesc.value) {
         return true;
     } else {
