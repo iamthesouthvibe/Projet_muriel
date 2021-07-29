@@ -233,16 +233,54 @@ include 'includes/header.php';
             <a href="">Voir tous les articles →</a>
         </div>
 
-    </div>
+        <!-- Section Produits -->
+
+        <div class="container_produit">
+            <div class="titre_section_produit">
+                <h4 class="titre_section_produit_h4">
+                    Nos Produits
+                </h4>
+            </div>
+            <div class="espace_flexbox_produit">
+                <div class="espace_produit">
+                    <img src="assets/jpg/maison_photo_01.jpg" alt="Thumbnail du blog">
+                    <h6 class="element_textuel_produit">Prix du Produit</h6>
+                    <h5 class="element_textuel_produit">Titre du Produit</h5>
+                    <a class="element_textuel_produit" href="">Acheter →</a>
+                </div>
+                <div class="espace_produit espace_produit_02">
+                    <img src="assets/jpg/maison_photo_01.jpg" alt="Thumbnail du blog">
+                    <h6>Prix du Produit</h6>
+                    <h5>Titre du Produit</h5>
+                    <a href="">Acheter →</a>
+                </div>
+                <div class="espace_produit espace_produit_02">
+                    <img src="assets/jpg/maison_photo_01.jpg" alt="Thumbnail du blog">
+                    <h6>Prix du Produit</h6>
+                    <h5>Titre du Produit</h5>
+                    <a href="">Acheter →</a>
+                </div>
+            </div>
+            <div class="lien_page_produit">
+                <a href="">Voir tous les produits →</a>
+            </div>
+
+        </div>
+
+
+        <!-- Ligne séparator -->
+
+        <div class="ligne_separator"></div>
+
+        <!-- Section Commentaires -->
+
+        
 
 
 
-
-
-
-    <?php
-    include "includes/cursor.php";
-    include("./includes/footer.php"); ?>
+        <?php
+        include "includes/cursor.php";
+        include("./includes/footer.php"); ?>
 
 </main>
 
