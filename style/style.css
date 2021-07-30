@@ -1,8 +1,3 @@
-<<<<<<< HEAD
-    @font-face {
-        font-family: ITCGaramondStd-BkNarrow;
-        src: local("../assets/fonts/GaramondStd/ITCGaramondStd-BkNarrow.otf"), local("ITCGaramondStd-BkNarrow"), url('../assets/fonts/GaramondStd/ITCGaramondStd-BkNarrow.woff2') format('woff2'), url('../assets/fonts/GaramondStd/ITCGaramondStd-BkNarrow.woff') format('woff');
-=======
 @font-face {
     font-family: ITCGaramondStd-BkNarrow;
     src: local("../assets/fonts/GaramondStd/ITCGaramondStd-BkNarrow.otf"),
@@ -1232,7 +1227,6 @@ footer ul {
     
     header nav {
       margin: 14px;
->>>>>>> users-page-style
     }
     
     @font-face {
@@ -1819,7 +1813,6 @@ footer ul {
     .qhero_entree_page_maison {
         max-width: 85vw;
         margin: auto;
-<<<<<<< HEAD
     }
     
     .div_h1_titre h1 {
@@ -1849,7 +1842,6 @@ footer ul {
         font-weight: normal;
         font-size: 18px;
         line-height: 20px;
-=======
       }
 
       .div_h2_sous_titre h2 {
@@ -1872,7 +1864,6 @@ footer ul {
       }
 
       .image_gauche  {
->>>>>>> users-page-style
         text-align: center;
         color: #000000;
         padding-left: 20vw;
@@ -2871,4 +2862,4 @@ footer ul {
             height: 30px;
         }
     }
-    /* ##### Fin Media Queries ##### */
+    /* ##### Fin Media Queries ##### 
