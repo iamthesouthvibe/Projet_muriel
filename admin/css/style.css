@@ -459,25 +459,43 @@ textarea {
 }
 
 .admin_page_users .table_users table {
-  border: solid 1px;
-  border-radius: 6px;
+  width: 100%;
+    border-collapse: collapse;
+}
+
+
+
+.admin_page_users .table_users tr {
+  display: flex;
 }
 
 
 .admin_page_users .table_users td {
    /* border-bottom: 1px solid rgb(0, 0, 0);*/
     padding: 5px 10px;
+    border: solid 1px;
+    width: 20%;
+    font-size: 15px;
+}
+
+.admin_page_users .table_users thead {
+  background-color: #9A4747;
+  width: 100%;
+  border-width: 0;
+	border-style: solid;
+	border-color: inherit;
 }
 
 .admin_page_users .table_users th {
-  border-bottom: 1px solid rgb(0, 0, 0);
   padding: 3px 10px;
   text-align: left;
-  color: #9A4747;
+  width: 20%;
+  border: solid 1px;
 }
 
 .admin_page_users .table_users .bx {
   color: #000;
+  font-size: 20px;
 }
 
 
@@ -535,6 +553,29 @@ textarea {
 
 
 /* ####### Fin Admin page utlisateurs style */
+
+
+/* ####### Debut style page reservations ####### */
+
+.admin_page_reserv table {
+  width: 100%;
+  border-collapse: collapse;
+  border: solid 1px;
+} 
+
+.admin_page_reserv th {
+  text-align: left;
+}
+
+.admin_page_reserv thead {
+  background-color: #9A4747;
+}
+
+.admin_page_reserv tr {
+  border-bottom: solid 1px;
+}
+
+
 
 
 

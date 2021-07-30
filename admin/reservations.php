@@ -1,72 +1,64 @@
 <?php
-require_once $_SERVER['DOCUMENT_ROOT'].'/core/core.php';
+require_once $_SERVER['DOCUMENT_ROOT'] . '/core/core.php';
 require_once('../helpers/helpers.php');
-   //LOGGED IN CHECK
-   if(!is_logged_in()){
-       login_error_check();
-   }
+//LOGGED IN CHECK
+if (!is_logged_in()) {
+  login_error_check();
+}
 
-   include 'includes/header.php';
-   include 'includes/navigation.php';
-   $sql = "SELECT * FROM reservations";
-   $result = $db->query($sql);
-   $row_count = 1;
+include 'includes/header.php';
+include 'includes/navigation.php';
+$sql = "SELECT * FROM reservations";
+$result = $db->query($sql);
+$row_count = 1;
 
-   if(isset($_GET['delete'])){
-     $toDelete = $_GET['delete'];
-     $sql = $db->query("DELETE FROM reservations WHERE id = '$toDelete' ");
-     header("Location: reservations.php");
-   }
+if (isset($_GET['delete'])) {
+  $toDelete = $_GET['delete'];
+  $sql = $db->query("DELETE FROM reservations WHERE id = '$toDelete' ");
+  header("Location: reservations.php");
+}
 
- ?>
-<div class="w3-container w3-main" style="margin-left:200px">
-  <header class="w3-container w3-purple">
-   <span class="w3-opennav w3-xlarge w3-hide-large" onclick="w3_open()">☰</span>
-   <h2 class="text-center">Reservations</h2>
- </header>
-  <div class="col-md-12">
-    <br>
-    <h2 class="text-center">Room Reservations</h2>
-    <br />
+?>
+
+<div class="admin_page">
+  <div class="header_admin">
+    <h1>Reservations</h1>
+    <img src="../assets/png/LOGO_ANCIEN.png" alt="Logo Muriel">
   </div>
-<div class="col-md-12">
-  <table class="table table-striped table-condensed table-bordered">
+  <div class="admin_page_reserv">
+    <table class="table table-striped table-condensed table-bordered">
       <thead>
-          <tr>
-              <th>#</th>
-              <th>Name</th>
-              <th>Room Number</th>
-              <th>Checkin</th>
-              <th>Checkout</th>
-              <th>Phone</th>
-              <th># of People</th>
-              <th>Email</th>
+        <tr>
+          <th>#</th>
+          <th>Name</th>
+          <th>Room Number</th>
+          <th>Checkin</th>
+          <th>Checkout</th>
+          <th>Phone</th>
+          <th># of People</th>
+          <th>Email</th>
 
-              <th>Action</th>
-          </tr>
+          <th>Action</th>
+        </tr>
       </thead>
       <tbody>
-      <?php while($rows = mysqli_fetch_assoc($result)): ?>
+        <?php while ($rows = mysqli_fetch_assoc($result)) : ?>
           <tr>
-              <td><?= $row_count++; ?></td>
-              <td><?=$rows['name']; ?></td>
-              <td><?=$rows['room']; ?></td>
-              <td><?=$rows['checkin']; ?></td>
-              <td><?=$rows['checkout']; ?></td>
-              <td><?=$rows['phone']; ?></td>
-              <td><?=$rows['people']; ?></td>
-              <td><?=$rows['email']; ?></td>
+            <td><?= $row_count++; ?></td>
+            <td><?= $rows['name']; ?></td>
+            <td><?= $rows['room']; ?></td>
+            <td><?= $rows['checkin']; ?></td>
+            <td><?= $rows['checkout']; ?></td>
+            <td><?= $rows['phone']; ?></td>
+            <td><?= $rows['people']; ?></td>
+            <td><?= $rows['email']; ?></td>
 
-              <td>
-                  <a href="reservations.php?delete=<?=$rows['id'];?>" class="w3-btn w3-small w3-red"><span class="glyphicon glyphicon-trash"></span></a>
-
-              </td>
+            <td>
+              <a href="reservations.php?delete=<?= $rows['id']; ?>"><i class='bx bx-trash'></i></a>
+            </td>
           </tr>
-        <?php endwhile;?>
+        <?php endwhile; ?>
       </tbody>
-  </table>
-</div>
-
-
-
+    </table>
+  </div>
 </div>
