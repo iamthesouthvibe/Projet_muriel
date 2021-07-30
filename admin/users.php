@@ -21,7 +21,7 @@ $row_count = 1; ####//Row Counter
 @$email = $_POST['email'];
 @$role = $_POST['role'];
 @$password = $_POST['password'];
-@$password2 = $_POST['password2'];
+@$password2 =$_POST['password2'];
 @$joinDate = date("Y-m-d H:m:i");
 
 //CODE TO REGISTER A NEW ADMINISTRATOR
@@ -44,15 +44,15 @@ if (isset($_POST['add'])) {
                 // Upload file
                 if (move_uploaded_file($_FILES['file']['tmp_name'], $target_dir . $fileName)) {
                     // Insert record
-                    $sql = "INSERT INTO users (`full_name`, `email`, `password`, `join_date`, `permissions`, `photo`) VALUES('$fullname','$email','$password','$joinDate' ,'$role','$fileName')";
-                    $insert = $db->query($sql);
-
-                    if ($insert) {
-                        $_SESSION['add_admin'] = 'New user successfully added!';
-                        header("Location: users.php");
-                    } else {
-                        printf("Erreur : %s\n", $db->error);
-                    }
+                        $sql = "INSERT INTO users (`full_name`, `email`, `password`, `join_date`, `permissions`, `photo`) VALUES('$fullname','$email','$password','$joinDate' ,'$role','$fileName')";
+                        $insert = $db->query($sql);
+                
+                        if ($insert) {
+                            $_SESSION['add_admin'] = 'New user successfully added!';
+                            header("Location: users.php");
+                        } else {
+                            printf("Erreur : %s\n", $db->error);
+                        }
                 }
             } else {
                 echo '<div>Extiensions acceptées : png, gif, jpg, jpeg</div>';
@@ -60,11 +60,8 @@ if (isset($_POST['add'])) {
         } else {
             echo '<div class="w3-red w3-center"> Passwords do not match!</div> ';
         }
-    } else {
-        echo '<div class="w3-red w3-center"> All fields with an asterisks are required!</div> ';
-    }
+    } 
 }
-
 
 //CODE TO DELETE A DATABASE USER
 if (isset($_GET['delete']) && !empty($_GET['delete'])) {
@@ -81,7 +78,15 @@ if (isset($_GET['edit']) && !empty($_GET['edit'])) {
 }
 
 ?>
+<style>
+  .form-control small {
+    opacity: 0;
+  }
 
+  .form-control.error small {
+    opacity: 1;
+  }
+</style>
 
 <div class="admin_page">
     <div class="header_admin">
@@ -117,25 +122,31 @@ if (isset($_GET['edit']) && !empty($_GET['edit'])) {
             </table>
         </div>
         <div class="form_users">
-            <form action="users.php" method="POST" class="form" id="add_user" enctype='multipart/form-data'>
+            <form action="users.php" method="POST" class="form" id="add_user" enctype='multipart/form-data' onsubmit="return validate();">
             <h2>Ajouter un nouveau utilisateur</h2>
-                <div class="form-group form_users_top">
+                <div class="form-control form_users_top">
                     <div>
                         <label for="fullname">Nom complet</label>
                         <br>
-                        <input type="text" value="<?= (isset($_GET['edit'])) ? '' . $edit['full_name'] . '' : '' . $fullname . ''; ?>" name="fullname" id="fullname" placeholder="" required>
+                        <input type="text" value="<?= (isset($_GET['edit'])) ? '' . $edit['full_name'] . '' : '' . $fullname . ''; ?>" name="fullname" id="fullname" placeholder="" >
+                        <br>
+                        <small>Error Message</small>
                     </div>
                     <div>
                         <label for="email">Email</label>
                         <br>
-                        <input type="email" value="<?= (isset($_GET['edit'])) ? '' . $edit['email'] . '' : '' . $email . ''; ?>" name="email" id="email" placeholder="" required>
+                        <input type="email" value="<?= (isset($_GET['edit'])) ? '' . $edit['email'] . '' : '' . $email . ''; ?>" name="email" id="email" placeholder="" >
+                        <br>
+                        <small>Error Message</small>
                     </div>
                 </div>
-                <div class="form-group form_users_middle">
+                <div class="form-control form_users_middle">
                     <div>
                         <label for="file">Photo</label>
                         <br>
                         <input type="file" name="file" id="file">
+                        <br>
+                        <small>Error Message</small>
                     </div>
                     <div>
                         <label for="role">Role</label>
@@ -146,18 +157,24 @@ if (isset($_GET['edit']) && !empty($_GET['edit'])) {
                             <option value="editor">Editor</option>
                             <option value="editor,admin">Editor & Admin</option>
                         </select>
+                        <br>
+                        <small>Error Message</small>
                     </div>
                 </div>
-                <div class="form-group form_users_bottom">
+                <div class="form-control form_users_bottom">
                     <div>
                         <label for="password">Mot de passe</label>
                         <br>
                         <input type="password" name="password" id="password" placeholder="">
+                        <br>
+                        <small>Error Message</small>
                     </div>
                     <div>
                         <label for="password2">Confirmer</label>
                         <br>
                         <input type="password" name="password2" id="password2" placeholder="Confirm password">
+                        <br>
+                        <small>Error Message</small>
                     </div>
                 </div>
                 <div>
@@ -170,3 +187,5 @@ if (isset($_GET['edit']) && !empty($_GET['edit'])) {
         </div>
     </div>
 </div>
+
+<script src="./js/checkform_users.js"></script>
