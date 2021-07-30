@@ -1521,6 +1521,22 @@
             margin-top: 70px;
             padding-bottom: 70px;
         }
+        /* responsive de la section commentaire sur la page maison */
+        .bloc_commentaire {
+            max-width: 90vw;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .bloc_commentaire:nth-child(even) {
+            margin-left: auto;
+            margin-right: auto;
+            margin-top: 0;
+        }
+        .bloc_commentaire:nth-child(odd) {
+            margin-left: auto;
+            margin-right: auto;
+            margin-top: 0;
+        }
         /* responsive de la page contact */
         .page_contact {
             padding-right: 14px;
