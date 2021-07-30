@@ -1,13 +1,11 @@
-
-const form = document.getElementById("form");
-const title = document.getElementById("title");
-const subtitle = document.getElementById("subtitle");
-const lieu = document.getElementById("lieu");
-const date = document.getElementById("date");
+const form = document.getElementById("add_user");
+const fullName = document.getElementById("fullname");
+const email = document.getElementById("email");
 const file = document.getElementById("file");
-const file2 = document.getElementById("file2");
-const file3 = document.getElementById("file3");
-const description = document.getElementById("description");
+const role = document.getElementById("permission");
+const pass = document.getElementById("password");
+const pass2 = document.getElementById("password2");
+
 
 
 //Show input error message
@@ -70,21 +68,27 @@ function checkLength(input, min, max) {
     }
 }
 
+
 function validate() {
-    let checkValue = checkRequired(title);
-    let checkSub = checkRequired(subtitle);
-    let checkDate = checkRequired(date);
-    let checkLieu = checkRequired(lieu);
-    let checkFile = checkRequired(file);
-    let checkFile2 = checkRequired(file2);
-    let checkFile3 = checkRequired(file3);
-    let checkDesc = checkRequired(description);
-    let checkLengthTitle = checkLength(title, 3, 45);
-    let checkLengthDes = checkLength(description, 50, 800);
  
-    if (checkValue.value && checkLengthTitle.value && checkLengthDes.value && checkSub.value && checkDate.value && checkLieu.value && checkFile.value && checkFile2.value && checkFile3.value && checkDesc.value) {
+    let checkName = checkRequired(fullName);
+    let checkEmail = checkRequired(email);
+    let checkFile = checkRequired(file);
+    let checkRole = checkRequired(role);
+    let checkPass = checkRequired(pass);
+    let checkPass2 = checkRequired(pass2);
+    let checkLengthPass = checkLength(pass, 6, 30);
+
+    console.log(checkName);
+    console.log(checkEmail);
+    console.log(checkFile);
+    console.log(checkRole);
+
+ 
+    if (checkName && checkEmail && checkFile && checkRole && checkPass && checkPass2 && checkLengthPass) {
         return true;
     } else {
         return false;
     }
 }
+

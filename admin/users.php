@@ -60,11 +60,8 @@ if (isset($_POST['add'])) {
         } else {
             echo '<div class="w3-red w3-center"> Passwords do not match!</div> ';
         }
-    } else {
-        echo '<div class="w3-red w3-center"> All fields with an asterisks are required!</div> ';
-    }
+    } 
 }
-
 
 //CODE TO DELETE A DATABASE USER
 if (isset($_GET['delete']) && !empty($_GET['delete'])) {
@@ -81,66 +78,31 @@ if (isset($_GET['edit']) && !empty($_GET['edit'])) {
 }
 
 ?>
-<div class="w3-container w3-main" style="margin-left:200px">
+<style>
+  .form-control small {
+    opacity: 0;
+  }
 
-    <div class="row">
-        <div class="col-md-6">
+  .form-control.error small {
+    opacity: 1;
+  }
+</style>
 
-            <h3 class="">New user Form</h3>
-            <hr>
-            <form action="users.php" method="POST" class="form" id="add_user" enctype='multipart/form-data'>
-                <div class="col-sm-6">
-                    <div class="form-group">
-                        <input type="text" value="<?= (isset($_GET['edit'])) ? '' . $edit['full_name'] . '' : '' . $fullname . ''; ?>" name="fullname" placeholder="Full name">
-                    </div>
-                </div>
-                <div class="col-sm-6">
-                    <div class="form-group">
-                        <input type="email" value="<?= (isset($_GET['edit'])) ? '' . $edit['email'] . '' : '' . $email . ''; ?>" name="email" placeholder="User email">
-                    </div>
-                </div>
-                <div class="col-sm-6">
-                    <div class="form-group">
-                        <input type="file" name="file" id="file">
-                    </div>
-                </div>
-                <div class="col-sm-12">
-                    <div class="form-group">
-                        <label for="role">User role:</label>
-                        <select id="permission" name="role">
-                            <option value="" selected>select a user role</option>
-                            <option value="admin">Admin</option>
-                            <option value="editor">Editor</option>
-                            <option value="editor,admin">Editor & Admin</option>
-                        </select>
-                    </div>
-                </div>
-                <div>
-                    <input type="password" name="password" placeholder="Password">
-                </div>
-                <div class="col-sm-6 form-group">
-                    <input type="password" name="password2" placeholder="Confirm password">
-                </div>
-                <div>
-                    <input type="submit" name="<?= (isset($_GET['edit'])) ? 'edit' : 'add'; ?>" value="<?= (isset($_GET['edit'])) ? 'Edit user' : 'Add user'; ?>">
-                    <?php if (isset($_GET['edit'])) : ?>
-                        <a href="users.php" class="btn btn-info" name="">Cancel</a>
-                    <?php endif; ?>
-                </div>
-            </form>
-
-        </div>
-        <div class="col-md-6">
-            <h3>User's table</h3>
-
+<div class="admin_page">
+    <div class="header_admin">
+        <h1>Utilisateurs</h1>
+        <img src="../assets/png/LOGO_ANCIEN.png" alt="Logo Muriel">
+    </div>
+    <div class="admin_page_users">
+        <div class="table_users">
             <table>
                 <thead>
                     <tr>
                         <th>#</th>
-                        <th>Name</th>
+                        <th>Nom</th>
                         <th>Roles</th>
-                        <th>Last login</th>
-                        <th>Actions</th>
+                        <th>Dernière connexion</th>
+                        <th>Supp</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -151,7 +113,7 @@ if (isset($_GET['edit']) && !empty($_GET['edit'])) {
                             <td><?= $rows['permissions']; ?></td>
                             <td><?= $rows['last_login']; ?></td>
                             <td>
-                                <a href="users.php?delete=<?= $rows['id']; ?>"><span></span></a>
+                                <a href="users.php?delete=<?= $rows['id']; ?>"><i class='bx bx-trash'></i></a>
                                 <a href="users.php?edit=<?= $rows['id']; ?>"><span></span></a>
                             </td>
                         </tr>
@@ -159,5 +121,71 @@ if (isset($_GET['edit']) && !empty($_GET['edit'])) {
                 </tbody>
             </table>
         </div>
+        <div class="form_users">
+            <form action="users.php" method="POST" class="form" id="add_user" enctype='multipart/form-data' onsubmit="return validate();">
+            <h2>Ajouter un nouveau utilisateur</h2>
+                <div class="form-control form_users_top">
+                    <div>
+                        <label for="fullname">Nom complet</label>
+                        <br>
+                        <input type="text" value="<?= (isset($_GET['edit'])) ? '' . $edit['full_name'] . '' : '' . $fullname . ''; ?>" name="fullname" id="fullname" placeholder="" >
+                        <br>
+                        <small>Error Message</small>
+                    </div>
+                    <div>
+                        <label for="email">Email</label>
+                        <br>
+                        <input type="email" value="<?= (isset($_GET['edit'])) ? '' . $edit['email'] . '' : '' . $email . ''; ?>" name="email" id="email" placeholder="" >
+                        <br>
+                        <small>Error Message</small>
+                    </div>
+                </div>
+                <div class="form-control form_users_middle">
+                    <div>
+                        <label for="file">Photo</label>
+                        <br>
+                        <input type="file" name="file" id="file">
+                        <br>
+                        <small>Error Message</small>
+                    </div>
+                    <div>
+                        <label for="role">Role</label>
+                        <br>
+                        <select id="permission" name="role">
+                            <option value="" selected>Selectionne un role</option>
+                            <option value="admin">Admin</option>
+                            <option value="editor">Editor</option>
+                            <option value="editor,admin">Editor & Admin</option>
+                        </select>
+                        <br>
+                        <small>Error Message</small>
+                    </div>
+                </div>
+                <div class="form-control form_users_bottom">
+                    <div>
+                        <label for="password">Mot de passe</label>
+                        <br>
+                        <input type="password" name="password" id="password" placeholder="">
+                        <br>
+                        <small>Error Message</small>
+                    </div>
+                    <div>
+                        <label for="password2">Confirmer</label>
+                        <br>
+                        <input type="password" name="password2" id="password2" placeholder="Confirm password">
+                        <br>
+                        <small>Error Message</small>
+                    </div>
+                </div>
+                <div>
+                    <input type="submit" name="<?= (isset($_GET['edit'])) ? 'edit' : 'add'; ?>" value="<?= (isset($_GET['edit'])) ? 'Edit user' : 'Add user'; ?>" class="submit_button">
+                    <?php if (isset($_GET['edit'])) : ?>
+                        <a href="users.php" class="btn btn-info" name="">Cancel</a>
+                    <?php endif; ?>
+                </div>
+            </form>
+        </div>
     </div>
 </div>
+
+<script src="./js/checkform_users.js"></script>
