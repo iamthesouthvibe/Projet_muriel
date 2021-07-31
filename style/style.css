@@ -2171,6 +2171,57 @@ footer ul {
         margin-left: 20vw;
         margin-right: 20vw;
     }
+    /*section commentaires*/
+    
+    .container_commentaire {
+        padding-top: 130px;
+        padding-bottom: 170px;
+    }
+    
+    .bloc_commentaire {
+        max-width: 40vw;
+    }
+    
+    .bloc_commentaire h5 {
+        font-family: ITCGaramondStd-BkNarrow;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 36px;
+        line-height: 101%;
+        color: #9A4747;
+        margin-top: 15px;
+        margin-bottom: 0px;
+    }
+    
+    .sous_bloc_commentaire {
+        display: flex;
+        gap: 10px;
+    }
+    
+    .sous_bloc_commentaire img {
+        width: 120px;
+    }
+    
+    .sous_bloc_commentaire h6 {
+        font-family: NeueMontreal-Regular;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 22px;
+        line-height: 36px;
+        /* identical to box height, or 126% */
+        color: #9B9B9B;
+        margin: 0;
+    }
+    
+    .bloc_commentaire:nth-child(even) {
+        margin-left: 50vw;
+        margin-top: 50px;
+    }
+    
+    .bloc_commentaire:nth-child(odd) {
+        margin-left: 6vw;
+        margin-top: 50px;
+    }
     /* ##### Fin style de la page maison ##### */
     /* ##### Debut style de la page contact ##### */
     
@@ -2717,6 +2768,31 @@ footer ul {
         .lien_page_produit {
             margin-top: 70px;
             padding-bottom: 70px;
+        }
+        /* responsive de la section commentaire sur la page maison */
+        .bloc_commentaire {
+            max-width: 90vw;
+            margin-left: auto;
+            margin-right: auto;
+            margin-top: 10vh;
+            margin-bottom: 10vh;
+        }
+        .bloc_commentaire h5 {
+            font-size: 30px;
+        }
+        .sous_bloc_commentaire {
+            display: block;
+            margin-top: 20px;
+        }
+        .bloc_commentaire:nth-child(even) {
+            margin-left: auto;
+            margin-right: auto;
+            margin-top: 0;
+        }
+        .bloc_commentaire:nth-child(odd) {
+            margin-left: auto;
+            margin-right: auto;
+            margin-top: 0;
         }
         /* responsive de la page contact */
         .page_contact {

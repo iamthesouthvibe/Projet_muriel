@@ -232,55 +232,89 @@ include 'includes/header.php';
         <div class="lien_page_blog">
             <a href="">Voir tous les articles →</a>
         </div>
+    </div>
+    <!-- Section Produits -->
 
-        <!-- Section Produits -->
-
-        <div class="container_produit">
-            <div class="titre_section_produit">
-                <h4 class="titre_section_produit_h4">
-                    Nos Produits
-                </h4>
+    <div class="container_produit">
+        <div class="titre_section_produit">
+            <h4 class="titre_section_produit_h4">
+                Nos Produits
+            </h4>
+        </div>
+        <div class="espace_flexbox_produit">
+            <div class="espace_produit">
+                <img src="assets/jpg/maison_photo_01.jpg" alt="Thumbnail du blog">
+                <h6 class="element_textuel_produit">Prix du Produit</h6>
+                <h5 class="element_textuel_produit">Titre du Produit</h5>
+                <a class="element_textuel_produit" href="">Acheter →</a>
             </div>
-            <div class="espace_flexbox_produit">
-                <div class="espace_produit">
-                    <img src="assets/jpg/maison_photo_01.jpg" alt="Thumbnail du blog">
-                    <h6 class="element_textuel_produit">Prix du Produit</h6>
-                    <h5 class="element_textuel_produit">Titre du Produit</h5>
-                    <a class="element_textuel_produit" href="">Acheter →</a>
-                </div>
-                <div class="espace_produit espace_produit_02">
-                    <img src="assets/jpg/maison_photo_01.jpg" alt="Thumbnail du blog">
-                    <h6>Prix du Produit</h6>
-                    <h5>Titre du Produit</h5>
-                    <a href="">Acheter →</a>
-                </div>
-                <div class="espace_produit espace_produit_02">
-                    <img src="assets/jpg/maison_photo_01.jpg" alt="Thumbnail du blog">
-                    <h6>Prix du Produit</h6>
-                    <h5>Titre du Produit</h5>
-                    <a href="">Acheter →</a>
-                </div>
+            <div class="espace_produit espace_produit_02">
+                <img src="assets/jpg/maison_photo_01.jpg" alt="Thumbnail du blog">
+                <h6>Prix du Produit</h6>
+                <h5>Titre du Produit</h5>
+                <a href="">Acheter →</a>
             </div>
-            <div class="lien_page_produit">
-                <a href="">Voir tous les produits →</a>
+            <div class="espace_produit espace_produit_02">
+                <img src="assets/jpg/maison_photo_01.jpg" alt="Thumbnail du blog">
+                <h6>Prix du Produit</h6>
+                <h5>Titre du Produit</h5>
+                <a href="">Acheter →</a>
             </div>
-
+        </div>
+        <div class="lien_page_produit">
+            <a href="">Voir tous les produits →</a>
         </div>
 
-
-        <!-- Ligne séparator -->
-
-        <div class="ligne_separator"></div>
-
-        <!-- Section Commentaires -->
-
-        
+    </div>
 
 
+    <!-- Ligne séparator -->
 
-        <?php
-        include "includes/cursor.php";
-        include("./includes/footer.php"); ?>
+    <div class="ligne_separator"></div>
+
+    <!-- Section Commentaires -->
+
+
+    <div class="container_commentaire">
+        <div class="bloc_commentaire">
+            <h5>“Villa merveilleuse aménagée avec beaucoup de goût vue exceptionnelle sur une des plus belles anses.
+                Tout confort”</h5>
+            <div class="sous_bloc_commentaire">
+                <img src="assets/svg/5_stars.svg" alt="5 stars svg">
+                <h6 class="infos_commentaire">Valerie Aubree - Février 2019 </h6>
+            </div>
+        </div>
+        <div class="bloc_commentaire">
+            <h5>“Villa merveilleuse aménagée avec beaucoup de goût vue exceptionnelle sur une des plus belles anses.
+                Tout confort”</h5>
+            <div class="sous_bloc_commentaire">
+                <img src="assets/svg/5_stars.svg" alt="5 stars svg">
+                <h6 class="infos_commentaire">Valerie Aubree - Février 2019 </h6>
+            </div>
+        </div>
+        <div class="bloc_commentaire">
+            <h5>“Villa merveilleuse aménagée avec beaucoup de goût vue exceptionnelle sur une des plus belles anses.
+                Tout confort”</h5>
+            <div class="sous_bloc_commentaire">
+                <img src="assets/svg/5_stars.svg" alt="5 stars svg">
+                <h6 class="infos_commentaire">Valerie Aubree - Février 2019 </h6>
+            </div>
+        </div>
+        <div class="bloc_commentaire">
+            <h5>“Villa merveilleuse aménagée avec beaucoup de goût vue exceptionnelle sur une des plus belles anses.
+                Tout confort”</h5>
+            <div class="sous_bloc_commentaire">
+                <img src="assets/svg/5_stars.svg" alt="5 stars svg">
+                <h6 class="infos_commentaire">Valerie Aubree - Février 2019 </h6>
+            </div>
+        </div>
+
+    </div>
+
+
+    <?php
+    include "includes/cursor.php";
+    include("./includes/footer.php"); ?>
 
 </main>
 
