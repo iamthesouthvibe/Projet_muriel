@@ -1526,6 +1526,15 @@
             max-width: 90vw;
             margin-left: auto;
             margin-right: auto;
+            margin-top: 10vh;
+            margin-bottom: 10vh;
+        }
+        .bloc_commentaire h5 {
+            font-size: 30px;
+        }
+        .sous_bloc_commentaire {
+            display: block;
+            margin-top: 20px;
         }
         .bloc_commentaire:nth-child(even) {
             margin-left: auto;
