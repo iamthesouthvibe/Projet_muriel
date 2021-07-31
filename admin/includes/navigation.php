@@ -29,7 +29,7 @@
         <span class="tooltip">Rubriques</span>
       </li>
       <li>
-        <a href="">
+        <a href="products.php">
           <i class='bx bx-shopping-bag'></i>
           <span class="links_name">Articles</span>
         </a>

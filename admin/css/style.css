@@ -448,9 +448,8 @@ textarea {
 
 .admin_page_users {
   display: flex;
-  justify-content: space-between;
   margin-top: 30px;
-  gap: 10%;
+  gap: 6vw;
 }
 
 
@@ -524,6 +523,7 @@ textarea {
 .admin_page_comments th,
 .admin_page_users th {
   text-align: left;
+  padding: 5px;
 }
 
 .admin_page_reserv thead,
@@ -536,6 +536,12 @@ textarea {
 .admin_page_comments tr,
 .admin_page_users tr {
   border-bottom: solid 1px;
+}
+
+.admin_page_reserv td,
+.admin_page_comments td,
+.admin_page_users td {
+  padding: 5px;
 }
 
 

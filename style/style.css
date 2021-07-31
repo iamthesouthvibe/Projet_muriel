@@ -1530,7 +1530,7 @@ footer ul {
         font-family: ITCGaramondStd-BkNarrow;
         font-style: normal;
         font-weight: normal;
-        font-size: 9vw;
+        font-size: 8.3vw;
         line-height: 78%;
         /* or 112px */
         text-align: center;
@@ -2862,4 +2862,4 @@ footer ul {
             height: 30px;
         }
     }
-    /* ##### Fin Media Queries ##### 
+    /* ##### Fin Media Queries ##### */
