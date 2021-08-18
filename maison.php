@@ -196,6 +196,77 @@ include 'includes/header.php';
         </div>
     </div>
 
+    <!-- Swiper Activités-->
+    <div class="carousel_and_map">
+        <div class="carousel_maison_03">
+            <div class="swiper-container mySwiper swiperHover">
+                <h4>Activités <div class="swiper-button-next"></div>
+                </h4>
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                        <p>Planche à voile</p>
+                        <p>Plongée (bouteille)</p>
+                        <p>Snorkeling</p>
+                        <p>Golf</p>
+                        <p>Randonnée</p>
+                        <p>Paddle</p>
+                        <p>Ski nautique</p>
+                        <p>Sortie en mer</p>
+                        <p>Découverte des dauphins</p>
+                        <p>Pêche</p>
+                        <p>Kayak</p>
+                        <p>Accrobranche</p>
+                        <p>Quad</p>
+                        <p>Jet Ski</p>
+                        <p>Parapente</p>
+                        <p>VTT</p>
+                    </div>
+                    <div class="swiper-slide">
+                        <p>Planche à voile</p>
+                        <p>Plongée (bouteille)</p>
+                        <p>Snorkeling</p>
+                        <p>Golf</p>
+                        <p>Randonnée</p>
+                        <p>Paddle</p>
+                        <p>Ski nautique</p>
+                        <p>Sortie en mer</p>
+                        <p>Découverte des dauphins</p>
+                        <p>Pêche</p>
+                        <p>Kayak</p>
+                        <p>Accrobranche</p>
+                        <p>Quad</p>
+                        <p>Jet Ski</p>
+                        <p>Parapente</p>
+                        <p>VTT</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="carousel_maison_03_map">
+            <div class="mapouter">
+                <div class="gmap_canvas"><iframe width="600" height="799" id="gmap_canvas" src="https://maps.google.com/maps?q=2880%20Broadway,%20New%20York&t=&z=13&ie=UTF8&iwloc=&output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe><a href="https://getasearch.com"></a><br>
+                    <style>
+                        .mapouter {
+                            position: relative;
+                            text-align: right;
+                            height: 799px;
+                            width: 600px;
+                        }
+                    </style><a href="https://www.embedgooglemap.net">embedgooglemap.net</a>
+                    <style>
+                        .gmap_canvas {
+                            overflow: hidden;
+                            background: none !important;
+                            height: 799px;
+                            width: 600px;
+                        }
+                    </style>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
 
 
     <!-- Section articles blog -->
@@ -381,5 +452,12 @@ include 'includes/header.php';
         pagination: {
             el: ".swiper-pagination",
         }
+    });
+
+    var swiper3 = new Swiper(".carousel_maison_03 .mySwiper", {
+        loop: true,
+        navigation: {
+            nextEl: ".swiper-button-next",
+        },
     });
 </script>

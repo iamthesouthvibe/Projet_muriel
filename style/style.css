@@ -706,6 +706,42 @@
         color: grey;
         --swiper-navigation-size: 37px;
     }
+
+    .carousel_and_map {
+        display: flex;
+    }
+
+    .carousel_maison_03 {
+        color: #fff;
+    }
+
+    .carousel_maison_03 .swiper-button-next {
+        background: transparent;
+        position: absolute;
+        opacity: 1;
+        height: 24%;
+        margin-right: 2vw;
+        color: #fff;
+        --swiper-navigation-size: 37px;
+    }
+
+    .carousel_maison_03 .swiper-container {
+        background-color: #9A4747; 
+        width: 448px;
+        height: 470px;
+    }
+
+    .carousel_maison_03 .swiper-slide {
+        background-color: #9A4747 ;
+        display: block;
+        margin: 20px;
+    }
+
+    .carousel_maison_03 .swiper-slide p {
+        text-align: left;
+        margin: 0;
+    }
+
     /* Section articles de blogs de la maison test*/
     
     .container_blog {
