@@ -844,7 +844,7 @@
     .lien_page_blog {
         text-align: center;
         margin-top: 100px;
-        /* padding-bottom: 100px; */
+        padding-bottom: 100px; 
     }
     
     .lien_page_blog a {

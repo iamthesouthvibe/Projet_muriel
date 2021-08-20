@@ -64,7 +64,7 @@ $select = $db->query("SELECT * FROM rooms WHERE id = '{$roomID}' ");
                 <p> <?= $shortDescription4; ?></p>
             </div>
             <div class="image_droite">
-                <img src="<?= $room['photo24']; ?>" alt="Photo Maison">
+                <img src="<?= $room['photo20']; ?>" alt="Photo Maison">
             </div>
         </div>
     </div>
@@ -494,32 +494,28 @@ $select = $db->query("SELECT * FROM rooms WHERE id = '{$roomID}' ");
 
     <div class="container_commentaire">
         <div class="bloc_commentaire">
-            <h5>“Villa merveilleuse aménagée avec beaucoup de goût vue exceptionnelle sur une des plus belles anses.
-                Tout confort”</h5>
+            <h5>“<?= $room["comm1"] ?>”</h5>
             <div class="sous_bloc_commentaire">
                 <img src="assets/svg/5_stars.svg" alt="5 stars svg">
                 <h6 class="infos_commentaire">Valerie Aubree - Février 2019 </h6>
             </div>
         </div>
         <div class="bloc_commentaire">
-            <h5>“Villa merveilleuse aménagée avec beaucoup de goût vue exceptionnelle sur une des plus belles anses.
-                Tout confort”</h5>
+            <h5>“<?= $room["comm2"] ?>”</h5>
             <div class="sous_bloc_commentaire">
                 <img src="assets/svg/5_stars.svg" alt="5 stars svg">
                 <h6 class="infos_commentaire">Valerie Aubree - Février 2019 </h6>
             </div>
         </div>
         <div class="bloc_commentaire">
-            <h5>“Villa merveilleuse aménagée avec beaucoup de goût vue exceptionnelle sur une des plus belles anses.
-                Tout confort”</h5>
+            <h5>“<?= $room["comm3"] ?>”</h5>
             <div class="sous_bloc_commentaire">
                 <img src="assets/svg/5_stars.svg" alt="5 stars svg">
                 <h6 class="infos_commentaire">Valerie Aubree - Février 2019 </h6>
             </div>
         </div>
         <div class="bloc_commentaire">
-            <h5>“Villa merveilleuse aménagée avec beaucoup de goût vue exceptionnelle sur une des plus belles anses.
-                Tout confort”</h5>
+            <h5>“<?= $room["comm4"] ?>”</h5>
             <div class="sous_bloc_commentaire">
                 <img src="assets/svg/5_stars.svg" alt="5 stars svg">
                 <h6 class="infos_commentaire">Valerie Aubree - Février 2019 </h6>
