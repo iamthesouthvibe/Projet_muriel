@@ -1,29 +1,32 @@
 <?php
 require_once 'core/core.php';
 include 'includes/header.php';
+
+$roomID = $_GET['room'];
+$select = $db->query("SELECT * FROM rooms WHERE id = '{$roomID}' ");
 ?>
 
 
 <main>
-
+<?php while ($room = mysqli_fetch_assoc($select)) : 
+    $shortDes = substr($room['details'], 0, 280)
+    ?>
     <!-- Section accueil -->
     <div class="qhero_page_maison">
         <div class="qhero_entree_page_maison">
             <div class="div_h1_titre">
                 <h1 class="h1_titre">
-                    Villa Grand Large <br>
-                    Baie des Anses d’Arlet
+                   <?= $room['room_number']; ?>
                 </h1>
             </div>
             <div class="div_h2_sous_titre">
                 <h2 class="h2_sous_titre">
-                    Martinique, France
+                <?= $room['lieu']; ?>
                 </h2>
             </div>
             <div class="div_h3_text_presentation">
                 <h3 class="h3_titre">
-                    Sed rutrum vulputate dapibus. Vivamus id tincidunt eros, in suscipit quam.Sed rutrum vulputate dapibus. Vivamus id tincidunt eros, in suscipit quam. Sed rutrum vulputate dapibus. Vivamus id tincidunt eros, in suscipit quam.
-                    Sed rutrum vulputate dapibus. Vivamus id tincidunt eros, in suscipit quam.
+                <?= $shortDes . '...'; ?>
                 </h3>
             </div>
         </div>
@@ -40,23 +43,28 @@ include 'includes/header.php';
     <div class="container_presentation_maison">
         <div class="container_presentation_maison_gauche">
             <div class="text_gauche">
+                <?php 
+                $shortDescription2 = substr($room['details'], 0, 250);
+                $shortDescription3 = substr($room['details'], 251, 500);
+                $shortDescription4 = substr($room['details'],501, -1);
+                ?>
                 <p>
-                    À notre arrivée en Martinique, pendant 3 ans, nous avons travaillé sur un catamaran de croisière qui, entre deux excursions aux îles Grenadines, venait régulièrement mouiller dans la baie azur des Anses d’Arlet… Quel ne fut pas notre bonheur lorsque, quelques années plus tard, nous avons pu nous offrir, ce qui n’était alors qu’une cabane au bout d’une piste, notre future maison, avec cette vue imprenable sur les eaux moirées de la baie…
+                    <?= $shortDescription2; ?>
                 </p>
                 <div class="image_gauche">
-                    <img src="assets/jpg/maison_photo_01.jpg" alt="Photo Maison">
+                    <img src="<?= $room['photo4']; ?>" alt="Photo Maison">
                 </div>
                 <p>
-                    Cette maison demeure le socle de notre famille quand nous revenons nous souvenir de ces années heureuses sur l’île…
+                <?= $shortDescription3; ?>
                 </p>
             </div>
         </div>
         <div class="container_presentation_maison_droite">
             <div class="text-droite">
-                <p>Nous avons décidé là de creuser les fondations de notre famille. Nos enfants y sont nés. Je les vois encore descendre à toute allure les petites marches menant à la mer, et croquer à pleine bouche les citrons verts du jardin… Au fil des années, la maison s’est modifiée et agrandie au fur et à mesure de nos projets. </p>
+                <p> <?= $shortDescription4; ?></p>
             </div>
             <div class="image_droite">
-                <img src="assets/jpg/maison_photo_01.jpg" alt="Photo Maison">
+                <img src="<?= $room['photo24']; ?>" alt="Photo Maison">
             </div>
         </div>
     </div>
@@ -68,15 +76,147 @@ include 'includes/header.php';
         <div class="swiper-container mySwiper swiperHover">
             <div class="swiper-wrapper">
                 <div class="swiper-slide">
-                    <img src="./assets/jpg/images page d'accueil/Villa-grande-Anse-Martinique02.jpg" alt="" srcset="">
+                    <img src="<?= $room['photo']; ?>" alt="" srcset="">
                     <div class="swiper-slide-titre">
-                        <p>Lorem ipsum, dolor sit amet</p>
+                        <p><?= $room['photo_des']; ?></p>
                     </div>
                 </div>
                 <div class="swiper-slide">
-                    <img src="./assets/jpg/images page d'accueil/Villa-grande-Anse-Martinique02.jpg" alt="" srcset="">
+                    <img src="<?= $room['photo2']; ?>" alt="" srcset="">
                     <div class="swiper-slide-titre">
-                        <p>Lorem ipsum, dolor sit amet</p>
+                        <p><?= $room['photo_des2']; ?></p>
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <img src="<?= $room['photo3']; ?>" alt="" srcset="">
+                    <div class="swiper-slide-titre">
+                        <p><?= $room['photo_des3']; ?></p>
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <img src="<?= $room['photo4']; ?>" alt="" srcset="">
+                    <div class="swiper-slide-titre">
+                        <p><?= $room['photo_des4']; ?></p>
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <img src="<?= $room['photo5']; ?>" alt="" srcset="">
+                    <div class="swiper-slide-titre">
+                        <p><?= $room['photo_des5']; ?></p>
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <img src="<?= $room['photo6']; ?>" alt="" srcset="">
+                    <div class="swiper-slide-titre">
+                        <p><?= $room['photo_des6']; ?></p>
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <img src="<?= $room['photo7']; ?>" alt="" srcset="">
+                    <div class="swiper-slide-titre">
+                        <p><?= $room['photo_des7']; ?></p>
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <img src="<?= $room['photo8']; ?>" alt="" srcset="">
+                    <div class="swiper-slide-titre">
+                        <p><?= $room['photo_des8']; ?></p>
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <img src="<?= $room['photo9']; ?>" alt="" srcset="">
+                    <div class="swiper-slide-titre">
+                        <p><?= $room['photo_des9']; ?></p>
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <img src="<?= $room['photo10']; ?>" alt="" srcset="">
+                    <div class="swiper-slide-titre">
+                        <p><?= $room['photo_des10']; ?></p>
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <img src="<?= $room['photo11']; ?>" alt="" srcset="">
+                    <div class="swiper-slide-titre">
+                        <p><?= $room['photo_des11']; ?></p>
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <img src="<?= $room['photo12']; ?>" alt="" srcset="">
+                    <div class="swiper-slide-titre">
+                        <p><?= $room['photo_des12']; ?></p>
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <img src="<?= $room['photo13']; ?>" alt="" srcset="">
+                    <div class="swiper-slide-titre">
+                        <p><?= $room['photo_des13']; ?></p>
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <img src="<?= $room['photo14']; ?>" alt="" srcset="">
+                    <div class="swiper-slide-titre">
+                        <p><?= $room['photo_des14']; ?></p>
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <img src="<?= $room['photo15']; ?>" alt="" srcset="">
+                    <div class="swiper-slide-titre">
+                        <p><?= $room['photo_des15']; ?></p>
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <img src="<?= $room['photo16']; ?>" alt="" srcset="">
+                    <div class="swiper-slide-titre">
+                        <p><?= $room['photo_des16']; ?></p>
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <img src="<?= $room['photo17']; ?>" alt="" srcset="">
+                    <div class="swiper-slide-titre">
+                        <p><?= $room['photo_des17']; ?></p>
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <img src="<?= $room['photo18']; ?>" alt="" srcset="">
+                    <div class="swiper-slide-titre">
+                        <p><?= $room['photo_des18']; ?></p>
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <img src="<?= $room['photo19']; ?>" alt="" srcset="">
+                    <div class="swiper-slide-titre">
+                        <p><?= $room['photo_des19']; ?></p>
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <img src="<?= $room['photo20']; ?>" alt="" srcset="">
+                    <div class="swiper-slide-titre">
+                        <p><?= $room['photo_des20']; ?></p>
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <img src="<?= $room['photo21']; ?>" alt="" srcset="">
+                    <div class="swiper-slide-titre">
+                        <p><?= $room['photo_des21']; ?></p>
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <img src="<?= $room['photo22']; ?>" alt="" srcset="">
+                    <div class="swiper-slide-titre">
+                        <p><?= $room['photo_des22']; ?></p>
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <img src="<?= $room['photo23']; ?>" alt="" srcset="">
+                    <div class="swiper-slide-titre">
+                        <p><?= $room['photo_des23']; ?></p>
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <img src="<?= $room['photo24']; ?>" alt="" srcset="">
+                    <div class="swiper-slide-titre">
+                        <p><?= $room['photo_des24']; ?></p>
                     </div>
                 </div>
             </div>
@@ -101,43 +241,43 @@ include 'includes/header.php';
                         <p></p>
                     </div>
                     <div class="bloc_text_slider">
-                        <p>12 Personnes</p>
+                        <p><?= $room['eq1']; ?></p>
                     </div>
                     <div class="separator">
                         <p></p>
                     </div>
                     <div>
-                        <p>6 Chambres</p>
+                    <p><?= $room['eq2']; ?></p>
                     </div>
                     <div class="separator">
                         <p></p>
                     </div>
                     <div>
-                        <p>2 Sdb</p>
+                    <p><?= $room['eq3']; ?></p>
                     </div>
                     <div class="separator">
                         <p></p>
                     </div>
                     <div>
-                        <p>Vue sur Mer</p>
+                        <p><?= $room['eq4']; ?></p>
                     </div>
                     <div class="separator">
                         <p></p>
                     </div>
                     <div>
-                        <p>Piscine</p>
+                        <p><?= $room['eq5']; ?></p>
                     </div>
                     <div class="separator">
                         <p></p>
                     </div>
                     <div>
-                        <p>Jardin</p>
+                        <p><?= $room['eq6']; ?></p>
                     </div>
                     <div class="separator">
                         <p></p>
                     </div>
                     <div>
-                        <p>2 Terrasses</p>
+                        <p><?= $room['eq7']; ?></p>
                     </div>
                     <div class="vide_flexBox">
                         <p></p>
@@ -148,43 +288,43 @@ include 'includes/header.php';
                         <p></p>
                     </div>
                     <div class="bloc_text_slider">
-                        <p>12 Personnes</p>
+                        <p><?= $room['eq8']; ?></p>
                     </div>
                     <div class="separator">
                         <p></p>
                     </div>
                     <div>
-                        <p>6 Chambres</p>
+                        <p><?= $room['eq9']; ?></p>
                     </div>
                     <div class="separator">
                         <p></p>
                     </div>
                     <div>
-                        <p>2 Sdb</p>
+                        <p><?= $room['eq10']; ?></p>
                     </div>
                     <div class="separator">
                         <p></p>
                     </div>
                     <div>
-                        <p>Vue sur Mer</p>
+                        <p><?= $room['eq11']; ?></p>
                     </div>
                     <div class="separator">
                         <p></p>
                     </div>
                     <div>
-                        <p>Piscine</p>
+                        <p><?= $room['eq12']; ?></p>
                     </div>
                     <div class="separator">
                         <p></p>
                     </div>
                     <div>
-                        <p>Jardin</p>
+                        <p><?= $room['eq13']; ?></p>
                     </div>
                     <div class="separator">
                         <p></p>
                     </div>
                     <div>
-                        <p>2 Terrasses</p>
+                        <p><?= $room['eq14']; ?></p>
                     </div>
                     <div class="vide_flexBox">
                         <p></p>
@@ -204,40 +344,45 @@ include 'includes/header.php';
                 </h4>
                 <div class="swiper-wrapper">
                     <div class="swiper-slide">
-                        <p>Planche à voile</p>
-                        <p>Plongée (bouteille)</p>
-                        <p>Snorkeling</p>
-                        <p>Golf</p>
-                        <p>Randonnée</p>
-                        <p>Paddle</p>
-                        <p>Ski nautique</p>
-                        <p>Sortie en mer</p>
-                        <p>Découverte des dauphins</p>
-                        <p>Pêche</p>
-                        <p>Kayak</p>
-                        <p>Accrobranche</p>
-                        <p>Quad</p>
-                        <p>Jet Ski</p>
-                        <p>Parapente</p>
-                        <p>VTT</p>
+                        <p><?= $room['act1']; ?></p>
+                        <p><?= $room['act2']; ?></p>
+                        <p><?= $room['act3']; ?></p>
+                        <p><?= $room['act4']; ?></p>
+                        <p><?= $room['act5']; ?></p>
+                        <p><?= $room['act6']; ?></p>
+                        <p><?= $room['act7']; ?></p>
+                        <p><?= $room['act8']; ?></p>
+                        <p><?= $room['act9']; ?></p>
+                        <p><?= $room['act10']; ?></p>
+                        <p><?= $room['act11']; ?></p>
+                        <p><?= $room['act12']; ?></p>
+                        <p><?= $room['act13']; ?></p>
+                        <p><?= $room['act14']; ?></p>
+                        <p><?= $room['act15']; ?></p>
+                        <p><?= $room['act16']; ?></p>
+                        <p><?= $room['act17']; ?></p>
                     </div>
                     <div class="swiper-slide">
-                        <p>Planche à voile</p>
-                        <p>Plongée (bouteille)</p>
-                        <p>Snorkeling</p>
-                        <p>Golf</p>
-                        <p>Randonnée</p>
-                        <p>Paddle</p>
-                        <p>Ski nautique</p>
-                        <p>Sortie en mer</p>
-                        <p>Découverte des dauphins</p>
-                        <p>Pêche</p>
-                        <p>Kayak</p>
-                        <p>Accrobranche</p>
-                        <p>Quad</p>
-                        <p>Jet Ski</p>
-                        <p>Parapente</p>
-                        <p>VTT</p>
+                        <p><?= $room['inte1']; ?></p>
+                        <p><?= $room['inte2']; ?></p>
+                        <p><?= $room['inte3']; ?></p>
+                        <p><?= $room['inte4']; ?></p>
+                        <p><?= $room['inte5']; ?></p>
+                        <p><?= $room['inte6']; ?></p>
+                        <p><?= $room['inte7']; ?></p>
+                        <p><?= $room['inte8']; ?></p>
+                        <p><?= $room['inte9']; ?></p>
+                        <p><?= $room['inte10']; ?></p>
+                        <p><?= $room['inte11']; ?></p>
+                    </div>
+                    <div class="swiper-slide">
+                        <p><?= $room['dist1']; ?></p>
+                        <p><?= $room['dist2']; ?></p>
+                        <p><?= $room['dist3']; ?></p>
+                        <p><?= $room['dist4']; ?></p>
+                        <p><?= $room['dist5']; ?></p>
+                        <p><?= $room['dist6']; ?></p>
+                        <p><?= $room['dist7']; ?></p>
                     </div>
                 </div>
             </div>
@@ -259,6 +404,10 @@ include 'includes/header.php';
                             background: none !important;
                             height: 799px;
                             width: 600px;
+                        }
+
+                        .carousel_maison img {
+                            filter: none;
                         }
                     </style>
                 </div>
@@ -380,7 +529,9 @@ include 'includes/header.php';
     </div>
 
 
+
     <?php
+    endwhile;
     include "includes/cursor.php";
     include("./includes/footer.php"); ?>
 

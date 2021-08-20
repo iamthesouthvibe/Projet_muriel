@@ -388,6 +388,7 @@
         height: 100%;
         object-fit: cover;
         position: absolute;
+        filter: grayscale(100%);
     }
     
     .swiper-slide-titre {
@@ -409,6 +410,7 @@
     }
     
     .swiper-slide-titre p {
+        margin: auto;
         font-family: Neue Montreal;
         font-style: normal;
         font-weight: normal;
@@ -597,6 +599,8 @@
         line-height: 78%;
         color: rgba(154, 71, 71, 1);
         margin: 0;
+        max-width: 70vw;
+        margin: auto;
     }
     
     .div_h2_sous_titre h2 {
