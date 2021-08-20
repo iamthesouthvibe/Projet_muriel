@@ -734,12 +734,12 @@
     .carousel_maison_03 .swiper-slide {
         background-color: #9A4747 ;
         display: block;
-        margin: 20px;
     }
 
     .carousel_maison_03 .swiper-slide p {
         text-align: left;
         margin: 0;
+        margin-left: 20px;
     }
 
     /* Section articles de blogs de la maison test*/
