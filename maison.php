@@ -490,7 +490,7 @@ $select = $db->query("SELECT * FROM rooms WHERE id = '{$roomID}' ");
             </div>
 
         </div>
-
+        <?php endwhile; ?>
 
         <!-- Ligne séparator -->
 
@@ -498,43 +498,24 @@ $select = $db->query("SELECT * FROM rooms WHERE id = '{$roomID}' ");
 
         <!-- Section Commentaires -->
 
-
+        <?php 
+        $select2 = $db->query("SELECT * FROM comments WHERE id_rooms = '{$roomID}' ORDER BY id DESC ");
+        ?>
         <div class="container_commentaire">
+            <?php while($comm = mysqli_fetch_assoc($select2)) : ?>
             <div class="bloc_commentaire">
-                <h5>“<?= $room["comm1"] ?>”</h5>
+                <h5>“<?= $comm["comment"] ?>”</h5>
                 <div class="sous_bloc_commentaire">
                     <img src="assets/svg/5_stars.svg" alt="5 stars svg">
-                    <h6 class="infos_commentaire">Valerie Aubree - Février 2019 </h6>
+                    <h6 class="infos_commentaire"><?= $comm['fullname'] . " - " . $comm['date_c']; ?></h6>
                 </div>
             </div>
-            <div class="bloc_commentaire">
-                <h5>“<?= $room["comm2"] ?>”</h5>
-                <div class="sous_bloc_commentaire">
-                    <img src="assets/svg/5_stars.svg" alt="5 stars svg">
-                    <h6 class="infos_commentaire">Valerie Aubree - Février 2019 </h6>
-                </div>
-            </div>
-            <div class="bloc_commentaire">
-                <h5>“<?= $room["comm3"] ?>”</h5>
-                <div class="sous_bloc_commentaire">
-                    <img src="assets/svg/5_stars.svg" alt="5 stars svg">
-                    <h6 class="infos_commentaire">Valerie Aubree - Février 2019 </h6>
-                </div>
-            </div>
-            <div class="bloc_commentaire">
-                <h5>“<?= $room["comm4"] ?>”</h5>
-                <div class="sous_bloc_commentaire">
-                    <img src="assets/svg/5_stars.svg" alt="5 stars svg">
-                    <h6 class="infos_commentaire">Valerie Aubree - Février 2019 </h6>
-                </div>
-            </div>
-
+            <?php endwhile; ?>
         </div>
 
 
 
     <?php
-    endwhile;
     include "includes/cursor.php";
     include("./includes/footer.php"); ?>
 
