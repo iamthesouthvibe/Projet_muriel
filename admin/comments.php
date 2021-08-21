@@ -30,10 +30,10 @@ if (isset($_GET['delete'])) {
         <tr>
           <th>#</th>
           <th>Name</th>
-          <th>Title of comment</th>
           <th>Date</th>
           <th>Comment</th>
           <th>Id House</th>
+          <th>Supp</th>
         </tr>
       </thead>
       <tbody>
@@ -41,12 +41,11 @@ if (isset($_GET['delete'])) {
           <tr>
             <td><?= $row_count++; ?></td>
             <td><?= $rows['fullname']; ?></td>
-            <td><?= $rows['title_c']; ?></td>
             <td><?= $rows['date_c']; ?></td>
             <td><?= $rows['comment']; ?></td>
             <td><?= $rows['id_rooms']; ?></td>
             <td>
-              <a href="comments.php?delete=<?= $rows['id']; ?>" class="w3-btn w3-small w3-red"><span class="glyphicon glyphicon-trash"></span></a>
+              <a href="comments.php?delete=<?= $rows['id']; ?>" class="w3-btn w3-small w3-red"><span class="glyphicon glyphicon-trash">supp</span></a>
 
             </td>
           </tr>
