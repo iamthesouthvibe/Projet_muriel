@@ -52,5 +52,6 @@ if (isset($_GET['delete'])) {
         <?php endwhile; ?>
       </tbody>
     </table>
+    <a href="add_commentaire.php"><img src="/assets/png/button_add.png" alt=""></a>
   </div>
 </div>

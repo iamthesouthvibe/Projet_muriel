@@ -42,6 +42,7 @@ body {
     background: #9A4747;
     padding: 15px 15px;
     transition: all 0.5s ease;
+    z-index: 10;
   }
 
   .sidebar.active {
@@ -321,6 +322,8 @@ body {
 
 .admin_page_maison_container img {
   width: 29vw;
+  filter: grayscale(100%);
+  z-index: 0;
 }
 
 .admin_page_maison_title {
@@ -333,7 +336,7 @@ body {
 .admin_page_maison_title h2 {
     font-family: ITCGaramondStd-BkNarrow;
     color: #9A4747;
-    font-size: 2vw;
+    font-size: 1.5vw;
     margin: 0;
 }
 
@@ -376,7 +379,8 @@ body {
     color: #000;
 }
 
-.admin_page_tours a img {
+.admin_page_tours a img,
+.admin_page_comments a img {
   position: fixed;
     right: 25px;
     bottom: 25px;
@@ -384,7 +388,8 @@ body {
     transition: all 0.5s;
 }
 
-.admin_page_tours a img:hover {
+.admin_page_tours a img:hover,
+.admin_page_comments a img:hover {
   transform: scale(1.2, 1.2);
 }
 

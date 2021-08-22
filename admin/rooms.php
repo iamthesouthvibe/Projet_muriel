@@ -9,23 +9,7 @@ include 'includes/header.php';
 include 'includes/navigation.php';
 #header("Location: events.php");
 
-$sql = $db->query("SELECT * FROM rooms");
-
-if (isset($_GET['delete'])) {
-    $toDeleteRoom = $_GET['delete'];
-    $sql1 = $db->query("SELECT * FROM rooms WHERE id = '$toDeleteRoom' LIMIT 1");
-    $fetch = mysqli_fetch_assoc($sql1);
-    /*
-        $imageURL = $_SERVER['DOCUMENT_ROOT'].'/'.$fetch['photo'];
-        unlink($imageURL);*/
-    ##################################################################
-    $sql = "DELETE FROM rooms WHERE id = '$toDeleteRoom' ";
-    $db->query($sql);
-    header("Location: rooms.php");
-}
-
-
-?>
+$sql = $db->query("SELECT * FROM rooms");?>
 <!--
 <div class="w3-container w3-main" style="margin-left:200px;" >
 
@@ -67,33 +51,14 @@ if (isset($_GET['delete'])) {
         <img src="../assets/png/LOGO_ANCIEN.png" alt="Logo Muriel">
     </div>
     <div class="admin_page_maison">
+    <?php while($room = mysqli_fetch_assoc($sql)): ?>
         <div class="admin_page_maison_container">
-            <img src="/assets/jpg/images page d'accueil/Villa-grande-Anse-Martinique02.jpg" alt="" srcset="">
+            <img src="/<?= $room['photo']; ?>" alt="" srcset="">
             <div class="admin_page_maison_title">
-                <h2>Villa Grande</h2>
+                <h2><?= $room['room_number']; ?></h2>
                 <button><a href="">Modifier</a></button>
             </div>
         </div>
-        <div class="admin_page_maison_container">
-            <img src="/assets/jpg/images page d'accueil/Villa-grande-Anse-Martinique02.jpg" alt="" srcset="">
-            <div class="admin_page_maison_title">
-                <h2>Villa Grande</h2>
-                <button><a href="">Modifier</a></button>
-            </div>
-        </div>
-       <div class="admin_page_maison_container">
-            <img src="/assets/jpg/images page d'accueil/Villa-grande-Anse-Martinique02.jpg" alt="" srcset="">
-            <div class="admin_page_maison_title">
-                <h2>Villa Grande</h2>
-                <button><a href="">Modifier</a></button>
-            </div>
-        </div>
-        <div class="admin_page_maison_container">
-            <img src="/assets/jpg/images page d'accueil/Villa-grande-Anse-Martinique02.jpg" alt="" srcset="">
-            <div class="admin_page_maison_title">
-                <h2>Villa Grande</h2>
-                <button><a href="">Modifier</a></button>
-            </div>
-        </div>
+    <?php endwhile; ?>    
     </div>
 </div>
