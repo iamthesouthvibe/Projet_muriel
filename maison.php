@@ -316,13 +316,13 @@ include 'includes/header.php';
                 <h5 class="element_textuel_produit">Titre du Produit</h5>
                 <a class="element_textuel_produit" href="">Acheter →</a>
             </div>
-            <div class="espace_produit espace_produit_02">
+            <div class="espace_produit espace_produit_maison_02">
                 <img src="assets/jpg/maison_photo_01.jpg" alt="Thumbnail du blog">
                 <h6>Prix du Produit</h6>
                 <h5>Titre du Produit</h5>
                 <a href="">Acheter →</a>
             </div>
-            <div class="espace_produit espace_produit_02">
+            <div class="espace_produit espace_produit_maison_02">
                 <img src="assets/jpg/maison_photo_01.jpg" alt="Thumbnail du blog">
                 <h6>Prix du Produit</h6>
                 <h5>Titre du Produit</h5>

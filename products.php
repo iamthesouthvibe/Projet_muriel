@@ -38,25 +38,43 @@ include 'includes/header.php';
     <!-- Section produits -->
 
     <div class="espace_flexbox_produit_02">
-            <div class="espace_produit_02">
+        <div class="espace_produit_02">
+            <a href="">
                 <img src="assets/jpg/products/product_example.png" alt="Thumbnail du produit">
-                <h6 class="element_textuel_produit_02">Prix du Produit</h6>
-                <h5 class="element_textuel_produit_02">Titre du Produit</h5>
-                <a class="element_textuel_produit_02" href="">Acheter →</a>
-            </div>
-            <div class="espace_produit espace_produit_02">
-                <img src="assets/jpg/products/product_example.png" alt="Thumbnail du produit">
+            </a>
+            <a href="">
                 <h6>Prix du Produit</h6>
+            </a>
+            <a href="">
                 <h5>Titre du Produit</h5>
-                <a href="">Acheter →</a>
-            </div>
-            <div class="espace_produit_02 espace_produit_02">
-                <img src="assets/jpg/products/product_example.png" alt="Thumbnail du produit">
-                <h6>Prix du Produit</h6>
-                <h5>Titre du Produit</h5>
-                <a href="">Acheter →</a>
-            </div>
+            </a>
+            <a href="" class="lien_achat">Acheter →</a>
         </div>
+        <div class="espace_produit_02">
+            <a href="">
+                <img src="assets/jpg/products/product_example.png" alt="Thumbnail du produit">
+            </a>
+            <a href="">
+                <h6>Prix du Produit</h6>
+            </a>
+            <a href="">
+                <h5>Titre du Produit</h5>
+            </a>
+            <a href="" class="lien_achat">Acheter →</a>
+        </div>
+        <div class="espace_produit_02">
+            <a href="">
+                <img src="assets/jpg/products/product_example.png" alt="Thumbnail du produit">
+            </a>
+            <a href="">
+                <h6>Prix du Produit</h6>
+            </a>
+            <a href="">
+                <h5>Titre du Produit</h5>
+            </a>
+            <a href="" class="lien_achat">Acheter →</a>
+        </div>
+    </div>
 
 
 
@@ -64,4 +82,4 @@ include 'includes/header.php';
     include "includes/cursor.php";
     include("./includes/footer.php"); ?>
 
-</main> 
+</main>
