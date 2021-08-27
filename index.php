@@ -76,7 +76,7 @@ $sql = $db->query("SELECT * FROM rooms LIMIT 4");
 
 
   <!-- Swiper -->
-  <div class="swiper-container mySwiper swiperHover">
+  <div class="swiper mySwiper swiperHover">
     <div class="swiper-wrapper">
     <?php  while($room = mysqli_fetch_assoc($sql)): 
       $nb_mots = 3;
@@ -125,18 +125,18 @@ $sql = $db->query("SELECT * FROM rooms LIMIT 4");
 
 
 <!-- Swiper JS -->
-<script src="https://unpkg.com/swiper/swiper-bundle.js"></script>
-<script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+
 
 
 
 <!-- Swiper JS -->
-<script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+<script src="https://unpkg.com/swiper@7/swiper-bundle.min.js"></script>
 
 <!-- Initialize Swiper -->
 <script>
   var swiper = new Swiper(".mySwiper", {
     loop: true,
+    redimensionnerObservateur: false,
     navigation: {
       nextEl: ".swiper-button-next",
       prevEl: ".swiper-button-prev",
