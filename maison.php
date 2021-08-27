@@ -73,7 +73,7 @@ $select = $db->query("SELECT * FROM rooms WHERE id = '{$roomID}' ");
 
         <!-- Swiper -->
         <div class="carousel_maison">
-            <div class="swiper-container mySwiper swiperHover">
+            <div class="swiper mySwiper swiperHover">
                 <div class="swiper-wrapper">
                     <div class="swiper-slide">
                         <img src="<?= $room['photo']; ?>" alt="" srcset="">
@@ -241,7 +241,7 @@ $select = $db->query("SELECT * FROM rooms WHERE id = '{$roomID}' ");
         <!-- Swiper Infos techniques maison-->
 
         <div class="carousel_maison_02">
-            <div class="swiper-container mySwiper swiperHover">
+            <div class="swiper mySwiper swiperHover">
                 <div class="swiper-wrapper">
                     <div class="swiper-slide">
                         <div class="vide_flexBox">
@@ -346,7 +346,7 @@ $select = $db->query("SELECT * FROM rooms WHERE id = '{$roomID}' ");
         <!-- Swiper Activités-->
         <div class="carousel_and_map">
             <div class="carousel_maison_03">
-                <div class="swiper-container mySwiper swiperHover">
+                <div class="swiper mySwiper swiperHover">
                     <h4>Activités <div class="swiper-button-next"></div>
                     </h4>
                     <div class="swiper-wrapper">
@@ -522,12 +522,14 @@ $select = $db->query("SELECT * FROM rooms WHERE id = '{$roomID}' ");
 </main>
 
 <!-- Swiper JS -->
-<script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+<script src="https://unpkg.com/swiper@7/swiper-bundle.min.js"></script>
 
 <!-- Initialize Swiper -->
 <script>
     var swiper = new Swiper(".mySwiper", {
         loop: true,
+        resizeObserver: false,
+        watchOverflow: false,
         navigation: {
             nextEl: ".swiper-button-next",
             prevEl: ".swiper-button-prev",
@@ -583,7 +585,8 @@ $select = $db->query("SELECT * FROM rooms WHERE id = '{$roomID}' ");
 
     var swiper2 = new Swiper(".carousel_maison_02 .mySwiper", {
         loop: true,
-
+        resizeObserver: false,
+    watchOverflow: false,
         pagination: {
             el: ".swiper-pagination",
         }
@@ -591,6 +594,8 @@ $select = $db->query("SELECT * FROM rooms WHERE id = '{$roomID}' ");
 
     var swiper3 = new Swiper(".carousel_maison_03 .mySwiper", {
         loop: true,
+        resizeObserver: false,
+    watchOverflow: false,
         navigation: {
             nextEl: ".swiper-button-next",
         },
