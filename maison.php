@@ -529,7 +529,6 @@ $select = $db->query("SELECT * FROM rooms WHERE id = '{$roomID}' ");
     var swiper = new Swiper(".mySwiper", {
         loop: true,
         resizeObserver: false,
-        watchOverflow: false,
         navigation: {
             nextEl: ".swiper-button-next",
             prevEl: ".swiper-button-prev",
