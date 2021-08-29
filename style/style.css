@@ -356,6 +356,10 @@
         }
     }
     /* Caroussel de photos */
+
+    .swiper {
+        height: 80vh;
+    }
     
     .swiper-container {
         width: 100%;
@@ -664,6 +668,10 @@
         margin-top: 35vh;
     }
     /* Caroussel de texte technique de la maison */
+
+    .carousel_maison_02 .swiper {
+        height: 10vh;
+    }
     
     .carousel_maison_02 .swiper-container {
         width: 100%;
@@ -720,6 +728,7 @@
         color: #fff;
     }
 
+
     .carousel_maison_03 h4 {
         margin-left: 50px;
     }
@@ -734,7 +743,7 @@
         --swiper-navigation-size: 20px;
     }
 
-    .carousel_maison_03 .swiper-container {
+    .carousel_maison_03 .swiper {
         background-color: #9A4747; 
         width: 448px;
         height: 470px;

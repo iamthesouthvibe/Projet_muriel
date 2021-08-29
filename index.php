@@ -84,12 +84,18 @@ $sql = $db->query("SELECT * FROM rooms LIMIT 4");
       $tab= explode(' ', $var, $nb_mots+1);
       unset($tab[$nb_mots]);
       $shortRoom = implode(' ', $tab);
+
+      $nb_mots2 = 45;
+      $var2 = $room['details'];
+      $tab2= explode(' ', $var2, $nb_mots2+1);
+      unset($tab2[$nb_mots2]);
+      $shortDesc = implode(' ', $tab2);
       ?>
       <div class="swiper-slide">
         <img src="<?=$room['photo'];?>" alt="" srcset="">
         <div class="swiper-slide-titre">
           <h2><?=$shortRoom;?></h2>
-          <p><?=$room['details'];?></p>
+          <p><?=$shortDesc?></p>
           <button><a href="maison.php?room=<?= $room['id']; ?>">Découvrir</a></button>
         </div>
       </div>
