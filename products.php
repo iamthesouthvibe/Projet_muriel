@@ -1,6 +1,8 @@
 <?php
 require_once 'core/core.php';
 include 'includes/header.php';
+
+$select = $db->query("SELECT * FROM products");
 ?>
 
 <main>
@@ -38,42 +40,20 @@ include 'includes/header.php';
     <!-- Section produits -->
 
     <div class="espace_flexbox_produit_02">
+    <?php while ($product = mysqli_fetch_assoc($select)) : ?>
         <div class="espace_produit_02">
             <a href="">
-                <img src="assets/jpg/products/product_example.png" alt="Thumbnail du produit">
+                <img src="<?= $product['photo_p']; ?>" alt="Thumbnail du produit">
             </a>
             <a href="">
-                <h6>Prix du Produit</h6>
+                <h6><?= $product['price_p']; ?></h6>
             </a>
             <a href="">
-                <h5>Titre du Produit</h5>
+                <h5><?= $product['name_p']; ?></h5>
             </a>
             <a href="" class="lien_achat">Acheter →</a>
         </div>
-        <div class="espace_produit_02">
-            <a href="">
-                <img src="assets/jpg/products/product_example.png" alt="Thumbnail du produit">
-            </a>
-            <a href="">
-                <h6>Prix du Produit</h6>
-            </a>
-            <a href="">
-                <h5>Titre du Produit</h5>
-            </a>
-            <a href="" class="lien_achat">Acheter →</a>
-        </div>
-        <div class="espace_produit_02">
-            <a href="">
-                <img src="assets/jpg/products/product_example.png" alt="Thumbnail du produit">
-            </a>
-            <a href="">
-                <h6>Prix du Produit</h6>
-            </a>
-            <a href="">
-                <h5>Titre du Produit</h5>
-            </a>
-            <a href="" class="lien_achat">Acheter →</a>
-        </div>
+        <?php endwhile; ?>
     </div>
 
 
