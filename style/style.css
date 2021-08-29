@@ -1029,6 +1029,173 @@ nav {
     margin-top: 50px;
 }
 /* ##### Fin style de la page maison ##### */
+
+
+/* ##### Debut style de la page produits ##### */
+
+.qhero_page_produits {
+    margin-top: 25vh;
+    text-align: center;
+}
+
+.div_h3_text_presentation_produits {
+    font-family: NeueMontreal-Regular;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 20px;
+    text-align: center;
+    color: #000000;
+    padding-left: 20vw;
+    padding-right: 20vw;
+    margin-bottom: 26vh;
+}
+
+.section_boutons_filtre {
+    margin-left: 25px;
+    margin-right: 25px;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 120px;
+}
+
+.boutons_maisons {
+    width: 45%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 10px;
+}
+
+.bouton_selection_maison {
+    width: 170px;
+    height: 36px;
+    background: none;
+    border-radius: 40px;
+    border: 1.5px solid;
+    border-color: #9A4747;
+    transition-duration: 0.5s;
+    min-width: 130px;
+}
+
+.bouton_agrandie {
+    width: 220px
+}
+
+.bouton_selection_maison a {
+    font-family: NeueMontreal-Bold;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 18px;
+    line-height: 20px;
+    text-align: center;
+    color: #9A4747;
+    text-decoration: none;
+    transition-duration: 0.5s
+}
+
+.bouton_selection_maison:hover {
+    width: 170px;
+    height: 36px;
+    background: #9A4747;
+    border-radius: 40px;
+    border: none;
+    border-color: none;
+    transition-duration: 0.5s
+}
+
+.bouton_selection_maison a:hover {
+    color: #FCF7EC;
+    text-decoration: none;
+    font-family: NeueMontreal-Bold;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 18px;
+    transition-duration: 0.5s
+}
+
+.bouton_agrandie:hover {
+    width: 220px
+}
+
+.espace_flexbox_produit_02 {
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-flex-direction: row;
+    -ms-flex-direction: row;
+    flex-direction: row;
+    -webkit-flex-wrap: nowrap;
+    -ms-flex-wrap: nowrap;
+    flex-wrap: nowrap;
+    -ms-flex-pack: justify;
+    -webkit-align-content: stretch;
+    -ms-flex-line-pack: stretch;
+    align-content: stretch;
+    -webkit-align-items: flex-start;
+    -ms-flex-align: start;
+    align-items: flex-start;
+    margin-left: 25px;
+    margin-right: 25px;
+    gap: 1vw;
+    justify-content: center;
+    margin-left: 0;
+    margin-right: 0;
+    text-align: center;
+}
+
+.espace_produit_02 a {
+    text-decoration: none;
+}
+
+.espace_produit_02 a img {
+    max-width: 90%;
+}
+
+.espace_produit_02 a h6 {
+    font-family: NeueMontreal-Regular;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 12px;
+    line-height: 106%;
+    /* or 13px */
+    color: #9A4747;
+    margin-top: 5px;
+    margin-bottom: 0px;
+    margin-left: 25px;
+    text-align: left;
+}
+
+.espace_produit_02 a h5 {
+    font-family: ITCGaramondStd-BkNarrow;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 36px;
+    line-height: 72.5%;
+    /* or 26px */
+    color: #9A4747;
+    margin-top: 15px;
+    margin-bottom: 20px;
+    margin-left: 25px;
+    text-align: left;
+}
+
+.espace_produit_02 .lien_achat {
+    text-decoration: none;
+    font-family: NeueMontreal-Regular;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 18px;
+    line-height: 72.5%;
+    color: #9B9B9B;
+    margin-left: 25px;
+    text-align: left;
+    float: left;
+}
+
+
+/* ##### Fin style de la page produits ##### */
+
 /* ##### Debut style de la page contact ##### */
 
 .page_contact {

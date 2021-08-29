@@ -53,7 +53,7 @@
             <a href="">Rubriques</a>
           </li>
           <li>
-            <a href="">Produits</a>
+            <a href="products.php">Produits</a>
           </li>
           <li>
             <a href="contact.php">Contact</a>
