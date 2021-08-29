@@ -3,10 +3,11 @@ require_once 'core/core.php';
 include 'includes/header.php';
 
 
-/*
+
 
 $sql = $db->query("SELECT * FROM rooms LIMIT 4");
-$tourSQL = $db->query("SELECT * FROM tourism LIMIT 4");
+
+/*
 ?>
 
 
@@ -75,52 +76,30 @@ $tourSQL = $db->query("SELECT * FROM tourism LIMIT 4");
 
 
   <!-- Swiper -->
-  <div class="swiper-container mySwiper swiperHover">
+  <div class="swiper mySwiper swiperHover">
     <div class="swiper-wrapper">
+    <?php  while($room = mysqli_fetch_assoc($sql)): 
+      $nb_mots = 3;
+      $var = $room['room_number'];
+      $tab= explode(' ', $var, $nb_mots+1);
+      unset($tab[$nb_mots]);
+      $shortRoom = implode(' ', $tab);
+
+      $nb_mots2 = 45;
+      $var2 = $room['details'];
+      $tab2= explode(' ', $var2, $nb_mots2+1);
+      unset($tab2[$nb_mots2]);
+      $shortDesc = implode(' ', $tab2);
+      ?>
       <div class="swiper-slide">
-        <img src="./assets/jpg/images page d'accueil/Villa-grande-Anse-Martinique02.jpg" alt="" srcset="">
+        <img src="<?=$room['photo'];?>" alt="" srcset="">
         <div class="swiper-slide-titre">
-          <h2>Grand large</h2>
-          <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Itaque quos numquam corrupti tempora neque dicta deserunt ab molestias obcaecati rerum,
-            illum fugiat quas aperiam asperiores sit facere cupiditate facilis earum? Lorem ipsum dolor sit, amet consectetur adipisicing elit. Voluptates, quas, nulla, in dolorum enim officia perferendis
-            reiciendis expedita accusantium laborum maxime quo
-            nihil debitis est exercitationem. Doloremque officia soluta eligendi!</p>
-          <button><a href="maison.php">Découvrir</a></button>
+          <h2><?=$shortRoom;?></h2>
+          <p><?=$shortDesc?></p>
+          <button><a href="maison.php?room=<?= $room['id']; ?>">Découvrir</a></button>
         </div>
       </div>
-      <div class="swiper-slide">
-        <img src="./assets/jpg/images page d'accueil/Villa-grande-Anse-Martinique02.jpg" alt="" srcset="">
-        <div class="swiper-slide-titre">
-          <h2>Grand large</h2>
-          <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Itaque quos numquam corrupti tempora neque dicta deserunt ab molestias obcaecati rerum,
-            illum fugiat quas aperiam asperiores sit facere cupiditate facilis earum? Lorem ipsum dolor sit, amet consectetur adipisicing elit. Voluptates, quas, nulla, in dolorum enim officia perferendis
-            reiciendis expedita accusantium laborum maxime quo
-            nihil debitis est exercitationem. Doloremque officia soluta eligendi!</p>
-          <button><a href="">Découvrir</a></button>
-        </div>
-      </div>
-      <div class="swiper-slide">
-        <img src="./assets/jpg/images page d'accueil/Villa-grande-Anse-Martinique02.jpg" alt="" srcset="">
-        <div class="swiper-slide-titre">
-          <h2>Grand large</h2>
-          <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Itaque quos numquam corrupti tempora neque dicta deserunt ab molestias obcaecati rerum,
-            illum fugiat quas aperiam asperiores sit facere cupiditate facilis earum? Lorem ipsum dolor sit, amet consectetur adipisicing elit. Voluptates, quas, nulla, in dolorum enim officia perferendis
-            reiciendis expedita accusantium laborum maxime quo
-            nihil debitis est exercitationem. Doloremque officia soluta eligendi!</p>
-          <button><a href="">Découvrir</a></button>
-        </div>
-      </div>
-      <div class="swiper-slide">
-        <img src="./assets/jpg/images page d'accueil/Villa-grande-Anse-Martinique02.jpg" alt="" srcset="">
-        <div class="swiper-slide-titre">
-          <h2>Grand large</h2>
-          <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Itaque quos numquam corrupti tempora neque dicta deserunt ab molestias obcaecati rerum,
-            illum fugiat quas aperiam asperiores sit facere cupiditate facilis earum? Lorem ipsum dolor sit, amet consectetur adipisicing elit. Voluptates, quas, nulla, in dolorum enim officia perferendis
-            reiciendis expedita accusantium laborum maxime quo
-            nihil debitis est exercitationem. Doloremque officia soluta eligendi!</p>
-          <button><a href="">Découvrir</a></button>
-        </div>
-      </div>
+      <?php endwhile; ?>
     </div>
     <div class="swiper-button-next"></div>
     <div class="swiper-button-prev"></div>
@@ -152,18 +131,18 @@ $tourSQL = $db->query("SELECT * FROM tourism LIMIT 4");
 
 
 <!-- Swiper JS -->
-<script src="https://unpkg.com/swiper/swiper-bundle.js"></script>
-<script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+
 
 
 
 <!-- Swiper JS -->
-<script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+<script src="https://unpkg.com/swiper@7/swiper-bundle.min.js"></script>
 
 <!-- Initialize Swiper -->
 <script>
   var swiper = new Swiper(".mySwiper", {
     loop: true,
+    resizeObserver: false,
     navigation: {
       nextEl: ".swiper-button-next",
       prevEl: ".swiper-button-prev",
