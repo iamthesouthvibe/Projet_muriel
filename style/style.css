@@ -1121,26 +1121,6 @@ nav {
     transition-duration: 0.5s
 }
 
-.bouton_selection_maison:hover {
-    width: 170px;
-    height: 36px;
-    background: #9A4747;
-    border-radius: 40px;
-    border: none;
-    border-color: none;
-    transition-duration: 0.5s
-}
-
-.bouton_selection_maison a:hover {
-    color: #FCF7EC;
-    text-decoration: none;
-    font-family: NeueMontreal-Bold;
-    font-style: normal;
-    font-weight: bold;
-    font-size: 18px;
-    transition-duration: 0.5s
-}
-
 .bouton_agrandie:hover {
     width: 220px
 }

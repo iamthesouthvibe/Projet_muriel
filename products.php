@@ -82,4 +82,13 @@ include 'includes/header.php';
     include "includes/cursor.php";
     include("./includes/footer.php"); ?>
 
+    <script>
+        let bouton = document.querySelector(".bouton_selection_maison");
+        let boutonLink = document.querySelector(".bouton_selection_maison a");
+        bouton.addEventListener("mouseenter", function(){
+            bouton.style.backgroundColor="#9A4747";
+            boutonLink.style.color="#9A4747";
+        })
+    </script>
+
 </main>
