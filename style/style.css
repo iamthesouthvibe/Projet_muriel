@@ -1204,6 +1204,206 @@ nav {
 /* ##### Fin style de la page produits ##### */
 
 
+/* ##### Debut style de la page produits Unité ##### */
+
+.qhero_page_produits_unit {
+    margin-top: 25vh;
+    text-align: center;
+    margin-bottom: 20vh;
+}
+
+.section_presentation_produits_unit {
+    display: flex;
+    margin-left: 25px;
+    margin-right: 5vw;
+}
+
+.image_produits_unit img {
+    width: 45vw;
+}
+
+.infos_techniques_produits_unit {
+    margin-left: 4vw;
+}
+
+.infos_techniques_produits_unit h2 {
+    margin-top: 0px;
+    font-family: ITCGaramondStd-BkNarrow;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 36px;
+    line-height: 72.5%;
+    color: #9A4747;
+    text-align: left;
+    margin-bottom: 5px;
+    padding-top: 5px;
+}
+
+.infos_techniques_produits_unit h5 {
+    font-family: NeueMontreal-Regular;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 12px;
+    line-height: 106%;
+    color: #9A4747;
+    margin-top: 10px;
+    margin-bottom: 70px;
+}
+
+.infos_techniques_produits_unit h3 {
+    font-family: NeueMontreal-Regular;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 20px;
+    color: #000000;
+}
+
+nav .nav_menu_deroulant {
+    width: 100%;
+    margin: 0 auto;
+    background-color: white;
+    position: sticky;
+    top: 0px;
+}
+
+.nav_menu_deroulant {
+    margin-left: 0px;
+    margin-bottom: 70px;
+}
+
+.nav_menu_deroulant .ul_menu_deroulant {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+.nav_menu_deroulant .ul_menu_deroulant li {
+    float: left;
+    width: 25%;
+    text-align: left;
+    position: relative;
+    min-width: 150px;
+    /*min-width: 130px;*/
+    clear: left;
+    /* Sert à positionner le menu déroulant quantité en dessous du menu Tailles */
+}
+
+.nav_menu_deroulant ul::after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+.menu_deroulant_taille {
+    margin-bottom: 25px;
+}
+
+.nav_menu_deroulant a {
+    display: block;
+    text-decoration: none;
+    color: black;
+    border-bottom: 2px solid transparent;
+    padding: 10px 0px;
+    border-bottom: 1.5px solid black;
+    max-width: 150px;
+    font-family: ITCGaramondStd-BkNarrow;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 95.5%;
+}
+
+.nav_menu_deroulant a:hover {
+    color: #9A4747;
+    border-bottom: 1.5px solid #9A4747;
+    transition-duration: 0.5s;
+}
+
+.sous {
+    display: none;
+    box-shadow: 0px 1px 2px #CCC;
+    background-color: white;
+    position: absolute;
+    width: 100%;
+    z-index: 1000;
+    list-style-type: none;
+    padding: 0;
+    max-width: 150px;
+}
+
+.nav_menu_deroulant>.ul_menu_deroulant li:hover .sous {
+    display: block;
+    transition-duration: 0.5s;
+}
+
+.sous .menu_deroulant_taille .menu_deroulant_quantite {
+    float: none;
+    width: 100%;
+    text-align: left;
+}
+
+.sous a {
+    padding: 10px;
+    border-bottom: none;
+    min-width: 130px;
+    font-family: ITCGaramondStd-BkNarrow;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 95.5%;
+    /* or 17px */
+    color: #000000;
+}
+
+.sous a:hover {
+    border-bottom: none;
+    background-color: #eeeded;
+    transition-duration: 0.5s;
+}
+
+.menu_deroulant_taille>a::after {
+    content: " ▼";
+    font-size: 12px;
+    text-align: right;
+}
+
+.menu_deroulant_quantite>a::after {
+    content: " ▼";
+    font-size: 12px;
+}
+
+.conteneur {
+    margin: 50px 20px;
+    height: 1500px;
+}
+
+.bouton_acheter_produits_unit {
+    width: 170px;
+    height: 36px;
+    background: none;
+    border-radius: 40px;
+    border: 1.5px solid;
+    border-color: #9A4747;
+    transition-duration: 0.5s;
+    min-width: 130px;
+}
+
+.bouton_acheter_produits_unit a {
+    font-family: NeueMontreal-Bold;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 18px;
+    line-height: 20px;
+    text-align: center;
+    color: #9A4747;
+    text-decoration: none;
+    transition-duration: 0.5s
+}
+
+
+/* ##### Fin style de la page produits Unité ##### */
+
+
 /* ##### Debut style de la page contact ##### */
 
 .page_contact {
@@ -3046,6 +3246,32 @@ footer ul {
     .bloc1 h1 a {
         font-size: 12vw;
         line-height: 120%;
+    }
+    /* responsive de la page Produits Unit */
+    .qhero_page_produits_unit {
+        margin-left: 25px;
+        margin-right: 25px;
+        margin-top: 120px;
+        margin-bottom: 110px;
+    }
+    .section_presentation_produits_unit {
+        margin-left: 25px;
+        margin-right: 25px;
+        display: flex;
+        flex-direction: column;
+    }
+    .section_presentation_produits_unit img {
+        width: 100%;
+    }
+    .infos_techniques_produits_unit {
+        margin-left: 0;
+    }
+    .infos_techniques_produits_unit h2 {
+        margin-top: 25px;
+    }
+    .bouton_acheter_produits_unit_div {
+        text-align: center;
+        margin-bottom: 60px;
     }
     /* responsive de la page admin login */
     .login_page {
