@@ -466,24 +466,18 @@ $select = $db->query("SELECT * FROM rooms WHERE id = '{$roomID}' ");
                 </h4>
             </div>
             <div class="espace_flexbox_produit">
+            <?php 
+        $select3 = $db->query("SELECT * FROM products WHERE rooms_id = '{$roomID}' LIMIT 3");
+         while($prod = mysqli_fetch_assoc($select3)) : 
+        ?>
                 <div class="espace_produit">
-                    <img src="assets/jpg/maison_photo_01.jpg" alt="Thumbnail du blog">
-                    <h6 class="element_textuel_produit">Prix du Produit</h6>
-                    <h5 class="element_textuel_produit">Titre du Produit</h5>
+                    <img src="<?= $prod['photo_p']; ?>" alt="Thumbnail du blog">
+                    <h6 class="element_textuel_produit"><?= $prod['price_p']; ?></h6>
+                    <h5 class="element_textuel_produit"><?= $prod['name_p']; ?></h5>
                     <a class="element_textuel_produit" href="">Acheter →</a>
                 </div>
-                <div class="espace_produit espace_produit_02">
-                    <img src="assets/jpg/maison_photo_01.jpg" alt="Thumbnail du blog">
-                    <h6>Prix du Produit</h6>
-                    <h5>Titre du Produit</h5>
-                    <a href="">Acheter →</a>
-                </div>
-                <div class="espace_produit espace_produit_02">
-                    <img src="assets/jpg/maison_photo_01.jpg" alt="Thumbnail du blog">
-                    <h6>Prix du Produit</h6>
-                    <h5>Titre du Produit</h5>
-                    <a href="">Acheter →</a>
-                </div>
+                <?php endwhile; ?>
+               
             </div>
             <div class="lien_page_produit">
                 <a href="">Voir tous les produits →</a>

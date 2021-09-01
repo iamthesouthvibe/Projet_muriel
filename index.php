@@ -79,11 +79,6 @@ $sql = $db->query("SELECT * FROM rooms LIMIT 4");
   <div class="swiper mySwiper swiperHover">
     <div class="swiper-wrapper">
     <?php  while($room = mysqli_fetch_assoc($sql)): 
-      $nb_mots = 3;
-      $var = $room['room_number'];
-      $tab= explode(' ', $var, $nb_mots+1);
-      unset($tab[$nb_mots]);
-      $shortRoom = implode(' ', $tab);
 
       $nb_mots2 = 45;
       $var2 = $room['details'];
@@ -94,7 +89,7 @@ $sql = $db->query("SELECT * FROM rooms LIMIT 4");
       <div class="swiper-slide">
         <img src="<?=$room['photo'];?>" alt="" srcset="">
         <div class="swiper-slide-titre">
-          <h2><?=$shortRoom;?></h2>
+          <h2><?=$room['shortName'];?></h2>
           <p><?=$shortDesc?></p>
           <button><a href="maison.php?room=<?= $room['id']; ?>">Découvrir</a></button>
         </div>
