@@ -1414,8 +1414,8 @@ nav .nav_menu_deroulant {
     display: flex;
     justify-content: space-between;
     position: relative;
-    min-width: 455px;
-    max-width: 455px;
+    min-width: 475px;
+    max-width: 475px;
 }
 
 nav .nav_menu_deroulant_reservation {
@@ -1462,12 +1462,12 @@ nav .nav_menu_deroulant_reservation {
     text-decoration: none;
     color: #FCF7EC;
     border-bottom: 2px solid transparent;
-    padding: 5px 0px;
+    padding: 5px 0px 2px 0px;
     border-bottom: 1.5px solid #FCF7EC;
     font-family: ITCGaramondStd-BkNarrow;
     font-style: normal;
     font-weight: normal;
-    font-size: 20px;
+    font-size: 22px;
     line-height: 95.5%;
 }
 
@@ -1480,7 +1480,7 @@ nav .nav_menu_deroulant_reservation {
 .sous_reservation {
     display: none;
     box-shadow: 0px 1px 2px #CCC;
-    background-color: white;
+    background-color: #FCF7EC;
     position: absolute;
     width: 100%;
     z-index: 1000;
@@ -1503,20 +1503,31 @@ nav .nav_menu_deroulant_reservation {
 .sous_reservation a {
     padding: 10px;
     border-bottom: none;
-    min-width: 160px;
+    min-width: 176px;
     font-family: ITCGaramondStd-BkNarrow;
     font-style: normal;
     font-weight: normal;
-    font-size: 18px;
+    font-size: 22px;
     line-height: 95.5%;
     /* or 17px */
-    color: #000000;
+    color: #9A4747;
 }
 
 .sous_reservation a:hover {
     border-bottom: none;
-    background-color: #eeeded;
-    transition-duration: 0.5s;
+    background-color: #E5E5E5;
+    transition-duration: 2s;
+    color: #9A4747;
+}
+
+.reglage-margin-top-menu-deroulant {
+    padding-top: 5px;
+}
+
+.reglage-margin-top-menu-deroulant:hover {
+    padding-top: 5px;
+    background-color: #E5E5E5;
+    transition-duration: 1s
 }
 
 .menu_deroulant_taille_reservation>a::after {
@@ -1553,7 +1564,7 @@ nav .nav_menu_deroulant_reservation {
     font-family: NeueMontreal-Regular;
     font-style: normal;
     font-weight: regular;
-    font-size: 18px;
+    font-size: 19px;
     line-height: 20px;
     text-align: center;
     color: #9A4747;
@@ -3433,6 +3444,19 @@ footer ul {
     .bouton_acheter_produits_unit_div {
         text-align: center;
         margin-bottom: 60px;
+    }
+    /* responsive de la page Reservation */
+    .page_reservation {
+        min-width: 235px;
+    }
+    .nav_menu_deroulant_reservation {
+        transform: translate(10%, 0%);
+    }
+    .bouton_verifier_dispo_div {
+        transform: translate(-99%, 290%);
+    }
+    .bouton_responsive {
+        display: none;
     }
     /* responsive de la page admin login */
     .login_page {

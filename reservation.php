@@ -11,15 +11,16 @@ include 'includes/header.php';
             <ul class="ul_menu_deroulant_reservation">
                 <li class="menu_deroulant_taille_reservation"><a href="#">Votre Maison &ensp; &ensp; &ensp; &ensp; &ensp;</a>
                     <ul class="sous_reservation">
-                        <li><a href="#">Small</a></li>
-                        <li><a href="#">Medium</a></li>
-                        <li><a href="#">Large</a></li>
+                        <li class="reglage-margin-top-menu-deroulant"><a href="#">Villa Grand Large - Martinique </a></li>
+                        <li><a href="#">La Maison Roma - Narbonne</a></li>
+                        <li><a href="#">Le Grain de Sable - Gruissan</a></li>
+                        <li><a href="#">Maison Chacun son Rêve - Pyrénées</a></li>
                     </ul>
                 </li>
             </ul>
         </nav>
-        <div class="bouton_acheter_produits_unit_div">
-            <button class="bouton_verifier_dispo"><a href="">Vérifier les disponibilités</a></button>
+        <div class="bouton_verifier_dispo_div">
+            <button class="bouton_verifier_dispo"><a href="">Vérifier la disponibilité</a></button>
         </div>
 
     </div>
