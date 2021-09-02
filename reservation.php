@@ -12,8 +12,8 @@ include 'includes/header.php';
                 <li class="menu_deroulant_taille_reservation"><a href="#">Votre Maison &ensp; &ensp; &ensp; &ensp; &ensp;</a>
                     <ul class="sous_reservation">
                         <li class="reglage-margin-top-menu-deroulant"><a href="#">Villa Grand Large - Martinique </a></li>
-                        <li><a href="#">La Maison Roma - Narbonne</a></li>
-                        <li><a href="#">Le Grain de Sable - Gruissan</a></li>
+                        <li class="reglage-decalage-vers-bas"><a href="#">La Maison Roma - Narbonne</a></li>
+                        <li class="reglage-decalage-vers-bas"><a href="#">Le Grain de Sable - Gruissan</a></li>
                         <li><a href="#">Maison Chacun son Rêve - Pyrénées</a></li>
                     </ul>
                 </li>
