@@ -1478,7 +1478,7 @@ nav .nav_menu_deroulant_reservation {
 }
 
 .sous_reservation {
-    display: block;
+    display: none;
     box-shadow: 0px 1px 2px #CCC;
     background-color: #FCF7EC;
     position: absolute;
