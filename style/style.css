@@ -1118,7 +1118,13 @@ nav {
     text-align: center;
     color: #9A4747;
     text-decoration: none;
-    transition-duration: 0.5s
+    transition-duration: 0.5s;
+    /* increase size of clickabke area*/
+    display: inline-block;
+    position: relative;
+    z-index: 1;
+    padding: 10px 20px 10px 20px;
+    margin: -5px;
 }
 
 .bouton_agrandie:hover {
@@ -1578,6 +1584,136 @@ nav .nav_menu_deroulant_reservation {
 
 
 /* ##### Fin style de la page Réservation ##### */
+
+
+/* ##### Début style de la page Réservation 02 (FINALE) ##### */
+
+.bouton_envoyer_demande {
+    width: 240px;
+    height: 28px;
+    background: #FCF7EC;
+    border-radius: 40px;
+    border: 1.5px solid;
+    border-color: #FCF7EC;
+    transition-duration: 0.5s;
+    min-width: 130px;
+    position: absolute;
+    top: 50%;
+    transform: translate(-50%, 0%);
+    left: 50%;
+}
+
+.bouton_envoyer_demande p {
+    font-family: NeueMontreal-Regular;
+    font-style: normal;
+    font-weight: regular;
+    font-size: 19px;
+    line-height: 20px;
+    text-align: center;
+    color: #9A4747;
+    text-decoration: none;
+    transition-duration: 0.5s;
+    margin-top: 2px;
+}
+
+.lds-ellipsis {
+    display: none;
+    /*display: inline-block;*/
+    position: relative;
+    width: 80px;
+    height: 80px;
+    transform: translate(-50%, -32%);
+    left: 50%;
+    margin-top: 50vh;
+}
+
+.lds-ellipsis div {
+    position: absolute;
+    top: 33px;
+    width: 13px;
+    height: 13px;
+    border-radius: 50%;
+    background: #fff;
+    animation-timing-function: cubic-bezier(0, 1, 1, 0);
+}
+
+.lds-ellipsis div:nth-child(1) {
+    left: 8px;
+    animation: lds-ellipsis1 0.6s infinite;
+}
+
+.lds-ellipsis div:nth-child(2) {
+    left: 8px;
+    animation: lds-ellipsis2 0.6s infinite;
+}
+
+.lds-ellipsis div:nth-child(3) {
+    left: 32px;
+    animation: lds-ellipsis2 0.6s infinite;
+}
+
+.lds-ellipsis div:nth-child(4) {
+    left: 56px;
+    animation: lds-ellipsis3 0.6s infinite;
+}
+
+@keyframes lds-ellipsis1 {
+    0% {
+        transform: scale(0);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+@keyframes lds-ellipsis3 {
+    0% {
+        transform: scale(1);
+    }
+    100% {
+        transform: scale(0);
+    }
+}
+
+@keyframes lds-ellipsis2 {
+    0% {
+        transform: translate(0, 0);
+    }
+    100% {
+        transform: translate(24px, 0);
+    }
+}
+
+.bouton_confirmation_demande {
+    display: none;
+    width: 240px;
+    height: 28px;
+    border: 2px solid #FCF7EC;
+    border-radius: 40px;
+    transition-duration: 0.5s;
+    min-width: 130px;
+    background-color: Transparent;
+    background-repeat: no-repeat;
+    position: absolute;
+    top: 50%;
+    transform: translate(-50%, 0%);
+    left: 50%;
+}
+
+.bouton_confirmation_demande a {
+    font-family: NeueMontreal-Regular;
+    font-style: normal;
+    font-weight: regular;
+    font-size: 19px;
+    line-height: 20px;
+    text-align: center;
+    color: #FCF7EC;
+    text-decoration: none;
+    transition-duration: 0.5s
+}
+
+
+/* ##### Fin style de la page Réservation 02 (FINALE) ##### */
 
 
 /* ##### Debut style de la page contact ##### */
