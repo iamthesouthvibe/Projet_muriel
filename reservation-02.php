@@ -4,7 +4,7 @@ include 'includes/header.php';
 
 ?>
 
-<main>
+<main id="testFade">
 
 
     <div id="bouton_envoyer_demande_div">

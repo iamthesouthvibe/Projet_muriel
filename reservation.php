@@ -4,7 +4,7 @@ include 'includes/header.php';
 
 ?>
 
-<main>
+<main id="testFade">
 
     <div class="page_reservation">
         <nav class="nav_menu_deroulant_reservation">

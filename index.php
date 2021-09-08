@@ -59,7 +59,7 @@ $tourSQL = $db->query("SELECT * FROM tourism LIMIT 4");
 ?>
 
 
-<main>
+<main id="testFade">
   <!--  ######Ceci est la partie Html de la page d'accueil. Raccorder le back par la suite.##### -->
   <div class="qhero">
     <div class="qhero_page_accueil">

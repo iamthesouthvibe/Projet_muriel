@@ -5,8 +5,12 @@ include 'includes/header.php';
 $select = $db->query("SELECT * FROM products");
 ?>
 
-<main>
+<main id="testFade">
 
+<svg id="fader"></svg>
+<script>
+            fadeInPage();
+        </script>
     <!-- Section accueil -->
     <div class="qhero_page_produits">
         <div class="qhero_entree_page_produits">
@@ -63,7 +67,11 @@ $select = $db->query("SELECT * FROM products");
     include("./includes/footer.php"); ?>
 
     <script>
-        
+        function fadeInPage() {
+            if (!window.AnimationEvent) { return; }
+            var fader = document.getElementById('fader');
+    fader.classList.add('fade-out');
+}
     </script>
 
 </main>

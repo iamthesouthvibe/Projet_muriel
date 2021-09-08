@@ -4,7 +4,7 @@ include 'includes/header.php';
 
 ?>
 
-<div class="page-404">
+<div class="page-404" id="testFade">
     <div class="div_2_page-404">
         <div class="div_titre_404">
             <h1 class="h1_titre_404">

@@ -4,7 +4,7 @@ include 'includes/header.php';
 ?>
 
 
-<main>
+<main id="testFade">
 
     <!-- Section accueil -->
     <div class="qhero_page_produits_unit">
