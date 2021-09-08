@@ -4,6 +4,11 @@
 }
 
 @font-face {
+    font-family: ITCGaramondStd-BkNarrowIta;
+    src: local("..assets/fonts/GaramondStd/ITCGaramondStd-BkNarrowIta.woff"), local("ITCGaramondStd-BkNarrowIta"), url('..assets/fonts/GaramondStd/ITCGaramondStd-BkNarrowIta.woff') format('woff');
+}
+
+@font-face {
     font-family: NeueMontreal-Bold;
     src: local("../assets/fonts/NeueMontreal/NeueMontreal-Bold.otf"), local("NeueMontreal-Bold"), url(NeueMontreal-Bold.otf);
 }
@@ -25,6 +30,8 @@ body {
     width: 1px;
     height: 1px;
 }
+
+
 /* style HEADER */
 
 header {
@@ -70,6 +77,8 @@ nav {
     font-weight: bold;
     font-size: 20px;
 }
+
+
 /* Systeme pour le bouton responsive*/
 
 .bouton_responsive {
@@ -148,8 +157,14 @@ nav {
     -webkit-transform: rotate(-135deg);
     z-index: 30;
 }
+
+
 /* fin style header */
+
+
 /*_______________________________________________________________________*/
+
+
 /* ##### Style du menu navigation ##### */
 
 .container_menu {
@@ -241,7 +256,11 @@ nav {
     transform: scaleX(1);
     transform-origin: bottom left;
 }
+
+
 /* ##### fin du menu navigation ##### */
+
+
 /* ##### Debut Curseur  ##### */
 
 .cursor {
@@ -282,7 +301,11 @@ nav {
 .content:hover~.cursor2 {
     opacity: 0;
 }
+
+
 /* ##### Fin Curseur  ##### */
+
+
 /* ##### Style de la page d'accueil ##### */
 
 .qhero {
@@ -324,6 +347,12 @@ nav {
     max-width: 42vw;
     margin: 5vh auto 0vh auto;
 }
+
+.italic_title {
+    font-family: ITCGaramondStd-BkNarrowIta;
+}
+
+
 /* Bouton animé scroll */
 
 .scroll_anim {
@@ -355,6 +384,8 @@ nav {
         opacity: 0;
     }
 }
+
+
 /* Caroussel de photos */
 
 .swiper {
@@ -534,6 +565,8 @@ nav {
 .cursor2_active_left {
     background: transparent;
 }
+
+
 /* Section Muriel */
 
 .section_muriel {
@@ -576,7 +609,11 @@ nav {
     /* or 111% */
     color: #000000;
 }
+
+
 /* ##### Fin style de la page d'accueil ##### */
+
+
 /* ##### Debut style de la page maison ##### */
 
 .qhero_page_maison {
@@ -667,6 +704,8 @@ nav {
 .container_presentation_maison_droite {
     margin-top: 35vh;
 }
+
+
 /* Caroussel de texte technique de la maison */
 
 .carousel_maison_02 .swiper {
@@ -728,7 +767,6 @@ nav {
     color: #fff;
 }
 
-
 .carousel_maison_03 h4 {
     margin-left: 50px;
 }
@@ -744,13 +782,13 @@ nav {
 }
 
 .carousel_maison_03 .swiper {
-    background-color: #9A4747; 
+    background-color: #9A4747;
     width: 448px;
     height: 470px;
 }
 
 .carousel_maison_03 .swiper-slide {
-    background-color: #9A4747 ;
+    background-color: #9A4747;
     display: block;
 }
 
@@ -759,6 +797,7 @@ nav {
     margin: 0;
     margin-left: 50px;
 }
+
 
 /* Section articles de blogs de la maison test*/
 
@@ -852,7 +891,7 @@ nav {
 .lien_page_blog {
     text-align: center;
     margin-top: 100px;
-    padding-bottom: 100px; 
+    padding-bottom: 100px;
 }
 
 .lien_page_blog a {
@@ -865,6 +904,8 @@ nav {
     /* or 98% */
     color: #000000;
 }
+
+
 /* Section Produits de la page maison */
 
 .container_produit {
@@ -970,6 +1011,8 @@ nav {
     /* or 98% */
     color: #000000;
 }
+
+
 /*Ligne separator */
 
 .ligne_separator {
@@ -977,6 +1020,8 @@ nav {
     margin-left: 20vw;
     margin-right: 20vw;
 }
+
+
 /*section commentaires*/
 
 .container_commentaire {
@@ -1028,6 +1073,8 @@ nav {
     margin-left: 6vw;
     margin-top: 50px;
 }
+
+
 /* ##### Fin style de la page maison ##### */
 
 
@@ -1196,6 +1243,7 @@ nav {
 
 /* ##### Fin style de la page produits ##### */
 
+
 /* ##### Debut style de la page contact ##### */
 
 .page_contact {
@@ -1238,7 +1286,28 @@ nav {
     color: #FCF7EC;
     text-decoration: none;
 }
+
+
 /* ##### Fin style de la page contact ##### */
+
+
+/* ##### Debut Style de la page RGPD ##### */
+
+.qhero_page_RGPD {
+    margin-top: 25vh;
+    text-align: center;
+}
+
+.container_texte_RGPD {
+    margin-top: 20vh;
+    margin-left: 25px;
+    margin-right: 25px;
+}
+
+
+/* ##### Fin Style de la page RGPD ##### */
+
+
 /* ##### Debut Style de la page 404 ##### */
 
 .div_2_page-404 {
@@ -1300,7 +1369,11 @@ nav {
     text-align: center;
     color: #FCF7EC;
 }
+
+
 /* ##### Fin Style de la page 404 ##### */
+
+
 /* ##### debut style page admin login #### */
 
 .login_page {
@@ -1415,7 +1488,11 @@ nav {
     color: #000000;
     text-decoration: none;
 }
+
+
 /* #### Fin style page admin login #### */
+
+
 /* ##### Debut style footer ##### */
 
 footer {
@@ -1537,11 +1614,23 @@ footer ul {
     transform: scaleX(1);
     transform-origin: bottom left;
 }
+
+
 /* ##### Fin style footer ##### */
+
+
 /* #################################################################### */
+
+
 /* #################################################################### */
+
+
 /* #################################################################### */
+
+
 /* #################################################################### */
+
+
 /* ##### Debut Media Queries  ##### */
 
 @media screen and (max-width: 450px) {
@@ -1885,7 +1974,6 @@ footer ul {
     .swiper-slide img {
         display: block;
         width: 100%;
-        
         object-fit: cover;
         position: absolute;
     }
@@ -2728,11 +2816,23 @@ footer ul {
         transform-origin: bottom left;
     }
 }
+
+
 /* ##### Fin style footer ##### */
+
+
 /* #################################################################### */
+
+
 /* #################################################################### */
+
+
 /* #################################################################### */
+
+
 /* #################################################################### */
+
+
 /* ##### Debut Media Queries  ##### */
 
 @media screen and (max-width: 450px) {
@@ -3102,4 +3202,6 @@ footer ul {
         height: 30px;
     }
 }
+
+
 /* ##### Fin Media Queries ##### */

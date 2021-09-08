@@ -47,6 +47,9 @@
                 <a href="">Contact</a>
             </li>
             <li>
+                <a href="">RGPD</a>
+            </li>
+            <li>
                 <a href="/admin/login.php">Admin</a>
             </li>
         </ul>

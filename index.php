@@ -64,7 +64,7 @@ $sql = $db->query("SELECT * FROM rooms LIMIT 4");
   <!--  ######Ceci est la partie Html de la page d'accueil. Raccorder le back par la suite.##### -->
   <div class="qhero">
     <div class="qhero_page_accueil">
-      <h1 class="style_h1_accueil">“Laissez-vous séduire par un univers d’élégance <br> et de douceur. <br> 4 maisons, 4 ambiances, le regard d’une femme”</h1>
+      <h1 class="style_h1_accueil">“Laissez-vous <span class="italic_title">séduire</span> par un <span class="italic_title">univers</span> d’élégance <br> et de douceur. <br> 4 maisons, 4 ambiances, le <span class="italic_title">regard</span> d’une femme”</h1>
       <h2 class="style_h2_accueil">Je veux créer des maisons pour faire rêver, des maisons qui soient comme des personnalités, surprenantes, inattendues, accueillantes et généreuses. Où l’on ait envie de rester et de revenir, comme pour poursuivre une conversation interrompue trop tôt. </h2>
       <svg width="40px" viewBox="0 0 14.334 24.75" class="scroll_anim">
         <circle class="circle-1" fill="black" cx="7.167" cy="6" r="1.2" />
