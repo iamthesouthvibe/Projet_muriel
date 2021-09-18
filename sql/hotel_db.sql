@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:8889
--- Generation Time: Sep 18, 2021 at 03:18 PM
+-- Generation Time: Sep 18, 2021 at 03:33 PM
 -- Server version: 5.7.30
 -- PHP Version: 7.4.9
 
@@ -13,6 +13,8 @@ SET time_zone = "+00:00";
 --
 -- Database: `hotel_db`
 --
+CREATE DATABASE IF NOT EXISTS `hotel_db` DEFAULT CHARACTER SET utf8 COLLATE utf8_general_ci;
+USE `hotel_db`;
 
 -- --------------------------------------------------------
 
@@ -20,13 +22,15 @@ SET time_zone = "+00:00";
 -- Table structure for table `comments`
 --
 
-CREATE TABLE `comments` (
-  `id` int(11) NOT NULL,
+CREATE TABLE IF NOT EXISTS `comments` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
   `fullname` varchar(255) NOT NULL,
   `date_c` varchar(50) DEFAULT NULL,
   `comment` longtext NOT NULL,
-  `id_rooms` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+  `id_rooms` int(11) NOT NULL,
+  PRIMARY KEY (`id`),
+  KEY `id_rooms` (`id_rooms`)
+) ENGINE=InnoDB AUTO_INCREMENT=35 DEFAULT CHARSET=utf8;
 
 --
 -- Dumping data for table `comments`
@@ -50,10 +54,11 @@ INSERT INTO `comments` (`id`, `fullname`, `date_c`, `comment`, `id_rooms`) VALUE
 -- Table structure for table `gallery`
 --
 
-CREATE TABLE `gallery` (
-  `id` int(11) NOT NULL,
-  `image` text NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=armscii8;
+CREATE TABLE IF NOT EXISTS `gallery` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `image` text NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=armscii8;
 
 --
 -- Dumping data for table `gallery`
@@ -72,16 +77,18 @@ INSERT INTO `gallery` (`id`, `image`) VALUES
 -- Table structure for table `products`
 --
 
-CREATE TABLE `products` (
-  `id_p` int(11) NOT NULL,
+CREATE TABLE IF NOT EXISTS `products` (
+  `id_p` int(11) NOT NULL AUTO_INCREMENT,
   `name_p` varchar(255) NOT NULL,
   `description_p` text NOT NULL,
   `photo_p` text NOT NULL,
   `size_p` varchar(10) NOT NULL,
   `quantity_p` varchar(10) NOT NULL,
   `price_p` varchar(255) NOT NULL,
-  `rooms_id` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+  `rooms_id` int(11) NOT NULL,
+  PRIMARY KEY (`id_p`),
+  KEY `test` (`rooms_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8;
 
 --
 -- Dumping data for table `products`
@@ -100,16 +107,17 @@ INSERT INTO `products` (`id_p`, `name_p`, `description_p`, `photo_p`, `size_p`, 
 -- Table structure for table `reservations`
 --
 
-CREATE TABLE `reservations` (
-  `id` int(11) NOT NULL,
+CREATE TABLE IF NOT EXISTS `reservations` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
   `name` varchar(255) NOT NULL,
   `checkin` date NOT NULL,
   `checkout` date NOT NULL,
   `phone` text NOT NULL,
   `people` int(11) NOT NULL,
   `email` varchar(255) NOT NULL,
-  `room` varchar(255) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=armscii8;
+  `room` varchar(255) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=armscii8;
 
 --
 -- Dumping data for table `reservations`
@@ -125,8 +133,8 @@ INSERT INTO `reservations` (`id`, `name`, `checkin`, `checkout`, `phone`, `peopl
 -- Table structure for table `rooms`
 --
 
-CREATE TABLE `rooms` (
-  `id` int(11) NOT NULL,
+CREATE TABLE IF NOT EXISTS `rooms` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
   `room_number` varchar(255) NOT NULL,
   `shortName` varchar(50) NOT NULL,
   `price` text CHARACTER SET armscii8 NOT NULL,
@@ -230,8 +238,9 @@ CREATE TABLE `rooms` (
   `dist4` varchar(100) CHARACTER SET armscii8 NOT NULL,
   `dist5` varchar(100) CHARACTER SET armscii8 NOT NULL,
   `dist6` varchar(100) CHARACTER SET armscii8 NOT NULL,
-  `dist7` varchar(100) CHARACTER SET armscii8 NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+  `dist7` varchar(100) CHARACTER SET armscii8 NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=26 DEFAULT CHARSET=utf8;
 
 --
 -- Dumping data for table `rooms`
@@ -248,8 +257,8 @@ INSERT INTO `rooms` (`id`, `room_number`, `shortName`, `price`, `details`, `lieu
 -- Table structure for table `tourism`
 --
 
-CREATE TABLE `tourism` (
-  `id` int(11) NOT NULL,
+CREATE TABLE IF NOT EXISTS `tourism` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
   `title` varchar(255) NOT NULL,
   `subtitles` varchar(255) NOT NULL,
   `photo` text NOT NULL,
@@ -257,8 +266,9 @@ CREATE TABLE `tourism` (
   `photo_3` text NOT NULL,
   `location` varchar(255) NOT NULL,
   `details` text NOT NULL,
-  `date` date NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=armscii8;
+  `date` date NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=16 DEFAULT CHARSET=armscii8;
 
 --
 -- Dumping data for table `tourism`
@@ -274,16 +284,17 @@ INSERT INTO `tourism` (`id`, `title`, `subtitles`, `photo`, `photo_2`, `photo_3`
 -- Table structure for table `users`
 --
 
-CREATE TABLE `users` (
-  `id` int(11) NOT NULL,
+CREATE TABLE IF NOT EXISTS `users` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
   `full_name` varchar(255) NOT NULL,
   `email` varchar(255) NOT NULL,
   `password` varchar(80) NOT NULL,
   `join_date` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `last_login` datetime NOT NULL,
   `permissions` varchar(255) NOT NULL,
-  `photo` text NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=armscii8;
+  `photo` text NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=70 DEFAULT CHARSET=armscii8;
 
 --
 -- Dumping data for table `users`
@@ -293,100 +304,6 @@ INSERT INTO `users` (`id`, `full_name`, `email`, `password`, `join_date`, `last_
 (3, 'admin', 'admin@admin.com', '$2y$10$Dhgz8tgcOjuI08Y0o5wsS.gK3.kNDRNpc.z9Q0qJ3mGpJMYDaIQBi', '2017-12-13 23:12:51', '2021-07-25 20:14:22', 'editor,admin', ''),
 (7, 'Jean Vayssie', 'jean.vayssie@orange.fr', '$2y$10$s2pgct2GWFW9RSpPmsRcxOhBYrYd5HcEsI99.fsReh2e1gHMPmgrK', '2021-07-23 11:07:33', '2021-07-23 11:33:43', 'editor,admin', ''),
 (69, 'L&eacute;o LABEAUME', 'leo.labeaume@hotmail.fr', '$2y$10$u98xl0fuMIL9fFYpQy8q6.6zKcbVuL0YqMjqFc2CbV2Ma8rYvzlGm', '2021-07-25 20:07:14', '2021-09-13 14:30:55', 'editor,admin', '119067618_313029256649032_3533176219461607909_n.jpg');
-
---
--- Indexes for dumped tables
---
-
---
--- Indexes for table `comments`
---
-ALTER TABLE `comments`
-  ADD PRIMARY KEY (`id`),
-  ADD KEY `id_rooms` (`id_rooms`);
-
---
--- Indexes for table `gallery`
---
-ALTER TABLE `gallery`
-  ADD PRIMARY KEY (`id`);
-
---
--- Indexes for table `products`
---
-ALTER TABLE `products`
-  ADD PRIMARY KEY (`id_p`),
-  ADD KEY `test` (`rooms_id`);
-
---
--- Indexes for table `reservations`
---
-ALTER TABLE `reservations`
-  ADD PRIMARY KEY (`id`);
-
---
--- Indexes for table `rooms`
---
-ALTER TABLE `rooms`
-  ADD PRIMARY KEY (`id`);
-
---
--- Indexes for table `tourism`
---
-ALTER TABLE `tourism`
-  ADD PRIMARY KEY (`id`);
-
---
--- Indexes for table `users`
---
-ALTER TABLE `users`
-  ADD PRIMARY KEY (`id`);
-
---
--- AUTO_INCREMENT for dumped tables
---
-
---
--- AUTO_INCREMENT for table `comments`
---
-ALTER TABLE `comments`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=35;
-
---
--- AUTO_INCREMENT for table `gallery`
---
-ALTER TABLE `gallery`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
-
---
--- AUTO_INCREMENT for table `products`
---
-ALTER TABLE `products`
-  MODIFY `id_p` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
-
---
--- AUTO_INCREMENT for table `reservations`
---
-ALTER TABLE `reservations`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
-
---
--- AUTO_INCREMENT for table `rooms`
---
-ALTER TABLE `rooms`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=26;
-
---
--- AUTO_INCREMENT for table `tourism`
---
-ALTER TABLE `tourism`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
-
---
--- AUTO_INCREMENT for table `users`
---
-ALTER TABLE `users`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=70;
 
 --
 -- Constraints for dumped tables
