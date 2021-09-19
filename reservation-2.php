@@ -25,6 +25,10 @@ $maison = mysqli_fetch_assoc($select);
         font-family: ITCGaramondStd-BkNarrow;
     }
 
+    .qhero_page_reservation_2 h1 span {
+        font-family: NeueMontreal-Regular;
+    }
+
     .qhero_page_reservation_2 .col {
         display: flex;
         gap: 120px;
@@ -36,11 +40,13 @@ $maison = mysqli_fetch_assoc($select);
 
     .qhero_page_reservation_2 .row .input_row {
         display: flex;
+        margin-bottom: 20px;
     }
 
     .qhero_page_reservation_2 .row .input_row label {
         color: #9A4747;
         font-family: ITCGaramondStd-BkNarrow;
+        margin-right: 15px;
     }
 
     .qhero_page_reservation_2 .row .input_row input {
@@ -52,29 +58,29 @@ $maison = mysqli_fetch_assoc($select);
 </style>
 
 <div class="qhero_page_reservation_2">
-    <h1>Votre maison : <?= $maison['shortName']; ?></h1>
+    <h1>Votre maison : <span> <?= $maison['shortName']; ?></span></h1>
     <form action="reservation-2.php?room=<?= $roomID ?>" method="POST">
         <div class="row">
             <div class="col">
                 <div>
                     <div class="input_row">
-                        <label class="form-control-label">Check-in :</label>
+                        <label class="form-control-label">Check-in</label>
                         <input type="date" class="form-control" name="in_date">
                     </div>
-                    <br>
+               
                     <div class="input_row">
-                        <label class="form-control-label">Check-out :</label>
+                        <label class="form-control-label">Check-out</label>
                         <input type="date" class="form-control" name="out_date">
                     </div>
                 </div>
                 <div>
                     <div class="input_row">
-                        <label class="form-control-label">People:</label>
+                        <label class="form-control-label">People</label>
                         <input type="number" class="form-control" max="5" name="people">
-                        <br>
+                    
                     </div>
                     <div class="input_row">
-                        <label class="form-control-label">child:</label>
+                        <label class="form-control-label">child</label>
                         <input type="number" class="form-control" max="5" name="people">
                     </div>
                 </div>
@@ -89,34 +95,34 @@ $maison = mysqli_fetch_assoc($select);
             <div class="col">
                 <div>
                     <div class="input_row">
-                        <label class="form-control-label">Nom :</label>
+                        <label class="form-control-label">Nom</label>
                         <input type="text" class="form-control" name="in_date">
                     </div>
-                    <br>
+                 
                     <div class="input_row">
-                        <label class="form-control-label">Adresse : </label>
-                        <input type="date" class="form-control" name="out_date">
+                        <label class="form-control-label">Adresse</label>
+                        <input type="text" class="form-control" name="out_date">
                     </div>
                 </div>
                 <div>
                     <div class="input_row">
-                        <label class="form-control-label">Pays : </label>
+                        <label class="form-control-label">Pays</label>
                         <input type="text" class="form-control" max="5" name="people">
-                        <br>
+              
                     </div>
                     <div class="input_row">
-                        <label class="form-control-label">Code postal : </label>
+                        <label class="form-control-label">Code postal</label>
                         <input type="number" class="form-control" max="5" name="people">
                     </div>
                 </div>
                 <div>
                     <div class="input_row">
-                        <label class="form-control-label">Email : </label>
+                        <label class="form-control-label">Email</label>
                         <input type="mail" class="form-control" max="5" name="people">
-                        <br>
+                      
                     </div>
                     <div class="input_row">
-                        <label class="form-control-label">Telephone : </label>
+                        <label class="form-control-label">Telephone</label>
                         <input type="tel" class="form-control" max="5" name="people">
                     </div>
                 </div>
