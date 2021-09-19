@@ -2,7 +2,7 @@
 require_once 'core/core.php';
 include 'includes/header.php';
 
-$sql = $db->query("SELECT * FROM rooms LIMIT 4");
+$sql = $db->query("SELECT * FROM rooms");
 ?>
 <style>
     body {
@@ -47,15 +47,26 @@ $sql = $db->query("SELECT * FROM rooms LIMIT 4");
     <div class="form">
         <div class="input">
             <form method="get" action="reservation-2.php">
-                <select name="maison" id="">
+                <select name="maison" id="" class="test">
                     <option value="" selected="true" disabled="disabled">Votre maison</option>
                     <?php while ($room = mysqli_fetch_assoc($sql)) : ?>
                         <option value="<?= $room['id']; ?>"><?= $room['shortName']; ?></option>
                     <?php endwhile; ?>
                 </select>
-                <input type="submit" value="Vérifier les disponibilités">
+                <input type="submit" value="Vérifier les disponibilités" class="button">
             </form>
         </div>
     </div>
 </div>
 
+<script>
+    let input = document.querySelector('.test');
+    let button = document.querySelector('.button');
+
+   
+    button.addEventListener('click', function(event) {
+        if (input.value === "") {
+           event.preventDefault();
+        } 
+    });
+</script>
