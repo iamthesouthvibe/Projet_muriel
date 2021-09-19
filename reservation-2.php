@@ -101,7 +101,7 @@ $maison = mysqli_fetch_assoc($select);
 
 <div class="qhero_page_reservation_2">
     <h1>Votre maison : <span> <?= $maison['shortName']; ?></span></h1>
-    <form action="reservation-2.php?room=<?= $roomID ?>" method="POST">
+    <form action="" method="POST">
         <div class="row">
             <div class="col">
                 <div>
