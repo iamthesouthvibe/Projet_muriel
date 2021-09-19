@@ -8,6 +8,10 @@ $maison = mysqli_fetch_assoc($select);
 ?>
 
 <style>
+    .header_right button {
+        display: none;
+    }
+
     .qhero_page_reservation_2 {
         position: absolute;
         left: 50%;
@@ -26,7 +30,7 @@ $maison = mysqli_fetch_assoc($select);
     }
 
     .qhero_page_reservation_2 h1 span {
-        font-family: NeueMontreal-Regular;
+        font-family: NeueMontreal-Bold;
     }
 
     .qhero_page_reservation_2 .col {
@@ -59,10 +63,11 @@ $maison = mysqli_fetch_assoc($select);
     input[type="text" i],
     input[type="date" i],
     input[type="mail" i],
-    input[type="tel" i] {
+    input[type="tel" i],
+    input[type="number" i] {
     padding: 1px 2px;
     font-size: 18px;
-    font-family: NeueMontreal-Regular;
+    font-family: NeueMontreal-Bold;
 }
 </style>
 
