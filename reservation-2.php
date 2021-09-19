@@ -55,6 +55,14 @@ $maison = mysqli_fetch_assoc($select);
         background-color: #FCF7EC;
         color: #9A4747;
     }
+
+    input[type="text" i],
+    input[type="date" i],
+    input[type="mail" i],
+    input[type="tel" i] {
+    padding: 1px 2px;
+    font-size: 18px;
+}
 </style>
 
 <div class="qhero_page_reservation_2">
