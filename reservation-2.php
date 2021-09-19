@@ -69,6 +69,34 @@ $maison = mysqli_fetch_assoc($select);
     font-size: 18px;
     font-family: NeueMontreal-Bold;
 }
+
+.qhero_page_reservation_2 .col_price {
+    text-align: center;
+}
+
+.qhero_page_reservation_2 .col_price h3 {
+    color: #9A4747;
+    font-family: ITCGaramondStd-BkNarrow;
+    margin: 0;
+}
+
+.qhero_page_reservation_2 .col_price h4 {
+    color: #9A4747;
+    margin: 0;
+    font-size: 18px;
+    font-family: NeueMontreal-Bold;
+}
+
+.qhero_page_reservation_2 .col_price .submit {
+    width: 300px;
+        height: 35px;
+        background: #9A4747;
+        border-radius: 40px;
+        border: none;
+        font-size: 23px;
+        color: #FCF7EC;
+        text-decoration: none;
+}
 </style>
 
 <div class="qhero_page_reservation_2">
@@ -140,6 +168,19 @@ $maison = mysqli_fetch_assoc($select);
                         <input type="tel" class="form-control" max="5" name="people">
                     </div>
                 </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col_price">
+                <h3>Prix total : </h3>
+                <h4>450$</h4>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col_price">
+                <input type="submit" value="Demande de réservation" class="submit">
             </div>
         </div>
     </form>
