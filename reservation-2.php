@@ -62,6 +62,7 @@ $maison = mysqli_fetch_assoc($select);
     input[type="tel" i] {
     padding: 1px 2px;
     font-size: 18px;
+    font-family: NeueMontreal-Regular;
 }
 </style>
 
