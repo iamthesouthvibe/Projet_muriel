@@ -60,35 +60,41 @@ $maison = mysqli_fetch_assoc($select);
         color: #9A4747;
     }
 
-    input[type="text" i],
-    input[type="date" i],
-    input[type="mail" i],
-    input[type="tel" i],
-    input[type="number" i] {
-    padding: 1px 2px;
-    font-size: 18px;
-    font-family: NeueMontreal-Bold;
-}
+    .qhero_page_reservation_2 .row .input_row textarea {
+        color: #9A4747;
+        font-size: 18px;
+        font-family: NeueMontreal-Bold;
+    }
 
-.qhero_page_reservation_2 .col_price {
-    text-align: center;
-}
+    input[type="text"i],
+    input[type="date"i],
+    input[type="mail"i],
+    input[type="tel"i],
+    input[type="number"i] {
+        padding: 1px 2px;
+        font-size: 18px;
+        font-family: NeueMontreal-Bold;
+    }
 
-.qhero_page_reservation_2 .col_price h3 {
-    color: #9A4747;
-    font-family: ITCGaramondStd-BkNarrow;
-    margin: 0;
-}
+    .qhero_page_reservation_2 .col_price {
+        text-align: center;
+    }
 
-.qhero_page_reservation_2 .col_price h4 {
-    color: #9A4747;
-    margin: 0;
-    font-size: 18px;
-    font-family: NeueMontreal-Bold;
-}
+    .qhero_page_reservation_2 .col_price h3 {
+        color: #9A4747;
+        font-family: ITCGaramondStd-BkNarrow;
+        margin: 0;
+    }
 
-.qhero_page_reservation_2 .col_price .submit {
-    width: 300px;
+    .qhero_page_reservation_2 .col_price h4 {
+        color: #9A4747;
+        margin: 0;
+        font-size: 18px;
+        font-family: NeueMontreal-Bold;
+    }
+
+    .qhero_page_reservation_2 .col_price .submit {
+        width: 300px;
         height: 35px;
         background: #9A4747;
         border-radius: 40px;
@@ -96,7 +102,7 @@ $maison = mysqli_fetch_assoc($select);
         font-size: 23px;
         color: #FCF7EC;
         text-decoration: none;
-}
+    }
 </style>
 
 <div class="qhero_page_reservation_2">
@@ -109,7 +115,7 @@ $maison = mysqli_fetch_assoc($select);
                         <label class="form-control-label">Check-in</label>
                         <input type="date" class="form-control" name="in_date">
                     </div>
-               
+
                     <div class="input_row">
                         <label class="form-control-label">Check-out</label>
                         <input type="date" class="form-control" name="out_date">
@@ -118,12 +124,12 @@ $maison = mysqli_fetch_assoc($select);
                 <div>
                     <div class="input_row">
                         <label class="form-control-label">People</label>
-                        <input type="number" class="form-control" max="5" name="people">
-                    
+                        <input type="number" class="form-control" max="10" min="0" name="people">
+
                     </div>
                     <div class="input_row">
                         <label class="form-control-label">child</label>
-                        <input type="number" class="form-control" max="5" name="people">
+                        <input type="number" class="form-control" max="10" min="0" name="people">
                     </div>
                 </div>
                 <div class="input_row">
@@ -140,7 +146,7 @@ $maison = mysqli_fetch_assoc($select);
                         <label class="form-control-label">Nom</label>
                         <input type="text" class="form-control" name="in_date">
                     </div>
-                 
+
                     <div class="input_row">
                         <label class="form-control-label">Adresse</label>
                         <input type="text" class="form-control" name="out_date">
@@ -150,7 +156,7 @@ $maison = mysqli_fetch_assoc($select);
                     <div class="input_row">
                         <label class="form-control-label">Pays</label>
                         <input type="text" class="form-control" max="5" name="people">
-              
+
                     </div>
                     <div class="input_row">
                         <label class="form-control-label">Code postal</label>
@@ -161,7 +167,7 @@ $maison = mysqli_fetch_assoc($select);
                     <div class="input_row">
                         <label class="form-control-label">Email</label>
                         <input type="mail" class="form-control" max="5" name="people">
-                      
+
                     </div>
                     <div class="input_row">
                         <label class="form-control-label">Telephone</label>
