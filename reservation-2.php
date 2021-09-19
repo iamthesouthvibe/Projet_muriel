@@ -21,6 +21,8 @@ $maison = mysqli_fetch_assoc($select);
     .qhero_page_reservation_2 h1 {
         text-align: center;
         margin-bottom: 50px;
+        color: #9A4747;
+        font-family: ITCGaramondStd-BkNarrow;
     }
 
     .qhero_page_reservation_2 .col {
@@ -38,6 +40,7 @@ $maison = mysqli_fetch_assoc($select);
 
     .qhero_page_reservation_2 .row .input_row label {
         color: #9A4747;
+        font-family: ITCGaramondStd-BkNarrow;
     }
 
     .qhero_page_reservation_2 .row .input_row input {
