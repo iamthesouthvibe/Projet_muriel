@@ -9,6 +9,10 @@ $sql = $db->query("SELECT * FROM rooms");
         background-color: #9A4747;
     }
 
+    .header_right button {
+        display: none;
+    }
+
     .qhero_page_reservation {
         position: absolute;
         top: 50%;
