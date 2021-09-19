@@ -55,12 +55,12 @@ $maison = mysqli_fetch_assoc($select);
             <div class="col">
                 <div>
                     <div class="input_row">
-                        <label class="form-control-label">Check-in date:</label>
+                        <label class="form-control-label">Check-in :</label>
                         <input type="date" class="form-control" name="in_date">
                     </div>
                     <br>
                     <div class="input_row">
-                        <label class="form-control-label">Check-out date:</label>
+                        <label class="form-control-label">Check-out :</label>
                         <input type="date" class="form-control" name="out_date">
                     </div>
                 </div>
@@ -86,29 +86,36 @@ $maison = mysqli_fetch_assoc($select);
             <div class="col">
                 <div>
                     <div class="input_row">
-                        <label class="form-control-label">Check-in date:</label>
-                        <input type="date" class="form-control" name="in_date">
+                        <label class="form-control-label">Nom :</label>
+                        <input type="text" class="form-control" name="in_date">
                     </div>
                     <br>
                     <div class="input_row">
-                        <label class="form-control-label">Check-out date:</label>
+                        <label class="form-control-label">Adresse : </label>
                         <input type="date" class="form-control" name="out_date">
                     </div>
                 </div>
                 <div>
                     <div class="input_row">
-                        <label class="form-control-label">People:</label>
-                        <input type="number" class="form-control" max="5" name="people">
+                        <label class="form-control-label">Pays : </label>
+                        <input type="text" class="form-control" max="5" name="people">
                         <br>
                     </div>
                     <div class="input_row">
-                        <label class="form-control-label">child:</label>
+                        <label class="form-control-label">Code postal : </label>
                         <input type="number" class="form-control" max="5" name="people">
                     </div>
                 </div>
-                <div class="input_row">
-                    <label for="">Commentaire additionel</label>
-                    <textarea name="" id="" cols="30" rows="5"></textarea>
+                <div>
+                    <div class="input_row">
+                        <label class="form-control-label">Email : </label>
+                        <input type="mail" class="form-control" max="5" name="people">
+                        <br>
+                    </div>
+                    <div class="input_row">
+                        <label class="form-control-label">Telephone : </label>
+                        <input type="tel" class="form-control" max="5" name="people">
+                    </div>
                 </div>
             </div>
         </div>
