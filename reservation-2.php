@@ -27,7 +27,7 @@ $maison = mysqli_fetch_assoc($select);
 
     .qhero_page_reservation_2 .col {
         display: flex;
-        gap: 100px;
+        gap: 120px;
     }
 
     .qhero_page_reservation_2 .row {
