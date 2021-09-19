@@ -5,6 +5,48 @@ include 'includes/header.php';
 $roomID = $_GET['maison'];
 $select = $db->query("SELECT * FROM rooms WHERE id = '{$roomID}' ");
 $maison = mysqli_fetch_assoc($select);
+
+if (isset($_GET['maison'])) {
+    $roomID = $_GET['maison'];
+
+    ####################################################################################
+    if (isset($_POST['checkin'])) {
+        if (!empty($_POST['name']) && !empty($_POST['in_date']) && !empty($_POST['out_date']) && !empty($_POST['phone']) && !empty($_POST['people'])) {
+
+            $name = $_POST['name'];
+            $checkin = $_POST['in_date'];
+            $checkout = $_POST['out_date'];
+            $phone = $_POST['phone'];
+            $people = $_POST['people'];
+            $child = $_POST['children'];
+            $email = $_POST['email'];
+            @$address = $_POST['adress'];
+            $pays = $_POST['pays'];
+            $comm = $_POST['commentaire'];
+            $current_date = date("Y-m-d");
+            $zip = $_POST['zip'];
+
+            if ($checkin >= $current_date) {
+                if ($checkout >= $checkin) {
+                    $insert = "INSERT INTO `reservations` (`name`, `checkin`, `checkout`, `phone`, `people`, `email`, `children`,`address`, `commentaire`, `zip`, `id_rooms`) VALUES ('$name', '$checkin', '$checkout', '$phone', '$people', '$email', '$child', '$address', '$comm', '$zip', '$roomID')";
+
+                    $save = $db->query($insert);
+
+                    if ($save) {
+                        echo "Demande de Reservation ! Je reviens vers vous d'ici 3 jours";
+                    }
+                } else {
+                    echo '<p class="text-center alert alert-danger">Date de départ non valide fournie. Veuillez éviter d\'utiliser une date passée.
+                    </p>';
+                }
+            } else {
+                echo '<p class="text-center alert alert-danger">Invalid Check-in date provided. Please avoid using a past date.</p>';
+            }
+        } else {
+            echo '<br /> All fields are required!';
+        }
+    }
+}
 ?>
 
 <style>
@@ -129,12 +171,12 @@ $maison = mysqli_fetch_assoc($select);
                     </div>
                     <div class="input_row">
                         <label class="form-control-label">child</label>
-                        <input type="number" class="form-control" max="10" min="0" name="people" required>
+                        <input type="number" class="form-control" max="10" min="0" name="children" required>
                     </div>
                 </div>
                 <div class="input_row">
                     <label for="">Commentaire</label>
-                    <textarea name="" id="" cols="30" rows="5"></textarea>
+                    <textarea name="commentaire" id="" cols="30" rows="5"></textarea>
                 </div>
             </div>
         </div>
@@ -144,34 +186,34 @@ $maison = mysqli_fetch_assoc($select);
                 <div>
                     <div class="input_row">
                         <label class="form-control-label">Nom</label>
-                        <input type="text" class="form-control" name="in_date" required>
+                        <input type="text" class="form-control" name="name" required>
                     </div>
 
                     <div class="input_row">
                         <label class="form-control-label">Adresse</label>
-                        <input type="text" class="form-control" name="out_date" required>
+                        <input type="text" class="form-control" name="adress" required>
                     </div>
                 </div>
                 <div>
                     <div class="input_row">
                         <label class="form-control-label">Pays</label>
-                        <input type="text" class="form-control" max="5" name="people" required>
+                        <input type="text" class="form-control" max="5" name="pays" required>
 
                     </div>
                     <div class="input_row">
                         <label class="form-control-label">Code postal</label>
-                        <input type="number" class="form-control" max="5" name="people" required>
+                        <input type="" class="form-control" name="zip" required>
                     </div>
                 </div>
                 <div>
                     <div class="input_row">
                         <label class="form-control-label">Email</label>
-                        <input type="mail" class="form-control" max="5" name="people" required>
+                        <input type="mail" class="form-control" max="5" name="email" required>
 
                     </div>
                     <div class="input_row">
                         <label class="form-control-label">Telephone</label>
-                        <input type="tel" class="form-control" max="5" name="people" required>
+                        <input type="tel" class="form-control" max="5" name="phone" required>
                     </div>
                 </div>
             </div>
@@ -186,7 +228,7 @@ $maison = mysqli_fetch_assoc($select);
 
         <div class="row">
             <div class="col_price">
-                <input type="submit" value="Demande de réservation" class="submit">
+                <input type="submit" name="checkin" value="Demande de réservation" class="submit">
             </div>
         </div>
     </form>
