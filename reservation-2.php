@@ -20,6 +20,7 @@ $maison = mysqli_fetch_assoc($select);
 
     .qhero_page_reservation_2 h1 {
         text-align: center;
+        margin-bottom: 50px;
     }
 
     .qhero_page_reservation_2 .col {
@@ -33,6 +34,17 @@ $maison = mysqli_fetch_assoc($select);
 
     .qhero_page_reservation_2 .row .input_row {
         display: flex;
+    }
+
+    .qhero_page_reservation_2 .row .input_row label {
+        color: #9A4747;
+    }
+
+    .qhero_page_reservation_2 .row .input_row input {
+        border: none;
+        border-bottom: solid 1px #9A4747;
+        background-color: #FCF7EC;
+        color: #9A4747;
     }
 </style>
 
@@ -63,7 +75,7 @@ $maison = mysqli_fetch_assoc($select);
                         <input type="number" class="form-control" max="5" name="people">
                     </div>
                 </div>
-                <div>
+                <div class="input_row">
                     <label for="">Commentaire additionel</label>
                     <textarea name="" id="" cols="30" rows="5"></textarea>
                 </div>
@@ -94,7 +106,7 @@ $maison = mysqli_fetch_assoc($select);
                         <input type="number" class="form-control" max="5" name="people">
                     </div>
                 </div>
-                <div>
+                <div class="input_row">
                     <label for="">Commentaire additionel</label>
                     <textarea name="" id="" cols="30" rows="5"></textarea>
                 </div>
