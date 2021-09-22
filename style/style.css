@@ -1242,8 +1242,10 @@ nav {
 
 
 /* ##### Fin style de la page produits ##### */
+
+
 /* ##### Debut style de la page produits Unité ##### */
-    
+
 .qhero_page_produits_unit {
     margin-top: 25vh;
     text-align: center;
@@ -1437,7 +1439,10 @@ nav .nav_menu_deroulant {
     text-decoration: none;
     transition-duration: 0.5s
 }
+
+
 /* ##### Fin style de la page produits Unité ##### */
+
 
 /* ##### Debut style de la page contact ##### */
 
@@ -2744,6 +2749,8 @@ footer ul {
         text-decoration: none;
     }
     /* ##### Fin style de la page contact ##### */
+    /* ##### DEBUT STYLE PAGE RESERVATION 01 ##### */
+    /* ##### Fin style page reservation 01 ###### */
     /* ##### Debut Style de la page 404 ##### */
     .div_2_page-404 {
         text-align: center;
@@ -3338,6 +3345,13 @@ footer ul {
     .login_page_container_return a {
         font-size: 12px;
     }
+    /* responsive de la page reservation 1 */
+    /* .qhero_page_reservation input {
+        text-align: center;
+    }
+    .qhero_page_reservation select {
+        margin-right: 0px;
+    }*/
 }
 
 @media screen and (max-width: 321px) {
