@@ -2750,7 +2750,7 @@ footer ul {
     }
     /* ##### Fin style de la page contact ##### */
     /* ##### DEBUT STYLE PAGE RESERVATION 01 ##### */
-    body {
+    /* body {
         background-color: #9A4747;
     }
     .header_right button {
@@ -2786,6 +2786,7 @@ footer ul {
         color: #9A4747;
         text-decoration: none;
     }
+    */
     /* ##### Fin style page reservation 01 ###### */
     /* ##### Debut Style de la page 404 ##### */
     .div_2_page-404 {
