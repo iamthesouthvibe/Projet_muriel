@@ -2414,6 +2414,7 @@ footer ul {
         flex-flow: row wrap;
         justify-content: space-around;
         margin-top: 10vh;
+        margin-bottom: 50px;
     }
     .container_presentation_maison img {
         max-width: 35vw;
