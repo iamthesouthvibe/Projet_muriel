@@ -78,22 +78,22 @@ $sql = $db->query("SELECT * FROM rooms LIMIT 4");
   <!-- Swiper -->
   <div class="swiper mySwiper swiperHover">
     <div class="swiper-wrapper">
-    <?php  while($room = mysqli_fetch_assoc($sql)): 
+      <?php while ($room = mysqli_fetch_assoc($sql)) :
 
-      $nb_mots2 = 45;
-      $var2 = $room['details'];
-      $tab2= explode(' ', $var2, $nb_mots2+1);
-      unset($tab2[$nb_mots2]);
-      $shortDesc = implode(' ', $tab2);
+        $nb_mots2 = 45;
+        $var2 = $room['details'];
+        $tab2 = explode(' ', $var2, $nb_mots2 + 1);
+        unset($tab2[$nb_mots2]);
+        $shortDesc = implode(' ', $tab2);
       ?>
-      <div class="swiper-slide">
-        <img src="<?=$room['photo'];?>" alt="" srcset="">
-        <div class="swiper-slide-titre">
-          <h2><?=$room['shortName'];?></h2>
-          <p><?=$shortDesc?></p>
-          <button><a href="maison.php?room=<?= $room['id']; ?>">Découvrir</a></button>
+        <div class="swiper-slide">
+          <img src="<?= $room['photo']; ?>" alt="" srcset="">
+          <div class="swiper-slide-titre">
+            <h2><?= $room['shortName']; ?></h2>
+            <p><?= $shortDesc ?></p>
+            <button><a href="maison.php?room=<?= $room['id']; ?>">Découvrir</a></button>
+          </div>
         </div>
-      </div>
       <?php endwhile; ?>
     </div>
     <div class="swiper-button-next"></div>
@@ -143,8 +143,8 @@ $sql = $db->query("SELECT * FROM rooms LIMIT 4");
       prevEl: ".swiper-button-prev",
     },
     pagination: {
-          el: ".swiper-pagination",
-        }
+      el: ".swiper-pagination",
+    }
   });
 
   let swiperHoverRight = document.querySelector('.swiperHover .swiper-button-next ')

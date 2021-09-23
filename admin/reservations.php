@@ -31,7 +31,6 @@ if (isset($_GET['delete'])) {
         <tr>
           <th>#</th>
           <th>Name</th>
-          <th>Room Number</th>
           <th>Checkin</th>
           <th>Checkout</th>
           <th>Phone</th>
@@ -46,7 +45,6 @@ if (isset($_GET['delete'])) {
           <tr>
             <td><?= $row_count++; ?></td>
             <td><?= $rows['name']; ?></td>
-            <td><?= $rows['room']; ?></td>
             <td><?= $rows['checkin']; ?></td>
             <td><?= $rows['checkout']; ?></td>
             <td><?= $rows['phone']; ?></td>
