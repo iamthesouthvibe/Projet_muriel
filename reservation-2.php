@@ -145,6 +145,46 @@ if (isset($_GET['maison'])) {
         color: #FCF7EC;
         text-decoration: none;
     }
+
+    @media screen and (max-width: 450px) {
+
+        .qhero_page_reservation_2 .col {
+            display: block;
+        }
+
+        .qhero_page_reservation_2 .row .input_row {
+            display: block;
+        }
+
+        .qhero_page_reservation_2 .row .input_row label {
+            font-size: 25px;
+        }
+
+        .qhero_page_reservation_2 .row {
+            margin-bottom: 0px;
+        }
+
+        .finalPrice {
+            margin-top: 70px;
+        }
+
+        .reservationFinale {
+            margin-top: 70px;
+            margin-bottom: 100px;
+        }
+
+        .qhero_page_reservation_2 h1 {
+            font-size: 35px;
+        }
+
+        .qhero_page_reservation_2 .col_price h3 {
+            font-size: 35px;
+        }
+
+        .qhero_page_reservation_2 .col_price h4 {
+            font-size: 22px;
+        }
+    }
 </style>
 
 <div class="qhero_page_reservation_2">
@@ -219,7 +259,7 @@ if (isset($_GET['maison'])) {
             </div>
         </div>
 
-        <div class="row">
+        <div class="row finalPrice">
             <div class="col_price">
                 <h3>Prix total : </h3>
                 <h4>450$</h4>
@@ -227,9 +267,13 @@ if (isset($_GET['maison'])) {
         </div>
 
         <div class="row">
-            <div class="col_price">
+            <div class="col_price reservationFinale">
                 <input type="submit" name="checkin" value="Demande de réservation" class="submit">
             </div>
         </div>
     </form>
 </div>
+
+<script>
+    document.getElementById('bouton_responsive').style.display = 'none';
+</script>
