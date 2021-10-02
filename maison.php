@@ -49,22 +49,22 @@ $select = $db->query("SELECT * FROM rooms WHERE id = '{$roomID}' ");
                     $shortDescription4 = substr($room['details'], 501, -1);
                     ?>
                     <p>
-                        <?= $shortDescription2; ?>
+                        <?= $room['details']; ?>
                     </p>
                     <div class="image_gauche">
                         <img src="<?= $room['photo4']; ?>" alt="Photo Maison">
                     </div>
                     <p>
-                        <?= $shortDescription3; ?>
+                        <?= $room['details2']; ?>
                     </p>
                 </div>
             </div>
             <div class="container_presentation_maison_droite">
                 <div class="text-droite">
-                    <p> <?= $shortDescription4; ?></p>
+                    <p> <?= $room['details3']; ?></p>
                 </div>
                 <div class="image_droite">
-                    <img src="<?= $room['photo20']; ?>" alt="Photo Maison">
+                    <img src="<?= $room['photo7']; ?>" alt="Photo Maison">
                 </div>
             </div>
         </div>
@@ -141,92 +141,113 @@ $select = $db->query("SELECT * FROM rooms WHERE id = '{$roomID}' ");
                             <p><?= $room['photo_des11']; ?></p>
                         </div>
                     </div>
-                    <div class="swiper-slide">
-                        <img src="<?= $room['photo12']; ?>" alt="" srcset="">
-                        <div class="swiper-slide-titre">
-                            <p><?= $room['photo_des12']; ?></p>
+                    <?php if (!empty($room['photo12'])) : ?>
+                        <div class="swiper-slide">
+                            <img src="<?= $room['photo12']; ?>" alt="" srcset="">
+                            <div class="swiper-slide-titre">
+                                <p><?= $room['photo_des12']; ?></p>
+                            </div>
                         </div>
-                    </div>
-                    <div class="swiper-slide">
-                        <img src="<?= $room['photo13']; ?>" alt="" srcset="">
-                        <div class="swiper-slide-titre">
-                            <p><?= $room['photo_des13']; ?></p>
+                    <?php endif; ?>
+                    <?php if (!empty($room['photo13'])) : ?>
+                        <div class="swiper-slide">
+                            <img src="<?= $room['photo13']; ?>" alt="" srcset="">
+                            <div class="swiper-slide-titre">
+                                <p><?= $room['photo_des13']; ?></p>
+                            </div>
                         </div>
-                    </div>
-                    <div class="swiper-slide">
-                        <img src="<?= $room['photo14']; ?>" alt="" srcset="">
-                        <div class="swiper-slide-titre">
-                            <p><?= $room['photo_des14']; ?></p>
+                    <?php endif; ?>
+                    <?php if (!empty($room['photo14'])) : ?>
+                        <div class="swiper-slide">
+                            <img src="<?= $room['photo14']; ?>" alt="" srcset="">
+                            <div class="swiper-slide-titre">
+                                <p><?= $room['photo_des14']; ?></p>
+                            </div>
                         </div>
-                    </div>
-                    <div class="swiper-slide">
-                        <img src="<?= $room['photo15']; ?>" alt="" srcset="">
-                        <div class="swiper-slide-titre">
-                            <p><?= $room['photo_des15']; ?></p>
+                    <?php endif ?>
+                    <?php if (!empty($room['photo15'])) : ?>
+                        <div class="swiper-slide">
+                            <img src="<?= $room['photo15']; ?>" alt="" srcset="">
+                            <div class="swiper-slide-titre">
+                                <p><?= $room['photo_des15']; ?></p>
+                            </div>
                         </div>
-                    </div>
-                    <div class="swiper-slide">
-                        <img src="<?= $room['photo16']; ?>" alt="" srcset="">
-                        <div class="swiper-slide-titre">
-                            <p><?= $room['photo_des16']; ?></p>
+                    <?php endif; ?>
+                    <?php if (!empty($room['photo16'])) : ?>
+                        <div class="swiper-slide">
+                            <img src="<?= $room['photo16']; ?>" alt="" srcset="">
+                            <div class="swiper-slide-titre">
+                                <p><?= $room['photo_des16']; ?></p>
+                            </div>
                         </div>
-                    </div>
-                    <div class="swiper-slide">
-                        <img src="<?= $room['photo17']; ?>" alt="" srcset="">
-                        <div class="swiper-slide-titre">
-                            <p><?= $room['photo_des17']; ?></p>
+                    <?php endif; ?>
+                    <?php if (!empty($room['photo17'])) : ?>
+                        <div class="swiper-slide">
+                            <img src="<?= $room['photo17']; ?>" alt="" srcset="">
+                            <div class="swiper-slide-titre">
+                                <p><?= $room['photo_des17']; ?></p>
+                            </div>
                         </div>
-                    </div>
-                    <div class="swiper-slide">
-                        <img src="<?= $room['photo18']; ?>" alt="" srcset="">
-                        <div class="swiper-slide-titre">
-                            <p><?= $room['photo_des18']; ?></p>
+                    <?php endif; ?>
+                    <?php if (!empty($room['photo18'])) : ?>
+                        <div class="swiper-slide">
+                            <img src="<?= $room['photo18']; ?>" alt="" srcset="">
+                            <div class="swiper-slide-titre">
+                                <p><?= $room['photo_des18']; ?></p>
+                            </div>
                         </div>
-                    </div>
-                    <div class="swiper-slide">
-                        <img src="<?= $room['photo19']; ?>" alt="" srcset="">
-                        <div class="swiper-slide-titre">
-                            <p><?= $room['photo_des19']; ?></p>
+                    <?php endif; ?>
+                    <?php if (!empty($room['photo19'])) : ?>
+                        <div class="swiper-slide">
+                            <img src="<?= $room['photo19']; ?>" alt="" srcset="">
+                            <div class="swiper-slide-titre">
+                                <p><?= $room['photo_des19']; ?></p>
+                            </div>
                         </div>
-                    </div>
-                    <div class="swiper-slide">
-                        <img src="<?= $room['photo20']; ?>" alt="" srcset="">
-                        <div class="swiper-slide-titre">
-                            <p><?= $room['photo_des20']; ?></p>
+                    <?php endif; ?>
+                    <?php if (!empty($room['photo20'])) : ?>
+                        <div class="swiper-slide">
+                            <img src="<?= $room['photo20']; ?>" alt="" srcset="">
+                            <div class="swiper-slide-titre">
+                                <p><?= $room['photo_des20']; ?></p>
+                            </div>
                         </div>
-                    </div>
-                    <div class="swiper-slide">
-                        <img src="<?= $room['photo21']; ?>" alt="" srcset="">
-                        <div class="swiper-slide-titre">
-                            <p><?= $room['photo_des21']; ?></p>
+                    <?php endif; ?>
+                    <?php if (!empty($room['photo21'])) : ?>
+                        <div class="swiper-slide">
+                            <img src="<?= $room['photo21']; ?>" alt="" srcset="">
+                            <div class="swiper-slide-titre">
+                                <p><?= $room['photo_des21']; ?></p>
+                            </div>
                         </div>
-                    </div>
+                    <?php endif; ?>
                     <?php if (!empty($room['photo22'])) : ?>
-                    <div class="swiper-slide">
-                        <img src="<?= $room['photo22']; ?>" alt="" srcset="">
-                        <div class="swiper-slide-titre">
-                            <p><?= $room['photo_des22']; ?></p>
+                        <div class="swiper-slide">
+                            <img src="<?= $room['photo22']; ?>" alt="" srcset="">
+                            <div class="swiper-slide-titre">
+                                <p><?= $room['photo_des22']; ?></p>
+                            </div>
                         </div>
-                    </div>
                     <?php endif; ?>
 
                     <?php if (!empty($room['photo23'])) : ?>
-                    <div class="swiper-slide">
-                        <img src="<?= $room['photo23']; ?>" alt="" srcset="">
-                        <div class="swiper-slide-titre">
-                            <p><?= $room['photo_des23']; ?></p>
+                        <div class="swiper-slide">
+                            <img src="<?= $room['photo23']; ?>" alt="" srcset="">
+                            <div class="swiper-slide-titre">
+                                <p><?= $room['photo_des23']; ?></p>
+                            </div>
                         </div>
-                    </div>
                     <?php endif; ?>
                     <?php if (!empty($room['photo24'])) : ?>
-                    <div class="swiper-slide">
-                        <img src="<?= $room['photo24']; ?>" alt="" srcset="">
-                        <div class="swiper-slide-titre">
-                            <p><?= $room['photo_des24']; ?></p>
+                        <div class="swiper-slide">
+                            <img src="<?= $room['photo24']; ?>" alt="" srcset="">
+                            <div class="swiper-slide-titre">
+                                <p><?= $room['photo_des24']; ?></p>
+                            </div>
                         </div>
-                    </div>
                     <?php endif; ?>
                 </div>
+
                 <div class="swiper-button-next"></div>
                 <div class="swiper-button-prev"></div>
                 <div class="swiper-pagination"></div>
@@ -466,37 +487,37 @@ $select = $db->query("SELECT * FROM rooms WHERE id = '{$roomID}' ");
                 </h4>
             </div>
             <div class="espace_flexbox_produit">
-            <?php 
-        $select3 = $db->query("SELECT * FROM products WHERE rooms_id = '{$roomID}' LIMIT 3");
-         while($prod = mysqli_fetch_assoc($select3)) : 
-        ?>
-                <div class="espace_produit">
-                    <img src="<?= $prod['photo_p']; ?>" alt="Thumbnail du blog">
-                    <h6 class="element_textuel_produit"><?= $prod['price_p']; ?></h6>
-                    <h5 class="element_textuel_produit"><?= $prod['name_p']; ?></h5>
-                    <a class="element_textuel_produit" href="">Acheter →</a>
-                </div>
+                <?php
+                $select3 = $db->query("SELECT * FROM products WHERE rooms_id = '{$roomID}' LIMIT 3");
+                while ($prod = mysqli_fetch_assoc($select3)) :
+                ?>
+                    <div class="espace_produit">
+                        <img src="<?= $prod['photo_p']; ?>" alt="Thumbnail du blog">
+                        <h6 class="element_textuel_produit"><?= $prod['price_p']; ?></h6>
+                        <h5 class="element_textuel_produit"><?= $prod['name_p']; ?></h5>
+                        <a class="element_textuel_produit" href="">Acheter →</a>
+                    </div>
                 <?php endwhile; ?>
-               
+
             </div>
             <div class="lien_page_produit">
                 <a href="">Voir tous les produits →</a>
             </div>
 
         </div>
-        <?php endwhile; ?>
+    <?php endwhile; ?>
 
-        <!-- Ligne séparator -->
+    <!-- Ligne séparator -->
 
-        <div class="ligne_separator"></div>
+    <div class="ligne_separator"></div>
 
-        <!-- Section Commentaires -->
+    <!-- Section Commentaires -->
 
-        <?php 
-        $select2 = $db->query("SELECT * FROM comments WHERE id_rooms = '{$roomID}' ORDER BY id DESC ");
-        ?>
-        <div class="container_commentaire">
-            <?php while($comm = mysqli_fetch_assoc($select2)) : ?>
+    <?php
+    $select2 = $db->query("SELECT * FROM comments WHERE id_rooms = '{$roomID}' ORDER BY id DESC ");
+    ?>
+    <div class="container_commentaire">
+        <?php while ($comm = mysqli_fetch_assoc($select2)) : ?>
             <div class="bloc_commentaire">
                 <h5>“<?= $comm["comment"] ?>”</h5>
                 <div class="sous_bloc_commentaire">
@@ -504,8 +525,8 @@ $select = $db->query("SELECT * FROM rooms WHERE id = '{$roomID}' ");
                     <h6 class="infos_commentaire"><?= $comm['fullname'] . " - " . $comm['date_c']; ?></h6>
                 </div>
             </div>
-            <?php endwhile; ?>
-        </div>
+        <?php endwhile; ?>
+    </div>
 
 
 
@@ -579,7 +600,7 @@ $select = $db->query("SELECT * FROM rooms WHERE id = '{$roomID}' ");
     var swiper2 = new Swiper(".carousel_maison_02 .mySwiper", {
         loop: true,
         resizeObserver: false,
-    watchOverflow: false,
+        watchOverflow: false,
         pagination: {
             el: ".swiper-pagination",
         }
@@ -588,7 +609,7 @@ $select = $db->query("SELECT * FROM rooms WHERE id = '{$roomID}' ");
     var swiper3 = new Swiper(".carousel_maison_03 .mySwiper", {
         loop: true,
         resizeObserver: false,
-    watchOverflow: false,
+        watchOverflow: false,
         navigation: {
             nextEl: ".swiper-button-next",
         },
