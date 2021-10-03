@@ -45,6 +45,20 @@ $sql = $db->query("SELECT * FROM rooms");
         color: #9A4747;
         text-decoration: none;
     }
+
+    @media screen and (max-width: 450px) {
+        /* responsive de la page reservation 1 */
+        .qhero_page_reservation form {
+            text-align: center;
+        }
+        .qhero_page_reservation select {
+            margin-right: 0px;
+        }
+
+        .qhero_page_reservation input {
+            margin-top: 110px;
+        }
+    }
 </style>
 
 <div class="qhero_page_reservation">
@@ -64,6 +78,10 @@ $sql = $db->query("SELECT * FROM rooms");
 </div>
 
 <script>
+
+    document.getElementById('bouton_responsive').style.display = 'none';
+
+
     let input = document.querySelector('.test');
     let button = document.querySelector('.button');
 
@@ -73,4 +91,5 @@ $sql = $db->query("SELECT * FROM rooms");
            event.preventDefault();
         } 
     });
+
 </script>

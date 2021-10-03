@@ -36,7 +36,7 @@
       </div>
     </nav>
 
-    <div class="bouton_responsive">
+    <div class="bouton_responsive" id="bouton_responsive">
       <button class="bouton_phone"><a href="reservation.php">Reserver</a></button>
     </div>
 
