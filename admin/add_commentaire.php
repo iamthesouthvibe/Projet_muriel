@@ -49,13 +49,13 @@ if (isset($_POST['add'])) {
             </select>
             <br>
             <label for="name">Nom complet : </label>
-            <input type="text" name="name" id="">
+            <input type="text" name="name" id="" required>
             <br>
             <label for="">Mois et année : </label>
-            <input type="text" name="date" id="">
+            <input type="text" name="date" id="" required>
             <br>
             <label for="">Commentaire : </label>
-            <textarea name="comm" id="" cols="30" rows="10"></textarea>
+            <textarea name="comm" id="" cols="30" rows="10" required></textarea>
             <br>
             <input type="submit" name="add" value="Ajouter">
         </form>
