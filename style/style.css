@@ -18,17 +18,78 @@
     src: local("../assets/fonts/NeueMontreal/NeueMontreal-Regular.otf"), local("NeueMontreal-Regular"), url(NeueMontreal-Bold.otf);
 }
 
+@font-face {
+    font-family: 'neue_montrealregular';
+    src: url('../assets/fonts/webfontkit-20211005-162415/neuemontreal-regular-webfont.woff2') format('woff2'), url('../assets/fonts/webfontkit-20211005-162415/neuemontreal-regular-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
 body {
     margin: 0px;
     padding: 0;
     background-color: #FCF7EC;
     height: 100%;
-    font-family: NeueMontreal-Regular;
+    font-family: neue_montrealregular;
 }
 
- ::-webkit-scrollbar {
-    width: 1px;
-    height: 1px;
+
+/* Hide scrollbar for Chrome, Safari and Opera */
+
+.scrollbar-hidden::-webkit-scrollbar {
+    display: none;
+}
+
+
+/* Hide scrollbar for IE, Edge add Firefox */
+
+.scrollbar-hidden {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+    /* Firefox */
+}
+
+::-webkit-scrollbar {
+    display: none;
+}
+
+#element {
+    scrollbar-width: none;
+}
+
+body {
+    scrollbar-width: none;
+}
+
+.hide-scrollbar {
+    overflow: auto;
+    -ms-overflow-style: none;
+    /* IE 11 */
+    scrollbar-width: none;
+    /* Firefox 64 */
+}
+
+@-moz-document url-prefix() {
+    /* Disable scrollbar Firefox */
+    html {
+        scrollbar-width: none;
+    }
+}
+
+body {
+    margin: 0;
+    /* remove default margin */
+    scrollbar-width: none;
+    /* Also needed to disable scrollbar Firefox */
+    -ms-overflow-style: none;
+    /* Disable scrollbar IE 10+ */
+    overflow-y: scroll;
+}
+
+body::-webkit-scrollbar {
+    width: 0px;
+    background: transparent;
+    /* Disable scrollbar Chrome/Safari/Webkit */
 }
 
 
@@ -73,7 +134,7 @@ nav {
 .header_right button a {
     color: #FCF7EC;
     text-decoration: none;
-    font-family: Neue Montreal;
+    font-family: neue_montrealregular;
     font-style: normal;
     font-weight: bold;
     font-size: 20px;
@@ -337,7 +398,8 @@ nav {
 }
 
 .style_h2_accueil {
-    font-family: Neue Montreal;
+    /*font-family: Neue Montreal;*/
+    font-family: neue_montrealregular;
     font-style: normal;
     font-weight: normal;
     font-size: 18px;
@@ -446,7 +508,7 @@ nav {
 
 .swiper-slide-titre p {
     margin: auto;
-    font-family: Neue Montreal;
+    font-family: neue_montrealregular;
     font-style: normal;
     font-weight: normal;
     font-size: 18px;
@@ -468,7 +530,7 @@ nav {
 
 .swiper-slide-titre button a {
     text-decoration: none;
-    font-family: Neue Montreal;
+    font-family: neue_montrealregular;
     font-style: normal;
     font-weight: bold;
     font-size: 20px;
@@ -602,7 +664,7 @@ nav {
 }
 
 .texte_section_muriel {
-    font-family: Neue Montreal;
+    font-family: neue_montrealregular;
     font-style: normal;
     font-weight: normal;
     font-size: 24px;
@@ -656,7 +718,7 @@ nav {
 }
 
 .div_h3_text_presentation h3 {
-    font-family: NeueMontreal-Regular;
+    font-family: neue_montrealregular;
     font-style: normal;
     font-weight: normal;
     font-size: 18px;
@@ -695,7 +757,7 @@ nav {
 }
 
 .container_presentation_maison p {
-    font-family: Neue Montreal;
+    font-family: neue_montrealregular;
     font-style: normal;
     font-weight: normal;
     font-size: 24px;
@@ -862,7 +924,7 @@ nav {
 }
 
 .espace_article_blog h6 {
-    font-family: NeueMontreal-Regular;
+    font-family: neue_montrealregular;
     font-style: normal;
     font-weight: normal;
     font-size: 12px;
@@ -887,7 +949,7 @@ nav {
 
 .espace_article_blog a {
     text-decoration: none;
-    font-family: NeueMontreal-Regular;
+    font-family: neue_montrealregular;
     font-style: normal;
     font-weight: bold;
     font-size: 18px;
@@ -903,7 +965,7 @@ nav {
 
 .lien_page_blog a {
     text-decoration: none;
-    font-family: NeueMontreal-Regular;
+    font-family: neue_montrealregular;
     font-style: normal;
     font-weight: normal;
     font-size: 29px;
@@ -969,7 +1031,7 @@ nav {
 }
 
 .espace_produit h6 {
-    font-family: NeueMontreal-Regular;
+    font-family: neue_montrealregular;
     font-style: normal;
     font-weight: normal;
     font-size: 12px;
@@ -994,7 +1056,7 @@ nav {
 
 .espace_produit a {
     text-decoration: none;
-    font-family: NeueMontreal-Regular;
+    font-family: neue_montrealregular;
     font-style: normal;
     font-weight: bold;
     font-size: 18px;
@@ -1010,7 +1072,7 @@ nav {
 
 .lien_page_produit a {
     text-decoration: none;
-    font-family: NeueMontreal-Regular;
+    font-family: neue_montrealregular;
     font-style: normal;
     font-weight: normal;
     font-size: 29px;
@@ -1061,7 +1123,7 @@ nav {
 }
 
 .sous_bloc_commentaire h6 {
-    font-family: NeueMontreal-Regular;
+    font-family: neue_montrealregular;
     font-style: normal;
     font-weight: normal;
     font-size: 22px;
@@ -1093,7 +1155,7 @@ nav {
 }
 
 .div_h3_text_presentation_produits {
-    font-family: NeueMontreal-Regular;
+    font-family: neue_montrealregular;
     font-style: normal;
     font-weight: normal;
     font-size: 18px;
@@ -1207,7 +1269,7 @@ nav {
 }
 
 .espace_produit_02 a h6 {
-    font-family: NeueMontreal-Regular;
+    font-family: neue_montrealregular;
     font-style: normal;
     font-weight: normal;
     font-size: 12px;
@@ -1236,7 +1298,7 @@ nav {
 
 .espace_produit_02 .lien_achat {
     text-decoration: none;
-    font-family: NeueMontreal-Regular;
+    font-family: neue_montrealregular;
     font-style: normal;
     font-weight: bold;
     font-size: 18px;
@@ -1287,7 +1349,7 @@ nav {
 }
 
 .infos_techniques_produits_unit h5 {
-    font-family: NeueMontreal-Regular;
+    font-family: neue_montrealregular;
     font-style: normal;
     font-weight: normal;
     font-size: 12px;
@@ -1298,7 +1360,7 @@ nav {
 }
 
 .infos_techniques_produits_unit h3 {
-    font-family: NeueMontreal-Regular;
+    font-family: neue_montrealregular;
     font-style: normal;
     font-weight: normal;
     font-size: 18px;
@@ -1567,7 +1629,7 @@ nav .nav_menu_deroulant {
 
 .bouton_retour_home a {
     text-decoration: none;
-    font-family: NeueMontreal-Regular;
+    font-family: neue_montrealregular;
     font-style: normal;
     font-weight: bold;
     font-size: 18px;
@@ -1624,7 +1686,7 @@ nav .nav_menu_deroulant {
 }
 
 .login_page_container_title p {
-    font-family: Neue Montreal;
+    font-family: neue_montrealregular;
     font-style: normal;
     font-weight: normal;
     font-size: 18px;
@@ -1641,7 +1703,7 @@ nav .nav_menu_deroulant {
 }
 
 .form_login label {
-    font-family: Neue Montreal;
+    font-family: neue_montrealregular;
     font-style: normal;
     font-weight: normal;
     font-size: 30px;
@@ -1685,7 +1747,7 @@ nav .nav_menu_deroulant {
 }
 
 .login_page_container_return a {
-    font-family: Neue Montreal;
+    font-family: neue_montrealregular;
     font-style: normal;
     font-weight: normal;
     font-size: 15px;
@@ -1756,7 +1818,7 @@ footer {
 
 .footer_class a {
     text-decoration: none;
-    font-family: Neue Montreal;
+    font-family: neue_montrealregular;
     font-style: normal;
     font-weight: normal;
     font-size: 22px;
@@ -1767,7 +1829,7 @@ footer {
 }
 
 .footer_class h4 {
-    font-family: NeueMontreal-Regular;
+    font-family: neue_montrealregular;
     font-style: normal;
     font-weight: normal;
     font-size: 27px;
@@ -1778,7 +1840,7 @@ footer {
 }
 
 .footer_class ul li .bouton-up {
-    font-family: NeueMontreal-Regular;
+    font-family: neue_montrealregular;
     font-style: normal;
     font-weight: normal;
     font-size: 27px;
@@ -1788,7 +1850,7 @@ footer {
 }
 
 .footer_informations h5 {
-    font-family: Neue Montreal;
+    font-family: neue_montrealregular;
     font-style: normal;
     font-weight: normal;
     font-size: 17px;
@@ -1857,7 +1919,7 @@ footer ul {
         padding: 0;
         background-color: #FCF7EC;
         height: 100%;
-        font-family: NeueMontreal-Regular;
+        font-family: neue_montrealregular;
     }
      ::-webkit-scrollbar {
         width: 1px;
@@ -1898,7 +1960,7 @@ footer ul {
     .header_right button a {
         color: #FCF7EC;
         text-decoration: none;
-        font-family: Neue Montreal;
+        font-family: neue_montrealregular;
         font-style: normal;
         font-weight: bold;
         font-size: 20px;
@@ -2117,7 +2179,7 @@ footer ul {
         margin-bottom: 50px;
     }
     .style_h2_accueil {
-        font-family: Neue Montreal;
+        font-family: neue_montrealregular;
         font-style: normal;
         font-weight: normal;
         font-size: 18px;
@@ -2203,7 +2265,7 @@ footer ul {
         text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     }
     .swiper-slide-titre p {
-        font-family: Neue Montreal;
+        font-family: neue_montrealregular;
         font-style: normal;
         font-weight: normal;
         font-size: 18px;
@@ -2223,7 +2285,7 @@ footer ul {
     }
     .swiper-slide-titre button a {
         text-decoration: none;
-        font-family: Neue Montreal;
+        font-family: neue_montrealregular;
         font-style: normal;
         font-weight: bold;
         font-size: 20px;
@@ -2345,7 +2407,7 @@ footer ul {
         margin-bottom: 20px;
     }
     .texte_section_muriel {
-        font-family: Neue Montreal;
+        font-family: neue_montrealregular;
         font-style: normal;
         font-weight: normal;
         font-size: 24px;
@@ -2388,7 +2450,7 @@ footer ul {
         margin-bottom: 12vh;
     }
     .div_h3_text_presentation h3 {
-        font-family: NeueMontreal-Regular;
+        font-family: neue_montrealregular;
         font-style: normal;
         font-weight: normal;
         font-size: 18px;
@@ -2439,7 +2501,7 @@ footer ul {
         max-width: 35vw;
     }
     .container_presentation_maison p {
-        font-family: Neue Montreal;
+        font-family: neue_montrealregular;
         font-style: normal;
         font-weight: normal;
         font-size: 24px;
@@ -2541,7 +2603,7 @@ footer ul {
         max-width: 23vw;
     }
     .espace_article_blog h6 {
-        font-family: NeueMontreal-Regular;
+        font-family: neue_montrealregular;
         font-style: normal;
         font-weight: normal;
         font-size: 12px;
@@ -2564,7 +2626,7 @@ footer ul {
     }
     .espace_article_blog a {
         text-decoration: none;
-        font-family: NeueMontreal-Regular;
+        font-family: neue_montrealregular;
         font-style: normal;
         font-weight: bold;
         font-size: 18px;
@@ -2578,7 +2640,7 @@ footer ul {
     }
     .lien_page_blog a {
         text-decoration: none;
-        font-family: NeueMontreal-Regular;
+        font-family: neue_montrealregular;
         font-style: normal;
         font-weight: normal;
         font-size: 29px;
@@ -2635,7 +2697,7 @@ footer ul {
         max-width: 23vw;
     }
     .espace_produit h6 {
-        font-family: NeueMontreal-Regular;
+        font-family: neue_montrealregular;
         font-style: normal;
         font-weight: normal;
         font-size: 12px;
@@ -2658,7 +2720,7 @@ footer ul {
     }
     .espace_produit a {
         text-decoration: none;
-        font-family: NeueMontreal-Regular;
+        font-family: neue_montrealregular;
         font-style: normal;
         font-weight: bold;
         font-size: 18px;
@@ -2672,7 +2734,7 @@ footer ul {
     }
     .lien_page_produit a {
         text-decoration: none;
-        font-family: NeueMontreal-Regular;
+        font-family: neue_montrealregular;
         font-style: normal;
         font-weight: normal;
         font-size: 29px;
@@ -2712,7 +2774,7 @@ footer ul {
         width: 120px;
     }
     .sous_bloc_commentaire h6 {
-        font-family: NeueMontreal-Regular;
+        font-family: neue_montrealregular;
         font-style: normal;
         font-weight: normal;
         font-size: 22px;
@@ -2852,7 +2914,7 @@ footer ul {
     }
     .bouton_retour_home a {
         text-decoration: none;
-        font-family: NeueMontreal-Regular;
+        font-family: neue_montrealregular;
         font-style: normal;
         font-weight: bold;
         font-size: 18px;
@@ -2899,7 +2961,7 @@ footer ul {
         margin-bottom: 15px;
     }
     .login_page_container_title p {
-        font-family: Neue Montreal;
+        font-family: neue_montrealregular;
         font-style: normal;
         font-weight: normal;
         font-size: 18px;
@@ -2914,7 +2976,7 @@ footer ul {
         margin-top: 7vh;
     }
     .form_login label {
-        font-family: Neue Montreal;
+        font-family: neue_montrealregular;
         font-style: normal;
         font-weight: normal;
         font-size: 30px;
@@ -2952,7 +3014,7 @@ footer ul {
         margin-top: 30px;
     }
     .login_page_container_return a {
-        font-family: Neue Montreal;
+        font-family: neue_montrealregular;
         font-style: normal;
         font-weight: normal;
         font-size: 15px;
@@ -3014,7 +3076,7 @@ footer ul {
     }
     .footer_class a {
         text-decoration: none;
-        font-family: Neue Montreal;
+        font-family: neue_montrealregular;
         font-style: normal;
         font-weight: normal;
         font-size: 22px;
@@ -3024,7 +3086,7 @@ footer ul {
         position: relative;
     }
     .footer_class h4 {
-        font-family: NeueMontreal-Regular;
+        font-family: neue_montrealregular;
         font-style: normal;
         font-weight: normal;
         font-size: 27px;
@@ -3034,7 +3096,7 @@ footer ul {
         margin-bottom: 12px;
     }
     .footer_class ul li .bouton-up {
-        font-family: NeueMontreal-Regular;
+        font-family: neue_montrealregular;
         font-style: normal;
         font-weight: normal;
         font-size: 27px;
@@ -3043,7 +3105,7 @@ footer ul {
         color: #9A4747;
     }
     .footer_informations h5 {
-        font-family: Neue Montreal;
+        font-family: neue_montrealregular;
         font-style: normal;
         font-weight: normal;
         font-size: 17px;
@@ -3143,7 +3205,7 @@ footer ul {
     .bouton_responsive button a {
         color: #FCF7EC;
         text-decoration: none;
-        font-family: Neue Montreal;
+        font-family: neue_montrealregular;
         font-style: normal;
         font-weight: bold;
         font-size: 20px;

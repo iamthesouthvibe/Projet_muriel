@@ -93,6 +93,7 @@ if (isset($_GET['maison'])) {
         color: #9A4747;
         font-family: ITCGaramondStd-BkNarrow;
         margin-right: 15px;
+        transform: translate(0px, 7px);
     }
 
     .qhero_page_reservation_2 .row .input_row input {
@@ -261,7 +262,7 @@ if (isset($_GET['maison'])) {
 
         <div class="row finalPrice">
             <div class="col_price">
-                <h3>Prix total : </h3>
+                <h3>Prix par nuit</h3>
                 <h4>450$</h4>
             </div>
         </div>
