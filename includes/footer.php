@@ -35,16 +35,13 @@
                 <a href="">Home</a>
             </li>
             <li>
-                <a href="">À propos</a>
-            </li>
-            <li>
                 <a href="">Articles</a>
             </li>
             <li>
                 <a href="">Rubriques</a>
             </li>
             <li>
-                <a href="">Contact</a>
+                <a href="/contact.php">Contact</a>
             </li>
             <li>
                 <a href="/RGPD.php">RGPD</a>

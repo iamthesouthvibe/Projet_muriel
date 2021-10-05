@@ -417,13 +417,20 @@ $select = $db->query("SELECT * FROM rooms WHERE id = '{$roomID}' ");
             </div>
             <div class="carousel_maison_03_map">
                 <div class="mapouter">
-                    <div class="gmap_canvas"><iframe width="600" height="799" id="gmap_canvas" src="https://maps.google.com/maps?q=2880%20Broadway,%20New%20York&t=&z=13&ie=UTF8&iwloc=&output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe><a href="https://getasearch.com"></a><br>
+                    <div class="gmap_canvas"><iframe width="700px" height="799" id="gmap_canvas" src="https://maps.google.com/maps?q=2880%20Broadway,%20New%20York&t=&z=13&ie=UTF8&iwloc=&output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe><a href="https://getasearch.com"></a><br>
                         <style>
                             .mapouter {
                                 position: relative;
                                 text-align: right;
                                 height: 799px;
-                                width: 600px;
+                                width: 700px;
+                            }
+
+                            @media screen and (max-width: 450px) {
+                                .mapouter {
+                                    width: 10px;
+                                    height: 600px;
+                                }
                             }
                         </style><a href="https://www.embedgooglemap.net">embedgooglemap.net</a>
                         <style>
@@ -431,11 +438,18 @@ $select = $db->query("SELECT * FROM rooms WHERE id = '{$roomID}' ");
                                 overflow: hidden;
                                 background: none !important;
                                 height: 799px;
-                                width: 600px;
+                                width: 100%;
                             }
 
                             .carousel_maison img {
                                 filter: none;
+                            }
+
+                            @media screen and (max-width: 450px) {
+                                .gmap_canvas {
+                                    width: 88vw;
+                                    height: 600px;
+                                }
                             }
                         </style>
                     </div>

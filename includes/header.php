@@ -23,11 +23,11 @@
     <nav>
       <div class="header_left">
         <a href="index.php">
-        <img src="../assets/png/LOGO_ANCIEN.png" alt="Logo muriel Home">
+        <img src="assets/png/LOGO_02_PNG_NOIR.png" alt="Logo muriel Home">
         </a>
       </div>
       <div class="header_right">
-        <button class="bouton_desktop"><a href="reservation.php">Reserver</a></button>
+        <button class="bouton_desktop"><a href="reservation.php">Réserver</a></button>
         <div class="burger-menu">
           <span></span>
           <span></span>
@@ -37,7 +37,7 @@
     </nav>
 
     <div class="bouton_responsive" id="bouton_responsive">
-      <button class="bouton_phone"><a href="reservation.php">Reserver</a></button>
+      <button class="bouton_phone"><a href="reservation.php">Réserver</a></button>
     </div>
 
   </header>
@@ -58,9 +58,6 @@
           <li>
             <a href="contact.php">Contact</a>
           </li>
-          <li>
-            <a href="">A propos</a>
-          </li>
         </ul>
       </div>
     </div>
@@ -77,9 +74,6 @@
           </li>
           <li>
             <a href="contact.php">04</a>
-          </li>
-          <li>
-            <a href="">05</a>
           </li>
         </ul>
     </div>
