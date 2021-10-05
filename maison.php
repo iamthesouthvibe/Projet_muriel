@@ -415,46 +415,56 @@ $select = $db->query("SELECT * FROM rooms WHERE id = '{$roomID}' ");
                     </div>
                 </div>
             </div>
-            <div class="carousel_maison_03_map">
-                <div class="mapouter">
-                    <div class="gmap_canvas"><iframe width="700px" height="799" id="gmap_canvas" src="https://maps.google.com/maps?q=2880%20Broadway,%20New%20York&t=&z=13&ie=UTF8&iwloc=&output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe><a href="https://getasearch.com"></a><br>
-                        <style>
+
+            <div class="mapouter">
+                <div class="gmap_canvas">
+                    <iframe width="700px" height="799" id="gmap_canvas" src="https://maps.google.com/maps?q=2880%20Broadway,%20New%20York&t=&z=13&ie=UTF8&iwloc=&output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe><a href="https://getasearch.com"></a><br>
+                    <style>
+                        .mapouter {
+                            position: relative;
+                            text-align: right;
+                            height: 659px;
+                            width: 700px;
+                        }
+                    </style><a href="https://www.embedgooglemap.net">embedgooglemap.net</a>
+                    <style>
+                        .gmap_canvas {
+                            overflow: hidden;
+                            background: none !important;
+
+                            width: 100%;
+
+                            padding-bottom: 56.25%;
+
+                            position: relative;
+
+                            height: 200px;
+                        }
+
+                        .gmap_canvas iframe {
+                            left: 0;
+
+                            top: 0;
+
+                            height: 100%;
+
+                            width: 100%;
+
+                            position: absolute;
+                        }
+
+                        .carousel_maison img {
+                            filter: none;
+                        }
+
+                        @media screen and (max-width: 450px) {
                             .mapouter {
-                                position: relative;
-                                text-align: right;
-                                height: 799px;
-                                width: 700px;
+                                height: 400px;
                             }
-
-                            @media screen and (max-width: 450px) {
-                                .mapouter {
-                                    width: 10px;
-                                    height: 600px;
-                                }
-                            }
-                        </style><a href="https://www.embedgooglemap.net">embedgooglemap.net</a>
-                        <style>
-                            .gmap_canvas {
-                                overflow: hidden;
-                                background: none !important;
-                                height: 799px;
-                                width: 100%;
-                            }
-
-                            .carousel_maison img {
-                                filter: none;
-                            }
-
-                            @media screen and (max-width: 450px) {
-                                .gmap_canvas {
-                                    width: 88vw;
-                                    height: 600px;
-                                }
-                            }
-                        </style>
-                    </div>
+                    </style>
                 </div>
             </div>
+
 
         </div>
 

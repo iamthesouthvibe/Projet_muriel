@@ -763,14 +763,19 @@ nav {
     display: flex;
     margin: 100px 6vw;
     justify-content: space-between;
+    margin-top: 100px;
+    margin-bottom: 30px;
+    margin-right: 6vw;
+    margin-left: 6vw;
 }
 
 .carousel_maison_03 {
     color: #fff;
+    margin-right: 25px;
 }
 
 .carousel_maison_03 h4 {
-    margin-left: 50px;
+    margin-left: 25px;
 }
 
 .carousel_maison_03 .swiper-button-next {
@@ -778,7 +783,7 @@ nav {
     position: absolute;
     opacity: 1;
     height: 16%;
-    margin-right: 2vw;
+    margin-right: -6vw;
     color: #fff;
     --swiper-navigation-size: 20px;
 }
@@ -797,7 +802,7 @@ nav {
 .carousel_maison_03 .swiper-slide p {
     text-align: left;
     margin: 0;
-    margin-left: 50px;
+    margin-left: 25px;
 }
 
 
@@ -2262,6 +2267,9 @@ footer ul {
         background-size: 15px;
         background-repeat: no-repeat;
         background-position: center;
+    }
+    .carousel_maison_03 {
+        margin-bottom: 25px;
     }
     .carousel_maison_03 .swiper {
         width: 88vw;
