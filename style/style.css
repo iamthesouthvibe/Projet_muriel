@@ -25,6 +25,13 @@
     font-style: normal;
 }
 
+@font-face {
+    font-family: 'neue_montrealbold';
+    src: url('../assets/fonts/webfontkit-20211006-052555/neuemontreal-bold-webfont.woff2') format('woff2'), url('../assets/fonts/webfontkit-20211006-052555/neuemontreal-bold-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
 body {
     margin: 0px;
     padding: 0;
@@ -707,7 +714,7 @@ nav {
 }
 
 .div_h2_sous_titre h2 {
-    font-family: NeueMontreal-Bold;
+    font-family: neue_montrealbold;
     font-style: normal;
     font-weight: normal;
     font-size: 18px;
@@ -1199,7 +1206,7 @@ nav {
 }
 
 .bouton_selection_maison a {
-    font-family: NeueMontreal-Bold;
+    font-family: neue_montrealbold;
     font-style: normal;
     font-weight: bold;
     font-size: 18px;
@@ -1223,7 +1230,7 @@ nav {
 .bouton_selection_maison a:hover {
     color: #FCF7EC;
     text-decoration: none;
-    font-family: NeueMontreal-Bold;
+    font-family: neue_montrealbold;
     font-style: normal;
     font-weight: bold;
     font-size: 18px;
@@ -1498,7 +1505,7 @@ nav .nav_menu_deroulant {
 }
 
 .bouton_acheter_produits_unit a {
-    font-family: NeueMontreal-Bold;
+    font-family: neue_montrealbold;
     font-style: normal;
     font-weight: bold;
     font-size: 18px;
@@ -1575,6 +1582,101 @@ nav .nav_menu_deroulant {
 
 
 /* ##### Fin Style de la page RGPD ##### */
+
+
+/* ####### DEBUT STYLE PAGE CONFIRMATION RESERVATION ####### */
+
+.qhero_page_confirmation {
+    max-width: 85vw;
+    margin: auto;
+}
+
+.style_h1_confirmation {
+    font-family: ITCGaramondStd-BkNarrow;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 7.4vw;
+    line-height: 78%;
+    /* or 112px */
+    text-align: center;
+    color: rgba(154, 71, 71, 1);
+    margin-top: 120px;
+    margin-bottom: 0px;
+}
+
+.style_h2_confirmation {
+    /*font-family: Neue Montreal;*/
+    font-family: neue_montrealbold;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 20px;
+    /* or 111% */
+    text-align: center;
+    color: #000000;
+    max-width: 75vw;
+    margin: 2vh auto 0vh auto;
+    color: #9A4747;
+}
+
+.section_recapitulatif {
+    margin-top: 8vh;
+}
+
+.style_h3_confirmation_reservation {
+    font-family: neue_montrealbold;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 20px;
+    /* identical to box height, or 111% */
+    text-align: center;
+    color: #9A4747;
+}
+
+.style_texte_recapitulatif {
+    font-family: neue_montrealregular;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 20px;
+    /* or 111% */
+    text-align: center;
+    color: #9A4747;
+    max-width: 600px;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.section_prix-total {
+    margin-top: 6.5vh;
+}
+
+.section_prix-total h4 {
+    color: #9A4747;
+    font-family: ITCGaramondStd-BkNarrow;
+    font-size: 32px;
+    margin: 0;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+}
+
+.section_prix-total h5 {
+    color: #9A4747;
+    font-family: neue_montrealbold;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 32px;
+    margin: 0;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+}
+
+
+/* ####### FIN STYLE PAGE CONFIRMATION RESERVATION ####### */
 
 
 /* ##### Debut Style de la page 404 ##### */
@@ -2440,7 +2542,7 @@ footer ul {
         margin: 0;
     }
     .div_h2_sous_titre h2 {
-        font-family: NeueMontreal-Bold;
+        font-family: neue_montrealbold;
         font-style: normal;
         font-weight: normal;
         font-size: 18px;
@@ -2868,6 +2970,19 @@ footer ul {
     }
     */
     /* ##### Fin style page reservation 01 ###### */
+    /* ####### DEBUT STYLE PAGE CONFIRMATION RESERVATION RESPONSIVE ####### */
+    .style_h1_confirmation {
+        font-size: 65.583px;
+        margin-top: 90px;
+    }
+    .section_recapitulatif p {
+        margin-left: 25px;
+        margin-right: 25px;
+    }
+    .section_prix-total {
+        margin-bottom: 40px;
+    }
+    /* ####### FIN STYLE PAGE CONFIRMATION RESERVATION RESPONSIVE ####### */
     /* ##### Debut Style de la page 404 ##### */
     .div_2_page-404 {
         text-align: center;

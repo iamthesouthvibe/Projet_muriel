@@ -27,7 +27,7 @@
         </a>
       </div>
       <div class="header_right">
-        <button class="bouton_desktop"><a href="reservation.php">Réserver</a></button>
+        <button class="bouton_desktop" id="bouton_desktop"><a href="reservation.php">Réserver</a></button>
         <div class="burger-menu">
           <span></span>
           <span></span>
