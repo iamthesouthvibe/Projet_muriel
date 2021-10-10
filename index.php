@@ -136,6 +136,7 @@ $sql = $db->query("SELECT * FROM rooms LIMIT 4");
 <!-- Initialize Swiper -->
 <script>
   var swiper = new Swiper(".mySwiper", {
+    /*autoHeight: true,*/
     loop: true,
     resizeObserver: false,
     navigation: {

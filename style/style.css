@@ -459,7 +459,7 @@ nav {
 /* Caroussel de photos */
 
 .swiper {
-    height: 90vh;
+    height: 95vh;
 }
 
 .swiper-container {
@@ -860,7 +860,7 @@ nav {
 .carousel_maison_03 .swiper {
     background-color: #9A4747;
     width: 40vw;
-    height: 470px;
+    height: 482px;
 }
 
 .carousel_maison_03 .swiper-slide {
@@ -1029,7 +1029,6 @@ nav {
 }
 
 .titre_section_produit .titre_section_produit_h4 {
-    padding-top: 100px;
     margin-bottom: 100px;
 }
 
@@ -1092,9 +1091,9 @@ nav {
 /*Ligne separator */
 
 .ligne_separator {
-    border: 0.2px solid black;
-    margin-left: 20vw;
-    margin-right: 20vw;
+    border: 0.7px solid black;
+    margin-left: 10vw;
+    margin-right: 10vw;
 }
 
 
@@ -1650,7 +1649,11 @@ nav .nav_menu_deroulant {
 }
 
 .section_prix-total {
-    margin-top: 6.5vh;
+    bottom: 100px;
+    position: fixed;
+    width: 120px;
+    left: 50%;
+    margin-left: -60px;
 }
 
 .section_prix-total h4 {
@@ -2978,9 +2981,12 @@ footer ul {
     .section_recapitulatif p {
         margin-left: 25px;
         margin-right: 25px;
+        margin-bottom: 50px;
     }
     .section_prix-total {
-        margin-bottom: 40px;
+        margin-bottom: 60px;
+        position: relative;
+        bottom: auto;
     }
     /* ####### FIN STYLE PAGE CONFIRMATION RESERVATION RESPONSIVE ####### */
     /* ##### Debut Style de la page 404 ##### */
