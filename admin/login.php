@@ -18,7 +18,7 @@ $hashed = password_hash($password, PASSWORD_DEFAULT);
 
 <div class="login_page">
     <div class="login_page_header">
-        <a href="/index.php"><img src="../assets/png/LOGO_ANCIEN.png" alt="Logo muriel home"></a>
+        <a href="/index.php"><img src="../assets/png/LOGO_02_PNG_NOIR.png" alt="Logo muriel home"></a>
     </div>
     <?php
     if (isset($_POST['login'])) {
@@ -76,7 +76,7 @@ $hashed = password_hash($password, PASSWORD_DEFAULT);
         </form>
 
         <div class="login_page_container_return">
-            <a href="">Si vous n’etes pas administaretru veuillez appuiyez ici</a>
+            <a href="/index.php">Si vous n’etes pas administrateur veuillez appuyer ici</a>
         </div>
     </div>
 </div>

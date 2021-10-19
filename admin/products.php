@@ -33,7 +33,7 @@ if (isset($_GET['delete'])) {
 <div class="admin_page">
     <div class="header_admin">
         <h1>Articles</h1>
-        <img src="../assets/png/LOGO_ANCIEN.png" alt="Logo Muriel">
+        <img src="../assets/png/LOGO_02_PNG_NOIR.png" alt="Logo Muriel">
     </div>
     <div class="admin_page_tours">
     <?php while ($tour = mysqli_fetch_assoc($sql)) : ?>

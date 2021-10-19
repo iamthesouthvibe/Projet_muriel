@@ -23,7 +23,7 @@ if (isset($_GET['delete'])) {
 <div class="admin_page">
   <div class="header_admin">
     <h1>Reservations</h1>
-    <img src="../assets/png/LOGO_ANCIEN.png" alt="Logo Muriel">
+    <img src="../assets/png/LOGO_02_PNG_NOIR.png" alt="Logo Muriel">
   </div>
   <div class="admin_page_reserv">
     <table class="table table-striped table-condensed table-bordered">

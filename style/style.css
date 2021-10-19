@@ -1764,8 +1764,8 @@ nav .nav_menu_deroulant {
 }
 
 .login_page_header img {
-    width: 90px;
-    height: 39px;
+    max-height: 40px;
+    max-width: 90px;
     margin-left: 25px;
     margin-top: 25px;
 }

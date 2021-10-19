@@ -22,7 +22,7 @@ if (isset($_GET['delete'])) {
 <div class="admin_page">
   <div class="header_admin">
     <h1>Commentaires</h1>
-    <img src="../assets/png/LOGO_ANCIEN.png" alt="Logo Muriel">
+    <img src="../assets/png/LOGO_02_PNG_NOIR.png" alt="Logo Muriel">
   </div>
   <div class="admin_page_comments">
     <table class="">

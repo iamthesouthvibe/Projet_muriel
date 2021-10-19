@@ -234,7 +234,7 @@ if (isset($_GET['delete_image'])) {
 <div class="admin_page">
   <div class="header_admin">
     <h1><?= (isset($toEditID)) ? '' . 'Modifier un article' . '' : 'Ajouter un article'; ?></h1>
-    <img src="../assets/png/LOGO_ANCIEN.png" alt="Logo Muriel">
+    <img src="../assets/png/LOGO_02_PNG_NOIR.png" alt="Logo Muriel">
   </div>
   <div class="admin_page_addtours">
     <form method="POST" enctype="multipart/form-data" id="form" name="form">

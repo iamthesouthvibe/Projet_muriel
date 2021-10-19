@@ -48,7 +48,7 @@ $sql = $db->query("SELECT * FROM rooms");?>
 <div class="admin_page">
     <div class="header_admin">
         <h1>Maisons</h1>
-        <img src="../assets/png/LOGO_ANCIEN.png" alt="Logo Muriel">
+        <img src="../assets/png/LOGO_02_PNG_NOIR.png" alt="Logo Muriel">
     </div>
     <div class="admin_page_maison">
     <?php while($room = mysqli_fetch_assoc($sql)): ?>

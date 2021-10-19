@@ -32,7 +32,7 @@
                 <h4>Pages :</h4>
             </li>
             <li>
-                <a href="">Home</a>
+                <a href="/index.php">Home</a>
             </li>
             <li>
                 <a href="">Articles</a>
@@ -57,7 +57,7 @@
                 <h4>Social :</h4>
             </li>
             <li>
-                <a href="">Instagram</a>
+                <a href="https://www.instagram.com/">Instagram</a>
             </li>
         </ul>
     </div>

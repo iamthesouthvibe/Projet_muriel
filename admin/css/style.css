@@ -1,26 +1,17 @@
 @font-face {
     font-family: ITCGaramondStd-BkNarrow;
-    src: local("./fonts/GaramondStd/ITCGaramondStd-BkNarrow.otf"),
-         local("ITCGaramondStd-BkNarrow"),
-        url('./fonts/GaramondStd/ITCGaramondStd-BkNarrow.woff2') format('woff2'),
-        url('./fonts/GaramondStd/ITCGaramondStd-BkNarrow.woff') format('woff');
-    
-  }
+    src: local("./fonts/GaramondStd/ITCGaramondStd-BkNarrow.otf"), local("ITCGaramondStd-BkNarrow"), url('./fonts/GaramondStd/ITCGaramondStd-BkNarrow.woff2') format('woff2'), url('./fonts/GaramondStd/ITCGaramondStd-BkNarrow.woff') format('woff');
+}
 
 @font-face {
     font-family: NeueMontreal-Bold;
-    src: local("./fonts/NeueMontreal/NeueMontreal-Bold.otf") format('otf'),
-         local("NeueMontreal-Bold") format('otf'),
-         url("./fonts/NeueMontreal/NeueMontreal-Bold.otf") format('otf');
-    
-  }
+    src: local("./fonts/NeueMontreal/NeueMontreal-Bold.otf") format('otf'), local("NeueMontreal-Bold") format('otf'), url("./fonts/NeueMontreal/NeueMontreal-Bold.otf") format('otf');
+}
 
 @font-face {
     font-family: NeueMontreal-Regular;
-    src: local("./fonts/NeueMontreal/NeueMontreal-Regular.otf") format('otf'),
-         local("./fonts/NeueMontreal/NeueMontreal-Regular.otf") format('otf'),
-         url("./fonts/NeueMontreal/NeueMontreal-Regular.otf") format('otf');
-  }
+    src: local("./fonts/NeueMontreal/NeueMontreal-Regular.otf") format('otf'), local("./fonts/NeueMontreal/NeueMontreal-Regular.otf") format('otf'), url("./fonts/NeueMontreal/NeueMontreal-Regular.otf") format('otf');
+}
 
 body {
     position: relative;
@@ -29,11 +20,12 @@ body {
     background-color: #FCF7EC;
     font-family: sans-serif;
     overflow-x: hidden;
-  }
+}
 
-  /* ### Début style Side bar admin page  ### */
-  
-  .sidebar {
+
+/* ### Début style Side bar admin page  ### */
+
+.sidebar {
     position: fixed;
     top: 0;
     left: 0;
@@ -43,13 +35,13 @@ body {
     padding: 15px 15px;
     transition: all 0.5s ease;
     z-index: 10;
-  }
+}
 
-  .sidebar.active {
+.sidebar.active {
     width: 240px;
-  }
+}
 
-  .sidebar .logo_content .logo {
+.sidebar .logo_content .logo {
     color: #FCF7EC;
     display: flex;
     height: 50px;
@@ -57,23 +49,23 @@ body {
     align-items: center;
     opacity: 0;
     pointer-events: none;
-  }
+}
 
-  .sidebar.active .logo_content .logo {
+.sidebar.active .logo_content .logo {
     opacity: 1;
     pointer-events: none;
-  }
+}
 
-  .logo_content .logo i {
+.logo_content .logo i {
     font-size: 28px;
     margin-right: 5px;
-  }
+}
 
-  .logo_content .logo .logo_name {
+.logo_content .logo .logo_name {
     font-size: 20px;
-  }
+}
 
-  .sidebar #btn {
+.sidebar #btn {
     position: absolute;
     color: #FCF7EC;
     left: 50%;
@@ -84,21 +76,21 @@ body {
     text-align: center;
     line-height: 50px;
     transform: translateX(-50%);
-  }
+}
 
-  .sidebar.active #btn {
+.sidebar.active #btn {
     left: 90%;
-  }
+}
 
-  .sidebar ul {
+.sidebar ul {
     margin-top: 20px;
-  }
+}
 
-  .nav_list {
+.nav_list {
     padding: 0;
-  }
+}
 
-  .sidebar ul li {
+.sidebar ul li {
     position: relative;
     height: 50px;
     width: 90%;
@@ -108,9 +100,9 @@ body {
     margin-bottom: 1.4vh;
     border: solid 2px #FCF7EC;
     border-radius: 6px;
-  }
+}
 
-  .sidebar ul li .tooltip {
+.sidebar ul li .tooltip {
     position: absolute;
     left: 122px;
     top: 0;
@@ -126,20 +118,19 @@ body {
     opacity: 0;
     pointer-events: none;
     display: block;
-  }
+}
 
-  .sidebar.active ul li .tooltip {
+.sidebar.active ul li .tooltip {
     display: none;
-  }
+}
 
-  .sidebar ul li:hover .tooltip {
+.sidebar ul li:hover .tooltip {
     transition: all 0.5s ease;
     opacity: 1;
     top: 50%;
-  }
+}
 
-
-  .sidebar ul li input {
+.sidebar ul li input {
     position: absolute;
     width: 100%;
     height: 100%;
@@ -152,117 +143,116 @@ body {
     padding-left: 50px;
     font-size: 18px;
     color: #9A4747;
-  }
+}
 
-  .sidebar ul li .bx-search {
+.sidebar ul li .bx-search {
     position: absolute;
     z-index: 99;
     color: #000;
     font-size: 22px;
     transition: all 0.5s ease;
-  }
+}
 
-  .sidebar ul li .bx-search:hover {
+.sidebar ul li .bx-search:hover {
     background: #9A4747;
     color: #FCF7EC;
-  }
+}
 
-  .sidebar ul li a {
+.sidebar ul li a {
     color: #FCF7EC;
     display: flex;
     align-items: center;
     text-decoration: none;
     border-radius: 6px;
     white-space: nowrap;
-  }
+}
 
-  .sidebar ul li a:hover {
+.sidebar ul li a:hover {
     color: #9A4747;
     background: #FCF7EC;
-  }
+}
 
-  .sidebar ul li a:hover .links_name {
+.sidebar ul li a:hover .links_name {
     color: #000;
     background: #FCF7EC;
-  }
+}
 
-  .sidebar.active ul li {
+.sidebar.active ul li {
     width: 100%;
-  }
+}
 
-  .sidebar ul li i {
+.sidebar ul li i {
     height: 50px;
     min-width: 50px;
     border-radius: 6px;
     line-height: 50px;
     text-align: center;
     font-size: 1.7vw;
-  }
+}
 
-  .sidebar .links_name {
+.sidebar .links_name {
     font-family: sans-serif;
     pointer-events: none;
     opacity: 0;
     color: #FCF7EC;
-  }
+}
 
-  .sidebar.active .links_name {
+.sidebar.active .links_name {
     pointer-events: auto;
     opacity: 1;
-  }
+}
 
-  .sidebar .profile_content {
+.sidebar .profile_content {
     position: absolute;
     color: #FCF7EC;
     background-color: #E5E5E5;
     bottom: 15px;
     left: 0;
     width: 100%;
-  }
+}
 
-  .sidebar .profile_content .profile {
+.sidebar .profile_content .profile {
     position: relative;
     padding: 15px 10px;
     height: 60px;
-  }
+}
 
-  .profile_content .profile .profile_details {
+.profile_content .profile .profile_details {
     display: flex;
     line-height: 20px;
     align-items: center;
     opacity: 0;
     pointer-events: none;
     white-space: nowrap;
-  }
+}
 
-  .sidebar.active .profile .profile_details {
+.sidebar.active .profile .profile_details {
     opacity: 1;
     pointer-events: auto;
-  }
+}
 
-  .profile .profile_details img {
+.profile .profile_details img {
     height: 45px;
     width: 45px;
     object-fit: cover;
     border-radius: 6px;
-  }
+}
 
-  .profile .profile_details .name_job {
+.profile .profile_details .name_job {
     margin-left: 10px;
     color: black;
-  }
+}
 
-  .profile .profile_details .name {
+.profile .profile_details .name {
     font-size: 15px;
     font-weight: 400;
-  }
+}
 
-  .profile .profile_details .job {
+.profile .profile_details .job {
     font-size: 12px;
-  }
+}
 
-
-  .profile #log_out {
+.profile #log_out {
     position: absolute;
     bottom: 25px;
     left: 50%;
@@ -274,21 +264,21 @@ body {
     text-align: center;
     font-size: 29px;
     color: black;
-  }
+}
 
-  .sidebar.active .profile #log_out {
+.sidebar.active .profile #log_out {
     left: 88%;
-  }
-
-   /* ### Fin style Side bar admin page  ### */
+}
 
 
-    /* ### Début style page admin header  ### */
+/* ### Fin style Side bar admin page  ### */
+
+
+/* ### Début style page admin header  ### */
 
 .admin_page {
     margin: 25px 25px 25px 125px;
 }
-
 
 .admin_page .header_admin {
     display: flex;
@@ -303,27 +293,24 @@ body {
     margin: 0;
 }
 
-
 .admin_page .header_admin img {
-    width: 90px;
-    height: 39px;
+    max-height: 40px;
+    max-width: 90px;
 }
 
 .admin_page_maison {
-  display: flex;
-  gap: 4vw;
-  /* flex-direction: row; */
-  flex-wrap: wrap;
-  align-content: center;
-  row-gap: 2vh;
+    display: flex;
+    gap: 4vw;
+    /* flex-direction: row; */
+    flex-wrap: wrap;
+    align-content: center;
+    row-gap: 2vh;
 }
 
-
-
 .admin_page_maison_container img {
-  width: 29vw;
-  filter: grayscale(100%);
-  z-index: 0;
+    width: 29vw;
+    filter: grayscale(100%);
+    z-index: 0;
 }
 
 .admin_page_maison_title {
@@ -356,11 +343,11 @@ body {
 }
 
 .admin_page_tours {
-  margin-top: 50px;
+    margin-top: 50px;
 }
 
 .admin_page_tours_container {
-  display: flex;
+    display: flex;
     justify-content: space-between;
     align-items: center;
     border-bottom: solid 1px;
@@ -368,12 +355,12 @@ body {
 }
 
 .admin_page_tours_title h2 {
-  margin: 10px 0;
-  font-weight: 500;
+    margin: 10px 0;
+    font-weight: 500;
 }
 
 .admin_page_tours_action i {
-  font-size: 27px;
+    font-size: 27px;
     border: solid 1.5px #9A4747;
     border-radius: 6px;
     color: #000;
@@ -381,7 +368,7 @@ body {
 
 .admin_page_tours a img,
 .admin_page_comments a img {
-  position: fixed;
+    position: fixed;
     right: 25px;
     bottom: 25px;
     width: 60px;
@@ -390,56 +377,54 @@ body {
 
 .admin_page_tours a img:hover,
 .admin_page_comments a img:hover {
-  transform: scale(1.2, 1.2);
+    transform: scale(1.2, 1.2);
 }
 
 .form_addtours_top,
 .form_addtours_middle,
 .form_addtours_bottom {
-  display: flex;
-  margin-top: 50px;
-  gap: 70px;
+    display: flex;
+    margin-top: 50px;
+    gap: 70px;
 }
 
 .admin_page_addtours form label {
-  font-family: Neue Montreal;
-  font-style: normal;
-  font-weight: normal;
-  font-size: 20px;
-  line-height: 95.5%;
-
-  color: #9A4747;
+    font-family: Neue Montreal;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 20px;
+    line-height: 95.5%;
+    color: #9A4747;
 }
 
 .admin_page_addtours form input[type="text" i],
-.admin_page_addtours form input[type="date" i]  {
-  font-family: ITCGaramondStd-BkNarrow;
-  font-size: 19px;
+.admin_page_addtours form input[type="date" i] {
+    font-family: ITCGaramondStd-BkNarrow;
+    font-size: 19px;
 }
 
 .admin_page_addtours form input[type="file" i] {
-  border-radius: 40px;
-  background-color: #FCF7EC;
-  color: #9A4747;
-  border: solid 1px #9A4747;
+    border-radius: 40px;
+    background-color: #FCF7EC;
+    color: #9A4747;
+    border: solid 1px #9A4747;
 }
 
 .admin_page_addtours form input {
-  border: none;
-  border-bottom: solid 1px;
-  background-color: #FCF7EC;
+    border: none;
+    border-bottom: solid 1px;
+    background-color: #FCF7EC;
 }
 
-
 textarea {
-  width: 550px;
-  height: 250px;
-  font-family: ITCGaramondStd-BkNarrow;
-  font-size: 19px;
+    width: 550px;
+    height: 250px;
+    font-family: ITCGaramondStd-BkNarrow;
+    font-size: 19px;
 }
 
 .admin_page_addtours .submit_button {
-  height: 30px;
+    height: 30px;
     width: 154px;
     border: none;
     border-radius: 40px;
@@ -448,59 +433,57 @@ textarea {
     font-size: 20px;
 }
 
+
 /* ####### Debut Admin page utlisateurs style */
 
-
 .admin_page_users {
-  display: flex;
-  margin-top: 30px;
-  gap: 6vw;
+    display: flex;
+    margin-top: 30px;
+    gap: 6vw;
 }
 
-
 .table_users {
-  width: 50%;
+    width: 50%;
 }
 
 .form_users h2 {
-  font-family: ITCGaramondStd-BkNarrow;
-  font-size: 30px;
-  color: #9A4747;
-  margin-top: 0;
+    font-family: ITCGaramondStd-BkNarrow;
+    font-size: 30px;
+    color: #9A4747;
+    margin-top: 0;
 }
 
 .form .form_users_top,
 .form_users_middle,
 .form_users_bottom {
-  display: flex;
-  margin-bottom: 20px;
-  gap: 40px;
+    display: flex;
+    margin-bottom: 20px;
+    gap: 40px;
 }
 
 .admin_page_users .form_users input {
-  border: none;
-  border-bottom: solid 1px #000;
-  background-color: #FCF7EC;
+    border: none;
+    border-bottom: solid 1px #000;
+    background-color: #FCF7EC;
 }
 
 .admin_page_users .form_users label {
-  font-family: Neue Montreal;
-  font-style: normal;
-  font-weight: normal;
-  font-size: 20px;
-  line-height: 95.5%;
-
-  color: #9A4747;
+    font-family: Neue Montreal;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 20px;
+    line-height: 95.5%;
+    color: #9A4747;
 }
 
 .admin_page_users form input[type="text" i],
-.admin_page_users form input[type="date" i]  {
-  font-family: ITCGaramondStd-BkNarrow;
-  font-size: 16px;
+.admin_page_users form input[type="date" i] {
+    font-family: ITCGaramondStd-BkNarrow;
+    font-size: 16px;
 }
 
 .admin_page_users .submit_button {
-  height: 30px;
+    height: 30px;
     width: 154px;
     border: none !important;
     border-radius: 40px;
@@ -519,85 +502,70 @@ textarea {
 .admin_page_reserv table,
 .admin_page_comments table,
 .admin_page_users table {
-  width: 100%;
-  border-collapse: collapse;
-  border: solid 1px;
-} 
+    width: 100%;
+    border-collapse: collapse;
+    border: solid 1px;
+}
 
 .admin_page_reserv th,
 .admin_page_comments th,
 .admin_page_users th {
-  text-align: left;
-  padding: 5px;
+    text-align: left;
+    padding: 5px;
 }
 
 .admin_page_reserv thead,
 .admin_page_comments thead,
 .admin_page_users thead {
-  background-color: #9A4747;
+    background-color: #9A4747;
 }
 
 .admin_page_reserv tr,
 .admin_page_comments tr,
 .admin_page_users tr {
-  border-bottom: solid 1px;
+    border-bottom: solid 1px;
 }
 
 .admin_page_reserv td,
 .admin_page_comments td,
 .admin_page_users td {
-  padding: 5px;
+    padding: 5px;
 }
 
-
-
-
-
-@media screen and (max-width: 450px)
-  {
+@media screen and (max-width: 450px) {
     .sidebar ul li i {
-      font-size: 25px;
+        font-size: 25px;
     }
-
     .admin_page .header_admin {
-      margin-bottom: 15px;
+        margin-bottom: 15px;
     }
-
     .admin_page .header_admin h1 {
-      font-size:  30px;
+        font-size: 30px;
     }
-
     .admin_page .header_admin img {
-      width: 55px;
-      height: 22px;
-  }
-
-  .admin_page {
-    margin-left: 100px;
-  }
-
-  .admin_page_maison_container img {
-    width: 65vw;
-  }
-
-  .admin_page_maison_title h2 {
-    font-size: 5vw;
-  }
-
-
-  .admin_page_maison_title button {
-    width: 92.8px;
-    height: 18.66px;
+        width: 55px;
+        height: 22px;
+    }
+    .admin_page {
+        margin-left: 100px;
+    }
+    .admin_page_maison_container img {
+        width: 65vw;
+    }
+    .admin_page_maison_title h2 {
+        font-size: 5vw;
+    }
+    .admin_page_maison_title button {
+        width: 92.8px;
+        height: 18.66px;
+    }
+    .admin_page_maison_title button a {
+        font-size: 13px;
+    }
+    .admin_page_tours_container {
+        width: 100%;
+    }
+    .admin_page_tours_title h2 {
+        font-size: 15px;
+    }
 }
-
-.admin_page_maison_title button a {
-  font-size: 13px;
-}
-
-.admin_page_tours_container {
-  width: 100%;
-}
-.admin_page_tours_title h2 {
-  font-size: 15px;
-}
-   }
