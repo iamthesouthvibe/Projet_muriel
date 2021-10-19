@@ -59,12 +59,30 @@ $sql = $db->query("SELECT * FROM rooms LIMIT 4");
 
 ?>
 
+<style>
+  .style_h1_accueil {
+    position: relative;
+    overflow: hidden;
+    margin: 0;
+  }
+
+  .style_h1_accueil span {
+    display: inline-block;
+    transform: translateY(100%);
+  }
+</style>
+
 
 <main>
   <!--  ######Ceci est la partie Html de la page d'accueil. Raccorder le back par la suite.##### -->
   <div class="qhero">
     <div class="qhero_page_accueil">
-      <h1 class="style_h1_accueil">“Laissez-vous <!--<span class="italic_title">séduire</span>--> séduire par un univers d’élégance <br> et de douceur. <br> 4 maisons, 4 ambiances, le regard d’une femme”</h1>
+      <h1 class="style_h1_accueil"> <span>“Laissez-vous
+          <!--<span class="italic_title">séduire</span>--> séduire par
+        </span> </h1>
+      <h1 class="style_h1_accueil"> <span>un univers d’élégance</span> </h1>
+      <h1 class="style_h1_accueil"><span>4 maisons, 4 ambiances</h1></span>
+      <h1 class="style_h1_accueil"><span>le regard d’une femme”</h1></span>
       <h2 class="style_h2_accueil">Je veux créer des maisons pour faire rêver, des maisons qui soient comme des personnalités, surprenantes, inattendues, accueillantes et généreuses. Où l’on ait envie de rester et de revenir, comme pour poursuivre une conversation interrompue trop tôt. </h2>
       <svg width="40px" viewBox="0 0 14.334 24.75" class="scroll_anim">
         <circle class="circle-1" fill="black" cx="7.167" cy="6" r="1.2" />
@@ -132,6 +150,7 @@ $sql = $db->query("SELECT * FROM rooms LIMIT 4");
 
 <!-- Swiper JS -->
 <script src="https://unpkg.com/swiper@7/swiper-bundle.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.6.1/gsap.min.js"></script>
 
 <!-- Initialize Swiper -->
 <script>
@@ -172,4 +191,14 @@ $sql = $db->query("SELECT * FROM rooms LIMIT 4");
     cursor.classList.remove('cursor_active_left');
     cursor2.classList.remove('cursor2_active_left');
   })
+  let tl = gsap.timeline({
+    defaults: {
+      ease: 'power4.out'
+    }
+  });
+  tl.to('.style_h1_accueil span', {
+    y: '0%',
+    duration: 1.5,
+    stagger: 0.3,
+  });
 </script>
