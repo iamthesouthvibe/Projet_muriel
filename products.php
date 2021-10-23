@@ -43,7 +43,7 @@ $select = $db->query("SELECT * FROM products");
     <?php while ($product = mysqli_fetch_assoc($select)) : ?>
         <div class="espace_produit_02">
             <a href="">
-                <img src="<?= $product['photo_p']; ?>" alt="Thumbnail du produit">
+                <img src=""<?= $product['photo_p']; ?>" alt="Thumbnail du produit">
             </a>
             <a href="">
                 <h6><?= $product['price_p']; ?></h6>
