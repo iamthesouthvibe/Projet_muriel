@@ -1161,7 +1161,7 @@ nav {
     text-align: center;
 }
 
-.div_h3_text_presentation_produits {
+.div_h3_text_presentation_produits h3 {
     font-family: neue_montrealregular;
     font-style: normal;
     font-weight: normal;
@@ -1208,7 +1208,7 @@ nav {
 .bouton_selection_maison a {
     font-family: neue_montrealbold;
     font-style: normal;
-    font-weight: bold;
+    font-weight: normal;
     font-size: 18px;
     line-height: 20px;
     text-align: center;
@@ -1232,7 +1232,7 @@ nav {
     text-decoration: none;
     font-family: neue_montrealbold;
     font-style: normal;
-    font-weight: bold;
+    font-weight: normal;
     font-size: 18px;
     transition-duration: 0.5s
 }
@@ -1518,6 +1518,97 @@ nav .nav_menu_deroulant {
 
 
 /* ##### Fin style de la page produits Unité ##### */
+
+/* ##### Debut style de la page Blog unit ##### */
+
+.qhero_page_blog-unit {
+    margin-top: 20vh;
+    text-align: center;
+    margin-bottom: 20vh;
+}
+
+.h1_titre_blog-unit {
+    font-family: ITCGaramondStd-BkNarrow;
+font-style: normal;
+font-weight: normal;
+font-size: 7vw;
+line-height: 78%;
+color: rgba(154, 71, 71, 1);
+margin: 0;
+max-width: 70vw;
+margin: auto;
+}
+
+.h2_date_blog-unit {
+    font-family: neue_montrealregular;
+font-style: normal;
+font-weight: normal;
+font-size: 18px;
+line-height: 20px;
+text-align: center;
+    color: #9B9B9B;
+    padding-left: 20vw;
+padding-right: 20vw;
+margin-top: 7vh;
+}
+
+.h3_titre-blog-unit {
+    font-family: neue_montrealregular;
+font-style: normal;
+font-weight: normal;
+font-size: 18px;
+line-height: 20px;
+text-align: center;
+color: #000000;
+padding-left: 25vw;
+padding-right: 25vw;
+margin-bottom: 10vh;
+}
+
+.container_presentation_blog-unit {
+    display: flex;
+        flex-flow: row wrap;
+        justify-content: space-around;
+        margin-top: 10vh;
+        margin-bottom: 50px;
+}
+
+.container_presentation_blog-unit p {
+    max-width: 35vw;
+        margin: auto;
+        font-family: neue_montrealregular;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 24px;
+        line-height: 24px;
+        color: #000000;
+}
+
+.container_presentation_blog-unit img {
+    max-width: 35vw;
+    margin-top: 10vh;
+    margin-bottom: 10vh;
+}
+
+.image_gauche-blog-unit {
+    text-align: center;
+    color: #000000;
+        /*padding-left: 20vw;*/
+        /*padding-right: 20vw;*/
+        margin-bottom: 10vh;
+}
+
+.container_presentation_blog-unit_colonne_droite {
+    margin-top: 35vh;
+}
+
+.container_presentation_blog-unit_colonne_droite {
+    margin-top: 35vh;
+}
+
+
+
+/* ##### Fin style de la page Blog unit ##### */
 
 
 /* ##### Debut style de la page contact ##### */
@@ -2898,6 +2989,65 @@ footer ul {
         margin-top: 50px;
     }
     /* ##### Fin style de la page maison ##### */
+
+    /* ##### Debut style de la page Blog unit ##### */
+
+    .qhero_page_blog-unit {
+        margin-left: 25px;
+        margin-right: 25px;
+        margin-top: 120px;
+        margin-bottom: 110px;
+    }
+
+    .h1_titre_blog-unit {
+        font-family: ITCGaramondStd-BkNarrow;
+font-style: normal;
+font-weight: normal;
+font-size: 15vw;
+line-height: 78%;
+color: rgba(154, 71, 71, 1);
+
+    }
+
+    .h3_titre-blog-unit {
+        max-width: 66vw;
+padding-right: 0;
+padding-left: 0;
+margin: auto;
+    }
+
+    .container_presentation_blog-unit {
+        display: flex;
+        flex-flow: row wrap;
+        justify-content: space-around;
+        margin-top: 10vh;
+        margin-bottom: 50px;
+    }
+
+    .container_presentation_blog-unit p {
+        max-width: 90vw;
+        margin: auto;
+    }
+
+    .container_presentation_blog-unit img {
+        max-width: 90vw;
+        margin-top: 5vh;
+        margin-bottom: 5vh;
+    }    
+
+    .image_gauche-blog-unit {
+        text-align: center;
+        color: #000000;
+        /*padding-left: 20vw;*/
+        /*padding-right: 20vw;*/
+        margin-bottom: 10vh;
+    }
+
+
+
+
+    /* ##### Fin style de la page Blog unit ##### */
+
     /* ##### Debut style de la page contact ##### */
     .page_contact {
         padding-right: 25px;
