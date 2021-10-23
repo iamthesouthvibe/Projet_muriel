@@ -31,8 +31,9 @@ $hashed = password_hash($password, PASSWORD_DEFAULT);
             } else {
                 //Check if Email exists in database
                 $sql = $db->query("SELECT * FROM users WHERE email = '$email' ");
-                $user = mysqli_fetch_assoc($sql);
-                $count = mysqli_num_rows($sql);
+                $user = $sql->fetch(PDO::FETCH_ASSOC);
+                $count = $sql->rowCount();
+
                 if ($count < 1) {
                     echo '<div>email not found in database.</div>';
                 } else {
@@ -54,7 +55,7 @@ $hashed = password_hash($password, PASSWORD_DEFAULT);
     <div class="login_page_container">
         <div class="login_page_container_title">
             <h1>Bienvenue sur l’espace connexion “Admin”</h1>
-            <p>Bienvenue sur la page d'administration, connectez-vous pour accéder aux fonctions d'administrateur. Sur cette page, il sera possible de consulter les reservations, d'ajouter des produits/artciles, 
+            <p>Bienvenue sur la page d'administration, connectez-vous pour accéder aux fonctions d'administrateur. Sur cette page, il sera possible de consulter les reservations, d'ajouter des produits/artciles,
                 de modifier des produits/artciles, de supprimer des produits/artciles, et bien plus de fonctions..</p>
         </div>
 

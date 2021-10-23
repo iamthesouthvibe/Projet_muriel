@@ -56,7 +56,7 @@ if (!empty($_FILES)) {
     $location3 = $_SERVER['DOCUMENT_ROOT'] . '/images/';
     move_uploaded_file($tmp_name3, $location3 . $fileName3);
   } else {
-   // echo '<div class="w3-center w3-red">The image type must be jpg, jpeg, gif, or png.</div></br>';
+    // echo '<div class="w3-center w3-red">The image type must be jpg, jpeg, gif, or png.</div></br>';
   }
 }
 
@@ -93,7 +93,8 @@ else if (isset($_POST['update'])) {
     @$image3 = 'images/' . $fileName3;
     $toEditID = $_GET['edit'];
     $sqlSelect = $db->query("SELECT * FROM tourism WHERE id = '$toEditID' ");
-    $row = mysqli_fetch_assoc($sqlSelect);
+    $row = $sqlSelect->fetch(PDO::FETCH_ASSOC);
+
 
     if ($row['photo'] == '' || $row['photo_2'] == '' || $row['photo_3'] == '') {
       $query = $db->query("UPDATE tourism SET `title`='$title', `subtitles`='$subtitles', `photo`='$image', `photo_2`='$image2',`photo_3`='$image3',
@@ -115,7 +116,7 @@ if (isset($_GET['edit'])) {
   $toEditID = $_GET['edit'];
   $sql = "SELECT * FROM tourism WHERE id = '$toEditID' ";
   $result = $db->query($sql);
-  $rows = mysqli_fetch_assoc($result);
+  $rows = $result->fetch(PDO::FETCH_ASSOC);;
 }
 
 //Canceling EDITING
@@ -128,7 +129,7 @@ if (isset($_GET['cancelEdit'])) {
 if (isset($_GET['delete_image'])) {
   $toEditID = $_GET['delete_image'];
   $sql1 = $db->query("SELECT * FROM tourism WHERE id = '$toEditID'");
-  $fetch = mysqli_fetch_assoc($sql1);
+  $fetch = $sql1->fetch(PDO::FETCH_ASSOC);;
   $imageURL = $_SERVER['DOCUMENT_ROOT'] . '/ht' . $fetch['photo'];
   $imageUR2 = $_SERVER['DOCUMENT_ROOT'] . '/ht' . $fetch['photo_2'];
   $imageURL3 = $_SERVER['DOCUMENT_ROOT'] . '/ht' . $fetch['photo_3'];

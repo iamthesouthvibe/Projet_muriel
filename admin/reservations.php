@@ -8,7 +8,7 @@ if (!is_logged_in()) {
 
 include 'includes/header.php';
 include 'includes/navigation.php';
-$sql = "SELECT * FROM reservations";
+$sql = "SELECT * FROM rooms INNER JOIN reservations WHERE rooms.id = reservations.id_rooms ";
 $result = $db->query($sql);
 $row_count = 1;
 
@@ -30,6 +30,7 @@ if (isset($_GET['delete'])) {
       <thead>
         <tr>
           <th>#</th>
+          <th>Maison</th>
           <th>Name</th>
           <th>Checkin</th>
           <th>Checkout</th>
@@ -41,9 +42,10 @@ if (isset($_GET['delete'])) {
         </tr>
       </thead>
       <tbody>
-        <?php while ($rows = mysqli_fetch_assoc($result)) : ?>
+        <?php while ($rows = $result->fetch(PDO::FETCH_ASSOC)) : ?>
           <tr>
             <td><?= $row_count++; ?></td>
+            <td><?= $rows['room_number']; ?></td>
             <td><?= $rows['name']; ?></td>
             <td><?= $rows['checkin']; ?></td>
             <td><?= $rows['checkout']; ?></td>

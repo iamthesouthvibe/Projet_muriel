@@ -12,7 +12,7 @@ session_start();
 if (isset($_SESSION['casf_user'])) {
     $userID = $_SESSION['casf_user'];
     $sql = $db->query("SELECT * FROM users WHERE id = '$userID' ");
-    $user_info = mysqli_fetch_assoc($sql);
+    $user_info = $sql->fetch(PDO::FETCH_ASSOC);
     $fn = explode(' ', $user_info['full_name']);
     @$user_info['first'] = $fn[0];
     @$user_info['last'] = $fn[1];

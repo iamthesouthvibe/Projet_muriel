@@ -37,7 +37,7 @@ if (isset($_GET['delete'])) {
         </tr>
       </thead>
       <tbody>
-        <?php while ($rows = mysqli_fetch_assoc($result)) : ?>
+        <?php while ($rows = $result->fetch(PDO::FETCH_ASSOC)) : ?>
           <tr>
             <td><?= $row_count++; ?></td>
             <td><?= $rows['fullname']; ?></td>

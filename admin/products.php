@@ -14,7 +14,7 @@ $sql = $db->query("SELECT * FROM products");
 if (isset($_GET['delete'])) {
     $toDeleteTours = $_GET['delete'];
     $sql1 = $db->query("SELECT * FROM products WHERE id = '$toDeleteTours' LIMIT 1");
-    $fetch = mysqli_fetch_assoc($sql1);
+    $fetch = $sql1->fetch(PDO::FETCH_ASSOC);
     /*$imageURL = $_SERVER['DOCUMENT_ROOT'].'/images/'.$fetch['photo'];
         $imageURL2 = $_SERVER['DOCUMENT_ROOT'].'/images/'.$fetch['photo_2'];
         $imageURL3 = $_SERVER['DOCUMENT_ROOT'].'/images/'.$fetch['photo_3'];
@@ -36,16 +36,16 @@ if (isset($_GET['delete'])) {
         <img src="../assets/png/LOGO_02_PNG_NOIR.png" alt="Logo Muriel">
     </div>
     <div class="admin_page_tours">
-    <?php while ($tour = mysqli_fetch_assoc($sql)) : ?>
-        <div class="admin_page_tours_container">
-            <div class="admin_page_tours_title">
-                <h2><?= $tour['name_p']; ?></h2>
+        <?php while ($tour = $sql->fetch(PDO::FETCH_ASSOC)) : ?>
+            <div class="admin_page_tours_container">
+                <div class="admin_page_tours_title">
+                    <h2><?= $tour['name_p']; ?></h2>
+                </div>
+                <div class="admin_page_tours_action">
+                    <a href="add_tour.php?edit=<?= $tour['id_p']; ?>"><i class='bx bx-edit'></i></a>
+                    <a href="tours.php?delete=<?= $tour['id_p']; ?>"><i class='bx bx-trash'></i></a>
+                </div>
             </div>
-            <div class="admin_page_tours_action">
-                <a href="add_tour.php?edit=<?= $tour['id_p']; ?>"><i class='bx bx-edit' ></i></a>
-                <a href="tours.php?delete=<?= $tour['id_p']; ?>"><i class='bx bx-trash' ></i></a>
-            </div>
-        </div>
         <?php endwhile; ?>
         <a href="add_product.php"><img src="/assets/png/button_add.png" alt=""></a>
     </div>

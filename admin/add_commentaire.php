@@ -43,7 +43,7 @@ if (isset($_POST['add'])) {
         <form method="POST" enctype="multipart/form-data">
             <label for="">Votre maison :</label>
             <select name="maison" id="">
-                <?php while ($test = mysqli_fetch_assoc($result)) : ?>
+                <?php while ($test = $result->fetch(PDO::FETCH_ASSOC)) : ?>
                     <option value="<?= $test['id_rooms']; ?>"><?= $test['room_number']; ?></option>
                 <?php endwhile; ?>
             </select>
