@@ -442,6 +442,7 @@ nav {
 
 .scroll_anim {
     margin-top: 30px;
+    transform: translate(0px, 40px);
 }
 
 .circle-1,
