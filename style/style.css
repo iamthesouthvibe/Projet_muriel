@@ -136,6 +136,7 @@ nav {
     border-radius: 40px;
     border: none;
     border-color: none;
+    transform: translate(-40px, 0px);
 }
 
 .header_right button a {
@@ -145,6 +146,12 @@ nav {
     font-style: normal;
     font-weight: bold;
     font-size: 20px;
+    display: inline-block;
+    position: relative;
+    z-index: 1;
+    padding:  1em 3em 1em 3em;
+    margin: -1em -3em -1em -3em;
+    
 }
 
 
@@ -169,6 +176,14 @@ nav {
     -moz-transition: 0.5s cubic-bezier(0.43, 0.58, 0.47, 0.62);
     -o-transition: 0.5s cubic-bezier(0.43, 0.58, 0.47, 0.62);
     -webkit-transition: 0.5s cubic-bezier(0.43, 0.58, 0.47, 0.62);
+
+    display: inline-block;
+    position: relative;
+    z-index: 1;
+    padding:  2em 3em 2em 3em;
+    margin: -2em -3em -2em -3em;
+    transform: translate(48px, 34px);
+
 }
 
 .burger-menu span {
@@ -543,6 +558,12 @@ nav {
     font-weight: bold;
     font-size: 20px;
     color: black;
+
+    display: inline-block;
+    position: relative;
+    z-index: 1;
+    padding:  1em 2.5em 1em 2.5em;
+    margin: -1em -2.5em -1em -2.5em;
 }
 
 .swiper-button-next {
@@ -2162,9 +2183,18 @@ footer ul {
         font-weight: bold;
         font-size: 20px;
     }
+
+    .header_right button a {
+        display: inline-block;
+        position: relative;
+        z-index: 1;
+        padding: 2em;
+        margin: -2em;
+    }
     /* Systeme pour le bouton responsive*/
     .bouton_responsive {
         display: none;
+        
     }
     .burger-menu {
         width: 60px;
@@ -2181,6 +2211,7 @@ footer ul {
         -moz-transition: 0.5s cubic-bezier(0.43, 0.58, 0.47, 0.62);
         -o-transition: 0.5s cubic-bezier(0.43, 0.58, 0.47, 0.62);
         -webkit-transition: 0.5s cubic-bezier(0.43, 0.58, 0.47, 0.62);
+        transform: translate(52px, 32px);
     }
     .burger-menu span {
         background: black;
