@@ -35,10 +35,10 @@
                 <a href="/index.php">Home</a>
             </li>
             <li>
-                <a href="">Articles</a>
+                <a href="/products.php">Articles</a>
             </li>
             <li>
-                <a href="">Rubriques</a>
+                <a href="/blog.php">Blog</a>
             </li>
             <li>
                 <a href="/contact.php">Contact</a>
