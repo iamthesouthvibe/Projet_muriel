@@ -499,7 +499,7 @@ $select = $db->query("SELECT * FROM rooms WHERE id = '{$roomID}' ");
                 </div>
             </div>
             <div class="lien_page_blog">
-                <a href="">Voir tous les articles →</a>
+                <a href="/blog.php">Voir tous les articles →</a>
             </div>
         </div>
         <!-- Section Produits -->
@@ -525,7 +525,7 @@ $select = $db->query("SELECT * FROM rooms WHERE id = '{$roomID}' ");
 
             </div>
             <div class="lien_page_produit">
-                <a href="">Voir tous les produits →</a>
+                <a href="products.php">Voir tous les produits →</a>
             </div>
 
         </div>

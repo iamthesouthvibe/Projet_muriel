@@ -1003,6 +1003,24 @@ nav {
     color: #000000;
 }
 
+.lien_page_blog a::after {
+        content: '';
+        position: absolute;
+        width: 100%;
+        transform: scaleX(0);
+        height: 2px;
+        bottom: 0;
+        left: 0;
+        background-color: #000000;
+        transform-origin: bottom right;
+        transition: transform 0.7s ease-out;
+}
+
+.lien_page_blog a:hover::after {
+    transform: scaleX(1);
+    transform-origin: bottom left;
+}
+
 
 /* Section Produits de la page maison */
 
