@@ -47,10 +47,12 @@ $sql = $db->query("SELECT * FROM rooms");
     }
 
     @media screen and (max-width: 450px) {
+
         /* responsive de la page reservation 1 */
         .qhero_page_reservation form {
             text-align: center;
         }
+
         .qhero_page_reservation select {
             margin-right: 0px;
         }
@@ -67,7 +69,8 @@ $sql = $db->query("SELECT * FROM rooms");
             <form method="get" action="reservation-2.php">
                 <select name="maison" id="" class="test">
                     <option value="" selected="true" disabled="disabled">Votre maison</option>
-                    <?php while ($room = mysqli_fetch_assoc($sql)) : ?>
+                    <?php while ($room = $sql->fetch(PDO::FETCH_ASSOC)) : ?>
+
                         <option value="<?= $room['id']; ?>"><?= $room['shortName']; ?></option>
                     <?php endwhile; ?>
                 </select>
@@ -78,18 +81,16 @@ $sql = $db->query("SELECT * FROM rooms");
 </div>
 
 <script>
-
     document.getElementById('bouton_responsive').style.display = 'none';
 
 
     let input = document.querySelector('.test');
     let button = document.querySelector('.button');
 
-   
+
     button.addEventListener('click', function(event) {
         if (input.value === "") {
-           event.preventDefault();
-        } 
+            event.preventDefault();
+        }
     });
-
 </script>

@@ -96,7 +96,8 @@ $sql = $db->query("SELECT * FROM rooms LIMIT 4");
   <!-- Swiper -->
   <div class="swiper mySwiper swiperHover">
     <div class="swiper-wrapper">
-      <?php while ($room = mysqli_fetch_assoc($sql)) :
+      <?php while ($room = $sql->fetch(PDO::FETCH_ASSOC)) :
+
 
         $nb_mots2 = 42;
         $var2 = $room['details'];

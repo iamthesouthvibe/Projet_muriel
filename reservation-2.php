@@ -1,21 +1,52 @@
+<link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/humanity/jquery-ui.css" type="text/css">
+
 <?php
 require_once 'core/core.php';
 include 'includes/header.php';
 
 $roomID = $_GET['maison'];
+
+$sql = ("SELECT * FROM calendar WHERE id_rooms = '{$roomID}'");
+
+foreach ($db->query($sql) as $row) {
+    $check = $row['checkin'];
+    $checkout = $row['checkout'];
+
+    $date[] = displayDates($check, $checkout);
+}
+
+function displayDates($date1, $date2, $format = 'd-m-Y')
+{
+    $dates = array();
+    $current = strtotime($date1);
+    $date2 = strtotime($date2);
+    $stepVal = '+1 day';
+    while ($current <= $date2) {
+        $dates[] = date($format, $current);
+        $current = strtotime($stepVal, $current);
+    }
+    return $dates;
+}
+
+
+$flat = array_merge(...$date);
+$fulldate = json_encode($flat);
+
+$roomID = $_GET['maison'];
 $select = $db->query("SELECT * FROM rooms WHERE id = '{$roomID}' ");
-$maison = mysqli_fetch_assoc($select);
+$maison = $select->fetch(PDO::FETCH_ASSOC);
+
 
 if (isset($_GET['maison'])) {
     $roomID = $_GET['maison'];
 
     ####################################################################################
     if (isset($_POST['checkin'])) {
-        if (!empty($_POST['name']) && !empty($_POST['in_date']) && !empty($_POST['out_date']) && !empty($_POST['phone']) && !empty($_POST['people'])) {
+        if (!empty($_POST['name']) && !empty($_POST['txtFromDate1']) && !empty($_POST['txtFromDate2']) && !empty($_POST['phone']) && !empty($_POST['people'])) {
 
             $name = $_POST['name'];
-            $checkin = $_POST['in_date'];
-            $checkout = $_POST['out_date'];
+            $checkin = $_POST['txtFromDate1'];
+            $checkout = $_POST['txtFromDate2'];
             $phone = $_POST['phone'];
             $people = $_POST['people'];
             $child = $_POST['children'];
@@ -26,14 +57,16 @@ if (isset($_GET['maison'])) {
             $current_date = date("Y-m-d");
             $zip = $_POST['zip'];
 
+
             if ($checkin >= $current_date) {
                 if ($checkout >= $checkin) {
                     $insert = "INSERT INTO `reservations` (`name`, `checkin`, `checkout`, `phone`, `people`, `email`, `children`,`address`, `commentaire`, `zip`, `id_rooms`) VALUES ('$name', '$checkin', '$checkout', '$phone', '$people', '$email', '$child', '$address', '$comm', '$zip', '$roomID')";
 
                     $save = $db->query($insert);
-
+                    var_dump($_POST);
                     if ($save) {
-                        echo "Demande de Reservation ! Je reviens vers vous d'ici 3 jours";
+                        $id = $db->lastInsertId();
+                        header('Location: confirmation-reservation.php?id=' . $id);
                     }
                 } else {
                     echo '<p class="text-center alert alert-danger">Date de départ non valide fournie. Veuillez éviter d\'utiliser une date passée.
@@ -43,6 +76,7 @@ if (isset($_GET['maison'])) {
                 echo '<p class="text-center alert alert-danger">Invalid Check-in date provided. Please avoid using a past date.</p>';
             }
         } else {
+            var_dump($_POST);
             echo '<br /> All fields are required!';
         }
     }
@@ -147,6 +181,13 @@ if (isset($_GET['maison'])) {
         text-decoration: none;
     }
 
+    .ui-widget-header {
+        border: 1px solid #d49768;
+        background: #b15e6d 50% 50% repeat-x;
+        color: #ffffff;
+        font-weight: bold;
+    }
+
     @media screen and (max-width: 450px) {
 
         .qhero_page_reservation_2 .col {
@@ -195,13 +236,13 @@ if (isset($_GET['maison'])) {
             <div class="col">
                 <div>
                     <div class="input_row">
-                        <label class="form-control-label">Check-in</label>
-                        <input type="date" class="form-control" name="in_date" required>
+                        <label for=txtFromDate1><strong>Checkin :</strong></label>
+                        <input type="text" name="txtFromDate1" id="txtFromDate1" class="home-input" style="width:79px;" />
                     </div>
 
                     <div class="input_row">
-                        <label class="form-control-label">Check-out</label>
-                        <input type="date" class="form-control" name="out_date" required>
+                        <label for=txtFromDate2><strong>Checkout :</strong></label>
+                        <input type="text" name="txtFromDate2" id="txtFromDate2" class="home-input" style="width:79px;" />
                     </div>
                 </div>
                 <div>
@@ -218,6 +259,10 @@ if (isset($_GET['maison'])) {
                 <div class="input_row">
                     <label for="">Commentaire</label>
                     <textarea name="commentaire" id="" cols="30" rows="5"></textarea>
+                </div>
+
+                <div class="input_row">
+                    <input type="hidden" name="id">
                 </div>
             </div>
         </div>
@@ -274,7 +319,44 @@ if (isset($_GET['maison'])) {
         </div>
     </form>
 </div>
-
+<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+<script src="https://kit.fontawesome.com/a076d05399.js"></script>
 <script>
     document.getElementById('bouton_responsive').style.display = 'none';
+    $(function() {
+
+        var unavailableDates = <?php echo $fulldate ?>;
+        console.log(unavailableDates);
+
+        function unavailable(date) {
+            ymd = ("0" + date.getDate()).slice(-2) + "-" + ("0" + (date.getMonth() + 1)).slice(-2) + "-" + date.getFullYear();
+
+            if ($.inArray(ymd, unavailableDates) < 0) {
+
+                return [true, "enabled", "Available"];
+
+            } else {
+
+                return [false, "red", "Booked Out"];
+
+            }
+        }
+
+        $('#txtFromDate1').datepicker({
+            beforeShowDay: unavailable,
+            dateFormat: 'yy-mm-dd',
+            onSelect: function(dateText) {
+                $("#txtFromDate1").val(dateText);
+            }
+        });
+
+        $('#txtFromDate2').datepicker({
+            beforeShowDay: unavailable,
+            dateFormat: 'yy-mm-dd',
+            onSelect: function(dateText) {
+                $("#txtFromDate2").val(dateText);
+            }
+        });
+    });
 </script>

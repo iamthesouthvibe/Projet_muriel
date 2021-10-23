@@ -8,7 +8,8 @@ $select = $db->query("SELECT * FROM rooms WHERE id = '{$roomID}' ");
 
 
 <main>
-    <?php while ($room = mysqli_fetch_assoc($select)) :
+    <?php while ($room = $select->fetch(PDO::FETCH_ASSOC)) :
+
         $shortDes = substr($room['details'], 0, 280)
     ?>
         <!-- Section accueil -->
@@ -461,6 +462,7 @@ $select = $db->query("SELECT * FROM rooms WHERE id = '{$roomID}' ");
                             .mapouter {
                                 height: 400px;
                             }
+                        }
                     </style>
                 </div>
             </div>
@@ -513,7 +515,7 @@ $select = $db->query("SELECT * FROM rooms WHERE id = '{$roomID}' ");
             <div class="espace_flexbox_produit">
                 <?php
                 $select3 = $db->query("SELECT * FROM products WHERE rooms_id = '{$roomID}' LIMIT 3");
-                while ($prod = mysqli_fetch_assoc($select3)) :
+                while ($prod = $select3->fetch(PDO::FETCH_ASSOC)) :
                 ?>
                     <div class="espace_produit">
                         <img src="<?= $prod['photo_p']; ?>" alt="Thumbnail du blog">
@@ -541,7 +543,7 @@ $select = $db->query("SELECT * FROM rooms WHERE id = '{$roomID}' ");
     $select2 = $db->query("SELECT * FROM comments WHERE id_rooms = '{$roomID}' ORDER BY id DESC ");
     ?>
     <div class="container_commentaire">
-        <?php while ($comm = mysqli_fetch_assoc($select2)) : ?>
+        <?php while ($comm = $select2->fetch(PDO::FETCH_ASSOC)) : ?>
             <div class="bloc_commentaire">
                 <h5>“<?= $comm["comment"] ?>”</h5>
                 <div class="sous_bloc_commentaire">

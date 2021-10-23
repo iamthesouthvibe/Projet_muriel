@@ -1,5 +1,6 @@
 <?php
-$db = new mysqli('localhost', 'root', 'root', 'hotel_db');
+$db = new PDO('mysql:host=localhost;dbname=hotel_db', 'root', 'root');
+
 if (!$db) {
     echo 'Could not establish database connection, please review your settings';
 }
