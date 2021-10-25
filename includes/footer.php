@@ -19,10 +19,10 @@
                     <a href="maison.php?room=24">Narbonne</a>
                 </li>
                 <li>
-                    <a href="http://localhost:8888/maison.php?room=25">Gruissan</a>
+                    <a href="maison.php?room=25">Gruissan</a>
                 </li>
                 <li>
-                    <a href="http://localhost:8888/maison.php?room=26">Pyrénnées</a>
+                    <a href="maison.php?room=26">Pyrénnées</a>
                 </li>
             </ul>
         </div>

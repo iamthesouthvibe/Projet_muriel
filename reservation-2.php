@@ -231,7 +231,7 @@ if (isset($_GET['maison'])) {
 
 <div class="qhero_page_reservation_2">
     <h1>Votre maison : <span> <?= $maison['shortName']; ?></span></h1>
-    <form action="" method="POST">
+    <form action="" method="POST" name="register" onsubmit="checkForm()">
         <div class="row">
             <div class="col">
                 <div>
