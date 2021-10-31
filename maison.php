@@ -425,7 +425,8 @@ $select = $db->query("SELECT * FROM rooms WHERE id = '{$roomID}' ");
                 </div>
             </div>
 
-            <div class="mapouter" data-aos="fade-up" data-aos-anchor-placement="top-bottom">
+            <div class="mapouter" data-aos="fade-up" data-aos-anchor-placement="top-bottom" data-aos-delay="150">
+
                 <div class="gmap_canvas">
                     <iframe width="700px" height="799" id="gmap_canvas" src="https://maps.google.com/maps?q=2880%20Broadway,%20New%20York&t=&z=13&ie=UTF8&iwloc=&output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe><a href="https://getasearch.com"></a><br>
                     <style>
@@ -496,21 +497,22 @@ $select = $db->query("SELECT * FROM rooms WHERE id = '{$roomID}' ");
                     <a class="element_textuel_blog" href="" data-aos="fade" data-aos-anchor-placement="top-bottom">Lire l'article →</a>
                 </div>
                 <div class="espace_article_blog espace_article_blog_02">
-                    <img src="assets/jpg/maison_photo_01.jpg" alt="Thumbnail du blog" data-aos="fade-up" data-aos-anchor-placement="top-bottom">
-                    <h6 data-aos="fade" data-aos-anchor-placement="top-bottom">Date de l'article</h6>
-                    <h5 data-aos="fade" data-aos-anchor-placement="top-bottom">Titre de l'article</h5>
-                    <a data-aos="fade" data-aos-anchor-placement="top-bottom" href="">Lire l'article →</a>
+                    <img src="assets/jpg/maison_photo_01.jpg" alt="Thumbnail du blog" data-aos="fade-up" data-aos-anchor-placement="top-bottom" data-aos-delay="150">
+                    <h6 data-aos="fade" data-aos-anchor-placement="top-bottom" data-aos-delay="120">Date de l'article</h6>
+                    <h5 data-aos="fade" data-aos-anchor-placement="top-bottom" data-aos-delay="120">Titre de l'article</h5>
+                    <a data-aos="fade" data-aos-anchor-placement="top-bottom" data-aos-delay="120" href="">Lire l'article →</a>
                 </div>
                 <div class="espace_article_blog espace_article_blog_02" >
-                    <img src="assets/jpg/maison_photo_01.jpg" alt="Thumbnail du blog" data-aos="fade-up" data-aos-anchor-placement="top-bottom">
-                    <h6 data-aos="fade" data-aos-anchor-placement="top-bottom">Date de l'article</h6>
-                    <h5 data-aos="fade" data-aos-anchor-placement="top-bottom">Titre de l'article</h5>
-                    <a data-aos="fade" data-aos-anchor-placement="top-bottom" href="">Lire l'article →</a>
+                    <img src="assets/jpg/maison_photo_01.jpg" alt="Thumbnail du blog" data-aos="fade-up" data-aos-anchor-placement="top-bottom" data-aos-delay="250">
+                    <h6 data-aos="fade" data-aos-anchor-placement="top-bottom" data-aos-delay="190">Date de l'article</h6>
+                    <h5 data-aos="fade" data-aos-anchor-placement="top-bottom" data-aos-delay="190">Titre de l'article</h5>
+                    <a data-aos="fade" data-aos-anchor-placement="top-bottom" data-aos-delay="190" href="">Lire l'article →</a>
                 </div>
             </div>
             <div class="lien_page_blog" data-aos="fade-up" data-aos-anchor-placement="top-bottom">
                 <a href="">Voir tous les articles →</a>
             </div>
+
         </div>
 
         <!-- Section Produits -->
