@@ -40,19 +40,19 @@ $select = $db->query("SELECT * FROM products");
     <!-- Section produits -->
 
     <div class="espace_flexbox_produit_02">
-        <?php while ($product = $select->fetch(PDO::FETCH_ASSOC)) : ?>
-            <div class="espace_produit_02">
-                <a href="">
-                    <img src="<?= $product['photo_p']; ?>" alt="Thumbnail du produit">
-                </a>
-                <a href="">
-                    <h6><?= $product['price_p']; ?></h6>
-                </a>
-                <a href="">
-                    <h5><?= $product['name_p']; ?></h5>
-                </a>
-                <a href="" class="lien_achat">Acheter →</a>
-            </div>
+    <?php while ($product = mysqli_fetch_assoc($select)) : ?>
+        <div class="espace_produit_02">
+            <a href="">
+                <img src=""<?= $product['photo_p']; ?>" alt="Thumbnail du produit">
+            </a>
+            <a href="">
+                <h6><?= $product['price_p']; ?></h6>
+            </a>
+            <a href="">
+                <h5><?= $product['name_p']; ?></h5>
+            </a>
+            <a href="" class="lien_achat">Acheter →</a>
+        </div>
         <?php endwhile; ?>
     </div>
 

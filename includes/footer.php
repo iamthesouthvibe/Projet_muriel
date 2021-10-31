@@ -38,7 +38,7 @@
                 <a href="/products.php">Articles</a>
             </li>
             <li>
-                <a href="/blog.php">Blog</a>
+                <a href="/blog.php">Rubriques</a>
             </li>
             <li>
                 <a href="/contact.php">Contact</a>

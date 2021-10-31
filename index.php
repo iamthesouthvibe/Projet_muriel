@@ -126,7 +126,7 @@ $sql = $db->query("SELECT * FROM rooms LIMIT 4");
 
   <div class="section_muriel">
     <div>
-      <img src="assets/jpg/Muriel.png" alt="Photo Profil Muriel" class="img_muriel">
+      <img src="assets/jpg/MURIEL-PROFIL.jpeg" alt="Photo Profil Muriel" class="img_muriel">
     </div>
     <div class="section_muriel_titre_text">
       <h2 class="titre_section_muriel">Muriel</h2>
