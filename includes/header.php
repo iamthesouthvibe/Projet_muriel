@@ -23,12 +23,12 @@
     <nav>
       <div class="header_left">
         <a href="index.php">
-        <img src="assets/png/LOGO_02_PNG_NOIR.png" alt="Logo muriel Home">
+        <img data-aos="fade" data-aos-anchor-placement="bottom-bottom" src="assets/png/LOGO_02_PNG_NOIR.png" alt="Logo muriel Home">
         </a>
       </div>
-      <div class="header_right">
-        <button class="bouton_desktop" id="bouton_desktop"><a href="reservation.php">Réserver</a></button>
-        <div class="burger-menu">
+      <div data-aos="fade" data-aos-anchor-placement="bottom-bottom" class="header_right">
+        <button data-aos="fade" data-aos-anchor-placement="bottom-bottom" class="bouton_desktop" id="bouton_desktop"><a href="reservation.php">Réserver</a></button>
+        <div data-aos="fade" data-aos-anchor-placement="bottom-bottom" class="burger-menu">
           <span></span>
           <span></span>
           <span></span>

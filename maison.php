@@ -8,30 +8,35 @@ $select = $db->query("SELECT * FROM rooms WHERE id = '{$roomID}' ");
 
 
 <main>
+
+<link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+
+
+
     <?php while ($room = $select->fetch(PDO::FETCH_ASSOC)) :
 
         $shortDes = substr($room['details'], 0, 280)
     ?>
         <!-- Section accueil -->
-        <div class="qhero_page_maison">
+        <div class="qhero_page_maison" data-aos="fade-up" data-aos-anchor-placement="top-bottom">
             <div class="qhero_entree_page_maison">
                 <div class="div_h1_titre">
                     <h1 class="h1_titre">
                         <?= $room['room_number']; ?>
                     </h1>
                 </div>
-                <div class="div_h2_sous_titre">
+                <div class="div_h2_sous_titre" data-aos="fade-up" data-aos-anchor-placement="top-bottom">
                     <h2 class="h2_sous_titre">
                         <?= $room['lieu']; ?>
                     </h2>
                 </div>
-                <div class="div_h3_text_presentation">
+                <div class="div_h3_text_presentation" data-aos="fade-up" data-aos-anchor-placement="bottom-bottom">
                     <h3 class="h3_titre">
                         <?= $shortDes . '...'; ?>
                     </h3>
                 </div>
             </div>
-            <div class="boutton_scroll">
+            <div class="boutton_scroll" data-aos="fade-up" data-aos-anchor-placement="bottom-bottom">
                 <svg width="40px" viewBox="0 0 14.334 24.75" class="scroll_anim">
                     <circle class="circle-1" fill="black" cx="7.167" cy="6" r="1.2" />
                     <circle class="circle-2" fill="black" cx="7.167" cy="6" r="1.2" />
@@ -40,10 +45,11 @@ $select = $db->query("SELECT * FROM rooms WHERE id = '{$roomID}' ");
             </div>
         </div>
 
+
         <!-- Section presentation maison -->
         <div class="container_presentation_maison">
             <div class="container_presentation_maison_gauche">
-                <div class="text_gauche">
+                <div class="text_gauche" data-aos="fade-up" data-aos-anchor-placement="bottom-bottom">
                     <?php
                     $shortDescription2 = substr($room['details'], 0, 250);
                     $shortDescription3 = substr($room['details'], 251, 500);
@@ -52,7 +58,7 @@ $select = $db->query("SELECT * FROM rooms WHERE id = '{$roomID}' ");
                     <p>
                         <?= $room['details']; ?>
                     </p>
-                    <div class="image_gauche">
+                    <div class="image_gauche" data-aos="fade-up" data-aos-anchor-placement="bottom-bottom">
                         <img src="<?= $room['photo4']; ?>" alt="Photo Maison">
                     </div>
                     <p>
@@ -60,7 +66,7 @@ $select = $db->query("SELECT * FROM rooms WHERE id = '{$roomID}' ");
                     </p>
                 </div>
             </div>
-            <div class="container_presentation_maison_droite">
+            <div class="container_presentation_maison_droite" data-aos="fade-up" data-aos-anchor-placement="bottom-bottom">
                 <div class="text-droite">
                     <p> <?= $room['details3']; ?></p>
                 </div>
@@ -562,8 +568,10 @@ $select = $db->query("SELECT * FROM rooms WHERE id = '{$roomID}' ");
 
 </main>
 
+
 <!-- Swiper JS -->
 <script src="https://unpkg.com/swiper@7/swiper-bundle.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.6.1/gsap.min.js"></script>
 
 <!-- Initialize Swiper -->
 <script>
