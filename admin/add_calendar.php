@@ -15,30 +15,24 @@ $result = $db->query($sql);
 
 // Get les data
 @$name = $_POST['name'];
-@$rooms =  $_POST['maison'];
+@$rooms =  (int)$_POST['maison'];
 @$phone = $_POST['phone'];
 @$email = $_POST['mail'];
 @$checkin = $_POST['checkin'];
 @$checkout = $_POST['checkout'];
 
+
 // On envoie les données
 if (isset($_POST['add'])) {
     if (!empty($name) && !empty($rooms) && !empty($phone) && !empty($email) && !empty($checkin) && !empty($checkout)) {
         $sql2 = "INSERT INTO calendar (`libelle`,`email`, `phone`, `checkin`, `checkout`, `id_rooms`)
-                    VALUES (':libelle',':email',':phone',':checkin',':checkout', ':id_rooms')";
+                    VALUES ('$name','$email','$phone','$checkin','$checkout', '$rooms')";
 
         $insert = $db->prepare($sql2);
-        $insert->execute([
-            ':libelle' => $name,
-            ':email' => $email,
-            ':phone' => $phone,
-            ':checkin' => $checkin,
-            ':checkout' => $checkout,
-            ':id_rooms' => $rooms
-        ]);
+        $insert->execute();
 
         if ($insert) {
-            var_dump($_POST);
+            var_dump($insert);
             // header("Location: calendar.php");
         } else {
             echo 'error';
@@ -67,7 +61,7 @@ if (isset($_POST['add'])) {
         <input type="email" name="mail" id="mail">
 
         <label for="phone">Téléphone :</label>
-        <input type="phone" name="phone" id="phone">
+        <input type="text" name="phone" id="phone">
 
         <label for="checkin">Checkin</label>
         <input type="date" name="checkin" id="checkin">
