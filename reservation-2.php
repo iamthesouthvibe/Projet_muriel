@@ -230,9 +230,9 @@ if (isset($_GET['maison'])) {
 </style>
 
 <div class="qhero_page_reservation_2">
-    <h1>Votre maison : <span> <?= $maison['shortName']; ?></span></h1>
+    <h1 data-aos="fade" data-aos-anchor-placement="top-bottom" data-aos-delay="0" data-aos-duration="2000" >Votre maison : <span> <?= $maison['shortName']; ?></span></h1>
     <form action="" method="POST">
-        <div class="row">
+        <div class="row" data-aos="fade" data-aos-anchor-placement="top-bottom" data-aos-delay="500" data-aos-duration="2000">
             <div class="col">
                 <div>
                     <div class="input_row">
@@ -268,7 +268,7 @@ if (isset($_GET['maison'])) {
         </div>
 
         <div class="row">
-            <div class="col">
+            <div class="col" data-aos="fade" data-aos-anchor-placement="top-bottom" data-aos-delay="500" data-aos-duration="2000">
                 <div>
                     <div class="input_row">
                         <label class="form-control-label">Nom</label>
@@ -305,14 +305,14 @@ if (isset($_GET['maison'])) {
             </div>
         </div>
 
-        <div class="row finalPrice">
+        <div class="row finalPrice" data-aos="fade" data-aos-anchor-placement="top-bottom" data-aos-delay="1000" data-aos-duration="2000">
             <div class="col_price">
                 <h3>Prix par nuit</h3>
                 <h4>450$</h4>
             </div>
         </div>
 
-        <div class="row">
+        <div class="row" data-aos="fade" data-aos-anchor-placement="top-bottom" data-aos-delay="1500" data-aos-duration="2000">
             <div class="col_price reservationFinale">
                 <input type="submit" name="checkin" value="Demande de réservation" class="submit">
             </div>

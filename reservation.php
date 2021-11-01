@@ -67,14 +67,15 @@ $sql = $db->query("SELECT * FROM rooms");
     <div class="form">
         <div class="input">
             <form method="get" action="reservation-2.php">
-                <select name="maison" id="" class="test">
+                <select name="maison" id="" class="test" data-aos="fade" data-aos-anchor-placement="top-bottom" data-aos-delay="0" data-aos-duration="3000">
+                    
                     <option value="" selected="true" disabled="disabled">Votre maison</option>
                     <?php while ($room = $sql->fetch(PDO::FETCH_ASSOC)) : ?>
 
                         <option value="<?= $room['id']; ?>"><?= $room['shortName']; ?></option>
                     <?php endwhile; ?>
                 </select>
-                <input type="submit" value="Vérifier les disponibilités" class="button">
+                <input data-aos="fade" data-aos-anchor-placement="top-bottom" data-aos-delay="450" data-aos-duration="3000" type="submit" value="Vérifier les disponibilités" class="button">
             </form>
         </div>
     </div>

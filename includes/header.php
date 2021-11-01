@@ -19,16 +19,18 @@
 
 <body>
 
+<link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+
   <header>
     <nav>
       <div class="header_left">
         <a href="index.php">
-        <img data-aos="fade" data-aos-anchor-placement="bottom-bottom" src="assets/png/LOGO_02_PNG_NOIR.png" alt="Logo muriel Home">
+        <img data-aos="fade" data-aos-anchor-placement="top-bottom" data-aos-duration="1000"  src="assets/png/LOGO_02_PNG_NOIR.png" alt="Logo muriel Home">
         </a>
       </div>
-      <div data-aos="fade" data-aos-anchor-placement="bottom-bottom" class="header_right">
-        <button data-aos="fade" data-aos-anchor-placement="bottom-bottom" class="bouton_desktop" id="bouton_desktop"><a href="reservation.php">Réserver</a></button>
-        <div data-aos="fade" data-aos-anchor-placement="bottom-bottom" class="burger-menu">
+      <div class="header_right">
+        <button data-aos="fade" data-aos-anchor-placement="top-bottom" data-aos-duration="1000" data-aos-delay="200" class="bouton_desktop" id="bouton_desktop"><a href="reservation.php">Réserver</a></button>
+        <div data-aos="fade" data-aos-anchor-placement="top-bottom" data-aos-duration="1000" data-aos-delay="400" class="burger-menu">
           <span></span>
           <span></span>
           <span></span>
@@ -47,7 +49,7 @@
       <div class="menu_nav_link">
         <ul>
           <li>
-            <a href="index.php">Home</a>
+            <a href="index.php" >Home</a>
           </li>
           <li>
             <a href="">Rubriques</a>
@@ -79,9 +81,7 @@
     </div>
   </div>
 
-
-
-
+</body>
 
   <script>
     let navBar = document.querySelector('.menu_nav');
@@ -104,4 +104,9 @@
         document.body.style.overflow = "hidden"
       }
     });
+  </script>
+
+<script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+  <script>
+    AOS.init();
   </script>
