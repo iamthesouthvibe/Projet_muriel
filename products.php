@@ -44,16 +44,16 @@ $select = $db->query("SELECT * FROM products");
     <div class="espace_flexbox_produit_02">
         <?php while ($product = $select->fetch(PDO::FETCH_ASSOC)) : ?>
             <div class="espace_produit_02">
-                <a href=""  data-aos="fade-up" data-aos-anchor-placement="top-bottom" data-aos-duration="1000" data-aos-delay="600">
-                    <img src="<?= $product['photo_p']; ?>" alt="Thumbnail du produit">
+                <a href="">
+                    <img data-aos="fade-up" data-aos-anchor-placement="top-bottom" data-aos-duration="500" data-aos-delay="100" src="<?= $product['photo_p']; ?>" alt="Thumbnail du produit">
                 </a>
-                <a href="" data-aos="fade-up" data-aos-anchor-placement="top-bottom" data-aos-duration="1000" data-aos-delay="700">
-                    <h6><?= $product['price_p']; ?></h6>
+                <a href="">
+                    <h6 data-aos="fade-up" data-aos-anchor-placement="top-bottom" data-aos-duration="500" data-aos-delay="200"><?= $product['price_p']; ?></h6>
                 </a>
-                <a href="" data-aos="fade-up" data-aos-anchor-placement="top-bottom" data-aos-duration="1000" data-aos-delay="800">
-                    <h5><?= $product['name_p']; ?></h5>
+                <a href="">
+                    <h5 data-aos="fade-up" data-aos-anchor-placement="top-bottom" data-aos-duration="400" data-aos-delay="300"><?= $product['name_p']; ?></h5>
                 </a>
-                <a href="" class="lien_achat" data-aos="fade-up" data-aos-anchor-placement="top-bottom" data-aos-duration="1000" data-aos-delay="900">Acheter →</a>
+                <a href="" class="lien_achat" data-aos="fade-up" data-aos-anchor-placement="top-bottom" data-aos-duration="400" data-aos-delay="400">Acheter →</a>
             </div>
         <?php endwhile; ?>
     </div>
