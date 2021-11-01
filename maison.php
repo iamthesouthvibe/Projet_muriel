@@ -18,25 +18,25 @@ $select = $db->query("SELECT * FROM rooms WHERE id = '{$roomID}' ");
         $shortDes = substr($room['details'], 0, 280)
     ?>
         <!-- Section accueil -->
-        <div class="qhero_page_maison" data-aos="fade-up" data-aos-anchor-placement="top-bottom">
+        <div class="qhero_page_maison">
             <div class="qhero_entree_page_maison">
-                <div class="div_h1_titre">
+                <div class="div_h1_titre" data-aos="fade-up" data-aos-anchor-placement="top-bottom" data-aos-duration="1000" data-aos-delay="0">
                     <h1 class="h1_titre">
                         <?= $room['room_number']; ?>
                     </h1>
                 </div>
-                <div class="div_h2_sous_titre" data-aos="fade-up" data-aos-anchor-placement="top-bottom">
+                <div class="div_h2_sous_titre" data-aos="fade-up" data-aos-anchor-placement="top-bottom" data-aos-duration="1000" data-aos-delay="200">
                     <h2 class="h2_sous_titre">
                         <?= $room['lieu']; ?>
                     </h2>
                 </div>
-                <div class="div_h3_text_presentation" data-aos="fade-up" data-aos-anchor-placement="bottom-bottom">
+                <div class="div_h3_text_presentation" data-aos="fade-up" data-aos-anchor-placement="top-bottom" data-aos-duration="1000" data-aos-delay="400">
                     <h3 class="h3_titre">
                         <?= $shortDes . '...'; ?>
                     </h3>
                 </div>
             </div>
-            <div class="boutton_scroll" data-aos="fade-up" data-aos-anchor-placement="top-bottom">
+            <div class="boutton_scroll" data-aos="fade" data-aos-anchor-placement="top-bottom" data-aos-duration="1000" data-aos-delay="600">
                 <svg width="40px" viewBox="0 0 14.334 24.75" class="scroll_anim">
                     <circle class="circle-1" fill="black" cx="7.167" cy="6" r="1.2" />
                     <circle class="circle-2" fill="black" cx="7.167" cy="6" r="1.2" />
@@ -49,7 +49,7 @@ $select = $db->query("SELECT * FROM rooms WHERE id = '{$roomID}' ");
         <!-- Section presentation maison -->
         <div class="container_presentation_maison">
             <div class="container_presentation_maison_gauche">
-                <div class="text_gauche" data-aos="fade-up" data-aos-anchor-placement="top-bottom">
+                <div class="text_gauche" data-aos="fade-up" data-aos-anchor-placement="top-bottom" data-aos-duration="1000" data-aos-delay="0">
                     <?php
                     $shortDescription2 = substr($room['details'], 0, 250);
                     $shortDescription3 = substr($room['details'], 251, 500);
@@ -58,7 +58,7 @@ $select = $db->query("SELECT * FROM rooms WHERE id = '{$roomID}' ");
                     <p>
                         <?= $room['details']; ?>
                     </p>
-                    <div class="image_gauche" data-aos="fade-up" data-aos-anchor-placement="top-bottom">
+                    <div class="image_gauche" data-aos="fade-up" data-aos-anchor-placement="top-bottom" data-aos-duration="1000" data-aos-delay="200">
                         <img src="<?= $room['photo4']; ?>" alt="Photo Maison">
                     </div>
                     <p>
@@ -67,10 +67,10 @@ $select = $db->query("SELECT * FROM rooms WHERE id = '{$roomID}' ");
                 </div>
             </div>
             <div class="container_presentation_maison_droite">
-                <div class="text-droite" data-aos="fade-up" data-aos-anchor-placement="top-bottom">
+                <div class="text-droite" data-aos="fade-up" data-aos-anchor-placement="top-bottom" data-aos-duration="1000" data-aos-delay="0">
                     <p> <?= $room['details3']; ?></p>
                 </div>
-                <div class="image_droite" data-aos="fade-up" data-aos-anchor-placement="top-bottom">
+                <div class="image_droite" data-aos="fade-up" data-aos-anchor-placement="top-bottom" data-aos-duration="1000" data-aos-delay="0">
                     <img src="<?= $room['photo7']; ?>" alt="Photo Maison">
                 </div>
             </div>
@@ -81,7 +81,7 @@ $select = $db->query("SELECT * FROM rooms WHERE id = '{$roomID}' ");
 
 
         <!-- Swiper -->
-        <div class="carousel_maison" data-aos="fade" data-aos-anchor-placement="top-bottom">
+        <div class="carousel_maison" data-aos="fade" data-aos-anchor-placement="top-bottom" data-aos-duration="1000">
             <div class="swiper mySwiper swiperHover">
                 <div class="swiper-wrapper">
                     <div class="swiper-slide">
@@ -270,7 +270,7 @@ $select = $db->query("SELECT * FROM rooms WHERE id = '{$roomID}' ");
 
         <!-- Swiper Infos techniques maison-->
 
-        <div class="carousel_maison_02" data-aos="fade" data-aos-anchor-placement="top-bottom">
+        <div class="carousel_maison_02" data-aos="fade" data-aos-anchor-placement="top-bottom" data-aos-duration="1000">
             <div class="swiper mySwiper swiperHover">
                 <div class="swiper-wrapper">
                     <div class="swiper-slide">
@@ -375,7 +375,7 @@ $select = $db->query("SELECT * FROM rooms WHERE id = '{$roomID}' ");
 
         <!-- Swiper Activités-->
         <div class="carousel_and_map">
-            <div class="carousel_maison_03" data-aos="fade-up" data-aos-anchor-placement="top-bottom">
+            <div class="carousel_maison_03" data-aos="fade-up" data-aos-anchor-placement="top-bottom" data-aos-duration="1000">
                 <div class="swiper mySwiper swiperHover">
                     <h4>Activités <div class="swiper-button-next"></div>
                     </h4>
@@ -425,7 +425,7 @@ $select = $db->query("SELECT * FROM rooms WHERE id = '{$roomID}' ");
                 </div>
             </div>
 
-            <div class="mapouter" data-aos="fade-up" data-aos-anchor-placement="top-bottom" data-aos-delay="150">
+            <div class="mapouter" data-aos="fade-up" data-aos-anchor-placement="top-bottom" data-aos-delay="200" data-aos-duration="1000">
 
                 <div class="gmap_canvas">
                     <iframe width="700px" height="799" id="gmap_canvas" src="https://maps.google.com/maps?q=2880%20Broadway,%20New%20York&t=&z=13&ie=UTF8&iwloc=&output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe><a href="https://getasearch.com"></a><br>
@@ -485,31 +485,31 @@ $select = $db->query("SELECT * FROM rooms WHERE id = '{$roomID}' ");
 
         <div class="container_blog">
             <div class="titre_section_blog">
-                <h4 class="titre_section_blog_h4" data-aos="fade-up" data-aos-anchor-placement="top-bottom">
+                <h4 class="titre_section_blog_h4" data-aos="fade-up" data-aos-anchor-placement="top-bottom" data-aos-duration="1000">
                     Espace Partage
                 </h4>
             </div>
             <div class="espace_flexbox_blog">
                 <div class="espace_article_blog">
-                    <img src="assets/jpg/maison_photo_01.jpg" alt="Thumbnail du blog" data-aos="fade-up" data-aos-anchor-placement="top-bottom">
+                    <img src="assets/jpg/maison_photo_01.jpg" alt="Thumbnail du blog" data-aos="fade-up" data-aos-anchor-placement="top-bottom" data-aos-duration="1000">
                     <h6 class="element_textuel_blog" data-aos="fade" data-aos-anchor-placement="top-bottom">Date de l'article</h6>
                     <h5 class="element_textuel_blog" data-aos="fade" data-aos-anchor-placement="top-bottom">Titre de l'article</h5>
                     <a class="element_textuel_blog" href="" data-aos="fade" data-aos-anchor-placement="top-bottom">Lire l'article →</a>
                 </div>
                 <div class="espace_article_blog espace_article_blog_02">
-                    <img src="assets/jpg/maison_photo_01.jpg" alt="Thumbnail du blog" data-aos="fade-up" data-aos-anchor-placement="top-bottom" data-aos-delay="150">
+                    <img src="assets/jpg/maison_photo_01.jpg" alt="Thumbnail du blog" data-aos="fade-up" data-aos-anchor-placement="top-bottom" data-aos-duration="1000" data-aos-delay="200" data-aos-duration="1000">
                     <h6 data-aos="fade" data-aos-anchor-placement="top-bottom" data-aos-delay="120">Date de l'article</h6>
                     <h5 data-aos="fade" data-aos-anchor-placement="top-bottom" data-aos-delay="120">Titre de l'article</h5>
                     <a data-aos="fade" data-aos-anchor-placement="top-bottom" data-aos-delay="120" href="">Lire l'article →</a>
                 </div>
                 <div class="espace_article_blog espace_article_blog_02" >
-                    <img src="assets/jpg/maison_photo_01.jpg" alt="Thumbnail du blog" data-aos="fade-up" data-aos-anchor-placement="top-bottom" data-aos-delay="250">
+                    <img src="assets/jpg/maison_photo_01.jpg" alt="Thumbnail du blog" data-aos="fade-up" data-aos-anchor-placement="top-bottom" data-aos-duration="1000" data-aos-delay="400">
                     <h6 data-aos="fade" data-aos-anchor-placement="top-bottom" data-aos-delay="190">Date de l'article</h6>
                     <h5 data-aos="fade" data-aos-anchor-placement="top-bottom" data-aos-delay="190">Titre de l'article</h5>
                     <a data-aos="fade" data-aos-anchor-placement="top-bottom" data-aos-delay="190" href="">Lire l'article →</a>
                 </div>
             </div>
-            <div class="lien_page_blog" data-aos="fade-up" data-aos-anchor-placement="top-bottom">
+            <div class="lien_page_blog" data-aos="fade-up" data-aos-anchor-placement="top-bottom" data-aos-duration="1000">
                 <a href="">Voir tous les articles →</a>
             </div>
 
@@ -519,7 +519,7 @@ $select = $db->query("SELECT * FROM rooms WHERE id = '{$roomID}' ");
 
         <div class="container_produit">
             <div class="titre_section_produit">
-                <h4 class="titre_section_produit_h4" data-aos="fade-up" data-aos-anchor-placement="top-bottom">
+                <h4 class="titre_section_produit_h4" data-aos="fade-up" data-aos-anchor-placement="top-bottom" data-aos-duration="1000">
                     Nos Produits
                 </h4>
             </div>
@@ -529,15 +529,15 @@ $select = $db->query("SELECT * FROM rooms WHERE id = '{$roomID}' ");
                 while ($prod = $select3->fetch(PDO::FETCH_ASSOC)) :
                 ?>
                     <div class="espace_produit">
-                        <img src="<?= $prod['photo_p']; ?>" alt="Thumbnail du blog" data-aos="fade-up" data-aos-anchor-placement="top-bottom">
-                        <h6 class="element_textuel_produit" data-aos="fade" data-aos-anchor-placement="top-bottom"><?= $prod['price_p']; ?></h6>
-                        <h5 class="element_textuel_produit"data-aos="fade" data-aos-anchor-placement="top-bottom"><?= $prod['name_p']; ?></h5>
-                        <a class="element_textuel_produit" href="" data-aos="fade" data-aos-anchor-placement="top-bottom">Acheter →</a>
+                        <img src="<?= $prod['photo_p']; ?>" alt="Thumbnail du blog" data-aos="fade-up" data-aos-anchor-placement="top-bottom" data-aos-duration="1000">
+                        <h6 class="element_textuel_produit" data-aos="fade" data-aos-anchor-placement="top-bottom" data-aos-duration="1000"><?= $prod['price_p']; ?></h6>
+                        <h5 class="element_textuel_produit"data-aos="fade" data-aos-anchor-placement="top-bottom" data-aos-duration="1000"><?= $prod['name_p']; ?></h5>
+                        <a class="element_textuel_produit" href="" data-aos="fade" data-aos-anchor-placement="top-bottom" data-aos-duration="1000">Acheter →</a>
                     </div>
                 <?php endwhile; ?>
 
             </div>
-            <div class="lien_page_produit" data-aos="fade-up" data-aos-anchor-placement="top-bottom">
+            <div class="lien_page_produit" data-aos="fade-up" data-aos-anchor-placement="top-bottom" data-aos-duration="1000">
                 <a href="">Voir tous les produits →</a>
             </div>
 
@@ -546,7 +546,7 @@ $select = $db->query("SELECT * FROM rooms WHERE id = '{$roomID}' ");
 
     <!-- Ligne séparator -->
 
-    <div class="ligne_separator" data-aos="fade" data-aos-anchor-placement="top-bottom"></div>
+    <div class="ligne_separator" data-aos="fade" data-aos-anchor-placement="top-bottom" data-aos-duration="1000"></div>
 
     <!-- Section Commentaires -->
 
@@ -556,10 +556,10 @@ $select = $db->query("SELECT * FROM rooms WHERE id = '{$roomID}' ");
     <div class="container_commentaire">
         <?php while ($comm = $select2->fetch(PDO::FETCH_ASSOC)) : ?>
             <div class="bloc_commentaire">
-                <h5 data-aos="fade-up" data-aos-anchor-placement="top-bottom">“<?= $comm["comment"] ?>”</h5>
+                <h5 data-aos="fade-up" data-aos-anchor-placement="top-bottom" data-aos-duration="1000">“<?= $comm["comment"] ?>”</h5>
                 <div class="sous_bloc_commentaire">
-                    <img src="assets/svg/5_stars.svg" alt="5 stars svg" data-aos="fade-up" data-aos-anchor-placement="top-bottom">
-                    <h6 data-aos="fade-up" data-aos-anchor-placement="top-bottom" class="infos_commentaire"><?= $comm['fullname'] . " - " . $comm['date_c']; ?></h6>
+                    <img src="assets/svg/5_stars.svg" alt="5 stars svg" data-aos="fade-up" data-aos-anchor-placement="top-bottom" data-aos-duration="1000">
+                    <h6 data-aos="fade-up" data-aos-anchor-placement="top-bottom" data-aos-duration="1000" class="infos_commentaire"><?= $comm['fullname'] . " - " . $comm['date_c']; ?></h6>
                 </div>
             </div>
         <?php endwhile; ?>
