@@ -44,11 +44,6 @@ $select = $db->query("SELECT * FROM rooms WHERE id = '{$roomID}' ");
         <div class="container_presentation_maison">
             <div class="container_presentation_maison_gauche">
                 <div class="text_gauche">
-                    <?php
-                    $shortDescription2 = substr($room['details'], 0, 250);
-                    $shortDescription3 = substr($room['details'], 251, 500);
-                    $shortDescription4 = substr($room['details'], 501, -1);
-                    ?>
                     <p>
                         <?= $room['details']; ?>
                     </p>

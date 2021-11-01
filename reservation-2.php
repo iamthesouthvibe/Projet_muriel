@@ -63,7 +63,7 @@ if (isset($_GET['maison'])) {
                     $insert = "INSERT INTO `reservations` (`name`, `checkin`, `checkout`, `phone`, `people`, `email`, `children`,`address`, `commentaire`, `zip`, `id_rooms`) VALUES ('$name', '$checkin', '$checkout', '$phone', '$people', '$email', '$child', '$address', '$comm', '$zip', '$roomID')";
 
                     $save = $db->query($insert);
-                    var_dump($_POST);
+
                     if ($save) {
                         $id = $db->lastInsertId();
                         header('Location: confirmation-reservation.php?id=' . $id);
@@ -260,10 +260,6 @@ if (isset($_GET['maison'])) {
                     <label for="">Commentaire</label>
                     <textarea name="commentaire" id="" cols="30" rows="5"></textarea>
                 </div>
-
-                <div class="input_row">
-                    <input type="hidden" name="id">
-                </div>
             </div>
         </div>
 
@@ -322,6 +318,7 @@ if (isset($_GET['maison'])) {
 <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
 <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+<script src="js/reservation-2.js"></script>
 <script>
     document.getElementById('bouton_responsive').style.display = 'none';
     $(function() {
