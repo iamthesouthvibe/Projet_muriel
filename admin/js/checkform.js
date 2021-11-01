@@ -42,7 +42,7 @@ function showSuccess(input) {
 
 function checkRequired(input) {
     if (input.value.trim() === "") {
-        return showError(input, `${getFieldName(input)} Filed is required`);
+        return showError(input, `${getFieldName(input)} Champ obligatoire`);
     }
     return showSuccess(input);
 }
@@ -81,7 +81,7 @@ function validate() {
     let checkDesc = checkRequired(description);
     let checkLengthTitle = checkLength(title, 3, 45);
     let checkLengthDes = checkLength(description, 50, 800);
- 
+
     if (checkValue.value && checkLengthTitle.value && checkLengthDes.value && checkSub.value && checkDate.value && checkLieu.value && checkFile.value && checkFile2.value && checkFile3.value && checkDesc.value) {
         return true;
     } else {
