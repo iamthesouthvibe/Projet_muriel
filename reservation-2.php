@@ -1,4 +1,4 @@
-<link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/humanity/jquery-ui.css" type="text/css">
+    <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/humanity/jquery-ui.css" type="text/css">
 
 <?php
 require_once 'core/core.php';
@@ -103,6 +103,8 @@ if (isset($_GET['maison'])) {
         margin-bottom: 50px;
         color: #9A4747;
         font-family: ITCGaramondStd-BkNarrow;
+    font-style: normal;
+    font-weight: normal;
     }
 
     .qhero_page_reservation_2 h1 span {
@@ -126,8 +128,12 @@ if (isset($_GET['maison'])) {
     .qhero_page_reservation_2 .row .input_row label {
         color: #9A4747;
         font-family: ITCGaramondStd-BkNarrow;
+    font-style: normal;
+    font-weight: normal;
+    font-size : 24px;
         margin-right: 15px;
         transform: translate(0px, 7px);
+        min-width : 107px;
     }
 
     .qhero_page_reservation_2 .row .input_row input {
@@ -139,8 +145,10 @@ if (isset($_GET['maison'])) {
 
     .qhero_page_reservation_2 .row .input_row textarea {
         color: #9A4747;
-        font-size: 18px;
-        font-family: NeueMontreal-Bold;
+        font-size: 24px;
+        font-family: neue_montrealbold;
+    font-style: normal;
+    font-weight: normal;
     }
 
     input[type="text"i],
@@ -149,8 +157,10 @@ if (isset($_GET['maison'])) {
     input[type="tel"i],
     input[type="number"i] {
         padding: 1px 2px;
-        font-size: 18px;
-        font-family: NeueMontreal-Bold;
+        font-size: 24px;
+        font-family: neue_montrealbold;
+    font-style: normal;
+    font-weight: normal;
     }
 
     .qhero_page_reservation_2 .col_price {
@@ -160,14 +170,18 @@ if (isset($_GET['maison'])) {
     .qhero_page_reservation_2 .col_price h3 {
         color: #9A4747;
         font-family: ITCGaramondStd-BkNarrow;
+    font-style: normal;
+    font-weight: normal;
         margin: 0;
     }
 
     .qhero_page_reservation_2 .col_price h4 {
         color: #9A4747;
         margin: 0;
-        font-size: 18px;
-        font-family: NeueMontreal-Bold;
+        font-size: 24px;
+        font-family: neue_montrealbold;
+    font-style: normal;
+    font-weight: normal;
     }
 
     .qhero_page_reservation_2 .col_price .submit {
@@ -176,7 +190,7 @@ if (isset($_GET['maison'])) {
         background: #9A4747;
         border-radius: 40px;
         border: none;
-        font-size: 23px;
+        font-size: 30px;
         color: #FCF7EC;
         text-decoration: none;
     }
@@ -185,7 +199,7 @@ if (isset($_GET['maison'])) {
         border: 1px solid #d49768;
         background: #b15e6d 50% 50% repeat-x;
         color: #ffffff;
-        font-weight: bold;
+        font-weight: normal;
     }
 
     @media screen and (max-width: 450px) {
@@ -200,6 +214,7 @@ if (isset($_GET['maison'])) {
 
         .qhero_page_reservation_2 .row .input_row label {
             font-size: 25px;
+            min-width : 0px
         }
 
         .qhero_page_reservation_2 .row {
@@ -236,12 +251,12 @@ if (isset($_GET['maison'])) {
             <div class="col">
                 <div>
                     <div class="input_row">
-                        <label for=txtFromDate1><strong>Checkin :</strong></label>
+                        <label for=txtFromDate1><strong>Checkin</strong></label>
                         <input type="text" name="txtFromDate1" id="txtFromDate1" class="home-input" style="width:79px;" />
                     </div>
 
                     <div class="input_row">
-                        <label for=txtFromDate2><strong>Checkout :</strong></label>
+                        <label for=txtFromDate2><strong>Checkout</strong></label>
                         <input type="text" name="txtFromDate2" id="txtFromDate2" class="home-input" style="width:79px;" />
                     </div>
                 </div>
@@ -293,12 +308,12 @@ if (isset($_GET['maison'])) {
                 </div>
                 <div>
                     <div class="input_row">
-                        <label class="form-control-label">Email</label>
+                        <label class="form-control-label">eMail</label>
                         <input type="mail" class="form-control" max="5" name="email" required>
 
                     </div>
                     <div class="input_row">
-                        <label class="form-control-label">Telephone</label>
+                        <label class="form-control-label">Télephone</label>
                         <input type="tel" class="form-control" max="5" name="phone" required>
                     </div>
                 </div>
