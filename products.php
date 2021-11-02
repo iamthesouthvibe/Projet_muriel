@@ -44,16 +44,16 @@ $select = $db->query("SELECT * FROM products");
     <div class="espace_flexbox_produit_02">
         <?php while ($product = $select->fetch(PDO::FETCH_ASSOC)) : ?>
             <div class="espace_produit_02">
-                <a href="">
+                <a class="waitBeforeNavigate" href="">
                     <img data-aos="fade-up" data-aos-anchor-placement="top-bottom" data-aos-duration="500" data-aos-delay="100" src="<?= $product['photo_p']; ?>" alt="Thumbnail du produit">
                 </a>
-                <a href="">
+                <a class="waitBeforeNavigate" href="">
                     <h6 data-aos="fade-up" data-aos-anchor-placement="top-bottom" data-aos-duration="500" data-aos-delay="200"><?= $product['price_p']; ?></h6>
                 </a>
-                <a href="">
+                <a class="waitBeforeNavigate" href="">
                     <h5 data-aos="fade-up" data-aos-anchor-placement="top-bottom" data-aos-duration="400" data-aos-delay="300"><?= $product['name_p']; ?></h5>
                 </a>
-                <a href="" class="lien_achat" data-aos="fade-up" data-aos-anchor-placement="top-bottom" data-aos-duration="400" data-aos-delay="400">Acheter →</a>
+                <a class="waitBeforeNavigate" href="" class="lien_achat" data-aos="fade-up" data-aos-anchor-placement="top-bottom" data-aos-duration="400" data-aos-delay="400">Acheter →</a>
             </div>
         <?php endwhile; ?>
     </div>
@@ -70,3 +70,20 @@ $select = $db->query("SELECT * FROM products");
   <script>
     AOS.init();
   </script>
+
+<script>
+  function waitBeforeNavigate(ev) {
+    ev.preventDefault(); // prevent default anchor behavior
+    const goTo = this.getAttribute("href"); // store anchor href
+
+    setTimeout(function () {
+        window.location = goTo;
+    }, 1000); // time in ms
+
+    document.body.style.opacity = "0"
+};
+
+document.querySelectorAll(".waitBeforeNavigate")
+    .forEach(EL => EL.addEventListener("click", waitBeforeNavigate));
+      
+</script>

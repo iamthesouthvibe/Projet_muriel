@@ -494,23 +494,23 @@ $select = $db->query("SELECT * FROM rooms WHERE id = '{$roomID}' ");
                     <img src="assets/jpg/maison_photo_01.jpg" alt="Thumbnail du blog" data-aos="fade-up" data-aos-anchor-placement="top-bottom" data-aos-duration="1000">
                     <h6 class="element_textuel_blog" data-aos="fade" data-aos-anchor-placement="top-bottom">Date de l'article</h6>
                     <h5 class="element_textuel_blog" data-aos="fade" data-aos-anchor-placement="top-bottom">Titre de l'article</h5>
-                    <a class="element_textuel_blog" href="" data-aos="fade" data-aos-anchor-placement="top-bottom">Lire l'article →</a>
+                    <a class="waitBeforeNavigate"  class="element_textuel_blog" href="" data-aos="fade" data-aos-anchor-placement="top-bottom">Lire l'article →</a>
                 </div>
                 <div class="espace_article_blog espace_article_blog_02">
                     <img src="assets/jpg/maison_photo_01.jpg" alt="Thumbnail du blog" data-aos="fade-up" data-aos-anchor-placement="top-bottom" data-aos-duration="1000" data-aos-delay="200" data-aos-duration="1000">
                     <h6 data-aos="fade" data-aos-anchor-placement="top-bottom" data-aos-delay="120">Date de l'article</h6>
                     <h5 data-aos="fade" data-aos-anchor-placement="top-bottom" data-aos-delay="120">Titre de l'article</h5>
-                    <a data-aos="fade" data-aos-anchor-placement="top-bottom" data-aos-delay="120" href="">Lire l'article →</a>
+                    <a class="waitBeforeNavigate"  data-aos="fade" data-aos-anchor-placement="top-bottom" data-aos-delay="120" href="">Lire l'article →</a>
                 </div>
                 <div class="espace_article_blog espace_article_blog_02" >
                     <img src="assets/jpg/maison_photo_01.jpg" alt="Thumbnail du blog" data-aos="fade-up" data-aos-anchor-placement="top-bottom" data-aos-duration="1000" data-aos-delay="400">
                     <h6 data-aos="fade" data-aos-anchor-placement="top-bottom" data-aos-delay="190">Date de l'article</h6>
                     <h5 data-aos="fade" data-aos-anchor-placement="top-bottom" data-aos-delay="190">Titre de l'article</h5>
-                    <a data-aos="fade" data-aos-anchor-placement="top-bottom" data-aos-delay="190" href="">Lire l'article →</a>
+                    <a class="waitBeforeNavigate"  data-aos="fade" data-aos-anchor-placement="top-bottom" data-aos-delay="190" href="">Lire l'article →</a>
                 </div>
             </div>
             <div class="lien_page_blog" data-aos="fade-up" data-aos-anchor-placement="top-bottom" data-aos-duration="1000">
-                <a href="">Voir tous les articles →</a>
+                <a class="waitBeforeNavigate"  href="">Voir tous les articles →</a>
             </div>
 
         </div>
@@ -532,13 +532,13 @@ $select = $db->query("SELECT * FROM rooms WHERE id = '{$roomID}' ");
                         <img src="<?= $prod['photo_p']; ?>" alt="Thumbnail du blog" data-aos="fade-up" data-aos-anchor-placement="top-bottom" data-aos-duration="1000">
                         <h6 class="element_textuel_produit" data-aos="fade" data-aos-anchor-placement="top-bottom" data-aos-duration="1000"><?= $prod['price_p']; ?></h6>
                         <h5 class="element_textuel_produit"data-aos="fade" data-aos-anchor-placement="top-bottom" data-aos-duration="1000"><?= $prod['name_p']; ?></h5>
-                        <a class="element_textuel_produit" href="" data-aos="fade" data-aos-anchor-placement="top-bottom" data-aos-duration="1000">Acheter →</a>
+                        <a class="waitBeforeNavigate"  class="element_textuel_produit" href="" data-aos="fade" data-aos-anchor-placement="top-bottom" data-aos-duration="1000">Acheter →</a>
                     </div>
                 <?php endwhile; ?>
 
             </div>
             <div class="lien_page_produit" data-aos="fade-up" data-aos-anchor-placement="top-bottom" data-aos-duration="1000">
-                <a href="">Voir tous les produits →</a>
+                <a class="waitBeforeNavigate"  href="">Voir tous les produits →</a>
             </div>
 
         </div>
@@ -659,3 +659,20 @@ $select = $db->query("SELECT * FROM rooms WHERE id = '{$roomID}' ");
   <script>
     AOS.init();
   </script>
+
+<script>
+  function waitBeforeNavigate(ev) {
+    ev.preventDefault(); // prevent default anchor behavior
+    const goTo = this.getAttribute("href"); // store anchor href
+
+    setTimeout(function () {
+        window.location = goTo;
+    }, 1000); // time in ms
+
+    document.body.style.opacity = "0"
+};
+
+document.querySelectorAll(".waitBeforeNavigate")
+    .forEach(EL => EL.addEventListener("click", waitBeforeNavigate));
+      
+</script>

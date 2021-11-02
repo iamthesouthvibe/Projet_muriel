@@ -45,16 +45,16 @@ $select = $db->query("SELECT * FROM products");
     <div class="espace_flexbox_produit_02">
     <?php while ($product = mysqli_fetch_assoc($select)) : ?>
         <div class="espace_produit_02">
-            <a href="" data-aos="fade" data-aos-anchor-placement="top-bottom" data-aos-duration="1000" data-aos-delay="600">
+            <a class="waitBeforeNavigate" href="" data-aos="fade" data-aos-anchor-placement="top-bottom" data-aos-duration="1000" data-aos-delay="600">
                 <img src="<?= $product['photo_p']; ?>" alt="Thumbnail du produit">
             </a>
-            <a href="" data-aos="fade" data-aos-anchor-placement="top-bottom" data-aos-duration="1000" data-aos-delay="700" >
+            <a class="waitBeforeNavigate" href="" data-aos="fade" data-aos-anchor-placement="top-bottom" data-aos-duration="1000" data-aos-delay="700" >
                 <h6><?= $product['price_p']; ?></h6>
             </a>
-            <a href=""data-aos="fade" data-aos-anchor-placement="top-bottom" data-aos-duration="1000" data-aos-delay="800">
+            <a class="waitBeforeNavigate" href=""data-aos="fade" data-aos-anchor-placement="top-bottom" data-aos-duration="1000" data-aos-delay="800">
                 <h5><?= $product['name_p']; ?></h5>
             </a>
-            <a href="" class="lien_achat" data-aos="fade" data-aos-anchor-placement="top-bottom" data-aos-duration="1000" data-aos-delay="900">Acheter →</a>
+            <a class="waitBeforeNavigate" href="" class="lien_achat" data-aos="fade" data-aos-anchor-placement="top-bottom" data-aos-duration="1000" data-aos-delay="900">Acheter →</a>
         </div>
         <?php endwhile; ?>
     </div>
@@ -76,3 +76,20 @@ $select = $db->query("SELECT * FROM products");
   <script>
     AOS.init();
   </script>
+
+<script>
+  function waitBeforeNavigate(ev) {
+    ev.preventDefault(); // prevent default anchor behavior
+    const goTo = this.getAttribute("href"); // store anchor href
+
+    setTimeout(function () {
+        window.location = goTo;
+    }, 1000); // time in ms
+
+    document.body.style.opacity = "0"
+};
+
+document.querySelectorAll(".waitBeforeNavigate")
+    .forEach(EL => EL.addEventListener("click", waitBeforeNavigate));
+      
+</script>

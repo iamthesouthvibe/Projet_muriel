@@ -220,5 +220,5 @@ $sql = $db->query("SELECT * FROM rooms LIMIT 4");
 
 document.querySelectorAll(".waitBeforeNavigate")
     .forEach(EL => EL.addEventListener("click", waitBeforeNavigate));
-    
+      
 </script>

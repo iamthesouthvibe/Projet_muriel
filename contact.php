@@ -23,7 +23,7 @@ include 'includes/header.php';
                     </h1>
         </div>
         <div class="bloc2" data-aos="fade" data-aos-anchor-placement="top-bottom" data-aos-duration="3000" data-aos-delay="400">
-                <a href="mailto:muriel.coutellier67@gmail.com"> Prise <br>
+                <a href="mailto:muriel.coutellier67@gmail.com?subject=Prise de contact""> Prise <br>
                  de contact <span></a>
         </div>
     </div>
@@ -55,3 +55,19 @@ include 'includes/header.php';
     AOS.init();
   </script>
 
+<script>
+  function waitBeforeNavigate(ev) {
+    ev.preventDefault(); // prevent default anchor behavior
+    const goTo = this.getAttribute("href"); // store anchor href
+
+    setTimeout(function () {
+        window.location = goTo;
+    }, 1000); // time in ms
+
+    document.body.style.opacity = "0"
+};
+
+document.querySelectorAll(".waitBeforeNavigate")
+    .forEach(EL => EL.addEventListener("click", waitBeforeNavigate));
+      
+</script>

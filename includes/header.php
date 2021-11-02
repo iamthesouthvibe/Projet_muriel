@@ -24,12 +24,12 @@
   <header>
     <nav>
       <div class="header_left">
-        <a href="index.php">
+        <a class="waitBeforeNavigate"  href="index.php">
         <img data-aos="fade" data-aos-anchor-placement="top-bottom" data-aos-duration="1000"  src="assets/png/LOGO_02_PNG_NOIR.png" alt="Logo muriel Home">
         </a>
       </div>
       <div class="header_right">
-        <button data-aos="fade" data-aos-anchor-placement="top-bottom" data-aos-duration="1000" data-aos-delay="200" class="bouton_desktop" id="bouton_desktop"><a href="reservation.php">Réserver</a></button>
+        <button data-aos="fade" data-aos-anchor-placement="top-bottom" data-aos-duration="1000" data-aos-delay="200" class="bouton_desktop" id="bouton_desktop"><a class="waitBeforeNavigate"  href="reservation.php">Réserver</a></button>
         <div data-aos="fade" data-aos-anchor-placement="top-bottom" data-aos-duration="1000" data-aos-delay="400" class="burger-menu">
           <span></span>
           <span></span>
@@ -39,7 +39,7 @@
     </nav>
 
     <div class="bouton_responsive" id="bouton_responsive">
-      <button class="bouton_phone"><a href="reservation.php">Réserver</a></button>
+      <button class="bouton_phone"><a class="waitBeforeNavigate"  href="reservation.php">Réserver</a></button>
     </div>
 
   </header>
@@ -49,16 +49,16 @@
       <div class="menu_nav_link">
         <ul>
           <li>
-            <a href="index.php" >Home</a>
+             <a class="waitBeforeNavigate"  href="index.php" >Home</a>
           </li>
           <li>
-            <a href="blog.php">Rubriques</a>
+            <a class="waitBeforeNavigate"  href="blog.php">Rubriques</a>
           </li>
           <li>
-            <a href="products.php">Produits</a>
+            <a class="waitBeforeNavigate"  href="products.php">Produits</a>
           </li>
           <li>
-            <a href="contact.php">Contact</a>
+            <a class="waitBeforeNavigate"  href="contact.php">Contact</a>
           </li>
         </ul>
       </div>
@@ -66,16 +66,16 @@
     <div class="menu_nav_right">
     <ul>
           <li>
-            <a href="index.php">01</a>
+            <a class="waitBeforeNavigate"  href="index.php">01</a>
           </li>
           <li>
-            <a href="">02</a>
+            <a class="waitBeforeNavigate"  href="">02</a>
           </li>
           <li>
-            <a href="">03</a>
+            <a class="waitBeforeNavigate"  href="">03</a>
           </li>
           <li>
-            <a href="contact.php">04</a>
+            <a class="waitBeforeNavigate"  href="contact.php">04</a>
           </li>
         </ul>
     </div>
@@ -110,3 +110,20 @@
   <script>
     AOS.init();
   </script>
+
+<script>
+  function waitBeforeNavigate(ev) {
+    ev.preventDefault(); // prevent default anchor behavior
+    const goTo = this.getAttribute("href"); // store anchor href
+
+    setTimeout(function () {
+        window.location = goTo;
+    }, 1000); // time in ms
+
+    document.body.style.opacity = "0"
+};
+
+document.querySelectorAll(".waitBeforeNavigate")
+    .forEach(EL => EL.addEventListener("click", waitBeforeNavigate));
+      
+</script>

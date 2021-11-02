@@ -75,7 +75,7 @@ $sql = $db->query("SELECT * FROM rooms");
                         <option value="<?= $room['id']; ?>"><?= $room['shortName']; ?></option>
                     <?php endwhile; ?>
                 </select>
-                <input data-aos="fade" data-aos-anchor-placement="top-bottom" data-aos-delay="450" data-aos-duration="3000" type="submit" value="Vérifier les disponibilités" class="button">
+                <input class="waitBeforeNavigate" data-aos="fade" data-aos-anchor-placement="top-bottom" data-aos-delay="450" data-aos-duration="3000" type="submit" value="Vérifier les disponibilités" class="button">
             </form>
         </div>
     </div>
@@ -94,4 +94,21 @@ $sql = $db->query("SELECT * FROM rooms");
             event.preventDefault();
         }
     });
+</script>
+
+<script>
+  function waitBeforeNavigate(ev) {
+    ev.preventDefault(); // prevent default anchor behavior
+    const goTo = this.getAttribute("href"); // store anchor href
+
+    setTimeout(function () {
+        window.location = goTo;
+    }, 1000); // time in ms
+
+    document.body.style.opacity = "0"
+};
+
+document.querySelectorAll(".waitBeforeNavigate")
+    .forEach(EL => EL.addEventListener("click", waitBeforeNavigate));
+      
 </script>
