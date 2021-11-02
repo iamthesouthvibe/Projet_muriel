@@ -113,7 +113,7 @@ $sql = $db->query("SELECT * FROM rooms LIMIT 4");
           <div class="swiper-slide-titre">
             <h2 data-aos="fade-up" data-aos-anchor-placement="bottom-bottom" data-aos-duration="1000" data-aos-delay="0"><?= $room['shortName']; ?></h2>
             <p data-aos="fade-up" data-aos-anchor-placement="bottom-bottom" data-aos-duration="1000" data-aos-delay="200"><?= $shortDesc . '...'; ?></p>
-            <button data-aos="fade-up" data-aos-anchor-placement="bottom-bottom" data-aos-duration="1000" data-aos-delay="400"><a href="maison.php?room=<?= $room['id']; ?>">Découvrir</a></button>
+            <button data-aos="fade-up" data-aos-anchor-placement="bottom-bottom" data-aos-duration="1000" data-aos-delay="400"><a class="waitBeforeNavigate" href="maison.php?room=<?= $room['id']; ?>">Découvrir</a></button>
           </div>
         </div>
       <?php endwhile; ?>
@@ -205,3 +205,20 @@ $sql = $db->query("SELECT * FROM rooms LIMIT 4");
 </script>
 
 <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+
+<script>
+  function waitBeforeNavigate(ev) {
+    ev.preventDefault(); // prevent default anchor behavior
+    const goTo = this.getAttribute("href"); // store anchor href
+
+    setTimeout(function () {
+        window.location = goTo;
+    }, 1000); // time in ms
+
+    document.body.style.opacity = "0"
+};
+
+document.querySelectorAll(".waitBeforeNavigate")
+    .forEach(EL => EL.addEventListener("click", waitBeforeNavigate));
+    
+</script>

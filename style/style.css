@@ -38,6 +38,7 @@ body {
     background-color: #FCF7EC;
     height: 100%;
     font-family: neue_montrealregular;
+    transition: 1s;
 }
 
 
