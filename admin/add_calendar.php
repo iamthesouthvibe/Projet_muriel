@@ -49,7 +49,7 @@ if (isset($_POST['add'])) {
 
     <form action="" method="post">
         <label for="name">Nom</label>
-        <input type="text" name="name" id="name">
+        <input type="text" name="name" id="name" required>
 
         <select name="maison" id="">
             <?php while ($maison_name = $result->fetch(PDO::FETCH_ASSOC)) : ?>
@@ -58,16 +58,16 @@ if (isset($_POST['add'])) {
         </select>
 
         <label for="mail">Email</label>
-        <input type="email" name="mail" id="mail">
+        <input type="email" name="mail" id="mail" required>
 
         <label for="phone">Téléphone :</label>
-        <input type="text" name="phone" id="phone">
+        <input type="text" name="phone" id="phone" required>
 
         <label for="checkin">Checkin</label>
-        <input type="date" name="checkin" id="checkin">
+        <input type="date" name="checkin" id="checkin" required>
 
         <label for="checkout">Checkout</label>
-        <input type="date" name="checkout" id="checkout">
+        <input type="date" name="checkout" id="checkout" required>
 
         <input type="submit" value="Ajouter" name="add">
 
