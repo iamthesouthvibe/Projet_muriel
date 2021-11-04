@@ -2,60 +2,7 @@
 require_once 'core/core.php';
 include 'includes/header.php';
 
-
-
-
 $sql = $db->query("SELECT * FROM rooms LIMIT 4");
-
-/*
-?>
-
-
-    <!-- Content section -->
-    <section class="py-5">
-      <div class="container">
-        <h1>Homes Muriel etst branch</h1><hr />
-      <div class="row">
-
-      <?php  while($room = mysqli_fetch_assoc($sql)): ?>
-          <div class="col-lg-3 col-md-4 col-sm-6">
-            <h4 class="text-center"><?=$room['room_number'];?></h4>
-            <img src="<?=$room['photo'];?>" class="img-responsive" alt="room" width="100%" height="200px">
-            <section class="text-justify">
-              <p>
-                <?=$room['details'];?>
-              </p>
-              <a href="details.php?room=<?= $room['id']; ?>" class="btn btn-block btn-primary">More Details</a>
-            </section>
-          </div>
-
-    <?php endwhile; ?>
-      </div>
-    </section>
-    -->
-
-    <!-- Content section -->
-    <section class="py-5">
-      <div class="container">
-        <h1>Tourism</h1>
-        <div class="row">
-
-        <?php while($tour = mysqli_fetch_assoc($tourSQL)): ?>
-            <div class="col-lg-3 col-md-4 col-sm-6">
-              <h4 class="text-center"><?=$tour['title'];?></h4>
-              <img src="<?=$tour['photo'];?>" class="img-responsive" alt="room" width="100%" height="200px">
-              <section class="text-justify">
-                <p>
-                  <?=$tour['details'];?>
-                </p>
-                <a href="tour.php?tour=<?= $tour['id']; ?>" class="btn btn-block btn-primary">More Details</a>
-              </section>
-            </div>
-
-      <?php endwhile; ?>
-        </div>
-      </div>
-    </section> */
 
 ?>
 

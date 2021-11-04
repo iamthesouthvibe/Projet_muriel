@@ -63,7 +63,7 @@ if (isset($_GET['maison'])) {
                     $insert = "INSERT INTO `reservations` (`name`, `checkin`, `checkout`, `phone`, `people`, `email`, `children`,`address`, `commentaire`, `zip`, `id_rooms`) VALUES ('$name', '$checkin', '$checkout', '$phone', '$people', '$email', '$child', '$address', '$comm', '$zip', '$roomID')";
 
                     $save = $db->query($insert);
-                    var_dump($_POST);
+
                     if ($save) {
                         $id = $db->lastInsertId();
                         header('Location: confirmation-reservation.php?id=' . $id);
@@ -76,7 +76,6 @@ if (isset($_GET['maison'])) {
                 echo '<p class="text-center alert alert-danger">Invalid Check-in date provided. Please avoid using a past date.</p>';
             }
         } else {
-            var_dump($_POST);
             echo '<br /> All fields are required!';
         }
     }
@@ -188,6 +187,16 @@ if (isset($_GET['maison'])) {
         font-weight: bold;
     }
 
+
+
+    .input_row small {
+        opacity: 0;
+    }
+
+    .input_row.error small {
+        opacity: 1;
+    }
+
     @media screen and (max-width: 450px) {
 
         .qhero_page_reservation_2 .col {
@@ -231,38 +240,41 @@ if (isset($_GET['maison'])) {
 
 <div class="qhero_page_reservation_2">
     <h1>Votre maison : <span> <?= $maison['shortName']; ?></span></h1>
-    <form action="" method="POST">
+    <form action="" method="POST" id="myForm" class="form-control" name="register" onsubmit="return validate();">
         <div class="row">
             <div class="col">
                 <div>
                     <div class="input_row">
                         <label for=txtFromDate1><strong>Checkin :</strong></label>
                         <input type="text" name="txtFromDate1" id="txtFromDate1" class="home-input" style="width:79px;" />
+                        <br>
+                        <small>Error Message</small>
                     </div>
 
                     <div class="input_row">
                         <label for=txtFromDate2><strong>Checkout :</strong></label>
                         <input type="text" name="txtFromDate2" id="txtFromDate2" class="home-input" style="width:79px;" />
+                        <br>
+                        <small>Error Message</small>
                     </div>
                 </div>
                 <div>
                     <div class="input_row">
                         <label class="form-control-label">People</label>
-                        <input type="number" class="form-control" max="10" min="0" name="people" required>
-
+                        <input type="number" class="form-control" max="10" min="0" name="people" id="people">
+                        <br>
+                        <small>Error Message</small>
                     </div>
                     <div class="input_row">
                         <label class="form-control-label">child</label>
-                        <input type="number" class="form-control" max="10" min="0" name="children" required>
+                        <input type="number" class="form-control" max="10" min="0" name="children" id="child">
+                        <br>
+                        <small>Error Message</small>
                     </div>
                 </div>
                 <div class="input_row">
                     <label for="">Commentaire</label>
                     <textarea name="commentaire" id="" cols="30" rows="5"></textarea>
-                </div>
-
-                <div class="input_row">
-                    <input type="hidden" name="id">
                 </div>
             </div>
         </div>
@@ -272,34 +284,44 @@ if (isset($_GET['maison'])) {
                 <div>
                     <div class="input_row">
                         <label class="form-control-label">Nom</label>
-                        <input type="text" class="form-control" name="name" required>
+                        <input type="text" class="form-control" name="name" id="name">
+                        <br>
+                        <small>Error Message</small>
                     </div>
 
                     <div class="input_row">
                         <label class="form-control-label">Adresse</label>
-                        <input type="text" class="form-control" name="adress" required>
+                        <input type="text" class="form-control" name="adress" id="adress">
+                        <br>
+                        <small>Error Message</small>
                     </div>
                 </div>
                 <div>
                     <div class="input_row">
                         <label class="form-control-label">Pays</label>
-                        <input type="text" class="form-control" max="5" name="pays" required>
-
+                        <input type="text" class="form-control" max="5" name="pays" id="pays">
+                        <br>
+                        <small>Error Message</small>
                     </div>
                     <div class="input_row">
                         <label class="form-control-label">Code postal</label>
-                        <input type="" class="form-control" name="zip" required>
+                        <input type="" class="form-control" name="zip" id="zip">
+                        <br>
+                        <small>Error Message</small>
                     </div>
                 </div>
                 <div>
                     <div class="input_row">
                         <label class="form-control-label">Email</label>
-                        <input type="mail" class="form-control" max="5" name="email" required>
-
+                        <input type="mail" class="form-control" max="5" name="email" id="email">
+                        <br>
+                        <small>Error Message</small>
                     </div>
                     <div class="input_row">
                         <label class="form-control-label">Telephone</label>
-                        <input type="tel" class="form-control" max="5" name="phone" required>
+                        <input type="tel" class="form-control" max="5" name="phone" id="phone">
+                        <br>
+                        <small>Error Message</small>
                     </div>
                 </div>
             </div>
@@ -322,8 +344,10 @@ if (isset($_GET['maison'])) {
 <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
 <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+<script src="js/reservation-2.js"></script>
 <script>
     document.getElementById('bouton_responsive').style.display = 'none';
+
     $(function() {
 
         var unavailableDates = <?php echo $fulldate ?>;
@@ -359,4 +383,67 @@ if (isset($_GET['maison'])) {
             }
         });
     });
+
+
+    const form = document.getElementById("form");
+    const name = document.getElementById("name");
+    const adress = document.getElementById("adress");
+    const date1 = document.getElementById("txtFromDate1");
+    const date2 = document.getElementById('txtFromDate2');
+    const people = document.getElementById('people');
+    const child = document.getElementById('child');
+    const pays = document.getElementById('pays');
+    const zip = document.getElementById('zip');
+    const email = document.getElementById('email');
+    const phone = document.getElementById('phone');
+
+
+    //Show input error message
+
+    function showError(input, message) {
+        const formControl = input.parentElement;
+        formControl.className = "input_row error";
+        const small = formControl.querySelector("small");
+        small.innerText = message;
+        return input;
+    }
+
+    //show success message
+
+    function showSuccess(input) {
+        const formControl = input.parentElement;
+        formControl.className = "input_row success";
+        return input;
+    }
+
+    function checkRequired(input) {
+        if (input.value.trim() === "") {
+            return showError(input, `Ce champ est obligatoire`);
+        }
+        return showSuccess(input);
+    }
+
+    //get field name
+    function getFieldName(input) {
+        return input.id.charAt(0).toUpperCase() + input.id.slice(1);
+    }
+
+    function validate() {
+        let checkValue = checkRequired(name);
+        let checkSub = checkRequired(adress);
+        let checkDate1 = checkRequired(date1);
+        let checkDate2 = checkRequired(date2);
+        let checkPeople = checkRequired(people);
+        let checkChild = checkRequired(child);
+        let checkCountry = checkRequired(pays);
+        let checkZip = checkRequired(zip);
+        let checkEmail = checkRequired(email);
+        let checkPhone = checkRequired(phone);
+
+        if (checkValue.value && checkSub.value && checkDate1 && checkDate2 && checkPeople && checkChild && checkCountry && checkZip && checkEmail && checkPhone) {
+            return true;
+        } else {
+            return false;
+        }
+    }
 </script>
