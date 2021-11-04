@@ -189,11 +189,11 @@ if (isset($_GET['maison'])) {
 
 
 
-    .form-control small {
+    .input_row small {
         opacity: 0;
     }
 
-    .form-control.error small {
+    .input_row.error small {
         opacity: 1;
     }
 
@@ -402,7 +402,7 @@ if (isset($_GET['maison'])) {
 
     function showError(input, message) {
         const formControl = input.parentElement;
-        formControl.className = "form-control error";
+        formControl.className = "input_row error";
         const small = formControl.querySelector("small");
         small.innerText = message;
         return input;
@@ -412,13 +412,13 @@ if (isset($_GET['maison'])) {
 
     function showSuccess(input) {
         const formControl = input.parentElement;
-        formControl.className = "form-control success";
+        formControl.className = "input_row success";
         return input;
     }
 
     function checkRequired(input) {
         if (input.value.trim() === "") {
-            return showError(input, `Le champ ${getFieldName(input)} est obligatoire`);
+            return showError(input, `Ce champ est obligatoire`);
         }
         return showSuccess(input);
     }
