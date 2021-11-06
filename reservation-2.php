@@ -28,9 +28,11 @@ function displayDates($date1, $date2, $format = 'd-m-Y')
     return $dates;
 }
 
+if (isset($date)) {
+    $flat = array_merge(...$date);
+    $fulldate = json_encode($flat);
+}
 
-$flat = array_merge(...$date);
-$fulldate = json_encode($flat);
 
 $roomID = $_GET['maison'];
 $select = $db->query("SELECT * FROM rooms WHERE id = '{$roomID}' ");
@@ -361,9 +363,7 @@ if (isset($_GET['maison'])) {
                 return [true, "enabled", "Available"];
 
             } else {
-
                 return [false, "red", "Booked Out"];
-
             }
         }
 
