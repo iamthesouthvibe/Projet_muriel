@@ -745,8 +745,8 @@ nav {
     font-size: 18px;
     line-height: 20px;
     color: #000000;
-    margin-top: 0;
-    margin-bottom: 8vh;
+    margin-top: 20px;
+    margin-bottom: 6vh;
 }
 
 .div_h3_text_presentation h3 {
@@ -767,7 +767,7 @@ nav {
     position: absolute;
     top: 90%;
     left: 50%;
-    transform: translate(-50%, -50%);
+    transform: translate(-50%, -80%);
 }
 
 .container_presentation_maison {

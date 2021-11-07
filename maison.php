@@ -36,8 +36,8 @@ $select = $db->query("SELECT * FROM rooms WHERE id = '{$roomID}' ");
                     </h3>
                 </div>
             </div>
-            <div class="boutton_scroll" data-aos="fade" data-aos-anchor-placement="top-bottom" data-aos-duration="1000" data-aos-delay="600">
-                <svg width="40px" viewBox="0 0 14.334 24.75" class="scroll_anim">
+            <div  class="boutton_scroll">
+                <svg data-aos="fade" data-aos-anchor-placement="top-bottom" data-aos-duration="1000" data-aos-delay="600" width="40px" viewBox="0 0 14.334 24.75" class="scroll_anim">
                     <circle class="circle-1" fill="black" cx="7.167" cy="6" r="1.2" />
                     <circle class="circle-2" fill="black" cx="7.167" cy="6" r="1.2" />
                     <path stroke="black" fill="transparent" stroke-width="0.5" d="M7.167,0.5C3.485,0.5,0.5,3.485,0.5,7.167v10.416                   c0,3.682,2.985,6.667,6.667,6.667s6.667-2.985,6.667-6.667V7.167C13.834,3.485,10.849,0.5,7.167,0.5z" />
