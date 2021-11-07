@@ -9,8 +9,15 @@ if (!is_logged_in()) {
 include 'includes/header.php';
 include 'includes/navigation.php';
 
-$sql = "SELECT * FROM calendar WHERE id > 5";
+
+$sql = "SELECT * FROM rooms INNER JOIN calendar WHERE rooms.id = calendar.id_rooms AND calendar.id > 5";
 $result = $db->query($sql);
+
+if (isset($_GET['delete'])) {
+    $toDelete = $_GET['delete'];
+    $sql = $db->query("DELETE FROM calendar WHERE id = '$toDelete' ");
+    header("Location: calendar.php");
+}
 ?>
 
 <div class="admin_page">
@@ -36,7 +43,7 @@ $result = $db->query($sql);
                 <?php while ($rows = $result->fetch(PDO::FETCH_ASSOC)) : ?>
                     <tr>
                         <td><?= $rows['libelle']; ?></td>
-                        <!--<td><?= $rows['maison']; ?></td> -->
+                        <td><?= $rows['room_number']; ?></td>
                         <td><?= $rows['checkin']; ?></td>
                         <td><?= $rows['checkout']; ?></td>
                         <td><?= $rows['email']; ?></td>

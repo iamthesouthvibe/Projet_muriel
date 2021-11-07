@@ -9,16 +9,9 @@
     <li>
       <a href="reservations.php">
         <i class='bx bx-home-heart'></i>
-        <span class="links_name">New Reservations</span>
+        <span class="links_name">Demande de reservations</span>
       </a>
-      <span class="tooltip">New Reservations</span>
-    </li>
-    <li>
-      <a href="rooms.php">
-        <i class='bx bx-home'></i>
-        <span class="links_name">Maison</span>
-      </a>
-      <span class="tooltip">Maison</span>
+      <span class="tooltip">Demande de reservations</span>
     </li>
     <li>
       <a href="calendar.php">
@@ -28,12 +21,20 @@
       <span class="tooltip">Reservations</span>
     </li>
     <li>
+      <a href="rooms.php">
+        <i class='bx bx-home'></i>
+        <span class="links_name">Maison</span>
+      </a>
+      <span class="tooltip">Maison</span>
+    </li>
+    <li>
       <a href="tours.php">
         <i class='bx bx-news'></i>
         <span class="links_name">Rubriques</span>
       </a>
       <span class="tooltip">Rubriques</span>
     </li>
+    <!--
     <li>
       <a href="products.php">
         <i class='bx bx-shopping-bag'></i>
@@ -41,7 +42,7 @@
       </a>
       <span class="tooltip">Articles</span>
     </li>
-    <!--
+    
     <li>
       <a href="">
         <i class='bx bx-basket'></i>
