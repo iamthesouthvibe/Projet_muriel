@@ -12,6 +12,7 @@ $sql = "SELECT * FROM rooms INNER JOIN reservations WHERE rooms.id = reservation
 $result = $db->query($sql);
 $row_count = 1;
 
+
 if (isset($_GET['delete'])) {
   $toDelete = $_GET['delete'];
   $sql = $db->query("DELETE FROM reservations WHERE id = '$toDelete' ");
@@ -31,12 +32,14 @@ if (isset($_GET['delete'])) {
         <tr>
           <th>#</th>
           <th>Maison</th>
-          <th>Name</th>
+          <th>Nom</th>
           <th>Checkin</th>
           <th>Checkout</th>
-          <th>Phone</th>
-          <th># of People</th>
+          <th>Téléphone</th>
+          <th>Adultes</th>
+          <th>Enfants</th>
           <th>Email</th>
+          <th>Prix total</th>
 
           <th>Action</th>
         </tr>
@@ -51,7 +54,15 @@ if (isset($_GET['delete'])) {
             <td><?= $rows['checkout']; ?></td>
             <td><?= $rows['phone']; ?></td>
             <td><?= $rows['people']; ?></td>
+            <td><?= $rows['children']; ?></td>
             <td><?= $rows['email']; ?></td>
+            <?php
+            ini_set("display_errors", 1);
+            date_default_timezone_set('Europe/Paris');
+            $date_debut = strtotime($rows['checkin']);
+            $date_fin = strtotime($rows['checkout']);
+            $nbJour = round(($date_fin - $date_debut) / 60 / 60 / 24, 0); ?>
+            <td><?= $nbJour * $rows['price']; ?>€</td>
 
             <td>
               <a href="reservations.php?delete=<?= $rows['id']; ?>"><i class='bx bx-trash'></i></a>

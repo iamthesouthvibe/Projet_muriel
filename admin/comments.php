@@ -8,7 +8,8 @@ if (!is_logged_in()) {
 
 include 'includes/header.php';
 include 'includes/navigation.php';
-$sql = "SELECT * FROM comments ORDER BY id_rooms";
+
+$sql = "SELECT * FROM rooms INNER JOIN comments WHERE rooms.id = comments.id_rooms ORDER BY comments.id_rooms ";
 $result = $db->query($sql);
 $row_count = 1;
 
@@ -29,10 +30,10 @@ if (isset($_GET['delete'])) {
       <thead>
         <tr>
           <th>#</th>
-          <th>Name</th>
+          <th>Maison</th>
+          <th>Nom</th>
           <th>Date</th>
-          <th>Comment</th>
-          <th>Id House</th>
+          <th>Commentaire</th>
           <th>Supp</th>
         </tr>
       </thead>
@@ -40,13 +41,12 @@ if (isset($_GET['delete'])) {
         <?php while ($rows = $result->fetch(PDO::FETCH_ASSOC)) : ?>
           <tr>
             <td><?= $row_count++; ?></td>
+            <td><?= $rows['room_number']; ?></td>
             <td><?= $rows['fullname']; ?></td>
             <td><?= $rows['date_c']; ?></td>
             <td><?= $rows['comment']; ?></td>
-            <td><?= $rows['id_rooms']; ?></td>
             <td>
-              <a href="comments.php?delete=<?= $rows['id']; ?>" class="w3-btn w3-small w3-red"><span class="glyphicon glyphicon-trash">supp</span></a>
-
+              <a href="comments.php?delete=<?= $rows['id']; ?>"><i class='bx bx-trash'></i></a>
             </td>
           </tr>
         <?php endwhile; ?>

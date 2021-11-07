@@ -34,7 +34,7 @@ if (isset($_GET['delete'])) {
                     <th>Maison</th>
                     <th>Checkin</th>
                     <th>Checkout</th>
-                    <th>Phone</th>
+                    <th>Téléphone</th>
                     <th>Email</th>
                     <th>Supprimer</th>
                 </tr>
