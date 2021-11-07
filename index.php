@@ -21,23 +21,26 @@ $sql = $db->query("SELECT * FROM rooms LIMIT 4");
 
 
 <main>
+
+  <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+
   <!--  ######Ceci est la partie Html de la page d'accueil. Raccorder le back par la suite.##### -->
   <div class="qhero">
     <div class="qhero_page_accueil">
-      <h1 class="style_h1_accueil"> <span>“Laissez-vous
-          <!--<span class="italic_title">séduire</span>--> séduire par
-        </span> </h1>
-      <h1 class="style_h1_accueil"> <span>un univers d’élégance</span> </h1>
-      <h1 class="style_h1_accueil"><span>4 maisons, 4 ambiances</h1></span>
-      <h1 class="style_h1_accueil"><span>le regard d’une femme”</h1></span>
-      <h2 class="style_h2_accueil">Je veux créer des maisons pour faire rêver, des maisons qui soient comme des personnalités, surprenantes, inattendues, accueillantes et généreuses. Où l’on ait envie de rester et de revenir, comme pour poursuivre une conversation interrompue trop tôt. </h2>
-      <svg width="40px" viewBox="0 0 14.334 24.75" class="scroll_anim">
-        <circle class="circle-1" fill="black" cx="7.167" cy="6" r="1.2" />
-        <circle class="circle-2" fill="black" cx="7.167" cy="6" r="1.2" />
-        <path stroke="black" fill="transparent" stroke-width="0.5" d="M7.167,0.5C3.485,0.5,0.5,3.485,0.5,7.167v10.416                   c0,3.682,2.985,6.667,6.667,6.667s6.667-2.985,6.667-6.667V7.167C13.834,3.485,10.849,0.5,7.167,0.5z" />
-      </svg>
+      <h1 class="style_h1_accueil" data-aos="fade-up" data-aos-anchor-placement="bottom-bottom" data-aos-duration="1000" data-aos-delay="0"> “Laissez-vous séduire par un univers d’élégance <br> et de douceur.<br> 4 maisons, 4 ambiances le
+        <br> regard d’une femme”
+      </h1>
+      <h2 class="style_h2_accueil" data-aos="fade-up" data-aos-anchor-placement="bottom-bottom" data-aos-duration="1000" data-aos-delay="200">Je veux créer des maisons pour faire rêver, des maisons qui soient comme des personnalités, surprenantes, inattendues, accueillantes et généreuses. Où l’on ait envie de rester et de revenir, comme pour poursuivre une conversation interrompue trop tôt. </h2>
+      <div data-aos="fade-up" data-aos-anchor-placement="bottom-bottom" data-aos-duration="1000" data-aos-delay="400">
+        <svg width="40px" viewBox="0 0 14.334 24.75" class="scroll_anim">
+          <circle class="circle-1" fill="black" cx="7.167" cy="6" r="1.2" />
+          <circle class="circle-2" fill="black" cx="7.167" cy="6" r="1.2" />
+          <path stroke="black" fill="transparent" stroke-width="0.5" d="M7.167,0.5C3.485,0.5,0.5,3.485,0.5,7.167v10.416                   c0,3.682,2.985,6.667,6.667,6.667s6.667-2.985,6.667-6.667V7.167C13.834,3.485,10.849,0.5,7.167,0.5z" />
+        </svg>
+      </div>
     </div>
   </div>
+
 
 
   <!-- Swiper -->
@@ -55,9 +58,9 @@ $sql = $db->query("SELECT * FROM rooms LIMIT 4");
         <div class="swiper-slide">
           <img src="<?= $room['photo']; ?>" alt="" srcset="">
           <div class="swiper-slide-titre">
-            <h2><?= $room['shortName']; ?></h2>
-            <p><?= $shortDesc . '...'; ?></p>
-            <button><a href="maison.php?room=<?= $room['id']; ?>">Découvrir</a></button>
+            <h2 data-aos="fade-up" data-aos-anchor-placement="bottom-bottom" data-aos-duration="1000" data-aos-delay="0"><?= $room['shortName']; ?></h2>
+            <p data-aos="fade-up" data-aos-anchor-placement="bottom-bottom" data-aos-duration="1000" data-aos-delay="200"><?= $shortDesc . '...'; ?></p>
+            <button data-aos="fade-up" data-aos-anchor-placement="bottom-bottom" data-aos-duration="1000" data-aos-delay="400"><a class="waitBeforeNavigate" href="maison.php?room=<?= $room['id']; ?>">Découvrir</a></button>
           </div>
         </div>
       <?php endwhile; ?>
@@ -73,11 +76,11 @@ $sql = $db->query("SELECT * FROM rooms LIMIT 4");
 
   <div class="section_muriel">
     <div>
-      <img src="assets/jpg/Muriel.png" alt="Photo Profil Muriel" class="img_muriel">
+      <img src="assets/jpg/Muriel.png" alt="Photo Profil Muriel" class="img_muriel" data-aos="fade-up" data-aos-anchor-placement="center-bottom" data-aos-duration="1000" data-aos-delay="100">
     </div>
     <div class="section_muriel_titre_text">
-      <h2 class="titre_section_muriel">Muriel</h2>
-      <p class="texte_section_muriel">Je quittai à 20 ans la métropole pour la Martinique, par amour et par désir d’aventures. Avec mon compagnon, nous sommes arrivés là-bas avec nos seules valises et envies de conquérir le monde. De débrouilles en petits boulots, incertains du lendemain, nous avons finalement passé 21 ans sur cette île aux mille couleurs et saveurs. Inspirée par cette terre où se rencontrent les cultures, où se métissent les imaginations, je me suis prise d’une véritable passion pour habiller les murs de ma maison de toutes ces influences.<br> <br>
+      <h2 class="titre_section_muriel" data-aos="fade-up" data-aos-anchor-placement="bottom-bottom" data-aos-duration="1000" data-aos-delay="200">Muriel</h2>
+      <p class="texte_section_muriel" data-aos="fade-up" data-aos-anchor-placement="top-bottom" data-aos-duration="1000" data-aos-delay="500">Je quittai à 20 ans la métropole pour la Martinique, par amour et par désir d’aventures. Avec mon compagnon, nous sommes arrivés là-bas avec nos seules valises et envies de conquérir le monde. De débrouilles en petits boulots, incertains du lendemain, nous avons finalement passé 21 ans sur cette île aux mille couleurs et saveurs. Inspirée par cette terre où se rencontrent les cultures, où se métissent les imaginations, je me suis prise d’une véritable passion pour habiller les murs de ma maison de toutes ces influences.<br> <br>
         Quand j’ai eu envie d’explorer d’autres horizons, Narbonne fut comme une évidence. J’y retrouvais le soleil, la mer, la générosité joyeuse de ses habitants. Rien ne me plaît tant que le contraste. J’aime chiner dans les greniers et les brocantes, trouver des meubles auxquels redonner vie. Je ponce, je peins, je détourne. J’aime cette petite étincelle d’étonnement que provoque la rencontre entre un objet design et une bricole restaurée sur mes murs.<br><br>
         Je veux créer des maisons pour faire rêver, des maisons qui soient comme des personnalités, surprenantes, inattendues, accueillantes et généreuses. Où l’on ait envie de rester et de revenir, comme pour poursuivre une conversation interrompue trop tôt.son de charme situé au coeur de la martinique. </p>
     </div>
@@ -87,11 +90,6 @@ $sql = $db->query("SELECT * FROM rooms LIMIT 4");
   include "includes/cursor.php";
   include("./includes/footer.php"); ?>
 </main>
-
-
-
-
-<!-- Swiper JS -->
 
 
 
@@ -140,14 +138,34 @@ $sql = $db->query("SELECT * FROM rooms LIMIT 4");
     cursor.classList.remove('cursor_active_left');
     cursor2.classList.remove('cursor2_active_left');
   })
-  let tl = gsap.timeline({
-    defaults: {
-      ease: 'power4.out'
-    }
-  });
-  tl.to('.style_h1_accueil span', {
-    y: '0%',
-    duration: 1.5,
-    stagger: 0.3,
-  });
+  /*let tl = gsap.timeline({
+     defaults: {
+       ease: 'power4.out'
+     }
+   });
+   tl.to('.style_h1_accueil span', {
+     y: '0%',
+     duration: 1.5,
+     stagger: 0.3,
+   }); */
+  AOS.init();
+</script>
+
+<script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+
+<script>
+  function waitBeforeNavigate(ev) {
+    ev.preventDefault(); // prevent default anchor behavior
+    const goTo = this.getAttribute("href"); // store anchor href
+
+    setTimeout(function () {
+        window.location = goTo;
+    }, 1000); // time in ms
+
+    document.body.style.opacity = "0"
+};
+
+document.querySelectorAll(".waitBeforeNavigate")
+    .forEach(EL => EL.addEventListener("click", waitBeforeNavigate));
+      
 </script>

@@ -1,4 +1,4 @@
-<footer>
+<footer data-aos="fade-up" data-aos-anchor-placement="top-bottom">
     <div class="footer_class">
         <div>
             <ul>
@@ -68,7 +68,24 @@
         </div>
         <div>
             <h5>Website designed and coded by <br>
-                Jean Vayssié et Léo Labeaume</h5>
+                <a href="https://www.instagram.com/jeanvayssie/" target="_blank" class="lien-insta"> Jean Vayssié </a> et <a href="https://www.instagram.com/iamthesouthvibe/" target="_blank" class="lien-insta"> Léo Labeaume </a>
+            </h5>
         </div>
     </div>
 </footer>
+
+<script>
+    function waitBeforeNavigate(ev) {
+        ev.preventDefault(); // prevent default anchor behavior
+        const goTo = this.getAttribute("href"); // store anchor href
+
+        setTimeout(function() {
+            window.location = goTo;
+        }, 1000); // time in ms
+
+        document.body.style.opacity = "0"
+    };
+
+    document.querySelectorAll(".waitBeforeNavigate")
+        .forEach(EL => EL.addEventListener("click", waitBeforeNavigate));
+</script>
