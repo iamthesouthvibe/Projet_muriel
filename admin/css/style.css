@@ -291,6 +291,7 @@ body {
     font-weight: normal;
     font-size: 4vw;
     margin: 0;
+    color: #9A4747;
 }
 
 .admin_page .header_admin img {
@@ -433,6 +434,77 @@ textarea {
     font-size: 20px;
 }
 
+/* ### Fin style page admin header  ### */
+
+/* ####### Debut Admin ajout commentaire #######*/
+
+.admin_page_addcomm form input {
+    margin-top: 15px;
+}
+
+.admin_page_addcomm form textarea {
+    margin-top: 15px;
+}
+
+.admin_page_addcomm .margin-commentaire {
+    margin-top: 50px;
+}
+
+.admin_page_addcomm .margin-ajouter {
+    margin-top: 50px;
+    position: relative;
+    
+    margin-top: 50px!important;
+
+    height: 30px;
+    width: 154px;
+    border: none !important;
+    border-radius: 40px;
+    background-color: #9A4747 !important;
+    color: #FCF7EC;
+    font-size: 20px;
+    margin-top: 20px;
+
+}
+
+.container-area {
+    display: flex;
+}
+
+.area2 {
+    margin-left: 80px;
+    margin-top: 50px;
+}
+
+.area2 label {
+    vertical-align: top;
+    margin-top: 35px;
+}
+
+.admin_page_addcomm form textarea {
+    margin-top: 0;
+}
+
+.margin-ajouter {
+    transform: translate(-160px, 80px);
+}
+
+.admin_page_addcomm .container-area input {
+    border: none;
+    border-bottom: solid 1px #000;
+    background-color: #FCF7EC;
+}
+
+.admin_page_addcomm .container-area label {
+    font-family: Neue Montreal;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 20px;
+    line-height: 95.5%;
+    color: #9A4747;
+}
+
+/* ####### Fin Admin ajout commentaire #######*/
 
 /* ####### Debut Admin page utlisateurs style */
 

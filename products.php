@@ -53,7 +53,7 @@ $select = $db->query("SELECT * FROM products");
                 <a class="waitBeforeNavigate" href="">
                     <h5 data-aos="fade-up" data-aos-anchor-placement="top-bottom" data-aos-duration="400" data-aos-delay="300"><?= $product['name_p']; ?></h5>
                 </a>
-                <a class="waitBeforeNavigate" href="" class="lien_achat" data-aos="fade-up" data-aos-anchor-placement="top-bottom" data-aos-duration="400" data-aos-delay="400">Acheter →</a>
+                <a class="waitBeforeNavigate" href="" class="lien_achat" >Acheter →</a>
             </div>
         <?php endwhile; ?>
     </div>

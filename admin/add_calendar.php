@@ -43,7 +43,7 @@ if (isset($_POST['add'])) {
 ?>
 <div class="admin_page">
     <div class="header_admin">
-        <h1>Ajouter une reservation</h1>
+        <h1>Ajouter une réservation</h1>
         <img src="../assets/png/LOGO_02_PNG_NOIR.png" alt="Logo Muriel">
     </div>
 

@@ -40,9 +40,10 @@ if (isset($_POST['add'])) {
         <img src="../assets/png/LOGO_02_PNG_NOIR.png" alt="Logo Muriel">
     </div>
     <div class="admin_page_addcomm">
-        <form method="POST" enctype="multipart/form-data">
-            <label for="">Votre maison :</label>
-            <select name="maison" id="">
+        <form class="container-area" method="POST" enctype="multipart/form-data">
+           <div class="area1"> 
+               <label for="">Votre maison :</label>
+            <select class="margin-commentaire" name="maison" id="">
                 <?php while ($test = $result->fetch(PDO::FETCH_ASSOC)) : ?>
                     <option value="<?= $test['id_rooms']; ?>"><?= $test['room_number']; ?></option>
                 <?php endwhile; ?>
@@ -53,11 +54,13 @@ if (isset($_POST['add'])) {
             <br>
             <label for="">Mois et année : </label>
             <input type="text" name="date" id="" required>
-            <br>
+            </div>
+            <div class="area2">
+            
             <label for="">Commentaire : </label>
             <textarea name="comm" id="" cols="30" rows="10" required></textarea>
-            <br>
-            <input type="submit" name="add" value="Ajouter">
+            <input class="margin-ajouter"  type="submit" name="add" value="Ajouter">
+            </div>
         </form>
     </div>
 </div>

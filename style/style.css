@@ -2101,7 +2101,7 @@ footer {
     text-decoration: none!important;
 }
 
-a:-webkit-any-link {
+footer a:-webkit-any-link {
     color: black;
     text-decoration: none;
 }

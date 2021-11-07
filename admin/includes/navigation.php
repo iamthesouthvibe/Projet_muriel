@@ -9,16 +9,16 @@
     <li>
       <a href="reservations.php">
         <i class='bx bx-home-heart'></i>
-        <span class="links_name">Demande de reservations</span>
+        <span class="links_name">Demande de réservations</span>
       </a>
-      <span class="tooltip">Demande de reservations</span>
+      <span class="tooltip">Demande de réservations</span>
     </li>
     <li>
       <a href="calendar.php">
         <i class='bx bx-calendar-week'></i>
-        <span class="links_name">Reservations</span>
+        <span class="links_name">Réservations</span>
       </a>
-      <span class="tooltip">Reservations</span>
+      <span class="tooltip">Réservations</span>
     </li>
     <li>
       <a href="rooms.php">
@@ -67,9 +67,9 @@
     <li>
       <a href="../index.php">
         <i class='bx bx-map'></i>
-        <span class="links_name">Visite site</span>
+        <span class="links_name">Visiter le site</span>
       </a>
-      <span class="tooltip">visite site</span>
+      <span class="tooltip">Visiter le site</span>
     </li>
   </ul>
   <div class="profile_content">

@@ -117,7 +117,7 @@ if (isset($_GET['delete']) && !empty($_GET['delete'])) {
         </div>
         <div class="form_users">
             <form action="users.php" method="POST" class="form" id="add_user" enctype='multipart/form-data' onsubmit="return validate();">
-                <h2>Ajouter un nouveau utilisateur</h2>
+                <h2>Ajouter un nouvel utilisateur</h2>
                 <div class="form-control form_users_top">
                     <div>
                         <label for="fullname">Nom complet</label>
