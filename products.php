@@ -7,7 +7,7 @@ $select = $db->query("SELECT * FROM products");
 
 <main>
 
-<link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
 
     <!-- Section accueil -->
     <div class="qhero_page_produits">
@@ -42,21 +42,6 @@ $select = $db->query("SELECT * FROM products");
     <!-- Section produits -->
 
     <div class="espace_flexbox_produit_02">
-<<<<<<< HEAD
-    <?php while ($product = mysqli_fetch_assoc($select)) : ?>
-        <div class="espace_produit_02">
-            <a href="">
-                <img src=""<?= $product['photo_p']; ?>" alt="Thumbnail du produit">
-            </a>
-            <a href="">
-                <h6><?= $product['price_p']; ?></h6>
-            </a>
-            <a href="">
-                <h5><?= $product['name_p']; ?></h5>
-            </a>
-            <a href="" class="lien_achat">Acheter →</a>
-        </div>
-=======
         <?php while ($product = $select->fetch(PDO::FETCH_ASSOC)) : ?>
             <div class="espace_produit_02">
                 <a class="waitBeforeNavigate" href="">
@@ -70,7 +55,6 @@ $select = $db->query("SELECT * FROM products");
                 </a>
                 <a class="waitBeforeNavigate" href="" class="lien_achat" data-aos="fade-up" data-aos-anchor-placement="top-bottom" data-aos-duration="400" data-aos-delay="400">Acheter →</a>
             </div>
->>>>>>> 5cc558a2e9efa5245ca124c4ba6aaa5980a4d7ac
         <?php endwhile; ?>
     </div>
 
@@ -83,23 +67,21 @@ $select = $db->query("SELECT * FROM products");
 </main>
 
 <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
-  <script>
-    AOS.init();
-  </script>
-
 <script>
-  function waitBeforeNavigate(ev) {
-    ev.preventDefault(); // prevent default anchor behavior
-    const goTo = this.getAttribute("href"); // store anchor href
+    AOS.init();
 
-    setTimeout(function () {
-        window.location = goTo;
-    }, 1000); // time in ms
 
-    document.body.style.opacity = "0"
-};
+    function waitBeforeNavigate(ev) {
+        ev.preventDefault(); // prevent default anchor behavior
+        const goTo = this.getAttribute("href"); // store anchor href
 
-document.querySelectorAll(".waitBeforeNavigate")
-    .forEach(EL => EL.addEventListener("click", waitBeforeNavigate));
-      
+        setTimeout(function() {
+            window.location = goTo;
+        }, 1000); // time in ms
+
+        document.body.style.opacity = "0"
+    };
+
+    document.querySelectorAll(".waitBeforeNavigate")
+        .forEach(EL => EL.addEventListener("click", waitBeforeNavigate));
 </script>
