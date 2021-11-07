@@ -2094,9 +2094,14 @@ footer {
     font-size: 17px;
     line-height: 90%;
     /* or 15px */
-    color: #000000;
+    color: #000000!important;
     padding-right: 1vw;
     padding-left: 1vw;
+    text-decoration: none!important;
+}
+
+a:-webkit-any-link {
+    color: black;
     text-decoration: none;
 }
 
