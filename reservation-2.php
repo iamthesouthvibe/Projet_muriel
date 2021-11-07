@@ -75,10 +75,8 @@ if (isset($_GET['maison'])) {
                     </p>';
                 }
             } else {
-                echo '<p class="text-center alert alert-danger">Invalid Check-in date provided. Please avoid using a past date.</p>';
+                echo '<p class="text-center alert alert-danger">Date de départ non valide fournie. Veuillez éviter d\'utiliser une date passée.</p>';
             }
-        } else {
-            echo '<br /> All fields are required!';
         }
     }
 }
@@ -120,7 +118,7 @@ if (isset($_GET['maison'])) {
     }
 
     .qhero_page_reservation_2 .row .input_row {
-        display: flex;
+        display: block;
         margin-bottom: 20px;
     }
 
@@ -262,13 +260,14 @@ if (isset($_GET['maison'])) {
                 </div>
                 <div>
                     <div class="input_row">
-                        <label class="form-control-label">People</label>
+                        <label class="form-control-label">Adultes</label>
                         <input type="number" class="form-control" max="10" min="0" name="people" id="people">
                         <br>
+                        <div></div>
                         <small>Error Message</small>
                     </div>
                     <div class="input_row">
-                        <label class="form-control-label">child</label>
+                        <label class="form-control-label">Enfants</label>
                         <input type="number" class="form-control" max="10" min="0" name="children" id="child">
                         <br>
                         <small>Error Message</small>
