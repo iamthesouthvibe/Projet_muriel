@@ -18,7 +18,7 @@ include 'includes/header.php';
         </div>
     </div>
         <div class="div_bouton_retour_home">
-        <button class="bouton_retour_home"><a href="index.php">Retour à l'Accueil</a></button>
+        <button class="bouton_retour_home"><a class="waitBeforeNavigate" href="index.php">Retour à l'Accueil</a></button>
         </div>  
 </div>
 
@@ -33,3 +33,21 @@ include 'includes/header.php';
 
     document.body.style.overflow="hidden";
 </script>
+
+<script>
+  function waitBeforeNavigate(ev) {
+    ev.preventDefault(); // prevent default anchor behavior
+    const goTo = this.getAttribute("href"); // store anchor href
+
+    setTimeout(function () {
+        window.location = goTo;
+    }, 1000); // time in ms
+
+    document.body.style.opacity = "0"
+};
+
+document.querySelectorAll(".waitBeforeNavigate")
+    .forEach(EL => EL.addEventListener("click", waitBeforeNavigate));
+      
+</script>
+

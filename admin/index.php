@@ -1,16 +1,15 @@
-
 <?php
 
-    require_once $_SERVER['DOCUMENT_ROOT'].'/core/core.php';
-    include '../helpers/helpers.php';
-    if(!is_logged_in()){
-        login_error_check();
-    }
-    include 'includes/header.php';
-    include 'includes/navigation.php';
-    #header("Location: events.php");
+require_once $_SERVER['DOCUMENT_ROOT'] . '/core/core.php';
+include '../helpers/helpers.php';
+if (!is_logged_in()) {
+    login_error_check();
+}
+include 'includes/header.php';
+include 'includes/navigation.php';
+#header("Location: events.php");
 
-    header("Location: rooms.php");
+header("Location: reservations.php");
 ?>
 <!--
 <div class="w3-container w3-main" style="margin-left:200px">

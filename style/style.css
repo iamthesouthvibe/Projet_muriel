@@ -38,6 +38,7 @@ body {
     background-color: #FCF7EC;
     height: 100%;
     font-family: neue_montrealregular;
+    transition: 1s;
 }
 
 
@@ -2096,6 +2097,7 @@ footer {
     color: #000000;
     padding-right: 1vw;
     padding-left: 1vw;
+    text-decoration: none;
 }
 
 footer ul {
@@ -2119,6 +2121,15 @@ footer ul {
 .footer_class a:hover::after {
     transform: scaleX(1);
     transform-origin: bottom left;
+}
+
+.footer h5 a .lien-insta {
+    text-decoration: none;
+    font-family: neue_montrealregular;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 17px;
+    line-height: 90%;
 }
 
 
@@ -2239,7 +2250,7 @@ footer ul {
         height: 3px;
         width: 50px;
         opacity: 1;
-        left: 0;
+        left: 0;    
         transform: rotate(0deg);
         -moz-transform: rotate(0deg);
         -o-transform: rotate(0deg);

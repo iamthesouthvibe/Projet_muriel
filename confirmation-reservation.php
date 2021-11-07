@@ -40,7 +40,7 @@ $nbJour = round(($date_fin - $date_debut) / 60 / 60 / 24, 0);
 </div>
 <div class="section_prix-total">
     <h4>Prix Total</h4>
-    <h5><?= $nbJour * $reservation['price']; ?> $</h5>
+    <h5><?= $nbJour * $reservation['price']; ?>€</h5>
 
 </div>
 
