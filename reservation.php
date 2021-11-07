@@ -35,6 +35,18 @@ $sql = $db->query("SELECT * FROM rooms");
         font-family: ITCGaramondStd-BkNarrow;
     }
 
+    .qhero_page_reservation option .test-hover:hover {
+        transition-duration: 500ms;
+        background-color: black;
+        color: red;
+    }
+
+    .test-hover:hover {
+        transition-duration: 500ms;
+        background-color: black;
+        color: red;
+    }
+
     .qhero_page_reservation input {
         width: 300px;
         height: 35px;
@@ -66,12 +78,12 @@ $sql = $db->query("SELECT * FROM rooms");
 <div class="qhero_page_reservation">
     <div class="form">
         <div class="input">
-            <form method="get" action="reservation-2.php">
-                <select name="maison" id="" class="test">
-                    <option value="" selected="true" disabled="disabled">Votre maison</option>
+            <form data-aos="fade" data-aos-anchor-placement="bottom-bottom" data-aos-duration="1000" method="get" action="reservation-2.php">
+                <select  name="maison" id="" class="test">
+                    <option  value="" selected="true" disabled="disabled">Votre maison</option>
                     <?php while ($room = $sql->fetch(PDO::FETCH_ASSOC)) : ?>
 
-                        <option value="<?= $room['id']; ?>"><?= $room['shortName']; ?></option>
+                        <option class="test-hover" value="<?= $room['id']; ?>"><?= $room['shortName']; ?></option>
                     <?php endwhile; ?>
                 </select>
                 <input type="submit" value="Vérifier les disponibilités" class="button">
@@ -94,6 +106,7 @@ $sql = $db->query("SELECT * FROM rooms");
         }
     });
 </script>
+
 
 <script>
     function waitBeforeNavigate(ev) {
