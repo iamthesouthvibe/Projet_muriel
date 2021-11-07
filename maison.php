@@ -504,13 +504,8 @@ $select = $db->query("SELECT * FROM rooms WHERE id = '{$roomID}' ");
                     <a class="waitBeforeNavigate" data-aos="fade" data-aos-anchor-placement="top-bottom" data-aos-delay="190" href="">Lire l'article →</a>
                 </div>
             </div>
-<<<<<<< HEAD
-            <div class="lien_page_blog">
-                <a href="/blog.php">Voir tous les articles →</a>
-=======
             <div class="lien_page_blog" data-aos="fade-up" data-aos-anchor-placement="top-bottom" data-aos-duration="1000">
                 <a class="waitBeforeNavigate" href="">Voir tous les articles →</a>
->>>>>>> 5cc558a2e9efa5245ca124c4ba6aaa5980a4d7ac
             </div>
 
         </div>
@@ -537,13 +532,8 @@ $select = $db->query("SELECT * FROM rooms WHERE id = '{$roomID}' ");
                 <?php endwhile; ?>
 
             </div>
-<<<<<<< HEAD
-            <div class="lien_page_produit">
-                <a href="products.php">Voir tous les produits →</a>
-=======
             <div class="lien_page_produit" data-aos="fade-up" data-aos-anchor-placement="top-bottom" data-aos-duration="1000">
                 <a class="waitBeforeNavigate" href="">Voir tous les produits →</a>
->>>>>>> 5cc558a2e9efa5245ca124c4ba6aaa5980a4d7ac
             </div>
 
         </div>
