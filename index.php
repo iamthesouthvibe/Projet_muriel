@@ -7,12 +7,6 @@ $sql = $db->query("SELECT * FROM rooms LIMIT 4");
 ?>
 
 <style>
-  .style_h1_accueil {
-    position: relative;
-    overflow: hidden;
-    margin: 0;
-  }
-
   .style_h1_accueil span {
     display: inline-block;
     transform: translateY(100%);
