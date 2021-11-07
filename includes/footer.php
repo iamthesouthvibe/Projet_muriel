@@ -3,61 +3,61 @@
         <div>
             <ul>
                 <li>
-                    <a href="" class="bouton-up">Haut de la Page</a>
+                    <a class="waitBeforeNavigate" data-aos="fade-up" data-aos-anchor-placement="bottom-bottom" href="" class="bouton-up">Haut de la Page</a>
                 </li>
             </ul>
         </div>
         <div>
             <ul>
                 <li>
-                    <h4>Destinations :</h4>
+                    <h4 data-aos="fade-up" data-aos-anchor-placement="bottom-bottom">Destinations :</h4>
                 </li>
                 <li>
-                    <a href="maison.php?room=23">Martinique</a>
+                    <a class="waitBeforeNavigate" data-aos="fade-up" data-aos-anchor-placement="bottom-bottom" href="maison.php?room=23">Martinique</a>
                 </li>
                 <li>
-                    <a href="maison.php?room=24">Narbonne</a>
+                    <a class="waitBeforeNavigate" data-aos="fade-up" data-aos-anchor-placement="bottom-bottom" href="maison.php?room=24">Narbonne</a>
                 </li>
                 <li>
-                    <a href="maison.php?room=25">Gruissan</a>
+                    <a class="waitBeforeNavigate" data-aos="fade-up" data-aos-anchor-placement="bottom-bottom" href="maison.php?room=25">Gruissan</a>
                 </li>
                 <li>
-                    <a href="maison.php?room=26">Pyrénnées</a>
-                </li>
-            </ul>
-        </div>
-        <div>
-            <ul>
-                <li>
-                    <h4>Pages :</h4>
-                </li>
-                <li>
-                    <a href="/index.php">Home</a>
-                </li>
-                <li>
-                    <a href="/products.php">Articles</a>
-                </li>
-                <li>
-                    <a href="/blog.php">Blog</a>
-                </li>
-                <li>
-                    <a href="/contact.php">Contact</a>
-                </li>
-                <li>
-                    <a href="/RGPD.php">RGPD</a>
-                </li>
-                <li>
-                    <a href="/admin/login.php">Admin</a>
+                    <a class="waitBeforeNavigate" data-aos="fade-up" data-aos-anchor-placement="bottom-bottom" href="maison.php?room=26">Pyrénnées</a>
                 </li>
             </ul>
         </div>
         <div>
             <ul>
                 <li>
-                    <h4>Social :</h4>
+                    <h4 data-aos="fade-up" data-aos-anchor-placement="bottom-bottom">Pages :</h4>
                 </li>
                 <li>
-                    <a href="https://www.instagram.com/">Instagram</a>
+                    <a class="waitBeforeNavigate" data-aos="fade-up" data-aos-anchor-placement="bottom-bottom" href="/index.php">Home</a>
+                </li>
+                <li>
+                    <a class="waitBeforeNavigate" data-aos="fade-up" data-aos-anchor-placement="bottom-bottom" href="/products.php">Articles</a>
+                </li>
+                <li>
+                    <a class="waitBeforeNavigate" data-aos="fade-up" data-aos-anchor-placement="bottom-bottom" href="/blog.php">Blog</a>
+                </li>
+                <li>
+                    <a class="waitBeforeNavigate" data-aos="fade-up" data-aos-anchor-placement="bottom-bottom" href="/contact.php">Contact</a>
+                </li>
+                <li>
+                    <a class="waitBeforeNavigate" data-aos="fade-up" data-aos-anchor-placement="bottom-bottom" href="/RGPD.php">RGPD</a>
+                </li>
+                <li>
+                    <a class="waitBeforeNavigate" data-aos="fade-up" data-aos-anchor-placement="bottom-bottom" href="/admin/login.php">Admin</a>
+                </li>
+            </ul>
+        </div>
+        <div>
+            <ul>
+                <li>
+                    <h4 data-aos="fade-up" data-aos-anchor-placement="bottom-bottom">Social :</h4>
+                </li>
+                <li>
+                    <a data-aos="fade-up" data-aos-anchor-placement="bottom-bottom" href="https://www.instagram.com/" target="_blank">Instagram</a>
                 </li>
             </ul>
         </div>
