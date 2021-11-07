@@ -76,11 +76,7 @@ $sql = $db->query("SELECT * FROM rooms LIMIT 4");
 
   <div class="section_muriel">
     <div>
-<<<<<<< HEAD
-      <img src="assets/jpg/MURIEL-PROFIL.jpeg" alt="Photo Profil Muriel" class="img_muriel">
-=======
       <img src="assets/jpg/Muriel.png" alt="Photo Profil Muriel" class="img_muriel" data-aos="fade-up" data-aos-anchor-placement="center-bottom" data-aos-duration="1000" data-aos-delay="100">
->>>>>>> 5cc558a2e9efa5245ca124c4ba6aaa5980a4d7ac
     </div>
     <div class="section_muriel_titre_text">
       <h2 class="titre_section_muriel" data-aos="fade-up" data-aos-anchor-placement="bottom-bottom" data-aos-duration="1000" data-aos-delay="200">Muriel</h2>
