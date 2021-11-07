@@ -9,7 +9,7 @@ if (!is_logged_in()) {
 include 'includes/header.php';
 include 'includes/navigation.php';
 
-$sql = "SELECT * FROM calendar";
+$sql = "SELECT * FROM calendar WHERE id > 5";
 $result = $db->query($sql);
 ?>
 

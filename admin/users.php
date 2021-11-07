@@ -21,7 +21,7 @@ $row_count = 1; ####//Row Counter
 @$email = $_POST['email'];
 @$role = $_POST['role'];
 @$password = $_POST['password'];
-@$password2 =$_POST['password2'];
+@$password2 = $_POST['password2'];
 @$joinDate = date("Y-m-d H:m:i");
 
 //CODE TO REGISTER A NEW ADMINISTRATOR
@@ -44,15 +44,15 @@ if (isset($_POST['add'])) {
                 // Upload file
                 if (move_uploaded_file($_FILES['file']['tmp_name'], $target_dir . $fileName)) {
                     // Insert record
-                        $sql = "INSERT INTO users (`full_name`, `email`, `password`, `join_date`, `permissions`, `photo`) VALUES('$fullname','$email','$password','$joinDate' ,'$role','$fileName')";
-                        $insert = $db->query($sql);
-                
-                        if ($insert) {
-                            $_SESSION['add_admin'] = 'New user successfully added!';
-                            header("Location: users.php");
-                        } else {
-                            printf("Erreur : %s\n", $db->error);
-                        }
+                    $sql = "INSERT INTO users (`full_name`, `email`, `password`, `join_date`, `permissions`, `photo`) VALUES('$fullname','$email','$password','$joinDate' ,'$role','$fileName')";
+                    $insert = $db->query($sql);
+
+                    if ($insert) {
+                        $_SESSION['add_admin'] = 'New user successfully added!';
+                        header("Location: users.php");
+                    } else {
+                        printf("Erreur : %s\n", $db->error);
+                    }
                 }
             } else {
                 echo '<div>Extiensions acceptées : png, gif, jpg, jpeg</div>';
@@ -60,7 +60,7 @@ if (isset($_POST['add'])) {
         } else {
             echo '<div class="w3-red w3-center"> Passwords do not match!</div> ';
         }
-    } 
+    }
 }
 
 //CODE TO DELETE A DATABASE USER
@@ -70,22 +70,17 @@ if (isset($_GET['delete']) && !empty($_GET['delete'])) {
     $_SESSION['add_admin'] = 'User successfully deleted!';
     header("Location: users.php");
 }
-//CODE TO EDIT A USER (UPDATE DATABASE)
-if (isset($_GET['edit']) && !empty($_GET['edit'])) {
-    $toEditID = $_GET['edit'];
-    $myedit = $db->query("SELECT * FROM users WHERE id = '$toEditID' ");
-    $edit = mysqli_fetch_assoc($myedit);
-}
+
 
 ?>
 <style>
-  .form-control small {
-    opacity: 0;
-  }
+    .form-control small {
+        opacity: 0;
+    }
 
-  .form-control.error small {
-    opacity: 1;
-  }
+    .form-control.error small {
+        opacity: 1;
+    }
 </style>
 
 <div class="admin_page">
@@ -106,7 +101,7 @@ if (isset($_GET['edit']) && !empty($_GET['edit'])) {
                     </tr>
                 </thead>
                 <tbody>
-                    <?php while ($rows = mysqli_fetch_assoc($result)) : ?>
+                    <?php while ($rows = $result->fetch(PDO::FETCH_ASSOC)) : ?>
                         <tr>
                             <td><?= $row_count++; ?></td>
                             <td><?= $rows['full_name']; ?></td>
@@ -114,7 +109,6 @@ if (isset($_GET['edit']) && !empty($_GET['edit'])) {
                             <td><?= $rows['last_login']; ?></td>
                             <td>
                                 <a href="users.php?delete=<?= $rows['id']; ?>"><i class='bx bx-trash'></i></a>
-                                <a href="users.php?edit=<?= $rows['id']; ?>"><span></span></a>
                             </td>
                         </tr>
                     <?php endwhile; ?>
@@ -123,19 +117,19 @@ if (isset($_GET['edit']) && !empty($_GET['edit'])) {
         </div>
         <div class="form_users">
             <form action="users.php" method="POST" class="form" id="add_user" enctype='multipart/form-data' onsubmit="return validate();">
-            <h2>Ajouter un nouveau utilisateur</h2>
+                <h2>Ajouter un nouveau utilisateur</h2>
                 <div class="form-control form_users_top">
                     <div>
                         <label for="fullname">Nom complet</label>
                         <br>
-                        <input type="text" value="<?= (isset($_GET['edit'])) ? '' . $edit['full_name'] . '' : '' . $fullname . ''; ?>" name="fullname" id="fullname" placeholder="" >
+                        <input type="text" value="<?= (isset($_GET['edit'])) ? '' . $edit['full_name'] . '' : '' . $fullname . ''; ?>" name="fullname" id="fullname" placeholder="">
                         <br>
                         <small>Error Message</small>
                     </div>
                     <div>
                         <label for="email">Email</label>
                         <br>
-                        <input type="email" value="<?= (isset($_GET['edit'])) ? '' . $edit['email'] . '' : '' . $email . ''; ?>" name="email" id="email" placeholder="" >
+                        <input type="email" value="<?= (isset($_GET['edit'])) ? '' . $edit['email'] . '' : '' . $email . ''; ?>" name="email" id="email" placeholder="">
                         <br>
                         <small>Error Message</small>
                     </div>
