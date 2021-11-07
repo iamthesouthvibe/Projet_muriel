@@ -67,15 +67,14 @@ $sql = $db->query("SELECT * FROM rooms");
     <div class="form">
         <div class="input">
             <form method="get" action="reservation-2.php">
-                <select name="maison" id="" class="test" data-aos="fade" data-aos-anchor-placement="top-bottom" data-aos-delay="0" data-aos-duration="3000">
-                    
+                <select name="maison" id="" class="test">
                     <option value="" selected="true" disabled="disabled">Votre maison</option>
                     <?php while ($room = $sql->fetch(PDO::FETCH_ASSOC)) : ?>
 
                         <option value="<?= $room['id']; ?>"><?= $room['shortName']; ?></option>
                     <?php endwhile; ?>
                 </select>
-                <input class="waitBeforeNavigate" data-aos="fade" data-aos-anchor-placement="top-bottom" data-aos-delay="450" data-aos-duration="3000" type="submit" value="Vérifier les disponibilités" class="button">
+                <input type="submit" value="Vérifier les disponibilités" class="button">
             </form>
         </div>
     </div>
@@ -97,18 +96,17 @@ $sql = $db->query("SELECT * FROM rooms");
 </script>
 
 <script>
-  function waitBeforeNavigate(ev) {
-    ev.preventDefault(); // prevent default anchor behavior
-    const goTo = this.getAttribute("href"); // store anchor href
+    function waitBeforeNavigate(ev) {
+        ev.preventDefault(); // prevent default anchor behavior
+        const goTo = this.getAttribute("href"); // store anchor href
 
-    setTimeout(function () {
-        window.location = goTo;
-    }, 1000); // time in ms
+        setTimeout(function() {
+            window.location = goTo;
+        }, 1000); // time in ms
 
-    document.body.style.opacity = "0"
-};
+        document.body.style.opacity = "0"
+    };
 
-document.querySelectorAll(".waitBeforeNavigate")
-    .forEach(EL => EL.addEventListener("click", waitBeforeNavigate));
-      
+    document.querySelectorAll(".waitBeforeNavigate")
+        .forEach(EL => EL.addEventListener("click", waitBeforeNavigate));
 </script>

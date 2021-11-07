@@ -1,5 +1,3 @@
-    <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/humanity/jquery-ui.css" type="text/css">
-
     <?php
     require_once 'core/core.php';
     include 'includes/header.php';
@@ -81,6 +79,8 @@
         }
     }
     ?>
+
+    <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/humanity/jquery-ui.css" type="text/css">
 
     <style>
         .header_right button {
@@ -328,25 +328,16 @@
                     </div>
                     <div>
                         <div class="input_row">
-                            <<<<<<< HEAD <label class="form-control-label">Email</label>
-                                <input type="mail" class="form-control" max="5" name="email" id="email">
-                                <br>
-                                <small>Error Message</small>
+                            <label class="form-control-label">Email</label>
+                            <input type="mail" class="form-control" max="5" name="email" id="email">
+                            <br>
+                            <small>Error Message</small>
                         </div>
                         <div class="input_row">
                             <label class="form-control-label">Telephone</label>
                             <input type="tel" class="form-control" max="5" name="phone" id="phone">
                             <br>
                             <small>Error Message</small>
-                            =======
-                            <label class="form-control-label">eMail</label>
-                            <input type="mail" class="form-control" max="5" name="email" required>
-
-                        </div>
-                        <div class="input_row">
-                            <label class="form-control-label">Télephone</label>
-                            <input type="tel" class="form-control" max="5" name="phone" required>
-                            >>>>>>> AOS-ANIMATION
                         </div>
                     </div>
                 </div>

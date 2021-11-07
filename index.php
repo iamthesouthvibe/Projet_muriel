@@ -96,7 +96,6 @@ $sql = $db->query("SELECT * FROM rooms LIMIT 4");
 
 <!-- Swiper JS -->
 <script src="https://unpkg.com/swiper@7/swiper-bundle.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.6.1/gsap.min.js"></script>
 
 <!-- Initialize Swiper -->
 <script>
@@ -138,16 +137,7 @@ $sql = $db->query("SELECT * FROM rooms LIMIT 4");
     cursor.classList.remove('cursor_active_left');
     cursor2.classList.remove('cursor2_active_left');
   })
-  /*let tl = gsap.timeline({
-     defaults: {
-       ease: 'power4.out'
-     }
-   });
-   tl.to('.style_h1_accueil span', {
-     y: '0%',
-     duration: 1.5,
-     stagger: 0.3,
-   }); */
+
   AOS.init();
 </script>
 
@@ -158,14 +148,13 @@ $sql = $db->query("SELECT * FROM rooms LIMIT 4");
     ev.preventDefault(); // prevent default anchor behavior
     const goTo = this.getAttribute("href"); // store anchor href
 
-    setTimeout(function () {
-        window.location = goTo;
+    setTimeout(function() {
+      window.location = goTo;
     }, 1000); // time in ms
 
     document.body.style.opacity = "0"
-};
+  };
 
-document.querySelectorAll(".waitBeforeNavigate")
+  document.querySelectorAll(".waitBeforeNavigate")
     .forEach(EL => EL.addEventListener("click", waitBeforeNavigate));
-      
 </script>
