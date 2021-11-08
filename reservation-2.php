@@ -184,12 +184,12 @@
         }
 
         .qhero_page_reservation_2 .col_price .submit {
-            width: 300px;
-            height: 35px;
+            width: 317PX;
+            height: 41px;
             background: #9A4747;
             border-radius: 40px;
             border: none;
-            font-size: 30px;
+            font-size: 25px;
             color: #FCF7EC;
             text-decoration: none;
         }
@@ -209,6 +209,16 @@
 
         .input_row.error small {
             opacity: 1;
+        }
+
+        .prix-nuit-div {
+            width: 100px;
+            float: left;
+        }
+
+        .boutton-reservation-finale {
+            width: 315px;
+            float: right;
         }
 
         @media screen and (max-width: 450px) {
@@ -342,17 +352,18 @@
                     </div>
                 </div>
             </div>
-
-            <div class="row finalPrice" data-aos="fade" data-aos-anchor-placement="top-bottom" data-aos-delay="1000" data-aos-duration="2000">
-                <div class="col_price">
-                    <h3>Prix par nuit</h3>
-                    <h4><?= $maison['price']; ?>€</h4>
+            <div>
+                <div class="row finalPrice" class="prix-nuit-div" data-aos="fade" data-aos-anchor-placement="top-bottom" data-aos-delay="1000" data-aos-duration="2000">
+                    <div class="col_price" >
+                        <h3>Prix par nuit</h3>
+                        <h4><?= $maison['price']; ?>€</h4>
+                    </div>
                 </div>
-            </div>
 
-            <div class="row" data-aos="fade" data-aos-anchor-placement="top-bottom" data-aos-delay="1500" data-aos-duration="2000">
-                <div class="col_price reservationFinale">
-                    <input type="submit" name="checkin" value="Demande de réservation" class="submit">
+                <div class="row" class="boutton-reservation-finale" data-aos="fade" data-aos-anchor-placement="top-bottom" data-aos-delay="1500" data-aos-duration="2000" >
+                    <div class="col_price reservationFinale">
+                        <input type="submit" name="checkin" value="Demande de réservation" class="submit">
+                    </div>
                 </div>
             </div>
         </form>
