@@ -346,7 +346,7 @@
             <div class="row finalPrice" data-aos="fade" data-aos-anchor-placement="top-bottom" data-aos-delay="1000" data-aos-duration="2000">
                 <div class="col_price">
                     <h3>Prix par nuit</h3>
-                    <h4>450$</h4>
+                    <h4><?= $maison['price']; ?>€</h4>
                 </div>
             </div>
 
