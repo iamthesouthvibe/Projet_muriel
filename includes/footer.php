@@ -16,10 +16,10 @@
                     <a class="waitBeforeNavigate" data-aos="fade-up" data-aos-anchor-placement="bottom-bottom" href="maison.php?room=23">Martinique</a>
                 </li>
                 <li>
-                    <a class="waitBeforeNavigate" data-aos="fade-up" data-aos-anchor-placement="bottom-bottom" href="maison.php?room=24">Narbonne</a>
+                    <a class="waitBeforeNavigate" data-aos="fade-up" data-aos-anchor-placement="bottom-bottom" href="maison.php?room=25">Narbonne</a>
                 </li>
                 <li>
-                    <a class="waitBeforeNavigate" data-aos="fade-up" data-aos-anchor-placement="bottom-bottom" href="maison.php?room=25">Gruissan</a>
+                    <a class="waitBeforeNavigate" data-aos="fade-up" data-aos-anchor-placement="bottom-bottom" href="maison.php?room=24">Gruissan</a>
                 </li>
                 <li>
                     <a class="waitBeforeNavigate" data-aos="fade-up" data-aos-anchor-placement="bottom-bottom" href="maison.php?room=26">Pyrénnées</a>

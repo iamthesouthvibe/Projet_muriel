@@ -49,13 +49,13 @@ if (isset($_POST['update'])) {
 
     <div class="form-group col-md-4">
       <label></label>
-      <input type="submit" class="btn btn-block btn-lg btn-success" value="update" name="update">
+      <input type="submit" class="btn btn-block btn-lg btn-success" value="Changer le prix" name="update">
     </div>
 
     <?php if (isset($_GET['edit']) && !empty($_GET['edit'])) : ?>
       <div class="form-group col-md-4">
         <label></label>
-        <a class="btn btn-block btn-danger btn-lg" href="rooms.php">Cancel Edit</a>
+        <a class="btn btn-block btn-danger btn-lg" href="rooms.php">Retour</a>
       </div>
 
 
