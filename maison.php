@@ -36,7 +36,7 @@ $select = $db->query("SELECT * FROM rooms WHERE id = '{$roomID}' ");
                     </h3>
                 </div>
             </div>
-            <div  class="boutton_scroll">
+            <div class="boutton_scroll">
                 <svg data-aos="fade" data-aos-anchor-placement="top-bottom" data-aos-duration="1000" data-aos-delay="600" width="40px" viewBox="0 0 14.334 24.75" class="scroll_anim">
                     <circle class="circle-1" fill="black" cx="7.167" cy="6" r="1.2" />
                     <circle class="circle-2" fill="black" cx="7.167" cy="6" r="1.2" />
@@ -511,6 +511,7 @@ $select = $db->query("SELECT * FROM rooms WHERE id = '{$roomID}' ");
         </div>
 
         <!-- Section Produits -->
+        <!--
 
         <div class="container_produit">
             <div class="titre_section_produit">
@@ -537,6 +538,7 @@ $select = $db->query("SELECT * FROM rooms WHERE id = '{$roomID}' ");
             </div>
 
         </div>
+                -->
     <?php endwhile; ?>
 
     <!-- Ligne séparator -->
