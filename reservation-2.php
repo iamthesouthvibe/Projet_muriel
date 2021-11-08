@@ -132,7 +132,7 @@
             font-size: 24px;
             margin-right: 15px;
             transform: translate(0px, 7px);
-            min-width: 107px;
+            min-width: 400px;
         }
 
         .qhero_page_reservation_2 .row .input_row input {
@@ -334,7 +334,7 @@
                             <small>Error Message</small>
                         </div>
                         <div class="input_row">
-                            <label class="form-control-label">Telephone</label>
+                            <label class="form-control-label">Téléphone</label>
                             <input type="tel" class="form-control" max="5" name="phone" id="phone">
                             <br>
                             <small>Error Message</small>
