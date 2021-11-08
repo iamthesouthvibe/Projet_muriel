@@ -40,26 +40,27 @@ if (isset($_POST['update'])) {
 <div class="w3-container w3-main" style="margin-left:200px">
   <br />
   <form class="form" action="#" method="post" enctype="multipart/form-data">
+    <h1>
+      <h1><?= $edit['room_number'] ?> </h1>
 
-
-    <div class="form-group col-md-2">
-      <label>Room Price:</label>
-      <input type="text" class="form-control" value="<?= $edit['price'] ?>" name="price">
-    </div>
-
-    <div class="form-group col-md-4">
-      <label></label>
-      <input type="submit" class="btn btn-block btn-lg btn-success" value="Changer le prix" name="update">
-    </div>
-
-    <?php if (isset($_GET['edit']) && !empty($_GET['edit'])) : ?>
-      <div class="form-group col-md-4">
-        <label></label>
-        <a class="btn btn-block btn-danger btn-lg" href="rooms.php">Retour</a>
+      <div class="form-group col-md-2">
+        <label>Prix par nuit</label>
+        <input type="text" class="form-control" value="<?= $edit['price'] ?>" name="price">
       </div>
 
+      <div class="form-group col-md-4">
+        <label></label>
+        <input type="submit" class="btn btn-block btn-lg btn-success" value="Changer le prix" name="update">
+      </div>
 
-    <?php endif; ?>
+      <?php if (isset($_GET['edit']) && !empty($_GET['edit'])) : ?>
+        <div class="form-group col-md-4">
+          <label></label>
+          <a class="btn btn-block btn-danger btn-lg" href="rooms.php">Retour</a>
+        </div>
+
+
+      <?php endif; ?>
 
   </form>
 </div>
