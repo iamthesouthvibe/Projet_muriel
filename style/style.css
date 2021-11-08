@@ -2482,6 +2482,11 @@ footer ul {
         }
     }
     /* Caroussel de photos */
+
+    .swiper {
+        height:50vh;
+    }
+
     .swiper-container {
         width: 100%;
         height: 80vh;
