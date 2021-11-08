@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:8889
--- Generation Time: Oct 03, 2021 at 09:45 AM
+-- Generation Time: Nov 08, 2021 at 06:42 PM
 -- Server version: 5.7.30
 -- PHP Version: 7.4.9
 
@@ -19,16 +19,46 @@ USE `hotel_db`;
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `calendar`
+--
+
+CREATE TABLE IF NOT EXISTS `calendar` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `libelle` varchar(255) NOT NULL,
+  `email` varchar(150) NOT NULL,
+  `phone` varchar(20) NOT NULL,
+  `checkin` date NOT NULL,
+  `checkout` date NOT NULL,
+  `id_rooms` int(11) NOT NULL,
+  PRIMARY KEY (`id`),
+  KEY `id_rooms_2` (`id_rooms`)
+) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `calendar`
+--
+
+INSERT INTO `calendar` (`id`, `libelle`, `email`, `phone`, `checkin`, `checkout`, `id_rooms`) VALUES
+(2, 'test 2', '', '', '2019-02-01', '2019-02-09', 24),
+(3, 'test 3', '', '', '2019-12-01', '2019-12-12', 26),
+(4, '', '', '', '2019-09-01', '2019-09-03', 25),
+(5, 'Léo LABEAUME', 'leo.labeaume@hotmail.fr', '0611879183', '2018-12-01', '2018-12-03', 23);
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `comments`
 --
 
-CREATE TABLE `comments` (
-  `id` int(11) NOT NULL,
+CREATE TABLE IF NOT EXISTS `comments` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
   `fullname` varchar(255) NOT NULL,
   `date_c` varchar(50) DEFAULT NULL,
   `comment` longtext NOT NULL,
-  `id_rooms` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+  `id_rooms` int(11) NOT NULL,
+  PRIMARY KEY (`id`),
+  KEY `id_rooms` (`id_rooms`)
+) ENGINE=InnoDB AUTO_INCREMENT=42 DEFAULT CHARSET=utf8;
 
 --
 -- Dumping data for table `comments`
@@ -44,7 +74,9 @@ INSERT INTO `comments` (`id`, `fullname`, `date_c`, `comment`, `id_rooms`) VALUE
 (31, 'Lara', 'Juin 2012', 'Super séjour grâce à Muriel.L’emplacement est génial, le logement est génial.\r\nMuriel est arrangeante et très agréable.\r\nJe recommande vivement', 24),
 (32, 'Marie Laure', 'Juin 2021', 'Ce joli chalet a tout pour plaire ! Tres bon emplacement avec vue sur la mer et prés des commerces à pied , 4 jolies chambres avec une bonne literie, une grande terrasse conviviale et tout ce qu il faut pour passer un excellent séjour ! Nous nous sommes sentis vraiment chez nous ! Merci Muriel à bientôt', 24),
 (33, 'Nicolas', 'Juillet 2021', 'Magnifique chalet en bord de mer, séjour très agréable et au calme.\r\nTrès bonne communication avec Muriel, Merci pour sa flexibilité.\r\nA recommander', 24),
-(34, 'Carol', 'Juillet 2021', 'Le chalet est très confortable et il y a une vue magnifique depuis la grande terrasse. Nous avons passé un très bon séjour!', 24);
+(34, 'Carol', 'Juillet 2021', 'Le chalet est très confortable et il y a une vue magnifique depuis la grande terrasse. Nous avons passé un très bon séjour!', 24),
+(40, '', 'Janvier 2018', 'Le Chalet est très confortable ! Encore Merci à Muriel pour son accueil', 26),
+(41, 'Léo LABEAUME', 'Octobre 2021', 'test', 24);
 
 -- --------------------------------------------------------
 
@@ -52,10 +84,11 @@ INSERT INTO `comments` (`id`, `fullname`, `date_c`, `comment`, `id_rooms`) VALUE
 -- Table structure for table `gallery`
 --
 
-CREATE TABLE `gallery` (
-  `id` int(11) NOT NULL,
-  `image` text NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=armscii8;
+CREATE TABLE IF NOT EXISTS `gallery` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `image` text NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=armscii8;
 
 --
 -- Dumping data for table `gallery`
@@ -74,16 +107,18 @@ INSERT INTO `gallery` (`id`, `image`) VALUES
 -- Table structure for table `products`
 --
 
-CREATE TABLE `products` (
-  `id_p` int(11) NOT NULL,
+CREATE TABLE IF NOT EXISTS `products` (
+  `id_p` int(11) NOT NULL AUTO_INCREMENT,
   `name_p` varchar(255) NOT NULL,
   `description_p` text NOT NULL,
   `photo_p` text NOT NULL,
   `size_p` varchar(10) NOT NULL,
   `quantity_p` varchar(10) NOT NULL,
   `price_p` varchar(255) NOT NULL,
-  `rooms_id` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+  `rooms_id` int(11) NOT NULL,
+  PRIMARY KEY (`id_p`),
+  KEY `test` (`rooms_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8;
 
 --
 -- Dumping data for table `products`
@@ -102,8 +137,8 @@ INSERT INTO `products` (`id_p`, `name_p`, `description_p`, `photo_p`, `size_p`, 
 -- Table structure for table `reservations`
 --
 
-CREATE TABLE `reservations` (
-  `id` int(11) NOT NULL,
+CREATE TABLE IF NOT EXISTS `reservations` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
   `name` varchar(255) CHARACTER SET utf8 NOT NULL,
   `checkin` date NOT NULL,
   `checkout` date NOT NULL,
@@ -114,8 +149,10 @@ CREATE TABLE `reservations` (
   `address` varchar(255) CHARACTER SET utf8 NOT NULL,
   `commentaire` text CHARACTER SET utf8 NOT NULL,
   `zip` varchar(15) CHARACTER SET utf8 NOT NULL,
-  `id_rooms` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=armscii8;
+  `id_rooms` int(11) NOT NULL,
+  PRIMARY KEY (`id`),
+  KEY `reservations_ibfk_1` (`id_rooms`)
+) ENGINE=InnoDB AUTO_INCREMENT=58 DEFAULT CHARSET=armscii8;
 
 --
 -- Dumping data for table `reservations`
@@ -124,17 +161,16 @@ CREATE TABLE `reservations` (
 INSERT INTO `reservations` (`id`, `name`, `checkin`, `checkout`, `phone`, `people`, `email`, `children`, `address`, `commentaire`, `zip`, `id_rooms`) VALUES
 (3, 'Tul', '2017-12-16', '2017-12-26', '0976245430', 2, 'tembothulani@gmail.com', '', '', '', '', 0),
 (5, 'Leo Labeaume', '2021-06-20', '2021-06-30', '0611879183', 2, 'leo.labeaume@hotmail.fr', '', '', '', '', 0),
-(6, 'Gabrielle Jabarnia', '2021-09-24', '2021-09-30', '0611077511', 1, 'gabriellejabarnia@yahoo.fr', '2', '12 rue rosa bonheur', 'fffffff', '3', 24),
-(7, 'Laurence FERRETTI', '2021-09-24', '2021-09-30', '+33685252008', 1, 'laurence.ferretti@gmail.com', '1', '604 AVENUE GEORGES POMPIDOU', 'ccccccc', '3', 24),
-(8, 'Gabrielle Jabarnia', '2021-09-24', '2021-09-30', '0611077511', 1, 'gabriellejabarnia@yahoo.fr', '2', '12 rue rosa bonheur', 'fffffff', '3', 24),
-(9, 'test', '2021-10-01', '2021-10-08', '0611077511', 4, 'test@gmail.com', '4', '12 rue rosa bonheur', '444444', '4', 25),
-(10, 'Léo LABEAUME', '2021-09-24', '2021-09-30', '0611879183', 4, 'leo.labeaume@hotmail.fr', '3', '5 rue Jean de Beauvais', 'testtttt', '3', 25),
-(11, 'Léo LABEAUME', '2021-10-21', '2021-11-26', '0611879183', 3, 'leo.labeaume@hotmail.fr', '4', '124 boulevard auguste blanqui', 'Bonjour nous sommes intéressés', '75103', 24),
-(12, 'Léo LABEAUME', '2021-10-21', '2021-11-26', '0611879183', 3, 'leo.labeaume@hotmail.fr', '4', '124 boulevard auguste blanqui', 'Bonjour nous sommes intéressés', '75103', 24),
-(13, 'Laurence FERRETTI', '2021-09-24', '2021-09-30', '+33685252008', 3, 'laurence.ferretti@gmail.com', '3', '604 AVENUE GEORGES POMPIDOU', 'hgfhjgjkgjgj', '06110', 25),
-(14, 'Laurence FERRETTI', '2021-09-24', '2021-09-30', '+33685252008', 3, 'laurence.ferretti@gmail.com', '3', '604 AVENUE GEORGES POMPIDOU', 'hgfhjgjkgjgj', '06110', 25),
-(21, 'Léo LABEAUME', '2021-10-14', '2021-10-23', '0611879183', 4, 'leo.labeaume@hotmail.fr', '4', '5 rue Jean de Beauvais', 'nnnnnnnn', '75005', 24),
-(22, 'Léo LABEAUME', '2021-10-15', '2021-10-30', '0611879183', 3, 'leo.labeaume@hotmail.fr', '4', '124 boulevard auguste blanqui', 'KSHFKSLHFKA FASFASFSA', '75103', 25);
+(48, 'Léo LABEAUME', '2021-10-24', '2021-10-31', '0611879183', 2, 'leo.labeaume@hotmail.fr', '2', '124 boulevard auguste blanqui', 'bbbbbbbbbb', '75103', 24),
+(49, 'Michel Thomas-Gerard', '2021-10-24', '2021-10-31', '0611893242', 2, 'michel@gmail.com', '3', '12', 'nnnnnnnn', '75015', 24),
+(50, 'Léo LABEAUME', '2021-11-20', '2021-11-27', '0611879183', 3, 'leo.labeaume@hotmail.fr', '3', '5 rue Jean de Beauvais', 'tttttttt', '75005', 24),
+(51, 'Laurence FERRETTI', '2021-11-01', '2021-11-19', '+33685252008', 8, 'laurence.ferretti@gmail.com', '3', '604 AVENUE GEORGES POMPIDOU', 'test', '06110', 23),
+(52, 'leo', '2021-11-02', '2021-11-03', '0685252008', 4, 'laurence.ferretti@gmail.com', '4', 'test', 'rrrrrr', '06110', 23),
+(53, 'Léo LABEAUME', '2021-11-01', '2021-11-06', '0611879183', 2, 'leo.labeaume@hotmail.fr', '2', '5 rue Jean de Beauvais', '', '75005', 24),
+(54, 'Laurence FERRETTI', '2021-11-05', '2021-11-26', '0685252008', 4, 'laurence.ferretti@gmail.com', '5', '604 AVENUE GEORGES POMPIDOU', 'test commentaire', '06110', 26),
+(55, 'WWWESH Hotel', '2021-11-17', '2021-11-26', '0611077511', 3, 'test@gmail.com', '4', '12 rue rosa bonheur', 'test commentaire', '75015', 24),
+(56, 'Léo LABEAUME', '2021-11-08', '2021-11-13', '0611879183', 5, 'leo.labeaume@hotmail.fr', '4', '124 boulevard auguste blanqui', 'test', '75103', 25),
+(57, 'Léo LABEAUME', '2021-11-08', '2021-11-13', '0611879183', 5, 'leo.labeaume@hotmail.fr', '4', '124 boulevard auguste blanqui', 'test', '75103', 25);
 
 -- --------------------------------------------------------
 
@@ -142,8 +178,8 @@ INSERT INTO `reservations` (`id`, `name`, `checkin`, `checkout`, `phone`, `peopl
 -- Table structure for table `rooms`
 --
 
-CREATE TABLE `rooms` (
-  `id` int(11) NOT NULL,
+CREATE TABLE IF NOT EXISTS `rooms` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
   `room_number` varchar(255) NOT NULL,
   `shortName` varchar(50) NOT NULL,
   `price` text CHARACTER SET armscii8 NOT NULL,
@@ -249,8 +285,9 @@ CREATE TABLE `rooms` (
   `dist4` varchar(100) NOT NULL,
   `dist5` varchar(100) NOT NULL,
   `dist6` varchar(100) NOT NULL,
-  `dist7` varchar(100) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+  `dist7` varchar(100) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=27 DEFAULT CHARSET=utf8;
 
 --
 -- Dumping data for table `rooms`
@@ -268,8 +305,8 @@ INSERT INTO `rooms` (`id`, `room_number`, `shortName`, `price`, `details`, `deta
 -- Table structure for table `tourism`
 --
 
-CREATE TABLE `tourism` (
-  `id` int(11) NOT NULL,
+CREATE TABLE IF NOT EXISTS `tourism` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
   `title` varchar(255) NOT NULL,
   `subtitles` varchar(255) NOT NULL,
   `photo` text NOT NULL,
@@ -277,8 +314,9 @@ CREATE TABLE `tourism` (
   `photo_3` text NOT NULL,
   `location` varchar(255) NOT NULL,
   `details` text NOT NULL,
-  `date` date NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=armscii8;
+  `date` date NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=16 DEFAULT CHARSET=armscii8;
 
 --
 -- Dumping data for table `tourism`
@@ -293,16 +331,17 @@ INSERT INTO `tourism` (`id`, `title`, `subtitles`, `photo`, `photo_2`, `photo_3`
 -- Table structure for table `users`
 --
 
-CREATE TABLE `users` (
-  `id` int(11) NOT NULL,
+CREATE TABLE IF NOT EXISTS `users` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
   `full_name` varchar(255) NOT NULL,
   `email` varchar(255) NOT NULL,
   `password` varchar(80) NOT NULL,
   `join_date` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `last_login` datetime NOT NULL,
   `permissions` varchar(255) NOT NULL,
-  `photo` text NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=armscii8;
+  `photo` text NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=70 DEFAULT CHARSET=armscii8;
 
 --
 -- Dumping data for table `users`
@@ -310,106 +349,17 @@ CREATE TABLE `users` (
 
 INSERT INTO `users` (`id`, `full_name`, `email`, `password`, `join_date`, `last_login`, `permissions`, `photo`) VALUES
 (3, 'admin', 'admin@admin.com', '$2y$10$Dhgz8tgcOjuI08Y0o5wsS.gK3.kNDRNpc.z9Q0qJ3mGpJMYDaIQBi', '2017-12-13 23:12:51', '2021-07-25 20:14:22', 'editor,admin', ''),
-(69, 'L&eacute;o LABEAUME', 'leo.labeaume@hotmail.fr', '$2y$10$u98xl0fuMIL9fFYpQy8q6.6zKcbVuL0YqMjqFc2CbV2Ma8rYvzlGm', '2021-07-25 20:07:14', '2021-10-02 16:30:58', 'editor,admin', '119067618_313029256649032_3533176219461607909_n.jpg');
-
---
--- Indexes for dumped tables
---
-
---
--- Indexes for table `comments`
---
-ALTER TABLE `comments`
-  ADD PRIMARY KEY (`id`),
-  ADD KEY `id_rooms` (`id_rooms`);
-
---
--- Indexes for table `gallery`
---
-ALTER TABLE `gallery`
-  ADD PRIMARY KEY (`id`);
-
---
--- Indexes for table `products`
---
-ALTER TABLE `products`
-  ADD PRIMARY KEY (`id_p`),
-  ADD KEY `test` (`rooms_id`);
-
---
--- Indexes for table `reservations`
---
-ALTER TABLE `reservations`
-  ADD PRIMARY KEY (`id`),
-  ADD KEY `reservations_ibfk_1` (`id_rooms`);
-
---
--- Indexes for table `rooms`
---
-ALTER TABLE `rooms`
-  ADD PRIMARY KEY (`id`);
-
---
--- Indexes for table `tourism`
---
-ALTER TABLE `tourism`
-  ADD PRIMARY KEY (`id`);
-
---
--- Indexes for table `users`
---
-ALTER TABLE `users`
-  ADD PRIMARY KEY (`id`);
-
---
--- AUTO_INCREMENT for dumped tables
---
-
---
--- AUTO_INCREMENT for table `comments`
---
-ALTER TABLE `comments`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=35;
-
---
--- AUTO_INCREMENT for table `gallery`
---
-ALTER TABLE `gallery`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
-
---
--- AUTO_INCREMENT for table `products`
---
-ALTER TABLE `products`
-  MODIFY `id_p` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
-
---
--- AUTO_INCREMENT for table `reservations`
---
-ALTER TABLE `reservations`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
-
---
--- AUTO_INCREMENT for table `rooms`
---
-ALTER TABLE `rooms`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=27;
-
---
--- AUTO_INCREMENT for table `tourism`
---
-ALTER TABLE `tourism`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
-
---
--- AUTO_INCREMENT for table `users`
---
-ALTER TABLE `users`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=70;
+(69, 'L&eacute;o LABEAUME', 'leo.labeaume@hotmail.fr', '$2y$10$u98xl0fuMIL9fFYpQy8q6.6zKcbVuL0YqMjqFc2CbV2Ma8rYvzlGm', '2021-07-25 20:07:14', '2021-11-08 18:33:34', 'editor,admin', '119067618_313029256649032_3533176219461607909_n.jpg');
 
 --
 -- Constraints for dumped tables
 --
+
+--
+-- Constraints for table `calendar`
+--
+ALTER TABLE `calendar`
+  ADD CONSTRAINT `calendar_ibfk_1` FOREIGN KEY (`id_rooms`) REFERENCES `rooms` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION;
 
 --
 -- Constraints for table `comments`
