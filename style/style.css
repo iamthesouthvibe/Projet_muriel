@@ -2106,6 +2106,11 @@ footer a:-webkit-any-link {
     text-decoration: none;
 }
 
+footer :any-link {
+    color: black;
+    text-decoration: none;
+}
+
 footer ul {
     padding-left: 1vw;
     margin-bottom: 10vh;

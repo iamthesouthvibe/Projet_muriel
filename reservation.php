@@ -75,11 +75,14 @@ $sql = $db->query("SELECT * FROM rooms");
     }
 </style>
 
+<main>
+<link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+
 <div class="qhero_page_reservation">
-    <div class="form">
+    <div class="form" data-aos="fade" data-aos-anchor-placement="bottom-bottom" data-aos-duration="1000" data-aos-delay="500">
         <div class="input">
-            <form data-aos="fade" data-aos-anchor-placement="bottom-bottom" data-aos-duration="1000" method="get" action="reservation-2.php">
-                <select  name="maison" id="" class="test">
+            <form method="get" action="reservation-2.php">
+                <select  name="maison" class="test">
                     <option  value="" selected="true" disabled="disabled">Votre maison</option>
                     <?php while ($room = $sql->fetch(PDO::FETCH_ASSOC)) : ?>
 
@@ -91,6 +94,7 @@ $sql = $db->query("SELECT * FROM rooms");
         </div>
     </div>
 </div>
+</main>
 
 <script>
     document.getElementById('bouton_responsive').style.display = 'none';
@@ -107,6 +111,7 @@ $sql = $db->query("SELECT * FROM rooms");
     });
 </script>
 
+<script src="https://unpkg.com/aos@next/dist/aos.js"></script>
 
 <script>
     function waitBeforeNavigate(ev) {

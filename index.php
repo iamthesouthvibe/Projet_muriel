@@ -16,6 +16,8 @@ $sql = $db->query("SELECT * FROM rooms LIMIT 4");
 
 <main>
 
+  <link rel="icon" type="assets/png/favicon.jpg" href="/favicon.jpg"/>
+
   <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
 
   <!--  ######Ceci est la partie Html de la page d'accueil. Raccorder le back par la suite.##### -->
