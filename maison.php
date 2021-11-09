@@ -263,118 +263,30 @@ $select = $db->query("SELECT * FROM rooms WHERE id = '{$roomID}' ");
 
 
 
-        <!-- Swiper Infos techniques maison-->
-
-        <div class="carousel_maison_02" data-aos="fade" data-aos-anchor-placement="top-bottom" data-aos-duration="1000">
-            <div class="swiper mySwiper swiperHover">
-                <div class="swiper-wrapper">
-                    <div class="swiper-slide">
-                        <div class="vide_flexBox">
-                            <p></p>
-                        </div>
-                        <div class="bloc_text_slider">
-                            <p><?= $room['eq1']; ?></p>
-                        </div>
-                        <div class="separator">
-                            <p></p>
-                        </div>
-                        <div>
-                            <p><?= $room['eq2']; ?></p>
-                        </div>
-                        <div class="separator">
-                            <p></p>
-                        </div>
-                        <div>
-                            <p><?= $room['eq3']; ?></p>
-                        </div>
-                        <div class="separator">
-                            <p></p>
-                        </div>
-                        <div>
-                            <p><?= $room['eq4']; ?></p>
-                        </div>
-                        <div class="separator">
-                            <p></p>
-                        </div>
-                        <div>
-                            <p><?= $room['eq5']; ?></p>
-                        </div>
-                        <div class="separator">
-                            <p></p>
-                        </div>
-                        <div>
-                            <p><?= $room['eq6']; ?></p>
-                        </div>
-                        <div class="separator">
-                            <p></p>
-                        </div>
-                        <div>
-                            <p><?= $room['eq7']; ?></p>
-                        </div>
-                        <div class="vide_flexBox">
-                            <p></p>
-                        </div>
-                    </div>
-                    <div class="swiper-slide">
-                        <div class="vide_flexBox">
-                            <p></p>
-                        </div>
-                        <div class="bloc_text_slider">
-                            <p><?= $room['eq8']; ?></p>
-                        </div>
-                        <div class="separator">
-                            <p></p>
-                        </div>
-                        <div>
-                            <p><?= $room['eq9']; ?></p>
-                        </div>
-                        <div class="separator">
-                            <p></p>
-                        </div>
-                        <div>
-                            <p><?= $room['eq10']; ?></p>
-                        </div>
-                        <div class="separator">
-                            <p></p>
-                        </div>
-                        <div>
-                            <p><?= $room['eq11']; ?></p>
-                        </div>
-                        <div class="separator">
-                            <p></p>
-                        </div>
-                        <div>
-                            <p><?= $room['eq12']; ?></p>
-                        </div>
-                        <div class="separator">
-                            <p></p>
-                        </div>
-                        <div>
-                            <p><?= $room['eq13']; ?></p>
-                        </div>
-                        <div class="separator">
-                            <p></p>
-                        </div>
-                        <div>
-                            <p><?= $room['eq14']; ?></p>
-                        </div>
-                        <div class="vide_flexBox">
-                            <p></p>
-                        </div>
-                    </div>
-                </div>
-                <div class="swiper-button-next"></div>
-                <div class="swiper-button-prev"></div>
-            </div>
-        </div>
 
         <!-- Swiper Activités-->
         <div class="carousel_and_map">
             <div class="carousel_maison_03" data-aos="fade-up" data-aos-anchor-placement="top-bottom" data-aos-duration="1000">
                 <div class="swiper mySwiper swiperHover">
-                    <h4>Activités <div class="swiper-button-next"></div>
+                    <h4>Informations <div class="swiper-button-next"></div>
                     </h4>
                     <div class="swiper-wrapper">
+                        <div class="swiper-slide">
+                            <p><?= $room['eq1']; ?></p>
+                            <p><?= $room['eq2']; ?></p>
+                            <p><?= $room['eq3']; ?></p>
+                            <p><?= $room['eq4']; ?></p>
+                            <p><?= $room['eq5']; ?></p>
+                            <p><?= $room['eq6']; ?></p>
+                            <p><?= $room['eq7']; ?></p>
+                            <p><?= $room['eq8']; ?></p>
+                            <p><?= $room['eq9']; ?></p>
+                            <p><?= $room['eq10']; ?></p>
+                            <p><?= $room['eq11']; ?></p>
+                            <p><?= $room['eq12']; ?></p>
+                            <p><?= $room['eq13']; ?></p>
+                            <p><?= $room['eq14']; ?></p>
+                        </div>
                         <div class="swiper-slide">
                             <p><?= $room['act1']; ?></p>
                             <p><?= $room['act2']; ?></p>
@@ -418,6 +330,7 @@ $select = $db->query("SELECT * FROM rooms WHERE id = '{$roomID}' ");
                         </div>
                     </div>
                 </div>
+
             </div>
 
             <div class="mapouter" data-aos="fade-up" data-aos-anchor-placement="top-bottom" data-aos-delay="200" data-aos-duration="1000">
