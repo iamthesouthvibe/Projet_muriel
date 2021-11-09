@@ -11,6 +11,7 @@
   if(isSafari){ 
   /*alert('Is safari');*/
   //Do something
+  cursor.style.display="none";
 
 } else {
   /*alert('Is other browser');*/
