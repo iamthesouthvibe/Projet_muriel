@@ -78,7 +78,7 @@
           <a class="waitBeforeNavigate" href="">03</a>
         </li> -->
         <li>
-          <a class="waitBeforeNavigate" href="contact.php">04</a>
+          <a class="waitBeforeNavigate" href="contact.php">03</a>
         </li>
       </ul>
     </div>
