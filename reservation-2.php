@@ -110,8 +110,9 @@
 
         .qhero_page_reservation_2 h1 span {
             font-family: neue_montrealregular;
-    font-style: normal;
-    font-weight: bold;        }
+            font-style: normal;
+            font-weight: bold;
+        }
 
         .qhero_page_reservation_2 .col {
             display: flex;
@@ -203,8 +204,9 @@
         }
 
         .ui-widget-header {
+            /* Ca c'est la parti au dessus avec les deux fleches */
             border: 1px solid #d49768;
-            background: #b15e6d 50% 50% repeat-x;
+            background: #9a4747 50% 50% repeat-x;
             color: #ffffff;
             font-weight: normal;
         }
@@ -230,7 +232,22 @@
         }
 
         .ajustement-margin-top {
-            margin-top : 40px;
+            margin-top: 40px;
+        }
+
+        .enabled {
+            /* Ca c'est le contour de chaque case jour */
+            background: #9a4747;
+        }
+
+        .ui-state-default,
+        .ui-widget-content .ui-state-default,
+        .ui-widget-header .ui-state-default,
+        .ui-button,
+        html .ui-button.ui-state-disabled:hover,
+        html .ui-button.ui-state-disabled:active {
+            /* Ca c'est le fond de chaque case jour */
+            /* background: red; */
         }
 
         @media screen and (max-width: 450px) {
@@ -278,29 +295,29 @@
             }
 
             .qhero_page_reservation_2 .row .input_row input {
-                width : 90vw;
-                min-width : 0px;
+                width: 90vw;
+                min-width: 0px;
             }
 
             .qhero_page_reservation_2 .row .input_row textarea {
-                width : 89vw;
+                width: 89vw;
             }
 
             .qhero_page_reservation_2 .col_price .submit {
-                width : 315px;
-                height : 39px;
-                font-size : 22px;
+                width: 315px;
+                height: 39px;
+                font-size: 22px;
             }
 
             .prix-nuit-div {
-            width: auto;
-            float: none;
-        }
+                width: auto;
+                float: none;
+            }
 
-        .boutton-reservation-finale {
-            width: auto;
-            float: none;
-        }
+            .boutton-reservation-finale {
+                width: auto;
+                float: none;
+            }
 
         }
     </style>
@@ -313,14 +330,14 @@
                     <div>
                         <div class="input_row">
                             <label for=txtFromDate1><strong>Checkin</strong></label><br>
-                            <input type="text" name="txtFromDate1" id="txtFromDate1" class="home-input"  />
+                            <input type="text" name="txtFromDate1" id="txtFromDate1" class="home-input" />
                             <br>
                             <small>Error Message</small>
                         </div>
 
                         <div class="input_row">
                             <label for=txtFromDate2><strong>Checkout</strong></label><br>
-                            <input type="text" name="txtFromDate2" id="txtFromDate2" class="home-input"  />
+                            <input type="text" name="txtFromDate2" id="txtFromDate2" class="home-input" />
                             <br>
                             <small>Error Message</small>
                         </div>
@@ -396,13 +413,13 @@
             </div>
             <div class="ajustement-margin-top">
                 <div class="row finalPrice prix-nuit-div" data-aos="fade" data-aos-anchor-placement="top-bottom" data-aos-delay="1000" data-aos-duration="2000">
-                    <div class="col_price" >
+                    <div class="col_price">
                         <h3>Prix par nuit</h3>
                         <h4><?= $maison['price']; ?>€</h4>
                     </div>
                 </div>
 
-                <div class="row boutton-reservation-finale"- data-aos="fade" data-aos-anchor-placement="top-bottom" data-aos-delay="1500" data-aos-duration="2000" >
+                <div class="row boutton-reservation-finale" - data-aos="fade" data-aos-anchor-placement="top-bottom" data-aos-delay="1500" data-aos-duration="2000">
                     <div class="col_price reservationFinale">
                         <input type="submit" name="checkin" value="Demande de réservation →" class="submit">
                     </div>
