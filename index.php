@@ -16,7 +16,7 @@ $sql = $db->query("SELECT * FROM rooms LIMIT 4");
 
 <main>
 
-  <link rel="icon" type="assets/png/favicon.jpg" href="/favicon.jpg"/>
+  <link rel="icon" type="assets/png/favicon.jpg" href="/favicon.jpg" />
 
   <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
 
@@ -55,6 +55,7 @@ $sql = $db->query("SELECT * FROM rooms LIMIT 4");
           <img src="<?= $room['photo']; ?>" alt="" srcset="">
           <div class="swiper-slide-titre">
             <h2 data-aos="fade-up" data-aos-anchor-placement="bottom-bottom" data-aos-duration="1000" data-aos-delay="0"><?= $room['shortName']; ?></h2>
+            <h3 data-aos="fade-up" data-aos-anchor-placement="bottom-bottom" data-aos-duration="1000" data-aos-delay="0"><?= $room['lieu']; ?></h3>
             <p data-aos="fade-up" data-aos-anchor-placement="bottom-bottom" data-aos-duration="1000" data-aos-delay="200"><?= $shortDesc . '...'; ?></p>
             <button data-aos="fade-up" data-aos-anchor-placement="bottom-bottom" data-aos-duration="1000" data-aos-delay="400"><a class="waitBeforeNavigate" href="maison.php?room=<?= $room['id']; ?>">Découvrir</a></button>
           </div>
