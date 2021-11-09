@@ -95,6 +95,8 @@
             transform: translate(-50%, 0%);
             display: block;
             margin-top: 10vh;
+            max-width: 1100px;
+
         }
 
         .qhero_page_reservation_2 h1 {
@@ -107,8 +109,9 @@
         }
 
         .qhero_page_reservation_2 h1 span {
-            font-family: NeueMontreal-Bold;
-        }
+            font-family: neue_montrealregular;
+    font-style: normal;
+    font-weight: bold;        }
 
         .qhero_page_reservation_2 .col {
             display: flex;
@@ -116,7 +119,7 @@
         }
 
         .qhero_page_reservation_2 .row {
-            margin-bottom: 50px;
+            /* margin-bottom: 50px; */
         }
 
         .qhero_page_reservation_2 .row .input_row {
@@ -140,6 +143,8 @@
             border-bottom: solid 1px #9A4747;
             background-color: #FCF7EC;
             color: #9A4747;
+            min-width: 280px;
+
         }
 
         .qhero_page_reservation_2 .row .input_row textarea {
@@ -148,6 +153,9 @@
             font-family: neue_montrealbold;
             font-style: normal;
             font-weight: normal;
+            height: 130px;
+            width: 290px;
+
         }
 
         input[type="text"i],
@@ -184,7 +192,7 @@
         }
 
         .qhero_page_reservation_2 .col_price .submit {
-            width: 317PX;
+            width: 357px;
             height: 41px;
             background: #9A4747;
             border-radius: 40px;
@@ -217,11 +225,19 @@
         }
 
         .boutton-reservation-finale {
-            width: 315px;
+            width: 357px;
             float: right;
         }
 
+        .ajustement-margin-top {
+            margin-top : 40px;
+        }
+
         @media screen and (max-width: 450px) {
+
+            .qhero_page_reservation_2 {
+                max-width: 90vw;
+            }
 
             .qhero_page_reservation_2 .col {
                 display: block;
@@ -260,6 +276,32 @@
             .qhero_page_reservation_2 .col_price h4 {
                 font-size: 22px;
             }
+
+            .qhero_page_reservation_2 .row .input_row input {
+                width : 90vw;
+                min-width : 0px;
+            }
+
+            .qhero_page_reservation_2 .row .input_row textarea {
+                width : 89vw;
+            }
+
+            .qhero_page_reservation_2 .col_price .submit {
+                width : 315px;
+                height : 39px;
+                font-size : 22px;
+            }
+
+            .prix-nuit-div {
+            width: auto;
+            float: none;
+        }
+
+        .boutton-reservation-finale {
+            width: auto;
+            float: none;
+        }
+
         }
     </style>
 
@@ -270,36 +312,36 @@
                 <div class="col">
                     <div>
                         <div class="input_row">
-                            <label for=txtFromDate1><strong>Checkin</strong></label>
-                            <input type="text" name="txtFromDate1" id="txtFromDate1" class="home-input" style="width:79px;" />
+                            <label for=txtFromDate1><strong>Checkin</strong></label><br>
+                            <input type="text" name="txtFromDate1" id="txtFromDate1" class="home-input"  />
                             <br>
                             <small>Error Message</small>
                         </div>
 
                         <div class="input_row">
-                            <label for=txtFromDate2><strong>Checkout</strong></label>
-                            <input type="text" name="txtFromDate2" id="txtFromDate2" class="home-input" style="width:79px;" />
+                            <label for=txtFromDate2><strong>Checkout</strong></label><br>
+                            <input type="text" name="txtFromDate2" id="txtFromDate2" class="home-input"  />
                             <br>
                             <small>Error Message</small>
                         </div>
                     </div>
                     <div>
                         <div class="input_row">
-                            <label class="form-control-label">Adultes</label>
+                            <label class="form-control-label">Adultes</label><br>
                             <input type="number" class="form-control" max="10" min="0" name="people" id="people">
                             <br>
                             <div></div>
                             <small>Error Message</small>
                         </div>
                         <div class="input_row">
-                            <label class="form-control-label">Enfants</label>
+                            <label class="form-control-label">Enfants</label><br>
                             <input type="number" class="form-control" max="10" min="0" name="children" id="child">
                             <br>
                             <small>Error Message</small>
                         </div>
                     </div>
                     <div class="input_row">
-                        <label for="">Commentaire</label>
+                        <label for="">Commentaire</label><br>
                         <textarea name="commentaire" id="" cols="30" rows="5"></textarea>
                     </div>
                 </div>
@@ -309,14 +351,14 @@
                 <div class="col" data-aos="fade" data-aos-anchor-placement="top-bottom" data-aos-delay="500" data-aos-duration="2000">
                     <div>
                         <div class="input_row">
-                            <label class="form-control-label">Nom</label>
+                            <label class="form-control-label">Nom</label><br>
                             <input type="text" class="form-control" name="name" id="name">
                             <br>
                             <small>Error Message</small>
                         </div>
 
                         <div class="input_row">
-                            <label class="form-control-label">Adresse</label>
+                            <label class="form-control-label">Adresse</label><br>
                             <input type="text" class="form-control" name="adress" id="adress">
                             <br>
                             <small>Error Message</small>
@@ -324,27 +366,27 @@
                     </div>
                     <div>
                         <div class="input_row">
-                            <label class="form-control-label">Pays</label>
+                            <label class="form-control-label">Pays</label><br>
                             <input type="text" class="form-control" max="5" name="pays" id="pays">
                             <br>
                             <small>Error Message</small>
                         </div>
                         <div class="input_row">
-                            <label class="form-control-label">Code postal</label>
-                            <input type="" class="form-control" name="zip" id="zip">
+                            <label class="form-control-label">Code postal</label><br>
+                            <input type="text" class="form-control" name="zip" id="zip">
                             <br>
                             <small>Error Message</small>
                         </div>
                     </div>
                     <div>
                         <div class="input_row">
-                            <label class="form-control-label">Email</label>
+                            <label class="form-control-label">Email</label><br>
                             <input type="mail" class="form-control" max="5" name="email" id="email">
                             <br>
                             <small>Error Message</small>
                         </div>
                         <div class="input_row">
-                            <label class="form-control-label">Téléphone</label>
+                            <label class="form-control-label">Téléphone</label><br>
                             <input type="tel" class="form-control" max="5" name="phone" id="phone">
                             <br>
                             <small>Error Message</small>
@@ -352,17 +394,17 @@
                     </div>
                 </div>
             </div>
-            <div>
-                <div class="row finalPrice" class="prix-nuit-div" data-aos="fade" data-aos-anchor-placement="top-bottom" data-aos-delay="1000" data-aos-duration="2000">
+            <div class="ajustement-margin-top">
+                <div class="row finalPrice prix-nuit-div" data-aos="fade" data-aos-anchor-placement="top-bottom" data-aos-delay="1000" data-aos-duration="2000">
                     <div class="col_price" >
                         <h3>Prix par nuit</h3>
                         <h4><?= $maison['price']; ?>€</h4>
                     </div>
                 </div>
 
-                <div class="row" class="boutton-reservation-finale" data-aos="fade" data-aos-anchor-placement="top-bottom" data-aos-delay="1500" data-aos-duration="2000" >
+                <div class="row boutton-reservation-finale"- data-aos="fade" data-aos-anchor-placement="top-bottom" data-aos-delay="1500" data-aos-duration="2000" >
                     <div class="col_price reservationFinale">
-                        <input type="submit" name="checkin" value="Demande de réservation" class="submit">
+                        <input type="submit" name="checkin" value="Demande de réservation →" class="submit">
                     </div>
                 </div>
             </div>

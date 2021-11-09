@@ -543,7 +543,7 @@ $select = $db->query("SELECT * FROM rooms WHERE id = '{$roomID}' ");
 
     <!-- Ligne séparator -->
 
-    <div class="ligne_separator" data-aos="fade" data-aos-anchor-placement="top-bottom" data-aos-duration="1000"></div>
+    <!-- <div class="ligne_separator" data-aos="fade" data-aos-anchor-placement="top-bottom" data-aos-duration="1000"></div> -->
 
     <!-- Section Commentaires -->
 

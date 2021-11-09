@@ -79,8 +79,8 @@ $sql = $db->query("SELECT * FROM rooms");
 <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
 
 <div class="qhero_page_reservation">
-    <div class="form">
-        <div data-aos="fade" data-aos-anchor-placement="bottom-bottom" data-aos-duration="1000" data-aos-delay="7   00" class="input">
+    <div class="form" data-aos="fade" data-aos-anchor-placement="bottom-bottom" data-aos-duration="1000" data-aos-delay="500">
+        <div class="input">
             <form method="get" action="reservation-2.php">
                 <select  name="maison" class="test">
                     <option  value="" selected="true" disabled="disabled">Votre maison</option>
