@@ -35,9 +35,6 @@
                     <a class="waitBeforeNavigate" data-aos="fade-up" data-aos-anchor-placement="bottom-bottom" href="/index.php">Home</a>
                 </li>
                 <li>
-                    <a class="waitBeforeNavigate" data-aos="fade-up" data-aos-anchor-placement="bottom-bottom" href="/products.php">Articles</a>
-                </li>
-                <li>
                     <a class="waitBeforeNavigate" data-aos="fade-up" data-aos-anchor-placement="bottom-bottom" href="/blog.php">Blog</a>
                 </li>
                 <li>
