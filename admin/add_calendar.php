@@ -61,8 +61,7 @@ if (isset($_POST['add'])) {
         $insert->execute();
 
         if ($insert) {
-            var_dump($insert);
-            // header("Location: calendar.php");
+            header("Location: calendar.php");
         } else {
             echo 'error';
         }
@@ -77,16 +76,6 @@ if (isset($_POST['add'])) {
         background: #b15e6d 50% 50% repeat-x;
         color: #ffffff;
         font-weight: normal;
-    }
-
-
-
-    .input_row small {
-        opacity: 0;
-    }
-
-    .input_row.error small {
-        opacity: 1;
     }
 </style>
 <div class="admin_page">
@@ -106,16 +95,16 @@ if (isset($_POST['add'])) {
         </select>
 
         <label for="mail">Email</label>
-        <input type="email" name="mail" id="mail" required>
+        <input type="email" name="mail" id="mail">
 
         <label for="phone">Téléphone :</label>
-        <input type="text" name="phone" id="phone" required>
+        <input type="text" name="phone" id="phone">
 
         <label for=txtFromDate1><strong>Checkin</strong></label>
-        <input type="text" name="txtFromDate1" id="txtFromDate1" class="home-input" style="width:79px;" />
+        <input type="text" name="txtFromDate1" id="txtFromDate1" class="home-input" style="width:79px;" required />
 
         <label for=txtFromDate2><strong>Checkout</strong></label>
-        <input type="text" name="txtFromDate2" id="txtFromDate2" class="home-input" style="width:79px;" />
+        <input type="text" name="txtFromDate2" id="txtFromDate2" class="home-input" style="width:79px;" required />
 
         <input type="submit" value="Ajouter" name="add">
 

@@ -8,7 +8,7 @@ if (!is_logged_in()) {
 
 include 'includes/header.php';
 include 'includes/navigation.php';
-$sql = "SELECT * FROM rooms INNER JOIN reservations WHERE rooms.id = reservations.id_rooms ";
+$sql = "SELECT * FROM rooms INNER JOIN reservations WHERE rooms.id = reservations.id_rooms ORDER BY reservations.id DESC";
 $result = $db->query($sql);
 $row_count = 1;
 

@@ -41,25 +41,25 @@ if (isset($_POST['add'])) {
     </div>
     <div class="admin_page_addcomm">
         <form class="container-area" method="POST" enctype="multipart/form-data">
-           <div class="area1"> 
-               <label for="">Votre maison :</label>
-            <select class="margin-commentaire" name="maison" id="">
-                <?php while ($test = $result->fetch(PDO::FETCH_ASSOC)) : ?>
-                    <option value="<?= $test['id_rooms']; ?>"><?= $test['room_number']; ?></option>
-                <?php endwhile; ?>
-            </select>
-            <br>
-            <label for="name">Nom complet : </label>
-            <input type="text" name="name" id="" required>
-            <br>
-            <label for="">Mois et année : </label>
-            <input type="text" name="date" id="" required>
+            <div class="area1">
+                <label for="">Votre maison :</label>
+                <select class="margin-commentaire" name="maison" id="">
+                    <?php while ($test = $result->fetch(PDO::FETCH_ASSOC)) : ?>
+                        <option value="<?= $test['id_rooms']; ?>"><?= $test['room_number']; ?></option>
+                    <?php endwhile; ?>
+                </select>
+                <br>
+                <label for="name">Nom complet : </label>
+                <input type="text" name="name" id="" required>
+                <br>
+                <label for="">Mois et année : </label>
+                <input type="text" name="date" id="" required placeholder="Février 2021">
             </div>
             <div class="area2">
-            
-            <label for="">Commentaire : </label>
-            <textarea name="comm" id="" cols="30" rows="10" required></textarea>
-            <input class="margin-ajouter"  type="submit" name="add" value="Ajouter">
+
+                <label for="">Commentaire : </label>
+                <textarea name="comm" id="" cols="30" rows="10" required></textarea>
+                <input class="margin-ajouter" type="submit" name="add" value="Ajouter">
             </div>
         </form>
     </div>

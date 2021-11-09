@@ -32,7 +32,7 @@ $nbJour = round(($date_fin - $date_debut) / 60 / 60 / 24, 0);
         <?= $reservation['people'] ?> Adultes <br>
         <?= $reservation['children'] ?> Enfants <br>
         <?= $reservation['name'] ?> <br>
-        <?= $reservation['address'] ?> <?= $reservation['zip'] ?> Gaillard <br>
+        <?= $reservation['address'] ?> <?= $reservation['zip'] . ', ' . $reservation['pays'] ?> <br>
         <?= $reservation['email'] ?> <br>
         <?= $reservation['phone'] ?> <br>
         <?= $reservation['commentaire'] ?>

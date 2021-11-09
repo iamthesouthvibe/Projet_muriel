@@ -268,9 +268,11 @@ $select = $db->query("SELECT * FROM rooms WHERE id = '{$roomID}' ");
         <div class="carousel_and_map">
             <div class="carousel_maison_03" data-aos="fade-up" data-aos-anchor-placement="top-bottom" data-aos-duration="1000">
                 <div class="swiper mySwiper swiperHover">
-                    <h4>Informations <div class="swiper-button-next"></div>
+                    <h4>Informations
                     </h4>
+                    <div class="swiper-button-next"></div>
                     <div class="swiper-wrapper">
+
                         <div class="swiper-slide">
                             <p><?= $room['eq1']; ?></p>
                             <p><?= $room['eq2']; ?></p>
@@ -490,7 +492,7 @@ $select = $db->query("SELECT * FROM rooms WHERE id = '{$roomID}' ");
 
 <!-- Initialize Swiper -->
 <script>
-    var swiper = new Swiper(".mySwiper", {
+    var swiper = new Swiper(".carousel_maison .mySwiper", {
         loop: true,
         resizeObserver: false,
         navigation: {
@@ -500,6 +502,14 @@ $select = $db->query("SELECT * FROM rooms WHERE id = '{$roomID}' ");
         pagination: {
             el: ".swiper-pagination",
         }
+    });
+
+    var swiper3 = new Swiper(".carousel_maison_03 .mySwiper", {
+        loop: true,
+        resizeObserver: false,
+        navigation: {
+            nextEl: ".swiper-button-next",
+        },
     });
 
     let swiperHoverRight = document.querySelector('.swiperHover .swiper-button-next ')
@@ -543,26 +553,6 @@ $select = $db->query("SELECT * FROM rooms WHERE id = '{$roomID}' ");
 
     let swiperContainerHeight = document.querySelector('.swiper-container')
     swiperContainerHeight.style.height = "90vh";
-
-
-
-    var swiper2 = new Swiper(".carousel_maison_02 .mySwiper", {
-        loop: true,
-        resizeObserver: false,
-        watchOverflow: false,
-        pagination: {
-            el: ".swiper-pagination",
-        }
-    });
-
-    var swiper3 = new Swiper(".carousel_maison_03 .mySwiper", {
-        loop: true,
-        resizeObserver: false,
-        watchOverflow: false,
-        navigation: {
-            nextEl: ".swiper-button-next",
-        },
-    });
 </script>
 
 <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
