@@ -3,6 +3,12 @@ require_once 'core/core.php';
 include 'includes/header.php';
 
 $roomID = $_GET['room'];
+
+if ($roomID == '') {
+    header('Location: page-404.php');
+} elseif ($roomID !== '23' && $roomID !== '24' && $roomID !== '25' && $roomID !== '26') {
+    header('Location: page-404.php');
+}
 $select = $db->query("SELECT * FROM rooms WHERE id = '{$roomID}' ");
 ?>
 
