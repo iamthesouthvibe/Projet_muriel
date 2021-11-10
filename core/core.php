@@ -1,5 +1,7 @@
 <?php
-$db = new PDO('mysql:host=localhost;dbname=hotel_db', 'root', 'root');
+// $db = new PDO('mysql:host=localhost;dbname=hotel_db', 'root', 'root');
+$db = new PDO('mysql:host=node67-eu.n0c.com;dbname=sxgdzjcq_testSQL', 'sxgdzjcq', '2A8zptPYcmZuQH');
+
 
 if (!$db) {
     echo 'Could not establish database connection, please review your settings';
