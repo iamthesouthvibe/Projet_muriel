@@ -3,6 +3,11 @@
     include 'includes/header.php';
 
     $roomID = $_GET['maison'];
+    if ($roomID == '') {
+        header('Location: page-404.php');
+    } elseif ($roomID !== '23' && $roomID !== '24' && $roomID !== '25' && $roomID !== '26') {
+        header('Location: page-404.php');
+    }
 
     $sql = ("SELECT * FROM calendar WHERE id_rooms = '{$roomID}'");
 
