@@ -40,7 +40,7 @@ $sql = $db->query("SELECT * FROM rooms LIMIT 4");
 
 
   <!-- Swiper -->
-  <div class="swiper mySwiper swiperHover" style="height: 80vh">
+  <div class="swiper mySwiper swiperHover" style="height: 90vh">
     <div class="swiper-wrapper">
       <?php while ($room = $sql->fetch(PDO::FETCH_ASSOC)) :
 
