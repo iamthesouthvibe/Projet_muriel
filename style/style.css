@@ -387,6 +387,11 @@ nav {
     opacity: 0;
 }
 
+.style_h1_accueil span {
+    display: inline-block;
+    transform: translateY(100%);
+  }
+
 
 /* ##### Fin Curseur  ##### */
 

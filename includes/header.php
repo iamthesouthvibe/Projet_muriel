@@ -11,6 +11,7 @@
   <link rel="stylesheet" href="https://unpkg.com/swiper@7/swiper-bundle.min.css" />
 
   <link rel="stylesheet" href="../style/style.css">
+  <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
 
   <!-- Custom styles for this template -->
 
@@ -18,8 +19,6 @@
 
 
 <body>
-
-  <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
 
   <header data-aos="fade" data-aos-anchor-placement="bottom-bottom" data-aos-duration="1000">
 

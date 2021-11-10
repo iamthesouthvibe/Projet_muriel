@@ -70,6 +70,7 @@
         </div>
     </div>
 </footer>
+</body>
 
 <script>
     function waitBeforeNavigate(ev) {

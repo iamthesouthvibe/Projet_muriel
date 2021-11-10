@@ -82,17 +82,16 @@ $sql = $db->query("SELECT * FROM rooms LIMIT 4");
         Je veux créer des maisons pour faire rêver, des maisons qui soient comme des personnalités, surprenantes, inattendues, accueillantes et généreuses. Où l’on ait envie de rester et de revenir, comme pour poursuivre une conversation interrompue trop tôt. </p>
     </div>
   </div>
-
-  <?php
-  include "includes/cursor.php";
-  include("./includes/footer.php"); ?>
 </main>
 
-
+<?php
+include "includes/cursor.php";
+include("./includes/footer.php"); ?>
 
 
 <!-- Swiper JS -->
 <script src="https://unpkg.com/swiper@7/swiper-bundle.min.js"></script>
+<script src="https://unpkg.com/aos@next/dist/aos.js"></script>
 
 <!-- Initialize Swiper -->
 <script>
@@ -136,11 +135,7 @@ $sql = $db->query("SELECT * FROM rooms LIMIT 4");
   })
 
   AOS.init();
-</script>
 
-<script src="https://unpkg.com/aos@next/dist/aos.js"></script>
-
-<script>
   function waitBeforeNavigate(ev) {
     ev.preventDefault(); // prevent default anchor behavior
     const goTo = this.getAttribute("href"); // store anchor href
