@@ -52,7 +52,7 @@ $shortDes3 = substr($blog['details'], 600, 5000);
                 </div>
             </div>
         </div>
-        <div class="container_presentation_blog-unit_colonne_droite" data-aos="fade" data-aos-anchor-placement="top-bottom" data-aos-duration="1000" data-aos-delay="200">
+        <div class="container_presentation_blog-unit_colonne_droite" data-aos="fade" data-aos-anchor-placement="top-bottom" data-aos-duration="1000" data-aos-delay="700">
             <div class="texte-droite-blog-unit">
                 <p>
                     <?= ($blog['details'] != '') ? $shortDes2 : ''; ?>...
