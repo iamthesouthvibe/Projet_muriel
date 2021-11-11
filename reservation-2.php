@@ -557,8 +557,6 @@
     <script src="https://kit.fontawesome.com/a076d05399.js"></script>
     <script src="js/reservation-2.js"></script>
     <script>
-        document.getElementById('bouton_responsive').style.display = 'none';
-
         $(function() {
 
             var unavailableDates = <?php echo $fulldate ?>;
@@ -592,67 +590,4 @@
                 }
             });
         });
-
-
-        const form = document.getElementById("form");
-        const name = document.getElementById("name");
-        const adress = document.getElementById("adress");
-        const date1 = document.getElementById("txtFromDate1");
-        const date2 = document.getElementById('txtFromDate2');
-        const people = document.getElementById('people');
-        const child = document.getElementById('child');
-        const pays = document.getElementById('pays');
-        const zip = document.getElementById('zip');
-        const email = document.getElementById('email');
-        const phone = document.getElementById('phone');
-
-
-        //Show input error message
-
-        function showError(input, message) {
-            const formControl = input.parentElement;
-            formControl.className = "input_row error";
-            const small = formControl.querySelector("small");
-            small.innerText = message;
-            return input;
-        }
-
-        //show success message
-
-        function showSuccess(input) {
-            const formControl = input.parentElement;
-            formControl.className = "input_row success";
-            return input;
-        }
-
-        function checkRequired(input) {
-            if (input.value.trim() === "") {
-                return showError(input, `Ce champ est obligatoire`);
-            }
-            return showSuccess(input);
-        }
-
-        //get field name
-        function getFieldName(input) {
-            return input.id.charAt(0).toUpperCase() + input.id.slice(1);
-        }
-
-        function validate() {
-            let checkValue = checkRequired(name);
-            let checkSub = checkRequired(adress);
-            let checkDate1 = checkRequired(date1);
-            let checkDate2 = checkRequired(date2);
-            let checkPeople = checkRequired(people);
-            let checkChild = checkRequired(child);
-            let checkCountry = checkRequired(pays);
-            let checkZip = checkRequired(zip);
-            let checkEmail = checkRequired(email);
-            let checkPhone = checkRequired(phone);
-
-            if (checkValue.value && checkSub.value && checkDate1 && checkDate2 && checkPeople && checkChild && checkCountry && checkZip && checkEmail && checkPhone) {
-                return true;
-            } else {
-                return false;
-            }
-        }
     </script>

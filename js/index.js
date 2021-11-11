@@ -11,6 +11,7 @@ var swiper = new Swiper(".mySwiper", {
     }
 });
 
+
 let swiperHoverRight = document.querySelector('.swiperHover .swiper-button-next ')
 
 swiperHoverRight.addEventListener('mouseenter', function (e) {
