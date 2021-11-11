@@ -1246,7 +1246,8 @@ nav {
     color: #000000;
     padding-left: 20vw;
     padding-right: 20vw;
-    margin-bottom: 26vh;
+    margin-bottom: 12vh;
+    margin-top: 60px;
 }
 
 .section_boutons_filtre {
@@ -1344,19 +1345,20 @@ nav {
 .espace_produit_02 a {
     text-decoration: none;
     color: rgba(155, 155, 155, 1);
-    font-size: 12px;
+    font-size: 20px;
 }
 
 .espace_produit_02 a img {
     width: 100%;
     height: 40vh;
+    object-fit: cover;
 }
 
 .espace_produit_02 a h6 {
     font-family: ITCGaramondStd-BkNarrow;
     font-style: normal;
     font-weight: normal;
-    font-size: 17px;
+    font-size: 28px;
     line-height: 106%;
     /* or 13px */
     color: #9A4747;
@@ -1625,7 +1627,8 @@ margin: auto;
     color: #9B9B9B;
     padding-left: 20vw;
     padding-right: 20vw;
-    margin-top: 7vh;
+    margin-top: 3vh;
+margin-bottom: 2vh;
 }
 
 .h3_titre-blog-unit {
@@ -1639,6 +1642,9 @@ color: #000000;
 padding-left: 25vw;
 padding-right: 25vw;
 margin-bottom: 10vh;
+max-width: 800px;
+margin-right: auto;
+margin-left: auto;
 }
 
 .container_presentation_blog-unit {
@@ -1647,6 +1653,12 @@ margin-bottom: 10vh;
         justify-content: space-around;
         margin-top: 10vh;
         margin-bottom: 50px;
+        margin-left: 7vw;
+margin-right: 7vw;
+}
+
+.container_presentation_blog-unit_colonne_droite {
+    width : 35vw;
 }
 
 .container_presentation_blog-unit p {
@@ -1664,13 +1676,18 @@ margin-bottom: 10vh;
     font-family: ITCGaramondStd-BkNarrow;
 font-style: normal;
 font-weight: normal;
-    font-size: 70px;
+font-size: calc(36px + 1.5vw);
     line-height: 0.8;
     /* or 81% */
     max-width: 45vw;
     margin: 55px 0;
     
     color: #9A4747;
+    max-width: 660px;
+text-align: center;
+margin-right: auto;
+margin-left: auto;
+
 }
 
 .container_presentation_blog-unit img {
@@ -3191,10 +3208,12 @@ margin: auto;
 
     .container_presentation_blog-unit_colonne_droite {
         margin-top: 50px;
-        margin-bottom: 200px;
+        margin-bottom: 100px;
     }
 
-
+    .container_presentation_blog-unit_colonne_droite {
+        width: auto;
+    }
 
 
     /* ##### Fin style de la page Blog unit ##### */
@@ -3751,6 +3770,11 @@ margin: auto;
     .lien_page_blog {
         margin-top: 70px;
         padding-bottom: 70px;
+    }
+
+    .boutons_maisons {
+        margin-left: auto;
+margin-right: auto;
     }
     /* responsive de la section produits sur la page maison */
     .titre_section_produit .titre_section_produit_h4 {
