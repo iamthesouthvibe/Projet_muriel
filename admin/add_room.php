@@ -36,32 +36,23 @@ if (isset($_POST['update'])) {
 }
 
 ?>
+<div class="admin_page">
+  <div class="header_admin">
+    <h1><?= $edit['room_number'] ?> </h1>
+    <img src="../assets/png/LOGO_02_PNG_NOIR.png" alt="Logo Muriel">
+  </div>
+  <form class="admin_page-addcalendar" action="#" method="post" enctype="multipart/form-data">
 
-<div class="w3-container w3-main" style="margin-left:200px">
-  <br />
-  <form class="form" action="#" method="post" enctype="multipart/form-data">
-    <h1>
-      <h1><?= $edit['room_number'] ?> </h1>
+    <div class="form- col-md-2">
+      <label>Prix par nuit</label>
+      <br>
+      <input type="text" class="form-control" value="<?= $edit['price'] ?>" name="price">
+    </div>
 
-      <div class="form-group col-md-2">
-        <label>Prix par nuit</label>
-        <input type="text" class="form-control" value="<?= $edit['price'] ?>" name="price">
-      </div>
-
-      <div class="form-group col-md-4">
-        <label></label>
-        <input type="submit" class="btn btn-block btn-lg btn-success" value="Changer le prix" name="update">
-      </div>
-
-      <?php if (isset($_GET['edit']) && !empty($_GET['edit'])) : ?>
-        <div class="form-group col-md-4">
-          <label></label>
-          <a class="btn btn-block btn-danger btn-lg" href="rooms.php">Retour</a>
-        </div>
-
-
-      <?php endif; ?>
-
+    <div class="margin-top-page-addroom">
+      <label></label>
+      <input type="submit" value="Changer le prix" name="update" class="button-ajout ">
+    </div>
   </form>
 </div>
 <script>
