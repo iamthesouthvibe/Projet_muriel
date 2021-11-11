@@ -261,7 +261,7 @@
         .ui-widget-content .ui-state-highlight,
         .ui-widget-header .ui-state-highlight {
             border: 2px solid #d97373;
-            background:none ;
+            background: none;
             color: #9A4747;
         }
 
@@ -287,7 +287,7 @@
             border-radius: 3px;
             padding-right: 10px;
         }
-        
+
 
         .ui-button.ui-state-disabled:hover {
             background: red;
@@ -347,19 +347,22 @@
             transition-duration: 500ms;
         }
 
-        .ui-state-hover, .ui-widget-content .ui-state-hover, .ui-widget-header .ui-state-hover, .ui-button:hover {
-            border : none;
-            background : #f5f0e5;
-            transition-duration : 500ms;
-           
+        .ui-state-hover,
+        .ui-widget-content .ui-state-hover,
+        .ui-widget-header .ui-state-hover,
+        .ui-button:hover {
+            border: none;
+            background: #f5f0e5;
+            transition-duration: 500ms;
+
         }
 
-       /* .ui-state-focus  .ui-widget-content  {
+        /* .ui-state-focus  .ui-widget-content  {
             background : red;
         }*/
 
-        
-       /* .ui-widget-header .ui-icon {
+
+        /* .ui-widget-header .ui-icon {
         background-image: url(assets/png/noun_Next_2810810.png); 
     }*/
 
@@ -445,7 +448,7 @@
     </style>
 
     <div class="qhero_page_reservation_2">
-        <h1 data-aos="fade" data-aos-anchor-placement="top-bottom" data-aos-delay="0" data-aos-duration="2000">Votre maison : <span> <?= $maison['shortName']; ?></span></h1>
+        <h1 data-aos="fade" data-aos-anchor-placement="top-bottom" data-aos-delay="0" data-aos-duration="2000">Votre maison : <span> <?= $maison['shortName']; ?> , <?= $maison['lieu']; ?> </span></h1>
         <form action="" method="POST" id="myForm" class="form-control" name="register" onsubmit="return validate();">
             <div class="row" data-aos="fade" data-aos-anchor-placement="top-bottom" data-aos-delay="500" data-aos-duration="2000">
                 <div class="col">
