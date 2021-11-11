@@ -968,8 +968,8 @@ nav {
     align-items: flex-start;
     margin-left: 5vw;
     margin-right: 5vw;
-    gap: 1vw;
-    justify-content: center;
+    gap: 10vw; 
+       justify-content: center;
     margin-left: 0;
     margin-right: 0;
     padding: 25px;
@@ -1005,7 +1005,7 @@ nav {
     font-style: normal;
     font-weight: normal;
     font-size: 36px;
-    line-height: 72.5%;
+    line-height: 100%;
     /* or 26px */
     color: #9A4747;
     margin-top: 15px;
