@@ -3033,6 +3033,7 @@ footer ul {
 
     .boutons_maisons {
         display: block;
+        width: 100%;
     }
 
     .section_boutons_filtre {
