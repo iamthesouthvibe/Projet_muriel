@@ -360,8 +360,8 @@
 
         
        /* .ui-widget-header .ui-icon {
-        background-image: url(assets/png/noun_Next_2810810.png); */
-}
+        background-image: url(assets/png/noun_Next_2810810.png); 
+    }*/
 
         input:focus,
         select:focus,
