@@ -1256,7 +1256,7 @@ nav {
     text-align: center;
     color: #9A4747;
     text-decoration: none;
-    transition-duration: 0.5s;
+    transition: 0.5s;
     cursor: pointer;
 }
 
@@ -1294,13 +1294,6 @@ nav {
     display: -ms-flexbox;
     display: -webkit-flex;
     display: flex;
-    -webkit-flex-direction: row;
-    -ms-flex-direction: row;
-    flex-direction: row;
-    -webkit-flex-wrap: nowrap;
-    -ms-flex-wrap: nowrap;
-    flex-wrap: nowrap;
-    -ms-flex-pack: justify;
     -webkit-align-content: stretch;
     -ms-flex-line-pack: stretch;
     align-content: stretch;
@@ -1310,25 +1303,32 @@ nav {
     margin-left: 25px;
     margin-right: 25px;
     gap: 1vw;
-    justify-content: center;
     margin-left: 0;
     margin-right: 0;
-    text-align: center;
+    padding: 25px;
+    flex-flow: wrap;
+}
+
+.espace_produit_02 {
+    width: 32.5%;
+    margin-bottom: 30px;
 }
 
 .espace_produit_02 a {
     text-decoration: none;
+    color: rgba(155, 155, 155, 1);
+    font-size: 12px;
 }
 
 .espace_produit_02 a img {
-    max-width: 90%;
+    max-width: 100%;
 }
 
 .espace_produit_02 a h6 {
     font-family: neue_montrealregular;
     font-style: normal;
     font-weight: normal;
-    font-size: 12px;
+    font-size: 14px;
     line-height: 106%;
     /* or 13px */
     color: #9A4747;
@@ -2175,7 +2175,7 @@ footer ul {
 
 /* ##### Debut Media Queries  ##### */
 
-@media screen and (max-width: 450px) {
+@media screen and (max-width: 470px) {
     header nav {
         margin: 14px;
     }
@@ -2976,6 +2976,29 @@ footer ul {
         justify-content: center;
         margin-left: 0;
         margin-right: 0;
+    }
+
+    .espace_flexbox_produit_02 {
+        display: block;
+    }
+
+    .espace_produit_02 {
+        width: 100%;
+    }
+
+    .boutons_maisons {
+        display: block;
+    }
+
+    .section_boutons_filtre {
+        display: block;
+        text-align: center;
+        text-align: -webkit-center;
+        margin-bottom: 30
+    }
+
+    .bouton_selection_maison {
+        margin-bottom: 15px;
     }
     .titre_section_produit .titre_section_produit_h4 {
         padding-top: 100px;

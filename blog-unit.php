@@ -3,6 +3,10 @@ require_once 'core/core.php';
 include 'includes/header.php';
 
 $id_blog = $_GET['blog'];
+
+if ($id_blog == '') {
+    header('Location: page-404.php');
+}
 // Requete SQL -> Selectionne tout dans la table tourism
 $sql = $db->query("SELECT * FROM tourism WHERE id = {$id_blog}");
 

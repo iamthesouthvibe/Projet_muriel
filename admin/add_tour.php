@@ -34,8 +34,11 @@ if (!empty($_FILES)) {
     $location = $_SERVER['DOCUMENT_ROOT'] . '/images/';
     move_uploaded_file($tmp_name, $location . $fileName);
   } else {
-    // echo '<div class="w3-center w3-red">The image type must be jpg, jpeg, gif, or png.</div></br>';
+    echo 'Image trop lourd ou pas au bon format';
   }
+
+  $location = $_SERVER['DOCUMENT_ROOT'] . '/images/';
+  move_uploaded_file($tmp_name, $location . $fileName);
 
   $fileName2 = @$_FILES['file2']['name'];
   $ext2 = strtolower(substr($fileName2, strpos($fileName2, '.') + 1));
@@ -47,8 +50,11 @@ if (!empty($_FILES)) {
     $location2 = $_SERVER['DOCUMENT_ROOT'] . '/images/';
     move_uploaded_file($tmp_name2, $location2 . $fileName2);
   } else {
-    //echo '<div class="w3-center w3-red">The image type must be jpg, jpeg, gif, or png.</div></br>';
+    echo 'Image trop lourd ou pas au bon format';
   }
+
+  $location2 = $_SERVER['DOCUMENT_ROOT'] . '/images/';
+  move_uploaded_file($tmp_name2, $location2 . $fileName2);
 }
 
 //INSERTING THE EVENT INFORMATION IN THE DATABASE
