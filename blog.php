@@ -36,7 +36,7 @@ $select = $db->query("SELECT * FROM tourism ORDER BY id desc");
             <button class="bouton_selection_maison" data-aos="fade-up" data-aos-anchor-placement="top-bottom" data-aos-duration="1000" data-aos-delay="400"><a href="">Narbonne</a></button>
         </div>
         <div class="bouton_articles">
-            <button class="bouton_selection_maison bouton_agrandie" data-aos="fade-up" data-aos-anchor-placement="top-bottom" data-aos-duration="1000" data-aos-delay="500"><a href="">Tous nos Articles</a></button>
+            <input type="button" value="Tous nos articles" cclass="bouton_selection_maison bouton_agrandie" data-aos="fade-up" data-aos-anchor-placement="top-bottom" data-aos-duration="1000" data-aos-delay="500">
         </div>
     </div>
 

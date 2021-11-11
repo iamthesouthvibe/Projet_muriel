@@ -412,7 +412,7 @@ $selectBlog = $db->query("SELECT * FROM tourism WHERE id_rooms = '{$roomID}' LIM
                     <?php endwhile; ?>
                 </div>
                 <div class="lien_page_blog" data-aos="fade-up" data-aos-anchor-placement="top-bottom" data-aos-duration="1000">
-                    <a class="waitBeforeNavigate" href="">Voir tous les articles →</a>
+                    <a class="waitBeforeNavigate" href="blog.php">Voir tous les articles →</a>
                 </div>
             </div>
         <?php endif; ?>
