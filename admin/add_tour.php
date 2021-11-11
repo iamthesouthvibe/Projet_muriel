@@ -67,9 +67,7 @@ if (isset($_POST['add'])) {
     //INSERTING EVENT DETAILS IN THE DATABASE
     $sql = "INSERT INTO tourism (`title`, `citation`, `photo`, `photo_2`, `location`,`details`, `date`, `id_rooms`) VALUES ('$title','$subtitles','$image','$image2', '$location_t','$sdetails','$date', '$id_rooms') ";
     $query_run = $db->query($sql);
-    var_dump($_POST);
-    var_dump($query_run);
-    exit;
+
     if ($query_run) {
       $_SESSION['added_event'] = '<div class="w3-center w3-green">Tour Event successfully added!</div></br>';
       header("Location: tours.php");
