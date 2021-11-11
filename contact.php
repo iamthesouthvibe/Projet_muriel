@@ -8,7 +8,7 @@ include 'includes/header.php';
     <div class="page_contact">
         <div class="bloc1">
             <h1>
-                <a href="mailto:muriel.coutellier67@gmail.com?subject=Prise de contact" class="bloc1_lien_first_child" data-aos="fade" data-aos-anchor-placement="top-bottom" data-aos-duration="2000">muriel.coutellier67@gmail.com</a> <br>
+                <a href="mailto:muriel.homes.location@gmail.com?subject=Prise de contact" class="bloc1_lien_first_child" data-aos="fade" data-aos-anchor-placement="top-bottom" data-aos-duration="2000">muriel.homes.location@gmail.com</a> <br>
             </h1>
             <h1>
                 <a href="https://www.instagram.com/" target="_blank" data-aos="fade" data-aos-anchor-placement="top-bottom" data-aos-delay="200" data-aos-duration="2000">Instagram</a> <br>
@@ -18,7 +18,7 @@ include 'includes/header.php';
             </h1>
         </div>
         <div class="bloc2" data-aos="fade" data-aos-anchor-placement="top-bottom" data-aos-duration="3000" data-aos-delay="400">
-            <a href="mailto:muriel.coutellier67@gmail.com?subject=Prise de contact"> Prise <br>
+            <a href="mailto:muriel.homes.location@gmail.com?subject=Prise de contact"> Prise <br>
                 de contact <span></a>
         </div>
     </div>
