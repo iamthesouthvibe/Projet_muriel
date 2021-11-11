@@ -1247,13 +1247,7 @@ nav {
     border-color: #9A4747;
     transition-duration: 0.5s;
     min-width: 130px;
-}
 
-.bouton_agrandie {
-    width: 220px
-}
-
-.bouton_selection_maison a {
     font-family: neue_montrealbold;
     font-style: normal;
     font-weight: normal;
@@ -1262,8 +1256,14 @@ nav {
     text-align: center;
     color: #9A4747;
     text-decoration: none;
-    transition-duration: 0.5s
+    transition-duration: 0.5s;
+    cursor: pointer;
 }
+
+.bouton_agrandie {
+    width: 220px
+}
+
 
 .bouton_selection_maison:hover {
     width: 170px;
@@ -1272,7 +1272,8 @@ nav {
     border-radius: 40px;
     border: none;
     border-color: none;
-    transition-duration: 0.5s
+    transition-duration: 0.5s;
+    color: #FCF7EC;
 }
 
 .bouton_selection_maison a:hover {
