@@ -10,11 +10,11 @@ $select = $db->query("SELECT * FROM tourism ORDER BY id desc");
     <div class="qhero_page_produits">
         <div class="qhero_entree_page_produits">
             <div class="div_h1_titre">
-                <h1 class="h1_titre" data-aos="fade-up" data-aos-anchor-placement="top-bottom" data-aos-duration="1000">
+                <h1 class="h1_titre" data-aos="fade-up" data-aos-anchor-placement="bottom-bottom" data-aos-duration="1000">
                     Notre Blog
                 </h1>
             </div>
-            <div class="div_h3_text_presentation_produits" data-aos="fade-up" data-aos-anchor-placement="top-bottom" data-aos-duration="1000" data-aos-delay="250">
+            <div class="div_h3_text_presentation_produits" data-aos="fade-up" data-aos-anchor-placement="bottom-bottom" data-aos-duration="1000" data-aos-delay="250">
                 <h3 class="h3_titre">
                     Sed rutrum vulputate dapibus. Vivamus id tincidunt eros, in suscipit quam. Praesent aliquet justo auctor urna feugiat, luctus aliquam odio pharetra. Fusce iaculis mauris sem. Donec varius urna libero, sit amet tincidunt enim laoreet ut. Donec non sem pharetra, ullamcorper nibh in, lacinia risus. Proin rutrum egestas massa, a cursus diam interdum ac.
                 </h3>
