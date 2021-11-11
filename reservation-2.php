@@ -283,17 +283,18 @@
             border: none;
             background: #ede4d4;
             font-weight: normal;
-            color: #8a4c1d;
+            color: #9a4747;
             border-radius: 3px;
             padding-right: 10px;
         }
+        
 
         .ui-button.ui-state-disabled:hover {
             background: red;
         }
 
         .ui-widget-content {
-            color: #8a4c1d;
+            color: #9a4747;
         }
 
         .ui-widget-header {
@@ -342,7 +343,26 @@
 
         /*  hover background */
         .enabled:hover .ui-state-default {
-            background: red;
+            background: #e2d8c7;
+            transition-duration: 500ms;
+        }
+
+        .ui-state-hover, .ui-widget-content .ui-state-hover, .ui-widget-header .ui-state-hover, .ui-button:hover {
+            border : none;
+            background : #f5f0e5;
+            transition-duration : 500ms;
+           
+        }
+
+       /* .ui-state-focus  .ui-widget-content  {
+            background : red;
+        }*/
+
+        input:focus,
+        select:focus,
+        textarea:focus,
+        button:focus {
+            outline: none;
         }
 
         @media screen and (max-width: 450px) {
