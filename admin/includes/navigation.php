@@ -58,13 +58,6 @@
       <span class="tooltip">Commentaires</span>
     </li>
     <li>
-      <a href="users.php">
-        <i class='bx bx-user'></i>
-        <span class="links_name">Utilisateurs</span>
-      </a>
-      <span class="tooltip">Utilisateurs</span>
-    </li>
-    <li>
       <a href="../index.php">
         <i class='bx bx-map'></i>
         <span class="links_name">Visiter le site</span>
