@@ -56,6 +56,7 @@ $sql = $db->query("SELECT * FROM rooms");
         font-size: 23px;
         color: #9A4747;
         text-decoration: none;
+        cursor: pointer;
     }
 
     @media screen and (max-width: 450px) {

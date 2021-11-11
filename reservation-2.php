@@ -204,6 +204,14 @@
             font-size: 25px;
             color: #FCF7EC;
             text-decoration: none;
+            cursor: pointer;
+            transition: 0.2s;
+        }
+
+        .qhero_page_reservation_2 .col_price .submit:hover {
+            border: solid 1px #9a4747;
+            background: #FCF7EC;
+            color: #9A4747;
         }
 
         .ui-widget-header {
