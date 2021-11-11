@@ -138,10 +138,15 @@ nav {
     border: none;
     border-color: none;
     transform: translate(-40px, 0px);
+    transition: 0.4s;
+}
+
+.header_right button:hover {
+    border: solid 1px #9A4747;
+    background-color: #FCF7EC;
 }
 
 .header_right button a {
-    color: #FCF7EC;
     text-decoration: none;
     font-family: neue_montrealregular;
     font-style: normal;
@@ -152,7 +157,12 @@ nav {
     z-index: 1;
     padding:  1em 3em 1em 3em;
     margin: -1em -3em -1em -3em;
-    
+    color: #FCF7EC;
+    transition: 0.4s;
+}
+
+.header_right button:hover a {
+    color: #9A4747;;
 }
 
 
