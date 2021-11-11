@@ -1588,15 +1588,15 @@ margin: auto;
 
 .h2_date_blog-unit {
     font-family: neue_montrealregular;
-font-style: normal;
-font-weight: normal;
-font-size: 18px;
-line-height: 20px;
-text-align: center;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 20px;
+    text-align: center;
     color: #9B9B9B;
     padding-left: 20vw;
-padding-right: 20vw;
-margin-top: 7vh;
+    padding-right: 20vw;
+    margin-top: 7vh;
 }
 
 .h3_titre-blog-unit {
@@ -1621,7 +1621,7 @@ margin-bottom: 10vh;
 }
 
 .container_presentation_blog-unit p {
-    max-width: 35vw;
+    max-width: 45vw;
         margin: auto;
         font-family: neue_montrealregular;
         font-style: normal;
@@ -1631,10 +1631,22 @@ margin-bottom: 10vh;
         color: #000000;
 }
 
+.texte-droite-blog-unit-citation {
+    font-family: ITCGaramondStd-BkNarrow;
+font-style: normal;
+font-weight: normal;
+    font-size: 70px;
+    line-height: 0.8;
+    /* or 81% */
+    max-width: 45vw;
+    margin: 55px 0;
+    
+    color: #9A4747;
+}
+
 .container_presentation_blog-unit img {
-    max-width: 35vw;
-    margin-top: 10vh;
-    margin-bottom: 10vh;
+    max-width: 40vw;
+    margin-bottom: 3vh;
 }
 
 .image_gauche-blog-unit {
@@ -1642,16 +1654,11 @@ margin-bottom: 10vh;
     color: #000000;
         /*padding-left: 20vw;*/
         /*padding-right: 20vw;*/
-        margin-bottom: 10vh;
+        margin: 0;
+        margin-bottom: 3vh;
 }
 
-.container_presentation_blog-unit_colonne_droite {
-    margin-top: 35vh;
-}
 
-.container_presentation_blog-unit_colonne_droite {
-    margin-top: 35vh;
-}
 
 
 
@@ -3113,8 +3120,7 @@ margin: auto;
 
     .container_presentation_blog-unit img {
         max-width: 90vw;
-        margin-top: 5vh;
-        margin-bottom: 5vh;
+        margin-bottom: 1vh;
     }    
 
     .image_gauche-blog-unit {
@@ -3122,7 +3128,16 @@ margin: auto;
         color: #000000;
         /*padding-left: 20vw;*/
         /*padding-right: 20vw;*/
-        margin-bottom: 10vh;
+        margin-bottom: 0;
+    }
+
+    .texte-droite-blog-unit-citation {
+        max-width: 100vw;
+        padding: 15px;
+    }
+
+    .container_presentation_blog-unit_colonne_droite {
+        margin-top: 50px;
     }
 
 

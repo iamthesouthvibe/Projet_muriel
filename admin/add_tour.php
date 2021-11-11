@@ -45,19 +45,6 @@ if (!empty($_FILES)) {
   } else {
     //echo '<div class="w3-center w3-red">The image type must be jpg, jpeg, gif, or png.</div></br>';
   }
-
-  $fileName3 = @$_FILES['file3']['name'];
-  $ext3 = strtolower(substr($fileName3, strpos($fileName3, '.') + 1));
-  $fileName3 = md5(microtime()) . '.' . $ext3;
-  $type3 = @$_FILES['file3']['type'];
-  $tmp_name3 = @$_FILES['file3']['tmp_name'];
-
-  if (($ext3 == 'jpg') || ($ext3 == 'jpeg') || ($ext3 == 'png') || ($ext3 == 'gif')) {
-    $location3 = $_SERVER['DOCUMENT_ROOT'] . '/images/';
-    move_uploaded_file($tmp_name3, $location3 . $fileName3);
-  } else {
-    // echo '<div class="w3-center w3-red">The image type must be jpg, jpeg, gif, or png.</div></br>';
-  }
 }
 
 //INSERTING THE EVENT INFORMATION IN THE DATABASE
@@ -65,10 +52,10 @@ if (isset($_POST['add'])) {
   if (!empty($_POST['title']) && !empty($_POST['subtitles']) && !empty($_POST['date']) && !empty($_POST['location']) && !empty($_POST['sdetails'])) {
     $image = 'images/' . $fileName;
     $image2 = 'images/' . $fileName2;
-    $image3 = 'images/' . $fileName3;
+    $
     //INSERTING EVENT DETAILS IN THE DATABASE
-    $sql = "INSERT INTO tourism (`title`, `subtitles`, `photo`, `photo_2`, `photo_3`, `location`,`details`, `date`)
-                    VALUES ('$title','$subtitles','$image','$image2','$image3', '$location_t','$sdetails','$date') ";
+    $sql = "INSERT INTO tourism (`title`, `citation`, `photo`, `photo_2`, `location`,`details`, `date`)
+                    VALUES ('$title','$subtitles','$image','$image2', '$location_t','$sdetails','$date') ";
 
     $query_run = $db->query($sql);
     if ($query_run) {
@@ -79,35 +66,6 @@ if (isset($_POST['add'])) {
     header("Location: tours.php");
   } else {
     $error = '<span class="form_error">Please fill in all fields.</span></br>';
-  }
-}
-//RUNNING UPDATE IF EDITING
-else if (isset($_POST['update'])) {
-  if (
-    !empty($_POST['title']) && !empty($_POST['subtitles']) && !empty($_POST['date']) &&
-    !empty($_POST['location']) && !empty($_POST['sdetails'])
-  ) {
-
-    @$image = 'images/' . $fileName;
-    @$image2 = 'images/' . $fileName2;
-    @$image3 = 'images/' . $fileName3;
-    $toEditID = $_GET['edit'];
-    $sqlSelect = $db->query("SELECT * FROM tourism WHERE id = '$toEditID' ");
-    $row = $sqlSelect->fetch(PDO::FETCH_ASSOC);
-
-
-    if ($row['photo'] == '' || $row['photo_2'] == '' || $row['photo_3'] == '') {
-      $query = $db->query("UPDATE tourism SET `title`='$title', `subtitles`='$subtitles', `photo`='$image', `photo_2`='$image2',`photo_3`='$image3',
-      `location`='$location_t', `details`='$sdetails', `date`='$date'  WHERE id = '$toEditID' ");
-    } else {
-      $query = $db->query("UPDATE tourism SET`title`='$title', `subtitles`='$subtitles',
-      `location`='$location_t', `details`='$sdetails', `date`='$date'  WHERE id = '$toEditID' ");
-    }
-
-    $update = $db->query($query);
-    header("Location: tours.php");
-  } else {
-    echo '<div class="w3-center w3-red">Please fill in all fields.</div></br>';
   }
 }
 
@@ -121,26 +79,9 @@ if (isset($_GET['edit'])) {
 
 //Canceling EDITING
 if (isset($_GET['cancelEdit'])) {
-  unset($_SESSION['edit']);
   header("Location: tours.php");
 }
 
-//DELETING IMAGE
-if (isset($_GET['delete_image'])) {
-  $toEditID = $_GET['delete_image'];
-  $sql1 = $db->query("SELECT * FROM tourism WHERE id = '$toEditID'");
-  $fetch = $sql1->fetch(PDO::FETCH_ASSOC);;
-  $imageURL = $_SERVER['DOCUMENT_ROOT'] . '/ht' . $fetch['photo'];
-  $imageUR2 = $_SERVER['DOCUMENT_ROOT'] . '/ht' . $fetch['photo_2'];
-  $imageURL3 = $_SERVER['DOCUMENT_ROOT'] . '/ht' . $fetch['photo_3'];
-  unlink($imageURL);
-  unlink($imageURL2);
-  unlink($imageURL3);
-  ##################################################################
-  $sql = "UPDATE tourism SET `photo` = '$imageURL', `photo_2` = '$imageUR2', `photo_3` = '$imageURL3' WHERE id = '$toEditID' ";
-  $db->query($sql);
-  header("Location: add_tour.php?edit=$toEditID");
-}
 ?>
 <!--
 <div class="w3-container w3-main" style="margin-left:200px">
@@ -261,7 +202,7 @@ if (isset($_GET['delete_image'])) {
 
 <div class="admin_page">
   <div class="header_admin">
-    <h1><?= (isset($toEditID)) ? '' . 'Modifier une rubrique' . '' : 'Ajouter une rubrique'; ?></h1>
+    <h1>Ajouter une rubrique</h1>
     <img src="../assets/png/LOGO_02_PNG_NOIR.png" alt="Logo Muriel">
   </div>
   <div class="admin_page_addtours">
@@ -270,15 +211,15 @@ if (isset($_GET['delete_image'])) {
         <div class="form-control">
           <label for="title">Titre</label>
           <br>
-          <input type="text" name="title" value="<?= (isset($toEditID)) ? '' . $rows['title'] . '' : ''; ?>" placeholder="Titre" id="title">
+          <input type="text" name="title" value="" placeholder="Titre" id="title" required>
           <br>
           <small>Error Message</small>
         </div>
 
         <div class="form-control">
-          <label for="subtitles">Sous-titre</label>
+          <label for="subtitles">Citation</label>
           <br>
-          <input type="text" name="subtitles" id="subtitle" value="<?= (isset($toEditID)) ? '' . $rows['subtitles'] . '' : ''; ?>" placeholder="event topic">
+          <input type="text" name="subtitles" id="subtitle" placeholder="Citation">
           <br>
           <small>Error Message</small>
         </div>
@@ -286,7 +227,7 @@ if (isset($_GET['delete_image'])) {
         <div class="form-control">
           <label for="location">Lieu </label>
           <br>
-          <input type="text" id="lieu" name="location" value="<?= (isset($toEditID)) ? '' . $rows['location'] . '' : ''; ?>" placeholder="venue">
+          <input type="text" id="lieu" name="location" placeholder="Lieu">
           <br>
           <small>Error Message</small>
         </div>
@@ -294,7 +235,7 @@ if (isset($_GET['delete_image'])) {
         <div class="form-control">
           <label for="date">Date</label>
           <br>
-          <input type="date" id="date" name="date" value="<?= (isset($toEditID)) ? '' . $rows['date'] . '' : ''; ?>">
+          <input type="date" id="date" name="date">
           <br>
           <small>Error Message</small>
         </div>
@@ -302,54 +243,32 @@ if (isset($_GET['delete_image'])) {
 
       <div class="form_addtours_middle">
         <div class="form-control">
-          <?php if (!@$rows['photo'] || @$rows['photo'] == '') : ?>
-            <label for="file">Photo:</label>
-            <br>
-            <input type="file" name="file" id="file" value="<?= (isset($toEditID)) ? '' . $rows['photo'] . '' : ''; ?>">
-            <br>
-            <small>Error Message</small>
-          <?php endif;  ?>
+          <label for="file">Photo:</label>
+          <br>
+          <input type="file" name="file" id="file">
+          <br>
+          <small>Error Message</small>
         </div>
 
         <div class="form-control">
-          <?php if (!@$rows['photo_2'] || @$rows['photo_2'] == '') : ?>
-            <label for="file2">Photo:</label>
-            <br>
-            <input type="file" name="file2" id="file2">
-            <br>
-            <small>Error Message</small>
-          <?php endif;  ?>
-        </div>
-
-        <div class="form-control">
-          <?php if (!@$rows['photo_3'] || @$rows['photo_3'] == '') : ?>
-            <label for="file3">Photo:</label>
-            <br>
-            <input type="file" name="file3" id="file3">
-            <br>
-            <small>Error Message</small>
-          <?php endif;  ?>
+          <label for="file2">Photo:</label>
+          <br>
+          <input type="file" name="file2" id="file2">
+          <br>
+          <small>Error Message</small>
         </div>
       </div>
       <div class="form_addtours_bottom">
         <div class="form-control">
           <label for="sdetails">Description:</label>
           <br>
-          <textarea name="sdetails" id="description" col="20" rows="5"><?= (isset($toEditID)) ? '' . $rows['details'] . '' : ''; ?></textarea>
+          <textarea name="sdetails" id="description" col="20" rows="5"></textarea>
           <br>
           <small>Error Message</small>
         </div>
 
-        <input type="submit" name="<?= (isset($toEditID)) ? 'update' : 'add'; ?>" value="<?= (isset($toEditID)) ? 'Edit Tour' : 'Add Tour'; ?>" class="submit_button"><br>
-        <?php
-        if (isset($toEditID)) {
-          echo '<br>';
-          echo ' <a href="add_tour.php?cancelEdit=' . $toEditID . '" type="button" name="cancelEdit" class="submit_button">Cancel Edit</a>';
-        } ?>
+        <input type="submit" name="add" value="Ajouter" class="submit_button"><br>
       </div>
     </form>
   </div>
 </div>
-
-
-<script src="./js/checkform.js"></script>

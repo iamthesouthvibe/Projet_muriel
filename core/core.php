@@ -6,7 +6,7 @@ if (!$db) {
     echo 'Could not establish database connection, please review your settings';
 }
 
-require_once $_SERVER['DOCUMENT_ROOT'] . '/config.php';
+// require_once $_SERVER['DOCUMENT_ROOT'] . '/config.php';
 
 session_start();
 

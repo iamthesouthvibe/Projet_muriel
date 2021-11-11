@@ -9,7 +9,8 @@ $sql = $db->query("SELECT * FROM tourism ");
 $blog = $sql->fetch(PDO::FETCH_ASSOC);
 
 $shortDes1 = substr($blog['details'], 0, 280);
-$shortDes2 = substr($blog['details'], 280, 600);
+$shortDes2 = substr($blog['details'], 0, 600);
+$shortDes3 = substr($blog['details'], 600, 5000);
 ?>
 
 <main>
@@ -42,30 +43,24 @@ $shortDes2 = substr($blog['details'], 280, 600);
     <div class="container_presentation_blog-unit">
         <div class="container_presentation_blog-unit_colonne_gauche">
             <div class="texte_gauche-blog-unit" data-aos="fade" data-aos-anchor-placement="top-bottom" data-aos-duration="1000" data-aos-delay="500">
-                <p>
-                    <?= ($blog['details'] != '') ? $shortDes2 : ''; ?>...
-                </p>
                 <div class="image_gauche-blog-unit" data-aos="fade" data-aos-anchor-placement="top-bottom" data-aos-duration="1000" data-aos-delay="200">
                     <img src="assets/jpg/images page d'accueil/Villa-grande-Anse-Martinique02.jpg" alt="Photo Maison Gauche">
                 </div>
-                <p>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed faucibus aliquet turpis, ut laoreet nisl imperdiet a. Sed at iaculis metus. Curabitur lobortis, neque porttitor tempus elementum, lectus tortor volutpat nisi, et consectetur tellus nunc eu turpis. Morbi rhoncus at nisi sed eleifend. Vivamus finibus nibh ipsum, et malesuada est ullamcorper nec. Phasellus pellentesque arcu at nunc tincidunt, id hendrerit arcu varius. Donec imperdiet condimentum lacus, ac maximus tortor tempus sit amet. Mauris tempor turpis ac sapien euismod feugiat. Nam at dolor a augue feugiat scelerisque non in sem. Interdum et malesuada fames ac ante ipsum primis in faucibus. Mauris at est lacus. Nulla hendrerit, lectus ut vestibulum imperdiet, est dolor aliquet libero, at gravida magna lectus nec metus. Nam vitae finibus ante. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
-
-                    Maecenas ullamcorper condimentum gravida. Etiam efficitur ut mi at consequat. Nullam eu magna quis dui maximus vehicula. Ut semper, leo ut sagittis volutpat, leo felis suscipit risus, nec laoreet elit quam ac sapien. Donec vel purus mauris. Vivamus urna orci, porta sit amet odio eu, scelerisque posuere arcu. Donec dignissim magna vel rhoncus pulvinar.
-                </p>
+                <div class="image_gauche-blog-unit" data-aos="fade" data-aos-anchor-placement="top-bottom" data-aos-duration="1000" data-aos-delay="200">
+                    <img src="assets/jpg/images page d'accueil/Villa-grande-Anse-Martinique02.jpg" alt="Photo Maison Gauche">
+                </div>
             </div>
         </div>
         <div class="container_presentation_blog-unit_colonne_droite" data-aos="fade" data-aos-anchor-placement="top-bottom" data-aos-duration="1000" data-aos-delay="200">
             <div class="texte-droite-blog-unit">
-                <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed faucibus aliquet turpis, ut laoreet nisl imperdiet a. Sed at iaculis metus. Curabitur lobortis, neque porttitor tempus elementum, lectus tortor volutpat nisi, et consectetur tellus nunc eu turpis. Morbi rhoncus at nisi sed eleifend. Vivamus finibus nibh ipsum, et malesuada est ullamcorper nec. Phasellus pellentesque arcu at nunc tincidunt, id hendrerit arcu varius. Donec imperdiet condimentum lacus, ac maximus tortor tempus sit amet. Mauris tempor turpis ac sapien euismod feugiat. Nam at dolor a augue feugiat scelerisque non in sem. Interdum et malesuada fames ac ante ipsum primis in faucibus. Mauris at est lacus. Nulla hendrerit, lectus ut vestibulum imperdiet, est dolor aliquet libero, at gravida magna lectus nec metus. Nam vitae finibus ante. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
-
-                    Maecenas ullamcorper condimentum gravida. Etiam efficitur ut mi at consequat. Nullam eu magna quis dui maximus vehicula. Ut semper, leo ut sagittis volutpat, leo felis suscipit risus, nec laoreet elit quam ac sapien. Donec vel purus mauris. Vivamus urna orci, porta sit amet odio eu, scelerisque posuere arcu. Donec dignissim magna vel rhoncus pulvinar.
-
+                <p>
+                    <?= ($blog['details'] != '') ? $shortDes2 : ''; ?>...
                 </p>
             </div>
-            <div class="image_droite-blog-unit" data-aos="fade" data-aos-anchor-placement="top-bottom" data-aos-duration="1000" data-aos-delay="200">
-                <img src="assets/jpg/images page d'accueil/Villa-grande-Anse-Martinique02.jpg" alt="Photo Maison Droite">
-            </div>
+            <h4 class="texte-droite-blog-unit-citation"> <?= ($blog['citation'] != '') ? '"' . $blog['citation'] . '"' : ''; ?></h4>
+            <p>
+                <?= ($blog['details'] != '') ? $shortDes3 : ''; ?>
+            </p>
         </div>
     </div>
 
