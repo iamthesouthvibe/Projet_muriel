@@ -42,7 +42,6 @@ if (isset($_GET['delete'])) {
                     <h2><?= $tour['title']; ?></h2>
                 </div>
                 <div class="admin_page_tours_action">
-                    <a href="add_tour.php?edit=<?= $tour['id']; ?>"><i class='bx bx-edit'></i></a>
                     <a href="tours.php?delete=<?= $tour['id']; ?>"><i class='bx bx-trash'></i></a>
                 </div>
             </div>

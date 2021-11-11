@@ -8,6 +8,8 @@ if (!is_logged_in()) {
 include 'includes/header.php';
 include 'includes/navigation.php';
 
+$sql2 = $db->query("SELECT * FROM rooms");
+
 
 //FIELD VARIABLES
 @$title = sanitize($_POST['title']);
@@ -15,6 +17,7 @@ include 'includes/navigation.php';
 @$date = sanitize($_POST['date']);
 @$location_t = sanitize($_POST['location']);
 @$sdetails = sanitize($_POST['sdetails']);
+@$id_rooms = sanitize($_POST['maison']);
 //The function nl2br() reserves line breaks
 // @$fdetails = nl2br($_POST['fdetails']);
 
@@ -25,6 +28,7 @@ if (!empty($_FILES)) {
   $fileName = md5(microtime()) . '.' . $ext;
   $type = @$_FILES['file']['type'];
   $tmp_name = @$_FILES['file']['tmp_name'];
+
 
   if (($ext == 'jpg') || ($ext == 'jpeg') || ($ext == 'png') || ($ext == 'gif')) {
     $location = $_SERVER['DOCUMENT_ROOT'] . '/images/';
@@ -52,34 +56,24 @@ if (isset($_POST['add'])) {
   if (!empty($_POST['title']) && !empty($_POST['subtitles']) && !empty($_POST['date']) && !empty($_POST['location']) && !empty($_POST['sdetails'])) {
     $image = 'images/' . $fileName;
     $image2 = 'images/' . $fileName2;
-    $
-    //INSERTING EVENT DETAILS IN THE DATABASE
-    $sql = "INSERT INTO tourism (`title`, `citation`, `photo`, `photo_2`, `location`,`details`, `date`)
-                    VALUES ('$title','$subtitles','$image','$image2', '$location_t','$sdetails','$date') ";
 
+
+    //INSERTING EVENT DETAILS IN THE DATABASE
+    $sql = "INSERT INTO tourism (`title`, `citation`, `photo`, `photo_2`, `location`,`details`, `date`, `id_rooms`) VALUES ('$title','$subtitles','$image','$image2', '$location_t','$sdetails','$date', '$id_rooms') ";
     $query_run = $db->query($sql);
+    var_dump($_POST);
+    var_dump($query_run);
+    exit;
     if ($query_run) {
       $_SESSION['added_event'] = '<div class="w3-center w3-green">Tour Event successfully added!</div></br>';
-      var_dump($query_run);
+      header("Location: tours.php");
+    } else {
+      var_dump($_POST);
     }
-    var_dump($query_run);
-    header("Location: tours.php");
   } else {
+    var_dump($_POST);
     $error = '<span class="form_error">Please fill in all fields.</span></br>';
   }
-}
-
-//CODE TO EDIT AN events
-if (isset($_GET['edit'])) {
-  $toEditID = $_GET['edit'];
-  $sql = "SELECT * FROM tourism WHERE id = '$toEditID' ";
-  $result = $db->query($sql);
-  $rows = $result->fetch(PDO::FETCH_ASSOC);;
-}
-
-//Canceling EDITING
-if (isset($_GET['cancelEdit'])) {
-  header("Location: tours.php");
 }
 
 ?>
@@ -243,9 +237,18 @@ if (isset($_GET['cancelEdit'])) {
 
       <div class="form_addtours_middle">
         <div class="form-control">
+          <select name="maison" id="" class="test" required>
+            <option value="" selected="true" disabled="disabled">Votre maison</option>
+            <?php while ($room = $sql2->fetch(PDO::FETCH_ASSOC)) : ?>
+
+              <option class="test-hover" value="<?= $room['id']; ?>"><?= $room['shortName']; ?></option>
+            <?php endwhile; ?>
+          </select>
+        </div>
+        <div class="form-control">
           <label for="file">Photo:</label>
           <br>
-          <input type="file" name="file" id="file">
+          <input type="file" name="file" id="file" required>
           <br>
           <small>Error Message</small>
         </div>
@@ -253,7 +256,7 @@ if (isset($_GET['cancelEdit'])) {
         <div class="form-control">
           <label for="file2">Photo:</label>
           <br>
-          <input type="file" name="file2" id="file2">
+          <input type="file" name="file2" id="file2" required>
           <br>
           <small>Error Message</small>
         </div>
@@ -262,7 +265,7 @@ if (isset($_GET['cancelEdit'])) {
         <div class="form-control">
           <label for="sdetails">Description:</label>
           <br>
-          <textarea name="sdetails" id="description" col="20" rows="5"></textarea>
+          <textarea name="sdetails" id="description" col="20" rows="5" required></textarea>
           <br>
           <small>Error Message</small>
         </div>
