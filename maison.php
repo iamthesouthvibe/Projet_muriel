@@ -11,7 +11,7 @@ if ($roomID == '') {
 }
 $select = $db->query("SELECT * FROM rooms WHERE id = '{$roomID}' ");
 
-$selectBlog = $db->query("SELECT * FROM tourism WHERE id_rooms = '{$roomID}' ")
+$selectBlog = $db->query("SELECT * FROM tourism WHERE id_rooms = '{$roomID}' LIMIT 3")
 ?>
 <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
 <main>

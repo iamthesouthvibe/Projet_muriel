@@ -957,7 +957,8 @@ nav {
 }
 
 .espace_article_blog img {
-    max-width: 23vw;
+    width: 400px;
+    height: 300px;
 }
 
 .espace_article_blog h6 {
