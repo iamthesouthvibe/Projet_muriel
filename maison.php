@@ -58,14 +58,12 @@ $selectBlog = $db->query("SELECT * FROM tourism WHERE id_rooms = '{$roomID}' LIM
                     <div class="image_gauche" data-aos="fade-up" data-aos-anchor-placement="top-bottom" data-aos-duration="1000" data-aos-delay="200">
                         <img src="<?= $room['photo4']; ?>" alt="Photo Maison">
                     </div>
-                    <p>
-                        <?= $room['details2']; ?>
-                    </p>
+                    <p> <?= $room['details3']; ?></p>
                 </div>
             </div>
             <div class="container_presentation_maison_droite">
                 <div class="text-droite" data-aos="fade-up" data-aos-anchor-placement="top-bottom" data-aos-duration="1000" data-aos-delay="0">
-                    <p> <?= $room['details3']; ?></p>
+                    <p><?= $room['details2']; ?></p>
                 </div>
                 <div class="image_droite" data-aos="fade-up" data-aos-anchor-placement="top-bottom" data-aos-duration="1000" data-aos-delay="0">
                     <img src="<?= $room['photo7']; ?>" alt="Photo Maison">
