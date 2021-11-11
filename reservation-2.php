@@ -156,9 +156,9 @@
             font-weight: normal;
             height: 130px;
             width: 290px;
-           
-                border : none;
-                background: #FCF7EC;
+
+            border: none;
+            background: #FCF7EC;
 
         }
 
@@ -252,41 +252,52 @@
             /* Ca c'est le fond de chaque case jour */
             /* background: red; */
 
-            
-            
+
+
         }
+
         /* ça ce sont les cadres autour des nombres dans le calendrier* et la couleur de la font du nombre séléctionné */
-        .ui-state-highlight, .ui-widget-content .ui-state-highlight, .ui-widget-header .ui-state-highlight {
+        .ui-state-highlight,
+        .ui-widget-content .ui-state-highlight,
+        .ui-widget-header .ui-state-highlight {
             border: 2px solid #d97373;
             background: ;
             color: #9A4747;
         }
+
         /* ça c'est la couleur de fond du jour d'aujourd'hui*/
-        .ui-state-highlight, .ui-widget-content .ui-state-highlight, .ui-widget-header .ui-state-highlight {
+        .ui-state-highlight,
+        .ui-widget-content .ui-state-highlight,
+        .ui-widget-header .ui-state-highlight {
             /*background: #959595;*/
-            background:red;
+            background: red;
         }
 
         /* permet de changer la couleur de la font des nombres du calendrier (sauf celui du jour meme ainsi que le fond et le bord */
-        .ui-state-default, .ui-widget-content .ui-state-default, .ui-widget-header .ui-state-default, .ui-button, html, html .ui-button.ui-state-disabled:active {
+        .ui-state-default,
+        .ui-widget-content .ui-state-default,
+        .ui-widget-header .ui-state-default,
+        .ui-button,
+        html,
+        html .ui-button.ui-state-disabled:active {
             border: none;
             background: #ede4d4;
             font-weight: normal;
             color: #8a4c1d;
             border-radius: 3px;
-            padding-right : 10px;
+            padding-right: 10px;
         }
 
         .ui-button.ui-state-disabled:hover {
-            background : red;
+            background: red;
         }
 
         .ui-widget-content {
             color: #8a4c1d;
         }
 
-        .ui-widget-header { 
-            border:none;
+        .ui-widget-header {
+            border: none;
         }
 
         .ui-widget-content {
@@ -294,31 +305,45 @@
         }
 
         .ui-widget.ui-widget-content {
-           border: 2px solid #cdc3b7;
-        }   
+            border: 2px solid #cdc3b7;
+        }
 
         .ui-datepicker {
-            padding : 0;
+            padding: 0;
         }
 
-        .ui-corner-all, .ui-corner-top, .ui-corner-right, .ui-corner-tr {
-           border-top-right-radius: 1px;
+        .ui-corner-all,
+        .ui-corner-top,
+        .ui-corner-right,
+        .ui-corner-tr {
+            border-top-right-radius: 1px;
         }
 
-        .ui-corner-all, .ui-corner-top, .ui-corner-left, .ui-corner-tl {
+        .ui-corner-all,
+        .ui-corner-top,
+        .ui-corner-left,
+        .ui-corner-tl {
             border-top-left-radius: 1px;
         }
 
-        .ui-corner-all, .ui-corner-bottom, .ui-corner-right, .ui-corner-br {
+        .ui-corner-all,
+        .ui-corner-bottom,
+        .ui-corner-right,
+        .ui-corner-br {
             border-bottom-right-radius: 1px;
         }
 
-        .ui-corner-all, .ui-corner-bottom, .ui-corner-left, .ui-corner-bl {
+        .ui-corner-all,
+        .ui-corner-bottom,
+        .ui-corner-left,
+        .ui-corner-bl {
             border-bottom-left-radius: 1px;
         }
 
-        
-
+        /*  hover background */
+        .enabled:hover .ui-state-default {
+            background: red;
+        }
 
         @media screen and (max-width: 450px) {
 
@@ -371,7 +396,7 @@
 
             .qhero_page_reservation_2 .row .input_row textarea {
                 width: 89vw;
-                border : none;
+                border: none;
                 background: #FCF7EC;
             }
 
