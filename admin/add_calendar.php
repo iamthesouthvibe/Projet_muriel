@@ -70,52 +70,6 @@ if (isset($_POST['add'])) {
 
 ?>
 <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/humanity/jquery-ui.css" type="text/css">
-<style>
-    .ui-widget-header {
-        border: 1px solid #d49768;
-        background: #b15e6d 50% 50% repeat-x;
-        color: #ffffff;
-        font-weight: normal;
-    }
-
-    .admin_page-addcalendar {
-        margin-top: 40px;
-    }
-
-    .admin_page-addcalendar input {
-        background-color: #FCF7EC;
-        border: none;
-        border-bottom: solid 1px;
-    }
-
-    .admin_page-addcalendar label {
-        font-family: ITCGaramondStd-BkNarrow;
-        color: #9a4747;
-        font-size: 22px;
-    }
-
-    .admin_page-addcalendar-row {
-        margin-bottom: 50px;
-        display: flex;
-        gap: 120px;
-    }
-
-    .admin_page-addcalendar .button-ajout {
-        position: relative;
-        height: 30px;
-        width: 154px;
-        border: none !important;
-        border-radius: 40px;
-        background-color: #9A4747 !important;
-        color: #FCF7EC;
-        font-size: 17px;
-    }
-
-    .admin_page-addcalendar-block {
-        display: flex;
-        flex-direction: column;
-    }
-</style>
 <div class="admin_page">
     <div class="header_admin">
         <h1>Ajouter une réservation au calendrier</h1>
