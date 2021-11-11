@@ -1236,7 +1236,8 @@ nav {
     color: #000000;
     padding-left: 20vw;
     padding-right: 20vw;
-    margin-bottom: 26vh;
+    margin-bottom: 12vh;
+    margin-top: 60px;
 }
 
 .section_boutons_filtre {
@@ -3197,10 +3198,12 @@ margin: auto;
 
     .container_presentation_blog-unit_colonne_droite {
         margin-top: 50px;
-        margin-bottom: 200px;
+        margin-bottom: 100px;
     }
 
-
+    .container_presentation_blog-unit_colonne_droite {
+        width: auto;
+    }
 
 
     /* ##### Fin style de la page Blog unit ##### */
