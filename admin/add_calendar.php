@@ -77,37 +77,86 @@ if (isset($_POST['add'])) {
         color: #ffffff;
         font-weight: normal;
     }
+
+    .admin_page-addcalendar {
+        margin-top: 40px;
+    }
+
+    .admin_page-addcalendar input {
+        background-color: #FCF7EC;
+        border: none;
+        border-bottom: solid 1px;
+    }
+
+    .admin_page-addcalendar label {
+        font-family: ITCGaramondStd-BkNarrow;
+        color: #9a4747;
+        font-size: 22px;
+    }
+
+    .admin_page-addcalendar-row {
+        margin-bottom: 50px;
+        display: flex;
+        gap: 120px;
+    }
+
+    .admin_page-addcalendar .button-ajout {
+        position: relative;
+        height: 30px;
+        width: 154px;
+        border: none !important;
+        border-radius: 40px;
+        background-color: #9A4747 !important;
+        color: #FCF7EC;
+        font-size: 17px;
+    }
+
+    .admin_page-addcalendar-block {
+        display: flex;
+        flex-direction: column;
+    }
 </style>
 <div class="admin_page">
     <div class="header_admin">
-        <h1>Ajouter une réservation</h1>
+        <h1>Ajouter une réservation au calendrier</h1>
         <img src="../assets/png/LOGO_02_PNG_NOIR.png" alt="Logo Muriel">
     </div>
 
-    <form action="" method="post">
-        <label for="name">Nom</label>
-        <input type="text" name="name" id="name" required>
+    <form action="" method="post" class="admin_page-addcalendar">
+        <div class="admin_page-addcalendar-row">
+            <div class="admin_page-addcalendar-block">
+                <label for="name">Nom</label>
+                <input type="text" name="name" id="name" required>
+            </div>
+            <div class="admin_page-addcalendar-block">
+                <label for="maison">Maison :</label>
+                <select name="maison" id="">
+                    <?php while ($maison_name = $result->fetch(PDO::FETCH_ASSOC)) : ?>
+                        <option value="<?php echo $maison_name['id'] ?>"><?php echo $maison_name['room_number'] ?></option>
+                    <?php endwhile; ?>
+                </select>
+            </div>
+            <div class="admin_page-addcalendar-block">
+                <label for="mail">Email</label>
+                <input type="email" name="mail" id="mail">
+            </div>
+        </div>
 
-        <select name="maison" id="">
-            <?php while ($maison_name = $result->fetch(PDO::FETCH_ASSOC)) : ?>
-                <option value="<?php echo $maison_name['id'] ?>"><?php echo $maison_name['room_number'] ?></option>
-            <?php endwhile; ?>
-        </select>
-
-        <label for="mail">Email</label>
-        <input type="email" name="mail" id="mail">
-
-        <label for="phone">Téléphone :</label>
-        <input type="text" name="phone" id="phone">
-
-        <label for=txtFromDate1><strong>Checkin</strong></label>
-        <input type="text" name="txtFromDate1" id="txtFromDate1" class="home-input" style="width:79px;" required />
-
-        <label for=txtFromDate2><strong>Checkout</strong></label>
-        <input type="text" name="txtFromDate2" id="txtFromDate2" class="home-input" style="width:79px;" required />
-
-        <input type="submit" value="Ajouter" name="add">
-
+        <div class="admin_page-addcalendar-row">
+            <div class="admin_page-addcalendar-block">
+                <label for="phone">Téléphone :</label>
+                <input type="text" name="phone" id="phone">
+            </div>
+            <div class="admin_page-addcalendar-block">
+                <label for=txtFromDate1>Checkin</label>
+                <input type="text" name="txtFromDate1" id="txtFromDate1" style="width:79px;" required />
+            </div>
+            <div class="admin_page-addcalendar-block">
+                <label for=txtFromDate2>Checkout</label>
+                <input type="text" name="txtFromDate2" id="txtFromDate2" style="width:79px;" required />
+            </div>
+        </div>
+        <input type="submit" value="Ajouter" name="add" class="button-ajout">
     </form>
 </div>
 

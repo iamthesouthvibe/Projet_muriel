@@ -56,6 +56,7 @@ if (isset($_GET['delete'])) {
             </tbody>
         </table>
     </div>
-
-    <a href="add_calendar_choice.php"><img src="/assets/png/button_add.png" alt=""></a>
+    <div class="admin_page_reserv_button">
+        <a href="add_calendar_choice.php"><img src="/assets/png/button_add.png" alt=""></a>
+    </div>
 </div>
