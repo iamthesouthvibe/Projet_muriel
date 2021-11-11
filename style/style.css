@@ -2371,7 +2371,7 @@ footer ul {
     .menu_nav {
         position: fixed;
         overflow: hidden;
-        width: 80vw;
+        width: 100vw;
         height: 100vh;
         background-color: #E5E5E5;
         top: 0;
@@ -2382,7 +2382,7 @@ footer ul {
     .menu_nav_right {
         position: fixed;
         overflow: hidden;
-        width: 20vw;
+        width: 0vw;
         height: 100vh;
         background-color: #E5E5E5;
         right: -20vw;
@@ -2405,6 +2405,7 @@ footer ul {
         position: absolute;
         bottom: 25px;
         right: 25px;
+        display: none;
     }
     .menu_nav ul li {
         list-style: none;
@@ -2441,6 +2442,11 @@ footer ul {
     .container_menu ul li a:hover::after {
         transform: scaleX(1);
         transform-origin: bottom left;
+    }
+
+    .menu_nav_link ul {
+        margin: 0;
+        padding-left: 15px;
     }
     /* ##### fin du menu navigation ##### */
     /* ##### Debut Curseur  ##### */
@@ -3862,7 +3868,7 @@ margin-right: auto;
         padding-left: 14px;
     }
     .container_menu ul li a {
-        font-size: 55px;
+        font-size: 95px;
     }
     .bloc1 h1 a {
         font-size: 12vw;
