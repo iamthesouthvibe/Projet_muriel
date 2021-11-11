@@ -3,11 +3,6 @@
     include 'includes/header.php';
 
     $roomID = $_GET['maison'];
-    if ($roomID == '') {
-        header('Location: page-404.php');
-    } elseif ($roomID !== '23' && $roomID !== '24' && $roomID !== '25' && $roomID !== '26') {
-        header('Location: page-404.php');
-    }
 
     $sql = ("SELECT * FROM calendar WHERE id_rooms = '{$roomID}'");
 
@@ -65,7 +60,7 @@
 
                 if ($checkin >= $current_date) {
                     if ($checkout >= $checkin) {
-                        $insert = "INSERT INTO `reservations` (`name`, `checkin`, `checkout`, `phone`, `people`, `email`, `children`,`address`, `commentaire`, `zip`, `pays`, `id_rooms`) VALUES ('$name', '$checkin', '$checkout', '$phone', '$people', '$email', '$child', '$address', '$comm', '$zip', '$pays' ,'$roomID')";
+                        $insert = "INSERT INTO `reservations` (`name`, `checkin`, `checkout`, `phone`, `people`, `email`, `children`,`address`, `commentaire`, `zip`, `id_rooms`) VALUES ('$name', '$checkin', '$checkout', '$phone', '$people', '$email', '$child', '$address', '$comm', '$zip', '$roomID')";
 
                         $save = $db->query($insert);
 
@@ -147,7 +142,7 @@
         .qhero_page_reservation_2 .row .input_row input {
             border: none;
             border-bottom: solid 1px #9A4747;
-            background-color: #FCF7EC;
+            background-color: #EDE4D4;
             color: #9A4747;
             min-width: 280px;
 
@@ -161,6 +156,9 @@
             font-weight: normal;
             height: 130px;
             width: 290px;
+           
+                border : none;
+                background: #FCF7EC;
 
         }
 
@@ -212,7 +210,7 @@
             /* Ca c'est la parti au dessus avec les deux fleches */
             border: 1px solid #d49768;
             background: #9a4747 50% 50% repeat-x;
-            color: #ffffff;
+            color: #FCF7EC;
             font-weight: normal;
         }
 
@@ -242,7 +240,7 @@
 
         .enabled {
             /* Ca c'est le contour de chaque case jour */
-            background: #9a4747;
+            background: none;
         }
 
         .ui-state-default,
@@ -253,7 +251,74 @@
         html .ui-button.ui-state-disabled:active {
             /* Ca c'est le fond de chaque case jour */
             /* background: red; */
+
+            
+            
         }
+        /* ça ce sont les cadres autour des nombres dans le calendrier* et la couleur de la font du nombre séléctionné */
+        .ui-state-highlight, .ui-widget-content .ui-state-highlight, .ui-widget-header .ui-state-highlight {
+            border: 2px solid #d97373;
+            background: ;
+            color: #9A4747;
+        }
+        /* ça c'est la couleur de fond du jour d'aujourd'hui*/
+        .ui-state-highlight, .ui-widget-content .ui-state-highlight, .ui-widget-header .ui-state-highlight {
+            /*background: #959595;*/
+            background:red;
+        }
+
+        /* permet de changer la couleur de la font des nombres du calendrier (sauf celui du jour meme ainsi que le fond et le bord */
+        .ui-state-default, .ui-widget-content .ui-state-default, .ui-widget-header .ui-state-default, .ui-button, html, html .ui-button.ui-state-disabled:active {
+            border: none;
+            background: #ede4d4;
+            font-weight: normal;
+            color: #8a4c1d;
+            border-radius: 3px;
+            padding-right : 10px;
+        }
+
+        .ui-button.ui-state-disabled:hover {
+            background : red;
+        }
+
+        .ui-widget-content {
+            color: #8a4c1d;
+        }
+
+        .ui-widget-header { 
+            border:none;
+        }
+
+        .ui-widget-content {
+            background: #ede4d4;
+        }
+
+        .ui-widget.ui-widget-content {
+           border: 2px solid #cdc3b7;
+        }   
+
+        .ui-datepicker {
+            padding : 0;
+        }
+
+        .ui-corner-all, .ui-corner-top, .ui-corner-right, .ui-corner-tr {
+           border-top-right-radius: 1px;
+        }
+
+        .ui-corner-all, .ui-corner-top, .ui-corner-left, .ui-corner-tl {
+            border-top-left-radius: 1px;
+        }
+
+        .ui-corner-all, .ui-corner-bottom, .ui-corner-right, .ui-corner-br {
+            border-bottom-right-radius: 1px;
+        }
+
+        .ui-corner-all, .ui-corner-bottom, .ui-corner-left, .ui-corner-bl {
+            border-bottom-left-radius: 1px;
+        }
+
+        
+
 
         @media screen and (max-width: 450px) {
 
@@ -306,6 +371,8 @@
 
             .qhero_page_reservation_2 .row .input_row textarea {
                 width: 89vw;
+                border : none;
+                background: #FCF7EC;
             }
 
             .qhero_page_reservation_2 .col_price .submit {
@@ -328,7 +395,7 @@
     </style>
 
     <div class="qhero_page_reservation_2">
-        <h1 data-aos="fade" data-aos-anchor-placement="top-bottom" data-aos-delay="0" data-aos-duration="2000">Votre maison : <span> <?= $maison['shortName'] . ', ' . $maison['lieu']; ?></span></h1>
+        <h1 data-aos="fade" data-aos-anchor-placement="top-bottom" data-aos-delay="0" data-aos-duration="2000">Votre maison : <span> <?= $maison['shortName']; ?></span></h1>
         <form action="" method="POST" id="myForm" class="form-control" name="register" onsubmit="return validate();">
             <div class="row" data-aos="fade" data-aos-anchor-placement="top-bottom" data-aos-delay="500" data-aos-duration="2000">
                 <div class="col">
