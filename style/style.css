@@ -138,7 +138,7 @@ nav {
     border: none;
     border-color: none;
     transform: translate(-40px, 0px);
-    transition: 0.2s;
+    transition: 0.2ss;
 }
 
 .header_right button:hover {

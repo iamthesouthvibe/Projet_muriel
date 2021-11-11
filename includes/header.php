@@ -109,11 +109,11 @@
 </script>
 
 <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
-<script>
-  AOS.init();
-</script>
+
 
 <script>
+  AOS.init();
+
   function waitBeforeNavigate(ev) {
     ev.preventDefault(); // prevent default anchor behavior
     const goTo = this.getAttribute("href"); // store anchor href
