@@ -45,13 +45,4 @@ $nbJour = round(($date_fin - $date_debut) / 60 / 60 / 24, 0);
 </div>
 
 
-
-
-
-
-
-
-<script>
-    document.getElementById('bouton_responsive').style.display = 'none';
-    document.getElementById('bouton_desktop').style.display = 'none';
-</script>
+<script src="js/confirmation-reservation.js"></script>

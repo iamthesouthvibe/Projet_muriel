@@ -17,12 +17,8 @@ $shortDes1 = substr($blog['details'], 0, 280);
 $shortDes2 = substr($blog['details'], 0, 600);
 $shortDes3 = substr($blog['details'], 600, 5000);
 ?>
-
+<link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
 <main>
-
-    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
-
-
     <!-- Section accueil -->
     <div class="qhero_page_blog-unit">
         <div class="qhero_entree_page_blog-unit">
@@ -77,7 +73,4 @@ include "includes/cursor.php";
 include("./includes/footer.php");
 ?>
 
-<script src="https://unpkg.com/aos@next/dist/aos.js"></script>
-<script>
-    AOS.init();
-</script>
+<script src="js/aos.js"></script>

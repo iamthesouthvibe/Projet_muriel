@@ -38,14 +38,10 @@ $sql = $db->query("SELECT * FROM rooms LIMIT 4");
     </div>
   </div>
 
-
-
   <!-- Swiper -->
   <div class="swiper mySwiper swiperHover" style="height: 90vh">
     <div class="swiper-wrapper">
       <?php while ($room = $sql->fetch(PDO::FETCH_ASSOC)) :
-
-
         $nb_mots2 = 42;
         $var2 = $room['details'];
         $tab2 = explode(' ', $var2, $nb_mots2 + 1);
@@ -67,7 +63,6 @@ $sql = $db->query("SELECT * FROM rooms LIMIT 4");
     <div class="swiper-button-prev"></div>
     <div class="swiper-pagination"></div>
   </div>
-
   </div>
 
   <!--  ######Ceci est la section Muriel.##### -->
@@ -92,62 +87,5 @@ include("./includes/footer.php"); ?>
 
 <!-- Swiper JS -->
 <script src="https://unpkg.com/swiper@7/swiper-bundle.min.js"></script>
-<script src="https://unpkg.com/aos@next/dist/aos.js"></script>
-
-<!-- Initialize Swiper -->
-<script>
-  var swiper = new Swiper(".mySwiper", {
-    /*autoHeight: true,*/
-    loop: true,
-    resizeObserver: false,
-    navigation: {
-      nextEl: ".swiper-button-next",
-      prevEl: ".swiper-button-prev",
-    },
-    pagination: {
-      el: ".swiper-pagination",
-    }
-  });
-
-  let swiperHoverRight = document.querySelector('.swiperHover .swiper-button-next ')
-
-  swiperHoverRight.addEventListener('mouseenter', function(e) {
-    cursor.classList.add('cursor_active_right');
-    cursor2.classList.add('cursor2_active_right');
-  })
-
-  swiperHoverRight.addEventListener('mouseleave', function(e) {
-    cursor.classList.remove('cursor_active_right');
-    cursor2.classList.remove('cursor2_active_right');
-  })
-
-
-
-  let swiperHoverLeft = document.querySelector('.swiperHover .swiper-button-prev ')
-
-  swiperHoverLeft.addEventListener('mouseenter', function(e) {
-    cursor.classList.add('cursor_active_left');
-    cursor2.classList.add('cursor2_active_left');
-  })
-
-  swiperHoverLeft.addEventListener('mouseleave', function(e) {
-    cursor.classList.remove('cursor_active_left');
-    cursor2.classList.remove('cursor2_active_left');
-  })
-
-  AOS.init();
-
-  function waitBeforeNavigate(ev) {
-    ev.preventDefault(); // prevent default anchor behavior
-    const goTo = this.getAttribute("href"); // store anchor href
-
-    setTimeout(function() {
-      window.location = goTo;
-    }, 1000); // time in ms
-
-    document.body.style.opacity = "0"
-  };
-
-  document.querySelectorAll(".waitBeforeNavigate")
-    .forEach(EL => EL.addEventListener("click", waitBeforeNavigate));
-</script>
+<script src="js/aos.js"></script>
+<script src="js/index.js"></script>

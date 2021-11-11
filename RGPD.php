@@ -25,13 +25,14 @@ include 'includes/header.php';
         </p>
         <h3 data-aos="fade-up" data-aos-anchor-placement="top-bottom" data-aos-duration="1000" data-aos-delay="200">1.2. Hébergeur</h3>
         <p data-aos="fade-up" data-aos-anchor-placement="top-bottom" data-aos-duration="1000" data-aos-delay="200">Ce site est hébergé par Planet Hoster
-       <br> Hébergeur : PLANET HOSTER PARIS
-       <br> Société : PLANET HOSTER
-       <br>Société : PLANET HOSTER
-       <br>Adresse web : https://www.planethoster.net/fr/
-       <br>Adresse Postale du siege: PlanetHoster – 4416 Louis-B.-Mayer – Laval, Québec – Canada – H7P 0G1
-       <br>Téléphone Paris : (+33) (0)1 76 60 41 43
-       <br>Adresse électronique (E-Mail) : https://www.planethoster.net/fr/Contact puis formulaire de communication à suivre sur le site de « PLANET HOSTER »</p>
+            <br> Hébergeur : PLANET HOSTER PARIS
+            <br> Société : PLANET HOSTER
+            <br>Société : PLANET HOSTER
+            <br>Adresse web : https://www.planethoster.net/fr/
+            <br>Adresse Postale du siege: PlanetHoster – 4416 Louis-B.-Mayer – Laval, Québec – Canada – H7P 0G1
+            <br>Téléphone Paris : (+33) (0)1 76 60 41 43
+            <br>Adresse électronique (E-Mail) : https://www.planethoster.net/fr/Contact puis formulaire de communication à suivre sur le site de « PLANET HOSTER »
+        </p>
         <h3 data-aos="fade-up" data-aos-anchor-placement="top-bottom" data-aos-duration="1000" data-aos-delay="200">1.3. Conception et réalisation technique du site</h3>
         <p data-aos="fade-up" data-aos-anchor-placement="top-bottom" data-aos-duration="1000" data-aos-delay="200">Jean Vayssié et Léo Labeaume <br>
 
@@ -55,22 +56,14 @@ include 'includes/header.php';
         <p data-aos="fade-up" data-aos-anchor-placement="top-bottom" data-aos-duration="1000" data-aos-delay="200">La consultation du site https://murielhomes.fr/ proposée par Muriel Home's n’est soumise à aucune condition. L’accès au formulaire pour poser une question est libre. Toute nouvelle demande d’information sera soumis à Muriel Home's.</p>
         <h2 data-aos="fade-up" data-aos-anchor-placement="top-bottom" data-aos-duration="1000" data-aos-delay="200">4. Données personnelles</h2>
         <p data-aos="fade-up" data-aos-anchor-placement="top-bottom" data-aos-duration="1000" data-aos-delay="200">Muriel Home's s’engage à ce que les données à caractère personnel concernant les utilisateurs du formulaire en ligne ne soient traitées que pour les finalités de ce service. En application des dispositions de la loi Informatique et Libertés du 6 janvier 1978, Muriel Home's s'engage à n'utiliser les données à caractère personnel de l'Utilisateur que pour les strictes finalités précisées ci-avant. Muriel Home's s'engage expressément à ne pas procéder à des traitements, de manière incompatible avec les finalités du présent service, à ne pas publier, divulguer ou transmettre d'informations concernant l'Utilisateur, sans son accord préalable.<br>
+            En application des dispositions de la loi Informatique et Libertés du 6 janvier 1978, l'utilisateur dispose d'un droit d'accès, de rectification et de suppression des données personnelles le concernant, qui peut être exercé à l'adresse suivante : muriel.homes.location@gmail.com <br>
 
-En application des dispositions de la loi Informatique et Libertés du 6 janvier 1978, l'utilisateur dispose d'un droit d'accès, de rectification et de suppression des données personnelles le concernant, qui peut être exercé à l'adresse suivante : muriel.homes.location@gmail.com <br>
-
-Muriel Home's garantit que les données à caractère personnel ne seront pas cédées à des tiers. Cette garantie ne s'applique pas pour des traitements à finalité statistique, dès lors que le traitement concerné n'aborde les données que de manière anonyme et globalisée.<br>
-Muriel Home's s'engage à mettre en œuvre les mesures techniques et d'organisation appropriées pour protéger les données à caractère personnel contre la destruction accidentelle ou illicite, la perte accidentelle, l'altération, la diffusion ou l'accès non autorisé.<br>
-Muriel Home's s'engage à conserver les données personnelles pendant une durée n'excédant pas celle nécessaire à la réalisation des finalités pour lesquelles elles sont collectées ou traitées.<br>
-Muriel Home's pourra être obligée de divulguer toute information vous concernant afin de se conformer à toute loi ou réglementation en vigueur, ou pour répondre à toute demande judiciaire ou administrative.</p>
-    
-    
+            Muriel Home's garantit que les données à caractère personnel ne seront pas cédées à des tiers. Cette garantie ne s'applique pas pour des traitements à finalité statistique, dès lors que le traitement concerné n'aborde les données que de manière anonyme et globalisée.<br>
+            Muriel Home's s'engage à mettre en œuvre les mesures techniques et d'organisation appropriées pour protéger les données à caractère personnel contre la destruction accidentelle ou illicite, la perte accidentelle, l'altération, la diffusion ou l'accès non autorisé.<br>
+            Muriel Home's s'engage à conserver les données personnelles pendant une durée n'excédant pas celle nécessaire à la réalisation des finalités pour lesquelles elles sont collectées ou traitées.<br>
+            Muriel Home's pourra être obligée de divulguer toute information vous concernant afin de se conformer à toute loi ou réglementation en vigueur, ou pour répondre à toute demande judiciaire ou administrative.</p>
     </div>
-
-
-
-
     <?php
     include "includes/cursor.php";
     include("./includes/footer.php"); ?>
-
 </main>

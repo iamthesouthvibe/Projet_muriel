@@ -143,24 +143,5 @@ include("./includes/footer.php");
 
 ?>
 
-
-<script src="https://unpkg.com/aos@next/dist/aos.js"></script>
-<script>
-    AOS.init();
-</script>
-
-<script>
-    function waitBeforeNavigate(ev) {
-        ev.preventDefault(); // prevent default anchor behavior
-        const goTo = this.getAttribute("href"); // store anchor href
-
-        setTimeout(function() {
-            window.location = goTo;
-        }, 1000); // time in ms
-
-        document.body.style.opacity = "0"
-    };
-
-    document.querySelectorAll(".waitBeforeNavigate")
-        .forEach(EL => EL.addEventListener("click", waitBeforeNavigate));
-</script>
+<script src="js/aos.js"></script>
+<script src="js/blog.js"></script>

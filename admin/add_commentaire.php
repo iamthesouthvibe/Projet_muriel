@@ -34,6 +34,7 @@ if (isset($_POST['add'])) {
 
 ?>
 
+
 <div class="admin_page">
     <div class="header_admin">
         <h1>Ajouter un commentaire</h1>

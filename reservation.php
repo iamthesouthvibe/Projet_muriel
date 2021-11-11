@@ -76,55 +76,23 @@ $sql = $db->query("SELECT * FROM rooms");
 </style>
 
 <main>
-<link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
 
-<div class="qhero_page_reservation">
-    <div class="form" data-aos="fade" data-aos-anchor-placement="bottom-bottom" data-aos-duration="1000" data-aos-delay="500">
-        <div class="input">
-            <form method="get" action="reservation-2.php">
-                <select  name="maison" class="test">
-                    <option  value="" selected="true" disabled="disabled">Votre maison</option>
-                    <?php while ($room = $sql->fetch(PDO::FETCH_ASSOC)) : ?>
+    <div class="qhero_page_reservation">
+        <div class="form" data-aos="fade" data-aos-anchor-placement="bottom-bottom" data-aos-duration="1000" data-aos-delay="500">
+            <div class="input">
+                <form method="get" action="reservation-2.php">
+                    <select name="maison" class="test">
+                        <option value="" selected="true" disabled="disabled">Votre maison</option>
+                        <?php while ($room = $sql->fetch(PDO::FETCH_ASSOC)) : ?>
 
-                        <option class="test-hover" value="<?= $room['id']; ?>"><?= $room['shortName']; ?></option>
-                    <?php endwhile; ?>
-                </select>
-                <input type="submit" value="Vérifier les disponibilités" class="button">
-            </form>
+                            <option class="test-hover" value="<?= $room['id']; ?>"><?= $room['shortName']; ?></option>
+                        <?php endwhile; ?>
+                    </select>
+                    <input type="submit" value="Vérifier les disponibilités" class="button">
+                </form>
+            </div>
         </div>
     </div>
-</div>
 </main>
-
-<script>
-    document.getElementById('bouton_responsive').style.display = 'none';
-
-
-    let input = document.querySelector('.test');
-    let button = document.querySelector('.button');
-
-
-    button.addEventListener('click', function(event) {
-        if (input.value === "") {
-            event.preventDefault();
-        }
-    });
-</script>
-
-<script src="https://unpkg.com/aos@next/dist/aos.js"></script>
-
-<script>
-    function waitBeforeNavigate(ev) {
-        ev.preventDefault(); // prevent default anchor behavior
-        const goTo = this.getAttribute("href"); // store anchor href
-
-        setTimeout(function() {
-            window.location = goTo;
-        }, 1000); // time in ms
-
-        document.body.style.opacity = "0"
-    };
-
-    document.querySelectorAll(".waitBeforeNavigate")
-        .forEach(EL => EL.addEventListener("click", waitBeforeNavigate));
-</script>
+<script src="js/reservation.js"></script>

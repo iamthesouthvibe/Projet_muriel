@@ -17,37 +17,9 @@ include 'includes/header.php';
             </h2>
         </div>
     </div>
-        <div class="div_bouton_retour_home">
+    <div class="div_bouton_retour_home">
         <button class="bouton_retour_home"><a class="waitBeforeNavigate" href="index.php">Retour à l'Accueil</a></button>
-        </div>  
+    </div>
 </div>
 
-<script>
-    document.body.style.backgroundColor="#9A4747";
-
-    let bouton = document.querySelector(".bouton_desktop");
-    bouton.style.display="none";
-
-    let boutonText= document.querySelector(".bouton_desktop a");
-    boutonText.style.display="none";
-
-    document.body.style.overflow="hidden";
-</script>
-
-<script>
-  function waitBeforeNavigate(ev) {
-    ev.preventDefault(); // prevent default anchor behavior
-    const goTo = this.getAttribute("href"); // store anchor href
-
-    setTimeout(function () {
-        window.location = goTo;
-    }, 1000); // time in ms
-
-    document.body.style.opacity = "0"
-};
-
-document.querySelectorAll(".waitBeforeNavigate")
-    .forEach(EL => EL.addEventListener("click", waitBeforeNavigate));
-      
-</script>
-
+<script src="js/404.js"></script>
