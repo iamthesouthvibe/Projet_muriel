@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:8889
--- Generation Time: Nov 10, 2021 at 09:14 PM
+-- Generation Time: Nov 11, 2021 at 02:32 PM
 -- Server version: 5.7.30
 -- PHP Version: 7.4.9
 
@@ -288,23 +288,23 @@ INSERT INTO `rooms` (`id`, `room_number`, `shortName`, `price`, `details`, `deta
 
 CREATE TABLE `tourism` (
   `id` int(11) NOT NULL,
-  `title` varchar(255) NOT NULL,
-  `subtitles` varchar(255) NOT NULL,
-  `photo` text NOT NULL,
-  `photo_2` text NOT NULL,
-  `photo_3` text NOT NULL,
-  `location` varchar(255) NOT NULL,
-  `details` text NOT NULL,
-  `date` date NOT NULL
+  `title` varchar(255) CHARACTER SET utf8 NOT NULL,
+  `citation` varchar(255) CHARACTER SET utf8 NOT NULL,
+  `photo` text CHARACTER SET utf8 NOT NULL,
+  `photo_2` text CHARACTER SET utf8 NOT NULL,
+  `location` varchar(255) CHARACTER SET utf8 NOT NULL,
+  `details` text CHARACTER SET utf8 NOT NULL,
+  `date` date NOT NULL,
+  `id_rooms` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=armscii8;
 
 --
 -- Dumping data for table `tourism`
 --
 
-INSERT INTO `tourism` (`id`, `title`, `subtitles`, `photo`, `photo_2`, `photo_3`, `location`, `details`, `date`) VALUES
-(4, 'Kuomboka ceremony', '', 'images/0527836c3fa98cb0b57ef19e5d26ff08.png', '', '', 'Mongu', 'Lorem ipsum dolor sit amet. Aut accusantium nostrum nam vero quis qui tenetur quibusdam ut nobis optio sit enim accusamus non quam velit cum accusamus alias! 33 recusandae velit qui doloribus voluptates ut necessitatibus voluptas et possimus numquam. Ex quaerat sapiente eum galisum totam sit autem suscipit!\r\n\r\nId veritatis quos atque voluptate non aliquid sequi ut molestiae animi qui sunt nisi vel odio corrupti est voluptatem accusamus! A similique recusandae non amet voluptas et fugit alias eum itaque esse ea iure dolores nam beatae possimus aut voluptatibus magni. At dolores quos et assumenda eligendi sit consequatur molestias sit saepe veniam aut commodi consequuntur qui consequuntur rerum. Quo explicabo natus et mollitia voluptates et nesciunt quia et quam animi eum similique mollitia qui odio illum.\r\n\r\nUt itaque veritatis et numquam nemo ut quod laboriosam ex dolor placeat est eligendi ipsum est eius voluptatem sed culpa quia! Eum odit voluptatibus ut perferendis quisquam aut veritatis cupiditate et suscipit iste non animi quis et enim impedit hic rerum voluptates. Sit nobis tempora sit porro sunt sit velit rerum qui dolorem molestiae ratione esse qui reprehenderit corporis. Est recusandae vero est omnis molestiae ullam temporibus.', '2017-04-08'),
-(16, 'test', 'test', 'images/86db8944b6b844e4600c6709c9e32868.jpg', 'images/0ecead8a560094352c3269956716ca40.png', 'images/2ea7d11ad3f3ab14b9f9a1899de4aeef.jpg', 'wwesh alorsn', 'ttttttttttttttttt', '2021-11-11');
+INSERT INTO `tourism` (`id`, `title`, `citation`, `photo`, `photo_2`, `location`, `details`, `date`, `id_rooms`) VALUES
+(20, 'Les Anses-d&rsquo;Arlet', 'Toute la douceur des &icirc;les', 'images/bb6e34cd03cfd31755ea467a8007fd3f.jpg', 'images/3d8f1b8fefc6f12553ed9e2b88e80903.jpg', 'Martinique, France', '&Agrave; la pointe sud-ouest de la Martinique, &agrave; 15 kilom&egrave;tres de Fort-de-France, Les Anses-d&rsquo;Arlet d&eacute;cline toutes les couleurs des Antilles : bleu azur du ciel et de la mer des Cara&iuml;bes, vert tendre des mornes et des volcans &eacute;teints, blanc, rouge, jaune des maisons traditionnelles aux volets bleus. Avec ses 18 kilom&egrave;tres de plages, ses anses pr&eacute;serv&eacute;es et la silhouette &eacute;l&eacute;gante de son &eacute;glise, on comprend qu&rsquo;il soit le village le plus photographi&eacute; de l&rsquo;&icirc;le et le deuxi&egrave;me &laquo; village pr&eacute;f&eacute;r&eacute; des Fran&ccedil;ais &raquo; 2020.\r\n\r\nBaie turquoise, langoureusement cambr&eacute;e devant le vert tendre de la v&eacute;g&eacute;tation ; cocotiers pench&eacute;s, comme pour mieux &eacute;couter les confidences de la brise ; des maisons blanches, jaunes, bleues, coiff&eacute;es de toits rouges ; pile au bout du ponton de bois jet&eacute; sur la mer azur, un clocher qu&rsquo;on dirait pos&eacute; sur le sable, avec en arri&egrave;re-plan, la silhouette bossue des mornes alentour : oui, Les Anses-d&rsquo;Arlet ont tout d&rsquo;une carte postale. C&rsquo;est d&rsquo;ailleurs un des sites les plus photographi&eacute;s de la Martinique.\r\n\r\nIci, l&rsquo;agitation n&rsquo;est pas de mise, on la laisse &agrave; Fort-de-France, &agrave; 35 kilom&egrave;tres. On lui pr&eacute;f&egrave;re la douce nonchalance des &icirc;les, le farniente et la p&ecirc;che au filet, pratiqu&eacute;e ici le matin de bonne heure. Difficile d&rsquo;imaginer que ce petit bout de paradis, les pieds dans la mer des Cara&iuml;bes, ait pu r&eacute;sonner du fracas des canons et des cris des hommes en guerre&hellip; C&rsquo;est pourtant ce qui est arriv&eacute; ici &agrave; plusieurs reprises.\r\n', '2021-11-11', 23),
+(21, 'LE RHUM MARTINIQUAIS : FIERT&Eacute; NATIONALE ', 'Blanc, Ambr&eacute; ou Vieux, vous succomberez &agrave; ses robes aussi bien avec vos yeux qu&rsquo;avec votre palais. ', 'images/8e0359c3ac47407cc33daa2675af1cf6.jpg', 'images/c25ac1763264bc84f8bd381e18d42cb3.jpg', 'Martinique, France', 'Les rhums de Martinique, prim&eacute;s dans le monde entier, doivent imp&eacute;rativement faire partie de vos exp&eacute;riences gustatives lors de vos prochaines vacances en Martinique. \r\nBlanc, Ambr&eacute; ou Vieux, vous succomberez &agrave; ses robes aussi bien avec vos yeux qu&rsquo;avec votre palais. \r\nLes distilleries o&ugrave; sont produites le pr&eacute;cieux nectar sont ouvertes toute l&rsquo;ann&eacute;e &agrave; la visite, au cours de laquelle vous pourrez entre autres d&eacute;guster et pourquoi pas acheter vos coups de coeur.\r\nVoyagez au c&oelig;ur des distilleries martiniquaises : Depaz, La Mauny, Neisson, Saint-James, JM, Cl&eacute;ment, Habitation Saint-Etienne&hellip; il y a largement de quoi se laisser tenter, mais attention, avec mod&eacute;ration !\r\n\r\nRendez-vous sur les flancs de la Montagne Pel&eacute;e o&ugrave; l&rsquo;habitation Bellevue profite d&rsquo;un climat tropical humide et de la fertilit&eacute; d&rsquo;une terre volcanique r&eacute;put&eacute;e propice &agrave; la culture de la canne &agrave; sucre d&rsquo;exception.\r\n\r\nProduit depuis plusieurs si&egrave;cles selon des techniques anciennes voulues par son fondateur, Jean-Marie Martin, le rhum J.M est jug&eacute; par les connaisseurs comme &eacute;tant le meilleur rhum vieux de l&rsquo;&icirc;le aux fleurs !\r\n\r\nLa Distillerie est l&rsquo;une des rares &agrave; utiliser de l&rsquo;eau de source pour produire ses rhums. Arrivant directement des entrailles de la Montagne Pel&eacute;e, cette eau riche en min&eacute;raux et pure contribue grandement &agrave; la qualit&eacute; des Rhums J.M.', '2021-11-12', 23);
 
 -- --------------------------------------------------------
 
@@ -329,7 +329,7 @@ CREATE TABLE `users` (
 
 INSERT INTO `users` (`id`, `full_name`, `email`, `password`, `join_date`, `last_login`, `permissions`, `photo`) VALUES
 (3, 'admin', 'admin@admin.com', '$2y$10$Dhgz8tgcOjuI08Y0o5wsS.gK3.kNDRNpc.z9Q0qJ3mGpJMYDaIQBi', '2017-12-13 23:12:51', '2021-07-25 20:14:22', 'editor,admin', ''),
-(69, 'L&eacute;o LABEAUME', 'leo.labeaume@hotmail.fr', '$2y$10$u98xl0fuMIL9fFYpQy8q6.6zKcbVuL0YqMjqFc2CbV2Ma8rYvzlGm', '2021-07-25 20:07:14', '2021-11-10 18:54:30', 'editor,admin', '119067618_313029256649032_3533176219461607909_n.jpg');
+(69, 'L&eacute;o LABEAUME', 'leo.labeaume@hotmail.fr', '$2y$10$u98xl0fuMIL9fFYpQy8q6.6zKcbVuL0YqMjqFc2CbV2Ma8rYvzlGm', '2021-07-25 20:07:14', '2021-11-11 12:58:08', 'editor,admin', '119067618_313029256649032_3533176219461607909_n.jpg');
 
 --
 -- Indexes for dumped tables
@@ -379,7 +379,8 @@ ALTER TABLE `rooms`
 -- Indexes for table `tourism`
 --
 ALTER TABLE `tourism`
-  ADD PRIMARY KEY (`id`);
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `id_rooms` (`id_rooms`);
 
 --
 -- Indexes for table `users`
@@ -431,7 +432,7 @@ ALTER TABLE `rooms`
 -- AUTO_INCREMENT for table `tourism`
 --
 ALTER TABLE `tourism`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
 
 --
 -- AUTO_INCREMENT for table `users`
@@ -466,3 +467,9 @@ ALTER TABLE `products`
 --
 ALTER TABLE `reservations`
   ADD CONSTRAINT `reservations_ibfk_1` FOREIGN KEY (`id_rooms`) REFERENCES `rooms` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+--
+-- Constraints for table `tourism`
+--
+ALTER TABLE `tourism`
+  ADD CONSTRAINT `tourism_ibfk_1` FOREIGN KEY (`id_rooms`) REFERENCES `rooms` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
