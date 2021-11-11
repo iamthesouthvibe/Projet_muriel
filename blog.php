@@ -2,7 +2,7 @@
 require_once 'core/core.php';
 include 'includes/header.php';
 
-$select = $db->query("SELECT * FROM tourism");
+$select = $db->query("SELECT * FROM tourism ORDER BY id desc");
 ?>
 
 <main>
@@ -45,13 +45,13 @@ $select = $db->query("SELECT * FROM tourism");
     <div class="espace_flexbox_produit_02">
         <?php while ($product = $select->fetch(PDO::FETCH_ASSOC)) : ?>
             <div class="espace_produit_02">
-                <a class="waitBeforeNavigate" href="" data-aos="fade" data-aos-anchor-placement="top-bottom" data-aos-duration="1000" data-aos-delay="600">
+                <a class="waitBeforeNavigate" href="blog-unit.php?blog=<?= $product['id'] ?>" data-aos="fade" data-aos-anchor-placement="top-bottom" data-aos-duration="1000" data-aos-delay="600">
                     <img src="<?= $product['photo']; ?>" alt="Thumbnail du produit">
                 </a>
-                <a class="waitBeforeNavigate" href="" data-aos="fade" data-aos-anchor-placement="top-bottom" data-aos-duration="1000" data-aos-delay="700">
+                <a class="waitBeforeNavigate" href="blog-unit.php?blog=<?= $product['id'] ?>" data-aos="fade" data-aos-anchor-placement="top-bottom" data-aos-duration="1000" data-aos-delay="700">
                     <h6><?= $product['title']; ?></h6>
                 </a>
-                <a class="waitBeforeNavigate" href="" class="lien_achat" data-aos="fade" data-aos-anchor-placement="top-bottom" data-aos-duration="1000" data-aos-delay="900">Lire l'article →</a>
+                <a class="waitBeforeNavigate" href="blog-unit.php?blog=<?= $product['id'] ?>" class="lien_achat" data-aos="fade" data-aos-anchor-placement="top-bottom" data-aos-duration="1000" data-aos-delay="900">Lire l'article →</a>
             </div>
         <?php endwhile; ?>
     </div>

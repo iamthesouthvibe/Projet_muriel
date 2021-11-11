@@ -28,7 +28,7 @@ if (!empty($_FILES)) {
   $fileName = md5(microtime()) . '.' . $ext;
   $type = @$_FILES['file']['type'];
   $tmp_name = @$_FILES['file']['tmp_name'];
-
+  $size = @$_FILES['file']['size'];
 
   if (($ext == 'jpg') || ($ext == 'jpeg') || ($ext == 'png') || ($ext == 'gif')) {
     $location = $_SERVER['DOCUMENT_ROOT'] . '/images/';

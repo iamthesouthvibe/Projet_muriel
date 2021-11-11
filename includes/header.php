@@ -52,7 +52,7 @@
             <a class="waitBeforeNavigate" href="index.php">Home</a>
           </li>
           <li>
-            <a class="waitBeforeNavigate" href="blog.php">Rubriques</a>
+            <a class="waitBeforeNavigate" href="blog.php">Blog</a>
           </li>
           <!--
           <li>

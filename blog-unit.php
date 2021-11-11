@@ -2,8 +2,9 @@
 require_once 'core/core.php';
 include 'includes/header.php';
 
+$id_blog = $_GET['blog'];
 // Requete SQL -> Selectionne tout dans la table tourism
-$sql = $db->query("SELECT * FROM tourism ");
+$sql = $db->query("SELECT * FROM tourism WHERE id = {$id_blog}");
 
 // On va chercher nos données 
 $blog = $sql->fetch(PDO::FETCH_ASSOC);
@@ -44,10 +45,10 @@ $shortDes3 = substr($blog['details'], 600, 5000);
         <div class="container_presentation_blog-unit_colonne_gauche">
             <div class="texte_gauche-blog-unit" data-aos="fade" data-aos-anchor-placement="top-bottom" data-aos-duration="1000" data-aos-delay="500">
                 <div class="image_gauche-blog-unit" data-aos="fade" data-aos-anchor-placement="top-bottom" data-aos-duration="1000" data-aos-delay="200">
-                    <img src="assets/jpg/images page d'accueil/Villa-grande-Anse-Martinique02.jpg" alt="Photo Maison Gauche">
+                    <img src="<?= $blog['photo']; ?>" alt="Photo Maison Gauche">
                 </div>
                 <div class="image_gauche-blog-unit" data-aos="fade" data-aos-anchor-placement="top-bottom" data-aos-duration="1000" data-aos-delay="200">
-                    <img src="assets/jpg/images page d'accueil/Villa-grande-Anse-Martinique02.jpg" alt="Photo Maison Gauche">
+                    <img src="<?= $blog['photo_2']; ?>" alt="Photo Maison Gauche">
                 </div>
             </div>
         </div>

@@ -10,15 +10,11 @@ if ($roomID == '') {
     header('Location: page-404.php');
 }
 $select = $db->query("SELECT * FROM rooms WHERE id = '{$roomID}' ");
+
+$selectBlog = $db->query("SELECT * FROM tourism WHERE id_rooms = '{$roomID}' ")
 ?>
-
-
+<link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
 <main>
-
-    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
-
-
-
     <?php while ($room = $select->fetch(PDO::FETCH_ASSOC)) :
 
         $shortDes = substr($room['details'], 0, 280)
@@ -398,39 +394,28 @@ $select = $db->query("SELECT * FROM rooms WHERE id = '{$roomID}' ");
 
 
         <!-- Section articles blog -->
-
-        <div class="container_blog">
-            <div class="titre_section_blog">
-                <h4 class="titre_section_blog_h4" data-aos="fade-up" data-aos-anchor-placement="top-bottom" data-aos-duration="1000">
-                    Espace Partage
-                </h4>
-            </div>
-            <div class="espace_flexbox_blog">
-                <div class="espace_article_blog">
-                    <img src="assets/jpg/maison_photo_01.jpg" alt="Thumbnail du blog" data-aos="fade-up" data-aos-anchor-placement="top-bottom" data-aos-duration="1000">
-                    <h6 class="element_textuel_blog" data-aos="fade" data-aos-anchor-placement="top-bottom">Date de l'article</h6>
-                    <h5 class="element_textuel_blog" data-aos="fade" data-aos-anchor-placement="top-bottom">Titre de l'article</h5>
-                    <a class="waitBeforeNavigate" class="element_textuel_blog" href="" data-aos="fade" data-aos-anchor-placement="top-bottom">Lire l'article →</a>
+        <?php if ($selectBlog != '') : ?>
+            <div class="container_blog">
+                <div class="titre_section_blog">
+                    <h4 class="titre_section_blog_h4" data-aos="fade-up" data-aos-anchor-placement="top-bottom" data-aos-duration="1000">
+                        Espace Partage
+                    </h4>
                 </div>
-                <div class="espace_article_blog espace_article_blog_02">
-                    <img src="assets/jpg/maison_photo_01.jpg" alt="Thumbnail du blog" data-aos="fade-up" data-aos-anchor-placement="top-bottom" data-aos-duration="1000" data-aos-delay="200" data-aos-duration="1000">
-                    <h6 data-aos="fade" data-aos-anchor-placement="top-bottom" data-aos-delay="120">Date de l'article</h6>
-                    <h5 data-aos="fade" data-aos-anchor-placement="top-bottom" data-aos-delay="120">Titre de l'article</h5>
-                    <a class="waitBeforeNavigate" data-aos="fade" data-aos-anchor-placement="top-bottom" data-aos-delay="120" href="">Lire l'article →</a>
+                <div class="espace_flexbox_blog">
+                    <?php while ($blog = $selectBlog->fetch(PDO::FETCH_ASSOC)) : ?>
+                        <div class="espace_article_blog">
+                            <img src="<?= $blog['photo']; ?>" alt="Thumbnail du blog" data-aos="fade-up" data-aos-anchor-placement="top-bottom" data-aos-duration="1000">
+                            <h6 class="element_textuel_blog" data-aos="fade" data-aos-anchor-placement="top-bottom"><?= $blog['date']; ?></h6>
+                            <h5 class="element_textuel_blog" data-aos="fade" data-aos-anchor-placement="top-bottom"><?= $blog['title']; ?></h5>
+                            <a class="waitBeforeNavigate" class="element_textuel_blog" href="blog-unit.php?blog=<?= $blog['id'] ?>" data-aos="fade" data-aos-anchor-placement="top-bottom">Lire l'article →</a>
+                        </div>
+                    <?php endwhile; ?>
                 </div>
-                <div class="espace_article_blog espace_article_blog_02">
-                    <img src="assets/jpg/maison_photo_01.jpg" alt="Thumbnail du blog" data-aos="fade-up" data-aos-anchor-placement="top-bottom" data-aos-duration="1000" data-aos-delay="400">
-                    <h6 data-aos="fade" data-aos-anchor-placement="top-bottom" data-aos-delay="190">Date de l'article</h6>
-                    <h5 data-aos="fade" data-aos-anchor-placement="top-bottom" data-aos-delay="190">Titre de l'article</h5>
-                    <a class="waitBeforeNavigate" data-aos="fade" data-aos-anchor-placement="top-bottom" data-aos-delay="190" href="">Lire l'article →</a>
+                <div class="lien_page_blog" data-aos="fade-up" data-aos-anchor-placement="top-bottom" data-aos-duration="1000">
+                    <a class="waitBeforeNavigate" href="">Voir tous les articles →</a>
                 </div>
             </div>
-            <div class="lien_page_blog" data-aos="fade-up" data-aos-anchor-placement="top-bottom" data-aos-duration="1000">
-                <a class="waitBeforeNavigate" href="">Voir tous les articles →</a>
-            </div>
-
-        </div>
-
+        <?php endif; ?>
         <!-- Section Produits -->
         <!--
 
