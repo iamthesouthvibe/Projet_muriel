@@ -359,8 +359,8 @@
         }*/
 
         
-        .ui-widget-header .ui-icon {
-        background-image: url(assets/png/noun_Next_2810810.png);
+       /* .ui-widget-header .ui-icon {
+        background-image: url(assets/png/noun_Next_2810810.png); */
 }
 
         input:focus,
