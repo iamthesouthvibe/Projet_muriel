@@ -17,6 +17,7 @@ $sql2 = $db->query("SELECT * FROM rooms");
 @$date = sanitize($_POST['date']);
 @$location_t = sanitize($_POST['location']);
 @$sdetails = sanitize($_POST['sdetails']);
+@$intro = sanitize($_POST['intro']);
 @$id_rooms = sanitize($_POST['maison']);
 //The function nl2br() reserves line breaks
 // @$fdetails = nl2br($_POST['fdetails']);
@@ -65,7 +66,7 @@ if (isset($_POST['add'])) {
 
 
     //INSERTING EVENT DETAILS IN THE DATABASE
-    $sql = "INSERT INTO tourism (`title`, `citation`, `photo`, `photo_2`, `location`,`details`, `date`, `id_rooms`) VALUES ('$title','$subtitles','$image','$image2', '$location_t','$sdetails','$date', '$id_rooms') ";
+    $sql = "INSERT INTO tourism (`title`, `citation`, `photo`, `photo_2`, `location`,`details`, `intro` ,`date`, `id_rooms`) VALUES ('$title','$subtitles','$image','$image2', '$location_t','$sdetails', '$intro' ,'$date', '$id_rooms') ";
     $query_run = $db->query($sql);
 
     if ($query_run) {
@@ -81,112 +82,6 @@ if (isset($_POST['add'])) {
 }
 
 ?>
-<!--
-<div class="w3-container w3-main" style="margin-left:200px">
-  <header class="w3-container w3-purple">
-    <span class="w3-opennav w3-xlarge w3-hide-large" onclick="w3_open()">☰</span>
-    <h2 class="text-center">Add a tour</h2>
-  </header>
-  <br />
-
-  <div class="row col-sm-12">
-    <a href="tours.php" class="btn btn-md btn-primary pull-right">Go to tours</a>
-  </div>
-  <br><br>
-  <div class="row">
-
-    <div class="col-md-9 w3-padding">
-
-      <form class="form" method="POST" action="" enctype="multipart/form-data">
-
-        <div class="col-sm-3 form-group">
-          <label for="title">Title:</label>
-          <input type="text" name="title" value="<?= (isset($toEditID)) ? '' . $rows['title'] . '' : ''; ?>" class="form-control" placeholder="event topic">
-        </div>
-
-        <div class="col-sm-3 form-group">
-          <label for="subtitles">Sous-Title:</label>
-          <input type="text" name="subtitles" value="<?= (isset($toEditID)) ? '' . $rows['subtitles'] . '' : ''; ?>" class="form-control" placeholder="event topic">
-        </div>
-
-        <div class="col-sm-3 form-group">
-          <label for="location">Location:</label>
-          <input type="text" name="location" class="form-control" value="<?= (isset($toEditID)) ? '' . $rows['location'] . '' : ''; ?>" placeholder="venue">
-        </div>
-
-        <div class="col-sm-3 form-group">
-          <label for="date">Date:</label>
-          <input type="date" name="date" value="<?= (isset($toEditID)) ? '' . $rows['date'] . '' : ''; ?>" class="form-control">
-        </div>
-
-        <?php if (!@$rows['photo'] || @$rows['photo'] == '') : ?>
-          <div class="col-sm-3 form-group">
-            <label for="file">Photo:</label>
-            <input type="file" class="form-control" name="file" id="file">
-          </div>
-        <?php endif;  ?>
-
-        <?php if (!@$rows['photo_2'] || @$rows['photo_2'] == '') : ?>
-          <div class="col-sm-3 form-group">
-            <label for="file2">Photo:</label>
-            <input type="file" class="form-control" name="file2" id="file">
-          </div>
-        <?php endif;  ?>
-
-        <?php if (!@$rows['photo_3'] || @$rows['photo_3'] == '') : ?>
-          <div class="col-sm-3 form-group">
-            <label for="file3">Photo:</label>
-            <input type="file" class="form-control" name="file3" id="file">
-          </div>
-        <?php endif;  ?>
-
-
-        <div class="col-sm-6 form-group">
-          <label for="sdetails">Description:</label>
-          <textarea name="sdetails" class="form-control" col="20" rows="5"><?= (isset($toEditID)) ? '' . $rows['details'] . '' : ''; ?></textarea>
-        </div>
-
-        <div class="col-sm-12">
-          <input type="submit" name="<?= (isset($toEditID)) ? 'update' : 'add'; ?>" value="<?= (isset($toEditID)) ? 'Edit Tour' : 'Add Tour'; ?>" class="w3-btn w3-indigo w3-btn-block"><br>
-          <?php
-          if (isset($toEditID)) {
-            echo '<br>';
-            echo ' <a href="add_tour.php?cancelEdit=' . $toEditID . '" type="button" name="cancelEdit" class="w3-btn w3-orange w3-btn-block">Cancel Edit</a>';
-          }
-          ?>
-        </div>
-      </form>
-    </div>
-    <div class="col-md-3">
-      <?php if (isset($toEditID) && !$rows['photo'] != ' ') : ?>
-        <figure>
-          <h3>Event Image</h3>
-          <img src="../<?= $rows['photo']; ?>" alt="event image" class="img-responsive">
-          <figcaption>
-            <a href="add_tour.php?delete_image=<?= $toEditID; ?>" class="w3-text-red">Delete Photo</a>
-          </figcaption>
-        </figure>
-        
-        <figure>
-          <h3>Event Image</h3>
-          <img src="../<?= $rows['photo_2']; ?>" alt="event image" class="img-responsive">
-          <figcaption>
-            <a href="add_tour.php?delete_image=<?= $toEditID; ?>" class="w3-text-red">Delete Photo</a>
-          </figcaption>
-        </figure>
-        
-        <figure>
-          <h3>Event Image</h3>
-          <img src="../<?= $rows['photo_3']; ?>" alt="event image" class="img-responsive">
-          <figcaption>
-            <a href="add_tour.php?delete_image=<?= $toEditID; ?>" class="w3-text-red">Delete Photo</a>
-          </figcaption>
-        </figure>
-      <?php endif; ?>
-    </div>
-  </div>
-</div>
-      -->
 
 <style>
   .form-control small {
@@ -266,6 +161,13 @@ if (isset($_POST['add'])) {
         </div>
       </div>
       <div class="form_addtours_bottom">
+        <div class="form-control">
+          <label for="intro">Texte introductif :</label>
+          <br>
+          <textarea name="intro" id="intro" col="5" rows="2" required></textarea>
+          <br>
+          <small>Error Message</small>
+        </div>
         <div class="form-control">
           <label for="sdetails">Description:</label>
           <br>

@@ -13,9 +13,34 @@ $sql = $db->query("SELECT * FROM tourism WHERE id = {$id_blog}");
 // On va chercher nos données 
 $blog = $sql->fetch(PDO::FETCH_ASSOC);
 
-$shortDes1 = substr($blog['details'], 0, 280);
-$shortDes2 = substr($blog['details'], 0, 600);
-$shortDes3 = substr($blog['details'], 600, 5000);
+
+$nb_mots = 50;
+$shortDes1 = $blog['details'];
+$tab = explode(' ', $shortDes1, $nb_mots + 1);
+unset($tab[$nb_mots]);
+$shortDesc = implode(' ', $tab);
+
+$nb_mots2 = 80;
+$shortDes2 = $blog['details'];
+$tab2 = explode(' ', $shortDes2, $nb_mots2 + 1);
+unset($tab2[$nb_mots2]);
+$shortDesc2 = implode(' ', $tab2);
+
+$WidgetText = substr($blog['details'], 0, strrpos(substr($blog['details'], 0, 600), ' '));
+$WidgetText2 = substr($blog['details'], 0, strrpos(substr($blog['details'], 0, 10000), ' '));
+
+function wordCutString($str, $start = 0, $words = 15)
+{
+    $arr = preg_split("/[\s]+/",  $str, $words + 1);
+    $arr = array_slice($arr, $start, $words);
+    return join(' ', $arr);
+}
+
+$test = wordCutString($blog['details'], 0, 100);
+
+$test2 = wordCutString($blog['details'], 100, 250);
+
+
 ?>
 <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
 <main>
@@ -34,7 +59,7 @@ $shortDes3 = substr($blog['details'], 600, 5000);
             </div>
             <div class="div_h3_text_presentation_blog-unit">
                 <h3 class="h3_titre-blog-unit" data-aos="fade-up" data-aos-anchor-placement="top-bottom" data-aos-duration="1000" data-aos-delay="200">
-                    <?= ($blog['details'] != '') ? $shortDes1 : ''; ?>...
+                    <?= ($blog['intro']  != '') ? $blog['intro'] : ''; ?>
                 </h3>
             </div>
         </div>
@@ -55,12 +80,12 @@ $shortDes3 = substr($blog['details'], 600, 5000);
         <div class="container_presentation_blog-unit_colonne_droite" data-aos="fade" data-aos-anchor-placement="top-bottom" data-aos-duration="1000" data-aos-delay="700">
             <div class="texte-droite-blog-unit">
                 <p>
-                    <?= ($blog['details'] != '') ? $shortDes2 : ''; ?>...
+                    <?= ($blog['details'] != '') ? $test : ''; ?>...
                 </p>
             </div>
             <h4 class="texte-droite-blog-unit-citation"> <?= ($blog['citation'] != '') ? '"' . $blog['citation'] . '"' : ''; ?></h4>
             <p>
-                <?= ($blog['details'] != '') ? $shortDes3 : ''; ?>
+                <?= ($blog['details'] != '') ? $test2 : ''; ?>
             </p>
         </div>
     </div>
