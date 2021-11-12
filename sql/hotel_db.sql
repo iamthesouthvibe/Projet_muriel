@@ -144,7 +144,7 @@ CREATE TABLE `reservations` (
   `zip` varchar(15) CHARACTER SET utf8 NOT NULL,
   `pays` varchar(255) DEFAULT NULL,
   `id_rooms` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=armscii8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
 
@@ -289,7 +289,7 @@ CREATE TABLE `tourism` (
   `intro` text NOT NULL,
   `date` date NOT NULL,
   `id_rooms` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=armscii8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Dumping data for table `tourism`
@@ -319,7 +319,7 @@ CREATE TABLE `users` (
   `last_login` datetime NOT NULL,
   `permissions` varchar(255) NOT NULL,
   `photo` text NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=armscii8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Dumping data for table `users`

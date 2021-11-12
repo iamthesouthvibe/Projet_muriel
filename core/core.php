@@ -1,6 +1,6 @@
 <?php
-//$db = new PDO('mysql:host=localhost;dbname=hotel_db', 'root', 'root');
-$db = new PDO('mysql:host=localhost;dbname=sxgdzjcq_ProjetV1', 'sxgdzjcq_v1', 'y7?xx3n(:nxe(enxnG');
+$db = new PDO('mysql:host=localhost;dbname=hotel_db', 'root', 'root');
+//$db = new PDO('mysql:host=localhost;dbname=sxgdzjcq_ProjetV1', 'sxgdzjcq_v1', 'y7?xx3n(:nxe(enxnG');
 
 if (!$db) {
     echo 'Could not establish database connection, please review your settings';
