@@ -13,22 +13,6 @@ $sql = $db->query("SELECT * FROM tourism WHERE id = {$id_blog}");
 // On va chercher nos données 
 $blog = $sql->fetch(PDO::FETCH_ASSOC);
 
-
-$nb_mots = 50;
-$shortDes1 = $blog['details'];
-$tab = explode(' ', $shortDes1, $nb_mots + 1);
-unset($tab[$nb_mots]);
-$shortDesc = implode(' ', $tab);
-
-$nb_mots2 = 80;
-$shortDes2 = $blog['details'];
-$tab2 = explode(' ', $shortDes2, $nb_mots2 + 1);
-unset($tab2[$nb_mots2]);
-$shortDesc2 = implode(' ', $tab2);
-
-$WidgetText = substr($blog['details'], 0, strrpos(substr($blog['details'], 0, 600), ' '));
-$WidgetText2 = substr($blog['details'], 0, strrpos(substr($blog['details'], 0, 10000), ' '));
-
 function wordCutString($str, $start = 0, $words = 15)
 {
     $arr = preg_split("/[\s]+/",  $str, $words + 1);
