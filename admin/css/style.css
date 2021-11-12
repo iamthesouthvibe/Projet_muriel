@@ -648,6 +648,13 @@ textarea {
     border-bottom: solid 1px;
 }
 
+input:focus,
+select:focus,
+textarea:focus,
+button:focus {
+    outline: none;
+}
+
 .admin_page-addcalendar label {
     font-family: ITCGaramondStd-BkNarrow;
     color: #9a4747;
