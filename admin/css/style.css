@@ -680,6 +680,8 @@ textarea {
     margin-top: 30px;
 }
 
+
+
 @media screen and (max-width: 450px) {
     .sidebar ul li i {
         font-size: 25px;

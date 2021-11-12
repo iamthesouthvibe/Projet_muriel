@@ -70,6 +70,9 @@ if (isset($_POST['add'])) {
 
 ?>
 <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/humanity/jquery-ui.css" type="text/css">
+<style>
+
+</style>
 <div class="admin_page">
     <div class="header_admin">
         <h1>Ajouter une réservation au calendrier</h1>
