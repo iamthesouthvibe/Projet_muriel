@@ -21,7 +21,7 @@ function sendMail($message)
         $mail->Username   = 'test@murielhomes.fr';                  //SMTP username
         $mail->Password   = '74x4g7+Z4^Z^k:O7x,';                   //SMTP password
         $mail->SMTPSecure = 'ssl';            //Enable implicit TLS encryption
-        $mail->Port       = 465;                                     //TCP port to connect to; use 587 if you have set `SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS`
+        $mail->Port       = 465;                                    //TCP port to connect to; use 587 if you have set `SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS`
 
         //Recipients
         $mail->setFrom('reservation@murielhomes.com', 'Muriel homes');
