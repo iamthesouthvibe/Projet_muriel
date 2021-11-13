@@ -1,7 +1,7 @@
     <?php
     require_once 'core/core.php';
     include 'includes/header.php';
-    include 'fonctions/fonctionMail.php';
+    // include 'fonctions/fonctionMail.php';
 
     $roomID = $_GET['maison'];
 
@@ -58,15 +58,15 @@
                 $current_date = date("Y-m-d");
                 $zip = $_POST['zip'];
 
-                $message = '<h1>Vous avez une demande de résérvation au nom de '  . $name  .  ' pour la maison ' . $maison['room_number']  . '</h1> <br>
-                            <h2>Date de la reservation : du ' . $checkin .  ' au ' . $checkout . '</h2> <br>
-                            <p>Email : ' . $email . ' Téléphone : ' . $phone . '</p>
-                            <p>Nombre d\'adultes : ' . $people  . ' Nombre d\'enfants : ' .  $child . '</p>
-                            <p>Adresse : ' . $address  . ' Pays : ' .  $pays . '</p>
-                            <p>Message : ' . $comm . '</p>';
+                // $message = '<h1>Vous avez une demande de résérvation au nom de '  . $name  .  ' pour la maison ' . $maison['room_number']  . '</h1> <br>
+                //             <h2>Date de la reservation : du ' . $checkin .  ' au ' . $checkout . '</h2> <br>
+                //             <p>Email : ' . $email . ' Téléphone : ' . $phone . '</p>
+                //             <p>Nombre d\'adultes : ' . $people  . ' Nombre d\'enfants : ' .  $child . '</p>
+                //             <p>Adresse : ' . $address  . ' Pays : ' .  $pays . '</p>
+                //             <p>Message : ' . $comm . '</p>';
 
-                $messageClient = '<p>Bonjour,<br><br> vous avez fait une demande de réservation pour la maison ' . $maison['room_number']  . ' du ' . $checkin . '  au ' . $checkout .
-                    ' <br> Votre demande a bien été pris en compte, je reviens vers vous d\'ici 3 jours. <br><br>  Cordialement,<br><br>  Muriel Home’s</p>';
+                // $messageClient = '<p>Bonjour,<br><br> vous avez fait une demande de réservation pour la maison ' . $maison['room_number']  . ' du ' . $checkin . '  au ' . $checkout .
+                //     ' <br> Votre demande a bien été pris en compte, je reviens vers vous d\'ici 3 jours. <br><br>  Cordialement,<br><br>  Muriel Home’s</p>';
 
 
                 if ($checkin >= $current_date) {
@@ -77,9 +77,9 @@
 
                         if ($save) {
 
-                            sendMail($message);
+                            // sendMail($message);
 
-                            sendMail2($messageClient, $email);
+                            // sendMail2($messageClient, $email);
 
                             $id = $db->lastInsertId();
 
