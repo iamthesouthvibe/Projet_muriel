@@ -14,7 +14,7 @@ include 'includes/header.php';
                 <a href="https://www.instagram.com/" target="_blank" data-aos="fade" data-aos-anchor-placement="top-bottom" data-aos-delay="200" data-aos-duration="2000">Instagram</a> <br>
             </h1>
             <h1>
-                <a href="tel:+33777240109" data-aos="fade" data-aos-anchor-placement="top-bottom" data-aos-delay="300" data-aos-duration="2000">+33777240109</a>
+                <a href="tel:+33674966088" data-aos="fade" data-aos-anchor-placement="top-bottom" data-aos-delay="300" data-aos-duration="2000">++33674966088</a>
             </h1>
         </div>
         <div class="bloc2" data-aos="fade" data-aos-anchor-placement="top-bottom" data-aos-duration="3000" data-aos-delay="400">
