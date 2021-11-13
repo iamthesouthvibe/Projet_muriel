@@ -39,7 +39,7 @@ if (isset($_POST['update'])) {
 <div class="admin_page">
   <div class="header_admin">
     <h1><?= $edit['room_number'] ?> </h1>
-    <img src="../assets/png/LOGO_02_PNG_NOIR.png" alt="Logo Muriel">
+    <img src="../assets/png/LOGO_03_PNG_NOIR.png" alt="Logo Muriel">
   </div>
   <form class="admin_page-addcalendar" action="#" method="post" enctype="multipart/form-data">
 

@@ -123,10 +123,14 @@ nav {
 .header_left img {
     max-height: 40px;
     max-width: 90px;
-    transform: translate(0px, -4px);
+    transform: translate(0px, -7px);
 }
 
 .header_right {
+    display: flex;
+}
+
+.flex-box-menu {
     display: flex;
 }
 
@@ -270,22 +274,23 @@ nav {
 .menu_nav {
     position: fixed;
     overflow: hidden;
-    width: 80vw;
+    width: 50vw;
     height: 100vh;
     background-color: #E5E5E5;
     top: 0;
     z-index: 10;
-    left: -100vw;
+    left: -50vw;
     transition: left 0.8s ease;
 }
+
 
 .menu_nav_right {
     position: fixed;
     overflow: hidden;
-    width: 20vw;
+    width: 50vw;
     height: 100vh;
     background-color: #E5E5E5;
-    right: -20vw;
+    right: -50vw;
     top: 0;
     z-index: 10;
     transition: right 0.8s ease;
@@ -307,9 +312,26 @@ nav {
 
 .menu_nav_right ul {
     position: absolute;
-    bottom: 25px;
-    right: 25px;
+    bottom: calc(-71px + 10vw);
+    
 }
+.container_menu .sous-menu-header li {
+    text-align: right;
+}
+
+.container_menu .sous-menu-header li a  {
+    font-family: neue_montrealregular;
+    font-style: normal;
+    font-weight: normal;
+    font-size: calc(12px + 1.2vw);
+    line-height: auto;
+}
+
+.invisibility-bloc {
+    visibility:hidden 
+
+}
+
 
 .menu_nav ul li {
     list-style: none;
@@ -334,7 +356,7 @@ nav {
     position: relative;
 }
 
-.container_menu ul li a::after {
+.container_menu .menu_nav_link ul li a::after {
     content: '';
     position: absolute;
     width: 100%;
@@ -347,9 +369,44 @@ nav {
     transition: transform 0.7s ease-out;
 }
 
-.container_menu ul li a:hover::after {
+.container_menu .menu_nav_link ul li a:hover::after {
     transform: scaleX(1);
     transform-origin: bottom left;
+}
+
+.container_menu .menu_nav_right ul li a::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    transform: scaleX(0);
+    height: 3px;
+    bottom: 0;
+    left: 0;
+    background-color: rgba(154, 71, 71, 1);
+    transform-origin: bottom right;
+    transition: transform 0.7s ease-out;
+}
+
+.container_menu .menu_nav_right ul li a:hover::after {
+    transform: scaleX(1);
+    transform-origin: bottom left;
+}
+
+.menu_nav_right p {
+    font-family: ITCGaramondStd-BkNarrow;
+font-style: normal;
+font-weight: normal;
+text-decoration: none;
+list-style: none;
+list-style-type: none;
+color: rgba(154, 71, 71, 1);
+font-size: 8vw;
+line-height: 0.9;
+margin-bottom: 10px;
+}
+
+.header-link-none {
+    display: none;
 }
 
 
@@ -1841,11 +1898,11 @@ margin-left: auto;
 }
 
 .section_prix-total {
-    bottom: 100px;
-    position: fixed;
+    margin-top: 50px;
+    /* position: fixed;
     width: 120px;
     left: 50%;
-    margin-left: -60px;
+    margin-left: -60px; */
 }
 
 .section_prix-total h4 {
@@ -1865,7 +1922,7 @@ margin-left: auto;
     font-weight: normal;
     font-size: 32px;
     margin: 0;
-    margin-left: auto;
+    margin-left: auto;  
     margin-right: auto;
     text-align: center;
 }
@@ -3611,12 +3668,18 @@ margin: auto;
     .header_left img {
         max-width: 90px;
         max-height: 32px;
-        transform: translate(0px, -9px);
+        transform: translate(0px, -4px);
     }
     .header_right button {
         top: 87vh;
         position: relative;
     }
+
+
+    .header-link-none {
+        display: block;
+    }
+
     .burger-menu span:nth-child(2) {
         top: 10px;
     }
@@ -3869,8 +3932,13 @@ margin-right: auto;
         padding-left: 14px;
     }
     .container_menu ul li a {
-        font-size: 95px;
+        font-size: 20vw;
     }
+
+    .sous-liens {
+        font-size: 8vw!important;
+    }
+    
     .bloc1 h1 a {
         font-size: 12vw;
         line-height: 120%;
@@ -4014,6 +4082,21 @@ margin-right: auto;
         width: 135px;
         height: 30px;
     }
+
+    .header-titre-maison {
+        font-family: ITCGaramondStd-BkNarrow;
+        font-style: normal;
+        font-weight: normal;
+        text-decoration: none;
+        list-style: none;
+        list-style-type: none;
+        color: rgba(154, 71, 71, 1);
+        font-size: 20vw;
+        line-height: 0.9;
+        margin-bottom: 10px;
+        display: inline-block;
+        position: relative;
+    }   
 }
 
 

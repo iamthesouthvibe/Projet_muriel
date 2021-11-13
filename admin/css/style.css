@@ -432,6 +432,7 @@ textarea {
     background-color: #9A4747;
     color: #FCF7EC;
     font-size: 20px;
+    margin-top: 50px;
 }
 
 /* ### Fin style page admin header  ### */
@@ -563,6 +564,7 @@ textarea {
     color: #FCF7EC;
     font-size: 20px;
     margin-top: 20px;
+    
 }
 
 
@@ -605,14 +607,19 @@ textarea {
 }
 
 .admin_page_reserv_button {
-    position: absolute;
-    bottom: 0px;
-    right: 0px;
-    padding: 25px;
+    position: fixed;
+    right: 25px;
+    bottom: 25px;
+    width: 60px;
+    transition: all 0.5s;
+}
+
+.admin_page_reserv_button:hover {
+    transform: scale(1.2,1.2);
 }
 
 .admin_page_reserv_button img {
-    width: 45px;
+    width: 60px;
 }
 
 .admin_page-calendar-choice .button {
