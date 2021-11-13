@@ -3936,7 +3936,12 @@ margin-right: auto;
     }
 
     .sous-liens {
-        font-size: 8vw!important;
+        font-size: 7vw!important;
+    }
+
+    .sous-menu-header li a {
+        line-height: 0.75!important;
+        
     }
     
     .bloc1 h1 a {
@@ -3995,6 +4000,25 @@ margin-right: auto;
     }
     .qhero_page_reservation select {
         margin-right: 0px;
+    }
+    .header-titre-maison {
+        font-family: ITCGaramondStd-BkNarrow;
+        font-style: normal;
+        font-weight: normal;
+        text-decoration: none;
+        list-style: none;
+        list-style-type: none;
+        color: rgba(154, 71, 71, 1);
+        font-size: 20vw;
+        line-height: 0.9;
+        margin-bottom: 10px;
+        display: inline-block;
+        position: relative;
+        margin: 0;
+    }   
+
+    .container_menu .header-link-none li {
+        text-align: right;
     }
 }
 
@@ -4083,20 +4107,7 @@ margin-right: auto;
         height: 30px;
     }
 
-    .header-titre-maison {
-        font-family: ITCGaramondStd-BkNarrow;
-        font-style: normal;
-        font-weight: normal;
-        text-decoration: none;
-        list-style: none;
-        list-style-type: none;
-        color: rgba(154, 71, 71, 1);
-        font-size: 20vw;
-        line-height: 0.9;
-        margin-bottom: 10px;
-        display: inline-block;
-        position: relative;
-    }   
+  
 }
 
 

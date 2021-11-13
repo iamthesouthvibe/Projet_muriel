@@ -65,21 +65,22 @@
                 <a class="waitBeforeNavigate" href="contact.php">Contact</a>
               </li>
               <div class="header-link-none">
-                    <li > 
-                        <p class="waitBeforeNavigate header-titre-maison">Maisons</p>
-                        <div class="sous-menu-header">
-                  <li>
-                    <a class="waitBeforeNavigate sous-menu-header sous-liens" href="index.php">Martinique →</a>
-                  </li>
-                  <li>
-                    <a class="waitBeforeNavigate sous-liens" href="index.php">Narbonne →</a>
-                  </li>
-                  <li>
-                    <a class="waitBeforeNavigate sous-liens" href="index.php">Gruissan →</a>
-                  </li>
-                  <li>
-                    <a class="waitBeforeNavigate sous-liens" href="index.php">Pyrénnées →</a>
-                  </li>
+                  <li > 
+                    <p class="waitBeforeNavigate header-titre-maison">Maisons</p>
+                  </li>    
+                  <div class="sous-menu-header">  
+                    <li>
+                      <a class="waitBeforeNavigate sous-menu-header sous-liens" href="index.php">Martinique →</a>
+                    </li>
+                    <li>
+                      <a class="waitBeforeNavigate sous-liens" href="index.php">Narbonne →</a>
+                    </li>
+                    <li>
+                      <a class="waitBeforeNavigate sous-liens" href="index.php">Gruissan →</a>
+                    </li>
+                    <li>
+                      <a class="waitBeforeNavigate sous-liens" href="index.php">Pyrénnées →</a>
+                    </li>
 
               </div>
               </li>
