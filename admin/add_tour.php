@@ -96,7 +96,7 @@ if (isset($_POST['add'])) {
 <div class="admin_page">
   <div class="header_admin">
     <h1>Ajouter une rubrique</h1>
-    <img src="../assets/png/LOGO_02_PNG_NOIR.png" alt="Logo Muriel">
+    <img src="../assets/png/LOGO_03_PNG_NOIR.png" alt="Logo Muriel">
   </div>
   <div class="admin_page_addtours">
     <form method="POST" enctype="multipart/form-data" id="form" name="form" onsubmit="return validate();">
@@ -174,10 +174,9 @@ if (isset($_POST['add'])) {
           <textarea name="sdetails" id="description" col="20" rows="5" required></textarea>
           <br>
           <small>Error Message</small>
-        </div>
-
-        <input type="submit" name="add" value="Ajouter" class="submit_button"><br>
+            </div>
       </div>
+      <input type="submit" name="add" value="Ajouter" class="submit_button"><br>
     </form>
   </div>
 </div>

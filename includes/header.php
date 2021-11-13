@@ -25,7 +25,7 @@
     <nav>
       <div class="header_left">
         <a class="waitBeforeNavigate" href="index.php">
-          <img src="assets/png/LOGO_02_PNG_NOIR.png" alt="Logo muriel Home">
+          <img src="assets/png/LOGO_03_PNG_NOIR.png" alt="Logo muriel Home">
         </a>
       </div>
       <div class="header_right">
@@ -47,39 +47,79 @@
   <div class="container_menu">
     <div class="menu_nav">
       <div class="menu_nav_link">
-        <ul>
-          <li>
-            <a class="waitBeforeNavigate" href="index.php">Home</a>
-          </li>
-          <li>
-            <a class="waitBeforeNavigate" href="blog.php">Blog</a>
-          </li>
-          <!--
-          <li>
-            <a class="waitBeforeNavigate"  href="products.php">Produits</a>
-          </li>
-          -->
-          <li>
-            <a class="waitBeforeNavigate" href="contact.php">Contact</a>
-          </li>
-        </ul>
+        <div class="flex-box-menu">
+          <div>
+            <ul>
+              <li>
+                <a class="waitBeforeNavigate" href="index.php">Accueil</a>
+              </li>
+              <li>
+                <a class="waitBeforeNavigate" href="blog.php">Blog</a>
+              </li>
+              <!--
+              <li>
+                <a class="waitBeforeNavigate"  href="products.php">Produits</a>
+              </li>
+              -->
+              <li>
+                <a class="waitBeforeNavigate" href="contact.php">Contact</a>
+              </li>
+              <div class="header-link-none">
+                  <li > 
+                    <p class="waitBeforeNavigate header-titre-maison">Maisons</p>
+                  </li>    
+                  <div class="sous-menu-header">  
+                    <li>
+                      <a class="waitBeforeNavigate sous-menu-header sous-liens" href="index.php">Martinique →</a>
+                    </li>
+                    <li>
+                      <a class="waitBeforeNavigate sous-liens" href="index.php">Narbonne →</a>
+                    </li>
+                    <li>
+                      <a class="waitBeforeNavigate sous-liens" href="index.php">Gruissan →</a>
+                    </li>
+                    <li>
+                      <a class="waitBeforeNavigate sous-liens" href="index.php">Pyrénnées →</a>
+                    </li>
+
+              </div>
+              </li>
+            </ul>
+          </div>
+      </div>
       </div>
     </div>
+    
     <div class="menu_nav_right">
-      <ul>
-        <li>
-          <a class="waitBeforeNavigate" href="index.php">01</a>
-        </li>
-        <li>
-          <a class="waitBeforeNavigate" href="blog.php">02</a>
-        </li>
-        <!-- <li>
-          <a class="waitBeforeNavigate" href="">03</a>
-        </li> -->
-        <li>
-          <a class="waitBeforeNavigate" href="contact.php">03</a>
-        </li>
-      </ul>
+       <div>
+         <ul>
+          <li>
+              <p class="waitBeforeNavigate">Maisons</p>
+          </li>
+          <div class="sous-menu-header">
+            <li>
+              <a class="waitBeforeNavigate sous-menu-header" href="index.php">Martinique →</a>
+            </li>
+            <li>
+              <a class="waitBeforeNavigate" href="index.php">Narbonne →</a>
+            </li>
+            <li>
+              <a class="waitBeforeNavigate" href="index.php">Gruissan →</a>
+            </li>
+            <li>
+              <a class="waitBeforeNavigate" href="index.php">Pyrénnées →</a>
+            </li>
+          </div>
+          <div class="invisibility-bloc">
+            <li>
+                <a class="waitBeforeNavigate" href="index.php"></a>
+            </li>
+            <li>
+                <a class="waitBeforeNavigate" href="index.php"></a>
+            </li>
+        </div>
+         </ul>
+        </div>
     </div>
   </div>
 
@@ -127,4 +167,14 @@
 
   document.querySelectorAll(".waitBeforeNavigate")
     .forEach(EL => EL.addEventListener("click", waitBeforeNavigate));
+</script>
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-1VJYHWLT9X"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-1VJYHWLT9X');
 </script>

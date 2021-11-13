@@ -18,7 +18,7 @@ $hashed = password_hash($password, PASSWORD_DEFAULT);
 
 <div class="login_page">
     <div class="login_page_header">
-        <a href="/index.php"><img src="../assets/png/LOGO_02_PNG_NOIR.png" alt="Logo muriel home"></a>
+        <a href="/index.php"><img src="../assets/png/LOGO_03_PNG_NOIR.png" alt="Logo muriel home"></a>
     </div>
     <?php
     if (isset($_POST['login'])) {
