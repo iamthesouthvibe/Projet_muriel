@@ -19,7 +19,7 @@ function sendMail($message)
         $mail->Host       = 'node67-eu.n0c.com';                    //Set the SMTP server to send through
         $mail->SMTPAuth   = true;                                   //Enable SMTP authentication
         $mail->Username   = 'test@murielhomes.fr';                  //SMTP username
-        $mail->Password   = '74x4g7+Z4^Z^k:O7x,';                   //SMTP password
+        $mail->Password   = 'J1(419)Ukx#9WJp4~k';                   //SMTP password
         $mail->SMTPSecure = 'ssl';            //Enable implicit TLS encryption
         $mail->Port       = 465;                                     //TCP port to connect to; use 587 if you have set `SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS`
 
@@ -62,7 +62,7 @@ function sendMail2($message, $expediteur)
         $mail->Host       = 'node67-eu.n0c.com';                    //Set the SMTP server to send through
         $mail->SMTPAuth   = true;                                   //Enable SMTP authentication
         $mail->Username   = 'test@murielhomes.fr';                  //SMTP username
-        $mail->Password   = '74x4g7+Z4^Z^k:O7x,';                   //SMTP password
+        $mail->Password   = 'J1(419)Ukx#9WJp4~k';                   //SMTP password
         $mail->SMTPSecure = 'ssl';            //Enable implicit TLS encryption
         $mail->Port       = 465;                                     //TCP port to connect to; use 587 if you have set `SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS`
 
