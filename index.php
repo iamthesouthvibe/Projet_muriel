@@ -25,7 +25,7 @@ $sql = $db->query("SELECT * FROM rooms LIMIT 4");
   <div class="qhero">
     <div class="qhero_page_accueil">
       <h1 class="style_h1_accueil" data-aos="fade-up" data-aos-anchor-placement="bottom-bottom" data-aos-duration="1000" data-aos-delay="0"> “Laissez-vous séduire par un univers d’élégance <br> et de douceur.<br> 4 maisons, 4 ambiances le
-        <br> regard d’une femmes”
+        <br> regard d’une femme”
       </h1>
       <h2 class="style_h2_accueil" data-aos="fade-up" data-aos-anchor-placement="bottom-bottom" data-aos-duration="1000" data-aos-delay="200">Je veux créer des maisons pour faire rêver, des maisons qui soient comme des personnalités, surprenantes, inattendues, accueillantes et généreuses. Où l’on ait envie de rester et de revenir, comme pour poursuivre une conversation interrompue trop tôt. </h2>
       <div data-aos="fade-up" data-aos-anchor-placement="bottom-bottom" data-aos-duration="1000" data-aos-delay="400">
