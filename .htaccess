@@ -1,3 +1,1 @@
-RewriteEngine on
-RewriteCond %{HTTPS} off
-RewriteRule (.*) https://murielhomes.fr//$1 [R=301,L]
+
