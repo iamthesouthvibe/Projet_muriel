@@ -8,8 +8,8 @@
     <meta name="description" content="">
     <meta name="author" content="">
     <link rel="stylesheet" href="../style/style.css">
-    <link rel="stylesheet" href="https://unpkg.com/swiper@7/swiper-bundle.min.css" />
-    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <link rel="module" href="https://unpkg.com/swiper@7/swiper-bundle.min.css" />
+    <link rel="module" href="https://unpkg.com/aos@next/dist/aos.css" />
   </head>
 
 
