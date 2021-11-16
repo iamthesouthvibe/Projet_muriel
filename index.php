@@ -97,6 +97,7 @@ include("./includes/footer.php"); ?>
 
 <!-- Initialize Swiper -->
 <script>
+  AOS.init();
   var swiper = new Swiper(".mySwiper", {
     /*autoHeight: true,*/
     loop: true,
