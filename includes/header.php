@@ -7,8 +7,8 @@
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <meta name="description" content="">
     <meta name="author" content="">
-    <link rel="stylesheet" href="../style/style.css">
     <link rel="stylesheet" href="https://unpkg.com/swiper@7/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="../style/style.css">
   </head>
 
 
