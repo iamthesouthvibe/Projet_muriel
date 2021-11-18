@@ -499,7 +499,7 @@
     <div class="qhero_page_reservation_2">
         <h1 data-aos="fade" data-aos-anchor-placement="top-bottom" data-aos-delay="0" data-aos-duration="2000" data-aos-once="true">Votre maison : <span> <?= $maison['shortName']; ?> , <?= $maison['lieu']; ?> </span></h1>
         <h2 data-aos="fade" data-aos-anchor-placement="top-bottom" data-aos-delay="100" data-aos-duration="2000" data-aos-once="true">Mettre la durée minimale de location par maison ici </h2>
-        <form action="" method="POST" id="myForm" class="form-control" name="register" onsubmit="return validate();">
+        <form action="" method="POST" id="myForm" class="form-control" name="register" onsubmit="return validate();" autocomplete="off">
             <div class="row" data-aos="fade" data-aos-anchor-placement="top-bottom" data-aos-delay="500" data-aos-duration="2000" data-aos-once="true">
                 <div class="col">
                     <div>
