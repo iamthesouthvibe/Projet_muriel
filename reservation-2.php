@@ -70,53 +70,57 @@
             $Return = getCaptcha($_POST['g-recaptcha-response']);
             // var_dump($Return);
             if ($Return->success == true && $Return->score > 0.5) {
-                if (!empty($_POST['name']) && !empty($_POST['txtFromDate1']) && !empty($_POST['txtFromDate2']) && !empty($_POST['phone']) && !empty($_POST['people'])) {
+                if (isset($_POST['url']) && $_POST['url'] == '') {
+                    if (!empty($_POST['name']) && !empty($_POST['txtFromDate1']) && !empty($_POST['txtFromDate2']) && !empty($_POST['phone']) && !empty($_POST['people'])) {
 
-                    $name = $_POST['name'];
-                    $checkin = $_POST['txtFromDate1'];
-                    $checkout = $_POST['txtFromDate2'];
-                    $phone = $_POST['phone'];
-                    $people = $_POST['people'];
-                    $child = $_POST['children'];
-                    $email = $_POST['email'];
-                    @$address = $_POST['adress'];
-                    $pays = $_POST['pays'];
-                    $comm = $_POST['commentaire'];
-                    $current_date = date("Y-m-d");
-                    $zip = $_POST['zip'];
+                        $name = $_POST['name'];
+                        $checkin = $_POST['txtFromDate1'];
+                        $checkout = $_POST['txtFromDate2'];
+                        $phone = $_POST['phone'];
+                        $people = $_POST['people'];
+                        $child = $_POST['children'];
+                        $email = $_POST['email'];
+                        @$address = $_POST['adress'];
+                        $pays = $_POST['pays'];
+                        $comm = $_POST['commentaire'];
+                        $current_date = date("Y-m-d");
+                        $zip = $_POST['zip'];
 
-                    $message = '<h1>Vous avez une demande de résérvation au nom de '  . $name  .  ' pour la maison ' . $maison['room_number']  . '</h1> <br>
-                                <h2>Date de la reservation : du ' . $checkin .  ' au ' . $checkout . '</h2> <br>
-                                <p>Email : ' . $email . ' Téléphone : ' . $phone . '</p>
-                                <p>Nombre d\'adultes : ' . $people  . ' Nombre d\'enfants : ' .  $child . '</p>
-                                <p>Adresse : ' . $address  . ' Pays : ' .  $pays . '</p>
-                                <p>Message : ' . $comm . '</p>';
+                        $message = '<h1>Vous avez une demande de résérvation au nom de '  . $name  .  ' pour la maison ' . $maison['room_number']  . '</h1> <br>
+                                    <h2>Date de la reservation : du ' . $checkin .  ' au ' . $checkout . '</h2> <br>
+                                    <p>Email : ' . $email . ' Téléphone : ' . $phone . '</p>
+                                    <p>Nombre d\'adultes : ' . $people  . ' Nombre d\'enfants : ' .  $child . '</p>
+                                    <p>Adresse : ' . $address  . ' Pays : ' .  $pays . '</p>
+                                    <p>Message : ' . $comm . '</p>';
 
-                    $messageClient = '<p>Bonjour,<br><br> vous avez fait une demande de réservation pour la maison ' . $maison['room_number']  . ' du ' . $checkin . '  au ' . $checkout .
-                        ' <br> Votre demande a bien été pris en compte, je reviens vers vous d\'ici 3 jours. <br><br>  Cordialement,<br><br>  Muriel Home’s</p>';
+                        $messageClient = '<p>Bonjour,<br><br> vous avez fait une demande de réservation pour la maison ' . $maison['room_number']  . ' du ' . $checkin . '  au ' . $checkout .
+                            ' <br> Votre demande a bien été pris en compte, je reviens vers vous d\'ici 3 jours. <br><br>  Cordialement,<br><br>  Muriel Home’s</p>';
 
 
-                    if ($checkin >= $current_date) {
-                        if ($checkout >= $checkin) {
+                        if ($checkin >= $current_date) {
+                            if ($checkout >= $checkin) {
 
-                            $insert = "INSERT INTO `reservations` (`name`, `checkin`, `checkout`, `phone`, `people`, `email`, `children`,`address`, `commentaire`, `zip`, `id_rooms`) VALUES ('$name', '$checkin', '$checkout', '$phone', '$people', '$email', '$child', '$address', '$comm', '$zip', '$roomID')";
-                            $save = $db->query($insert);
-                            if ($save) {
-                                ini_set("error_reporting", E_ALL);
-                                ini_set("display_errors", "1");
-                                $id = $db->lastInsertId();
-                                sendMail($message);
-                                sendMail2($messageClient, $email);
-                                header('Location: confirmation-reservation.php?id=' . $id);
+                                $insert = "INSERT INTO `reservations` (`name`, `checkin`, `checkout`, `phone`, `people`, `email`, `children`,`address`, `commentaire`, `zip`, `id_rooms`) VALUES ('$name', '$checkin', '$checkout', '$phone', '$people', '$email', '$child', '$address', '$comm', '$zip', '$roomID')";
+                                $save = $db->query($insert);
+                                if ($save) {
+                                    ini_set("error_reporting", E_ALL);
+                                    ini_set("display_errors", "1");
+                                    $id = $db->lastInsertId();
+                                    sendMail($message);
+                                    sendMail2($messageClient, $email);
+                                    header('Location: confirmation-reservation.php?id=' . $id);
+                                } else {
+                                    echo 'erreur';
+                                }
                             } else {
-                                echo 'erreur';
+                                echo '<p class="text-center alert alert-danger">Date de départ non valide fournie. Veuillez éviter d\'utiliser une date passée.</p>';
                             }
                         } else {
                             echo '<p class="text-center alert alert-danger">Date de départ non valide fournie. Veuillez éviter d\'utiliser une date passée.</p>';
                         }
-                    } else {
-                        echo '<p class="text-center alert alert-danger">Date de départ non valide fournie. Veuillez éviter d\'utiliser une date passée.</p>';
                     }
+                } else {
+                    header('Location: page-404.php');
                 }
             } else {
                 echo 'u re a robot';
@@ -519,6 +523,8 @@
                             <small>Error Message</small>
                         </div>
 
+                        <p style="display:none;"><input type="text" name="url" /></p>
+
                         <div class="input_row">
                             <label for=txtFromDate2>Départ</label><br>
                             <input type="text" name="txtFromDate2" id="txtFromDate2" class="home-input" />
@@ -615,7 +621,7 @@
     <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
     <script src="https://kit.fontawesome.com/a076d05399.js"></script>
-    <!-- <script src="js/reservation-2.js"></script> -->
+    <script src="js/reservation-2.js"></script>
     <script src="js/datepicker-fr.js"></script>
     <script>
         grecaptcha.ready(function() {
