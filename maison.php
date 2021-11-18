@@ -275,34 +275,34 @@ $selectBlog = $db->query("SELECT * FROM tourism WHERE id_rooms = '{$roomID}' LIM
                             <p><?= $room['eq15']; ?></p>
                         </div>
                     <?php endif; ?>
-                    <?php if (!empty($room['eq16'])) : ?>
+                    <?php if (!empty($room['act1'])) : ?>
                         <div class="set-icon-text">
                             <img src="assets/svg/ICONS_TECHNIQUE_MAISON/CENTRE-VILLE.svg"> </img>
-                            <p><?= $room['eq16']; ?></p>
+                            <p><?= $room['act1']; ?></p>
                         </div>
                     <?php endif; ?>
-                    <?php if (!empty($room['eq17'])) : ?>
+                    <?php if (!empty($room['act2'])) : ?>
                         <div class="set-icon-text">
                             <img src="assets/svg/ICONS_TECHNIQUE_MAISON/CHEMINEE.svg"> </img>
-                            <p><?= $room['eq17']; ?></p>
+                            <p><?= $room['act2']; ?></p>
                         </div>
                     <?php endif; ?>
-                    <?php if (!empty($room['eq18'])) : ?>
+                    <?php if (!empty($room['act3'])) : ?>
                         <div class="set-icon-text">
                             <img src="assets/svg/ICONS_TECHNIQUE_MAISON/ENTRY.svg"> </img>
-                            <p><?= $room['eq18']; ?></p>
+                            <p><?= $room['act3']; ?></p>
                         </div>
                     <?php endif; ?>
-                    <?php if (!empty($room['eq19'])) : ?>
+                    <?php if (!empty($room['act4'])) : ?>
                         <div class="set-icon-text">
                             <img src="assets/svg/ICONS_TECHNIQUE_MAISON/RANGEMENT_SKIS.svg"> </img>
-                            <p><?= $room['eq19']; ?></p>
+                            <p><?= $room['act4']; ?></p>
                         </div>
                     <?php endif; ?>
-                    <?php if (!empty($room['eq20'])) : ?>
+                    <?php if (!empty($room['act5'])) : ?>
                         <div class="set-icon-text">
                             <img src="assets/svg/ICONS_TECHNIQUE_MAISON/PISTES-SKI.svg"> </img>
-                            <p><?= $room['eq20']; ?></p>
+                            <p><?= $room['act5']; ?></p>
                         </div>
                     <?php endif; ?>
                 </div>

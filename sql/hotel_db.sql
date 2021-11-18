@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:8889
--- Generation Time: Nov 12, 2021 at 12:12 PM
+-- Generation Time: Nov 18, 2021 at 07:36 PM
 -- Server version: 5.7.30
 -- PHP Version: 7.4.9
 
@@ -41,7 +41,8 @@ INSERT INTO `calendar` (`id`, `libelle`, `email`, `phone`, `checkin`, `checkout`
 (3, 'test 3', '', '', '2019-12-01', '2019-12-12', 26),
 (4, '', '', '', '2019-09-01', '2019-09-03', 25),
 (5, 'Léo LABEAUME', 'leo.labeaume@hotmail.fr', '0611879183', '2018-12-01', '2018-12-03', 23),
-(12, 'Léo LABEAUME', 'leo.labeaume@hotmail.fr', '0611879183', '2021-11-12', '2021-12-15', 23);
+(12, 'Léo LABEAUME', 'leo.labeaume@hotmail.fr', '0611879183', '2021-11-12', '2021-12-15', 23),
+(13, 'Test', 'test@gmail.com', '01', '2021-12-16', '2021-12-18', 23);
 
 -- --------------------------------------------------------
 
@@ -82,8 +83,8 @@ INSERT INTO `comments` (`id`, `fullname`, `date_c`, `comment`, `id_rooms`) VALUE
 
 CREATE TABLE `gallery` (
   `id` int(11) NOT NULL,
-  `image` text NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=armscii8;
+  `image` mediumtext NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Dumping data for table `gallery`
@@ -132,19 +133,27 @@ INSERT INTO `products` (`id_p`, `name_p`, `description_p`, `photo_p`, `size_p`, 
 
 CREATE TABLE `reservations` (
   `id` int(11) NOT NULL,
-  `name` varchar(255) CHARACTER SET utf8 NOT NULL,
+  `name` varchar(255) NOT NULL,
   `checkin` date NOT NULL,
   `checkout` date NOT NULL,
-  `phone` text CHARACTER SET utf8 NOT NULL,
+  `phone` text NOT NULL,
   `people` int(11) NOT NULL,
-  `email` varchar(255) CHARACTER SET utf8 NOT NULL,
-  `children` varchar(255) CHARACTER SET utf8 NOT NULL,
-  `address` varchar(255) CHARACTER SET utf8 NOT NULL,
-  `commentaire` text CHARACTER SET utf8 NOT NULL,
-  `zip` varchar(15) CHARACTER SET utf8 NOT NULL,
+  `email` varchar(255) NOT NULL,
+  `children` varchar(255) NOT NULL,
+  `address` varchar(255) DEFAULT NULL,
+  `commentaire` text NOT NULL,
+  `zip` varchar(15) DEFAULT NULL,
   `pays` varchar(255) DEFAULT NULL,
   `id_rooms` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `reservations`
+--
+
+INSERT INTO `reservations` (`id`, `name`, `checkin`, `checkout`, `phone`, `people`, `email`, `children`, `address`, `commentaire`, `zip`, `pays`, `id_rooms`) VALUES
+(186, 'lambert', '2022-01-09', '2022-01-16', '0674966088', 3, 'coutellier.muriel@wanadoo.fr', '2', '1 impasse de la Coronille', 'gffdsfdfdssfds', '11100', NULL, 23),
+(187, 'Vayssié', '2022-01-28', '2022-03-26', '33777340108', 1, 'nonhumain@protonmail.com', '1', '23 rue du chatelet', '', '74240', NULL, 23);
 
 -- --------------------------------------------------------
 
@@ -156,60 +165,36 @@ CREATE TABLE `rooms` (
   `id` int(11) NOT NULL,
   `room_number` varchar(255) NOT NULL,
   `shortName` varchar(50) NOT NULL,
-  `price` text CHARACTER SET armscii8 NOT NULL,
+  `price` mediumtext NOT NULL,
   `details` text NOT NULL,
   `details2` text NOT NULL,
   `details3` text NOT NULL,
   `lieu` varchar(255) NOT NULL,
-  `map` text CHARACTER SET armscii8 NOT NULL,
-  `photo` text CHARACTER SET armscii8 NOT NULL,
-  `photo_des` longtext NOT NULL,
-  `photo2` longtext CHARACTER SET armscii8 NOT NULL,
-  `photo_des2` longtext NOT NULL,
-  `photo3` longtext CHARACTER SET armscii8 NOT NULL,
-  `photo_des3` longtext NOT NULL,
-  `photo4` longtext CHARACTER SET armscii8 NOT NULL,
-  `photo_des4` longtext NOT NULL,
-  `photo5` longtext CHARACTER SET armscii8 NOT NULL,
-  `photo_des5` longtext NOT NULL,
-  `photo6` longtext CHARACTER SET armscii8 NOT NULL,
-  `photo_des6` longtext NOT NULL,
-  `photo7` longtext CHARACTER SET armscii8 NOT NULL,
-  `photo_des7` longtext NOT NULL,
-  `photo8` longtext CHARACTER SET armscii8 NOT NULL,
-  `photo_des8` longtext NOT NULL,
-  `photo9` longtext CHARACTER SET armscii8 NOT NULL,
-  `photo_des9` longtext NOT NULL,
-  `photo10` longtext CHARACTER SET armscii8 NOT NULL,
-  `photo_des10` longtext NOT NULL,
-  `photo11` longtext CHARACTER SET armscii8 NOT NULL,
-  `photo_des11` longtext NOT NULL,
-  `photo12` longtext CHARACTER SET armscii8 NOT NULL,
-  `photo_des12` longtext NOT NULL,
-  `photo13` longtext CHARACTER SET armscii8 NOT NULL,
-  `photo_des13` longtext NOT NULL,
-  `photo14` longtext CHARACTER SET armscii8 NOT NULL,
-  `photo_des14` longtext NOT NULL,
-  `photo15` longtext CHARACTER SET armscii8 NOT NULL,
-  `photo_des15` longtext NOT NULL,
-  `photo16` longtext CHARACTER SET armscii8 NOT NULL,
-  `photo_des16` longtext NOT NULL,
-  `photo17` longtext CHARACTER SET armscii8 NOT NULL,
-  `photo_des17` longtext NOT NULL,
-  `photo18` longtext CHARACTER SET armscii8 NOT NULL,
-  `photo_des18` longtext NOT NULL,
-  `photo19` longtext CHARACTER SET armscii8 NOT NULL,
-  `photo_des19` longtext NOT NULL,
-  `photo20` longtext CHARACTER SET armscii8 NOT NULL,
-  `photo_des20` longtext NOT NULL,
-  `photo21` longtext CHARACTER SET armscii8 NOT NULL,
-  `photo_des21` longtext NOT NULL,
-  `photo22` longtext CHARACTER SET armscii8 NOT NULL,
-  `photo_des22` longtext CHARACTER SET armscii8 NOT NULL,
-  `photo23` longtext CHARACTER SET armscii8 NOT NULL,
-  `photo_des23` longtext CHARACTER SET armscii8 NOT NULL,
-  `photo24` longtext CHARACTER SET armscii8 NOT NULL,
-  `photo_des24` longtext CHARACTER SET armscii8 NOT NULL,
+  `map` mediumtext NOT NULL,
+  `photo` mediumtext NOT NULL,
+  `photo2` longtext NOT NULL,
+  `photo3` longtext NOT NULL,
+  `photo4` longtext NOT NULL,
+  `photo5` longtext NOT NULL,
+  `photo6` longtext NOT NULL,
+  `photo7` longtext NOT NULL,
+  `photo8` longtext NOT NULL,
+  `photo9` longtext NOT NULL,
+  `photo10` longtext NOT NULL,
+  `photo11` longtext NOT NULL,
+  `photo12` longtext NOT NULL,
+  `photo13` longtext NOT NULL,
+  `photo14` longtext NOT NULL,
+  `photo15` longtext NOT NULL,
+  `photo16` longtext NOT NULL,
+  `photo17` longtext NOT NULL,
+  `photo18` longtext NOT NULL,
+  `photo19` longtext NOT NULL,
+  `photo20` longtext NOT NULL,
+  `photo21` longtext NOT NULL,
+  `photo22` longtext NOT NULL,
+  `photo23` longtext NOT NULL,
+  `photo24` longtext NOT NULL,
   `eq1` longtext NOT NULL,
   `eq2` longtext NOT NULL,
   `eq3` longtext NOT NULL,
@@ -229,48 +214,18 @@ CREATE TABLE `rooms` (
   `act2` longtext NOT NULL,
   `act3` longtext NOT NULL,
   `act4` varchar(80) NOT NULL,
-  `act5` varchar(80) NOT NULL,
-  `act6` varchar(80) NOT NULL,
-  `act7` varchar(80) NOT NULL,
-  `act8` varchar(80) NOT NULL,
-  `act9` varchar(80) NOT NULL,
-  `act10` varchar(80) NOT NULL,
-  `act11` varchar(80) NOT NULL,
-  `act12` varchar(80) NOT NULL,
-  `act13` varchar(80) NOT NULL,
-  `act14` varchar(80) NOT NULL,
-  `act15` varchar(80) NOT NULL,
-  `act16` varchar(80) NOT NULL,
-  `act17` varchar(80) NOT NULL,
-  `inte1` varchar(80) NOT NULL,
-  `inte2` varchar(80) NOT NULL,
-  `inte3` varchar(80) NOT NULL,
-  `inte4` varchar(80) NOT NULL,
-  `inte5` varchar(80) NOT NULL,
-  `inte6` varchar(80) NOT NULL,
-  `inte7` varchar(80) NOT NULL,
-  `inte8` varchar(80) NOT NULL,
-  `inte9` varchar(80) NOT NULL,
-  `inte10` varchar(80) NOT NULL,
-  `inte11` varchar(80) NOT NULL,
-  `dist1` varchar(100) NOT NULL,
-  `dist2` varchar(100) NOT NULL,
-  `dist3` varchar(100) NOT NULL,
-  `dist4` varchar(100) NOT NULL,
-  `dist5` varchar(100) NOT NULL,
-  `dist6` varchar(100) NOT NULL,
-  `dist7` varchar(100) NOT NULL
+  `act5` varchar(80) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Dumping data for table `rooms`
 --
 
-INSERT INTO `rooms` (`id`, `room_number`, `shortName`, `price`, `details`, `details2`, `details3`, `lieu`, `map`, `photo`, `photo_des`, `photo2`, `photo_des2`, `photo3`, `photo_des3`, `photo4`, `photo_des4`, `photo5`, `photo_des5`, `photo6`, `photo_des6`, `photo7`, `photo_des7`, `photo8`, `photo_des8`, `photo9`, `photo_des9`, `photo10`, `photo_des10`, `photo11`, `photo_des11`, `photo12`, `photo_des12`, `photo13`, `photo_des13`, `photo14`, `photo_des14`, `photo15`, `photo_des15`, `photo16`, `photo_des16`, `photo17`, `photo_des17`, `photo18`, `photo_des18`, `photo19`, `photo_des19`, `photo20`, `photo_des20`, `photo21`, `photo_des21`, `photo22`, `photo_des22`, `photo23`, `photo_des23`, `photo24`, `photo_des24`, `eq1`, `eq2`, `eq3`, `eq4`, `eq5`, `eq6`, `eq7`, `eq8`, `eq9`, `eq10`, `eq11`, `eq12`, `eq13`, `eq14`, `eq15`, `act1`, `act2`, `act3`, `act4`, `act5`, `act6`, `act7`, `act8`, `act9`, `act10`, `act11`, `act12`, `act13`, `act14`, `act15`, `act16`, `act17`, `inte1`, `inte2`, `inte3`, `inte4`, `inte5`, `inte6`, `inte7`, `inte8`, `inte9`, `inte10`, `inte11`, `dist1`, `dist2`, `dist3`, `dist4`, `dist5`, `dist6`, `dist7`) VALUES
-(23, 'Villa Grand Large Baie des Anses', 'Villa Grand Large ', '333', 'La Villa Grand Large vous accueille avec sa situation exceptionnelle sur Grande Anse et vous offre une vue époustouflante sur la mer Caraïbe.\r\nEntourée d\'un terrain arboré et fleuri de 2500 m2 qui descend sur la mer turquoise, vous serez au meilleur endroit pour découvrir les tortues et les poissons tropicaux en vous ?équipant juste de masque et tuba.\r\n\r\n', 'La villa est composée de 2 parties: la villa principale au bord de la piscine avec le séjour, la cuisine ouverte, 3 chambres climatisées et 2 salles d\'eau puis la partie en bois sous le carbet, avec 3 chambres en enfilades ventilées naturellement et une douche extérieure.', 'Profitez du large deck autour de la piscine pour vous détendre et du carbet pour vos repas devant ce décor paradisiaque.  Recommandé pour des grands groupes ou famille avec des enfants de plus de 10 ans.', 'Martinique, France', '', 'images/GrandLarge1.jpg', 'La villa Grand Large', 'images/GrandLarge2.jpg', 'La vue unique de votre salon', 'images/GrandLarge3.jpg', 'La belle maison de vacances vous attend', 'images/GrandLarge4.jpg', 'Salon extérieur sous le cabet', 'images/GrandLarge5.jpg', 'Le salon sous le carbet', 'images/GrandLarge6.jpg', 'Sallon', 'images/GrandLarge7.jpg', 'Pièce à vivre', 'images/GrandLarge8.jpg', 'La belle cuisine', 'images/GrandLarge9.jpg', 'La cuisine et la salle à manger', 'images/GrandLarge10.jpg', 'Salon, salle à manger et cuisine', 'images/GrandLarge11.jpg', 'Vue exceptionnelle de la maison', 'images/GrandLarge12.jpg', 'Salon qui donne sur la piscine', 'images/GrandLarge13.jpg', 'Salon face à la mer', 'images/GrandLarge14.jpg', 'La piscine et sa magnifique vue', 'images/GrandLarge15.jpg', 'Chambre du haut', 'images/GrandLarge16.jpg', 'Autre chambre du haut', 'images/GrandLarge17.jpg', 'Plage privée', 'images/GrandLarge18.jpg', 'Salle de bain', 'images/GrandLarge19.jpg', 'Vue de la terrasse', 'images/GrandLarge20.jpg', 'Accès plage', '', 'La piscine cap sur le grand large', '', 'Bienvenue dans un autre monde o? le temps s\'arr?te', '', 'Soyez les bienvenus ? la villa Grand Large', '', 'L\'acc?s ? la mer au pied de la villa Grand Large', '12 personnes', '6 chambres', '2 SdB', 'Vue sur la mer', 'Piscine', 'Jardin', '2 Terrasses\r\n\r\n', '3 Parking', 'Barbecue', '3 climatisations', 'Wifi', 'TV', 'Lave linge', 'Lave vaisselle', 'Linge de maison', 'Planche a voile\r\n\r\n', 'Plongee bouteille', 'Snorkeling', 'Golf', 'Randonnee', 'Paddle', 'Ski nautique', 'Sortie en mer', 'Decouverte des dauphins', 'Peche', 'Peche au gros', 'Kayak', 'Accrobranche', 'Quad', 'Jet Ski', 'Parapente', 'VTT', 'Bord de mer', 'Plage', 'Rhumerie', 'Marche', 'Eglise', 'Musee', 'Jardin botanique', 'Casino', 'Boutiques', 'Marina', 'Restaurants', 'Aeroport  40 km', 'Commerces 3 km', 'Plage/Baignade : 50 m', 'Bourg : 3 km', 'Bord de mer : 50 m', 'Restaurant : 18 m', 'restaurant Ti Sable  50 metres'),
-(24, 'Chalet bord de mer', 'Chalet bord de mer', '280', 'Je vous propose à la location chalet neuf en front de mer à Gruissan plage.\r\nJoliment décoré, le chalet se compose d\'un rez de chaussée avec 2 chambres et salle d\'eau, wc indépendant et à l\'étage , salon cuisine, 2 chambres , wc indépendant, salle d\'eau.\r\nLa cuisine est tout équipée.\r\n\r\n\r\n', 'Au pied du chalet, emplacement fermé pour y stocker planche de surf, voile, vélos..... Proche de la mer 50m, aire de jeux , terrain de volley, fête foraine, restaurant de plage, commerces. Tout peut se faire à pied.', 'Souhaitant nous deconnecter pendant les vacances, nous avons choisi de ne pas installer de WIFI , les réseaux 4G restent néanmoins accéssibles', 'Gruissan, France', '', 'images/Chalet1.jpg', 'Vue de la terrasse', 'images/Chalet2.jpg', 'Salon', 'images/Chalet3.jpg', 'Salon', 'images/Chalet4.jpg', 'Chambre du haut ', 'images/Chalet5.jpg', 'Chambre a letage', 'images/Chalet6.jpg', 'eme chambre a letage', 'images/Chalet7.jpg', 'Cuisine', 'images/Chalet8.jpg', 'Chambre du bas ', 'images/Chalet9.jpg', 'Chambre du bas 1 er', 'images/Chalet10.jpg', 'Entree, buanderie', 'images/Chalet11.jpg', 'Vue panoramique', 'images/Chalet12.jpg', 'Vue sur la mer', 'images/Chalet13.jpg', 'Couloir interieur', 'images/Chalet14.jpg', 'Photo de la terrasse vu du bas', 'images/Chalet15.jpg', 'Vu arriere du chalet ', '', 'Vue de face', '', 'Vue de cote', '', 'Terrain de volley', '', 'Terrasse', '', 'Sejour', '', 'Cuisine sejour', '', 'Toilettes', '', '', '', '', '8 personnes', '4 chambres', 'Cuisine', 'Parking gratuit ', 'Television', 'Lave linge', 'Seche-cheveux', 'Sejours longue duree autorises', 'Eau chaude', 'Cintres', 'Chauffage', 'Detecteur de fumee', 'Cuisine', 'Lavevaisselle', 'Entree privee', 'Planche a voile', 'Bateau', 'Plongee sous marine', 'Paddle', 'Kayak', 'Randonnee', 'Plage', 'Velo', 'Ski Nautique', 'Jet Ski ', 'Wake', 'Bouee', 'Plages privees', 'Golf', 'Sortie en mer', 'Tennis', 'Basket', 'Restaurants', 'Plages', 'Musees', 'Casino', 'Boutiques', 'Boites/Bar', 'Parc', 'Bord de mer', 'March?', 'Eglise ', 'Sport Nautique', 'Plages 100m', 'Boutiques : 3km', 'Restaurants : 2km', 'Centre ville : 12km', 'Aeroport : 32km', 'Gare : 8km', 'Distributeur : 1km'),
-(25, 'Jolie maison de ville', 'Jolie maison de ville', '185', 'Cette jolie petite maison de 90 m2 a été entièrement rénovée et vous séduira par sa décoration raffinée et son calme. Elle dispose d\'un grand séjour salle à manger très lumineux, d\'une cuisine entièrement équipée et à l\'étage 3 chambres et 1 salle de bain toilette. \r\n', ' Située à quelques pas du centre ville de Narbonne et des halles une institution incontournable de la ville pour tous les fins gourmets et les amateurs de joie de vivre . Le logement Elle dispose d\'un grand séjour très lumineux donnant sur la terrasse et la piscine, d\'une cuisine entièrement équipée (four micro ondes, lave vaisselle, machine à laver, nespresso...) Un petit coin lecture pour les grands et petite table avec 2 chaises pour l\'espaces enfants. L\'étage est recouvert de parquet, il y a 3 chambres, une de 13m2 et deux de 10m2, les lits sont en 140. Il y a une salle d\'eau avec douche et toilette.', 'La maison est entièrement climatisée et dispose du wifi. Vous avez la possibilité de garer votre véhicule devant et gratuitement. Ce logement répondra en tous points pour un séjour en famille avec sa petite piscine de 3X3 , pour quelques jours en amoureux ou le temps d\'un week-end pour venir découvrir son terroir et faire un bons repas au Grand Buffet, dans les halles ou dans les nombreux petits restaurants de la ville et sans oublier a 15\' en voiture Narbonne plage et ses 5 kms de plage de sable blanc. La maison dispose d\'un digicode qui vous permet des arrivées souples.', 'Narbonne, France', '', 'images/Villa1.jpg', 'Terrasse et piscine', 'images/Villa2.jpg', 'Entree donnant sur la terrasse', 'images/Villa3.jpg', 'Escalier ', 'images/Villa4.jpg', 'Terrasse ', 'images/Villa5.jpg', 'Chambre 1 avec placard', 'images/Villa6.jpg', 'Chambre 2  12m2 avec placard', 'images/Villa7.jpg', 'Chambre 1  de 10m2', 'images/Villa8.jpg', 'Chambres deuxieme etage', 'images/Villa9.jpg', 'Salle d\'eau douche wc', 'images/Villa10.jpg', 'Salon', 'images/Villa11.jpg', 'Salle de bain', 'images/Villa12.jpg', 'Cuisine Salle  manger', 'images/Villa13.jpg', 'Chambre', '', 'Chambre', '', 'Chambre', '', 'Salon Salle  manger', '', 'Cle de la Villa', '', 'Escalier et chambres', '', 'Salle a manger et vue sur la piscine', '', 'Salon Cuisine Salle manger', '', 'Salon et en arriere plan terrasse et piscine', '', 'Espace lecture et table de dessin pour enfants', '', '', '', '', 'Cuisine', 'Wifi', 'Parking gratuit', 'Piscine', 'Television', 'Lave-linge', 'Climatisation', 'Seche-cheveux', 'Eau chaude', 'Serviettes et draps', 'Chauffage', 'Kit de premiers secours', 'Fere repasser', 'Terrasse ', '', 'Narbonne Plage', 'Piscine ', 'Kite surf', 'Paddle', 'Location de Bateaux ', 'VTT', 'Randonnees', 'Quad', 'Balades', 'Spectacles ', 'Musees ', 'Theatre ', 'P?che ', 'Voile', 'Catamaran ', 'Jet Ski', 'Wake', 'Abbaye de Fontfroide', 'Les Halles de Narbonne', 'Cathedrale Saint-Just', 'Domaine de Sainte Marthe', 'Aquajet Parc', 'Canal de la Robine', 'Chateau des Karantes', 'Palais des Archeveques ', 'Horreum romain', 'Donjon Gilles Aycelin', 'Basilique Saint-Paul-Serges', 'Plages 6km', 'Centre ville : 3km', 'Restaurants : 1km', 'Boutiques : 3km', 'Aeroport : 23km', 'Commerce : 2km', 'Eglise : 4km'),
-(26, 'Chalet dans la montagne', 'Chalet montagne', '300', 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.', 'Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.\r\n', 'Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.', 'Pyrennnes, France', '', 'images/Pyrennes1.jpg', 'Salon, vue sur la terrasse', 'images/Pyrennes2.jpg', 'Vue sur la fôret ', 'images/Pyrennes3.jpg', 'Escaliers intérieur', 'images/Pyrennes4.jpg', 'Chambre', 'images/Pyrennes5.jpg', 'Chambre', 'images/Pyrennes6.jpg', 'Seconde chambre', 'images/Pyrennes7.jpg', 'Lit de la seconde chambre', 'images/Pyrennes8.jpg', 'Chambre', 'images/Pyrennes9.jpg', 'Troisième chambr', 'images/Pyrennes10.jpg', 'Salle de bain', 'images/Pyrennes11.jpg', 'Couloir, escaliers', 'images/Pyrennes12.jpg', 'Chambre enfants', 'images/Pyrennes13.jpg', 'Salle à manger', 'images/Pyrennes14.jpg', 'Salon', 'images/Pyrennes15.jpg', 'Salon qui donne sur la terrasse', 'images/Pyrennes16.jpg', 'Pièce à vivre', 'images/Pyrennes17.jpg', 'Salon', 'images/Pyrennes18.jpg', 'Cuisine et vue sur la neige', '', '', '', '', '', '', '', '', '', '', '', '', 'Cuisine', '4 Chambres', 'Salon', 'Salle de bain', 'Terrasse', 'Cheminée', 'Salon équipé', 'Chambre enfant', 'Chauffage', 'Wifi', 'Pistes', 'Parking', 'Cave', 'Local', '', 'Ski', 'Snowboard', 'Luge', 'Patinoire', 'Randonnée', 'Ski de fond', 'Cinéma', 'Raquette', 'Moto neige', 'Skateparc', 'Tennis', 'Bien être', 'Spa', 'Restaurants', '', '', '', 'Montagne', 'Neige', '', '', '', '', '', '', '', '', '', 'Aéroport :', 'Pistes : 500m', '', '', '', '', '');
+INSERT INTO `rooms` (`id`, `room_number`, `shortName`, `price`, `details`, `details2`, `details3`, `lieu`, `map`, `photo`, `photo2`, `photo3`, `photo4`, `photo5`, `photo6`, `photo7`, `photo8`, `photo9`, `photo10`, `photo11`, `photo12`, `photo13`, `photo14`, `photo15`, `photo16`, `photo17`, `photo18`, `photo19`, `photo20`, `photo21`, `photo22`, `photo23`, `photo24`, `eq1`, `eq2`, `eq3`, `eq4`, `eq5`, `eq6`, `eq7`, `eq8`, `eq9`, `eq10`, `eq11`, `eq12`, `eq13`, `eq14`, `eq15`, `act1`, `act2`, `act3`, `act4`, `act5`) VALUES
+(23, 'Villa Grand Large Baie des Anses d’Arlet\r\n', 'Villa Grand Large ', '333', 'La villa grand large vous accueille avec sa situation exceptionnelle sur Grande Anse et vous offre une vue époustouflante sur la mer des Caraïbes. Entourée d’un terrain arboré de 2500m2 qui descend sur la mer turquoise. Vous serez au meilleur endroit pour découvrir les tortues et les poissons tropicaux .', 'Une pente douce qui vous fait glisser immédiatement dans un univers de rêve.\r\nPassez la porte aux couleurs chatoyantes et soyez saisi par la vue panoramique sur la baie azur des Anses d’Arlet. La Villa s’ouvre sur l’extérieur dans une parfaite continuité entre dedans et dehors. Pas de 4e mur dans ce large salon de bois blanc qui se prolonge jusqu’à la piscine à débordement avec la mer à l’horizon. Circulez librement sans cloison de l’espace cuisine au salon, surveillez de loin une grillade dans le barbecue, marchez pieds nus sur le deck, allongez-vous dans un transat suspendu ou goutez un daïquiri sous le carbet… ', 'Pour des vacances en famille ou entre amis, profitez des spacieux espaces communs pour vivre des moments forts et des nombreuses chambres pour se retrouver en toute intimité : trois suites climatisées dans la maison et leurs deux salles de bain, trois autres chambres sous le carbet et la salle de bain façon cabane de Robinson donnant sur la grande bleue et les citronniers. Un petit chemin privatif vous conduit jusqu’à la mer… ', 'Anses d\'Arlet, Martinique', '', 'images/GrandLarge1.jpg', 'images/GrandLarge2.jpg', 'images/GrandLarge3.jpg', 'images/GrandLarge4.jpg', 'images/GrandLarge5.jpg', 'images/GrandLarge6.jpg', 'images/GrandLarge7.jpg', 'images/GrandLarge8.jpg', 'images/GrandLarge9.jpg', 'images/GrandLarge10.jpg', 'images/GrandLarge11.jpg', 'images/GrandLarge12.jpg', 'images/GrandLarge13.jpg', 'images/GrandLarge14.jpg', 'images/GrandLarge15.jpg', 'images/GrandLarge16.jpg', 'images/GrandLarge17.jpg', 'images/GrandLarge18.jpg', 'images/GrandLarge19.jpg', 'images/GrandLarge20.jpg', '', '', '', '', '12 personnes', '6 chambres dont 3 climatisées', '3 Salles de Bain', 'Vue sur mer accès privatif', 'Piscine à débordement', '1 carbet en bois avec terrasse/salon/chambres', 'Parking gratuit\r\n', 'Jardin de 2500m2', 'Barbecue', '', 'Wifi', 'Climatisée', '', '', '', '\r\n', '', '', '', ''),
+(24, 'Chalet Bord de Mer', 'Chalet Bord de Mer', '280', 'Gruissan et ses incontournables chalets sur pilotis tournés vers la mer, les pieds dans les vagues. Tentez l’escapade iodée et troquez vos chaussures de ville pour les sandales de plage.', ' Au chalet, vous serez accueilli tout d’abord par deux chambres aux teintes soleil, sa salle de bain et son WC indépendant. Au 1er étage, vous découvrez 2 autres chambres aux couleurs pastel, à coté la salle de bain et son wc indépendant. L’espace de vie, la cuisine et le salon sont ouverts sur la terrasse avec vue sur la mer ', 'L’espace rappelle l’atmosphère des cabines de plage, le confort et la modernité en plus ! Sa décoration « rose » façon 37°2 , célèbre film mythique qui a consacré au cinéma la plage de Gruissan, vous séduira par sa douceur.\r\nVous aussi, venez passer de l’autre côté de l’écran…  \r\n', 'Gruissan, Occitanie', '', 'images/Chalet1.jpg', 'images/Chalet2.jpg', 'images/Chalet3.jpg', 'images/Chalet4.jpg', 'images/Chalet5.jpg', 'images/Chalet6.jpg', 'images/Chalet7.jpg', 'images/Chalet8.jpg', 'images/Chalet9.jpg', 'images/Chalet10.jpg', 'images/Chalet11.jpg', 'images/Chalet12.jpg', 'images/Chalet13.jpg', 'images/Chalet14.jpg', 'images/Chalet15.jpg', '', '', '', '', '', '', '', '', '', '8 personnes', '4 chambres', '2 Salles de Bain', 'Terrasse extérieure', '', '', '', '', '', 'Cuisine équipée', '', 'Climatisée', '2 WC', 'Salon', '', '', '', '', '', ''),
+(25, 'Jolie maison de ville', 'Jolie maison de ville', '185', 'Cette jolie maison vous séduira par sa décoration raffinée et son calme. Un petit cocon de calme et de confort.  Vivre au cœur de la ville, de ses saveurs, de ses pierres chaudes, du soleil et des millénaires d’histoire écrite au fil des siècles.', 'Passez le portail, et découvrez un enclos de sérénité avec son bassin central pour se détendre et se rafraichir pendant que d’autres prennent l’apéritif en terrasse à vos côtés. Au même niveau, le salon et la cuisine avec ses couleurs chaudes vous accueillent immédiatement dans un lieu convivial à la décoration originale, aux petits détails qui attrapent le regard.', 'A l’étage, trois chambres épurées et leur salle de bain et son wc pour se reposer en toute quiétude avant de poursuivre le lendemain l’exploration de la ville, son canal, ses petites boutiques et ses halles gourmandes.', 'Narbonne, Occitanie', '', 'images/Villa1.jpg', 'images/Villa2.jpg', 'images/Villa3.jpg', 'images/Villa4.jpg', 'images/Villa5.jpg', 'images/Villa6.jpg', 'images/Villa7.jpg', 'images/Villa8.jpg', 'images/Villa9.jpg', 'images/Villa10.jpg', 'images/Villa11.jpg', 'images/Villa12.jpg', 'images/Villa13.jpg', '', '', '', '', '', '', '', '', '', '', '', '6 Personnes', '3 chambres', '1 Salle de Bain', 'Terrasse extérieure', 'Piscine', '', '', '', '', 'Cuisine équipée', '', 'Climatisée', '2 WC', 'Salon', 'Buanderie', 'Centre Ville', '', '', '', ''),
+(26, 'Chalet montagne', 'Chalet montagne', '300', 'Ce chalet se veut une bulle chaleureuse au milieu des neiges blanches à l’orée des pistes. Un refuge de repos et de douceur après les pistes l’hiver et les escapades sur les sentiers l’été.', 'Au milieu des sapins, sur les hauteurs, en plein cœur des Pyrénées Ariègeoise, venez découvrir la chaleur d’une vie en chalet : un refuge en bois au milieu des cimes… Découvrez un lieu accueillant pour les grands et les plus jeunes. Ces derniers trouveront pour eux cinq lits superposés façon cabine de bateau pour chuchoter d’un étage à l’autre jusqu’au bout de la nuit.', 'Faites trois marches supplémentaires et vous trouverez trois chambres spacieuses et confortables ainsi qu’une salle de bain avec douche et WC indépendant. L’espace de vie, avec cuisine ouverte sur le salon et sa cheminée, domine la forêt noire et blanche. C’est un espace tout en douceur, peluche et plume, tout n’y est que caresse.  Venez tentez l’aventure montagne !', 'Bonascre -Ax les Thermes, Ariège', '', 'images/Pyrennes1.jpg', 'images/Pyrennes2.jpg', 'images/Pyrennes3.jpg', 'images/Pyrennes4.jpg', 'images/Pyrennes5.jpg', 'images/Pyrennes6.jpg', 'images/Pyrennes7.jpg', 'images/Pyrennes8.jpg', 'images/Pyrennes9.jpg', 'images/Pyrennes10.jpg', 'images/Pyrennes11.jpg', 'images/Pyrennes12.jpg', 'images/Pyrennes13.jpg', 'images/Pyrennes14.jpg', 'images/Pyrennes15.jpg', 'images/Pyrennes16.jpg', 'images/Pyrennes17.jpg', 'images/Pyrennes18.jpg', '', '', '', '', '', '', '11 personnes', '3 Chambres avec lit double\r\n1 Chambre avec 5 lits bateau', '1 Salle de Bain', 'Terrasse de 50m2\r\nVue montagne et forêt', '', '', '', '', '', 'Cuisine équipée', 'Wifi', '', '1 WC', 'Salon', '', '', 'Cheminée', 'Hall d’entrée', 'Rangement ski/chaussure', 'Piste à 500m');
 
 -- --------------------------------------------------------
 
@@ -280,12 +235,12 @@ INSERT INTO `rooms` (`id`, `room_number`, `shortName`, `price`, `details`, `deta
 
 CREATE TABLE `tourism` (
   `id` int(11) NOT NULL,
-  `title` varchar(255) CHARACTER SET utf8 NOT NULL,
-  `citation` varchar(255) CHARACTER SET utf8 NOT NULL,
-  `photo` text CHARACTER SET utf8 NOT NULL,
-  `photo_2` text CHARACTER SET utf8 NOT NULL,
-  `location` varchar(255) CHARACTER SET utf8 NOT NULL,
-  `details` text CHARACTER SET utf8 NOT NULL,
+  `title` varchar(255) NOT NULL,
+  `citation` varchar(255) NOT NULL,
+  `photo` text NOT NULL,
+  `photo_2` text NOT NULL,
+  `location` varchar(255) NOT NULL,
+  `details` text NOT NULL,
   `intro` text NOT NULL,
   `date` date NOT NULL,
   `id_rooms` int(11) NOT NULL
@@ -301,8 +256,7 @@ INSERT INTO `tourism` (`id`, `title`, `citation`, `photo`, `photo_2`, `location`
 (31, 'Plong&eacute;e en Martinique', 'Quel plaisir de partager mon r&ecirc;ve avec ma famille', 'images/b527c0173f2ecf27e7b785a747cbd90d.pakiela.jpg', 'images/fac94cd0703f1b8dcea6b6c168baabdf.pakiela.jpg', 'Martinique, France', 'La Martinique est baign&eacute;e par l&#039;Oc&eacute;an Atlantique sur sa fa&ccedil;ade Est et par la Mer Cara&iuml;be sur sa fa&ccedil;ade Ouest. Elle est &eacute;galement bord&eacute;e de deux profonds canaux: Au Sud le Canal de Sainte Lucie et au Nord celui de la Dominique. V&eacute;ritable carrefour marin les eaux martiniquaises abritent une flore et une faune marine tr&egrave;s diversifi&eacute;es qui font le bonheur des plongeurs sous-marins. Il est ainsi possible d&#039;y observer de tr&egrave;s nombreuses esp&egrave;ces de poissons tropicaux, de tr&egrave;s belles gorgones et patates de corail, des tortues marines et m&ecirc;me des dauphins parfois (si si). La plupart des spots se situent &agrave; l&#039;abri de la grande houle atlantique, c&#039;est &agrave; dire aux extr&eacute;mit&eacute;s nord et sud ainsi que le long de la c&ocirc;te cara&iuml;be. Certains ont m&ecirc;me, au fil des ann&eacute;es, acquis une renomm&eacute;e internationale et nombreux sont les passionn&eacute;s de tous horizons &agrave; vouloir les visiter... C&#039;est en particulier le cas du cimeti&egrave;re d&#039;&eacute;paves de la baie de Saint Pierre - r&eacute;sultat de l&#039;&eacute;ruption catastrophique de la Montagne Pel&eacute;e en 1902 - ou encore du Rocher du Diamant v&eacute;ritable embl&egrave;me de la Martinique ou de la Perle au nord et de la Pointe Burgos au sud. Mais chaque m&eacute;daille a son revers, et courant ou profondeur obligent, seuls les plus exp&eacute;riment&eacute;s pourront profiter pleinement des meilleurs coins pour plonger en toute s&eacute;curit&eacute;. Voici donc quelques renseignements sur les meilleurs spots pour d&eacute;couvrir les fonds marins avec une bouteille ou plus simplement juste &eacute;quip&eacute; de palmes, masque et tuba ainsi que quelques adresses de clubs r&eacute;put&eacute;s.', '', '2021-11-12', 23),
 (34, 'Le Ch&acirc;teau de Gruissan', 'Un endroit surprenant', 'images/e29131e70c1877eda2265c947448aaa9.jpg', 'images/44cbf2276088e728c44260a792f59a94.jpg', 'Gruissan, France', 'Avec les vestiges des villas romaines et les dessins de l&rsquo;homme pr&eacute;historique dans la Grotte de la Crouzade, la vie gruissanaise se perd dans la nuit des temps.\r\nPendant des si&egrave;cles, un village &laquo; cherchait &agrave; na&icirc;tre &raquo; pr&egrave;s des &eacute;tangs ou des terroirs.\r\nSur l&rsquo;&Icirc;le Saint Martin, des vestiges de villas, &eacute;glise et m&ecirc;me cimeti&egrave;re attesteraient de la pr&eacute;sence d&rsquo;un groupement humain.\r\n\r\nLes murs sont enduits d&rsquo;une texture fine arrondissant les angles et &agrave; l&rsquo;endroit o&ugrave; ils sont &eacute;rod&eacute;s se situent des ouvertures permettant de recueillir l&rsquo;eau achemin&eacute;e par des tuyaux.\r\nLa rigole, am&eacute;nag&eacute;e dans une pierre taill&eacute;e pour l&rsquo;&eacute;coulement de l&rsquo;eau, a 2 fonctions : r&eacute;cup&eacute;rer l&rsquo;eau de pluie et d&eacute;verser le trop plein pour garder un niveau constant).\r\nLa pr&eacute;sence d&rsquo;ouverture et d&rsquo;une vo&ucirc;te permet de penser qu&rsquo;il s&rsquo;agit d&rsquo;une casemate (abri enterr&eacute; servant de protection contre les tirs). Avec l&rsquo;architecture militaire du Moyen &Acirc;ge, le d&eacute;veloppement de l&rsquo;artillerie accro&icirc;t l&rsquo;&eacute;paisseur des murs. Donc les embrasures int&eacute;rieures ne d&eacute;bouchent plus &agrave; l&rsquo;air libre, mais sur un local ferm&eacute; construit dans la masse du rempart.\r\nLa casemate prot&egrave;ge les servants (artilleurs) contre les coups indirects, mais ses petites ouvertures sont envahies par les gaz d&eacute;gag&eacute;s par les canons et autres armes. Les conduits d&rsquo;a&eacute;ration d&eacute;bouchent sur les parties hautes et forment avec les embrasures un syst&egrave;me de tirage fonctionnant comme une chemin&eacute;e.\r\nL&rsquo;imagination populaire a fait de toutes les salles basses des tours, des &laquo; oubliettes &raquo;, surtout quand elles ne sont accessibles que par un oculus (petite baie &agrave; trac&eacute; circulaire) plac&eacute; dans la vo&ucirc;te.\r\nMais en r&egrave;gle g&eacute;n&eacute;rale, ces salles ne servent que de r&eacute;serves &agrave; vivre. Elles ne sont accessibles que par une petite cavit&eacute; o&ugrave; seul l&rsquo;homme peut entrer.\r\nEn effet, contrairement &agrave; la l&eacute;gende, les hommes du Moyen &Acirc;ge ne cherchent pas &agrave; oublier leurs prisonniers, souvent source de revenus. Ils les placent dans des endroits accessibles, de mani&egrave;re &agrave; pouvoir les surveiller facilement et &agrave; leur assurer un minimum vital.\r\n\r\n', '', '2021-11-19', 24),
 (35, 'Le prestigieux site de Gavarnie', 'La beaut&eacute; et la grandeur de la nature', 'images/8390130db7abffec415445e0976321e5.jpg', 'images/5b6af87ba74c5ebc4a9c11272bcefe8b.jpg', 'Mont Perdu, France', 'Plant&eacute; au coeur du Parc National des Pyr&eacute;n&eacute;es, pr&egrave;s du Mont Perdu qui culmine &agrave; plus de 3000m d&#039;altitude, et entour&eacute; au sud par les extraordinaires canyons d&#039;Ordesa, le cirque de Gavarnie est class&eacute; depuis 1997 au Patrimoine Mondial de l&#039;UNESCO. C&#039;est l&#039;un des sites les plus visit&eacute;s dans les Pyr&eacute;n&eacute;es, sans oublier ses voisins class&eacute;s &eacute;galement, Troumouse, le plus grand des cirques, et Estaube, le plus sauvage d&#039;entre eux. \r\n\r\nNotre randonn&eacute;e de Gavarnie &agrave; Ordesa vous fera d&eacute;couvrir l&#039;ensemble de ses sites incontournables.\r\n\r\nLe cirque de Gavarnie abrite une cascade de 423 m&egrave;tres de hauteur, l&#039;une des plus importantes d&#039;Europe. Nombreux sont les randonneurs &agrave; la journ&eacute;e qui prolongent la marche jusqu&#039;&agrave; la Br&egrave;che de Roland, une impressionnante trou&eacute;e naturelle.\r\nD&#039;apr&egrave;s la l&eacute;gende, la br&egrave;che faite entre les deux parois de la montagne s&eacute;parant la France de l&#039;Espagne aurait &eacute;t&eacute; faite par l&#039;&eacute;p&eacute;e de Roland de Roncevaux, le neveu de Charlemagne.', '', '2021-11-12', 26),
-(36, 'La Plage &agrave; Narbonne-Plage', 'Quel plaisir de se baigner dans une eau aussi clair ', 'images/55229c72c269e1b363a9662105ad9766.jpg', 'images/1fc071b6a606fc3e00a6841c4e53d531.jpg', 'Narbonne, France', 'Situ&eacute;e &agrave; une quinzaine de kilom&egrave;tres &agrave; l&#039;Est de la ville d&#039;Art et d&#039;Histoire de Narbonne, au pied de la montagne de la Clape, dans le Parc Naturel R&eacute;gional de la Narbonnaise en M&eacute;diterran&eacute;e, la station baln&eacute;aire de Narbonne-Plage, dot&eacute;e du label Pavillon Bleu d&#039;Europe, b&eacute;n&eacute;ficie de la pr&eacute;sence d&#039;une longue plage - pas moins de cinq kilom&egrave;tres de sable fin ! - propice au farniente, &agrave; la baignade et aux loisirs sportifs, tels que la voile, le beach volley, le jet ski, le char &agrave; voile, le catamaran ou encore le kayak de mer. Narbonne-Plage propose aussi de nombreuses animations estivales, telles que march&eacute;s nocturnes, spectacles de plein air, f&ecirc;tes traditionnelles...\r\n\r\nPour les amateurs de nature, la station constitue un bon point de d&eacute;part pour des randonn&eacute;es dans le massif sauvage et pr&eacute;serv&eacute; de la Clape.', '', '2021-11-12', 25),
-(37, 'test', 'Test sous title', 'images/3da3630563987e90dacf77aec25f0f7e.png', 'images/1e148f2bcf3ff29c6cd4cbda8c279a41.png', 'Martinique, France', 'Qui quod commodi vel rerum excepturi eum dolorem ipsam. Eos commodi omnis ut dolor tenetur aut quas similique qui amet consequatur ea voluptatum harum? Aut velit perferendis est exercitationem officiis id alias unde et dolores quas eos fuga distinctio et quia maiores. Rem reiciendis culpa ut voluptates pariatur aut eligendi inventore hic natus voluptas!\r\n\r\nEt ducimus voluptates ex dolore commodi id nihil suscipit. Ut praesentium autem qui voluptatem ipsum aut dolore aspernatur.\r\n\r\nUt nisi officia quo facilis illo est nisi internos aut consequatur esse et eaque sint vel tempora quam est voluptatem autem. Et culpa tempora id repellendus tempora et ipsum natus.\r\n\r\n', 'Lorem ipsum dolor sit amet. Aut tenetur cupiditate sit inventore voluptas et quos beatae. Hic assumenda commodi ut magnam quod sed quidem voluptates non nihil laborum. Ut recusandae tempore in galisum veritatis qui harum omnis. Sit consequatur voluptatibus et illum ipsum aut dolores eveniet nisi quibusdam aut reiciendis soluta.', '2021-11-13', 26);
+(36, 'La Plage &agrave; Narbonne-Plage', 'Quel plaisir de se baigner dans une eau aussi clair ', 'images/55229c72c269e1b363a9662105ad9766.jpg', 'images/1fc071b6a606fc3e00a6841c4e53d531.jpg', 'Narbonne, France', 'Situ&eacute;e &agrave; une quinzaine de kilom&egrave;tres &agrave; l&#039;Est de la ville d&#039;Art et d&#039;Histoire de Narbonne, au pied de la montagne de la Clape, dans le Parc Naturel R&eacute;gional de la Narbonnaise en M&eacute;diterran&eacute;e, la station baln&eacute;aire de Narbonne-Plage, dot&eacute;e du label Pavillon Bleu d&#039;Europe, b&eacute;n&eacute;ficie de la pr&eacute;sence d&#039;une longue plage - pas moins de cinq kilom&egrave;tres de sable fin ! - propice au farniente, &agrave; la baignade et aux loisirs sportifs, tels que la voile, le beach volley, le jet ski, le char &agrave; voile, le catamaran ou encore le kayak de mer. Narbonne-Plage propose aussi de nombreuses animations estivales, telles que march&eacute;s nocturnes, spectacles de plein air, f&ecirc;tes traditionnelles...\r\n\r\nPour les amateurs de nature, la station constitue un bon point de d&eacute;part pour des randonn&eacute;es dans le massif sauvage et pr&eacute;serv&eacute; de la Clape.', '', '2021-11-12', 25);
 
 -- --------------------------------------------------------
 
@@ -326,8 +280,9 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `full_name`, `email`, `password`, `join_date`, `last_login`, `permissions`, `photo`) VALUES
-(3, 'admin', 'admin@admin.com', '$2y$10$Dhgz8tgcOjuI08Y0o5wsS.gK3.kNDRNpc.z9Q0qJ3mGpJMYDaIQBi', '2017-12-13 23:12:51', '2021-07-25 20:14:22', 'editor,admin', ''),
-(69, 'L&eacute;o LABEAUME', 'leo.labeaume@hotmail.fr', '$2y$10$u98xl0fuMIL9fFYpQy8q6.6zKcbVuL0YqMjqFc2CbV2Ma8rYvzlGm', '2021-07-25 20:07:14', '2021-11-12 11:10:48', 'editor,admin', '119067618_313029256649032_3533176219461607909_n.jpg');
+(3, 'admin', 'admin@admin.com', '$2y$10$Dhgz8tgcOjuI08Y0o5wsS.gK3.kNDRNpc.z9Q0qJ3mGpJMYDaIQBi', '2017-12-13 23:12:51', '2021-11-12 14:08:27', 'editor,admin', ''),
+(69, 'L&eacute;o LABEAUME', 'leo.labeaume@hotmail.fr', '$2y$10$u98xl0fuMIL9fFYpQy8q6.6zKcbVuL0YqMjqFc2CbV2Ma8rYvzlGm', '2021-07-25 20:07:14', '2021-11-18 01:07:55', 'editor,admin', '119067618_313029256649032_3533176219461607909_n.jpg'),
+(70, 'Muriel Lambert', 'muriel.homes.location@gmail.com', 'AdminMuriel1997?', '2021-11-12 14:15:24', '2021-11-12 20:42:27', 'editor,admin', '');
 
 --
 -- Indexes for dumped tables
@@ -394,13 +349,13 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `calendar`
 --
 ALTER TABLE `calendar`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
 
 --
 -- AUTO_INCREMENT for table `comments`
 --
 ALTER TABLE `comments`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=42;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=43;
 
 --
 -- AUTO_INCREMENT for table `gallery`
@@ -418,7 +373,7 @@ ALTER TABLE `products`
 -- AUTO_INCREMENT for table `reservations`
 --
 ALTER TABLE `reservations`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=61;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=188;
 
 --
 -- AUTO_INCREMENT for table `rooms`
@@ -430,13 +385,13 @@ ALTER TABLE `rooms`
 -- AUTO_INCREMENT for table `tourism`
 --
 ALTER TABLE `tourism`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=38;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=39;
 
 --
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=70;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=71;
 
 --
 -- Constraints for dumped tables
