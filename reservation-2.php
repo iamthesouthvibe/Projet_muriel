@@ -129,7 +129,7 @@
             font-family: ITCGaramondStd-BkNarrow;
             font-style: normal;
             font-weight: normal;
-            margin-top: 10px;   
+            margin-top: 10px;
         }
 
         .qhero_page_reservation_2 h1 span {
@@ -143,7 +143,7 @@
             font-family: neue_montrealbold;
             font-style: normal;
             font-weight: normal;
-            font-size : 20px;
+            font-size: 20px;
             color: #9A4747;
             text-align: center;
             margin-bottom: 60px;
@@ -477,7 +477,7 @@
             }
 
             .qhero_page_reservation_2 .col_price .submit {
-                transform: translate(-8px,0px);
+                transform: translate(-8px, 0px);
                 width: 355px;
                 height: 39px;
                 font-size: 22px;
@@ -498,7 +498,13 @@
 
     <div class="qhero_page_reservation_2">
         <h1 data-aos="fade" data-aos-anchor-placement="top-bottom" data-aos-delay="0" data-aos-duration="2000" data-aos-once="true">Votre maison : <span> <?= $maison['shortName']; ?> , <?= $maison['lieu']; ?> </span></h1>
-        <h2 data-aos="fade" data-aos-anchor-placement="top-bottom" data-aos-delay="100" data-aos-duration="2000" data-aos-once="true">Mettre la durée minimale de location par maison ici </h2>
+        <?php if ($roomID == '23') :  ?>
+            <h2 data-aos="fade" data-aos-anchor-placement="top-bottom" data-aos-delay="100" data-aos-duration="2000" data-aos-once="true">Location à partir de 7 jours</h2>
+        <?php elseif ($roomID == '26') : ?>
+            <h2 data-aos="fade" data-aos-anchor-placement="top-bottom" data-aos-delay="100" data-aos-duration="2000" data-aos-once="true">Uniquement à la semaine toute l'année</h2>
+        <?php else : ?>
+            <h2 data-aos="fade" data-aos-anchor-placement="top-bottom" data-aos-delay="100" data-aos-duration="2000" data-aos-once="true">Location uniquement à la semaine pour la période de juillet et aout</h2>
+        <?php endif; ?>
         <form action="" method="POST" id="myForm" class="form-control" name="register" onsubmit="return validate();" autocomplete="off">
             <div class="row" data-aos="fade" data-aos-anchor-placement="top-bottom" data-aos-delay="500" data-aos-duration="2000" data-aos-once="true">
                 <div class="col">

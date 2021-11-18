@@ -87,7 +87,7 @@ $sql = $db->query("SELECT * FROM rooms");
                         <option value="" selected="true" disabled="disabled">Votre maison</option>
                         <?php while ($room = $sql->fetch(PDO::FETCH_ASSOC)) : ?>
 
-                            <option class="test-hover" value="<?= $room['id']; ?>"><?= $room['shortName'] . ' ' . $room['lieu']; ?></option>
+                            <option class="test-hover" value="<?= $room['id']; ?>"><?= $room['shortName']; ?>, <?= $room['lieu']; ?></option>
                         <?php endwhile; ?>
                     </select>
                     <input type="submit" value="Vérifier les disponibilités" class="button">
