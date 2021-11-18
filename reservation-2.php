@@ -273,7 +273,7 @@
         }
 
         .boutton-reservation-finale {
-            width: 357px;
+            width: 415px;
             float: right;
         }
 

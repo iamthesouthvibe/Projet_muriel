@@ -2985,6 +2985,17 @@ footer ul {
         color: grey;
         --swiper-navigation-size: 37px;
     }
+
+    .infos-techniques-maison {
+        min-width: 90vw;
+    }
+
+    .infos-techniques-maison h4 {
+        text-align: center;
+        transform: translate(-4vw, 0px);
+    }
+
+
     /* Section articles de blogs de la maison */
     .container_blog {
         background-color: #E5E5E5;
