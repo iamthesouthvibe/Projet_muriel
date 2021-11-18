@@ -137,6 +137,14 @@
             font-weight: bold;
         }
 
+        .qhero_page_reservation_2 h2 {
+            font-family: neue_montrealregular;
+            font-style: normal;
+            font-weight: bold;
+            font-size : 20px;
+            color: #9A4747;
+        }
+
         .qhero_page_reservation_2 .col {
             display: flex;
             gap: 120px;
@@ -444,6 +452,7 @@
                 font-size: 35px;
             }
 
+
             .qhero_page_reservation_2 .col_price h3 {
                 font-size: 35px;
             }
@@ -464,6 +473,7 @@
             }
 
             .qhero_page_reservation_2 .col_price .submit {
+                transform: translate(-8px,0px);
                 width: 355px;
                 height: 39px;
                 font-size: 22px;
@@ -484,6 +494,7 @@
 
     <div class="qhero_page_reservation_2">
         <h1 data-aos="fade" data-aos-anchor-placement="top-bottom" data-aos-delay="0" data-aos-duration="2000" data-aos-once="true">Votre maison : <span> <?= $maison['shortName']; ?> , <?= $maison['lieu']; ?> </span></h1>
+        <h2 data-aos="fade" data-aos-anchor-placement="top-bottom" data-aos-delay="100" data-aos-duration="2000" data-aos-once="true">Mettre la durée minimale de location par maison ici </h2>
         <form action="" method="POST" id="myForm" class="form-control" name="register" onsubmit="return validate();">
             <div class="row" data-aos="fade" data-aos-anchor-placement="top-bottom" data-aos-delay="500" data-aos-duration="2000" data-aos-once="true">
                 <div class="col">
