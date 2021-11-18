@@ -17,7 +17,7 @@
       <nav>
         <div class="header_left">
           <a class="waitBeforeNavigate" href="index.php">
-            <img src="assets/png/LOGO_03_PNG_NOIR.png" alt="Logo muriel Home">
+            <img src="assets/svg/LOGO_03_SVG_NOIR.svg" alt="Logo muriel Home">
           </a>
         </div>
         <div class="header_right">

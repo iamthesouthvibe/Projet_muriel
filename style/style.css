@@ -121,6 +121,7 @@ nav {
 }
 
 .header_left img {
+    min-width: 60px;
     max-height: 40px;
     max-width: 90px;
     transform: translate(0px, -7px);
