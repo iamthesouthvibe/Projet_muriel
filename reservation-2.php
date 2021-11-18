@@ -666,5 +666,18 @@
                 }
             });
             $.datepicker.setDefaults($.datepicker.regional["fr"]);
+
+
+        });
+
+        $(document).ready(function() {
+            $('form').submit(function(e) {
+                var hours = parseInt(prompt('Combien font 2+2'));
+                if (hours != '4') {
+                    e.preventDefault();
+                } else {
+                    $(this).unbind('submit').submit()
+                }
+            });
         });
     </script>
