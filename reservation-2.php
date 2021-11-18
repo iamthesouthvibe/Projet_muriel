@@ -124,25 +124,29 @@
 
         .qhero_page_reservation_2 h1 {
             text-align: center;
-            margin-bottom: 50px;
+            margin-bottom: 30px;
             color: #9A4747;
             font-family: ITCGaramondStd-BkNarrow;
             font-style: normal;
             font-weight: normal;
+            margin-top: 10px;   
         }
 
         .qhero_page_reservation_2 h1 span {
             font-family: neue_montrealregular;
             font-style: normal;
             font-weight: bold;
+            line-height: 0;
         }
 
         .qhero_page_reservation_2 h2 {
-            font-family: neue_montrealregular;
+            font-family: neue_montrealbold;
             font-style: normal;
-            font-weight: bold;
+            font-weight: normal;
             font-size : 20px;
             color: #9A4747;
+            text-align: center;
+            margin-bottom: 60px;
         }
 
         .qhero_page_reservation_2 .col {
