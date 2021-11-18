@@ -2,6 +2,9 @@
     require_once 'core/core.php';
     include 'fonctions/fonctionMail.php';
 
+    define('SITE_KEY', '6LcTkzsdAAAAAFvkJyptozb6tb9kEguW_-mlB8z2');
+    define('SECRET_KEY', '6LcTkzsdAAAAAH-LhZiao2CaT0KXywsY_-Q6kiwR');
+
     $roomID = $_GET['maison'];
 
     // var_dump($id);
@@ -46,62 +49,83 @@
         header('Location: page-404.php');
     }
 
+    //:TODO : Mettre cette fonction dans une fichier php à part
+    /**
+     * Fonction pour recuperer le captch sous forme de json
+     */
+    function getCaptcha($SecretKey)
+    {
+        $Response = file_get_contents("https://www.google.com/recaptcha/api/siteverify?secret=" . SECRET_KEY . "&response={$SecretKey}");
+        $Return = json_decode($Response);
+        return $Return;
+    }
+
 
     if (isset($_GET['maison'])) {
         $roomID = $_GET['maison'];
 
         ####################################################################################
         if (isset($_POST['checkin'])) {
-            if (!empty($_POST['name']) && !empty($_POST['txtFromDate1']) && !empty($_POST['txtFromDate2']) && !empty($_POST['phone']) && !empty($_POST['people'])) {
 
-                $name = $_POST['name'];
-                $checkin = $_POST['txtFromDate1'];
-                $checkout = $_POST['txtFromDate2'];
-                $phone = $_POST['phone'];
-                $people = $_POST['people'];
-                $child = $_POST['children'];
-                $email = $_POST['email'];
-                @$address = $_POST['adress'];
-                $pays = $_POST['pays'];
-                $comm = $_POST['commentaire'];
-                $current_date = date("Y-m-d");
-                $zip = $_POST['zip'];
+            $Return = getCaptcha($_POST['g-recaptcha-response']);
+            // var_dump($Return);
+            if ($Return->success == true && $Return->score > 0.5) {
+                if (!empty($_POST['name']) && !empty($_POST['txtFromDate1']) && !empty($_POST['txtFromDate2']) && !empty($_POST['phone']) && !empty($_POST['people'])) {
 
-                $message = '<h1>Vous avez une demande de résérvation au nom de '  . $name  .  ' pour la maison ' . $maison['room_number']  . '</h1> <br>
-                            <h2>Date de la reservation : du ' . $checkin .  ' au ' . $checkout . '</h2> <br>
-                            <p>Email : ' . $email . ' Téléphone : ' . $phone . '</p>
-                            <p>Nombre d\'adultes : ' . $people  . ' Nombre d\'enfants : ' .  $child . '</p>
-                            <p>Adresse : ' . $address  . ' Pays : ' .  $pays . '</p>
-                            <p>Message : ' . $comm . '</p>';
+                    $name = $_POST['name'];
+                    $checkin = $_POST['txtFromDate1'];
+                    $checkout = $_POST['txtFromDate2'];
+                    $phone = $_POST['phone'];
+                    $people = $_POST['people'];
+                    $child = $_POST['children'];
+                    $email = $_POST['email'];
+                    @$address = $_POST['adress'];
+                    $pays = $_POST['pays'];
+                    $comm = $_POST['commentaire'];
+                    $current_date = date("Y-m-d");
+                    $zip = $_POST['zip'];
 
-                $messageClient = '<p>Bonjour,<br><br> vous avez fait une demande de réservation pour la maison ' . $maison['room_number']  . ' du ' . $checkin . '  au ' . $checkout .
-                    ' <br> Votre demande a bien été pris en compte, je reviens vers vous d\'ici 3 jours. <br><br>  Cordialement,<br><br>  Muriel Home’s</p>';
+                    $message = '<h1>Vous avez une demande de résérvation au nom de '  . $name  .  ' pour la maison ' . $maison['room_number']  . '</h1> <br>
+                                <h2>Date de la reservation : du ' . $checkin .  ' au ' . $checkout . '</h2> <br>
+                                <p>Email : ' . $email . ' Téléphone : ' . $phone . '</p>
+                                <p>Nombre d\'adultes : ' . $people  . ' Nombre d\'enfants : ' .  $child . '</p>
+                                <p>Adresse : ' . $address  . ' Pays : ' .  $pays . '</p>
+                                <p>Message : ' . $comm . '</p>';
 
-                if ($checkin >= $current_date) {
-                    if ($checkout >= $checkin) {
-                        $insert = "INSERT INTO `reservations` (`name`, `checkin`, `checkout`, `phone`, `people`, `email`, `children`,`address`, `commentaire`, `zip`, `id_rooms`) VALUES ('$name', '$checkin', '$checkout', '$phone', '$people', '$email', '$child', '$address', '$comm', '$zip', '$roomID')";
-                        $save = $db->query($insert);
-                        if ($save) {
-                            ini_set("error_reporting", E_ALL);
-                            ini_set("display_errors", "1");
-                            $id = $db->lastInsertId();
-                            sendMail($message);
-                            sendMail2($messageClient, $email);
-                            header('Location: confirmation-reservation.php?id=' . $id);
+                    $messageClient = '<p>Bonjour,<br><br> vous avez fait une demande de réservation pour la maison ' . $maison['room_number']  . ' du ' . $checkin . '  au ' . $checkout .
+                        ' <br> Votre demande a bien été pris en compte, je reviens vers vous d\'ici 3 jours. <br><br>  Cordialement,<br><br>  Muriel Home’s</p>';
+
+
+                    if ($checkin >= $current_date) {
+                        if ($checkout >= $checkin) {
+
+                            $insert = "INSERT INTO `reservations` (`name`, `checkin`, `checkout`, `phone`, `people`, `email`, `children`,`address`, `commentaire`, `zip`, `id_rooms`) VALUES ('$name', '$checkin', '$checkout', '$phone', '$people', '$email', '$child', '$address', '$comm', '$zip', '$roomID')";
+                            $save = $db->query($insert);
+                            if ($save) {
+                                ini_set("error_reporting", E_ALL);
+                                ini_set("display_errors", "1");
+                                $id = $db->lastInsertId();
+                                sendMail($message);
+                                sendMail2($messageClient, $email);
+                                header('Location: confirmation-reservation.php?id=' . $id);
+                            } else {
+                                echo 'erreur';
+                            }
                         } else {
-                            echo 'erreur';
+                            echo '<p class="text-center alert alert-danger">Date de départ non valide fournie. Veuillez éviter d\'utiliser une date passée.</p>';
                         }
                     } else {
                         echo '<p class="text-center alert alert-danger">Date de départ non valide fournie. Veuillez éviter d\'utiliser une date passée.</p>';
                     }
-                } else {
-                    echo '<p class="text-center alert alert-danger">Date de départ non valide fournie. Veuillez éviter d\'utiliser une date passée.</p>';
                 }
+            } else {
+                echo 'u re a robot';
             }
         }
     }
     include 'includes/header.php';
     ?>
+    <script src="https://www.google.com/recaptcha/api.js?render=<?php echo SITE_KEY; ?>"></script>
 
     <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/humanity/jquery-ui.css" type="text/css">
 
@@ -578,6 +602,7 @@
                         <h4><?= $maison['price']; ?>€/nuit</h4>
                     </div>
                 </div>
+                <div><input type="hidden" name="g-recaptcha-response" id="g-recaptcha-response"></div>
 
                 <div class="row boutton-reservation-finale" - data-aos="fade" data-aos-anchor-placement="top-bottom" data-aos-delay="1500" data-aos-duration="2000" data-aos-once="true">
                     <div class="col_price reservationFinale">
@@ -590,9 +615,18 @@
     <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
     <script src="https://kit.fontawesome.com/a076d05399.js"></script>
-    <script src="js/reservation-2.js"></script>
+    <!-- <script src="js/reservation-2.js"></script> -->
     <script src="js/datepicker-fr.js"></script>
     <script>
+        grecaptcha.ready(function() {
+            grecaptcha.execute('6LcTkzsdAAAAAFvkJyptozb6tb9kEguW_-mlB8z2', {
+                action: 'submit'
+            }).then(function(token) {
+                // console.log(token);
+                document.getElementById('g-recaptcha-response').value = token;
+            });
+        });
+
         $(function() {
 
             var unavailableDates = <?php echo $fulldate ?>;

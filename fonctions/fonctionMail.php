@@ -16,10 +16,10 @@ function sendMail($message)
         //Server settings
         //$mail->SMTPDebug = SMTP::DEBUG_SERVER;                      //Enable verbose debug output
         $mail->isSMTP();                                            //Send using SMTP
-        $mail->Host       = 'node67-eu.n0c.com';                    //Set the SMTP server to send through
+        $mail->Host       = 'mail.smtp2go.com';                    //Set the SMTP server to send through
         $mail->SMTPAuth   = true;                                   //Enable SMTP authentication
-        $mail->Username   = 'murielhomes@murielhomes.fr';                  //SMTP username
-        $mail->Password   = 'z@~37Kh*@hq(*79(c(';                   //SMTP password
+        $mail->Username   = 'murielmailv2@murielhomes.fr';                  //SMTP username
+        $mail->Password   = 'NjZtajZ5NjNrODAw';                   //SMTP password
         $mail->SMTPSecure = 'ssl';            //Enable implicit TLS encryption
         $mail->Port       = 465;                                     //TCP port to connect to; use 587 if you have set `SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS`
 
@@ -59,12 +59,12 @@ function sendMail2($message, $expediteur)
         //Server settings
         //$mail->SMTPDebug = SMTP::DEBUG_SERVER;                      //Enable verbose debug output
         $mail->isSMTP();                                            //Send using SMTP
-        $mail->Host       = 'node67-eu.n0c.com';                    //Set the SMTP server to send through
+        $mail->Host       = 'mail.smtp2go.com';                    //Set the SMTP server to send through
         $mail->SMTPAuth   = true;                                   //Enable SMTP authentication
-        $mail->Username   = 'murielhomes@murielhomes.fr';                  //SMTP username
-        $mail->Password   = 'z@~37Kh*@hq(*79(c(';                   //SMTP password
+        $mail->Username   = 'murielmailv2@murielhomes.fr';                  //SMTP username
+        $mail->Password   = 'NjZtajZ5NjNrODAw';                   //SMTP password
         $mail->SMTPSecure = 'ssl';            //Enable implicit TLS encryption
-        $mail->Port       = 465;                                     //TCP port to connect to; use 587 if you have set `SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS`
+        $mail->Port       = 2525;                                //TCP port to connect to; use 587 if you have set `SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS`
 
         //Recipients
         $mail->setFrom('reservation@murielhomes.com', 'Muriel homes');
