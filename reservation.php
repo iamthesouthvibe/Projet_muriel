@@ -82,7 +82,7 @@ $sql = $db->query("SELECT * FROM rooms");
     <div class="qhero_page_reservation">
         <div class="form" data-aos="fade" data-aos-anchor-placement="bottom-bottom" data-aos-duration="1000" data-aos-delay="500">
             <div class="input">
-                <form method="get" action="reservation-2.php">
+                <form method="get" autocomplete="off" action="reservation-2.php">
                     <select name="maison" class="test">
                         <option value="" selected="true" disabled="disabled">Votre maison</option>
                         <?php while ($room = $sql->fetch(PDO::FETCH_ASSOC)) : ?>
