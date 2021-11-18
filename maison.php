@@ -189,7 +189,7 @@ $selectBlog = $db->query("SELECT * FROM tourism WHERE id_rooms = '{$roomID}' LIM
 
 
         <!-- Swiper Activités-->
-        <div class="carousel_and_map">  
+        <div class="carousel_and_map">
             <div class="infos-techniques-maison" data-aos="fade-up" data-aos-anchor-placement="top-bottom" data-aos-duration="1000">
                 <h4>Informations</h4>
                 <div>
@@ -209,70 +209,102 @@ $selectBlog = $db->query("SELECT * FROM tourism WHERE id_rooms = '{$roomID}' LIM
                         <img src="assets/svg/ICONS_TECHNIQUE_MAISON/TERRASSE.svg"> </img>
                         <p><?= $room['eq4']; ?></p>
                     </div>
-                    <div class="set-icon-text">
-                        <img src="assets/svg/ICONS_TECHNIQUE_MAISON/PISCINE.svg"> </img>
-                        <p><?= $room['eq5']; ?></p>
-                    </div>
-                    <div class="set-icon-text">
-                        <img src="assets/svg/ICONS_TECHNIQUE_MAISON/CARBET.svg"> </img>
-                        <p><?= $room['eq6']; ?></p>
-                    </div>
-                    <div class="set-icon-text">
-                        <img src="assets/svg/ICONS_TECHNIQUE_MAISON/PARKING2.svg"> </img>
-                        <p><?= $room['eq7']; ?></p>
-                    </div>
-                    <div class="set-icon-text">
-                        <img src="assets/svg/ICONS_TECHNIQUE_MAISON/GARDEN.svg"> </img>
-                        <p><?= $room['eq8']; ?></p>
-                    </div>
-                    <div class="set-icon-text">
-                        <img src="assets/svg/ICONS_TECHNIQUE_MAISON/BARBECUE.svg"> </img>
-                        <p><?= $room['eq9']; ?></p>
-                    </div>
-                    <div class="set-icon-text">
-                        <img src="assets/svg/ICONS_TECHNIQUE_MAISON/KITCHEN.svg"> </img>
-                        <p><?= $room['eq10']; ?></p>
-                    </div>
-                    <div class="set-icon-text">
-                        <img src="assets/svg/ICONS_TECHNIQUE_MAISON/WIFI.svg"> </img>
-                        <p><?= $room['eq11']; ?></p>
-                    </div>
-                    <div class="set-icon-text">
-                        <img src="assets/svg/ICONS_TECHNIQUE_MAISON/CLIMATISEUR.svg"> </img>
-                        <p><?= $room['eq12']; ?></p>
-                    </div>
-                    <div class="set-icon-text">
-                        <img src="assets/svg/ICONS_TECHNIQUE_MAISON/TOILETS.svg"> </img>
-                        <p><?= $room['eq13']; ?></p>
-                    </div>
-                    <div class="set-icon-text">
-                        <img src="assets/svg/ICONS_TECHNIQUE_MAISON/SALON.svg"> </img>
-                        <p><?= $room['eq14']; ?></p>
-                    </div>
-                    <div class="set-icon-text">
-                        <img src="assets/svg/ICONS_TECHNIQUE_MAISON/BUANDERIE.svg"> </img>
-                        <p><?= $room['eq15']; ?></p>
-                    </div>
-                    <div class="set-icon-text">
-                        <img src="assets/svg/ICONS_TECHNIQUE_MAISON/CENTRE-VILLE.svg"> </img>
-                        <p><?= $room['eq16']; ?></p>
-                    </div>
-                    <div class="set-icon-text">
-                        <img src="assets/svg/ICONS_TECHNIQUE_MAISON/CHEMINEE.svg"> </img>
-                        <p><?= $room['eq17']; ?></p>
-                    </div>
-                    <div class="set-icon-text">
-                        <img src="assets/svg/ICONS_TECHNIQUE_MAISON/ENTRY.svg"> </img>
-                        <p><?= $room['eq18']; ?></p>
-                    </div>
-                    <div class="set-icon-text">
-                        <img src="assets/svg/ICONS_TECHNIQUE_MAISON/RANGEMENT_SKIS.svg"> </img>
-                        <p><?= $room['eq19']; ?></p>
-                    </div>
-                    <div class="set-icon-text">
-                        <img src="assets/svg/ICONS_TECHNIQUE_MAISON/PISTES-SKI.svg"> </img>
-                        <p><?= $room['eq20']; ?></p>
-                    </div>
+                    <?php if (!empty($room['eq5'])) : ?>
+                        <div class="set-icon-text">
+                            <img src="assets/svg/ICONS_TECHNIQUE_MAISON/PISCINE.svg"> </img>
+                            <p><?= $room['eq5']; ?></p>
+                        </div>
+                    <?php endif; ?>
+                    <?php if (!empty($room['eq6'])) : ?>
+                        <div class="set-icon-text">
+                            <img src="assets/svg/ICONS_TECHNIQUE_MAISON/CARBET.svg"> </img>
+                            <p><?= $room['eq6']; ?></p>
+                        </div>
+                    <?php endif; ?>
+                    <?php if (!empty($room['eq7'])) : ?>
+                        <div class="set-icon-text">
+                            <img src="assets/svg/ICONS_TECHNIQUE_MAISON/PARKING2.svg"> </img>
+                            <p><?= $room['eq7']; ?></p>
+                        </div>
+                    <?php endif; ?>
+                    <?php if (!empty($room['eq8'])) : ?>
+                        <div class="set-icon-text">
+                            <img src="assets/svg/ICONS_TECHNIQUE_MAISON/GARDEN.svg"> </img>
+                            <p><?= $room['eq8']; ?></p>
+                        </div>
+                    <?php endif; ?>
+                    <?php if (!empty($room['eq9'])) : ?>
+                        <div class="set-icon-text">
+                            <img src="assets/svg/ICONS_TECHNIQUE_MAISON/BARBECUE.svg"> </img>
+                            <p><?= $room['eq9']; ?></p>
+                        </div>
+                    <?php endif; ?>
+                    <?php if (!empty($room['eq10'])) : ?>
+                        <div class="set-icon-text">
+                            <img src="assets/svg/ICONS_TECHNIQUE_MAISON/KITCHEN.svg"> </img>
+                            <p><?= $room['eq10']; ?></p>
+                        </div>
+                    <?php endif; ?>
+                    <?php if (!empty($room['eq11'])) : ?>
+                        <div class="set-icon-text">
+                            <img src="assets/svg/ICONS_TECHNIQUE_MAISON/WIFI.svg"> </img>
+                            <p><?= $room['eq11']; ?></p>
+                        </div>
+                    <?php endif; ?>
+                    <?php if (!empty($room['eq12'])) : ?>
+                        <div class="set-icon-text">
+                            <img src="assets/svg/ICONS_TECHNIQUE_MAISON/CLIMATISEUR.svg"> </img>
+                            <p><?= $room['eq12']; ?></p>
+                        </div>
+                    <?php endif; ?>
+                    <?php if (!empty($room['eq13'])) : ?>
+                        <div class="set-icon-text">
+                            <img src="assets/svg/ICONS_TECHNIQUE_MAISON/TOILETS.svg"> </img>
+                            <p><?= $room['eq13']; ?></p>
+                        </div>
+                    <?php endif; ?>
+                    <?php if (!empty($room['eq14'])) : ?>
+                        <div class="set-icon-text">
+                            <img src="assets/svg/ICONS_TECHNIQUE_MAISON/SALON.svg"> </img>
+                            <p><?= $room['eq14']; ?></p>
+                        </div>
+                    <?php endif; ?>
+                    <?php if (!empty($room['eq15'])) : ?>
+                        <div class="set-icon-text">
+                            <img src="assets/svg/ICONS_TECHNIQUE_MAISON/BUANDERIE.svg"> </img>
+                            <p><?= $room['eq15']; ?></p>
+                        </div>
+                    <?php endif; ?>
+                    <?php if (!empty($room['eq16'])) : ?>
+                        <div class="set-icon-text">
+                            <img src="assets/svg/ICONS_TECHNIQUE_MAISON/CENTRE-VILLE.svg"> </img>
+                            <p><?= $room['eq16']; ?></p>
+                        </div>
+                    <?php endif; ?>
+                    <?php if (!empty($room['eq17'])) : ?>
+                        <div class="set-icon-text">
+                            <img src="assets/svg/ICONS_TECHNIQUE_MAISON/CHEMINEE.svg"> </img>
+                            <p><?= $room['eq17']; ?></p>
+                        </div>
+                    <?php endif; ?>
+                    <?php if (!empty($room['eq18'])) : ?>
+                        <div class="set-icon-text">
+                            <img src="assets/svg/ICONS_TECHNIQUE_MAISON/ENTRY.svg"> </img>
+                            <p><?= $room['eq18']; ?></p>
+                        </div>
+                    <?php endif; ?>
+                    <?php if (!empty($room['eq19'])) : ?>
+                        <div class="set-icon-text">
+                            <img src="assets/svg/ICONS_TECHNIQUE_MAISON/RANGEMENT_SKIS.svg"> </img>
+                            <p><?= $room['eq19']; ?></p>
+                        </div>
+                    <?php endif; ?>
+                    <?php if (!empty($room['eq20'])) : ?>
+                        <div class="set-icon-text">
+                            <img src="assets/svg/ICONS_TECHNIQUE_MAISON/PISTES-SKI.svg"> </img>
+                            <p><?= $room['eq20']; ?></p>
+                        </div>
+                    <?php endif; ?>
                 </div>
             </div>
 
