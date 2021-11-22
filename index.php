@@ -8,10 +8,7 @@ $sql = $db->query("SELECT * FROM rooms LIMIT 4");
 
 
 <style>
-  .style_h1_accueil span {
-    display: inline-block;
-    transform: translateY(100%);
-  }
+  
 </style>
 
 
@@ -24,17 +21,11 @@ $sql = $db->query("SELECT * FROM rooms LIMIT 4");
   <!--  ######Ceci est la partie Html de la page d'accueil. Raccorder le back par la suite.##### -->
   <div class="qhero">
     <div class="qhero_page_accueil">
-      <h1 class="style_h1_accueil" data-aos="fade-up" data-aos-anchor-placement="bottom-bottom" data-aos-duration="1000" data-aos-delay="0"> “Laissez-vous séduire par un univers d’élégance <br> et de douceur.<br> 4 maisons, 4 ambiances le
+      <h1 class="style_h1_accueil" data-aos="fade-up" data-aos-anchor-placement="bottom-bottom" data-aos-duration="1000" data-aos-delay="0"> “Laissez-vous <span class="italic-h1-index">séduire</span> <br> par un univers <span class="italic-h1-index">d’élégance</span> <br> et de <span class="italic-h1-index">douceur</span>.<br> 4 maisons, 4 ambiances le
         <br> regard d’une femme”
       </h1>
       <h2 class="style_h2_accueil" data-aos="fade-up" data-aos-anchor-placement="bottom-bottom" data-aos-duration="1000" data-aos-delay="200">Je veux créer des maisons pour faire rêver, des maisons qui soient comme des personnalités, surprenantes, inattendues, accueillantes et généreuses. Où l’on ait envie de rester et de revenir, comme pour poursuivre une conversation interrompue trop tôt. </h2>
-      <div data-aos="fade-up" data-aos-anchor-placement="bottom-bottom" data-aos-duration="1000" data-aos-delay="400">
-        <svg width="40px" viewBox="0 0 14.334 24.75" class="scroll_anim">
-          <circle class="circle-1" fill="black" cx="7.167" cy="6" r="1.2" />
-          <circle class="circle-2" fill="black" cx="7.167" cy="6" r="1.2" />
-          <path stroke="black" fill="transparent" stroke-width="0.5" d="M7.167,0.5C3.485,0.5,0.5,3.485,0.5,7.167v10.416                   c0,3.682,2.985,6.667,6.667,6.667s6.667-2.985,6.667-6.667V7.167C13.834,3.485,10.849,0.5,7.167,0.5z" />
-        </svg>
-      </div>
+      
     </div>
   </div>
 

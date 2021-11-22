@@ -38,13 +38,6 @@ $selectBlog = $db->query("SELECT * FROM tourism WHERE id_rooms = '{$roomID}' LIM
                     </h3>
                 </div>
             </div>
-            <div class="boutton_scroll">
-                <svg data-aos="fade" data-aos-anchor-placement="top-bottom" data-aos-duration="1000" data-aos-delay="600" width="40px" viewBox="0 0 14.334 24.75" class="scroll_anim">
-                    <circle class="circle-1" fill="black" cx="7.167" cy="6" r="1.2" />
-                    <circle class="circle-2" fill="black" cx="7.167" cy="6" r="1.2" />
-                    <path stroke="black" fill="transparent" stroke-width="0.5" d="M7.167,0.5C3.485,0.5,0.5,3.485,0.5,7.167v10.416                   c0,3.682,2.985,6.667,6.667,6.667s6.667-2.985,6.667-6.667V7.167C13.834,3.485,10.849,0.5,7.167,0.5z" />
-                </svg>
-            </div>
         </div>
 
 
@@ -197,73 +190,122 @@ $selectBlog = $db->query("SELECT * FROM tourism WHERE id_rooms = '{$roomID}' LIM
 
         <!-- Swiper Activités-->
         <div class="carousel_and_map">
-            <div class="carousel_maison_03" data-aos="fade-up" data-aos-anchor-placement="top-bottom" data-aos-duration="1000">
-                <div class="swiper mySwiper swiperHover">
-                    <h4>Informations
-                    </h4>
-                    <div class="swiper-button-next"></div>
-                    <div class="swiper-wrapper">
-
-                        <div class="swiper-slide">
-                            <p><?= $room['eq1']; ?></p>
-                            <p><?= $room['eq2']; ?></p>
-                            <p><?= $room['eq3']; ?></p>
-                            <p><?= $room['eq4']; ?></p>
+            <div class="infos-techniques-maison" data-aos="fade-up" data-aos-anchor-placement="top-bottom" data-aos-duration="1000">
+                <h4>Informations</h4>
+                <div>
+                    <div class="set-icon-text">
+                        <img src="assets/svg/ICONS_TECHNIQUE_MAISON/people1.svg"> </img>
+                        <p><?= $room['eq1']; ?></p>
+                    </div>
+                    <div class="set-icon-text">
+                        <img src="assets/svg/ICONS_TECHNIQUE_MAISON/CHAMBRES.svg"> </img>
+                        <p><?= $room['eq2']; ?></p>
+                    </div>
+                    <div class="set-icon-text">
+                        <img src="assets/svg/ICONS_TECHNIQUE_MAISON/SALLE_DE_BAIN.svg"> </img>
+                        <p><?= $room['eq3']; ?></p>
+                    </div>
+                    <div class="set-icon-text">
+                        <img src="assets/svg/ICONS_TECHNIQUE_MAISON/TERRASSE.svg"> </img>
+                        <p><?= $room['eq4']; ?></p>
+                    </div>
+                    <?php if (!empty($room['eq5'])) : ?>
+                        <div class="set-icon-text">
+                            <img src="assets/svg/ICONS_TECHNIQUE_MAISON/PISCINE.svg"> </img>
                             <p><?= $room['eq5']; ?></p>
+                        </div>
+                    <?php endif; ?>
+                    <?php if (!empty($room['eq6'])) : ?>
+                        <div class="set-icon-text">
+                            <img src="assets/svg/ICONS_TECHNIQUE_MAISON/CARBET.svg"> </img>
                             <p><?= $room['eq6']; ?></p>
+                        </div>
+                    <?php endif; ?>
+                    <?php if (!empty($room['eq7'])) : ?>
+                        <div class="set-icon-text">
+                            <img src="assets/svg/ICONS_TECHNIQUE_MAISON/PARKING2.svg"> </img>
                             <p><?= $room['eq7']; ?></p>
+                        </div>
+                    <?php endif; ?>
+                    <?php if (!empty($room['eq8'])) : ?>
+                        <div class="set-icon-text">
+                            <img src="assets/svg/ICONS_TECHNIQUE_MAISON/GARDEN.svg"> </img>
                             <p><?= $room['eq8']; ?></p>
+                        </div>
+                    <?php endif; ?>
+                    <?php if (!empty($room['eq9'])) : ?>
+                        <div class="set-icon-text">
+                            <img src="assets/svg/ICONS_TECHNIQUE_MAISON/BARBECUE.svg"> </img>
                             <p><?= $room['eq9']; ?></p>
+                        </div>
+                    <?php endif; ?>
+                    <?php if (!empty($room['eq10'])) : ?>
+                        <div class="set-icon-text">
+                            <img src="assets/svg/ICONS_TECHNIQUE_MAISON/KITCHEN.svg"> </img>
                             <p><?= $room['eq10']; ?></p>
+                        </div>
+                    <?php endif; ?>
+                    <?php if (!empty($room['eq11'])) : ?>
+                        <div class="set-icon-text">
+                            <img src="assets/svg/ICONS_TECHNIQUE_MAISON/WIFI.svg"> </img>
                             <p><?= $room['eq11']; ?></p>
+                        </div>
+                    <?php endif; ?>
+                    <?php if (!empty($room['eq12'])) : ?>
+                        <div class="set-icon-text">
+                            <img src="assets/svg/ICONS_TECHNIQUE_MAISON/CLIMATISEUR.svg"> </img>
                             <p><?= $room['eq12']; ?></p>
+                        </div>
+                    <?php endif; ?>
+                    <?php if (!empty($room['eq13'])) : ?>
+                        <div class="set-icon-text">
+                            <img src="assets/svg/ICONS_TECHNIQUE_MAISON/TOILETS.svg"> </img>
                             <p><?= $room['eq13']; ?></p>
+                        </div>
+                    <?php endif; ?>
+                    <?php if (!empty($room['eq14'])) : ?>
+                        <div class="set-icon-text">
+                            <img src="assets/svg/ICONS_TECHNIQUE_MAISON/SALON.svg"> </img>
                             <p><?= $room['eq14']; ?></p>
                         </div>
-                        <div class="swiper-slide">
+                    <?php endif; ?>
+                    <?php if (!empty($room['eq15'])) : ?>
+                        <div class="set-icon-text">
+                            <img src="assets/svg/ICONS_TECHNIQUE_MAISON/BUANDERIE.svg"> </img>
+                            <p><?= $room['eq15']; ?></p>
+                        </div>
+                    <?php endif; ?>
+                    <?php if (!empty($room['act1'])) : ?>
+                        <div class="set-icon-text">
+                            <img src="assets/svg/ICONS_TECHNIQUE_MAISON/CENTRE-VILLE.svg"> </img>
                             <p><?= $room['act1']; ?></p>
+                        </div>
+                    <?php endif; ?>
+                    <?php if (!empty($room['act2'])) : ?>
+                        <div class="set-icon-text">
+                            <img src="assets/svg/ICONS_TECHNIQUE_MAISON/CHEMINEE.svg"> </img>
                             <p><?= $room['act2']; ?></p>
+                        </div>
+                    <?php endif; ?>
+                    <?php if (!empty($room['act3'])) : ?>
+                        <div class="set-icon-text">
+                            <img src="assets/svg/ICONS_TECHNIQUE_MAISON/ENTRY.svg"> </img>
                             <p><?= $room['act3']; ?></p>
+                        </div>
+                    <?php endif; ?>
+                    <?php if (!empty($room['act4'])) : ?>
+                        <div class="set-icon-text">
+                            <img src="assets/svg/ICONS_TECHNIQUE_MAISON/RANGEMENT_SKIS.svg"> </img>
                             <p><?= $room['act4']; ?></p>
+                        </div>
+                    <?php endif; ?>
+                    <?php if (!empty($room['act5'])) : ?>
+                        <div class="set-icon-text">
+                            <img src="assets/svg/ICONS_TECHNIQUE_MAISON/PISTES-SKI.svg"> </img>
                             <p><?= $room['act5']; ?></p>
-                            <p><?= $room['act6']; ?></p>
-                            <p><?= $room['act7']; ?></p>
-                            <p><?= $room['act8']; ?></p>
-                            <p><?= $room['act9']; ?></p>
-                            <p><?= $room['act10']; ?></p>
-                            <p><?= $room['act11']; ?></p>
-                            <p><?= $room['act12']; ?></p>
-                            <p><?= $room['act13']; ?></p>
-                            <p><?= $room['act14']; ?></p>
-                            <p><?= $room['act15']; ?></p>
-                            <p><?= $room['act16']; ?></p>
-                            <p><?= $room['act17']; ?></p>
                         </div>
-                        <div class="swiper-slide">
-                            <p><?= $room['inte1']; ?></p>
-                            <p><?= $room['inte2']; ?></p>
-                            <p><?= $room['inte3']; ?></p>
-                            <p><?= $room['inte4']; ?></p>
-                            <p><?= $room['inte5']; ?></p>
-                            <p><?= $room['inte6']; ?></p>
-                            <p><?= $room['inte7']; ?></p>
-                            <p><?= $room['inte8']; ?></p>
-                            <p><?= $room['inte9']; ?></p>
-                            <p><?= $room['inte10']; ?></p>
-                            <p><?= $room['inte11']; ?></p>
-                        </div>
-                        <div class="swiper-slide">
-                            <p><?= $room['dist1']; ?></p>
-                            <p><?= $room['dist2']; ?></p>
-                            <p><?= $room['dist3']; ?></p>
-                            <p><?= $room['dist4']; ?></p>
-                            <p><?= $room['dist5']; ?></p>
-                            <p><?= $room['dist6']; ?></p>
-                            <p><?= $room['dist7']; ?></p>
-                        </div>
-                    </div>
+                    <?php endif; ?>
                 </div>
-
             </div>
 
             <div class="mapouter" data-aos="fade-up" data-aos-anchor-placement="top-bottom" data-aos-delay="200" data-aos-duration="1000">
