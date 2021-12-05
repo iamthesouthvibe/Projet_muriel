@@ -45,13 +45,25 @@ if (isset($_GET['delete'])) {
         </tr>
       </thead>
       <tbody>
-        <?php while ($rows = $result->fetch(PDO::FETCH_ASSOC)) : ?>
+        <?php while ($rows = $result->fetch(PDO::FETCH_ASSOC)) : 
+          
+          // Creating timestamp from given date
+          $timestamp = strtotime($rows['checkin']);
+          // Creating new date format from that timestamp
+          $new_checkin = date("d-m-Y", $timestamp);
+          
+          // Creating timestamp from given date
+          $timestamp2 = strtotime($rows['checkout']);
+          // Creating new date format from that timestamp
+          $new_checkout = date("d-m-Y", $timestamp2);
+
+          ?>
           <tr>
             <td><?= $row_count++; ?></td>
             <td><?= $rows['room_number']; ?></td>
             <td><?= $rows['name']; ?></td>
-            <td><?= $rows['checkin']; ?></td>
-            <td><?= $rows['checkout']; ?></td>
+            <td><?= $new_checkin; ?></td>
+            <td><?= $new_checkout; ?></td>
             <td><?= $rows['phone']; ?></td>
             <td><?= $rows['people']; ?></td>
             <td><?= $rows['children']; ?></td>

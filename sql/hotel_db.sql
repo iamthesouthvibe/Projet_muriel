@@ -1,14 +1,22 @@
 -- phpMyAdmin SQL Dump
--- version 4.9.5
+-- version 4.9.6
 -- https://www.phpmyadmin.net/
 --
--- Host: localhost:8889
--- Generation Time: Nov 18, 2021 at 07:36 PM
--- Server version: 5.7.30
--- PHP Version: 7.4.9
+-- Hôte : kp3dv.myd.infomaniak.com
+-- Généré le :  Dim 05 déc. 2021 à 19:43
+-- Version du serveur :  10.4.18-MariaDB-1:10.4.18+maria~stretch-log
+-- Version de PHP :  7.4.25
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET AUTOCOMMIT = 0;
+START TRANSACTION;
 SET time_zone = "+00:00";
+
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8mb4 */;
 
 --
 -- Database: `hotel_db`
@@ -20,6 +28,9 @@ USE `hotel_db`;
 
 --
 -- Table structure for table `calendar`
+--
+--
+-- Structure de la table `calendar`
 --
 
 CREATE TABLE `calendar` (
@@ -33,7 +44,7 @@ CREATE TABLE `calendar` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `calendar`
+-- Déchargement des données de la table `calendar`
 --
 
 INSERT INTO `calendar` (`id`, `libelle`, `email`, `phone`, `checkin`, `checkout`, `id_rooms`) VALUES
@@ -47,7 +58,7 @@ INSERT INTO `calendar` (`id`, `libelle`, `email`, `phone`, `checkin`, `checkout`
 -- --------------------------------------------------------
 
 --
--- Table structure for table `comments`
+-- Structure de la table `comments`
 --
 
 CREATE TABLE `comments` (
@@ -59,7 +70,7 @@ CREATE TABLE `comments` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `comments`
+-- Déchargement des données de la table `comments`
 --
 
 INSERT INTO `comments` (`id`, `fullname`, `date_c`, `comment`, `id_rooms`) VALUES
@@ -78,7 +89,7 @@ INSERT INTO `comments` (`id`, `fullname`, `date_c`, `comment`, `id_rooms`) VALUE
 -- --------------------------------------------------------
 
 --
--- Table structure for table `gallery`
+-- Structure de la table `gallery`
 --
 
 CREATE TABLE `gallery` (
@@ -87,7 +98,7 @@ CREATE TABLE `gallery` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `gallery`
+-- Déchargement des données de la table `gallery`
 --
 
 INSERT INTO `gallery` (`id`, `image`) VALUES
@@ -100,7 +111,7 @@ INSERT INTO `gallery` (`id`, `image`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `products`
+-- Structure de la table `products`
 --
 
 CREATE TABLE `products` (
@@ -115,7 +126,7 @@ CREATE TABLE `products` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `products`
+-- Déchargement des données de la table `products`
 --
 
 INSERT INTO `products` (`id_p`, `name_p`, `description_p`, `photo_p`, `size_p`, `quantity_p`, `price_p`, `rooms_id`) VALUES
@@ -128,7 +139,7 @@ INSERT INTO `products` (`id_p`, `name_p`, `description_p`, `photo_p`, `size_p`, 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `reservations`
+-- Structure de la table `reservations`
 --
 
 CREATE TABLE `reservations` (
@@ -148,17 +159,24 @@ CREATE TABLE `reservations` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `reservations`
+-- Déchargement des données de la table `reservations`
 --
 
 INSERT INTO `reservations` (`id`, `name`, `checkin`, `checkout`, `phone`, `people`, `email`, `children`, `address`, `commentaire`, `zip`, `pays`, `id_rooms`) VALUES
-(186, 'lambert', '2022-01-09', '2022-01-16', '0674966088', 3, 'coutellier.muriel@wanadoo.fr', '2', '1 impasse de la Coronille', 'gffdsfdfdssfds', '11100', NULL, 23),
-(187, 'Vayssié', '2022-01-28', '2022-03-26', '33777340108', 1, 'nonhumain@protonmail.com', '1', '23 rue du chatelet', '', '74240', NULL, 23);
+(218, 'Vayssié', '2022-01-01', '2022-03-05', '33777340108', 1, 'nonhumain@protonmail.com', '1', '23 rue du chatelet', '', '74240', NULL, 23),
+(219, 'Jean', '2022-01-13', '2022-02-11', '0777777777', 2, 'Nonhumain@protonmail.com', '2', 'Tdze', 'Hh', 'Dheh', NULL, 23),
+(220, 'Léo Labeaume', '2022-02-01', '2022-02-11', '0611879183', 2, 'leo.labeaume@hotmail.fr', '2', '5 rue jean de beauvais', '', '75005', NULL, 23),
+(221, 'Léo Labeaume', '2022-02-01', '2022-02-17', '0611879183', 2, 'leo.labeaume@hotmail.fr', '5', '5 rue jean de beauvais', '', '75005', NULL, 23),
+(222, 'Léo Labeaume', '2021-12-03', '2021-12-16', '0611879183', 2, 'leo.labeaume@hotmail.fr', '2', '5 rue jean de beauvais', '', '75005', NULL, 25),
+(223, 'Léo Labeaume', '2022-02-01', '2022-02-28', '0611879183', 2, 'leo.labeaume@hotmail.fr', '2', '5 rue jean de beauvais', '', '75005', NULL, 26),
+(224, 'Vayssié', '2022-02-05', '2022-04-02', '33777340108', 1, 'nonhumain@protonmail.com', '1', '23 rue du chatelet', '', '74240', NULL, 23),
+(225, 'Muriel COUTELLIER', '2021-12-26', '2022-01-09', '0674966088', 5, 'coutellier.muriel@wanadoo.fr', '3', '1 impasse de la Coronille', '', '11100', NULL, 23),
+(226, 'Muriel COUTELLIER', '2022-01-09', '2022-01-23', '0674966088', 4, 'coutellier.muriel@wanadoo.fr', '1', '1 impasse de la Coronille', '', '11100', NULL, 23);
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `rooms`
+-- Structure de la table `rooms`
 --
 
 CREATE TABLE `rooms` (
@@ -166,6 +184,7 @@ CREATE TABLE `rooms` (
   `room_number` varchar(255) NOT NULL,
   `shortName` varchar(50) NOT NULL,
   `price` mediumtext NOT NULL,
+  `intitule` text NOT NULL,
   `details` text NOT NULL,
   `details2` text NOT NULL,
   `details3` text NOT NULL,
@@ -218,19 +237,19 @@ CREATE TABLE `rooms` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `rooms`
+-- Déchargement des données de la table `rooms`
 --
 
-INSERT INTO `rooms` (`id`, `room_number`, `shortName`, `price`, `details`, `details2`, `details3`, `lieu`, `map`, `photo`, `photo2`, `photo3`, `photo4`, `photo5`, `photo6`, `photo7`, `photo8`, `photo9`, `photo10`, `photo11`, `photo12`, `photo13`, `photo14`, `photo15`, `photo16`, `photo17`, `photo18`, `photo19`, `photo20`, `photo21`, `photo22`, `photo23`, `photo24`, `eq1`, `eq2`, `eq3`, `eq4`, `eq5`, `eq6`, `eq7`, `eq8`, `eq9`, `eq10`, `eq11`, `eq12`, `eq13`, `eq14`, `eq15`, `act1`, `act2`, `act3`, `act4`, `act5`) VALUES
-(23, 'Villa Grand Large Baie des Anses d’Arlet\r\n', 'Villa Grand Large ', '333', 'La villa grand large vous accueille avec sa situation exceptionnelle sur Grande Anse et vous offre une vue époustouflante sur la mer des Caraïbes. Entourée d’un terrain arboré de 2500m2 qui descend sur la mer turquoise. Vous serez au meilleur endroit pour découvrir les tortues et les poissons tropicaux .', 'Une pente douce qui vous fait glisser immédiatement dans un univers de rêve.\r\nPassez la porte aux couleurs chatoyantes et soyez saisi par la vue panoramique sur la baie azur des Anses d’Arlet. La Villa s’ouvre sur l’extérieur dans une parfaite continuité entre dedans et dehors. Pas de 4e mur dans ce large salon de bois blanc qui se prolonge jusqu’à la piscine à débordement avec la mer à l’horizon. Circulez librement sans cloison de l’espace cuisine au salon, surveillez de loin une grillade dans le barbecue, marchez pieds nus sur le deck, allongez-vous dans un transat suspendu ou goutez un daïquiri sous le carbet… ', 'Pour des vacances en famille ou entre amis, profitez des spacieux espaces communs pour vivre des moments forts et des nombreuses chambres pour se retrouver en toute intimité : trois suites climatisées dans la maison et leurs deux salles de bain, trois autres chambres sous le carbet et la salle de bain façon cabane de Robinson donnant sur la grande bleue et les citronniers. Un petit chemin privatif vous conduit jusqu’à la mer… ', 'Anses d\'Arlet, Martinique', '', 'images/GrandLarge1.jpg', 'images/GrandLarge2.jpg', 'images/GrandLarge3.jpg', 'images/GrandLarge4.jpg', 'images/GrandLarge5.jpg', 'images/GrandLarge6.jpg', 'images/GrandLarge7.jpg', 'images/GrandLarge8.jpg', 'images/GrandLarge9.jpg', 'images/GrandLarge10.jpg', 'images/GrandLarge11.jpg', 'images/GrandLarge12.jpg', 'images/GrandLarge13.jpg', 'images/GrandLarge14.jpg', 'images/GrandLarge15.jpg', 'images/GrandLarge16.jpg', 'images/GrandLarge17.jpg', 'images/GrandLarge18.jpg', 'images/GrandLarge19.jpg', 'images/GrandLarge20.jpg', '', '', '', '', '12 personnes', '6 chambres dont 3 climatisées', '3 Salles de Bain', 'Vue sur mer accès privatif', 'Piscine à débordement', '1 carbet en bois avec terrasse/salon/chambres', 'Parking gratuit\r\n', 'Jardin de 2500m2', 'Barbecue', '', 'Wifi', 'Climatisée', '', '', '', '\r\n', '', '', '', ''),
-(24, 'Chalet Bord de Mer', 'Chalet Bord de Mer', '280', 'Gruissan et ses incontournables chalets sur pilotis tournés vers la mer, les pieds dans les vagues. Tentez l’escapade iodée et troquez vos chaussures de ville pour les sandales de plage.', ' Au chalet, vous serez accueilli tout d’abord par deux chambres aux teintes soleil, sa salle de bain et son WC indépendant. Au 1er étage, vous découvrez 2 autres chambres aux couleurs pastel, à coté la salle de bain et son wc indépendant. L’espace de vie, la cuisine et le salon sont ouverts sur la terrasse avec vue sur la mer ', 'L’espace rappelle l’atmosphère des cabines de plage, le confort et la modernité en plus ! Sa décoration « rose » façon 37°2 , célèbre film mythique qui a consacré au cinéma la plage de Gruissan, vous séduira par sa douceur.\r\nVous aussi, venez passer de l’autre côté de l’écran…  \r\n', 'Gruissan, Occitanie', '', 'images/Chalet1.jpg', 'images/Chalet2.jpg', 'images/Chalet3.jpg', 'images/Chalet4.jpg', 'images/Chalet5.jpg', 'images/Chalet6.jpg', 'images/Chalet7.jpg', 'images/Chalet8.jpg', 'images/Chalet9.jpg', 'images/Chalet10.jpg', 'images/Chalet11.jpg', 'images/Chalet12.jpg', 'images/Chalet13.jpg', 'images/Chalet14.jpg', 'images/Chalet15.jpg', '', '', '', '', '', '', '', '', '', '8 personnes', '4 chambres', '2 Salles de Bain', 'Terrasse extérieure', '', '', '', '', '', 'Cuisine équipée', '', 'Climatisée', '2 WC', 'Salon', '', '', '', '', '', ''),
-(25, 'Jolie maison de ville', 'Jolie maison de ville', '185', 'Cette jolie maison vous séduira par sa décoration raffinée et son calme. Un petit cocon de calme et de confort.  Vivre au cœur de la ville, de ses saveurs, de ses pierres chaudes, du soleil et des millénaires d’histoire écrite au fil des siècles.', 'Passez le portail, et découvrez un enclos de sérénité avec son bassin central pour se détendre et se rafraichir pendant que d’autres prennent l’apéritif en terrasse à vos côtés. Au même niveau, le salon et la cuisine avec ses couleurs chaudes vous accueillent immédiatement dans un lieu convivial à la décoration originale, aux petits détails qui attrapent le regard.', 'A l’étage, trois chambres épurées et leur salle de bain et son wc pour se reposer en toute quiétude avant de poursuivre le lendemain l’exploration de la ville, son canal, ses petites boutiques et ses halles gourmandes.', 'Narbonne, Occitanie', '', 'images/Villa1.jpg', 'images/Villa2.jpg', 'images/Villa3.jpg', 'images/Villa4.jpg', 'images/Villa5.jpg', 'images/Villa6.jpg', 'images/Villa7.jpg', 'images/Villa8.jpg', 'images/Villa9.jpg', 'images/Villa10.jpg', 'images/Villa11.jpg', 'images/Villa12.jpg', 'images/Villa13.jpg', '', '', '', '', '', '', '', '', '', '', '', '6 Personnes', '3 chambres', '1 Salle de Bain', 'Terrasse extérieure', 'Piscine', '', '', '', '', 'Cuisine équipée', '', 'Climatisée', '2 WC', 'Salon', 'Buanderie', 'Centre Ville', '', '', '', ''),
-(26, 'Chalet montagne', 'Chalet montagne', '300', 'Ce chalet se veut une bulle chaleureuse au milieu des neiges blanches à l’orée des pistes. Un refuge de repos et de douceur après les pistes l’hiver et les escapades sur les sentiers l’été.', 'Au milieu des sapins, sur les hauteurs, en plein cœur des Pyrénées Ariègeoise, venez découvrir la chaleur d’une vie en chalet : un refuge en bois au milieu des cimes… Découvrez un lieu accueillant pour les grands et les plus jeunes. Ces derniers trouveront pour eux cinq lits superposés façon cabine de bateau pour chuchoter d’un étage à l’autre jusqu’au bout de la nuit.', 'Faites trois marches supplémentaires et vous trouverez trois chambres spacieuses et confortables ainsi qu’une salle de bain avec douche et WC indépendant. L’espace de vie, avec cuisine ouverte sur le salon et sa cheminée, domine la forêt noire et blanche. C’est un espace tout en douceur, peluche et plume, tout n’y est que caresse.  Venez tentez l’aventure montagne !', 'Bonascre -Ax les Thermes, Ariège', '', 'images/Pyrennes1.jpg', 'images/Pyrennes2.jpg', 'images/Pyrennes3.jpg', 'images/Pyrennes4.jpg', 'images/Pyrennes5.jpg', 'images/Pyrennes6.jpg', 'images/Pyrennes7.jpg', 'images/Pyrennes8.jpg', 'images/Pyrennes9.jpg', 'images/Pyrennes10.jpg', 'images/Pyrennes11.jpg', 'images/Pyrennes12.jpg', 'images/Pyrennes13.jpg', 'images/Pyrennes14.jpg', 'images/Pyrennes15.jpg', 'images/Pyrennes16.jpg', 'images/Pyrennes17.jpg', 'images/Pyrennes18.jpg', '', '', '', '', '', '', '11 personnes', '3 Chambres avec lit double\r\n1 Chambre avec 5 lits bateau', '1 Salle de Bain', 'Terrasse de 50m2\r\nVue montagne et forêt', '', '', '', '', '', 'Cuisine équipée', 'Wifi', '', '1 WC', 'Salon', '', '', 'Cheminée', 'Hall d’entrée', 'Rangement ski/chaussure', 'Piste à 500m');
+INSERT INTO `rooms` (`id`, `room_number`, `shortName`, `price`, `intitule`, `details`, `details2`, `details3`, `lieu`, `map`, `photo`, `photo2`, `photo3`, `photo4`, `photo5`, `photo6`, `photo7`, `photo8`, `photo9`, `photo10`, `photo11`, `photo12`, `photo13`, `photo14`, `photo15`, `photo16`, `photo17`, `photo18`, `photo19`, `photo20`, `photo21`, `photo22`, `photo23`, `photo24`, `eq1`, `eq2`, `eq3`, `eq4`, `eq5`, `eq6`, `eq7`, `eq8`, `eq9`, `eq10`, `eq11`, `eq12`, `eq13`, `eq14`, `eq15`, `act1`, `act2`, `act3`, `act4`, `act5`) VALUES
+(23, 'Villa Grand Large Baie des Anses d’Arlet\r\n', 'Villa Grand Large ', '333', 'La villa grand large vous accueille avec sa situation exceptionnelle sur Grande Anse et vous offre une vue époustouflante sur la mer des Caraïbes. Entourée d’un terrain arboré de 2500m2 qui descend sur la mer turquoise. Vous serez au meilleur endroit pour découvrir les tortues et les poissons tropicaux.', 'Une pente douce qui vous fait glisser immédiatement dans un univers de rêve.\r\nPassez la porte aux couleurs chatoyantes et soyez saisi par la vue panoramique sur la baie azur des Anses d’Arlet. La Villa s’ouvre sur l’extérieur dans une parfaite continuité entre dedans et dehors. Pas de 4e mur dans ce large salon de bois blanc qui se prolonge jusqu’à la piscine à débordement avec la mer à l’horizon. \r\n', 'Circulez librement sans cloison de l’espace cuisine au salon, surveillez de loin une grillade dans le barbecue, marchez pieds nus sur le deck, allongez-vous dans un transat suspendu ou goutez un daïquiri sous le carbet… ', 'Pour des vacances en famille ou entre amis, profitez des spacieux espaces communs pour vivre des moments forts et des nombreuses chambres pour se retrouver en toute intimité : trois suites climatisées dans la maison et leurs deux salles de bain, trois autres chambres sous le carbet et la salle de bain façon cabane de Robinson donnant sur la grande bleue et les citronniers. Un petit chemin privatif vous conduit jusqu’à la mer… ', 'Anses d\'Arlet, Martinique', '', 'images/GrandLarge1.jpg', 'images/GrandLarge2.jpg', 'images/GrandLarge3.jpg', 'images/GrandLarge4.jpg', 'images/GrandLarge5.jpg', 'images/GrandLarge6.jpg', 'images/GrandLarge7.jpg', 'images/GrandLarge8.jpg', 'images/GrandLarge9.jpg', 'images/GrandLarge10.jpg', 'images/GrandLarge11.jpg', 'images/GrandLarge12.jpg', 'images/GrandLarge13.jpg', 'images/GrandLarge14.jpg', 'images/GrandLarge15.jpg', 'images/GrandLarge16.jpg', 'images/GrandLarge17.jpg', 'images/GrandLarge18.jpg', 'images/GrandLarge19.jpg', 'images/GrandLarge20.jpg', '', '', '', '', '12 personnes', '6 chambres dont 3 climatisées', '3 Salles de Bain', 'Vue sur mer accès privatif', 'Piscine à débordement', '1 carbet en bois avec terrasse/salon/chambres', 'Parking gratuit\r\n', 'Jardin de 2500m2', 'Barbecue', '', 'Wifi', 'Climatisée', '', '', '', '\r\n', '', '', '', ''),
+(24, 'Chalet Bord de Mer', 'Chalet Bord de Mer', '280', 'Gruissan et ses incontournables chalets sur pilotis tournés vers la mer, les pieds dans les vagues. Tentez l’escapade iodée et troquez vos chaussures de ville pour les sandales de plage.', ' Au chalet, vous serez accueilli tout d’abord par deux chambres aux teintes soleil, sa salle de bain et son WC indépendant. Au 1er étage, vous découvrez 2 autres chambres aux couleurs pastel, à coté la salle de bain et son wc indépendant. ', 'L’espace de vie, la cuisine et le salon sont ouverts sur la terrasse avec vue sur la mer \r\n L’espace rappelle l’atmosphère des cabines de plage, le confort et la modernité en plus ! \r\n', 'Sa décoration « rose » façon 37°2 , célèbre film mythique qui a consacré au cinéma la plage de Gruissan, vous séduira par sa douceur.\r\nVous aussi, venez passer de l’autre côté de l’écran…  \r\nVous aussi, venez passer de l’autre côté de l’écran…  \r\n', 'Gruissan, Occitanie', '', 'images/Chalet1.jpg', 'images/Chalet2.jpg', 'images/Chalet3.jpg', 'images/Chalet4.jpg', 'images/Chalet5.jpg', 'images/Chalet6.jpg', 'images/Chalet7.jpg', 'images/Chalet8.jpg', 'images/Chalet9.jpg', 'images/Chalet10.jpg', 'images/Chalet11.jpg', 'images/Chalet12.jpg', 'images/Chalet13.jpg', 'images/Chalet14.jpg', 'images/Chalet15.jpg', '', '', '', '', '', '', '', '', '', '8 personnes', '4 chambres', '2 Salles de Bain', 'Terrasse extérieure', '', '', '', '', '', 'Cuisine équipée', '', 'Climatisée', '2 WC', 'Salon', '', '', '', '', '', ''),
+(25, 'Jolie maison de ville', 'Jolie maison de ville', '185', 'Cette jolie maison vous séduira par sa décoration raffinée et son calme. Un petit cocon de calme et de confort.  Vivre au cœur de la ville, de ses saveurs, de ses pierres chaudes, du soleil et des millénaires d’histoire écrite au fil des siècles.', 'Passez le portail, et découvrez un enclos de sérénité avec son bassin central pour se détendre et se rafraichir pendant que d’autres prennent l’apéritif en terrasse à vos côtés. \r\n', 'Au même niveau, le salon et la cuisine avec ses couleurs chaudes vous accueillent immédiatement dans un lieu convivial à la décoration originale, aux petits détails qui attrapent le regard. \r\n\r\n', 'A l’étage, trois chambres épurées et leur salle de bain et son wc pour se reposer en toute quiétude avant de poursuivre le lendemain l’exploration de la ville, son canal, ses petites boutiques et ses halles gourmandes.  ', 'Narbonne, Occitanie', '', 'images/Villa1.jpg', 'images/Villa2.jpg', 'images/Villa3.jpg', 'images/Villa4.jpg', 'images/Villa5.jpg', 'images/Villa6.jpg', 'images/Villa7.jpg', 'images/Villa8.jpg', 'images/Villa9.jpg', 'images/Villa10.jpg', 'images/Villa11.jpg', 'images/Villa12.jpg', 'images/Villa13.jpg', '', '', '', '', '', '', '', '', '', '', '', '6 Personnes', '3 chambres', '1 Salle de Bain', 'Terrasse extérieure', 'Piscine', '', '', '', '', 'Cuisine équipée', '', 'Climatisée', '2 WC', 'Salon', 'Buanderie', 'Centre Ville', '', '', '', ''),
+(26, 'Chalet montagne', 'Chalet montagne', '300', 'Ce chalet se veut une bulle chaleureuse au milieu des neiges blanches à l’orée des pistes. Un refuge de repos et de douceur après les pistes l’hiver et les escapades sur les sentiers l’été.', 'Au milieu des sapins, sur les hauteurs, en plein cœur des Pyrénées Ariègeoise, venez découvrir la chaleur d’une vie en chalet : un refuge en bois au milieu des cimes… Découvrez un lieu accueillant pour les grands et les plus jeunes. Ces derniers trouveront pour eux cinq lits superposés façon cabine de bateau pour chuchoter d’un étage à l’autre jusqu’au bout de la nuit. ', 'Faites trois marches supplémentaires et vous trouverez trois chambres spacieuses et confortables ainsi qu’une salle de bain avec douche et WC indépendant. ', 'L’espace de vie, avec cuisine ouverte sur le salon et sa cheminée, domine la forêt noire et blanche. C’est un espace tout en douceur, peluche et plume, tout n’y est que caresse.  Venez tentez l’aventure montagne !  ', 'Bonascre, Ax-les-Thermes, Pyrénées', '', 'images/Pyrennes1.jpg', 'images/Pyrennes2.jpg', 'images/Pyrennes3.jpg', 'images/Pyrennes4.jpg', 'images/Pyrennes5.jpg', 'images/Pyrennes6.jpg', 'images/Pyrennes7.jpg', 'images/Pyrennes8.jpg', 'images/Pyrennes9.jpg', 'images/Pyrennes10.jpg', 'images/Pyrennes11.jpg', 'images/Pyrennes12.jpg', 'images/Pyrennes13.jpg', 'images/Pyrennes14.jpg', 'images/Pyrennes15.jpg', 'images/Pyrennes16.jpg', 'images/Pyrennes17.jpg', 'images/Pyrennes18.jpg', '', '', '', '', '', '', '11 personnes', '3 Chambres avec lit double\r\n1 Chambre avec 5 lits bateau', '1 Salle de Bain', 'Terrasse de 50m2\r\nVue montagne et forêt', '', '', '', '', '', 'Cuisine équipée', 'Wifi', '', '1 WC', 'Salon', '', '', 'Cheminée', 'Hall d’entrée', 'Rangement ski/chaussure', 'Piste à 500m');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `tourism`
+-- Structure de la table `tourism`
 --
 
 CREATE TABLE `tourism` (
@@ -247,7 +266,7 @@ CREATE TABLE `tourism` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `tourism`
+-- Déchargement des données de la table `tourism`
 --
 
 INSERT INTO `tourism` (`id`, `title`, `citation`, `photo`, `photo_2`, `location`, `details`, `intro`, `date`, `id_rooms`) VALUES
@@ -261,7 +280,7 @@ INSERT INTO `tourism` (`id`, `title`, `citation`, `photo`, `photo_2`, `location`
 -- --------------------------------------------------------
 
 --
--- Table structure for table `users`
+-- Structure de la table `users`
 --
 
 CREATE TABLE `users` (
@@ -269,160 +288,165 @@ CREATE TABLE `users` (
   `full_name` varchar(255) NOT NULL,
   `email` varchar(255) NOT NULL,
   `password` varchar(80) NOT NULL,
-  `join_date` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `join_date` datetime NOT NULL DEFAULT current_timestamp(),
   `last_login` datetime NOT NULL,
   `permissions` varchar(255) NOT NULL,
   `photo` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `users`
+-- Déchargement des données de la table `users`
 --
 
 INSERT INTO `users` (`id`, `full_name`, `email`, `password`, `join_date`, `last_login`, `permissions`, `photo`) VALUES
 (3, 'admin', 'admin@admin.com', '$2y$10$Dhgz8tgcOjuI08Y0o5wsS.gK3.kNDRNpc.z9Q0qJ3mGpJMYDaIQBi', '2017-12-13 23:12:51', '2021-11-12 14:08:27', 'editor,admin', ''),
-(69, 'L&eacute;o LABEAUME', 'leo.labeaume@hotmail.fr', '$2y$10$u98xl0fuMIL9fFYpQy8q6.6zKcbVuL0YqMjqFc2CbV2Ma8rYvzlGm', '2021-07-25 20:07:14', '2021-11-18 01:07:55', 'editor,admin', '119067618_313029256649032_3533176219461607909_n.jpg'),
+(69, 'L&eacute;o LABEAUME', 'leo.labeaume@hotmail.fr', '$2y$10$u98xl0fuMIL9fFYpQy8q6.6zKcbVuL0YqMjqFc2CbV2Ma8rYvzlGm', '2021-07-25 20:07:14', '2021-12-02 11:02:31', 'editor,admin', '119067618_313029256649032_3533176219461607909_n.jpg'),
 (70, 'Muriel Lambert', 'muriel.homes.location@gmail.com', 'AdminMuriel1997?', '2021-11-12 14:15:24', '2021-11-12 20:42:27', 'editor,admin', '');
 
 --
--- Indexes for dumped tables
+-- Index pour les tables déchargées
 --
 
 --
--- Indexes for table `calendar`
+-- Index pour la table `calendar`
 --
 ALTER TABLE `calendar`
   ADD PRIMARY KEY (`id`),
   ADD KEY `id_rooms_2` (`id_rooms`);
 
 --
--- Indexes for table `comments`
+-- Index pour la table `comments`
 --
 ALTER TABLE `comments`
   ADD PRIMARY KEY (`id`),
   ADD KEY `id_rooms` (`id_rooms`);
 
 --
--- Indexes for table `gallery`
+-- Index pour la table `gallery`
 --
 ALTER TABLE `gallery`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `products`
+-- Index pour la table `products`
 --
 ALTER TABLE `products`
   ADD PRIMARY KEY (`id_p`),
   ADD KEY `test` (`rooms_id`);
 
 --
--- Indexes for table `reservations`
+-- Index pour la table `reservations`
 --
 ALTER TABLE `reservations`
   ADD PRIMARY KEY (`id`),
   ADD KEY `reservations_ibfk_1` (`id_rooms`);
 
 --
--- Indexes for table `rooms`
+-- Index pour la table `rooms`
 --
 ALTER TABLE `rooms`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `tourism`
+-- Index pour la table `tourism`
 --
 ALTER TABLE `tourism`
   ADD PRIMARY KEY (`id`),
   ADD KEY `id_rooms` (`id_rooms`);
 
 --
--- Indexes for table `users`
+-- Index pour la table `users`
 --
 ALTER TABLE `users`
   ADD PRIMARY KEY (`id`);
 
 --
--- AUTO_INCREMENT for dumped tables
+-- AUTO_INCREMENT pour les tables déchargées
 --
 
 --
--- AUTO_INCREMENT for table `calendar`
+-- AUTO_INCREMENT pour la table `calendar`
 --
 ALTER TABLE `calendar`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
 
 --
--- AUTO_INCREMENT for table `comments`
+-- AUTO_INCREMENT pour la table `comments`
 --
 ALTER TABLE `comments`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=43;
 
 --
--- AUTO_INCREMENT for table `gallery`
+-- AUTO_INCREMENT pour la table `gallery`
 --
 ALTER TABLE `gallery`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
--- AUTO_INCREMENT for table `products`
+-- AUTO_INCREMENT pour la table `products`
 --
 ALTER TABLE `products`
   MODIFY `id_p` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
--- AUTO_INCREMENT for table `reservations`
+-- AUTO_INCREMENT pour la table `reservations`
 --
 ALTER TABLE `reservations`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=188;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=227;
 
 --
--- AUTO_INCREMENT for table `rooms`
+-- AUTO_INCREMENT pour la table `rooms`
 --
 ALTER TABLE `rooms`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=27;
 
 --
--- AUTO_INCREMENT for table `tourism`
+-- AUTO_INCREMENT pour la table `tourism`
 --
 ALTER TABLE `tourism`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=39;
 
 --
--- AUTO_INCREMENT for table `users`
+-- AUTO_INCREMENT pour la table `users`
 --
 ALTER TABLE `users`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=71;
 
 --
--- Constraints for dumped tables
+-- Contraintes pour les tables déchargées
 --
 
 --
--- Constraints for table `calendar`
+-- Contraintes pour la table `calendar`
 --
 ALTER TABLE `calendar`
   ADD CONSTRAINT `calendar_ibfk_1` FOREIGN KEY (`id_rooms`) REFERENCES `rooms` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION;
 
 --
--- Constraints for table `comments`
+-- Contraintes pour la table `comments`
 --
 ALTER TABLE `comments`
   ADD CONSTRAINT `comments_ibfk_1` FOREIGN KEY (`id_rooms`) REFERENCES `rooms` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
--- Constraints for table `products`
+-- Contraintes pour la table `products`
 --
 ALTER TABLE `products`
   ADD CONSTRAINT `test` FOREIGN KEY (`rooms_id`) REFERENCES `rooms` (`id`);
 
 --
--- Constraints for table `reservations`
+-- Contraintes pour la table `reservations`
 --
 ALTER TABLE `reservations`
   ADD CONSTRAINT `reservations_ibfk_1` FOREIGN KEY (`id_rooms`) REFERENCES `rooms` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
--- Constraints for table `tourism`
+-- Contraintes pour la table `tourism`
 --
 ALTER TABLE `tourism`
   ADD CONSTRAINT `tourism_ibfk_1` FOREIGN KEY (`id_rooms`) REFERENCES `rooms` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
+COMMIT;
+
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;

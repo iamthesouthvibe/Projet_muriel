@@ -11,6 +11,16 @@ WHERE reservations.id_rooms = rooms.id AND reservations.id = '{$resaID}'");
 
 $reservation = $sql2->fetch(PDO::FETCH_ASSOC);
 
+// Creating timestamp from given date
+$timestamp = strtotime($reservation['checkin']);
+// Creating new date format from that timestamp
+$new_checkin = date("d-m-Y", $timestamp);
+
+
+// Creating timestamp from given date
+$timestamp2 = strtotime($reservation['checkout']);
+// Creating new date format from that timestamp
+$new_checkout = date("d-m-Y", $timestamp2);
 
 ini_set("display_errors", 1);
 date_default_timezone_set('Europe/Paris');
@@ -25,7 +35,7 @@ $nbJour = round(($date_fin - $date_debut) / 60 / 60 / 24, 0); ?>
     <h3 class="style_h3_confirmation_reservation">Récapitulatif</h3>
 
     <p class="style_texte_recapitulatif"><?= $reservation['room_number'] ?> <br>
-        <?= $reservation['checkin'] ?> - <?= $reservation['checkout'] ?> <br>
+        <?= $new_checkin ?> - <?= $new_checkout ?> <br>
         <?= $reservation['people'] ?> Adultes <br>
         <?= $reservation['children'] ?> Enfants <br>
         <?= $reservation['name'] ?> <br>
