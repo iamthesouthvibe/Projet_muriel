@@ -17,7 +17,7 @@
       <nav>
         <div class="header_left">
           <a class="waitBeforeNavigate" href="index.php">
-            <img src="assets/png/LOGO_03_PNG_NOIR.png" alt="Logo muriel Home">
+            <img src="assets/svg/LOGO_03_SVG_NOIR.svg" alt="Logo muriel Home">
           </a>
         </div>
         <div class="header_right">
@@ -58,7 +58,7 @@
                 </li>
                 <div class="header-link-none">
                   <li>
-                    <p class="waitBeforeNavigate header-titre-maison">Maisons</p>
+                    <p class="header-titre-maison">Maisons</p>
                   </li>
                   <div class="sous-menu-header">
                     <li>

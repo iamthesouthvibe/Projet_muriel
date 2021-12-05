@@ -2,6 +2,7 @@ var swiper = new Swiper(".mySwiper", {
     /*autoHeight: true,*/
     loop: true,
     resizeObserver: false,
+    draggable: true,
     navigation: {
         nextEl: ".swiper-button-next",
         prevEl: ".swiper-button-prev",

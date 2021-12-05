@@ -1,9 +1,11 @@
     <?php
+    require_once('vendor/autoload.php');
     require_once 'core/core.php';
     include 'fonctions/fonctionMail.php';
 
-    define('SITE_KEY', '6LcTkzsdAAAAAFvkJyptozb6tb9kEguW_-mlB8z2');
-    define('SECRET_KEY', '6LcTkzsdAAAAAH-LhZiao2CaT0KXywsY_-Q6kiwR');
+
+    define('SITE_KEY', '6LewOlodAAAAAC2IoZg-Ye76rGW_Pgrh8weg7tm-');
+    define('SECRET_KEY', '6LewOlodAAAAAII2nhQu25dNzXhFz0_-XhO5G9nD');
 
     $roomID = $_GET['maison'];
 
@@ -64,13 +66,14 @@
     if (isset($_GET['maison'])) {
         $roomID = $_GET['maison'];
 
-        ####################################################################################
         if (isset($_POST['checkin'])) {
 
             $Return = getCaptcha($_POST['g-recaptcha-response']);
-            // var_dump($Return);
+
             if ($Return->success == true && $Return->score > 0.5) {
+
                 if (isset($_POST['url']) && $_POST['url'] == '') {
+
                     if (!empty($_POST['name']) && !empty($_POST['txtFromDate1']) && !empty($_POST['txtFromDate2']) && !empty($_POST['phone']) && !empty($_POST['people'])) {
 
                         $name = $_POST['name'];
@@ -85,16 +88,20 @@
                         $comm = $_POST['commentaire'];
                         $current_date = date("Y-m-d");
                         $zip = $_POST['zip'];
+                        $nbrPersonnes = intval($child) + intval($people);
 
                         $message = '<h1>Vous avez une demande de résérvation au nom de '  . $name  .  ' pour la maison ' . $maison['room_number']  . '</h1> <br>
                                     <h2>Date de la reservation : du ' . $checkin .  ' au ' . $checkout . '</h2> <br>
-                                    <p>Email : ' . $email . ' Téléphone : ' . $phone . '</p>
-                                    <p>Nombre d\'adultes : ' . $people  . ' Nombre d\'enfants : ' .  $child . '</p>
+                                    <p>Email : ' . $email . '<br> Téléphone : ' . $phone . '</p>
+                                    <p>Nombre d\'adultes : ' . $people  . '<br> Nombre d\'enfants : ' .  $child . '</p>
                                     <p>Adresse : ' . $address  . ' Pays : ' .  $pays . '</p>
                                     <p>Message : ' . $comm . '</p>';
 
-                        $messageClient = '<p>Bonjour,<br><br> vous avez fait une demande de réservation pour la maison ' . $maison['room_number']  . ' du ' . $checkin . '  au ' . $checkout .
-                            ' <br> Votre demande a bien été pris en compte, je reviens vers vous d\'ici 3 jours. <br><br>  Cordialement,<br><br>  Muriel Home’s</p>';
+
+                        $messageClient = '<p><strong>Madame, Monsieur,</strong><br><br> Nous vous accusons réception de la demande de réservation que vous avez effectuée pour la maison <strong>' . $maison['room_number'] . '</strong> 
+                        au nom de <strong>'. $name . '</strong>. Nous avons pris bonne note que votre arrivée serai prévue pour le <strong>' . $checkin  . '</strong> et le départ prévue pour le <strong>' . $checkout  . '</strong>. Il s\'agit
+                        Il s\'agit d\'un séjour pour <strong>' . $nbrPersonnes . '</strong> personnes.<br><br>Je reviens vers vous d\'ici 3 jours afin de procéder à la confirmation de votre réservation. 
+                        <br><br>  Cordialement,<br><br>  Muriel Home’s</p>';
 
 
                         if ($checkin >= $current_date) {
@@ -152,17 +159,29 @@
 
         .qhero_page_reservation_2 h1 {
             text-align: center;
-            margin-bottom: 50px;
+            margin-bottom: 30px;
             color: #9A4747;
             font-family: ITCGaramondStd-BkNarrow;
             font-style: normal;
             font-weight: normal;
+            margin-top: 10px;
         }
 
         .qhero_page_reservation_2 h1 span {
             font-family: neue_montrealregular;
             font-style: normal;
             font-weight: bold;
+            line-height: 0;
+        }
+
+        .qhero_page_reservation_2 h2 {
+            font-family: neue_montrealbold;
+            font-style: normal;
+            font-weight: normal;
+            font-size: 20px;
+            color: #9A4747;
+            text-align: center;
+            margin-bottom: 50px;
         }
 
         .qhero_page_reservation_2 .col {
@@ -289,7 +308,7 @@
         }
 
         .boutton-reservation-finale {
-            width: 357px;
+            width: 415px;
             float: right;
         }
 
@@ -472,6 +491,7 @@
                 font-size: 35px;
             }
 
+
             .qhero_page_reservation_2 .col_price h3 {
                 font-size: 35px;
             }
@@ -492,6 +512,7 @@
             }
 
             .qhero_page_reservation_2 .col_price .submit {
+                transform: translate(-8px, 0px);
                 width: 355px;
                 height: 39px;
                 font-size: 22px;
@@ -512,7 +533,14 @@
 
     <div class="qhero_page_reservation_2">
         <h1 data-aos="fade" data-aos-anchor-placement="top-bottom" data-aos-delay="0" data-aos-duration="2000" data-aos-once="true">Votre maison : <span> <?= $maison['shortName']; ?> , <?= $maison['lieu']; ?> </span></h1>
-        <form action="" method="POST" id="myForm" class="form-control" name="register" onsubmit="return validate();">
+        <?php if ($roomID == '23') :  ?>
+            <h2 data-aos="fade" data-aos-anchor-placement="top-bottom" data-aos-delay="100" data-aos-duration="2000" data-aos-once="true">Location à partir de 7 jours</h2>
+        <?php elseif ($roomID == '26') : ?>
+            <h2 data-aos="fade" data-aos-anchor-placement="top-bottom" data-aos-delay="100" data-aos-duration="2000" data-aos-once="true">Uniquement à la semaine toute l'année</h2>
+        <?php else : ?>
+            <h2 data-aos="fade" data-aos-anchor-placement="top-bottom" data-aos-delay="100" data-aos-duration="2000" data-aos-once="true">Location uniquement à la semaine pour la période de juillet et aout</h2>
+        <?php endif; ?>
+        <form action="" method="POST" id="myForm" class="form-control" name="register" onsubmit="return validate();" autocomplete="off">
             <div class="row" data-aos="fade" data-aos-anchor-placement="top-bottom" data-aos-delay="500" data-aos-duration="2000" data-aos-once="true">
                 <div class="col">
                     <div>
@@ -621,18 +649,13 @@
     <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
     <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+    <script src="https://www.google.com/recaptcha/api.js?render=6LewOlodAAAAAC2IoZg-Ye76rGW_Pgrh8weg7tm-"></script>
     <script src="js/reservation-2.js"></script>
     <script src="js/datepicker-fr.js"></script>
-    <script>
-        grecaptcha.ready(function() {
-            grecaptcha.execute('6LcTkzsdAAAAAFvkJyptozb6tb9kEguW_-mlB8z2', {
-                action: 'submit'
-            }).then(function(token) {
-                // console.log(token);
-                document.getElementById('g-recaptcha-response').value = token;
-            });
-        });
 
+
+
+    <script>
         $(function() {
 
             var unavailableDates = <?php echo $fulldate ?>;
@@ -668,16 +691,5 @@
             $.datepicker.setDefaults($.datepicker.regional["fr"]);
 
 
-        });
-
-        $(document).ready(function() {
-            $('form').submit(function(e) {
-                var hours = parseInt(prompt('Combien font 2+2'));
-                if (hours != '4') {
-                    e.preventDefault();
-                } else {
-                    $(this).unbind('submit').submit()
-                }
-            });
         });
     </script>

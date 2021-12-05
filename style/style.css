@@ -1,11 +1,19 @@
 @font-face {
     font-family: ITCGaramondStd-BkNarrow;
-    src: local("../assets/fonts/GaramondStd/ITCGaramondStd-BkNarrow.otf"), local("ITCGaramondStd-BkNarrow"), url('../assets/fonts/GaramondStd/ITCGaramondStd-BkNarrow.woff2') format('woff2'), url('../assets/fonts/GaramondStd/ITCGaramondStd-BkNarrow.woff') format('woff');
+    src: local("../assets/fonts/GaramondStd/ITCGaramondStd-BkNarrow.otf"), 
+    local("ITCGaramondStd-BkNarrow"), 
+    url('../assets/fonts/GaramondStd/ITCGaramondStd-BkNarrow.woff2') format('woff2'), 
+    url('../assets/fonts/GaramondStd/ITCGaramondStd-BkNarrow.woff') format('woff');
 }
 
 @font-face {
-    font-family: ITCGaramondStd-BkNarrowIta;
-    src: local("..assets/fonts/GaramondStd/ITCGaramondStd-BkNarrowIta.woff"), local("ITCGaramondStd-BkNarrowIta"), url('..assets/fonts/GaramondStd/ITCGaramondStd-BkNarrowIta.woff') format('woff');
+    font-family: 'ITCGaramondStd-BkNarrowIta';
+    src: url("..assets/fonts/GaramondStd/ITCGaramondStd-BkNarrowIta.woff"), 
+    url('../assets/fonts/GaramondStd/ITCGaramondStd-BkNarrowIta.woff') format('woff'),
+    url('../assets/fonts/GaramondStd/ITCGaramondStd-BkNarrowIta.woff2') format('woff2'),
+    url('../assets/fonts/GaramondStd/ITCGaramondStd-BkNarrowIta.ttf') format('truetype'),
+    url('../assets/fonts/GaramondStd/ITCGaramondStd-BkNarrowIta.otf') format('opentype'),
+    local('ITCGaramondStd-BkNarrowIta');
 }
 
 @font-face {
@@ -121,6 +129,7 @@ nav {
 }
 
 .header_left img {
+    min-width: 60px;
     max-height: 40px;
     max-width: 90px;
     transform: translate(0px, -7px);
@@ -357,6 +366,7 @@ nav {
 }
 
 .container_menu .menu_nav_link ul li a::after {
+    top : 6vw;
     content: '';
     position: absolute;
     width: 100%;
@@ -375,6 +385,8 @@ nav {
 }
 
 .container_menu .menu_nav_right ul li a::after {
+
+    top: calc(1vw + 13px);
     content: '';
     position: absolute;
     width: 100%;
@@ -452,12 +464,7 @@ margin-bottom: 10px;
 
 .content:hover~.cursor2 {
     opacity: 0;
-}
-
-.style_h1_accueil span {
-    display: inline-block;
-    transform: translateY(100%);
-  }
+}   
 
 
 /* ##### Fin Curseur  ##### */
@@ -489,7 +496,9 @@ margin-bottom: 10px;
     /* or 112px */
     text-align: center;
     color: rgba(154, 71, 71, 1);
-    margin-bottom: 50px;
+    margin-bottom: 61px;
+    margin-top: 20px;
+
 }
 
 .style_h2_accueil {
@@ -507,7 +516,12 @@ margin-bottom: 10px;
 }
 
 .italic_title {
-    font-family: ITCGaramondStd-BkNarrowIta;
+    font-family: 'ITCGaramondStd-BkNarrowIta';
+}
+
+.italic-h1-index {
+    font-family: 'ITCGaramondStd-BkNarrowIta';
+    
 }
 
 
@@ -771,7 +785,7 @@ margin-bottom: 10px;
     font-family: ITCGaramondStd-BkNarrow;
     font-style: normal;
     font-weight: normal;
-    font-size: 8vw;
+    font-size: 3vw;
     line-height: 79%;
     /* or 103px */
     color: #9A4747;
@@ -886,6 +900,37 @@ margin-bottom: 10px;
     margin-top: 35vh;
 }
 
+.infos-techniques-maison {
+    background-color: #9A4747;
+    width: 29vw;
+    height: 100%;
+    max-width: 700px;
+
+}
+
+.infos-techniques-maison h4 {
+    margin-top: 20px;
+    padding-left: 25px;
+    font-family: NeueMontreal-Bold;
+    font-weight: normal;
+    font-style: normal;
+    font-size: 19px;
+    color: #FCF7EC;
+}
+
+.infos-techniques-maison p {
+    margin-left: 22px;
+    color: #FCF7EC;
+}
+
+.infos-techniques-maison img {
+    max-width: 35px;
+    margin-left: 25px;
+}
+
+.set-icon-text {
+    display: flex;
+}
 
 /* Caroussel de texte technique de la maison */
 
@@ -941,11 +986,10 @@ margin-bottom: 10px;
 .carousel_and_map {
     display: flex;
     margin: 100px 6vw;
-    justify-content: space-between;
     margin-top: 100px;
     margin-bottom: 30px;
-    margin-right: 6vw;
-    margin-left: 6vw;
+    gap: 2vw;
+    justify-content: center;
 }
 
 .carousel_maison_03 {
@@ -1868,7 +1912,7 @@ margin-left: auto;
 }
 
 .section_recapitulatif {
-    margin-top: 8vh;
+    margin-top: 4vh;
 }
 
 .style_h3_confirmation_reservation {
@@ -1898,7 +1942,7 @@ margin-left: auto;
 }
 
 .section_prix-total {
-    margin-top: 50px;
+    /*margin-top: 50px;*/
     /* position: fixed;
     width: 120px;
     left: 50%;
@@ -2950,6 +2994,24 @@ footer ul {
         color: grey;
         --swiper-navigation-size: 37px;
     }
+
+    .swiper-button-prev {
+        display: none;
+    }
+    .swiper-button-next {
+        display: none;
+    }
+
+    .infos-techniques-maison {
+        min-width: 90vw;
+    }
+
+    .infos-techniques-maison h4 {
+        text-align: center;
+        transform: translate(-4vw, 0px);
+    }
+
+
     /* Section articles de blogs de la maison */
     .container_blog {
         background-color: #E5E5E5;
@@ -3317,6 +3379,20 @@ margin: auto;
         line-height: 80.5%;
         color: #FCF7EC;
         text-decoration: none;
+    }
+
+    .container_menu .menu_nav_link ul li a::after {
+        top : 6vw;
+        content: '';
+        position: absolute;
+        width: 100%;
+        transform: scaleX(0);
+        height: 0px;
+        bottom: 0;
+        left: 0;
+        background-color: rgba(154, 71, 71, 1);
+        transform-origin: bottom right;
+        transition: transform 0.7s ease-out;
     }
     /* ##### Fin style de la page contact ##### */
     /* ##### DEBUT STYLE PAGE RESERVATION 01 ##### */

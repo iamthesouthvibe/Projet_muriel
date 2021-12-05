@@ -1,3 +1,16 @@
+grecaptcha.ready(function () {
+    grecaptcha.execute('6LewOlodAAAAAC2IoZg-Ye76rGW_Pgrh8weg7tm-', {
+        action: 'submit'
+    }).then(function (token) {
+        // console.log(token);
+        document.getElementById('g-recaptcha-response').value = token;
+    });
+});
+
+
+// ###### Check si la valeur des champs inputs est vide ou non ##########
+// Renvoie une erreur si vide sinon submit le form
+
 document.getElementById('bouton_responsive').style.display = 'none';
 
 const form = document.getElementById("form");
@@ -55,6 +68,16 @@ function validate() {
         return false;
     }
 }
+//
 
-// ###### Check si la valeur des champs inputs est vide ou non ##########
-// Renvoie une erreur si vide sinon submit le form
+
+$(document).ready(function () {
+    $('form').submit(function (e) {
+        var hours = parseInt(prompt('Combien font 2+2'));
+        if (hours != '4') {
+            e.preventDefault();
+        } else {
+            $(this).unbind('submit').submit()
+        }
+    });
+});

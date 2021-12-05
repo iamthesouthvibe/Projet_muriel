@@ -19,9 +19,7 @@ $date_fin = strtotime($reservation['checkout']);
 $nbJour = round(($date_fin - $date_debut) / 60 / 60 / 24, 0); ?>
 <div class="qhero_page_confirmation">
     <h1 class="style_h1_confirmation">Demande <br>envoyée !</h1>
-    <h2 class="style_h2_confirmation">Je reviens vers vous sous 3 jours par retour de mail.</h2>
-    <br>
-    <h2 class="style_h2_confirmation">Un mail de confirmation récapitulatif vous a été envoyé, vérifiez vos spams si besoin.</h2>
+    <h2 class="style_h2_confirmation">Je reviens vers vous sous 3 jours par retour de mail. <br> Un mail de confirmation récapitulatif vous a été envoyé, vérifiez vos spams si besoin.</h2>
 </div>
 <div class="section_recapitulatif">
     <h3 class="style_h3_confirmation_reservation">Récapitulatif</h3>
