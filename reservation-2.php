@@ -649,7 +649,7 @@
                 <div class="row finalPrice prix-nuit-div" data-aos="fade" data-aos-anchor-placement="top-bottom" data-aos-delay="1000" data-aos-duration="2000" data-aos-once="true">
                     <div class="col_price">
                         <h3>À partir de</h3>
-                        <h4><?= $maison['price']; ?>€/nuit</h4>
+                        <h4></h4>
                     </div>
                 </div>
                 <div><input type="hidden" name="g-recaptcha-response" id="g-recaptcha-response"></div>
@@ -702,6 +702,19 @@
                 dateFormat: 'dd-mm-yy',
                 onSelect: function(dateText) {
                     $("#txtFromDate2").val(dateText);
+                    let month = dateText.substr(3, 2);
+                    console.log(month + ' ok');
+                    if (room.toString() == 25) {
+                        if (month <= 12 && month >= 8) {
+                            console.log('ok');
+                            $('.col_price h4').html('433€/nuit');
+                        } else {
+                            $('.col_price h4').html('3€/nuit');
+                            console.log('non');
+                        }
+                    } else {
+                        console.log('maison pas ok');
+                    }
                 }
             });
             $.datepicker.setDefaults($.datepicker.regional["fr"]);
