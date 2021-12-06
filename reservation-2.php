@@ -72,35 +72,35 @@
 
             // if ($Return->success == true && $Return->score > 0.5) {
 
-                if (isset($_POST['url']) && $_POST['url'] == '') {
+            if (isset($_POST['url']) && $_POST['url'] == '') {
 
-                    if (!empty($_POST['name']) && !empty($_POST['txtFromDate1']) && !empty($_POST['txtFromDate2']) && !empty($_POST['phone']) && !empty($_POST['people'])) {
+                if (!empty($_POST['name']) && !empty($_POST['txtFromDate1']) && !empty($_POST['txtFromDate2']) && !empty($_POST['phone']) && !empty($_POST['people'])) {
 
-                        $name = $_POST['name'];
-                        $checkin = $_POST['txtFromDate1'];
-                        $checkout = $_POST['txtFromDate2'];
-                        $phone = $_POST['phone'];
-                        $people = $_POST['people'];
-                        $child = $_POST['children'];
-                        $email = $_POST['email'];
-                        @$address = $_POST['adress'];
-                        $pays = $_POST['pays'];
-                        $comm = $_POST['commentaire'];
-                        $current_date = date("d-m-Y");
-                        $zip = $_POST['zip'];
-                        $nbrPersonnes = intval($child) + intval($people);
+                    $name = $_POST['name'];
+                    $checkin = $_POST['txtFromDate1'];
+                    $checkout = $_POST['txtFromDate2'];
+                    $phone = $_POST['phone'];
+                    $people = $_POST['people'];
+                    $child = $_POST['children'];
+                    $email = $_POST['email'];
+                    @$address = $_POST['adress'];
+                    $pays = $_POST['pays'];
+                    $comm = $_POST['commentaire'];
+                    $current_date = date("d-m-Y");
+                    $zip = $_POST['zip'];
+                    $nbrPersonnes = intval($child) + intval($people);
 
-                        // Creating timestamp from given date
-                        $timestamp = strtotime($checkin);
-                        // Creating new date format from that timestamp
-                        $new_checkin = date("d-m-Y", $timestamp);
+                    // Creating timestamp from given date
+                    $timestamp = strtotime($checkin);
+                    // Creating new date format from that timestamp
+                    $new_checkin = date("d-m-Y", $timestamp);
 
-                        // Creating timestamp from given date
-                        $timestamp2 = strtotime($checkout);
-                        // Creating new date format from that timestamp
-                        $new_checkout = date("d-m-Y", $timestamp2);
+                    // Creating timestamp from given date
+                    $timestamp2 = strtotime($checkout);
+                    // Creating new date format from that timestamp
+                    $new_checkout = date("d-m-Y", $timestamp2);
 
-                        $message = '<h1>Vous avez une demande de résérvation au nom de '  . $name  .  ' pour la maison ' . $maison['room_number']  . '</h1> <br>
+                    $message = '<h1>Vous avez une demande de résérvation au nom de '  . $name  .  ' pour la maison ' . $maison['room_number']  . '</h1> <br>
                                     <h2>Date de la reservation : du ' . $new_checkin .  ' au ' . $new_checkout . '</h2> <br>
                                     <p>Email : ' . $email . '<br> Téléphone : ' . $phone . '</p>
                                     <p>Nombre d\'adultes : ' . $people  . '<br> Nombre d\'enfants : ' .  $child . '</p>
@@ -108,48 +108,48 @@
                                     <p>Message : ' . $comm . '</p>';
 
 
-                        $messageClient = '<p><strong>Madame, Monsieur,</strong><br><br> Nous vous accusons réception de la demande de réservation que vous avez effectuée pour la maison <strong>' . $maison['room_number'] . '</strong> 
-                        au nom de <strong>'. $name . '</strong>. Nous avons pris bonne note que votre arrivée serai prévue pour le <strong>' . $new_checkin  . '</strong> et le départ prévue pour le <strong>' . $new_checkout  . '</strong>. Il s\'agit
+                    $messageClient = '<p><strong>Madame, Monsieur,</strong><br><br> Nous vous accusons réception de la demande de réservation que vous avez effectuée pour la maison <strong>' . $maison['room_number'] . '</strong> 
+                        au nom de <strong>' . $name . '</strong>. Nous avons pris bonne note que votre arrivée serai prévue pour le <strong>' . $new_checkin  . '</strong> et le départ prévue pour le <strong>' . $new_checkout  . '</strong>. Il s\'agit
                         Il s\'agit d\'un séjour pour <strong>' . $nbrPersonnes . '</strong> personnes.<br><br>Je reviens vers vous d\'ici 3 jours afin de procéder à la confirmation de votre réservation. 
                         <br><br>  Cordialement,<br><br>  Muriel Home’s</p>';
-      
-                        if (strtotime($new_checkin) >= ($current_date)) {
-                            if (strtotime($new_checkout) >= strtotime($new_checkin)) {
 
-                             
-                                $datecheck = DateTime::createFromFormat('d-m-Y', $new_checkin);
-                                $dateFormat=$datecheck->format('Y-m-d');
+                    if (strtotime($new_checkin) >= ($current_date)) {
+                        if (strtotime($new_checkout) >= strtotime($new_checkin)) {
 
-                                $datecheckout = DateTime::createFromFormat('d-m-Y', $new_checkout);
-                                $dateFormat2=$datecheckout->format('Y-m-d');
-                                
 
-                                $insert = "INSERT INTO `reservations` (`name`, `checkin`, `checkout`, `phone`, `people`, `email`, `children`,`address`, `commentaire`, `zip`, `id_rooms`) VALUES ('$name', '$dateFormat', '$dateFormat2', '$phone', '$people', '$email', '$child', '$address', '$comm', '$zip', '$roomID')";
-                                $save = $db->query($insert);
-              
-                                if ($save) {
-                                    // ini_set("error_reporting", E_ALL);
-                                    // ini_set("display_errors", "1");
-                                    $id = $db->lastInsertId();
-                                    // sendMail($message);
-                                    // sendMail2($messageClient, $email);
-                                    header('Location: confirmation-reservation.php?id=' . $id);
-                                } else {
-                                    echo 'erreur';
-                                }
+                            $datecheck = DateTime::createFromFormat('d-m-Y', $new_checkin);
+                            $dateFormat = $datecheck->format('Y-m-d');
+
+                            $datecheckout = DateTime::createFromFormat('d-m-Y', $new_checkout);
+                            $dateFormat2 = $datecheckout->format('Y-m-d');
+
+
+                            $insert = "INSERT INTO `reservations` (`name`, `checkin`, `checkout`, `phone`, `people`, `email`, `children`,`address`, `commentaire`, `zip`, `id_rooms`) VALUES ('$name', '$dateFormat', '$dateFormat2', '$phone', '$people', '$email', '$child', '$address', '$comm', '$zip', '$roomID')";
+                            $save = $db->query($insert);
+
+                            if ($save) {
+                                // ini_set("error_reporting", E_ALL);
+                                // ini_set("display_errors", "1");
+                                $id = $db->lastInsertId();
+                                // sendMail($message);
+                                // sendMail2($messageClient, $email);
+                                header('Location: confirmation-reservation.php?id=' . $id);
                             } else {
-                                echo '<p class="text-center alert alert-danger">Date de retour non valide fournie. Veuillez éviter d\'utiliser une date passée.</p>';
+                                echo 'erreur';
                             }
                         } else {
-                            echo '<p class="text-center alert alert-danger">Date de départ non valide fournie. Veuillez éviter d\'utiliser une date passée.</p>';
+                            echo '<p class="text-center alert alert-danger">Date de retour non valide fournie. Veuillez éviter d\'utiliser une date passée.</p>';
                         }
+                    } else {
+                        echo '<p class="text-center alert alert-danger">Date de départ non valide fournie. Veuillez éviter d\'utiliser une date passée.</p>';
                     }
-                } else {
-                    header('Location: page-404.php');
                 }
-            }   
+            } else {
+                header('Location: page-404.php');
+            }
         }
-    
+    }
+
     include 'includes/header.php';
     ?>
     <!-- <script src="https://www.google.com/recaptcha/api.js?render=<?php echo SITE_KEY; ?>"></script> -->
@@ -676,6 +676,7 @@
 
             var unavailableDates = <?php echo $fulldate ?>;
             console.log(unavailableDates);
+            var room = <?php echo $roomID ?>;
 
             function unavailable(date) {
                 ymd = ("0" + date.getDate()).slice(-2) + "-" + ("0" + (date.getMonth() + 1)).slice(-2) + "-" + date.getFullYear();
@@ -703,14 +704,29 @@
                 onSelect: function(dateText) {
                     $("#txtFromDate2").val(dateText);
                     let month = dateText.substr(3, 2);
-                    console.log(month + ' ok');
+                    let day = dateText.substr(0, 2);
+
+                    let month2 = dateText.substr(3, 2);
+                    let day2 = dateText.substr(0, 2);
+
+                    console.log(day + '-' + month);
+                    console.log(day2 + '-' + month2);
+
                     if (room.toString() == 25) {
-                        if (month <= 12 && month >= 8) {
+                        if (day >= 3 && month == 1) {
                             console.log('ok');
-                            $('.col_price h4').html('433€/nuit');
+                            $('.col_price h4').html('180/nuit');
+                        } else if (day <= 3 && month == 2) {
+                            $('.col_price h4').html('180/nuit');
+                            console.log('ok ok');
+                        } else if (((day >= 4 && month == 2) || (day <= 6 && month == 3)) || ((day >= 8 && month == 4) || (day <= 8 && month == 5)) || ((day >= 25 && month == 5) && (day2 <= 29 && month2 == 5)) || ((day >= 1 && month == 7) || (day >= 1 && month == 8) || (day >= 1 && month == 9) || (day >= 1 && month == 10) || (day <= 13 && month == 11)) || ((day >= 16 && month == 12) || (day <= 2 && month == 2))) {
+                            $('.col_price h4').html('210/nuit');
+                            console.log('ok ok');
+                        } else if (((day >= 7 && month == 3) || (day <= 7 && month == 4)) || ((day >= 8 && month == 5) && (day2 <= 24 && month2 == 5)) || ((day >= 30 && month == 5) || (day <= 30 && month == 6)) || ((day >= 14 && month == 11) || (day <= 15 && month == 12))) {
+                            $('.col_price h4').html('180/nuit');
+                            console.log('ok ok');
                         } else {
-                            $('.col_price h4').html('3€/nuit');
-                            console.log('non');
+                            $('.col_price h4').html('0/nuit/nuit');
                         }
                     } else {
                         console.log('maison pas ok');
