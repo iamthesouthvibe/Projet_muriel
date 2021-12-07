@@ -668,6 +668,7 @@ include 'includes/header.php';
         console.log(unavailableDates);
         var room = <?php echo $roomID; ?>;
 
+        // Check les disponibilités 
         function unavailable(date) {
             ymd = ("0" + date.getDate()).slice(-2) + "-" + ("0" + (date.getMonth() + 1)).slice(-2) + "-" + date.getFullYear();
 
@@ -680,6 +681,7 @@ include 'includes/header.php';
             }
         }
 
+        // Inititalisation datepicker pour checkin
         $('#txtFromDate1').datepicker({
             beforeShowDay: unavailable,
             dateFormat: 'dd-mm-yy',
@@ -688,6 +690,7 @@ include 'includes/header.php';
             }
         });
 
+        // Inititalisation datepicker pour checkout
         $('#txtFromDate2').datepicker({
             beforeShowDay: unavailable,
             dateFormat: 'dd-mm-yy',
@@ -706,13 +709,13 @@ include 'includes/header.php';
                 if (room.toString() == 25) {
 
                     if (day >= 3 && month == 1) {
-                        $('.col_price h4').html('180/nuit');
+                        $('.col_price h4').html('180€/nuit');
                     } else if (day <= 3 && month == 2) {
-                        $('.col_price h4').html('180/nuit');
+                        $('.col_price h4').html('180€/nuit');
                     } else if (((day >= 4 && month == 2) || (day <= 6 && month == 3)) || ((day >= 8 && month == 4) || (day <= 8 && month == 5)) || ((day >= 25 && month == 5) && (day2 <= 29 && month2 == 5)) || ((day >= 1 && month == 7) || (day >= 1 && month == 8) || (day >= 1 && month == 9) || (day >= 1 && month == 10) || (day <= 13 && month == 11)) || ((day >= 16 && month == 12) || (day <= 2 && month == 2))) {
-                        $('.col_price h4').html('210/nuit');
+                        $('.col_price h4').html('210€/nuit');
                     } else if (((day >= 7 && month == 3) || (day <= 7 && month == 4)) || ((day >= 8 && month == 5) && (day2 <= 24 && month2 == 5)) || ((day >= 30 && month == 5) || (day <= 30 && month == 6)) || ((day >= 14 && month == 11) || (day <= 15 && month == 12))) {
-                        $('.col_price h4').html('180/nuit');
+                        $('.col_price h4').html('180€/nuit');
                     } else {
                         $('.col_price h4').html('0nuit');
                     }
@@ -721,26 +724,46 @@ include 'includes/header.php';
                 } else if (room.toString() == 24) {
 
                     if (day >= 3 && month == 1) {
-                        $('.col_price h4').html('210/nuit');
+                        $('.col_price h4').html('210€/nuit');
                     } else if (day <= 3 && month == 2) {
-                        $('.col_price h4').html('210/nuit');
-                    } else if (((day >= 4 && month == 2) || (day <= 6 && month == 3)) || ((day >= 8 && month == 4) || (day <= 8 && month == 5)) || ((day >= 25 && month == 5) && (day2 <= 29 && month2 == 5)) || ((day >= 1 && month == 7) || (day >= 1 && month == 8) || (day >= 1 && month == 9) || (day >= 1 && month == 10) || (day <= 13 && month == 11)) || ((day >= 16 && month == 12) || (day <= 2 && month == 2))) {
-                        $('.col_price h4').html('230/nuit');
+                        $('.col_price h4').html('210€/nuit');
+                    } else if (((day >= 4 && month == 2) || (day <= 6 && month == 3)) || ((day >= 8 && month == 4) || (day <= 8 && month == 5)) || ((day >= 25 && month == 5) && (day2 <= 29 && month2 == 5)) || ((day >= 1 && month == 7) || (day >= 1 && month == 8) || (day >= 1 && month == 9) || (day >= 1 && month == 10) || (day <= 13 && month == 11)) || ((day >= 16 && month == 12) || (day <= 2 && month == 1))) {
+                        $('.col_price h4').html('230€/nuit');
                     } else if (((day >= 7 && month == 3) || (day <= 7 && month == 4)) || ((day >= 8 && month == 5) && (day2 <= 24 && month2 == 5)) || ((day >= 30 && month == 5) || (day <= 30 && month == 6)) || ((day >= 14 && month == 11) || (day <= 15 && month == 12))) {
-                        $('.col_price h4').html('210/nuit');
+                        $('.col_price h4').html('210€/nuit');
                     } else {
                         $('.col_price h4').html('0nuit');
                     }
                 }
 
                 // Check si c'est l'id de la maison correspond à 26 (Chalet montagne)
-                // else if (room.toString() == 26) {
-                //     if (((day >= 3 && month == 1) || (day <= 3 && month == 2)) || ((day >= 7 && month == 3) || (day <= 7 && month == 4)) || (day >= 9 && month == 5) || ((day >= 1 && month == 6) || (day >= 1 && month == 7) || (day >= 1 && month == 8) || (day >= 1 && month == 9) || (day >= 1 && month == 10) || (day >= 1 && month == 11) || (day <= 17 && month == 12))) {
-                //         $('.col_price h4').html('357/nuit');
-                //     } else {
+                else if (room.toString() == 26) {
 
-                //     }
-                // }
+                    if (((day >= 3 && month == 1) || (day <= 3 && month == 2)) || ((day >= 7 && month == 3) || (day <= 7 && month == 4)) || ((day >= 9 && month == 5) || (day >= 1 && month == 6) || (day >= 1 && month == 7) || (day >= 1 && month == 8) || (day >= 1 && month == 9) || (day >= 1 && month == 10) || (day >= 1 && month == 11) || (day <= 17 && month == 12))) {
+                        $('.col_price h4').html('357€/nuit');
+                    } else if (((day >= 4 && month == 2) || (day <= 6 && month == 3)) || ((day >= 8 && month == 4) || (day <= 8 && month == 5)) || ((day >= 17 && month == 12) || (day <= 2 && month == 1))) {
+                        $('.col_price h4').html('420€/nuit');
+                    }
+                }
+
+                // Check si c'est l'id de la maison correspond à 23 (Villa grand large)
+                else if (room.toString() == 23) {
+                    console.log('ok');
+                    if (((day >= 2 && month == 1) || (day >= 1 && month == 2) || (day >= 1 && month == 3) || (day >= 1 && month == 4) || (day <= 7 && month == 5)) ||
+                        ((day >= 22 && month == 5) || (day <= 4 && month == 6)) ||
+                        ((day >= 3 && month == 7) || (day >= 1 && month == 8) || (day <= 3 && month == 9)) ||
+                        ((day >= 22 && month == 10) || (day <= 12 && month == 11))) {
+                        $('.col_price h4').html('640€/nuit');
+                    } else if (((day >= 7 && month == 5 && day <= 21)) ||
+                        ((day >= 5 && month == 6) || (day <= 2 && month == 7)) ||
+                        ((day >= 4 && month == 9) || (day <= 21 && month == 10)) ||
+                        ((day >= 13 && month == 11) || (day <= 16 && month == 12))) {
+                        console.log('bravo');
+                        $('.col_price h4').html('530€/nuit');
+                    } else if (((day >= 17 && month == 12) || (day <= 1 && month == 1))) {
+                        $('.col_price h4').html('740€/nuit');
+                    }
+                }
             }
         });
         $.datepicker.setDefaults($.datepicker.regional["fr"]);
