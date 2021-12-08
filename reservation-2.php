@@ -166,7 +166,7 @@ include 'includes/header.php';
 
     .qhero_page_reservation_2 h1 {
         text-align: center;
-        margin-bottom: 30px;
+        margin-bottom: 15px;
         color: #9A4747;
         font-family: ITCGaramondStd-BkNarrow;
         font-style: normal;
@@ -320,7 +320,7 @@ include 'includes/header.php';
     }
 
     .ajustement-margin-top {
-        margin-top: 40px;
+        margin-top: 20px;
     }
 
     .enabled {
@@ -688,6 +688,9 @@ include 'includes/header.php';
             dateFormat: 'dd-mm-yy',
             onSelect: function(dateText) {
                 $("#txtFromDate1").val(dateText);
+                // dateCheck();
+                returnPriceMaisonVille();
+
             }
         });
 
@@ -697,78 +700,135 @@ include 'includes/header.php';
             dateFormat: 'dd-mm-yy',
             onSelect: function(dateText) {
                 $("#txtFromDate2").val(dateText);
+                returnPriceMaisonVille();
                 let month = dateText.substr(3, 2);
                 let day = dateText.substr(0, 2);
 
                 let month2 = dateText.substr(3, 2);
                 let day2 = dateText.substr(0, 2);
 
-                console.log(day + '-' + month);
-                console.log(day2 + '-' + month2);
-
                 // Check si c'est l'id de la maison correspond à 25 (Jolie maison de ville)
-                if (room.toString() == 25) {
+                // if (room.toString() == 25) {
 
-                    if (day >= 3 && month == 1) {
-                        $('.col_price h4').html('180€/nuit');
-                    } else if (day <= 3 && month == 2) {
-                        $('.col_price h4').html('180€/nuit');
-                    } else if (((day >= 4 && month == 2) || (day <= 6 && month == 3)) || ((day >= 8 && month == 4) || (day <= 8 && month == 5)) || ((day >= 25 && month == 5) && (day2 <= 29 && month2 == 5)) || ((day >= 1 && month == 7) || (day >= 1 && month == 8) || (day >= 1 && month == 9) || (day >= 1 && month == 10) || (day <= 13 && month == 11)) || ((day >= 16 && month == 12) || (day <= 2 && month == 2))) {
-                        $('.col_price h4').html('210€/nuit');
-                    } else if (((day >= 7 && month == 3) || (day <= 7 && month == 4)) || ((day >= 8 && month == 5) && (day2 <= 24 && month2 == 5)) || ((day >= 30 && month == 5) || (day <= 30 && month == 6)) || ((day >= 14 && month == 11) || (day <= 15 && month == 12))) {
-                        $('.col_price h4').html('180€/nuit');
-                    } else {
-                        $('.col_price h4').html('0nuit');
-                    }
+                //     if (day >= 3 && month == 1) {
+                //         $('.col_price h4').html('180€/nuit');
+                //     } else if (day <= 3 && month == 2) {
+                //         $('.col_price h4').html('180€/nuit');
+                //     } else if (((day >= 4 && month == 2) || (day <= 6 && month == 3)) || ((day >= 8 && month == 4) || (day <= 8 && month == 5)) || ((day >= 25 && month == 5) && (day2 <= 29 && month2 == 5)) || ((day >= 1 && month == 7) || (day >= 1 && month == 8) || (day >= 1 && month == 9) || (day >= 1 && month == 10) || (day <= 13 && month == 11)) || ((day >= 16 && month == 12) || (day <= 2 && month == 2))) {
+                //         $('.col_price h4').html('210€/nuit');
+                //     } else if (((day >= 7 && month == 3) || (day <= 7 && month == 4)) || ((day >= 8 && month == 5) && (day2 <= 24 && month2 == 5)) || ((day >= 30 && month == 5) || (day <= 30 && month == 6)) || ((day >= 14 && month == 11) || (day <= 15 && month == 12))) {
+                //         $('.col_price h4').html('180€/nuit');
+                //     } else {
+                //         $('.col_price h4').html('0nuit');
+                //     }
 
-                    // Check si c'est l'id de la maison correspond à 24 (Chalet Bord de Mer)
-                } else if (room.toString() == 24) {
+                //     // Check si c'est l'id de la maison correspond à 24 (Chalet Bord de Mer)
+                // } else if (room.toString() == 24) {
 
-                    if (day >= 3 && month == 1) {
-                        $('.col_price h4').html('210€/nuit');
-                    } else if (day <= 3 && month == 2) {
-                        $('.col_price h4').html('210€/nuit');
-                    } else if (((day >= 4 && month == 2) || (day <= 6 && month == 3)) || ((day >= 8 && month == 4) || (day <= 8 && month == 5)) || ((day >= 25 && month == 5) && (day2 <= 29 && month2 == 5)) || ((day >= 1 && month == 7) || (day >= 1 && month == 8) || (day >= 1 && month == 9) || (day >= 1 && month == 10) || (day <= 13 && month == 11)) || ((day >= 16 && month == 12) || (day <= 2 && month == 1))) {
-                        $('.col_price h4').html('230€/nuit');
-                    } else if (((day >= 7 && month == 3) || (day <= 7 && month == 4)) || ((day >= 8 && month == 5) && (day2 <= 24 && month2 == 5)) || ((day >= 30 && month == 5) || (day <= 30 && month == 6)) || ((day >= 14 && month == 11) || (day <= 15 && month == 12))) {
-                        $('.col_price h4').html('210€/nuit');
-                    } else {
-                        $('.col_price h4').html('0nuit');
-                    }
-                }
+                //     if (day >= 3 && month == 1) {
+                //         $('.col_price h4').html('210€/nuit');
+                //     } else if (day <= 3 && month == 2) {
+                //         $('.col_price h4').html('210€/nuit');
+                //     } else if (((day >= 4 && month == 2) || (day <= 6 && month == 3)) || ((day >= 8 && month == 4) || (day <= 8 && month == 5)) || ((day >= 25 && month == 5) && (day2 <= 29 && month2 == 5)) || ((day >= 1 && month == 7) || (day >= 1 && month == 8) || (day >= 1 && month == 9) || (day >= 1 && month == 10) || (day <= 13 && month == 11)) || ((day >= 16 && month == 12) || (day <= 2 && month == 1))) {
+                //         $('.col_price h4').html('230€/nuit');
+                //     } else if (((day >= 7 && month == 3) || (day <= 7 && month == 4)) || ((day >= 8 && month == 5) && (day2 <= 24 && month2 == 5)) || ((day >= 30 && month == 5) || (day <= 30 && month == 6)) || ((day >= 14 && month == 11) || (day <= 15 && month == 12))) {
+                //         $('.col_price h4').html('210€/nuit');
+                //     } else {
+                //         $('.col_price h4').html('0nuit');
+                //     }
+                // }
 
-                // Check si c'est l'id de la maison correspond à 26 (Chalet montagne)
-                else if (room.toString() == 26) {
+                // // Check si c'est l'id de la maison correspond à 26 (Chalet montagne)
+                // else if (room.toString() == 26) {
 
-                    if (((day >= 3 && month == 1) || (day <= 3 && month == 2)) || ((day >= 7 && month == 3) || (day <= 7 && month == 4)) || ((day >= 9 && month == 5) || (day >= 1 && month == 6) || (day >= 1 && month == 7) || (day >= 1 && month == 8) || (day >= 1 && month == 9) || (day >= 1 && month == 10) || (day >= 1 && month == 11) || (day <= 17 && month == 12))) {
-                        $('.col_price h4').html('357€/nuit');
-                    } else if (((day >= 4 && month == 2) || (day <= 6 && month == 3)) || ((day >= 8 && month == 4) || (day <= 8 && month == 5)) || ((day >= 17 && month == 12) || (day <= 2 && month == 1))) {
-                        $('.col_price h4').html('420€/nuit');
-                    }
-                }
+                //     if (((day >= 3 && month == 1) || (day <= 3 && month == 2)) || ((day >= 7 && month == 3) || (day <= 7 && month == 4)) || ((day >= 9 && month == 5) || (day >= 1 && month == 6) || (day >= 1 && month == 7) || (day >= 1 && month == 8) || (day >= 1 && month == 9) || (day >= 1 && month == 10) || (day >= 1 && month == 11) || (day <= 17 && month == 12))) {
+                //         $('.col_price h4').html('357€/nuit');
+                //     } else if (((day >= 4 && month == 2) || (day <= 6 && month == 3)) || ((day >= 8 && month == 4) || (day <= 8 && month == 5)) || ((day >= 17 && month == 12) || (day <= 2 && month == 1))) {
+                //         $('.col_price h4').html('420€/nuit');
+                //     }
+                // }
 
-                // Check si c'est l'id de la maison correspond à 23 (Villa grand large)
-                else if (room.toString() == 23) {
-                    console.log('ok');
-                    if (((day >= 2 && month == 1) || (day >= 1 && month == 2) || (day >= 1 && month == 3) || (day >= 1 && month == 4) || (day <= 7 && month == 5)) ||
-                        ((day >= 22 && month == 5) || (day <= 4 && month == 6)) ||
-                        ((day >= 3 && month == 7) || (day >= 1 && month == 8) || (day <= 3 && month == 9)) ||
-                        ((day >= 22 && month == 10) || (day <= 12 && month == 11))) {
-                        $('.col_price h4').html('640€/nuit');
-                    } else if (((day >= 7 && month == 5 && day <= 21)) ||
-                        ((day >= 5 && month == 6) || (day <= 2 && month == 7)) ||
-                        ((day >= 4 && month == 9) || (day <= 21 && month == 10)) ||
-                        ((day >= 13 && month == 11) || (day <= 16 && month == 12))) {
-                        console.log('bravo');
-                        $('.col_price h4').html('530€/nuit');
-                    } else if (((day >= 17 && month == 12) || (day <= 1 && month == 1))) {
-                        $('.col_price h4').html('740€/nuit');
-                    }
-                }
+                // // Check si c'est l'id de la maison correspond à 23 (Villa grand large)
+                // else if (room.toString() == 23) {
+                //     console.log('ok');
+                //     if (((day >= 2 && month == 1) || (day >= 1 && month == 2) || (day >= 1 && month == 3) || (day >= 1 && month == 4) || (day <= 7 && month == 5)) ||
+                //         ((day >= 22 && month == 5) || (day <= 4 && month == 6)) ||
+                //         ((day >= 3 && month == 7) || (day >= 1 && month == 8) || (day <= 3 && month == 9)) ||
+                //         ((day >= 22 && month == 10) || (day <= 12 && month == 11))) {
+                //         $('.col_price h4').html('640€/nuit');
+                //     } else if (((day >= 7 && month == 5 && day <= 21)) ||
+                //         ((day >= 5 && month == 6) || (day <= 2 && month == 7)) ||
+                //         ((day >= 4 && month == 9) || (day <= 21 && month == 10)) ||
+                //         ((day >= 13 && month == 11) || (day <= 16 && month == 12))) {
+                //         console.log('bravo');
+                //         $('.col_price h4').html('530€/nuit');
+                //     } else if (((day >= 17 && month == 12) || (day <= 1 && month == 1))) {
+                //         $('.col_price h4').html('740€/nuit');
+                //     }
+                // }
             }
         });
         $.datepicker.setDefaults($.datepicker.regional["fr"]);
 
 
     });
+
+    /**
+     * @from= date debut de periode
+     * @to = date debut de periode
+     */
+
+    function dateCheck(from2, to2, price) {
+
+        var fDate, lDate, cDate;
+
+        fDate = jQuery.datepicker.formatDate('dd-mm-yy', from2); // MM/DD/yy firstdate
+        cDate = jQuery.datepicker.parseDate('dd-mm-yy', $('#txtFromDate1').val()); // date from form
+        lDate = jQuery.datepicker.formatDate('dd-mm-yy', to2); // MM/DD/yy
+
+        var dateFrom = fDate.split("-");
+        var dateTo = lDate.split("-");
+
+        var from = new Date(dateFrom[2], parseInt(dateFrom[1]) - 1, dateFrom[0]); // -1 because months are from 0 to 11
+        var to = new Date(dateTo[2], parseInt(dateTo[1]) - 1, dateTo[0]);
+
+        var d1 = $('#txtFromDate1').datepicker('getDate');
+        var d2 = $('#txtFromDate2').datepicker('getDate');
+
+        var oneDay = 24 * 60 * 60 * 1000;
+        var diff = 0;
+        if (d1.getTime() < d2.getTime()) {
+
+            diff = Math.round(Math.abs((d2.getTime() - d1.getTime()) / (oneDay)));
+            console.log(diff);
+
+        } else {
+            $('.col_price h4').html('Date non valide');
+            return false;
+
+        }
+
+        if ((cDate <= to && cDate >= from)) {
+            // return true;
+            $('.col_price h4').html((diff * price) + '€/nuit');
+        } else {
+            return false
+        }
+
+
+    }
+
+    function returnPriceMaisonVille() {
+
+        dateCheck(new Date('01-03-22'), new Date('02-03-22'), '180'); // MM/DD/yy
+        dateCheck(new Date('02-04-22'), new Date('03-06-22'), '210');
+        dateCheck(new Date('03-07-22'), new Date('04-07-22'), '180');
+        dateCheck(new Date('04-08-22'), new Date('05-08-22'), '210');
+        dateCheck(new Date('05-09-22'), new Date('05-24-22'), '180');
+        dateCheck(new Date('05-25-22'), new Date('05-29-22'), '210');
+        dateCheck(new Date('05-30-22'), new Date('06-30-22'), '180');
+        dateCheck(new Date('07-01-22'), new Date('11-13-22'), '210');
+        dateCheck(new Date('11-14-22'), new Date('12-15-22'), '180');
+        dateCheck(new Date('12-16-22'), new Date('01-01-23'), '210');
+    }
 </script>
