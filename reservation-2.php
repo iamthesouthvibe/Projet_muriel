@@ -703,11 +703,6 @@ include 'includes/header.php';
             onSelect: function(dateText) {
                 $("#txtFromDate2").val(dateText);
                 returnPriceMaisonVille();
-                let month = dateText.substr(3, 2);
-                let day = dateText.substr(0, 2);
-
-                let month2 = dateText.substr(3, 2);
-                let day2 = dateText.substr(0, 2);
 
                 // Check si c'est l'id de la maison correspond à 25 (Jolie maison de ville)
                 // if (room.toString() == 25) {
@@ -775,11 +770,10 @@ include 'includes/header.php';
 
     });
 
-    /**
+    /** 
      * @from= date debut de periode
      * @to = date debut de periode
      */
-
     function dateCheck(from2, to2, price) {
 
         var fDate, lDate, cDate;
@@ -794,9 +788,7 @@ include 'includes/header.php';
         var from = new Date(dateFrom[2], parseInt(dateFrom[1]) - 1, dateFrom[0]); // -1 because months are from 0 to 11
         var to = new Date(dateTo[2], parseInt(dateTo[1]) - 1, dateTo[0]);
 
-        /**
-         * Calcul le nombre de jour entre la date d'arrivée et le départ
-         */
+        /* Calcul le nombre de jour entre la date d'arrivée et le départ */
         var d1 = $('#txtFromDate1').datepicker('getDate');
         var d2 = $('#txtFromDate2').datepicker('getDate');
 
@@ -814,20 +806,19 @@ include 'includes/header.php';
         }
         //
 
-        /**
-         * Renvoie le prix en fonction du nombre de jour et de la periode
-         */
+        /** Renvoie le prix en fonction du nombre de jour et de la periodec*/
         if ((cDate <= to && cDate >= from)) {
             $('.col_price h4').html((diff * price) + '€');
         } else {
             return false
         }
-
-
+        //
     }
+    //
 
     function returnPriceMaisonVille() {
 
+        // 2022
         dateCheck(new Date('01-03-22'), new Date('02-03-22'), '180'); // MM/DD/yy
         dateCheck(new Date('02-04-22'), new Date('03-06-22'), '210');
         dateCheck(new Date('03-07-22'), new Date('04-07-22'), '180');
@@ -837,6 +828,19 @@ include 'includes/header.php';
         dateCheck(new Date('05-30-22'), new Date('06-30-22'), '180');
         dateCheck(new Date('07-01-22'), new Date('11-13-22'), '210');
         dateCheck(new Date('11-14-22'), new Date('12-15-22'), '180');
-        dateCheck(new Date('12-16-22'), new Date('01-01-23'), '210');
+        dateCheck(new Date('12-16-22'), new Date('01-02-23'), '210');
+
+        // 2023
+        dateCheck(new Date('01-03-23'), new Date('02-03-23'), '180'); // MM/DD/yy
+        dateCheck(new Date('02-04-23'), new Date('03-06-23'), '210');
+        dateCheck(new Date('03-07-23'), new Date('04-07-23'), '180');
+        dateCheck(new Date('04-08-23'), new Date('05-08-23'), '210');
+        dateCheck(new Date('05-09-23'), new Date('05-24-23'), '180');
+        dateCheck(new Date('05-25-23'), new Date('05-29-23'), '210');
+        dateCheck(new Date('05-30-23'), new Date('06-30-23'), '180');
+        dateCheck(new Date('07-01-23'), new Date('11-13-23'), '210');
+        dateCheck(new Date('11-14-23'), new Date('12-15-23'), '180');
+        dateCheck(new Date('12-16-23'), new Date('01-02-24'), '210');
     }
 </script>
+<?php include "includes/cursor.php"; ?>
