@@ -49,6 +49,7 @@ if ($roomID !== $maison['id']) {
     header('Location: page-404.php');
 }
 
+
 //:TODO : Mettre cette fonction dans une fichier php à part
 /*
     * Fonction pour recuperer le captch sous forme de json
@@ -552,7 +553,7 @@ include 'includes/header.php';
                 <div>
                     <div class="input_row">
                         <label for=txtFromDate1>Arrivée</label><br>
-                        <input type="text" name="txtFromDate1" id="txtFromDate1" class="home-input" />
+                        <input type="text" name="txtFromDate1" id="txtFromDate1" class="home-input txtFromDate1" />
                         <br>
                         <small>Error Message</small>
                     </div>
@@ -665,7 +666,7 @@ include 'includes/header.php';
     $(function() {
 
         var unavailableDates = <?php echo $fulldate; ?>;
-        console.log(unavailableDates);
+
         var room = <?php echo $roomID; ?>;
 
         // Check les disponibilités 
