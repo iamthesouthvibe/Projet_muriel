@@ -686,6 +686,7 @@ include 'includes/header.php';
         $('#txtFromDate1').datepicker({
             beforeShowDay: unavailable,
             dateFormat: 'dd-mm-yy',
+            minDate: 0,
             onSelect: function(dateText) {
                 $("#txtFromDate1").val(dateText);
                 // dateCheck();
@@ -698,6 +699,7 @@ include 'includes/header.php';
         $('#txtFromDate2').datepicker({
             beforeShowDay: unavailable,
             dateFormat: 'dd-mm-yy',
+            minDate: 0,
             onSelect: function(dateText) {
                 $("#txtFromDate2").val(dateText);
                 returnPriceMaisonVille();
@@ -792,6 +794,9 @@ include 'includes/header.php';
         var from = new Date(dateFrom[2], parseInt(dateFrom[1]) - 1, dateFrom[0]); // -1 because months are from 0 to 11
         var to = new Date(dateTo[2], parseInt(dateTo[1]) - 1, dateTo[0]);
 
+        /**
+         * Calcul le nombre de jour entre la date d'arrivée et le départ
+         */
         var d1 = $('#txtFromDate1').datepicker('getDate');
         var d2 = $('#txtFromDate2').datepicker('getDate');
 
@@ -807,10 +812,13 @@ include 'includes/header.php';
             return false;
 
         }
+        //
 
+        /**
+         * Renvoie le prix en fonction du nombre de jour et de la periode
+         */
         if ((cDate <= to && cDate >= from)) {
-            // return true;
-            $('.col_price h4').html((diff * price) + '€/nuit');
+            $('.col_price h4').html((diff * price) + '€');
         } else {
             return false
         }
