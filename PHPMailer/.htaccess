@@ -1,5 +1,0 @@
-Options All
-AuthType "Basic"
-AuthName "Protected Access"
-AuthUserFile "/home/sxgdzjcq/public_html/PHPMailer/.htpasswd"
-require valid-user

@@ -57,6 +57,10 @@ $sql = $db->query("SELECT * FROM rooms");
         color: #9A4747;
         text-decoration: none;
         cursor: pointer;
+        font-family: neue_montrealregular;
+        font-style: normal;
+        font-weight: bold;
+        font-size: 20px;
     }
 
     @media screen and (max-width: 450px) {
@@ -66,9 +70,6 @@ $sql = $db->query("SELECT * FROM rooms");
             text-align: center;
         }
 
-        .qhero_page_reservation select {
-            margin-right: 0px;
-        }
 
         .qhero_page_reservation input {
             margin-top: 110px;
@@ -82,12 +83,12 @@ $sql = $db->query("SELECT * FROM rooms");
     <div class="qhero_page_reservation">
         <div class="form" data-aos="fade" data-aos-anchor-placement="bottom-bottom" data-aos-duration="1000" data-aos-delay="500">
             <div class="input">
-                <form method="get" action="reservation-2.php">
+                <form method="get" autocomplete="off" action="reservation-2.php">
                     <select name="maison" class="test">
                         <option value="" selected="true" disabled="disabled">Votre maison</option>
                         <?php while ($room = $sql->fetch(PDO::FETCH_ASSOC)) : ?>
 
-                            <option class="test-hover" value="<?= $room['id']; ?>"><?= $room['shortName'] . ' ' . $room['lieu']; ?></option>
+                            <option class="test-hover" value="<?= $room['id']; ?>"><?= $room['shortName']; ?>, <?= $room['lieu']; ?></option>
                         <?php endwhile; ?>
                     </select>
                     <input type="submit" value="Vérifier les disponibilités" class="button">

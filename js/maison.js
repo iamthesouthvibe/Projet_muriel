@@ -1,6 +1,7 @@
 var swiper = new Swiper(".carousel_maison .mySwiper", {
     loop: true,
     resizeObserver: false,
+    draggable: true,
     navigation: {
         nextEl: ".swiper-button-next",
         prevEl: ".swiper-button-prev",

@@ -53,7 +53,7 @@ $result = $db->query($sql);
 
 // On envoie les données
 if (isset($_POST['add'])) {
-    if (!empty($name) && !empty($rooms) && !empty($phone) && !empty($email) && !empty($checkin) && !empty($checkout)) {
+    if (!empty($name) && !empty($rooms) && !empty($checkin) && !empty($checkout)) {
         $sql2 = "INSERT INTO calendar (`libelle`,`email`, `phone`, `checkin`, `checkout`, `id_rooms`)
                     VALUES ('$name','$email','$phone','$checkin','$checkout', '$rooms')";
 

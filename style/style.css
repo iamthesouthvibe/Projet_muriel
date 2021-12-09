@@ -1,11 +1,19 @@
 @font-face {
     font-family: ITCGaramondStd-BkNarrow;
-    src: local("../assets/fonts/GaramondStd/ITCGaramondStd-BkNarrow.otf"), local("ITCGaramondStd-BkNarrow"), url('../assets/fonts/GaramondStd/ITCGaramondStd-BkNarrow.woff2') format('woff2'), url('../assets/fonts/GaramondStd/ITCGaramondStd-BkNarrow.woff') format('woff');
+    src: local("../assets/fonts/GaramondStd/ITCGaramondStd-BkNarrow.otf"), 
+    local("ITCGaramondStd-BkNarrow"), 
+    url('../assets/fonts/GaramondStd/ITCGaramondStd-BkNarrow.woff2') format('woff2'), 
+    url('../assets/fonts/GaramondStd/ITCGaramondStd-BkNarrow.woff') format('woff');
 }
 
 @font-face {
-    font-family: ITCGaramondStd-BkNarrowIta;
-    src: local("..assets/fonts/GaramondStd/ITCGaramondStd-BkNarrowIta.woff"), local("ITCGaramondStd-BkNarrowIta"), url('..assets/fonts/GaramondStd/ITCGaramondStd-BkNarrowIta.woff') format('woff');
+    font-family: 'ITCGaramondStd-BkNarrowIta';
+    src: url("..assets/fonts/GaramondStd/ITCGaramondStd-BkNarrowIta.woff"), 
+    url('../assets/fonts/GaramondStd/ITCGaramondStd-BkNarrowIta.woff') format('woff'),
+    url('../assets/fonts/GaramondStd/ITCGaramondStd-BkNarrowIta.woff2') format('woff2'),
+    url('../assets/fonts/GaramondStd/ITCGaramondStd-BkNarrowIta.ttf') format('truetype'),
+    url('../assets/fonts/GaramondStd/ITCGaramondStd-BkNarrowIta.otf') format('opentype'),
+    local('ITCGaramondStd-BkNarrowIta');
 }
 
 @font-face {
@@ -121,6 +129,7 @@ nav {
 }
 
 .header_left img {
+    min-width: 60px;
     max-height: 40px;
     max-width: 90px;
     transform: translate(0px, -7px);
@@ -357,6 +366,7 @@ nav {
 }
 
 .container_menu .menu_nav_link ul li a::after {
+    top : 6vw;
     content: '';
     position: absolute;
     width: 100%;
@@ -375,6 +385,8 @@ nav {
 }
 
 .container_menu .menu_nav_right ul li a::after {
+
+    top: calc(1vw + 13px);
     content: '';
     position: absolute;
     width: 100%;
@@ -452,12 +464,7 @@ margin-bottom: 10px;
 
 .content:hover~.cursor2 {
     opacity: 0;
-}
-
-.style_h1_accueil span {
-    display: inline-block;
-    transform: translateY(100%);
-  }
+}   
 
 
 /* ##### Fin Curseur  ##### */
@@ -489,7 +496,9 @@ margin-bottom: 10px;
     /* or 112px */
     text-align: center;
     color: rgba(154, 71, 71, 1);
-    margin-bottom: 50px;
+    margin-bottom: 61px;
+    margin-top: 20px;
+
 }
 
 .style_h2_accueil {
@@ -507,7 +516,12 @@ margin-bottom: 10px;
 }
 
 .italic_title {
-    font-family: ITCGaramondStd-BkNarrowIta;
+    font-family: 'ITCGaramondStd-BkNarrowIta';
+}
+
+.italic-h1-index {
+    font-family: 'ITCGaramondStd-BkNarrowIta';
+    
 }
 
 
@@ -575,6 +589,11 @@ margin-bottom: 10px;
     -ms-flex-align: center;
     -webkit-align-items: center;
     align-items: center;
+    
+}
+
+.swiper-page-accueil {
+    background-color: black;
 }
 
 .swiper-slide img {
@@ -584,6 +603,10 @@ margin-bottom: 10px;
     object-fit: cover;
     position: absolute;
     filter: grayscale(100%);
+}
+
+.swiper-page-accueil img {
+    opacity: 0.8;
 }
 
 .swiper-slide-titre {
@@ -771,7 +794,7 @@ margin-bottom: 10px;
     font-family: ITCGaramondStd-BkNarrow;
     font-style: normal;
     font-weight: normal;
-    font-size: 8vw;
+    font-size: 3vw;
     line-height: 79%;
     /* or 103px */
     color: #9A4747;
@@ -784,10 +807,13 @@ margin-bottom: 10px;
     font-family: neue_montrealregular;
     font-style: normal;
     font-weight: normal;
-    font-size: 24px;
-    line-height: 24px;
+    font-size: 18px;
+    line-height: 20px;
     /* or 111% */
     color: #000000;
+    text-align: justify;
+    max-width: 540px;
+
 }
 
 
@@ -883,9 +909,56 @@ margin-bottom: 10px;
 }
 
 .container_presentation_maison_droite {
-    margin-top: 35vh;
+  /*  margin-top: 35vh; */
 }
 
+.text_gauche {
+    text-align: justify;
+}
+
+.text-droite {
+    text-align: justify;
+}
+
+.image-rehaussement img {
+    margin-top: 0;
+}
+
+.rehaussement-text p {
+    margin-top: 0;
+}
+
+.infos-techniques-maison {
+    background-color: #9A4747;
+    width: 29vw;
+    height: 100%;
+    max-width: 700px;
+    padding-bottom: 20px;
+}
+
+.infos-techniques-maison h4 {
+    margin-top: 20px;
+    padding-left: 25px;
+    font-family: NeueMontreal-Bold;
+    font-weight: normal;
+    font-style: normal;
+    font-size: 19px;
+    color: #FCF7EC;
+}
+
+.infos-techniques-maison p {
+    margin-left: 22px;
+    color: #FCF7EC;
+}
+
+.infos-techniques-maison img {
+    width: 35px;
+    margin-left: 25px;
+}
+
+.set-icon-text {
+    display: flex;
+}
 
 /* Caroussel de texte technique de la maison */
 
@@ -941,11 +1014,10 @@ margin-bottom: 10px;
 .carousel_and_map {
     display: flex;
     margin: 100px 6vw;
-    justify-content: space-between;
     margin-top: 100px;
     margin-bottom: 30px;
-    margin-right: 6vw;
-    margin-left: 6vw;
+    gap: 2vw;
+    justify-content: center;
 }
 
 .carousel_maison_03 {
@@ -1043,6 +1115,11 @@ margin-bottom: 10px;
 
 .espace_article_blog img {
     width: 100%;
+    float: left;
+    width: 33vw;
+    height: 22vw;
+    object-fit: cover;
+    margin-bottom: 20px;
 }
 
 .espace_article_blog h6 {
@@ -1729,6 +1806,7 @@ margin-right: 7vw;
         color: #000000;
 }
 
+
 .texte-droite-blog-unit-citation {
     font-family: ITCGaramondStd-BkNarrow;
 font-style: normal;
@@ -1868,7 +1946,7 @@ margin-left: auto;
 }
 
 .section_recapitulatif {
-    margin-top: 8vh;
+    margin-top: 4vh;
 }
 
 .style_h3_confirmation_reservation {
@@ -1880,6 +1958,7 @@ margin-left: auto;
     /* identical to box height, or 111% */
     text-align: center;
     color: #9A4747;
+    margin-bottom: 0px;
 }
 
 .style_texte_recapitulatif {
@@ -1895,10 +1974,12 @@ margin-left: auto;
     text-align: center;
     margin-left: auto;
     margin-right: auto;
+    margin-top: 8px;
 }
 
 .section_prix-total {
     margin-top: 50px;
+    /*margin-top: 50px;*/
     /* position: fixed;
     width: 120px;
     left: 50%;
@@ -2258,8 +2339,77 @@ footer ul {
     line-height: 90%;
 }
 
+footer .instafooter  {
+     
+    display: flex;
+    gap: 10px;
+}
+
 
 /* ##### Fin style footer ##### */
+
+/* #################################################################### */
+
+
+/* #################################################################### */
+
+
+/* #################################################################### */
+
+
+/* #################################################################### */
+
+
+/* ##### Debut Media Queries  ##### */
+
+@media screen and (max-width: 1106px) {
+
+    .qhero_page_reservation select {
+        display: block;
+        margin: auto;
+    }
+
+    .qhero_page_reservation input {
+        margin-top: 110px;
+    }
+
+    .qhero_page_reservation .input form {
+        text-align: center;
+    }
+
+
+
+}
+
+@media screen and (max-width: 800px) {
+     /* section ajustement maps et infos techniques de la page maison */
+
+     .mapouter {
+        width: auto!important;
+    }
+}
+
+
+/* ##### Debut Media Queries  ##### */
+
+@media screen and (max-width: 1080px) {
+
+    .carousel_and_map {
+        display: block;
+    }
+
+    .infos-techniques-maison {
+        margin: auto;
+        width: auto;
+    }
+
+    .mapouter {
+        margin: auto;
+        margin-top: 20px;
+        
+    }
+
+}
 
 
 /* #################################################################### */
@@ -2454,7 +2604,7 @@ footer ul {
         right: 0;
     }
     .menu_nav_link {
-        bottom: 25px;
+        bottom: 115px;
         position: absolute;
         z-index: 1000;
     }
@@ -2635,6 +2785,7 @@ footer ul {
         -ms-flex-align: center;
         -webkit-align-items: center;
         align-items: center;
+        background-color: black;
     }
     .swiper-slide img {
         height: 100%;
@@ -2805,10 +2956,11 @@ footer ul {
         font-family: neue_montrealregular;
         font-style: normal;
         font-weight: normal;
-        font-size: 24px;
-        line-height: 24px;
+        font-size: 18px;
+        line-height: 20px;
         /* or 111% */
         color: #000000;
+        text-align: justify;
     }
     /* ##### Fin style de la page d'accueil ##### */
     /* ##### Debut style de la page maison ##### */
@@ -2909,6 +3061,7 @@ footer ul {
     }
     .carousel_and_map {
         flex-wrap: wrap;
+        display: flex;
     }
     /* Caroussel de texte technique de la maison */
     .carousel_maison_02 .swiper-container {
@@ -2950,6 +3103,29 @@ footer ul {
         color: grey;
         --swiper-navigation-size: 37px;
     }
+
+    .swiper-button-prev {
+        display: none;
+    }
+    .swiper-button-next {
+        display: none;
+    }
+
+    .infos-techniques-maison {
+        min-width: 90vw;
+    }
+
+    .infos-techniques-maison h4 {
+        text-align: center;
+        transform: translate(-4vw, 0px);
+    }
+
+    /* Section map et infos techniques */
+
+    .mapouter {
+        width: 700px !important;
+    }
+
     /* Section articles de blogs de la maison */
     .container_blog {
         background-color: #E5E5E5;
@@ -3002,7 +3178,7 @@ footer ul {
         font-family: neue_montrealregular;
         font-style: normal;
         font-weight: normal;
-        font-size: 12px;
+        font-size: 16px;
         line-height: 106%;
         /* or 13px */
         color: #9A4747;
@@ -3250,6 +3426,11 @@ margin: auto;
     .container_presentation_blog-unit p {
         max-width: 90vw;
         margin: auto;
+        text-align: justify;
+    }
+
+    .container_presentation_blog-unit_colonne_droite p {
+        text-align: justify;
     }
 
     .container_presentation_blog-unit img {
@@ -3317,6 +3498,20 @@ margin: auto;
         line-height: 80.5%;
         color: #FCF7EC;
         text-decoration: none;
+    }
+
+    .container_menu .menu_nav_link ul li a::after {
+        top : 6vw;
+        content: '';
+        position: absolute;
+        width: 100%;
+        transform: scaleX(0);
+        height: 0px;
+        bottom: 0;
+        left: 0;
+        background-color: rgba(154, 71, 71, 1);
+        transform-origin: bottom right;
+        transition: transform 0.7s ease-out;
     }
     /* ##### Fin style de la page contact ##### */
     /* ##### DEBUT STYLE PAGE RESERVATION 01 ##### */
@@ -3534,8 +3729,8 @@ margin: auto;
     /* ##### Debut style footer ##### */
     footer {
         background-color: #E5E5E5;
-        margin-top: 0;
-    }
+        margin-top: 10vh;
+        }
     .footer_class {
         display: -ms-flexbox;
         display: -webkit-flex;
@@ -3687,8 +3882,8 @@ margin: auto;
         top: 20px;
     }
     .swiper-slide-titre h2 {
-        font-size: 98px;
-        margin-bottom: 10px;
+        font-size: 75px;
+        margin-bottom: 30px;
     }
     .swiper-slide-titre p {
         font-size: 18px;
@@ -3711,7 +3906,7 @@ margin: auto;
         border: none;
         border-color: none;
         position: fixed;
-        top: 91vh;
+        top: 87vh;
         margin: auto;
     }
     .bouton_responsive button a {
@@ -3721,6 +3916,14 @@ margin: auto;
         font-style: normal;
         font-weight: bold;
         font-size: 20px;
+
+        display: inline-block;     
+   position: relative;    
+   z-index: 1;     
+   padding: 1em 2em 1em 2em;    
+   margin: -2em;
+
+   transform: translate(0px, 3px);
     }
     footer {
         padding-bottom: 90px;
@@ -3767,9 +3970,9 @@ margin: auto;
         max-width: 60vw;
     }
     .texte_section_muriel {
-        text-align: left;
-        font-size: 24px;
-        line-height: 23px;
+        text-align: justify;
+        font-size: 18px;
+        line-height: 20px;
     }
     /* Adpatation de la taille occupée par la carroussel en reponsive (10% en plus)*/
     .swiper-container {
@@ -3789,7 +3992,7 @@ margin: auto;
         margin: auto;
     }
     .div_h2_sous_titre h2 {
-        margin-top: 1vh;
+        margin-top: 3vh;
     }
     .container_presentation_maison {
         display: block;
@@ -3818,10 +4021,12 @@ margin: auto;
     /* responsive de la section articles de blog sur la page maison */
     .titre_section_blog .titre_section_blog_h4 {
         font-size: 61px;
-        line-height: 78%;
+        line-height: 90%;
         max-width: 100vw;
         padding-top: 70px;
         margin-bottom: 70px;
+        padding-left: 5vw;
+        padding-right: 5vw; 
     }
     .espace_flexbox_blog {
         display: block;

@@ -24,14 +24,12 @@ include 'includes/header.php';
         <p data-aos="fade-up" data-aos-anchor-placement="top-bottom" data-aos-duration="1000" data-aos-delay="200">Le présent site est la propriété de Muriel Lambert.
         </p>
         <h3 data-aos="fade-up" data-aos-anchor-placement="top-bottom" data-aos-duration="1000" data-aos-delay="200">1.2. Hébergeur</h3>
-        <p data-aos="fade-up" data-aos-anchor-placement="top-bottom" data-aos-duration="1000" data-aos-delay="200">Ce site est hébergé par Planet Hoster
-            <br> Hébergeur : PLANET HOSTER PARIS
-            <br> Société : PLANET HOSTER
-            <br>Société : PLANET HOSTER
-            <br>Adresse web : https://www.planethoster.net/fr/
-            <br>Adresse Postale du siege: PlanetHoster – 4416 Louis-B.-Mayer – Laval, Québec – Canada – H7P 0G1
-            <br>Téléphone Paris : (+33) (0)1 76 60 41 43
-            <br>Adresse électronique (E-Mail) : https://www.planethoster.net/fr/Contact puis formulaire de communication à suivre sur le site de « PLANET HOSTER »
+        <p data-aos="fade-up" data-aos-anchor-placement="top-bottom" data-aos-duration="1000" data-aos-delay="200">Ce site est hébergé par Infomaniak
+            <br> Hébergeur / Société : INFOMANIAK NETWORK SA
+            <br>Adresse web : http://www.infomaniak.ch
+            <br>Adresse Postale du siege: Rue Eugène-Marziano 25 1227 Les Acacias
+            <br>Téléphone : +41 844551155
+           
         </p>
         <h3 data-aos="fade-up" data-aos-anchor-placement="top-bottom" data-aos-duration="1000" data-aos-delay="200">1.3. Conception et réalisation technique du site</h3>
         <p data-aos="fade-up" data-aos-anchor-placement="top-bottom" data-aos-duration="1000" data-aos-delay="200">Jean Vayssié et Léo Labeaume <br>

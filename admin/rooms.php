@@ -22,7 +22,6 @@ $sql = $db->query("SELECT * FROM rooms"); ?>
                 <img src="/<?= $room['photo']; ?>" alt="" srcset="">
                 <div class="admin_page_maison_title">
                     <h2><?= $room['room_number']; ?></h2>
-                    <button><a href="add_room.php?edit=<?= $room['id'] ?>">Modifier</a></button>
                 </div>
             </div>
         <?php endwhile; ?>

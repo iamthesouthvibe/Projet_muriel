@@ -1,5 +1,5 @@
 Options All
 AuthType "Basic"
 AuthName "Protected Access"
-AuthUserFile "/home/sxgdzjcq/public_html/fonctions/.htpasswd"
+AuthUserFile "/sites/testmurielhomes.online/fonctions/.htpasswd"
 require valid-user

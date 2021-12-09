@@ -1,0 +1,404 @@
+html {
+    background-color: #FCF7EC;
+}
+
+.header_right button {
+    display: none;
+}
+
+.qhero_page_reservation_2 {
+    position: absolute;
+    left: 50%;
+    -ms-transform: translateX(-50%);
+    -webkit-transform: translate(-50%, 0%);
+    transform: translate(-50%, 0%);
+    display: block;
+    margin-top: 13vh;
+    max-width: 1100px;
+
+}
+
+.qhero_page_reservation_2 h1 {
+    text-align: center;
+    margin-bottom: 15px;
+    color: #9A4747;
+    font-family: ITCGaramondStd-BkNarrow;
+    font-style: normal;
+    font-weight: normal;
+    margin-top: 10px;
+}
+
+.qhero_page_reservation_2 h1 span {
+    font-family: neue_montrealregular;
+    font-style: normal;
+    font-weight: bold;
+    line-height: 0;
+}
+
+.qhero_page_reservation_2 h2 {
+    font-family: neue_montrealbold;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 20px;
+    color: #9A4747;
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.qhero_page_reservation_2 .col {
+    display: flex;
+    gap: 120px;
+}
+
+.qhero_page_reservation_2 .row {
+    /* margin-bottom: 50px; */
+}
+
+.qhero_page_reservation_2 .row .input_row {
+    display: block;
+    margin-bottom: 20px;
+}
+
+.qhero_page_reservation_2 .row .input_row label {
+    color: #9A4747;
+    font-family: ITCGaramondStd-BkNarrow;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 24px;
+    margin-right: 15px;
+    transform: translate(0px, 7px);
+    min-width: 400px;
+}
+
+.qhero_page_reservation_2 .row .input_row input {
+    border: none;
+    border-bottom: solid 1px #9A4747;
+    background-color: #FCF7EC;
+    color: #9A4747;
+    min-width: 280px;
+
+}
+
+.qhero_page_reservation_2 .row .input_row textarea {
+    color: #9A4747;
+    font-size: 24px;
+    font-family: neue_montrealbold;
+    font-style: normal;
+    font-weight: normal;
+    width: 290px;
+    height: 237px;
+    border: none;
+    border: solid 1px;
+    background: #FCF7EC;
+
+}
+
+.qhero_page_reservation_2 form {
+    margin-top: 60px;
+}
+
+input[type="text"i],
+input[type="date"i],
+input[type="mail"i],
+input[type="tel"i],
+input[type="number"i] {
+    padding: 1px 2px;
+    font-size: 24px;
+    font-family: neue_montrealbold;
+    font-style: normal;
+    font-weight: normal;
+}
+
+.qhero_page_reservation_2 .col_price {
+    text-align: center;
+}
+
+.qhero_page_reservation_2 .col_price h3 {
+    color: #9A4747;
+    font-family: ITCGaramondStd-BkNarrow;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 24px;
+    margin: 0;
+}
+
+.qhero_page_reservation_2 .col_price h4 {
+    color: #9A4747;
+    margin: 0;
+    font-size: 24px;
+    font-family: neue_montrealbold;
+    font-style: normal;
+    font-weight: normal;
+}
+
+.qhero_page_reservation_2 .col_price .submit {
+    width: 357px;
+    height: 41px;
+    background: #9A4747;
+    border-radius: 40px;
+    border: none;
+    font-size: 25px;
+    color: #FCF7EC;
+    text-decoration: none;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.qhero_page_reservation_2 .col_price .submit:hover {
+    border: solid 1px #9a4747;
+    background: #FCF7EC;
+    color: #9A4747;
+}
+
+.ui-widget-header {
+    /* Ca c'est la parti au dessus avec les deux fleches */
+    border: 1px solid #d49768;
+    background: #9a4747 50% 50% repeat-x;
+    color: #FCF7EC;
+    font-weight: normal;
+}
+
+
+
+.input_row small {
+    opacity: 0;
+}
+
+.input_row.error small {
+    opacity: 1;
+}
+
+.prix-nuit-div {
+    width: 100px;
+    float: left;
+}
+
+.boutton-reservation-finale {
+    width: 415px;
+    margin: auto;
+    margin-top: 40px;
+}
+
+.ajustement-margin-top {
+    margin-top: 20px;
+}
+
+.enabled {
+    /* Ca c'est le contour de chaque case jour */
+    background: none;
+}
+
+.ui-state-default,
+.ui-widget-content .ui-state-default,
+.ui-widget-header .ui-state-default,
+.ui-button,
+html .ui-button.ui-state-disabled:hover,
+html .ui-button.ui-state-disabled:active {
+    /* Ca c'est le fond de chaque case jour */
+    /* background: red; */
+
+
+
+}
+
+/* ça ce sont les cadres autour des nombres dans le calendrier* et la couleur de la font du nombre séléctionné */
+.ui-state-highlight,
+.ui-widget-content .ui-state-highlight,
+.ui-widget-header .ui-state-highlight {
+    border: 2px solid #d97373;
+    background: none;
+    color: #9A4747;
+}
+
+/* ça c'est la couleur de fond du jour d'aujourd'hui*/
+.ui-state-highlight,
+.ui-widget-content .ui-state-highlight,
+.ui-widget-header .ui-state-highlight {
+    /*background: #959595;*/
+    background: red;
+}
+
+/* permet de changer la couleur de la font des nombres du calendrier (sauf celui du jour meme ainsi que le fond et le bord */
+.ui-state-default,
+.ui-widget-content .ui-state-default,
+.ui-widget-header .ui-state-default,
+.ui-button,
+html,
+html .ui-button.ui-state-disabled:active {
+    border: none;
+    background: #FCF7EC;
+    font-weight: normal;
+    color: #9a4747;
+    border-radius: 3px;
+    padding-right: 10px;
+}
+
+
+.ui-button.ui-state-disabled:hover {
+    background: red;
+}
+
+.ui-widget-content {
+    color: #9a4747;
+}
+
+.ui-widget-header {
+    border: none;
+}
+
+.ui-widget-content {
+    background: #ede4d4;
+}
+
+.ui-widget.ui-widget-content {
+    border: 2px solid #cdc3b7;
+}
+
+.ui-datepicker {
+    padding: 0;
+}
+
+.ui-corner-all,
+.ui-corner-top,
+.ui-corner-right,
+.ui-corner-tr {
+    border-top-right-radius: 1px;
+}
+
+.ui-corner-all,
+.ui-corner-top,
+.ui-corner-left,
+.ui-corner-tl {
+    border-top-left-radius: 1px;
+}
+
+.ui-corner-all,
+.ui-corner-bottom,
+.ui-corner-right,
+.ui-corner-br {
+    border-bottom-right-radius: 1px;
+}
+
+.ui-corner-all,
+.ui-corner-bottom,
+.ui-corner-left,
+.ui-corner-bl {
+    border-bottom-left-radius: 1px;
+}
+
+/*  hover background */
+.enabled:hover .ui-state-default {
+    background: #e2d8c7;
+    transition-duration: 500ms;
+}
+
+.ui-state-hover,
+.ui-widget-content .ui-state-hover,
+.ui-widget-header .ui-state-hover,
+.ui-button:hover {
+    border: none;
+    background: #f5f0e5;
+    transition-duration: 500ms;
+
+}
+
+/* .ui-state-focus  .ui-widget-content  {
+    background : red;
+}*/
+
+
+/* .ui-widget-header .ui-icon {
+background-image: url(assets/png/noun_Next_2810810.png); 
+}*/
+
+input:focus,
+select:focus,
+textarea:focus,
+button:focus {
+    outline: none;
+}
+
+.qhero_page_reservation_2 .col_price .submit {
+    width: 415px;
+}
+
+@media screen and (max-width: 450px) {
+
+    .qhero_page_reservation_2 {
+        max-width: 90vw;
+    }
+
+    .qhero_page_reservation_2 .col {
+        display: block;
+    }
+
+    .qhero_page_reservation_2 .row .input_row {
+        display: block;
+    }
+
+    .qhero_page_reservation_2 .row .input_row label {
+        font-size: 25px;
+        min-width: 0px
+    }
+
+    .qhero_page_reservation_2 .row {
+        margin-bottom: 30px;
+        justify-content: center;
+    }
+
+.col_price {
+    display: flex;
+    gap: 15px;
+}
+
+    .prix-nuit-div {
+        display: flex;
+        margin-bottom: 20px;
+    }
+
+    .reservationFinale {
+        margin-top: 70px;
+        margin-bottom: 100px;
+    }
+
+    .qhero_page_reservation_2 h1 {
+        font-size: 35px;
+    }
+
+
+    .qhero_page_reservation_2 .col_price h3 {
+        font-size: 25px;
+    }
+
+    .qhero_page_reservation_2 .col_price h4 {
+        font-size: 22px;
+    }
+
+    .qhero_page_reservation_2 .row .input_row input {
+        width: 90vw;
+        min-width: 0px;
+    }
+
+    .qhero_page_reservation_2 .row .input_row textarea {
+        width: 89vw;
+
+    }
+
+    .qhero_page_reservation_2 .col_price .submit {
+        transform: translate(-8px, 0px);
+        width: 355px;
+        height: 39px;
+        font-size: 22px;
+    }
+
+    .prix-nuit-div {
+        width: auto;
+        float: none;
+    }
+
+    .boutton-reservation-finale {
+        width: auto;
+        float: none;
+    }
+
+}

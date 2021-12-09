@@ -16,6 +16,11 @@ $sql = $db->query("SELECT * FROM tourism WHERE id = {$id_blog}");
 // On va chercher nos données 
 $blog = $sql->fetch(PDO::FETCH_ASSOC);
 
+// Creating timestamp from given date
+$timestamp = strtotime($blog['date']);
+// Creating new date format from that timestamp
+$date = date("d-m-Y", $timestamp);
+
 if ($id_blog !== $blog['id']) {
     header('Location: page-404.php');
 }
@@ -45,7 +50,7 @@ include 'includes/header.php';
             </div>
             <div class="div_h2_date_blog-unit" data-aos="fade-up" data-aos-anchor-placement="top-bottom" data-aos-duration="1000" data-aos-delay="100">
                 <h2 class="h2_date_blog-unit">
-                    <?= ($blog['date']  != '') ? $blog['date'] : ''; ?>
+                    <?= ($blog['date']  != '') ? $date : ''; ?>
                 </h2>
             </div>
             <div class="div_h3_text_presentation_blog-unit">

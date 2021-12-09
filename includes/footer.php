@@ -53,8 +53,9 @@
                 <li>
                     <h4 data-aos="fade-up" data-aos-anchor-placement="bottom-bottom">Social :</h4>
                 </li>
-                <li>
-                    <a data-aos="fade-up" data-aos-anchor-placement="bottom-bottom" href="https://www.instagram.com/" target="_blank">Instagram</a>
+                <li class="instafooter" data-aos="fade-up" data-aos-anchor-placement="bottom-bottom" >
+                    <img src="assets/svg/insta-logo.svg" alt="" style="width:24px">
+                    <a href="https://www.instagram.com/" target="_blank">Instagram</a>
                 </li>
             </ul>
         </div>
