@@ -83,6 +83,7 @@ if (isset($_GET['maison'])) {
                 $comm = $_POST['commentaire'];
                 $current_date = date('d-m-Y');
                 $zip = $_POST['zip'];
+                $price = $_POST['price'];
                 $nbrPersonnes = intval($child) + intval($people);
 
                 // Creating timestamp from given date
@@ -95,7 +96,7 @@ if (isset($_GET['maison'])) {
                 // Creating new date format from that timestamp
                 $new_checkout = date('d-m-Y', $timestamp2);
 
-                $message = '<h1>Vous avez une demande de résérvation au nom de ' . $name . ' pour la maison ' . $maison['room_number'] . '</h1> <br>
+                $message = '<h1>Vous avez une demande de réservation au nom de ' . $name . ' pour la maison ' . $maison['room_number'] . '</h1> <br>
                                 <h2>Date de la reservation : du ' . $new_checkin . ' au ' . $new_checkout . '</h2> <br>
                                 <p>Email : ' . $email . '<br> Téléphone : ' . $phone . '</p>
                                 <p>Nombre d\'adultes : ' . $people . '<br> Nombre d\'enfants : ' . $child . '</p>
@@ -115,7 +116,7 @@ if (isset($_GET['maison'])) {
                         $datecheckout = DateTime::createFromFormat('d-m-Y', $new_checkout);
                         $dateFormat2 = $datecheckout->format('Y-m-d');
 
-                        $insert = "INSERT INTO `reservations` (`name`, `checkin`, `checkout`, `phone`, `people`, `email`, `children`,`address`, `commentaire`, `zip`, `id_rooms`) VALUES ('$name', '$dateFormat', '$dateFormat2', '$phone', '$people', '$email', '$child', '$address', '$comm', '$zip', '$roomID')";
+                        $insert = "INSERT INTO `reservations` (`name`, `checkin`, `checkout`, `phone`, `people`, `email`, `children`,`address`, `commentaire`, `zip`, `pays` ,`price`, `id_rooms`) VALUES ('$name', '$dateFormat', '$dateFormat2', '$phone', '$people', '$email', '$child', '$address', '$comm', '$zip', '$pays' ,'$price', '$roomID')";
                         $save = $db->query($insert);
 
                         if ($save) {
@@ -633,6 +634,7 @@ include 'includes/header.php';
                         <br>
                         <small>Error Message</small>
                     </div>
+                    <input type="hidden" name="price" id='price_input'>
                 </div>
             </div>
         </div>
@@ -689,8 +691,23 @@ include 'includes/header.php';
             minDate: 0,
             onSelect: function(dateText) {
                 $("#txtFromDate1").val(dateText);
-                // dateCheck();
-                returnPriceMaisonVille();
+
+                // Check si c'est l'id de la maison correspond à 25 (Jolie maison de ville)
+                if (room.toString() == 25) {
+                    returnPriceMaisonVille();
+                }
+                // Check si c'est l'id de la maison correspond à 24 (Chalet Bord de Mer)
+                else if (room.toString() == 24) {
+                    returnPriceChaletMer();
+                }
+                // Check si c'est l'id de la maison correspond à 26 (Chalet montagne)
+                else if (room.toString() == 26) {
+                    returnPriceChaletMontagne();
+                }
+                // Check si c'est l'id de la maison correspond à 23 (Villa grand large)
+                else if (room.toString() == 23) {
+                    returnPriceGrandLarge();
+                }
 
             }
         });
@@ -702,67 +719,23 @@ include 'includes/header.php';
             minDate: 0,
             onSelect: function(dateText) {
                 $("#txtFromDate2").val(dateText);
-                returnPriceMaisonVille();
 
                 // Check si c'est l'id de la maison correspond à 25 (Jolie maison de ville)
-                // if (room.toString() == 25) {
-
-                //     if (day >= 3 && month == 1) {
-                //         $('.col_price h4').html('180€/nuit');
-                //     } else if (day <= 3 && month == 2) {
-                //         $('.col_price h4').html('180€/nuit');
-                //     } else if (((day >= 4 && month == 2) || (day <= 6 && month == 3)) || ((day >= 8 && month == 4) || (day <= 8 && month == 5)) || ((day >= 25 && month == 5) && (day2 <= 29 && month2 == 5)) || ((day >= 1 && month == 7) || (day >= 1 && month == 8) || (day >= 1 && month == 9) || (day >= 1 && month == 10) || (day <= 13 && month == 11)) || ((day >= 16 && month == 12) || (day <= 2 && month == 2))) {
-                //         $('.col_price h4').html('210€/nuit');
-                //     } else if (((day >= 7 && month == 3) || (day <= 7 && month == 4)) || ((day >= 8 && month == 5) && (day2 <= 24 && month2 == 5)) || ((day >= 30 && month == 5) || (day <= 30 && month == 6)) || ((day >= 14 && month == 11) || (day <= 15 && month == 12))) {
-                //         $('.col_price h4').html('180€/nuit');
-                //     } else {
-                //         $('.col_price h4').html('0nuit');
-                //     }
-
-                //     // Check si c'est l'id de la maison correspond à 24 (Chalet Bord de Mer)
-                // } else if (room.toString() == 24) {
-
-                //     if (day >= 3 && month == 1) {
-                //         $('.col_price h4').html('210€/nuit');
-                //     } else if (day <= 3 && month == 2) {
-                //         $('.col_price h4').html('210€/nuit');
-                //     } else if (((day >= 4 && month == 2) || (day <= 6 && month == 3)) || ((day >= 8 && month == 4) || (day <= 8 && month == 5)) || ((day >= 25 && month == 5) && (day2 <= 29 && month2 == 5)) || ((day >= 1 && month == 7) || (day >= 1 && month == 8) || (day >= 1 && month == 9) || (day >= 1 && month == 10) || (day <= 13 && month == 11)) || ((day >= 16 && month == 12) || (day <= 2 && month == 1))) {
-                //         $('.col_price h4').html('230€/nuit');
-                //     } else if (((day >= 7 && month == 3) || (day <= 7 && month == 4)) || ((day >= 8 && month == 5) && (day2 <= 24 && month2 == 5)) || ((day >= 30 && month == 5) || (day <= 30 && month == 6)) || ((day >= 14 && month == 11) || (day <= 15 && month == 12))) {
-                //         $('.col_price h4').html('210€/nuit');
-                //     } else {
-                //         $('.col_price h4').html('0nuit');
-                //     }
-                // }
-
-                // // Check si c'est l'id de la maison correspond à 26 (Chalet montagne)
-                // else if (room.toString() == 26) {
-
-                //     if (((day >= 3 && month == 1) || (day <= 3 && month == 2)) || ((day >= 7 && month == 3) || (day <= 7 && month == 4)) || ((day >= 9 && month == 5) || (day >= 1 && month == 6) || (day >= 1 && month == 7) || (day >= 1 && month == 8) || (day >= 1 && month == 9) || (day >= 1 && month == 10) || (day >= 1 && month == 11) || (day <= 17 && month == 12))) {
-                //         $('.col_price h4').html('357€/nuit');
-                //     } else if (((day >= 4 && month == 2) || (day <= 6 && month == 3)) || ((day >= 8 && month == 4) || (day <= 8 && month == 5)) || ((day >= 17 && month == 12) || (day <= 2 && month == 1))) {
-                //         $('.col_price h4').html('420€/nuit');
-                //     }
-                // }
-
-                // // Check si c'est l'id de la maison correspond à 23 (Villa grand large)
-                // else if (room.toString() == 23) {
-                //     console.log('ok');
-                //     if (((day >= 2 && month == 1) || (day >= 1 && month == 2) || (day >= 1 && month == 3) || (day >= 1 && month == 4) || (day <= 7 && month == 5)) ||
-                //         ((day >= 22 && month == 5) || (day <= 4 && month == 6)) ||
-                //         ((day >= 3 && month == 7) || (day >= 1 && month == 8) || (day <= 3 && month == 9)) ||
-                //         ((day >= 22 && month == 10) || (day <= 12 && month == 11))) {
-                //         $('.col_price h4').html('640€/nuit');
-                //     } else if (((day >= 7 && month == 5 && day <= 21)) ||
-                //         ((day >= 5 && month == 6) || (day <= 2 && month == 7)) ||
-                //         ((day >= 4 && month == 9) || (day <= 21 && month == 10)) ||
-                //         ((day >= 13 && month == 11) || (day <= 16 && month == 12))) {
-                //         console.log('bravo');
-                //         $('.col_price h4').html('530€/nuit');
-                //     } else if (((day >= 17 && month == 12) || (day <= 1 && month == 1))) {
-                //         $('.col_price h4').html('740€/nuit');
-                //     }
-                // }
+                if (room.toString() == 25) {
+                    returnPriceMaisonVille();
+                }
+                // Check si c'est l'id de la maison correspond à 24 (Chalet Bord de Mer)
+                else if (room.toString() == 24) {
+                    returnPriceChaletMer();
+                }
+                // Check si c'est l'id de la maison correspond à 26 (Chalet montagne)
+                else if (room.toString() == 26) {
+                    returnPriceChaletMontagne();
+                }
+                // Check si c'est l'id de la maison correspond à 23 (Villa grand large)
+                else if (room.toString() == 23) {
+                    returnPriceGrandLarge();
+                }
             }
         });
         $.datepicker.setDefaults($.datepicker.regional["fr"]);
@@ -773,6 +746,7 @@ include 'includes/header.php';
     /** 
      * @from= date debut de periode
      * @to = date debut de periode
+     * @price = prix en fonction de la periode
      */
     function dateCheck(from2, to2, price) {
 
@@ -797,7 +771,6 @@ include 'includes/header.php';
         if (d1.getTime() < d2.getTime()) {
 
             diff = Math.round(Math.abs((d2.getTime() - d1.getTime()) / (oneDay)));
-            console.log(diff);
 
         } else {
             $('.col_price h4').html('Date non valide');
@@ -808,7 +781,13 @@ include 'includes/header.php';
 
         /** Renvoie le prix en fonction du nombre de jour et de la periodec*/
         if ((cDate <= to && cDate >= from)) {
+
+            // Rempli la valeur de l'input price
+            $('input[name="price"]').attr('value', price * diff);
+
+            //Affiche le prix dans un élément du dom
             $('.col_price h4').html((diff * price) + '€');
+
         } else {
             return false
         }
@@ -819,6 +798,7 @@ include 'includes/header.php';
     function returnPriceMaisonVille() {
 
         // 2022
+        dateCheck(new Date('12-08-21'), new Date('01-02-22'), '210');
         dateCheck(new Date('01-03-22'), new Date('02-03-22'), '180'); // MM/DD/yy
         dateCheck(new Date('02-04-22'), new Date('03-06-22'), '210');
         dateCheck(new Date('03-07-22'), new Date('04-07-22'), '180');
@@ -841,6 +821,81 @@ include 'includes/header.php';
         dateCheck(new Date('07-01-23'), new Date('11-13-23'), '210');
         dateCheck(new Date('11-14-23'), new Date('12-15-23'), '180');
         dateCheck(new Date('12-16-23'), new Date('01-02-24'), '210');
+    }
+
+    function returnPriceChaletMer() {
+
+        // 2022
+        dateCheck(new Date('12-08-21'), new Date('01-02-22'), '230');
+        dateCheck(new Date('01-03-22'), new Date('02-03-22'), '210'); // MM/DD/yy
+        dateCheck(new Date('02-04-22'), new Date('03-06-22'), '230');
+        dateCheck(new Date('03-07-22'), new Date('04-07-22'), '210');
+        dateCheck(new Date('04-08-22'), new Date('05-08-22'), '230');
+        dateCheck(new Date('05-09-22'), new Date('05-24-22'), '210');
+        dateCheck(new Date('05-25-22'), new Date('05-29-22'), '230');
+        dateCheck(new Date('05-30-22'), new Date('06-30-22'), '210');
+        dateCheck(new Date('07-01-22'), new Date('11-13-22'), '230');
+        dateCheck(new Date('11-14-22'), new Date('12-15-22'), '210');
+        dateCheck(new Date('12-16-22'), new Date('01-02-23'), '230');
+
+        // 2023
+        dateCheck(new Date('01-03-23'), new Date('02-03-23'), '210'); // MM/DD/yy
+        dateCheck(new Date('02-04-23'), new Date('03-06-23'), '230');
+        dateCheck(new Date('03-07-23'), new Date('04-07-23'), '210');
+        dateCheck(new Date('04-08-23'), new Date('05-08-23'), '230');
+        dateCheck(new Date('05-09-23'), new Date('05-24-23'), '210');
+        dateCheck(new Date('05-25-23'), new Date('05-29-23'), '230');
+        dateCheck(new Date('05-30-23'), new Date('06-30-23'), '210');
+        dateCheck(new Date('07-01-23'), new Date('11-13-23'), '230');
+        dateCheck(new Date('11-14-23'), new Date('12-15-23'), '210');
+        dateCheck(new Date('12-16-23'), new Date('01-02-24'), '230');
+    }
+
+    function returnPriceChaletMontagne() {
+
+        // 2022
+        dateCheck(new Date('12-08-21'), new Date('01-02-22'), '420');
+        dateCheck(new Date('01-03-22'), new Date('02-03-22'), '357'); // MM/DD/yy
+        dateCheck(new Date('02-04-22'), new Date('03-06-22'), '420');
+        dateCheck(new Date('03-07-22'), new Date('04-07-22'), '357');
+        dateCheck(new Date('04-08-22'), new Date('05-08-22'), '420');
+        dateCheck(new Date('05-09-22'), new Date('12-16-22'), '357');
+        dateCheck(new Date('12-17-22'), new Date('01-02-23'), '420');
+
+        // 2023
+        dateCheck(new Date('01-03-23'), new Date('02-03-23'), '357'); // MM/DD/yy
+        dateCheck(new Date('02-04-23'), new Date('03-06-23'), '420');
+        dateCheck(new Date('03-07-23'), new Date('04-07-23'), '357');
+        dateCheck(new Date('04-08-23'), new Date('05-08-23'), '420');
+        dateCheck(new Date('05-09-23'), new Date('12-16-23'), '357');
+        dateCheck(new Date('12-17-23'), new Date('01-02-24'), '420');
+
+    }
+
+    function returnPriceGrandLarge() {
+
+        // 2022
+        dateCheck(new Date('12-17-21'), new Date('01-02-22'), '740');
+        dateCheck(new Date('01-02-22'), new Date('05-07-22'), '640'); // MM/DD/yy
+        dateCheck(new Date('05-08-22'), new Date('05-21-22'), '530');
+        dateCheck(new Date('05-22-22'), new Date('06-04-22'), '640');
+        dateCheck(new Date('06-05-22'), new Date('07-02-22'), '530');
+        dateCheck(new Date('07-03-22'), new Date('09-03-22'), '640');
+        dateCheck(new Date('09-04-22'), new Date('10-21-22'), '530');
+        dateCheck(new Date('10-22-22'), new Date('11-12-22'), '640');
+        dateCheck(new Date('11-13-22'), new Date('12-16-22'), '530');
+        dateCheck(new Date('12-17-22'), new Date('01-01-23'), '740');
+
+        // 2023
+        dateCheck(new Date('01-02-23'), new Date('05-07-23'), '640'); // MM/DD/yy
+        dateCheck(new Date('05-08-23'), new Date('05-21-23'), '530');
+        dateCheck(new Date('05-22-23'), new Date('06-04-23'), '640');
+        dateCheck(new Date('06-05-23'), new Date('07-02-23'), '530');
+        dateCheck(new Date('07-03-23'), new Date('09-03-23'), '640');
+        dateCheck(new Date('09-04-23'), new Date('10-21-23'), '530');
+        dateCheck(new Date('10-22-23'), new Date('11-12-23'), '640');
+        dateCheck(new Date('11-13-23'), new Date('12-16-23'), '530');
+        dateCheck(new Date('12-17-23'), new Date('01-01-24'), '740');
     }
 </script>
 <?php include "includes/cursor.php"; ?>

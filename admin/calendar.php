@@ -40,27 +40,27 @@ if (isset($_GET['delete'])) {
                 </tr>
             </thead>
             <tbody>
-                <?php while ($rows = $result->fetch(PDO::FETCH_ASSOC)) : 
+                <?php while ($rows = $result->fetch(PDO::FETCH_ASSOC)) :
                     // Creating timestamp from given date
                     $timestamp = strtotime($rows['checkin']);
                     // Creating new date format from that timestamp
                     $new_checkin = date("d-m-Y", $timestamp);
-                    
+
                     // Creating timestamp from given date
                     $timestamp2 = strtotime($rows['checkout']);
                     // Creating new date format from that timestamp
                     $new_checkout = date("d-m-Y", $timestamp2);
-                    
-                    ?>
+
+                ?>
                     <tr>
                         <td><?= $rows['libelle']; ?></td>
                         <td><?= $rows['room_number']; ?></td>
-                        <td><?= $new_checkin;?></td>
+                        <td><?= $new_checkin; ?></td>
                         <td><?= $new_checkout; ?></td>
                         <td><?= $rows['email']; ?></td>
                         <td><?= $rows['phone']; ?></td>
                         <td>
-                            <a href="calendar.php?delete=<?= $rows['id']; ?>"><i class='bx bx-trash'></i></a>
+                            <a href="calendar.php?delete=<?= $rows['id']; ?>" onclick="return confirm('Vous êtes sur le point de supprimer une date dans le calendrier')"><i class='bx bx-trash'></i></a>
                         </td>
                     </tr>
                 <?php endwhile; ?>

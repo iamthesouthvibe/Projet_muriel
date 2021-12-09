@@ -45,19 +45,19 @@ if (isset($_GET['delete'])) {
         </tr>
       </thead>
       <tbody>
-        <?php while ($rows = $result->fetch(PDO::FETCH_ASSOC)) : 
-          
+        <?php while ($rows = $result->fetch(PDO::FETCH_ASSOC)) :
+
           // Creating timestamp from given date
           $timestamp = strtotime($rows['checkin']);
           // Creating new date format from that timestamp
           $new_checkin = date("d-m-Y", $timestamp);
-          
+
           // Creating timestamp from given date
           $timestamp2 = strtotime($rows['checkout']);
           // Creating new date format from that timestamp
           $new_checkout = date("d-m-Y", $timestamp2);
 
-          ?>
+        ?>
           <tr>
             <td><?= $row_count++; ?></td>
             <td><?= $rows['room_number']; ?></td>
@@ -68,16 +68,10 @@ if (isset($_GET['delete'])) {
             <td><?= $rows['people']; ?></td>
             <td><?= $rows['children']; ?></td>
             <td><?= $rows['email']; ?></td>
-            <?php
-            ini_set("display_errors", 1);
-            date_default_timezone_set('Europe/Paris');
-            $date_debut = strtotime($rows['checkin']);
-            $date_fin = strtotime($rows['checkout']);
-            $nbJour = round(($date_fin - $date_debut) / 60 / 60 / 24, 0); ?>
-            <td><?= $nbJour * $rows['price']; ?>€</td>
+            <td><?= $rows['price']; ?>€</td>
 
             <td>
-              <a href="reservations.php?delete=<?= $rows['id']; ?>"><i class='bx bx-trash'></i></a>
+              <a href="reservations.php?delete=<?= $rows['id']; ?>" onclick="return confirm('Vous êtes sur le point de supprimer une demande de réservation')"><i class='bx bx-trash'></i></a>
             </td>
           </tr>
         <?php endwhile; ?>
