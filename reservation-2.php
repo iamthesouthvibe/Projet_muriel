@@ -1,10 +1,10 @@
 <?php
 require_once 'vendor/autoload.php';
 require_once 'core/core.php';
-// include 'fonctions/fonctionMail.php';
+include 'fonctions/fonctionMail.php';
 
-// define('SITE_KEY', '6LewOlodAAAAAC2IoZg-Ye76rGW_Pgrh8weg7tm-');
-// define('SECRET_KEY', '6LewOlodAAAAAII2nhQu25dNzXhFz0_-XhO5G9nD');
+define('SITE_KEY', '6LewOlodAAAAAC2IoZg-Ye76rGW_Pgrh8weg7tm-');
+define('SECRET_KEY', '6LewOlodAAAAAII2nhQu25dNzXhFz0_-XhO5G9nD');
 
 $roomID = $_GET['maison'];
 
@@ -52,99 +52,106 @@ if ($roomID !== $maison['id']) {
 
 //:TODO : Mettre cette fonction dans une fichier php à part
 /*
-    * Fonction pour recuperer le captch sous forme de json
-    */
-// function getCaptcha($SecretKey)
-// {
-//     $Response = file_get_contents("https://www.google.com/recaptcha/api/siteverify?secret=" . SECRET_KEY . "&response={$SecretKey}");
-//     $Return = json_decode($Response);
-//     return $Return;
-// }
+* Fonction pour recuperer le captch sous forme de json
+*/
+function getCaptcha($SecretKey)
+{
+    $Response = file_get_contents("https://www.google.com/recaptcha/api/siteverify?secret=" . SECRET_KEY . "&response={$SecretKey}");
+    $Return = json_decode($Response);
+    return $Return;
+}
+//
 
 if (isset($_GET['maison'])) {
     $roomID = $_GET['maison'];
 
     if (isset($_POST['checkin'])) {
-        // $Return = getCaptcha($_POST['g-recaptcha-response']);
+        $Return = getCaptcha($_POST['g-recaptcha-response']);
 
-        // if ($Return->success == true && $Return->score > 0.5) {
+        if ($Return->success == true && $Return->score > 0.5) {
+            if (isset($_POST['url']) && $_POST['url'] == '') {
+                if (!empty($_POST['name']) && !empty($_POST['txtFromDate1']) && !empty($_POST['txtFromDate2']) && !empty($_POST['phone']) && !empty($_POST['people'])) {
+                    $name = $_POST['name'];
+                    $checkin = $_POST['txtFromDate1'];
+                    $checkout = $_POST['txtFromDate2'];
+                    $phone = $_POST['phone'];
+                    $people = $_POST['people'];
+                    $child = $_POST['children'];
+                    $email = $_POST['email'];
+                    @$address = $_POST['adress'];
+                    $pays = $_POST['pays'];
+                    $comm = $_POST['commentaire'];
+                    $current_date = date('d-m-Y');
+                    $zip = $_POST['zip'];
+                    $price = $_POST['price'];
+                    $nbrPersonnes = intval($child) + intval($people);
 
-        if (isset($_POST['url']) && $_POST['url'] == '') {
-            if (!empty($_POST['name']) && !empty($_POST['txtFromDate1']) && !empty($_POST['txtFromDate2']) && !empty($_POST['phone']) && !empty($_POST['people'])) {
-                $name = $_POST['name'];
-                $checkin = $_POST['txtFromDate1'];
-                $checkout = $_POST['txtFromDate2'];
-                $phone = $_POST['phone'];
-                $people = $_POST['people'];
-                $child = $_POST['children'];
-                $email = $_POST['email'];
-                @$address = $_POST['adress'];
-                $pays = $_POST['pays'];
-                $comm = $_POST['commentaire'];
-                $current_date = date('d-m-Y');
-                $zip = $_POST['zip'];
-                $price = $_POST['price'];
-                $nbrPersonnes = intval($child) + intval($people);
+                    // Creating timestamp from given date
+                    $timestamp = strtotime($checkin);
+                    // Creating new date format from that timestamp
+                    $new_checkin = date('d-m-Y', $timestamp);
 
-                // Creating timestamp from given date
-                $timestamp = strtotime($checkin);
-                // Creating new date format from that timestamp
-                $new_checkin = date('d-m-Y', $timestamp);
+                    // Creating timestamp from given date
+                    $timestamp2 = strtotime($checkout);
+                    // Creating new date format from that timestamp
+                    $new_checkout = date('d-m-Y', $timestamp2);
 
-                // Creating timestamp from given date
-                $timestamp2 = strtotime($checkout);
-                // Creating new date format from that timestamp
-                $new_checkout = date('d-m-Y', $timestamp2);
-
-                $message = '<h1>Vous avez une demande de réservation au nom de ' . $name . ' pour la maison ' . $maison['room_number'] . '</h1> <br>
+                    $message = '<h1>Vous avez une demande de réservation au nom de ' . $name . ' pour la maison ' . $maison['room_number'] . '</h1> <br>
                                 <h2>Date de la reservation : du ' . $new_checkin . ' au ' . $new_checkout . '</h2> <br>
                                 <p>Email : ' . $email . '<br> Téléphone : ' . $phone . '</p>
                                 <p>Nombre d\'adultes : ' . $people . '<br> Nombre d\'enfants : ' . $child . '</p>
                                 <p>Adresse : ' . $address . ' Pays : ' . $pays . '</p>
                                 <p>Message : ' . $comm . '</p>';
 
-                $messageClient = '<p><strong>Madame, Monsieur,</strong><br><br> Nous vous accusons réception de la demande de réservation que vous avez effectuée pour la maison <strong>' . $maison['room_number'] . '</strong> 
-                    au nom de <strong>' . $name . '</strong>. Nous avons pris bonne note que votre arrivée serai prévue pour le <strong>' . $new_checkin . '</strong> et le départ prévue pour le <strong>' . $new_checkout . '</strong>. Il s\'agit
-                    Il s\'agit d\'un séjour pour <strong>' . $nbrPersonnes . '</strong> personnes.<br><br>Je reviens vers vous d\'ici 3 jours afin de procéder à la confirmation de votre réservation. 
-                    <br><br>  Cordialement,<br><br>  Muriel Home’s</p>';
+                    // $messageClient = '<p><strong>Madame, Monsieur,</strong><br><br> Nous vous accusons réception de la demande de réservation que vous avez effectuée pour la maison <strong>' . $maison['room_number'] . '</strong> au nom de <strong>' . $name . '</strong>. Nous avons pris bonne note que votre arrivée serai prévue pour le <strong>' . $new_checkin . '</strong> et le départ prévue pour le <strong>' . $new_checkout . '</strong>. Il s\'agit d\'un séjour pour <strong>' . $nbrPersonnes . '</strong> personnes.<br><br>Je reviens vers vous d\'ici 3 jours afin de procéder à la confirmation de votre réservation.
+                    //     <br><br>  Cordialement,<br><br>  Muriel Home’s</p>';
 
-                if (strtotime($new_checkin) >= ($current_date)) {
-                    if (strtotime($new_checkout) >= strtotime($new_checkin)) {
-                        $datecheck = DateTime::createFromFormat('d-m-Y', $new_checkin);
-                        $dateFormat = $datecheck->format('Y-m-d');
+                    $messageClient = '<p><strong>Madame, Monsieur,</strong><br><br> 
+                Je vous remercie pour votre demande d\'information concernant la villa <strong>"' . $maisom['room_number'] . '"</strong> pour la période du <strong>' . $new_checkin . '</strong>  au <strong>' . $new_checkout . '</strong>  pour <strong>' . $nbrPersonnes . '</strong> personnes. <br><br>
+                Je reviens vers vous au plus vite afin de vous confirmer les tarifs et disponibilités</p>.
+                <br><br>
+                Bien à vous,
+                <br><br>
+                Muriel';
 
-                        $datecheckout = DateTime::createFromFormat('d-m-Y', $new_checkout);
-                        $dateFormat2 = $datecheckout->format('Y-m-d');
+                    if (strtotime($new_checkin) >= ($current_date)) {
+                        if (strtotime($new_checkout) >= strtotime($new_checkin)) {
+                            $datecheck = DateTime::createFromFormat('d-m-Y', $new_checkin);
+                            $dateFormat = $datecheck->format('Y-m-d');
 
-                        $insert = "INSERT INTO `reservations` (`name`, `checkin`, `checkout`, `phone`, `people`, `email`, `children`,`address`, `commentaire`, `zip`, `pays` ,`price`, `id_rooms`) VALUES ('$name', '$dateFormat', '$dateFormat2', '$phone', '$people', '$email', '$child', '$address', '$comm', '$zip', '$pays' ,'$price', '$roomID')";
-                        $save = $db->query($insert);
+                            $datecheckout = DateTime::createFromFormat('d-m-Y', $new_checkout);
+                            $dateFormat2 = $datecheckout->format('Y-m-d');
 
-                        if ($save) {
-                            // ini_set("error_reporting", E_ALL);
-                            // ini_set("display_errors", "1");
-                            $id = $db->lastInsertId();
-                            // sendMail($message);
-                            // sendMail2($messageClient, $email);
-                            header('Location: confirmation-reservation.php?id=' . $id);
+                            $insert = "INSERT INTO `reservations` (`name`, `checkin`, `checkout`, `phone`, `people`, `email`, `children`,`address`, `commentaire`, `zip`, `pays` ,`price`, `id_rooms`) VALUES ('$name', '$dateFormat', '$dateFormat2', '$phone', '$people', '$email', '$child', '$address', '$comm', '$zip', '$pays' ,'$price', '$roomID')";
+                            $save = $db->query($insert);
+
+                            if ($save) {
+                                // ini_set("error_reporting", E_ALL);
+                                // ini_set("display_errors", "1");
+                                $id = $db->lastInsertId();
+                                // sendMail($message);
+                                // sendMail2($messageClient, $email);
+                                header('Location: confirmation-reservation.php?id=' . $id);
+                            } else {
+                                echo 'erreur';
+                            }
                         } else {
-                            echo 'erreur';
+                            echo '<p class="text-center alert alert-danger">Date de retour non valide fournie. Veuillez éviter d\'utiliser une date passée.</p>';
                         }
                     } else {
-                        echo '<p class="text-center alert alert-danger">Date de retour non valide fournie. Veuillez éviter d\'utiliser une date passée.</p>';
+                        echo '<p class="text-center alert alert-danger">Date de départ non valide fournie. Veuillez éviter d\'utiliser une date passée.</p>';
                     }
-                } else {
-                    echo '<p class="text-center alert alert-danger">Date de départ non valide fournie. Veuillez éviter d\'utiliser une date passée.</p>';
                 }
+            } else {
+                header('Location: page-404.php');
             }
-        } else {
-            header('Location: page-404.php');
         }
     }
 }
 
 include 'includes/header.php';
 ?>
-<!-- <script src="https://www.google.com/recaptcha/api.js?render=<?php echo SITE_KEY; ?>"></script> -->
+<script src="https://www.google.com/recaptcha/api.js?render=<?php echo SITE_KEY; ?>"></script>
 
 <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/humanity/jquery-ui.css" type="text/css">
 
@@ -546,7 +553,7 @@ include 'includes/header.php';
     <?php } elseif ($roomID == '26') { ?>
         <h2 data-aos="fade" data-aos-anchor-placement="top-bottom" data-aos-delay="100" data-aos-duration="2000" data-aos-once="true">Uniquement à la semaine toute l'année</h2>
     <?php } else { ?>
-        <h2 data-aos="fade" data-aos-anchor-placement="top-bottom" data-aos-delay="100" data-aos-duration="2000" data-aos-once="true">Location uniquement à la semaine pour la période de juillet et aout</h2>
+        <h2 data-aos="fade" data-aos-anchor-placement="top-bottom" data-aos-delay="100" data-aos-duration="2000" data-aos-once="true">Location uniquement à la semaine pour la période de juillet et août</h2>
     <?php } ?>
     <form action="" method="POST" id="myForm" class="form-control" name="register" onsubmit="return validate();" autocomplete="off">
         <div class="row" data-aos="fade" data-aos-anchor-placement="top-bottom" data-aos-delay="500" data-aos-duration="2000" data-aos-once="true">

@@ -18,7 +18,6 @@ const name = document.getElementById("name");
 const date1 = document.getElementById("txtFromDate1");
 const date2 = document.getElementById('txtFromDate2');
 const people = document.getElementById('people');
-const child = document.getElementById('child');
 const email = document.getElementById('email');
 const phone = document.getElementById('phone');
 
@@ -58,11 +57,10 @@ function validate() {
     let checkDate1 = checkRequired(date1);
     let checkDate2 = checkRequired(date2);
     let checkPeople = checkRequired(people);
-    let checkChild = checkRequired(child);
     let checkEmail = checkRequired(email);
     let checkPhone = checkRequired(phone);
 
-    if (checkValue.value && checkSub.value && checkDate1 && checkDate2 && checkPeople && checkChild && checkEmail && checkPhone) {
+    if (checkValue.value && checkSub.value && checkDate1 && checkDate2 && checkPeople && checkEmail && checkPhone) {
         return true;
     } else {
         return false;

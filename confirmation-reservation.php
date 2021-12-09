@@ -30,6 +30,10 @@ $date_fin = strtotime($reservation['checkout']); ?>
     <h1 class="style_h1_confirmation">Demande <br>envoyée !</h1>
     <h2 class="style_h2_confirmation">Je reviens vers vous sous 3 jours par retour de mail. <br> Un mail de confirmation récapitulatif vous a été envoyé, vérifiez vos spams si besoin.</h2>
 </div>
+<div class="section_prix-total">
+    <h4>Prix Total environ</h4>
+    <h5><?= $reservation['price']; ?>€</h5>
+</div>
 <div class="section_recapitulatif">
     <h3 class="style_h3_confirmation_reservation">Récapitulatif</h3>
 
@@ -44,9 +48,5 @@ $date_fin = strtotime($reservation['checkout']); ?>
         <?= $reservation['commentaire'] ?>
     </p> <br>
 </div>
-<div class="section_prix-total">
-    <h4>Prix Total</h4>
-    <h5><?= $reservation['price']; ?>€</h5>
 
-</div>
 <script src="js/confirmation-reservation.js"></script>
